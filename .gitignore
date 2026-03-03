@@ -1,0 +1,8 @@
+dist/
+
+venv/
+
+bin/
+*.log
+*.tmp
+*.bak
