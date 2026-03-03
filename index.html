@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - quiet asterisk</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-cream: #FAF8F3;
+  --color-sand: #E8E3D8;
+  --color-charcoal: #2B2826;
+  --color-slate: #5A5450;
+  --color-rust: #B8503E;
+  --color-terracotta: #D17458;
+  --color-sage: #8B9B7E;
+  --color-gold: #C9A767;
+  --font-serif: 'Crimson Pro', serif;
+  --font-sans: 'Work Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-serif);
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header */
+.header {
+  border-bottom: 2px solid var(--color-sand);
+  background: var(--color-cream);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background: rgba(250, 248, 243, 0.95);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  color: var(--color-charcoal);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: var(--color-rust);
+}
+
+.logo-asterisk {
+  color: var(--color-rust);
+  margin-left: 0.25rem;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-slate);
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-charcoal);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-rust);
+}
+
+/* Hero Section */
+.hero {
+  padding: 8rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-sand) 100%);
+}
+
+.hero-bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.05;
+}
+
+.hero-bg-blob-1 {
+  top: 5rem;
+  right: 2.5rem;
+  width: 18rem;
+  height: 18rem;
+  background: var(--color-terracotta);
+}
+
+.hero-bg-blob-2 {
+  bottom: 2.5rem;
+  left: 2.5rem;
+  width: 24rem;
+  height: 24rem;
+  background: var(--color-sage);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-label {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-rust);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  max-width: 80rem;
+}
+
+.hero-title-accent {
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-slate);
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 48rem;
+  margin-bottom: 3rem;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: var(--color-slate);
+  line-height: 1.6;
+  max-width: 42rem;
+  margin-bottom: 3rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.btn {
+  padding: 1.25rem 2.5rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1.125rem;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s;
+  display: inline-block;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--color-rust);
+  color: white;
+  border: 2px solid var(--color-rust);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background: #A03D2F;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-charcoal);
+  border: 2px solid var(--color-charcoal);
+}
+
+.btn-secondary:hover {
+  background: var(--color-charcoal);
+  color: white;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 48rem;
+}
+
+.stat-item {
+  padding-left: 1.5rem;
+  border-left: 4px solid;
+}
+
+.stat-item:nth-child(1) { border-color: var(--color-rust); }
+.stat-item:nth-child(2) { border-color: var(--color-sage); }
+.stat-item:nth-child(3) { border-color: var(--color-gold); }
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-slate);
+}
+
+/* Section Headers */
+.section {
+  padding: 6rem 0;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-header-centered {
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 700;
+  font-family: var(--font-serif);
+  margin-bottom: 1.5rem;
+}
+
+.section-description {
+  font-size: 1.25rem;
+  color: var(--color-slate);
+  line-height: 1.6;
+  max-width: 48rem;
+}
+
+.section-description-centered {
+  margin: 0 auto;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3rem 0;
+}
+
+.divider-line {
+  width: 4rem;
+  height: 2px;
+}
+
+.divider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: white;
+  border: 2px solid var(--color-sand);
+  padding: 2.5rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--color-charcoal);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.card-category {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.card-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  margin-bottom: 1rem;
+  color: var(--color-charcoal);
+  transition: color 0.3s;
+}
+
+.card:hover .card-title {
+  color: var(--color-rust);
+}
+
+.card-excerpt {
+  color: var(--color-slate);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.card-meta {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-slate);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-rust);
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.card:hover .card-link {
+  transform: translateX(0.5rem);
+}
+
+/* Featured Card (Large) */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.card-featured {
+  grid-row: span 2;
+  padding: 3rem;
+}
+
+.featured-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--color-rust);
+  color: white;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.card-featured .card-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-featured .card-excerpt {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* Post Content */
+.post-content {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.post-header {
+  margin-bottom: 3rem;
+}
+
+.post-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.post-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.post-meta-item {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-slate);
+}
+
+.post-category {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  color: var(--color-rust);
+}
+
+.decorative-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-rust), var(--color-terracotta));
+  margin: 2rem 0;
+}
+
+.post-body {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.post-body h2, .post-body h3 {
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-body p {
+  margin-bottom: 1.5rem;
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 2rem 0;
+}
+
+.post-body blockquote {
+  border-left: 4px solid var(--color-rust);
+  padding-left: 2rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--color-slate);
+}
+
+/* Related Posts */
+.related-posts {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 2px solid var(--color-sand);
+}
+
+.related-posts-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.related-posts-list {
+  list-style: none;
+  padding: 0;
+}
+
+.related-posts-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-sand);
+}
+
+.related-posts-link {
+  color: var(--color-charcoal);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.related-posts-link:hover {
+  color: var(--color-rust);
+}
+
+/* Footer */
+.footer {
+  background: var(--color-charcoal);
+  color: var(--color-cream);
+  padding: 4rem 0 2rem;
+  margin-top: 6rem;
+  border-top: 2px solid var(--color-sand);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section-title {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-terracotta);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link {
+  color: var(--color-sand);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-slate);
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-sand);
+}
+
+/* Books Section */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.book-card {
+  background: white;
+  border: 2px solid var(--color-sand);
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.book-card:hover {
+  border-color: var(--color-gold);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.book-image {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.book-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.book-description {
+  color: var(--color-slate);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero {
+    padding: 4rem 0 3rem;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-featured {
+    grid-row: auto;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Load More functionality */
+.hidden-post {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="index.html" class="logo">quiet asterisk<span class="logo-asterisk">*</span></a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">Essays</a>
+        <a href="books.html" class="nav-link ">Books</a>
+        <a href="categories.html" class="nav-link ">Categories</a>
+        <a href="about.html" class="nav-link ">About</a>
+        <a href="contact.html" class="nav-link ">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main>
+
+<section class="hero">
+  <div class="hero-bg-blob hero-bg-blob-1"></div>
+  <div class="hero-bg-blob hero-bg-blob-2"></div>
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-label">Welcome to Quiet Asterisk</p>
+      <h1 class="hero-title">
+        Essays on <span class="hero-title-accent" style="color: var(--color-rust);">meaning</span>, 
+        <span style="color: var(--color-sage);">uncertainty</span>, and the quiet details
+      </h1>
+      <p class="hero-subtitle">that shape how we think and see the world</p>
+      <p class="hero-description">
+        A collection of reflections on systems, stories, and the subtle patterns that connect them. 
+        Written with care for those who notice the small things.
+      </p>
+      <div class="hero-cta">
+        <a href="#featured" class="btn btn-primary">Explore Essays</a>
+        <a href="about.html" class="btn btn-secondary">About the Author</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">12+</div>
+          <div class="stat-label">Essays Published</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Categories</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">7</div>
+          <div class="stat-label">Books Written</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Books</h2>
+      <p class="section-description">Published works and ongoing projects</p>
+    </div>
+    <div class="books-grid">
+
+<div class="book-card">
+  <img src="images/space_between_knowing.jpg" class="book-image" alt="Space Between Knowing">
+  <h4 class="book-title">Space Between Knowing</h4>
+  
+  
+  <p class="book-description">A reflective exploration of thoughts, uncertainty, and outcomes we don't fully control. It challenges the belief that mindset guarantees results and s...</p>
+  
+        <a href="https://www.amazon.com/Space-Between-Knowing-Subu-Sangameswar-ebook/dp/B0GHZMSKY5" target="_blank" rel="noopener noreferrer" class="btn btn-primary" 
+           style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block;">
+          Buy Book
+        </a>
+        
+</div>
+
+<div class="book-card">
+  <img src="images/the_quiet_asterisk.jpg" class="book-image" alt="The Quiet Asterisk">
+  <h4 class="book-title">The Quiet Asterisk</h4>
+  
+  
+  <p class="book-description">A meditation on probability and everyday resilience. Through human stories, it reframes uncertainty as something to live with—rather than conquer.</p>
+  
+        <a href="https://www.amazon.com/Quiet-Asterisk-Probability-Softens-Edges-ebook/dp/B0GPLJCMXH" target="_blank" rel="noopener noreferrer" class="btn btn-primary" 
+           style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block;">
+          Buy Book
+        </a>
+        
+</div>
+
+    </div>
+    <div style="margin-top: 3rem; text-align: center;">
+      <a href="books.html" class="btn btn-secondary">View All Books</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider">
+  <div class="divider-line" style="background: var(--color-rust);"></div>
+  <div class="divider-dot" style="background: var(--color-rust);"></div>
+  <div class="divider-line" style="background: var(--color-rust);"></div>
+</div>
+
+<section class="section" id="featured">
+  <div class="container">
+    <div class="section-header section-header-centered">
+      <h2 class="section-title">Featured Essays</h2>
+      <p class="section-description section-description-centered">Recent explorations worth your time</p>
+      <div style="display: flex; justify-content: center; margin-top: 2rem;">
+        <div style="width: 6rem; height: 2px; background: linear-gradient(90deg, transparent, var(--color-rust), transparent);"></div>
+      </div>
+    </div>
+    <div class="featured-grid">
+
+<article class="card card-featured">
+  <span class="featured-badge">Featured</span>
+  <div class="card-meta" style="margin-bottom: 1.5rem;">
+    <span class="card-category" style="color: var(--color-rust);">Chance, Risk & Probability</span>
+    <span class="post-meta-item">February 2026</span>
+    <span class="post-meta-item">7 min read</span>
+  </div>
+  <h3 class="card-title">Mercury Is in Retrograde, and So Is My Patience</h3>
+  <p class="card-excerpt">A meditation on astrology, physics, and probability that argues our lives are shaped less by destiny than by noise, tendency, and the stories we tell about both</p>
+  <a href="2026_02_14_mercury_retrograde.html" class="card-link">
+    Read Essay
+    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+    </svg>
+  </a>
+</article>
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+<article class="card">
+  <div class="card-meta">
+    <span class="card-category" style="color: var(--color-rust);">Chance, Risk & Probability</span>
+    <span class="post-meta-item">February 2026</span>
+  </div>
+  <h3 class="card-title">Rational Decision or Is It?</h3>
+  <p class="card-excerpt">An ordinary life—coffee purchases, missed houses—reveals how quietly and consistently our decisions are shaped by the invisible rules of behavioral economics.</p>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+    <span class="post-meta-item">6 min read</span>
+    <a href="2026_02_01_rational_decisions.html" class="card-link">
+      Read
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</article>
+
+<article class="card">
+  <div class="card-meta">
+    <span class="card-category" style="color: var(--color-rust);">Life & Uncertainty</span>
+    <span class="post-meta-item">January 2026</span>
+  </div>
+  <h3 class="card-title">Thoughts, Problems, and the Space Between</h3>
+  <p class="card-excerpt">Peace isn’t the lack of hardship—it’s staying steady with your thoughts and uncertainty without letting them take over.</p>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+    <span class="post-meta-item">5 min read</span>
+    <a href="2026_01_17_thought_problems_space.html" class="card-link">
+      Read
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</article>
+</div></div></div></section>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Recent Essays</h2>
+      <p class="section-description">Latest thoughts and explorations</p>
+    </div>
+    <div class="card-grid">
+
+<article class="card">
+  <div class="card-meta">
+    <span class="card-category" style="color: var(--color-rust);">Chance, Risk & Probability</span>
+    <span class="post-meta-item">February 2026</span>
+  </div>
+  <h3 class="card-title">The Probability of Aliens, and Other Things I Can’t Predict</h3>
+  <p class="card-excerpt">One person’s meditation on aliens, uncertainty, and the quiet absurdity of trying to calculate a universe that barely explains itself</p>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+    <span class="post-meta-item">5 min read</span>
+    <a href="2026_02_22_probability_of_aliens.html" class="card-link">
+      Read
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</article>
+
+<article class="card">
+  <div class="card-meta">
+    <span class="card-category" style="color: var(--color-rust);">Perception, Patterns & Illusion</span>
+    <span class="post-meta-item">February 2026</span>
+  </div>
+  <h3 class="card-title">The Dow Is Over 50,000</h3>
+  <p class="card-excerpt">One ordinary day, a blinking coffee machine, and the comforting power of very large numbers</p>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+    <span class="post-meta-item">7 min read</span>
+    <a href="2026_02_15_dow_50000.html" class="card-link">
+      Read
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</article>
+
+<article class="card">
+  <div class="card-meta">
+    <span class="card-category" style="color: var(--color-rust);">Life & Uncertainty</span>
+    <span class="post-meta-item">January 2026</span>
+  </div>
+  <h3 class="card-title">Seven Minutes Until Arrival</h3>
+  <p class="card-excerpt">A quiet metro meditation on memory, identity, and the freedom of not being the voice in our heads</p>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+    <span class="post-meta-item">7 min read</span>
+    <a href="2026_01_11_seven_minutes.html" class="card-link">
+      Read
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</article>
+
+<article class="card">
+  <div class="card-meta">
+    <span class="card-category" style="color: var(--color-rust);">Chance, Risk & Probability</span>
+    <span class="post-meta-item">January 2026</span>
+  </div>
+  <h3 class="card-title">Fooled by Randomness</h3>
+  <p class="card-excerpt">A reflection on how randomness runs through parking lots, marriages, and money—reminding us control is limited and explanations are fragile.</p>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+    <span class="post-meta-item">9 min read</span>
+    <a href="2026_01_04_fooled_by_randomness.html" class="card-link">
+      Read
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</article>
+
+<article class="card">
+  <div class="card-meta">
+    <span class="card-category" style="color: var(--color-rust);">Life & Uncertainty</span>
+    <span class="post-meta-item">January 2026</span>
+  </div>
+  <h3 class="card-title">A New Beginning</h3>
+  <p class="card-excerpt">A reflective meditation on second chances, self-growth, and the hope of a steadier love born from experience rather than innocence</p>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+    <span class="post-meta-item">2 min read</span>
+    <a href="2026_01_01_a_new_beginning.html" class="card-link">
+      Read
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</article>
+
+<article class="card">
+  <div class="card-meta">
+    <span class="card-category" style="color: var(--color-rust);">Love, Loss, and Time</span>
+    <span class="post-meta-item">November 2025</span>
+  </div>
+  <h3 class="card-title">The Girl at Arc Coffee</h3>
+  <p class="card-excerpt">Amid brief encounters and quiet mornings, Kavya taught me to live fully, love openly, and face loss without shrinking</p>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+    <span class="post-meta-item">9 min read</span>
+    <a href="2025_11_02_girl_arc_coffee.html" class="card-link">
+      Read
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</article>
+
+    </div>
+    <div style="margin-top: 4rem; text-align: center;">
+      <a href="categories.html" class="btn btn-secondary">View All Essays</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <a href="index.html" class="logo" style="color: var(--color-cream);">quiet asterisk<span class="logo-asterisk">*</span></a>
+        <p style="margin-top: 1rem; color: var(--color-sand);">On chance, meaning, and the quiet details</p>
+      </div>
+      <div>
+        <h4 class="footer-section-title">Explore</h4>
+        <nav class="footer-nav">
+          <a href="index.html" class="footer-link">Essays</a>
+          <a href="books.html" class="footer-link">Books</a>
+          <a href="categories.html" class="footer-link">Categories</a>
+          <a href="about.html" class="footer-link">About</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <h4 class="footer-section-title">Connect</h4>
+        <p style="color: var(--color-sand); margin-bottom: 1rem;">Get in touch</p>
+        <a href="mailto:hello@quietasterisk.com" class="footer-link" style="display: block; margin-bottom: 0.5rem;">hello@quietasterisk.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 pathway llc. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
