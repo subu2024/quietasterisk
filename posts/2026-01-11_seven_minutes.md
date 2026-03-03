@@ -1,5 +1,5 @@
 ---
-title: Seven Minutes Until Arrival
+title: "Seven Minutes Until Arrival"
 date: 2026-01-11
 category: Life & Uncertainty
 featured: false

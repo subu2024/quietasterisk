@@ -1,6 +1,6 @@
 ---
 title: The Second Toast
-date: "2025-11-08"
+date: 2025-11-08
 category: Love, Loss, and Time
 featured: false
 archived: false

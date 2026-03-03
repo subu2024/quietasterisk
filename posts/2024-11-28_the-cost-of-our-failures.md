@@ -1,5 +1,5 @@
 ---
-title: The Cost of Our Failures
+title: "The Cost of Our Failures"
 date: 2024-11-28
 category: Life & Uncertainty
 featured: false

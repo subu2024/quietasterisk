@@ -1,6 +1,6 @@
 ---
-title: Finding the Signal in a World of Status Updates
-date: "2025-08-08"
+title: "Finding the Signal in a World of Status Updates"
+date: 2025-08-08
 category: Perception, Patterns & Illusion
 featured: true
 archived: false

@@ -1,5 +1,5 @@
 ---
-title: The Girl at Arc Coffee
+title: "The Girl at Arc Coffee"
 date: 2025-11-02
 category: Love, Loss, and Time
 featured: false

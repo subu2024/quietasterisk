@@ -1,5 +1,5 @@
 ---
-title: A New Beginning
+title: "A New Beginning"
 date: 2026-01-01
 category: Life & Uncertainty
 featured: false

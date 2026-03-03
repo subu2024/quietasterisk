@@ -1,11 +1,10 @@
 ---
-title: How to Become an Overnight Expert in Everything
-date: '2025-10-01'
+title: "How to Become an Overnight Expert in Everything"
+date: 2025-10-01
 category: Life & Uncertainty
 featured: false
 archived: false
-excerpt: Crossing oceans changes how others see you, but the real measure of life
-  lies in the ordinary moments and small routines that define each day
+excerpt: "Crossing oceans changes how others see you, but the real measure of life lies in the ordinary moments and small routines that define each day"
 ---
 
 When I boarded the flight from Bombay to the U.S. all those years ago, I was still, in the eyes of my family, something of a nobody. A good kid, yes. A hardworking student, sure. But nothing extraordinary. My cousins with stable jobs in Indian companies, who wore crisp shirts to the office every day, were the ones seen as “settled.” I was just the boy still asking his parents for spending money .. while clinging to the dream of graduate school abroad.
