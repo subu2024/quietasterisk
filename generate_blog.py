@@ -15,6 +15,7 @@ import argparse
 from config import OUTPUT_DIR, IMAGE_DIR, INPUT_DIR, TEMP_CONTENT_FILE
 from parser import read_markdown_files
 from similarity import compute_similarity, build_related_map
+from utils import copy_downloads
 from generators import (
     generate_index,
     generate_books,
@@ -46,6 +47,12 @@ def main(write_temp: bool = False):
         shutil.rmtree(OUTPUT_DIR)
     OUTPUT_DIR.mkdir(parents=True)
     IMAGE_DIR.mkdir(exist_ok=True)
+    
+
+    # Copy downloadable files
+    logger.info("Copying downloadable files...")
+    files_copied = copy_downloads()
+
 
     # Read all markdown posts
     posts = read_markdown_files(INPUT_DIR)

@@ -9,7 +9,7 @@ import logging
 from pathlib import Path
 from typing import List, Dict
 
-from config import IMAGE_DIR, BOOKS_FILE, CATEGORIES_FILE_JSON
+from config import IMAGE_DIR, BOOKS_FILE, CATEGORIES_FILE_JSON, DOWNLOADS_DIR, OUTPUT_DOWNLOADS_DIR
 from models import Post
 
 logger = logging.getLogger("BlogGen")
@@ -18,6 +18,47 @@ logger = logging.getLogger("BlogGen")
 # ==========================================================
 # File Operations
 # ==========================================================
+
+def copy_downloads() -> int:
+    """
+    Copy all files from DOWNLOADS_DIR to OUTPUT_DOWNLOADS_DIR.
+    
+    This allows you to include downloadable files (PDFs, ebooks, etc.) 
+    in your blog that will be copied to the output directory.
+    
+    Returns:
+        Number of files copied
+    """
+    if not DOWNLOADS_DIR.exists():
+        logger.info(f"Downloads directory {DOWNLOADS_DIR} does not exist. Skipping.")
+        return 0
+    
+    # Create output downloads directory
+    OUTPUT_DOWNLOADS_DIR.mkdir(parents=True, exist_ok=True)
+    
+    # Copy all files
+    files_copied = 0
+    
+    for item in DOWNLOADS_DIR.rglob('*'):
+        if item.is_file():
+            # Calculate relative path from DOWNLOADS_DIR
+            rel_path = item.relative_to(DOWNLOADS_DIR)
+            dest_path = OUTPUT_DOWNLOADS_DIR / rel_path
+            
+            # Create parent directories if needed
+            dest_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            try:
+                shutil.copy2(item, dest_path)  # copy2 preserves metadata
+                files_copied += 1
+                logger.debug(f"Copied: {rel_path}")
+            except Exception as e:
+                logger.warning(f"Failed to copy {item}: {e}")
+    
+    if files_copied > 0:
+        logger.info(f"Copied {files_copied} file(s) from downloads directory")
+    
+    return files_copied
 
 def copy_image(src_path: str) -> str:
     """

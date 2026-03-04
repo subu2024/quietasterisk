@@ -19,6 +19,8 @@ CONTACT_EMAIL = "hello@quietasterisk.com"
 INPUT_DIR = Path("./posts")
 OUTPUT_DIR = Path("./dist")
 IMAGE_DIR = OUTPUT_DIR / "images"
+DOWNLOADS_DIR = Path("./downloads")  # Source directory for downloadable files
+OUTPUT_DOWNLOADS_DIR = OUTPUT_DIR / "downloads"  # Destination in output
 
 # Data files
 BOOKS_FILE = Path("./books.json")

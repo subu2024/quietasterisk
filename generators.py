@@ -217,10 +217,10 @@ def generate_books():
     <div class="hero-content">
       <p class="hero-label">Published Works</p>
       <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4rem);">
-        Books by <span style="color: var(--color-rust); font-style: italic;">Subu Sangameswar</span>
+        Published Books and Ongoing Projects
       </h1>
       <p class="hero-description" style="max-width: 48rem;">
-        A collection of published works exploring life, meaning, and the human experience.
+        A collection of works exploring life, meaning, technology and the human experience.
       </p>
     </div>
   </div>

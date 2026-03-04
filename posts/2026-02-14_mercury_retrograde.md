@@ -19,9 +19,9 @@ It feels intuitive. The universe is one big connected system. Why wouldn’t it 
 
 But then I sit in my kitchen, staring at the unpaid electricity bill tucked under a magnet shaped like a tomato, and I remember something quieter and less cosmic.
 
-**_*Influence is not the same as significance.*_**
+> Influence is not the same as significance.
 
-Yes, planets tug at Earth. Yes, they tug at me in the most literal, scientific sense. But so does my wooden chair. So does the neighbor’s washing machine vibrating through the wall. The gravitational pull of Mars is real—and smaller than the pull of the mug warming my hands.
+Yes, planets tug at Earth. Yes, they tug at me in the most literal, scientific sense. But so does my wooden chair. So does the neighbor’s washing machine vibrating through the wall. The gravitational pull of Mars is real but smaller than the pull of the mug warming my hands.
 
 Physics isn’t dramatic about it. It just shrugs and says, “The effect is lost in the noise.”
 
@@ -31,11 +31,11 @@ It’s full of variables that have nothing to do with constellations: how I was 
 
 Even if Saturn had an opinion about my career, it would have to shout to be heard over all that.
 
-Still, astrology has a way of sliding into ordinary life like background music. A friend sends me a meme: “Classic Virgo behavior.” We laugh. Someone at dinner announces they would never date a Aquarius. An aunt consults her horoscope before making a big purchase, the newspaper folded neatly beside her tea.
+Still, astrology has a way of sliding into ordinary life like background music. A friend sends me a meme: “Classic Virgo behavior.” We laugh. Someone at dinner announces they would never date an Aquarius. An aunt consults her horoscope before making a big purchase, the newspaper folded neatly beside her tea.
 
 No one is building a rocket ship with this information. It’s softer than that. It’s a language for the small moral dilemmas of being a person.
 
-When I cancel plans because I’m tired, it’s easier to say, “I’m such an introvert” or “That’s my rising sign,” than to admit I’m afraid of disappointing people by showing up half-hearted. When I cling to a grudge, it’s more charming to blame a fiery placement than to face my own stubbornness.
+When I cancel plans because I’m tired, it’s easier to say, “That’s my rising sign,” than to admit I’m afraid of disappointing people by showing up half-hearted. When I cling to a grudge, it’s more charming to blame a fiery placement than to face my own stubbornness.
 
 Astrology offers permission.
 
@@ -55,15 +55,15 @@ Noise again.
 
 And yet, I understand the pull of a bigger story.
 
-We don’t experience life as raw data. We experience it as narrative. When someone tells me, “You’re independent but you crave connection,” I don’t run a statistical analysis. I nod. It resonates. It feels like being seen.
+**_ We don’t experience life as raw data._** We experience it as narrative. When someone tells me, “You’re independent but you crave connection,” I don’t run a statistical analysis. I nod. It resonates. It feels like being seen.
 
 Resonance is powerful. It doesn’t ask whether the statement applies to millions of other people scrolling on their phones at this exact moment. It just asks, “Does this fit?”
 
-Most of the time, it does.
+Most of the time, it seems it does.
 
 That’s not deception. It’s how we’re built. We are extraordinary pattern-finding creatures. We see faces in clouds, meaning in coincidences, lessons in hindsight. We stitch events together into something that resembles a plot.
 
-In my own small way, I do this constantly. I look back at a breakup and trace a clean arc: we were incompatible, the timing was wrong, I needed to grow. The story makes sense now. At the time, it felt like chaos.
+In my own small way, I do this constantly. After my breakup, I looked back and traced a clean arc: we were incompatible, the timing was wrong, I needed to grow. The story makes sense even now. At the time, it felt like chaos.
 
 Probability tells me that chaos and pattern coexist. Some things happen for reasons I can name. Some happen because of timing. Some happen because of noise. And most reasons only become visible after the fact, when I’m already rewriting the script.
 
