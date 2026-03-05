@@ -98,7 +98,7 @@ def format_book_card(book: dict, show_full_description: bool = False) -> str:
         link_html = f'''
         <a href="{link_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" 
            style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block;">
-          Buy Book
+          {book.get("linkDescription", "Buy Book")}
         </a>
         '''
     

@@ -123,6 +123,36 @@ def generate_index(posts: List[Post], related_map: Dict):
   </div>
 </section>
 """
+    
+        # Featured Essays
+    featured_posts = [p for p in posts if p.featured][:4]
+    if featured_posts:
+        content += """
+<section class="section" id="featured">
+  <div class="container">
+    <div class="section-header section-header-centered">
+      <h2 class="section-title">Featured Essays</h2>
+      <p class="section-description section-description-centered">Recent explorations worth your time</p>
+      <div style="display: flex; justify-content: center; margin-top: 2rem;">
+        <div style="width: 6rem; height: 2px; background: linear-gradient(90deg, transparent, var(--color-rust), transparent);"></div>
+      </div>
+    </div>
+    <div class="featured-grid">
+"""
+        content += format_featured_card(featured_posts[0])
+        content += '<div style="display: flex; flex-direction: column; gap: 2rem;">'
+        for post in featured_posts[1:]:
+            content += format_card(post, is_small=True)
+        content += '</div></div></div></section>'
+
+    # Divider
+    content += """
+<div class="divider">
+  <div class="divider-line" style="background: var(--color-rust);"></div>
+  <div class="divider-dot" style="background: var(--color-rust);"></div>
+  <div class="divider-line" style="background: var(--color-rust);"></div>
+</div>
+"""
 
     # Books section
     if books:
@@ -146,7 +176,7 @@ def generate_index(posts: List[Post], related_map: Dict):
 </section>
 """
 
-    # Divider
+   # Divider
     content += """
 <div class="divider">
   <div class="divider-line" style="background: var(--color-rust);"></div>
@@ -155,26 +185,6 @@ def generate_index(posts: List[Post], related_map: Dict):
 </div>
 """
 
-    # Featured Essays
-    featured_posts = [p for p in posts if p.featured][:4]
-    if featured_posts:
-        content += """
-<section class="section" id="featured">
-  <div class="container">
-    <div class="section-header section-header-centered">
-      <h2 class="section-title">Featured Essays</h2>
-      <p class="section-description section-description-centered">Recent explorations worth your time</p>
-      <div style="display: flex; justify-content: center; margin-top: 2rem;">
-        <div style="width: 6rem; height: 2px; background: linear-gradient(90deg, transparent, var(--color-rust), transparent);"></div>
-      </div>
-    </div>
-    <div class="featured-grid">
-"""
-        content += format_featured_card(featured_posts[0])
-        content += '<div style="display: flex; flex-direction: column; gap: 2rem;">'
-        for post in featured_posts[1:]:
-            content += format_card(post, is_small=True)
-        content += '</div></div></div></section>'
 
     # Recent Posts
     recent_posts = [p for p in posts if not p.featured][:6]
