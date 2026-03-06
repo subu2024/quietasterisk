@@ -1,10 +1,10 @@
 ---
-title: Shiny Floors, Same Ghosts
-date: "2024-11-10"
+title: "Shiny Floors, Same Ghosts"
+date: 2024-11-10
 category: Perception, Patterns & Illusion
 featured: false
 archived: false
-excerpt: We replace old carpets with shiny floors, chase new beginnings, and expect change to transform us—but life gently reminds us that patterns endure
+excerpt: "We replace old carpets with shiny floors, chase new beginnings, and expect change to transform us—but life gently reminds us that patterns endure"
 ---
 
 In the quiet stillness of my living room, the floor beneath me bore witness to years of wear and tear, a patchwork of life’s small disasters. The carpet—once vibrant and inviting—had dulled over time, fading into an unremarkable hue that whispered stories of spilled drinks, hurried footsteps, and unacknowledged dust bunnies. Each stain held a memory, perhaps a moment of laughter or the remnants of a forgotten snack. The carpet silently stood as an intimate witness to the ebbs and flows of life, and yet its presence had begun to feel like a burden, a ghost that clung to the space.

@@ -1,10 +1,10 @@
 ---
-title: Lies We Tell Ourselves
-date: "2025-06-01"
+title: "Lies We Tell Ourselves"
+date: 2025-06-01
 category: Life & Uncertainty
 featured: true
 archived: false
-excerpt: Life is messy, hilarious, heartbreaking—and endlessly rewritten; every memory we revisit shows just how beautifully human we really are.
+excerpt: "Life is messy, hilarious, heartbreaking—and endlessly rewritten; every memory we revisit shows just how beautifully human we really are."
 ---
 
 Life, in all its messy, magnificent glory, often feels like a long-running sitcom — except the jokes aren’t always funny, and the laugh track is broken. We march through it with the sincere hope that we’re heading somewhere meaningful, only to frequently trip over our own expectations and land face-first in a puddle of, “Oh no, not this again.”

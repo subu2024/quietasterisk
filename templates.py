@@ -37,6 +37,14 @@ def header_html(title: str, active_page: str = "home") -> str:
 <style>{get_modern_styles()}</style>
 </head>
 <body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z65VG31B7Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {{ window.dataLayer.push(arguments); }}
+  gtag('js', new Date());
+  gtag('config', 'G-Z65VG31B7Q', {{ page_path: window.location.pathname }});
+</script>
+
 <header class="header">
   <div class="container">
     <div class="header-content">
@@ -51,6 +59,7 @@ def header_html(title: str, active_page: str = "home") -> str:
     </div>
   </div>
 </header>
+
 <main>
 """
 

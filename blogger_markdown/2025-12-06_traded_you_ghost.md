@@ -1,6 +1,6 @@
 ---
 title: I Traded You for a Ghost
-date: '2025-12-06'
+date: 2025-12-06
 category: Love, Loss, and Time
 featured: true
 archived: true

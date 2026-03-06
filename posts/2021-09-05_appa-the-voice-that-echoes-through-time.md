@@ -1,10 +1,10 @@
 ---
-title: Appa, The Voice That Echoes Through Time
-date: "2021-09-05"
+title: "Appa, The Voice That Echoes Through Time"
+date: 2021-09-05
 category: Love, Loss, and Time
 featured: false
 archived: false
-excerpt: Reflection on memory, loss, and the fragile mathematics of love, discovering that life’s meaning may lie not in certainty, but in its improbability.
+excerpt: "Reflection on memory, loss, and the fragile mathematics of love, discovering that life’s meaning may lie not in certainty, but in its improbability."
 ---
 
 “Appa”, “Appa” the voice came loud, clear, and urgent. That was my 12 year old calling for me. A voice filled with love and a brashness only a child can possess. “Appa” is another word for Daddy.
