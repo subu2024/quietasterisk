@@ -1,10 +1,10 @@
 ---
 title: "Time's Cruel Joke: A Journey of Love, Loss, and Reflection"
-date: "2023-02-14"
+date: 2023-02-14
 category: Love, Loss, and Time
 featured: false
 archived: false
-excerpt: An intimate meditation on how love, loss, and coincidence blur the line between destiny and probability.
+excerpt: "An intimate meditation on how love, loss, and coincidence blur the line between destiny and probability."
 ---
 
 Time works its quiet arithmetic whether we consent to it or not.
@@ -53,7 +53,7 @@ In 2019, I wrote about two strangers on a chariot, pulled by invisible forces—
 > _Money is the silent one that does the tugging to seek fame_  
 > _The mannered Goals and value refusing to play others game_
 >
-> - ["25", May 2019](/blog/2019-05-25_25)
+> - ["25", May 2019](2019-05-25_25.html)
 
 I romanticized the chaos. I mistook turbulence for depth.
 
@@ -76,7 +76,7 @@ In 2015, in the midst of hope and fracture, I wrote:
 > _Leaving the souls today, standing alone and broke_  
 > _With our own wretched demons to cope_
 >
-> - ["Dreams of Hope", Jan 2015](/blog/2015-01-10_dreams-of-hope)
+> - ["Dreams of Hope", Jan 2015](2015-01-10_dreams-of-hope.html)
 
 At the time, I framed it as cruelty. Now I see it as indifference. Probability does not negotiate with our feelings. It does not soften because we are sincere. It does not bend because we have written poems or made promises.
 

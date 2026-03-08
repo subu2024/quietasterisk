@@ -1,6 +1,6 @@
 ---
-title: The Currency of Life
-date: "2024-10-06"
+title: "The Currency of Life"
+date: 2024-10-06
 category: Life & Uncertainty
 featured: false
 archived: false

@@ -1,6 +1,6 @@
 ---
-title: The Beautiful Absurdity of Waking Up
-date: "2024-10-01"
+title: "The Beautiful Absurdity of Waking Up"
+date: 2024-10-01
 category: Life & Uncertainty
 featured: false
 archived: false

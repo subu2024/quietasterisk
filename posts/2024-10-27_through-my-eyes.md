@@ -1,6 +1,6 @@
 ---
-title: Through My Eyes
-date: "2024-10-27"
+title: "Through My Eyes"
+date: 2024-10-27
 category: Perception, Patterns & Illusion
 featured: false
 archived: false
