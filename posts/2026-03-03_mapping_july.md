@@ -7,6 +7,8 @@ archived: false
 excerpt: "A loud stranger on a quiet metro reminds me that we plan the future as if it’s obedient, even while it keeps slipping its hand from ours"
 ---
 
+[youtube:XVXGZbIsBsw]
+
 The metro doors sighed open, and a ribbon of cold morning air slipped inside, carrying the faint smell of metal and last night’s rain. I found my usual spot by the pole, one hand on my laptop, the other fishing for my transit card I had, of course, already put away. The carriage was quiet in that particular way only a morning train can be—people zipped into coats, eyes fixed on phones, headphones sealing them off like polite little borders.
 
 And then she began.

@@ -7,12 +7,20 @@ from pathlib import Path
 from typing import List
 import logging
 
+#import markdown
+#from markdown.extensions import Extension
+#from markdown.inlinepatterns import InlineProcessor
+#import xml.etree.ElementTree as etree
+
+import re
+
 from models import Post
 from config import INPUT_DIR
 
 logger = logging.getLogger("BlogGen")
 
 
+    
 def parse_front_matter(content: str) -> tuple:
     """
     Parse YAML-style front matter from markdown content.
@@ -51,6 +59,35 @@ def parse_front_matter(content: str) -> tuple:
 
     return title, date, category, featured, archived, excerpt, body
 
+def process_youtube_embeds(html_content: str) -> str:
+    """
+    Convert [youtube:VIDEO_ID] tags to YouTube iframe embeds.
+    
+    Args:
+        html_content: HTML content with [youtube:ID] tags
+        
+    Returns:
+        HTML with embedded YouTube iframes
+    """
+    def youtube_replacer(match):
+        video_id = match.group(1)
+        return f'''
+<div class="youtube-embed" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+    <iframe 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+        src="https://www.youtube.com/embed/{video_id}?rel=0&modestbranding=1" 
+        title="YouTube video player"
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>
+'''
+    
+    # Replace [youtube:VIDEO_ID] with iframe
+    pattern = r'\[youtube:([a-zA-Z0-9_-]+)\]'
+    return re.sub(pattern, youtube_replacer, html_content)
 
 def read_markdown_files(directory: Path) -> List[Post]:
     """

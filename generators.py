@@ -13,7 +13,8 @@ from models import Post
 from templates import header_html, footer_html
 from cards import format_card, format_featured_card, format_book_card
 from utils import copy_image, load_books, load_categories, slugify
-
+#from parser import YouTubeExtension
+from parser import process_youtube_embeds
 logger = logging.getLogger("BlogGen")
 
 # Global variable for temp content
@@ -27,6 +28,10 @@ def generate_post_pages(posts: List[Post], related_map: Dict[str, List[str]]):
     for post in posts:
         # Convert markdown to HTML
         html_body = markdown.markdown(post.body, extensions=['extra', 'codehilite'])
+        
+        html_body = process_youtube_embeds(html_body)
+
+       
         
         # Handle images
         img_matches = re.findall(r'<img.*?src=[\'"](.*?)[\'"]', html_body)

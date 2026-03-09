@@ -503,6 +503,33 @@ body {
   color: var(--color-slate);
 }
 
+.post-body iframe {
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+
+.post-body .youtube-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 2rem 0;
+    border-radius: 8px;
+    background: #000;
+}
+
+.post-body .youtube-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 /* Related Posts */
 .related-posts {
   margin-top: 4rem;
