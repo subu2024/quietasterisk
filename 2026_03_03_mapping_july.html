@@ -497,6 +497,33 @@ body {
   color: var(--color-slate);
 }
 
+.post-body iframe {
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+
+.post-body .youtube-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 2rem 0;
+    border-radius: 8px;
+    background: #000;
+}
+
+.post-body .youtube-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 /* Related Posts */
 .related-posts {
   margin-top: 4rem;
@@ -707,7 +734,20 @@ body {
     <div class="decorative-line"></div>
   </header>
   <div class="post-body">
-    <p>The metro doors sighed open, and a ribbon of cold morning air slipped inside, carrying the faint smell of metal and last night’s rain. I found my usual spot by the pole, one hand on my laptop, the other fishing for my transit card I had, of course, already put away. The carriage was quiet in that particular way only a morning train can be—people zipped into coats, eyes fixed on phones, headphones sealing them off like polite little borders.</p>
+    <p>
+<div class="youtube-embed" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+    <iframe 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+        src="https://www.youtube.com/embed/XVXGZbIsBsw?rel=0&modestbranding=1" 
+        title="YouTube video player"
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>
+</p>
+<p>The metro doors sighed open, and a ribbon of cold morning air slipped inside, carrying the faint smell of metal and last night’s rain. I found my usual spot by the pole, one hand on my laptop, the other fishing for my transit card I had, of course, already put away. The carriage was quiet in that particular way only a morning train can be—people zipped into coats, eyes fixed on phones, headphones sealing them off like polite little borders.</p>
 <p>And then she began.</p>
 <p>She walked in with a thud and dropped into a seat across the aisle. A moment later, her friend slipped in and sat next to me. They barely exchanged a glance before she launched in—bright, unstoppable, with the energy of someone who had already lived half a day before 7.30 a.m. In the hush of the carriage, her voice rose and fell like it owned the space.</p>
 <p>She was talking to her friend. Or perhaps performing for one.</p>
