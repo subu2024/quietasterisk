@@ -7,6 +7,8 @@ archived: false
 excerpt: "In the quiet ritual of cooking his own meal, Jai carries both the absence of love and the radiant proof of his own resilience—reminding me that some strength is born, not given."
 ---
 
+[youtube:GQrphwjWyqg]
+
 Jai stood quietly in the kitchen, assembling a modest plate of fish and rice. The aroma drifted through the air, weaving its magic into every corner of the room—so comforting, so familiar. I watched him with a gentle admiration. He approached dinner not as a chore, but as a ritual—something he found almost artisanal, more graceful than anything I might have prepared.
 
 As the fragrance of the meal wrapped around me, memories arrived—soft, subtle, and bittersweet. I saw Mihir at that tender age, sitting at the table while his mother served him with a warmth that felt boundless. Now, there stood Jai, delicately arranging his dinner, alone. How peculiar, and how achingly beautiful, the sight of him feeding himself in a house that once whispered with togetherness.

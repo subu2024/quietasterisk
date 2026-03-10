@@ -7,6 +7,8 @@ archived: false
 excerpt: "Time and fate separate us, leaving hearts alone, wandering through hope, regret, and uncertainty."
 ---
 
+[youtube:hJvfz7S1TCQ]
+
 Time my love, has played a cruel joke  
  Bringing us together on the dreams of hope  
  Leaving the souls today, standing alone and broke  
