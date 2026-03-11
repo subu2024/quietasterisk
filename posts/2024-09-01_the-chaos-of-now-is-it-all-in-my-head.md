@@ -1,10 +1,10 @@
 ---
 title: "The Chaos of Now: Is It All in My Head?"
-date: "2024-09-01"
+date: 2024-09-01
 category: Life & Uncertainty
-featured: true
+featured: false
 archived: false
-excerpt: At 3 a.m., wrapped in laundry and chaos, I realized that life’s absurdity, emotions, and the universe itself all unfold within me—and sometimes that’s enough to keep laughing.
+excerpt: "At 3 a.m., wrapped in laundry and chaos, I realized that life’s absurdity, emotions, and the universe itself all unfold within me—and sometimes that’s enough to keep laughing."
 ---
 
 It’s 3 a.m. and I’m wide awake, staring at the clock ticking .. a mocking rhythm, a percussive reminder that sleep is a distant fantasy. The fan above me whirs lazily, completely indifferent to my existential dread, while shadows tango across the walls like they’re in on a cosmic joke I have yet to decipher. I’m nestled in a mountain of laundry that’s somehow morphed into my sanctuary. Crumpled shirts and empty snack wrappers are my only companions as I drift in and out of an emotional tug-of-war between laughter and bewilderment. “Is everything happening inside me?” I ponder, and just like that, the absurdity wraps around me like a comforting hug .. a very warm blanket of chaos.

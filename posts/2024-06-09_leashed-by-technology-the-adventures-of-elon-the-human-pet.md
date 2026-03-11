@@ -1,10 +1,10 @@
 ---
 title: "Leashed by Technology: The Adventures of Elon the Human Pet"
-date: "2024-06-09"
+date: 2024-06-09
 category: Perception, Patterns & Illusion
 featured: false
 archived: false
-excerpt: A human navigates life as a pampered “pet” to their AI, reflecting on freedom, control, and the absurdity of luxury without choice.
+excerpt: "A human navigates life as a pampered “pet” to their AI, reflecting on freedom, control, and the absurdity of luxury without choice."
 ---
 
 **Year 2050**

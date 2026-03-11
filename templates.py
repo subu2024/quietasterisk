@@ -3,7 +3,7 @@ HTML template functions for generating pages.
 """
 
 from config import (
-    BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL,
+    BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL,
     INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE
 )
 from styles import get_modern_styles
@@ -89,6 +89,13 @@ def footer_html() -> str:
         <h4 class="footer-section-title">Connect</h4>
         <p style="color: var(--color-sand); margin-bottom: 1rem;">Get in touch</p>
         <a href="mailto:{CONTACT_EMAIL}" class="footer-link" style="display: block; margin-bottom: 0.5rem;">{CONTACT_EMAIL}</a>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <a href="{YOUTUBE_CHANNEL}" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="YouTube Channel" title="YouTube Channel">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
