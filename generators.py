@@ -8,9 +8,13 @@ import logging
 import markdown
 from typing import List, Dict
 
-from config import YOUTUBE_CHANNEL
+from config import (
+    BLOG_TITLE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, HOMEPAGE_VIDEO_ID,
+    INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE,
+    OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE
+)
 
-from config import *
+
 from models import Post
 from templates import header_html, footer_html
 from cards import format_card, format_featured_card, format_book_card
@@ -133,7 +137,7 @@ def generate_index(posts: List[Post], related_map: Dict):
     
 
  # Divider
-    content += """
+    content += f"""
 <div class="divider">
   <div class="divider-line" style="background: var(--color-rust);"></div>
   <div class="divider-dot" style="background: var(--color-rust);"></div>
