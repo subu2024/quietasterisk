@@ -8,6 +8,8 @@ import logging
 import markdown
 from typing import List, Dict
 
+from config import YOUTUBE_CHANNEL
+
 from config import *
 from models import Post
 from templates import header_html, footer_html
@@ -392,20 +394,52 @@ function loadMore() {
 def generate_about():
     """Generate about page."""
     content = header_html("About - " + BLOG_TITLE, "about")
-    content += """
+    content += f"""
 <section class="section">
   <div class="container">
     <article class="post-content">
-      <h2>About the Author</h2>
-      <p>Subu Sangameswar writes about love and loss, parenting chaos,
-    uncertainty, systems, and our deeply human habit of demanding clarity
-    from a world that offers none.</p><br/>
-    <p>Part biography, part fiction, his work moves like an episode of
-    <a href="https://en.wikipedia.org/wiki/Seinfeld" target="_blank" rel="noopener noreferrer">Seinfeld</a>
-    — observant, self-aware, mildly neurotic, and uncomfortably honest.</p><br/>
-    <p>In a culture obsessed with certainty, he lingers in risk, chance, and
-    hope — treating uncertainty not as a flaw to eliminate, but as a
-    companion to travel with. Preferably with humor. Sometimes with coffee.</p>
+      <h2>Dear Curious Internet Stranger,</h2>
+      
+      <p>First, thank you for clicking "About" instead of immediately leaving. 
+      That shows either genuine curiosity or excellent procrastination skills. 
+      Either way, I respect it.</p>
+      
+      <p>I write about love and loss, parenting chaos, uncertainty, systems, 
+      and our deeply human habit of demanding clarity from a world that offers none.</p>
+      
+      <p>Think of this space as what happens when 
+      <a href="https://en.wikipedia.org/wiki/Seinfeld" target="_blank" rel="noopener noreferrer">Seinfeld</a> 
+      meets philosophy—observant, self-aware, mildly neurotic, and uncomfortably honest. 
+      Part biography, part fiction, all slightly suspicious of people who claim to have it all figured out.</p>
+      
+      <p>In a culture obsessed with certainty, I prefer to linger in risk, chance, and hope. 
+      Not because I'm brave, but because pretending to have answers feels exhausting. 
+      Uncertainty isn't a flaw to eliminate—it's a traveling companion. Preferably one that 
+      appreciates humor. And coffee. Definitely coffee.</p>
+      
+      <p>You'll find essays here that ramble a bit, stories that might be true 
+      (or true-ish), and observations about the small things we usually ignore until 
+      they're suddenly the only things that matter.</p>
+      
+      <p>If you're the kind of person who reads the footnotes, questions the premise, 
+      and occasionally pauses mid-sentence to wonder if any of this means anything—
+      well, you're in the right place.</p>
+      
+      <p>Thanks for stopping by. The asterisk is silent, but the questions are loud.</p>
+      
+      <p style="margin-top: 2rem;">Warmly,<br/>
+      <span style="font-style: italic;">Subu Sangameswar</span></p>
+      
+      <div style="margin-top: 4rem; padding: 2rem; background: white; border-left: 4px solid var(--color-rust); border-radius: 4px;">
+        <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--color-charcoal);">Want to Connect?</h3>
+        
+        <p style="margin-bottom: 1.5rem; font-size: 1.125rem;">I'd love to hear from you. Questions, thoughts, disagreements, or just to say hello—
+        <a href="{CONTACT_FILE}" style="color: var(--color-rust); text-decoration: underline; font-weight: 500;">drop me a line</a>.</p>
+        
+        <p style="font-size: 1.125rem;">You can also find me sharing thoughts (280 characters at a time) 
+        and occasional video essays on <a href="{YOUTUBE_CHANNEL}" target="_blank" rel="noopener noreferrer" 
+        style="color: var(--color-rust); text-decoration: underline; font-weight: 500;">YouTube</a>.</p>
+      </div>
     </article>
   </div>
 </section>
@@ -441,7 +475,7 @@ def generate_contact():
         </svg>
       </div>
       <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem;">Email Me</h2>
-      <p style="color: var(--color-slate); margin-bottom: 2rem;">I typically respond within a few days</p>
+      <p style="color: var(--color-slate); margin-bottom: 2rem;">I typically respond within a 48 hours</p>
       <a href="mailto:{CONTACT_EMAIL}" class="btn btn-primary" style="font-size: 1.125rem; padding: 1rem 2.5rem;">
         {CONTACT_EMAIL}
       </a>

@@ -121,7 +121,7 @@ def read_markdown_files(directory: Path) -> List[Post]:
             logger.warning(f"Failed to read {md_file}: {e}")
             continue
 
-        # Skip archived posts
+        # Skip archived posts .. this is useful to keep old posts in the source directory without them being published
         if archived:
             continue
 
