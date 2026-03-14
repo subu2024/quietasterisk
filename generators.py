@@ -131,6 +131,42 @@ def generate_index(posts: List[Post], related_map: Dict):
 </section>
 """
     
+
+ # Divider
+    content += """
+<div class="divider">
+  <div class="divider-line" style="background: var(--color-rust);"></div>
+  <div class="divider-dot" style="background: var(--color-rust);"></div>
+  <div class="divider-line" style="background: var(--color-rust);"></div>
+</div>
+
+
+<!-- Add YouTube Video Section -->
+<section class="section" style="background: white; padding: 4rem 0;">
+  <div class="container" style="max-width: 56rem;">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h2 style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 1rem; color: var(--color-charcoal);">
+        Watch: Introduction to Quiet Asterisk
+      </h2>
+      <p style="color: var(--color-slate); font-size: 1.125rem;">
+        A quick video about what you'll find here
+      </p>
+    </div>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+     <iframe 
+  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+  src="https://www.youtube.com/embed/{HOMEPAGE_VIDEO_ID}?rel=0&modestbranding=1"
+  title="YouTube video player"
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+    </div>
+  </div>
+</section>
+"""
+    
         # Featured Essays
     featured_posts = [p for p in posts if p.featured][:4]
     if featured_posts:
@@ -152,36 +188,7 @@ def generate_index(posts: List[Post], related_map: Dict):
             content += format_card(post, is_small=True)
         content += '</div></div></div></section>'
 
-    # Divider
-    content += """
-<div class="divider">
-  <div class="divider-line" style="background: var(--color-rust);"></div>
-  <div class="divider-dot" style="background: var(--color-rust);"></div>
-  <div class="divider-line" style="background: var(--color-rust);"></div>
-</div>
-"""
 
-    # Books section
-    if books:
-        content += """
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Books</h2>
-      <p class="section-description">Published works and ongoing projects</p>
-    </div>
-    <div class="books-grid">
-"""
-        for book in books[:BOOKS_ON_HOMEPAGE]:
-            content += format_book_card(book, show_full_description=False)
-        content += """
-    </div>
-    <div style="margin-top: 3rem; text-align: center;">
-      <a href="books.html" class="btn btn-secondary">View All Books</a>
-    </div>
-  </div>
-</section>
-"""
 
    # Divider
     content += """
@@ -199,9 +206,9 @@ def generate_index(posts: List[Post], related_map: Dict):
         content += """
 <section class="section">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header section-header-centered">
       <h2 class="section-title">Recent Essays</h2>
-      <p class="section-description">Latest thoughts and explorations</p>
+      <p class="section-description section-description-centered">Latest thoughts and explorations</p>
     </div>
     <div class="card-grid">
 """

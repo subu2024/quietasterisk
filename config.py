@@ -13,6 +13,7 @@ TAG_LINE = "On chance, meaning, and the quiet details"
 COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.0.03"
 CONTACT_EMAIL = "hello@quietasterisk.com"
 YOUTUBE_CHANNEL = "https://www.youtube.com/@quietasterisk"
+HOMEPAGE_VIDEO_ID = "cPwFdCmHWq4"  # https://youtu.be/cPwFdCmHWq4
 
 # ==========================================================
 # File Paths

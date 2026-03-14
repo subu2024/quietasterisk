@@ -2,7 +2,7 @@
 title: "Mercury Is in Retrograde, and So Is My Patience"
 date: 2026-02-14
 category: Chance, Risk & Probability
-featured: true
+featured: false
 archived: false
 excerpt: "A meditation on astrology, physics, and probability that argues our lives are shaped less by destiny than by noise, tendency, and the stories we tell about both"
 ---
