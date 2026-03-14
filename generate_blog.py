@@ -19,6 +19,7 @@ from utils import copy_downloads
 from generators import (
     generate_index,
     generate_books,
+    generate_videos,
     generate_categories,
     generate_about,
     generate_contact,
@@ -70,6 +71,9 @@ def main(write_temp: bool = False):
     
     logger.info("Generating books page...")
     generate_books()
+
+    logger.info("Generating videos page...")  # Add this
+    generate_videos()   
     
     logger.info("Generating categories pages...")
     generate_categories(posts)

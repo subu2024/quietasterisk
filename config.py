@@ -13,7 +13,7 @@ TAG_LINE = "On chance, meaning, and the quiet details"
 COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.0.04"
 CONTACT_EMAIL = "hello@quietasterisk.com"
 YOUTUBE_CHANNEL = "https://www.youtube.com/@quietasterisk"
-HOMEPAGE_VIDEO_ID = "cPwFdCmHWq4"  # https://youtu.be/cPwFdCmHWq4
+
 
 # ==========================================================
 # File Paths
@@ -27,6 +27,7 @@ OUTPUT_DOWNLOADS_DIR = OUTPUT_DIR / "downloads"  # Destination in output
 # Data files
 BOOKS_FILE = Path("./books.json")
 CATEGORIES_FILE_JSON = Path("./categories.json")
+VIDEOS_FILE = Path("./videos.json")  # Add this
 
 # Output HTML files
 INDEX_FILE = "index.html"
@@ -34,6 +35,7 @@ ABOUT_FILE = "about.html"
 CATEGORIES_FILE = "categories.html"
 BOOKS_FILE_HTML = "books.html"
 CONTACT_FILE = "contact.html"
+VIDEOS_FILE_HTML = "videos.html"  # Add this
 
 # ==========================================================
 # Content Settings

@@ -9,7 +9,7 @@ import logging
 from pathlib import Path
 from typing import List, Dict
 
-from config import IMAGE_DIR, BOOKS_FILE, CATEGORIES_FILE_JSON, DOWNLOADS_DIR, OUTPUT_DOWNLOADS_DIR
+from config import IMAGE_DIR, BOOKS_FILE, CATEGORIES_FILE_JSON, DOWNLOADS_DIR, OUTPUT_DOWNLOADS_DIR, VIDEOS_FILE
 from models import Post
 
 logger = logging.getLogger("BlogGen")
@@ -141,6 +141,10 @@ def load_categories() -> Dict[str, Dict]:
     """Load category metadata from categories.json."""
     return load_json_file(CATEGORIES_FILE_JSON, expected_type=dict)
 
+
+def load_videos() -> List[Dict]:
+    """Load video data from videos.json."""
+    return load_json_file(VIDEOS_FILE, expected_type=list)
 
 # ==========================================================
 # Text Processing

@@ -9,7 +9,7 @@ import markdown
 from typing import List, Dict
 
 from config import (
-    BLOG_TITLE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, HOMEPAGE_VIDEO_ID,
+    BLOG_TITLE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, VIDEOS_FILE_HTML,
     INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE,
     OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE
 )
@@ -18,7 +18,7 @@ from config import (
 from models import Post
 from templates import header_html, footer_html
 from cards import format_card, format_featured_card, format_book_card
-from utils import copy_image, load_books, load_categories, slugify
+from utils import copy_image, load_books, load_categories, slugify, load_videos
 #from parser import YouTubeExtension
 from parser import process_youtube_embeds
 logger = logging.getLogger("BlogGen")
@@ -136,36 +136,44 @@ def generate_index(posts: List[Post], related_map: Dict):
 """
     
 
- # Divider
-    content += f"""
+ # Featured Video Section
+    videos = load_videos()
+    featured_video = next((v for v in videos if v.get("featured")), None)
+    
+    if featured_video:
+        video_id = featured_video.get("video_id", "")
+        video_title = featured_video.get("title", "Featured Video")
+        article_link = featured_video.get("article_link", "")
+        
+        article_html = ""
+        if article_link:
+            article_html = f'<a href="{article_link}" style="color: var(--color-rust); text-decoration: underline; font-size: 1rem;">Read the related article →</a>'
+        
+        content += f"""
 <div class="divider">
   <div class="divider-line" style="background: var(--color-rust);"></div>
   <div class="divider-dot" style="background: var(--color-rust);"></div>
   <div class="divider-line" style="background: var(--color-rust);"></div>
 </div>
 
-
-<!-- Add YouTube Video Section -->
 <section class="section" style="background: white; padding: 4rem 0;">
   <div class="container" style="max-width: 56rem;">
     <div style="text-align: center; margin-bottom: 2rem;">
       <h2 style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 1rem; color: var(--color-charcoal);">
-        Watch: Introduction to Quiet Asterisk
+        {video_title}
       </h2>
-      <p style="color: var(--color-slate); font-size: 1.125rem;">
-        A quick video about what you'll find here
-      </p>
+      {article_html}
     </div>
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-     <iframe 
-  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-  src="https://www.youtube.com/embed/{HOMEPAGE_VIDEO_ID}?rel=0&modestbranding=1"
-  title="YouTube video player"
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-  referrerpolicy="strict-origin-when-cross-origin"
-  allowfullscreen>
-</iframe>
+      <iframe 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+        src="https://www.youtube.com/embed/{video_id}?rel=0&modestbranding=1"
+        title="{video_title}"
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
     </div>
   </div>
 </section>
@@ -498,6 +506,89 @@ def generate_contact():
     with open(OUTPUT_DIR / CONTACT_FILE, "w", encoding="utf-8") as f:
         f.write(content)
 
+
+def generate_videos():
+    """Generate videos page showing all videos."""
+    videos = load_videos()
+    
+    if not videos:
+        logger.info("No videos found, skipping videos page generation")
+        return
+    
+    content = header_html("Videos - " + BLOG_TITLE, "videos")
+    
+    # Hero section
+    content += """
+<section class="hero" style="padding: 6rem 0 4rem;">
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-label">Video Library</p>
+      <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4rem);">
+        Watch & <span style="color: var(--color-rust); font-style: italic;">Learn</span>
+      </h1>
+      <p class="hero-description" style="max-width: 48rem;">
+        Video essays, explanations, and explorations on the topics covered in the blog.
+      </p>
+    </div>
+  </div>
+</section>
+"""
+    
+    # Videos grid
+    content += """
+<section class="section">
+  <div class="container">
+    <div class="card-grid">
+"""
+    
+    for video in videos:
+        video_id = video.get("video_id", "")
+        title = video.get("title", "Untitled Video")
+        article_link = video.get("article_link", "")
+        
+        article_html = ""
+        if article_link:
+            article_html = f'''
+            <div style="margin-top: 1rem;">
+              <a href="{article_link}" class="card-link">
+                Read Article
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+            '''
+        
+        content += f"""
+<article class="card">
+  <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">{title}</h3>
+  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; margin-bottom: 1rem;">
+    <iframe 
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+      src="https://www.youtube.com/embed/{video_id}?rel=0&modestbranding=1"
+      title="{title}"
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </div>
+  {article_html}
+</article>
+"""
+    
+    content += """
+    </div>
+  </div>
+</section>
+"""
+    
+    content += footer_html()
+    
+    with open(OUTPUT_DIR / VIDEOS_FILE_HTML, "w", encoding="utf-8") as f:
+        f.write(content)
+    
+    logger.info(f"Generated videos page with {len(videos)} videos")
 
 def get_temp_content():
     """Return temporary content for debugging."""
