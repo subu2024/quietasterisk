@@ -10,7 +10,7 @@ from pathlib import Path
 # ==========================================================
 BLOG_TITLE = "quiet asterisk"
 TAG_LINE = "On chance, meaning, and the quiet details"
-COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.0.04"
+COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.0.05"
 CONTACT_EMAIL = "hello@quietasterisk.com"
 YOUTUBE_CHANNEL = "https://www.youtube.com/@quietasterisk"
 
@@ -27,7 +27,7 @@ OUTPUT_DOWNLOADS_DIR = OUTPUT_DIR / "downloads"  # Destination in output
 # Data files
 BOOKS_FILE = Path("./books.json")
 CATEGORIES_FILE_JSON = Path("./categories.json")
-VIDEOS_FILE = Path("./videos.json")  # Add this
+VIDEOS_FILE = Path("./videos.json")  
 
 # Output HTML files
 INDEX_FILE = "index.html"
@@ -35,7 +35,14 @@ ABOUT_FILE = "about.html"
 CATEGORIES_FILE = "categories.html"
 BOOKS_FILE_HTML = "books.html"
 CONTACT_FILE = "contact.html"
-VIDEOS_FILE_HTML = "videos.html"  # Add this
+VIDEOS_FILE_HTML = "videos.html"  
+
+# AI Chat Module
+ENABLE_AI_CHAT = False  # Set to False to disable
+AI_CHAT_TITLE = "Ask Devi"
+AI_CHAT_PLACEHOLDER = "Ask a question about uncertainity in your life ..."
+AWS_API_ENDPOINT = "https://your-api-gateway-url.execute-api.region.amazonaws.com/prod/chat"
+AWS_API_TOKEN = "your-secret-token-here"  # Your AWS API secret token
 
 # ==========================================================
 # Content Settings

@@ -7,7 +7,7 @@ archived: false
 excerpt: "Every day is a small sequence of guesses — and the toast will burn anyway."
 ---
 
-[youtube:XVXGZbIsBsw]
+![morning toast](philosophy_burnt_toast.png)
 
 The smell hit me before the alarm did. Burnt toast — not catastrophically burnt, just the low-grade, slightly accusatory kind that means you walked away for thirty seconds too long. I stood in the kitchen in yesterday's socks, staring at two dark rectangles as if they owed me an explanation. They didn't, of course. They were just toast.
 

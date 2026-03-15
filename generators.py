@@ -14,6 +14,8 @@ from config import (
     OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE
 )
 
+from chat_widget import get_chat_widget_html
+
 
 from models import Post
 from templates import header_html, footer_html
@@ -235,6 +237,9 @@ def generate_index(posts: List[Post], related_map: Dict):
 </section>
 """
 
+    # AI Chat Widget (if enabled)
+    content += get_chat_widget_html()
+    
     content += footer_html()
     with open(OUTPUT_DIR / INDEX_FILE, "w", encoding="utf-8") as f:
         f.write(content)
