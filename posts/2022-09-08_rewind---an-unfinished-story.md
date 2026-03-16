@@ -2,9 +2,9 @@
 title: "Rewind - an unfinished story"
 date: 2022-09-08
 category: Life & Uncertainty
-featured: true
-archived: true
-excerpt: "The airplane shuddered violently .. tethering in the thin air at 37,000 feet while speeding at 527 miles per hour .. the jolt pushed the..."
+featured: false
+archived: false
+excerpt: "A mid-air scare triggers a flood of memories about a lost love, revealing the lingering battle between heart, ego, and the ache of what might have been."
 ---
 
 The airplane shuddered violently .. tethering in the thin air at 37,000 feet while speeding at 527 miles per hour .. the jolt pushed the hostess down .. everyone was screaming .. the lady on my right grabbed me hard by wrist while I was pulled away from my seat stretching my seatbelt. The time stood still ..
@@ -21,12 +21,12 @@ The heart aches, the pain continues .. long after .. You were the first and only
 
 The heart behaves differently then the reality .. and it hurts .. it hurts a lot yet tears refuses to flow .. the question again in front of me .. who wins? Is it the ego that wins this crazy battle?
 
-> *In this wide world*  
-> *You will find many, who will admire you*  
-> *In this wide world,*  
-> *You will find few, who will love you*  
-> *In this wide world,*  
-> *You will find only me, who is simply crazy about you*  
+> _In this wide world_  
+> _You will find many, who will admire you_  
+> _In this wide world,_  
+> _You will find few, who will love you_  
+> _In this wide world,_  
+> _You will find only me, who is simply crazy about you_
 >
 > - Me, Apr 2022
 
@@ -36,10 +36,10 @@ the heart pines for your company .. your touch .. the reality struggles to adapt
 
 Will it ever heal?
 
-> *The pain of breakup stings sharp like a bee*  
-> *No anodyne to alleviate or flee*  
-> *Standing alone and separate in tragic glee*  
-> *Instead of us, The mirror now reflects you and me*  
+> _The pain of breakup stings sharp like a bee_  
+> _No anodyne to alleviate or flee_  
+> _Standing alone and separate in tragic glee_  
+> _Instead of us, The mirror now reflects you and me_
 >
 > - Us, Mar 2022
 
@@ -49,38 +49,38 @@ alone and loneliness are two distinct words but put together it becomes a weapon
 
 The fight between the heart and the mind continues .. into the abyss of a black hole .. while you and I remain strangers with unsolved past and a muddy future .. unable to move from pain and conflict to joy and peace.
 
-> *Many differences stand between us as a wall*  
-> *Blocking all communication including my heartfelt call*  
-> *So goes many seasons spring summer and fall*  
-> *And we stand alone, helpless amidst all*  
+> _Many differences stand between us as a wall_  
+> _Blocking all communication including my heartfelt call_  
+> _So goes many seasons spring summer and fall_  
+> _And we stand alone, helpless amidst all_
 >
 > - The Wall, Apr 2022
 
 the many small mistakes have taken a giant form and over shadowed the many successes .. the togetherness .. the good times .. every win as a couple has paled into insignificance on the strength of the many minor mistakes we have made .. albeit many of those mistakes solely made by me .. time ticks forward, heart continues to cry while ego laughs wildly at its victory ..
 
-> *what is love?*  
-> *what is affection?*  
-> *you moved on*  
-> *wearing a new face in a new world*  
-> *I’m naive*  
-> *as I stand forlorn*  
-> *wearing your memories like a shroud*  
+> _what is love?_  
+> _what is affection?_  
+> _you moved on_  
+> _wearing a new face in a new world_  
+> _I’m naive_  
+> _as I stand forlorn_  
+> _wearing your memories like a shroud_
 >
 > - Reflect, Aug 2022
 
 Love and hate are two sides of a classic dichotomy. They stand at opposite sides of the spectrum, like black and white or night and day. Yet they are both equally important. One cannot be without the other .. so they stay ...
 
-> *this heart burns*  
-> *let it burn*  
-> *don’t cry*  
-> *let it burn*  
-> *let it ..*  
+> _this heart burns_  
+> _let it burn_  
+> _don’t cry_  
+> _let it burn_  
+> _let it .._
 >
 > - Today, Aug 2022
 
 .. And then the calm returned .. as suddenly as it started .. The flight was back on its path .. everyone slowly pulled themselves back to normalcy .. My attention was back again on the movie as the titles rolled by with a song playing in the background ..
 
-> *Listen to your heart, it knew from the start*  
-> *She was never with you, not in any part*  
-> *Not at the end, the middle, or start—*  
-> *She played the role, but never gave her heart*  
+> _Listen to your heart, it knew from the start_  
+> _She was never with you, not in any part_  
+> _Not at the end, the middle, or start—_  
+> _She played the role, but never gave her heart_

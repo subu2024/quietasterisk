@@ -2,12 +2,10 @@
 title: "Subscriptions: Cancel Me If You Can"
 date: 2023-01-08
 category: Chance, Risk & Probability
-image: ./images/chase-chappell-wTIJdBQt5Uk-unsplash.jpg
 featured: true
-archived: true
-excerpt: "I logged into the app to cancel the subscription. There was few more hours before the automatic charge would kick in .. frantically I searched..."
+archived: false
+excerpt: "Somewhere between car loans, streaming services, and phone plans, life transformed from owning things to endlessly subscribing to them."
 ---
-
 
 I logged into the app to cancel the subscription. There was few more hours before the automatic charge would kick in .. frantically I searched and could not find a easy way to cancel it. Next stop, I started chatting with the automated chat bot .. a few pleasant exchanges but it remained clueless .. next I dialed the phone number .. a stern voice at the other end announced .. we are currently closed. please call between 8:00am and 8:00pm EST .. ah!!! Desperate, I sent an email and a text to the subscription department asking to cancel and waited ….
 
