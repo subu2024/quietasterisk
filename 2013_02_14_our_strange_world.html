@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Strange World</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-cream: #FAF8F3;
+  --color-sand: #E8E3D8;
+  --color-charcoal: #2B2826;
+  --color-slate: #5A5450;
+  --color-rust: #B8503E;
+  --color-terracotta: #D17458;
+  --color-sage: #8B9B7E;
+  --color-gold: #C9A767;
+  --font-serif: 'Crimson Pro', serif;
+  --font-sans: 'Work Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-serif);
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header */
+.header {
+  border-bottom: 2px solid var(--color-sand);
+  background: var(--color-cream);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background: rgba(250, 248, 243, 0.95);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  color: var(--color-charcoal);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: var(--color-rust);
+}
+
+.logo-asterisk {
+  color: var(--color-rust);
+  margin-left: 0.25rem;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-slate);
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-charcoal);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-rust);
+}
+
+/* Hero Section */
+.hero {
+  padding: 8rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-sand) 100%);
+}
+
+.hero-bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.05;
+}
+
+.hero-bg-blob-1 {
+  top: 5rem;
+  right: 2.5rem;
+  width: 18rem;
+  height: 18rem;
+  background: var(--color-terracotta);
+}
+
+.hero-bg-blob-2 {
+  bottom: 2.5rem;
+  left: 2.5rem;
+  width: 24rem;
+  height: 24rem;
+  background: var(--color-sage);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-label {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-rust);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  max-width: 80rem;
+}
+
+.hero-title-accent {
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-slate);
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 48rem;
+  margin-bottom: 3rem;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: var(--color-slate);
+  line-height: 1.6;
+  max-width: 42rem;
+  margin-bottom: 3rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.btn {
+  padding: 1.25rem 2.5rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1.125rem;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s;
+  display: inline-block;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--color-rust);
+  color: white;
+  border: 2px solid var(--color-rust);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background: #A03D2F;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-charcoal);
+  border: 2px solid var(--color-charcoal);
+}
+
+.btn-secondary:hover {
+  background: var(--color-charcoal);
+  color: white;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 48rem;
+}
+
+.stat-item {
+  padding-left: 1.5rem;
+  border-left: 4px solid;
+}
+
+.stat-item:nth-child(1) { border-color: var(--color-rust); }
+.stat-item:nth-child(2) { border-color: var(--color-sage); }
+.stat-item:nth-child(3) { border-color: var(--color-gold); }
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-slate);
+}
+
+/* Section Headers */
+.section {
+  padding: 6rem 0;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-header-centered {
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 700;
+  font-family: var(--font-serif);
+  margin-bottom: 1.5rem;
+}
+
+.section-description {
+  font-size: 1.25rem;
+  color: var(--color-slate);
+  line-height: 1.6;
+  max-width: 48rem;
+}
+
+.section-description-centered {
+  margin: 0 auto;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3rem 0;
+}
+
+.divider-line {
+  width: 4rem;
+  height: 2px;
+}
+
+.divider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: white;
+  border: 2px solid var(--color-sand);
+  padding: 2.5rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--color-charcoal);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.card-category {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.card-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  margin-bottom: 1rem;
+  color: var(--color-charcoal);
+  transition: color 0.3s;
+}
+
+.card:hover .card-title {
+  color: var(--color-rust);
+}
+
+.card-excerpt {
+  color: var(--color-slate);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.card-meta {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-slate);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-rust);
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.card:hover .card-link {
+  transform: translateX(0.5rem);
+}
+
+/* Featured Card (Large) */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.card-featured {
+  grid-row: span 2;
+  padding: 3rem;
+}
+
+.featured-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--color-rust);
+  color: white;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.card-featured .card-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-featured .card-excerpt {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* Post Content */
+.post-content {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.post-header {
+  margin-bottom: 3rem;
+}
+
+.post-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.post-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.post-meta-item {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-slate);
+}
+
+.post-category {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  color: var(--color-rust);
+}
+
+.decorative-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-rust), var(--color-terracotta));
+  margin: 2rem 0;
+}
+
+.post-body {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.post-body h2, .post-body h3 {
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-body p {
+  margin-bottom: 1.5rem;
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 2rem 0;
+}
+
+.post-body blockquote {
+  border-left: 4px solid var(--color-rust);
+  padding-left: 2rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--color-slate);
+}
+
+.post-body iframe {
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+
+.post-body .youtube-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 2rem 0;
+    border-radius: 8px;
+    background: #000;
+}
+
+.post-body .youtube-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Related Posts */
+.related-posts {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 2px solid var(--color-sand);
+}
+
+.related-posts-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.related-posts-list {
+  list-style: none;
+  padding: 0;
+}
+
+.related-posts-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-sand);
+}
+
+.related-posts-link {
+  color: var(--color-charcoal);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.related-posts-link:hover {
+  color: var(--color-rust);
+}
+
+/* Footer */
+.footer {
+  background: var(--color-charcoal);
+  color: var(--color-cream);
+  padding: 4rem 0 2rem;
+  margin-top: 6rem;
+  border-top: 2px solid var(--color-sand);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section-title {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-terracotta);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link {
+  color: var(--color-sand);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-slate);
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-sand);
+}
+
+/* Books Section */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.book-card {
+  background: white;
+  border: 2px solid var(--color-sand);
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.book-card:hover {
+  border-color: var(--color-gold);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.book-image {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.book-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.book-description {
+  color: var(--color-slate);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero {
+    padding: 4rem 0 3rem;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-featured {
+    grid-row: auto;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Load More functionality */
+.hidden-post {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z65VG31B7Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-Z65VG31B7Q', { page_path: window.location.pathname });
+</script>
+
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="index.html" class="logo">quiet asterisk<span class="logo-asterisk">*</span></a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link ">Essays</a>
+        <a href="books.html" class="nav-link ">Books</a>
+        <a href="videos.html" class="nav-link ">Videos</a>
+        <a href="categories.html" class="nav-link ">Categories</a>
+        <a href="about.html" class="nav-link ">About</a>
+        <a href="contact.html" class="nav-link ">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<article class="post-content animate-in">
+  <header class="post-header">
+    <div class="post-meta">
+      <span class="post-category">Life & Uncertainty</span>
+      <span class="post-meta-item">February 2013</span>
+      <span class="post-meta-item">1 min read</span>
+    </div>
+    <h1 class="post-title">Our Strange World</h1>
+    <div class="decorative-line"></div>
+  </header>
+  <div class="post-body">
+    <p>Standing at the doorsteps of life's turmoil<br />
+ I wonder what, together have we achieved?<br />
+ Nothing but fragments of life shattered by pain<br />
+ Reflecting the few happy moments interleaved</p>
+<p>All those days squeezed with a mangle<br />
+ All those dreams dreamt at few awkward moments<br />
+ Everything has vanished leaving in dangle<br />
+ A vast ridge of difference and lines of torments</p>
+<p>Even as we face each other, our minds stay far away<br />
+ Sounds of my whisper arrive as words of anger to you<br />
+ In the darkness, you read my face, that I never intend to portray<br />
+ Slowly collecting tears to ease the walk into new</p>
+<p>As we rewind days from past<br />
+ The blur images display hurt and hate<br />
+ Overshadowing simple days of love and care<br />
+ Echoing the unhappy emotions instate</p>
+<p>Will we ever able to walk together again?<br />
+ I pause; the baggage of emotion is too heavy<br />
+ To be lifted across the ocean of time<br />
+ And lay a path for a happy day levee</p>
+  </div>
+  <div class="related-posts"><h4 class="related-posts-title">Related Essays</h4><ul class="related-posts-list"><li class="related-posts-item"><a href="2020_09_08_the_relationship_tango.html" class="related-posts-link">The Relationship Tango</a></li></ul></div>
+</article>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <a href="index.html" class="logo" style="color: var(--color-cream);">quiet asterisk<span class="logo-asterisk">*</span></a>
+        <p style="margin-top: 1rem; color: var(--color-sand);">On chance, meaning, and the quiet details</p>
+      </div>
+      <div>
+        <h4 class="footer-section-title">Explore</h4>
+        <nav class="footer-nav">
+          <a href="index.html" class="footer-link">Essays</a>
+          <a href="books.html" class="footer-link">Books</a>
+          <a href="videos.html" class="footer-link">Videos</a>
+          <a href="categories.html" class="footer-link">Categories</a>
+          <a href="about.html" class="footer-link">About</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <h4 class="footer-section-title">Connect</h4>
+        <p style="color: var(--color-sand); margin-bottom: 1rem;">Get in touch</p>
+        <a href="mailto:hello@quietasterisk.com" class="footer-link" style="display: block; margin-bottom: 0.5rem;">hello@quietasterisk.com</a>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <a href="https://www.youtube.com/@quietasterisk" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="YouTube Channel" title="YouTube Channel">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>https://www.youtube.com/@quietasterisk
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 pathway llc. All rights reserved. v1.0.05</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
