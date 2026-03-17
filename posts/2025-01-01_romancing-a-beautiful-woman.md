@@ -1,10 +1,10 @@
 ---
 title: "Romancing a Beautiful Woman"
-date: "2025-01-01"
+date: 2025-01-01
 category: Love, Loss, and Time
-featured: true
-archived: true
-excerpt: "Her long black hair, a silken tide, Calls out to touch, to pull inside It frames her face, a radiant glow, A treasure I long..."
+featured: false
+archived: false
+excerpt: "A man is utterly captivated by a woman whose breathtaking beauty, graceful presence, and enigmatic depth consume his heart and transform his entire world."
 ---
 
 Her long black hair, a silken tide,  

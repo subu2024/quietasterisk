@@ -10,7 +10,7 @@ from pathlib import Path
 # ==========================================================
 BLOG_TITLE = "quiet asterisk"
 TAG_LINE = "On chance, meaning, and the quiet details"
-COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.0.05"
+COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.0.06"
 CONTACT_EMAIL = "hello@quietasterisk.com"
 YOUTUBE_CHANNEL = "https://www.youtube.com/@quietasterisk"
 
@@ -48,7 +48,7 @@ AWS_API_TOKEN = "your-secret-token-here"  # Your AWS API secret token
 # Content Settings
 # ==========================================================
 MIN_SNIPPET_LEN = 38
-SIMILARITY_THRESHOLD = 0.15
+SIMILARITY_THRESHOLD = 0.16
 POSTS_PER_CATEGORY_PAGE = 10  # Number of posts to show before "Load More"
 BOOKS_ON_HOMEPAGE = 2  # Number of books to show on homepage
 
