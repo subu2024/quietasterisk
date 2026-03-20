@@ -3,8 +3,8 @@ title: "Obsessing over Time"
 date: "2023-01-15"
 category: Love, Loss, and Time
 featured: false
-archived: true
-excerpt: "She looked at me and smiled .. a smile of familiarity, a smile of comfort .. She was a friend from my college days .."
+archived: false
+excerpt: "A reflective encounter turns into a meditation on the elusive nature of time—only to circle back to the simple truth that sometimes “no time” just means moving on."
 ---
 
 [!](https://blogger.googleusercontent.com/img/b/r29vz2xl/avvxsegib2ulosqzvfvqauzde4r7bpymxzgbrk2f_lqczbnjfjh_kr0yuzj4xzrkz3ggyimupcjqqdrbkeboylmqf24kcxzpyowwntnuw2uulwcdg79tvpzeewwwquisdai0tplkb-bxomevwesvfhf3k2tueypzkbad-ykljj_s7e5_fvvvs4nqex_gxvob/w400-h266/timon-studler-abgavhjxwdq-unsplash.jpg)

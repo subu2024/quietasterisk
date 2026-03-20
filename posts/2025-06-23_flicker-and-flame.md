@@ -4,8 +4,7 @@ date: 2025-06-23
 category: Life & Uncertainty
 featured: true
 archived: false
-excerpt: "For the longest time, I found myself about how weird life is .. chaotic .. complicated ..unpredictable .. messy. At times poetic, at other times,..."
-  \ very impermanence makes it luminous, warm, and meaningful."
+excerpt: "Life is a fragile, fleeting flame whose beauty and meaning come from its inevitable end, urging us to live with intention and presence."
 ---
 
 For the longest time, I found myself [writing](2022_03_31_life_yet_another_view.html) about how _weird_ life is .. chaotic .. complicated ..unpredictable .. messy. At times poetic, at other times, completely absurd. There was always something elusive about it—something I couldn't quite grasp but couldn’t ignore either. It felt like walking through a fog where the path keeps shifting, even as you take each step forward. That weirdness, that mystery, has defined my understanding of life for years.

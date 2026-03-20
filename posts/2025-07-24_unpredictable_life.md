@@ -1,10 +1,10 @@
 ---
 title: "This Unpredictable Life"
-date: "2025-07-24"
+date: 2025-07-24
 category: Life & Uncertainty
 featured: false
-archived: true
-excerpt: "Strangers meet and worlds collide, It’s been like this since time began. Odd fits, wrong turns, surprise goodbyes — Yet somehow, it’s part of the..."
+archived: false
+excerpt: "A reflection on life’s unpredictability, where chance, loss, and fleeting moments intertwine to create meaning, resilience, and quiet hope."
 ---
 
 Strangers meet and worlds collide,  

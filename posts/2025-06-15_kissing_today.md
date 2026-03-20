@@ -1,10 +1,10 @@
 ---
 title: "Kissing Today"
-date: "2025-06-15"
+date: 2025-06-15
 category: Love, Loss, and Time
-featured: true
-archived: true
-excerpt: "Wrapped in the shroud of memory’s thread I straddle the living, the long-loved dead To chase the lustful arms of today Or dream with tomorrow,..."
+featured: false
+archived: false
+excerpt: "A meditation on choosing to fully embrace the present without abandoning the pull of past memories and future possibilities."
 ---
 
 Wrapped in the shroud of memory’s thread  
