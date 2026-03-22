@@ -2,7 +2,7 @@
 title: "The Morning the Toast Burned Twice"
 date: 2026-03-15
 category: Chance, Risk & Probability
-featured: true
+featured: false
 archived: false
 excerpt: "Every day is a small sequence of guesses — and the toast will burn anyway."
 ---
