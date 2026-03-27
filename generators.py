@@ -97,48 +97,73 @@ def generate_index(posts: List[Post], related_map: Dict):
 
     content = header_html("Home - " + BLOG_TITLE, "home")
 
-    # Hero Section
+    # Hero Section - Modern with gradient and glassmorphism
     content += f"""
-<section class="hero">
-  <div class="hero-bg-blob hero-bg-blob-1"></div>
-  <div class="hero-bg-blob hero-bg-blob-2"></div>
-  <div class="container">
-    <div class="hero-content">
-      <p class="hero-label">Welcome to Quiet Asterisk</p>
-      <h1 class="hero-title">
-        Essays on <span class="hero-title-accent" style="color: var(--color-rust);">meaning</span>, 
-        <span style="color: var(--color-sage);">uncertainty</span>, and the quiet details
+<section class="hero" style="background: linear-gradient(135deg, #FAF8F3 0%, #E8E3D8 50%, #F5E6D3 100%); position: relative; overflow: hidden; padding: 8rem 0 6rem;">
+  <!-- Animated background blobs -->
+  <div style="position: absolute; top: -10%; right: -5%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(184, 80, 62, 0.15), transparent); border-radius: 50%; filter: blur(60px); animation: float 20s infinite ease-in-out;"></div>
+  <div style="position: absolute; bottom: -10%; left: -5%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(139, 155, 126, 0.15), transparent); border-radius: 50%; filter: blur(60px); animation: float 25s infinite ease-in-out reverse;"></div>
+  <div style="position: absolute; top: 40%; right: 30%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(201, 167, 103, 0.1), transparent); border-radius: 50%; filter: blur(50px); animation: float 15s infinite ease-in-out;"></div>
+  
+  <div class="container" style="position: relative; z-index: 10;">
+    <div class="hero-content" style="text-align: center;">
+      <div style="display: inline-block; padding: 0.5rem 1.5rem; background: rgba(184, 80, 62, 0.1); border: 2px solid var(--color-rust); border-radius: 50px; margin-bottom: 2rem; backdrop-filter: blur(10px);">
+        <p class="hero-label" style="margin: 0; font-weight: 600;">Welcome to Quiet Asterisk</p>
+      </div>
+      
+      <h1 style="font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-rust) 50%, var(--color-gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+        Essays on Life
       </h1>
-      <p class="hero-subtitle">that shape how we think and see the world</p>
-      <p class="hero-description">
-        A collection of reflections on systems, stories, and the subtle patterns that connect them. 
+      
+      <p style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); color: var(--color-slate); font-weight: 400; max-width: 42rem; margin: 0 auto 1rem; line-height: 1.6;">
+        Exploring <span style="color: var(--color-rust); font-weight: 600;">uncertainty</span>, 
+        <span style="color: var(--color-sage); font-weight: 600;">systems</span>, and the 
+        <span style="color: var(--color-gold); font-weight: 600;">quiet details</span> that shape how we think & live.
+      </p>
+      
+      <p style="font-size: 1.125rem; color: var(--color-slate); max-width: 36rem; margin: 0 auto 3rem; line-height: 1.7;">
+        A collection of reflections on stories, patterns, and the subtle connections that bind them. 
         Written with care for those who notice the small things.
       </p>
-      <div class="hero-cta">
-        <a href="#featured" class="btn btn-primary">Explore Essays</a>
-        <a href="about.html" class="btn btn-secondary">About the Author</a>
+      
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem;">
+        <a href="#featured" class="btn btn-primary" style="padding: 1.25rem 2.5rem; font-size: 1.125rem; box-shadow: 0 8px 20px rgba(184, 80, 62, 0.3); transform: translateY(0); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 28px rgba(184, 80, 62, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(184, 80, 62, 0.3)'">
+          Explore Essays
+        </a>
+        <a href="{ABOUT_FILE}" class="btn btn-secondary" style="padding: 1.25rem 2.5rem; font-size: 1.125rem; backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.5);">
+          About the Author
+        </a>
       </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-number">{len(posts)}+</div>
-          <div class="stat-label">Essays Published</div>
+      
+      <!-- Stats with modern cards -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 56rem; margin: 0 auto;">
+        <div style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 2px solid rgba(184, 80, 62, 0.2); border-radius: 16px; padding: 2rem; box-shadow: 0 8px 24px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 32px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)'">
+          <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, var(--color-rust), var(--color-terracotta)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">{len(posts)}+</div>
+          <div style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-slate); font-weight: 600;">Essays Published</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">{len(set(p.category for p in posts))}</div>
-          <div class="stat-label">Categories</div>
+        <div style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 2px solid rgba(139, 155, 126, 0.2); border-radius: 16px; padding: 2rem; box-shadow: 0 8px 24px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 32px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)'">
+          <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, var(--color-sage), #6B8B5E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">{len(set(p.category for p in posts))}</div>
+          <div style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-slate); font-weight: 600;">Categories</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">{len(books)}</div>
-          <div class="stat-label">Books Written</div>
+        <div style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 2px solid rgba(201, 167, 103, 0.2); border-radius: 16px; padding: 2rem; box-shadow: 0 8px 24px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 32px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)'">
+          <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, var(--color-gold), #B8954F); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">{len(books)}</div>
+          <div style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-slate); font-weight: 600;">Books Written</div>
         </div>
       </div>
     </div>
   </div>
 </section>
-"""
-    
 
- # Featured Video Section
+<style>
+@keyframes float {{
+  0%, 100% {{ transform: translate(0, 0) rotate(0deg); }}
+  33% {{ transform: translate(30px, -30px) rotate(5deg); }}
+  66% {{ transform: translate(-20px, 20px) rotate(-5deg); }}
+}}
+</style>
+"""
+
+    # Featured Video Section
     videos = load_videos()
     featured_video = next((v for v in videos if v.get("featured")), None)
     
@@ -181,18 +206,19 @@ def generate_index(posts: List[Post], related_map: Dict):
 </section>
 """
     
-        # Featured Essays
+    # Featured Essays - Modern section
     featured_posts = [p for p in posts if p.featured][:4]
     if featured_posts:
-        content += """
-<section class="section" id="featured">
+        content += f"""
+<section class="section" id="featured" style="background: linear-gradient(180deg, var(--color-cream) 0%, white 100%); padding: 6rem 0;">
   <div class="container">
-    <div class="section-header section-header-centered">
-      <h2 class="section-title">Featured Essays</h2>
-      <p class="section-description section-description-centered">Recent explorations worth your time</p>
-      <div style="display: flex; justify-content: center; margin-top: 2rem;">
-        <div style="width: 6rem; height: 2px; background: linear-gradient(90deg, transparent, var(--color-rust), transparent);"></div>
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <div style="display: inline-block; padding: 0.5rem 1.5rem; background: rgba(184, 80, 62, 0.1); border: 2px solid var(--color-rust); border-radius: 50px; margin-bottom: 1rem;">
+        <span style="font-family: var(--font-sans); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-rust); font-weight: 600;">Curated Reading</span>
       </div>
+      <h2 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 1rem; color: var(--color-charcoal);">Featured Essays</h2>
+      <p style="font-size: 1.25rem; color: var(--color-slate); max-width: 36rem; margin: 0 auto 2rem;">Recent explorations worth your time</p>
+      <div style="width: 80px; height: 4px; background: linear-gradient(90deg, transparent, var(--color-rust), transparent); margin: 0 auto; border-radius: 2px;"></div>
     </div>
     <div class="featured-grid">
 """
@@ -202,27 +228,18 @@ def generate_index(posts: List[Post], related_map: Dict):
             content += format_card(post, is_small=True)
         content += '</div></div></div></section>'
 
-
-
-   # Divider
-    content += """
-<div class="divider">
-  <div class="divider-line" style="background: var(--color-rust);"></div>
-  <div class="divider-dot" style="background: var(--color-rust);"></div>
-  <div class="divider-line" style="background: var(--color-rust);"></div>
-</div>
-"""
-
-
-    # Recent Posts
+    # Recent Posts - Modern section
     recent_posts = [p for p in posts if not p.featured][:6]
     if recent_posts:
-        content += """
-<section class="section">
+        content += f"""
+<section class="section" style="padding: 6rem 0;">
   <div class="container">
-    <div class="section-header section-header-centered">
-      <h2 class="section-title">Recent Essays</h2>
-      <p class="section-description section-description-centered">Latest thoughts and explorations</p>
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <div style="display: inline-block; padding: 0.5rem 1.5rem; background: rgba(139, 155, 126, 0.1); border: 2px solid var(--color-sage); border-radius: 50px; margin-bottom: 1rem;">
+        <span style="font-family: var(--font-sans); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-sage); font-weight: 600;">Latest Thoughts</span>
+      </div>
+      <h2 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 1rem; color: var(--color-charcoal);">Recent Essays</h2>
+      <p style="font-size: 1.25rem; color: var(--color-slate);">Fresh perspectives and explorations</p>
     </div>
     <div class="card-grid">
 """
@@ -633,3 +650,160 @@ def generate_videos():
 def get_temp_content():
     """Return temporary content for debugging."""
     return TEMP_CONTENT
+
+
+def generate_index_old(posts: List[Post], related_map: Dict):
+    """Generate homepage with hero, books, featured and recent posts."""
+    books = load_books()
+    
+    # Generate individual post pages
+    generate_post_pages(posts, related_map)
+
+    content = header_html("Home - " + BLOG_TITLE, "home")
+
+    # Hero Section
+    content += f"""
+<section class="hero">
+  <div class="hero-bg-blob hero-bg-blob-1"></div>
+  <div class="hero-bg-blob hero-bg-blob-2"></div>
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-label">Welcome to Quiet Asterisk</p>
+      <h1 class="hero-title">
+        Essays on <span class="hero-title-accent" style="color: var(--color-rust);">meaning</span>, 
+        <span style="color: var(--color-sage);">uncertainty</span>, and the quiet details
+      </h1>
+      <p class="hero-subtitle">that shape how we think and see the world</p>
+      <p class="hero-description">
+        A collection of reflections on systems, stories, and the subtle patterns that connect them. 
+        Written with care for those who notice the small things.
+      </p>
+      <div class="hero-cta">
+        <a href="#featured" class="btn btn-primary">Explore Essays</a>
+        <a href="about.html" class="btn btn-secondary">About the Author</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">{len(posts)}+</div>
+          <div class="stat-label">Essays Published</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">{len(set(p.category for p in posts))}</div>
+          <div class="stat-label">Categories</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">{len(books)}</div>
+          <div class="stat-label">Books Written</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+"""
+    
+
+ # Featured Video Section
+    videos = load_videos()
+    featured_video = next((v for v in videos if v.get("featured")), None)
+    
+    if featured_video:
+        video_id = featured_video.get("video_id", "")
+        video_title = featured_video.get("title", "Featured Video")
+        article_link = featured_video.get("article_link", "")
+        
+        article_html = ""
+        if article_link:
+            article_html = f'<a href="{article_link}" style="color: var(--color-rust); text-decoration: underline; font-size: 1rem;">Read the related article →</a>'
+        
+        content += f"""
+<div class="divider">
+  <div class="divider-line" style="background: var(--color-rust);"></div>
+  <div class="divider-dot" style="background: var(--color-rust);"></div>
+  <div class="divider-line" style="background: var(--color-rust);"></div>
+</div>
+
+<section class="section" style="background: white; padding: 4rem 0;">
+  <div class="container" style="max-width: 56rem;">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h2 style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 1rem; color: var(--color-charcoal);">
+        {video_title}
+      </h2>
+      {article_html}
+    </div>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      <iframe 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+        src="https://www.youtube.com/embed/{video_id}?rel=0&modestbranding=1"
+        title="{video_title}"
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+"""
+    
+        # Featured Essays
+    featured_posts = [p for p in posts if p.featured][:4]
+    if featured_posts:
+        content += """
+<section class="section" id="featured">
+  <div class="container">
+    <div class="section-header section-header-centered">
+      <h2 class="section-title">Featured Essays</h2>
+      <p class="section-description section-description-centered">Recent explorations worth your time</p>
+      <div style="display: flex; justify-content: center; margin-top: 2rem;">
+        <div style="width: 6rem; height: 2px; background: linear-gradient(90deg, transparent, var(--color-rust), transparent);"></div>
+      </div>
+    </div>
+    <div class="featured-grid">
+"""
+        content += format_featured_card(featured_posts[0])
+        content += '<div style="display: flex; flex-direction: column; gap: 2rem;">'
+        for post in featured_posts[1:]:
+            content += format_card(post, is_small=True)
+        content += '</div></div></div></section>'
+
+
+
+   # Divider
+    content += """
+<div class="divider">
+  <div class="divider-line" style="background: var(--color-rust);"></div>
+  <div class="divider-dot" style="background: var(--color-rust);"></div>
+  <div class="divider-line" style="background: var(--color-rust);"></div>
+</div>
+"""
+
+
+    # Recent Posts
+    recent_posts = [p for p in posts if not p.featured][:6]
+    if recent_posts:
+        content += """
+<section class="section">
+  <div class="container">
+    <div class="section-header section-header-centered">
+      <h2 class="section-title">Recent Essays</h2>
+      <p class="section-description section-description-centered">Latest thoughts and explorations</p>
+    </div>
+    <div class="card-grid">
+"""
+        for post in recent_posts:
+            content += format_card(post)
+        content += """
+    </div>
+    <div style="margin-top: 4rem; text-align: center;">
+      <a href="categories.html" class="btn btn-secondary">View All Essays</a>
+    </div>
+  </div>
+</section>
+"""
+
+    # AI Chat Widget (if enabled)
+    content += get_chat_widget_html()
+    
+    content += footer_html()
+    with open(OUTPUT_DIR / INDEX_FILE, "w", encoding="utf-8") as f:
+        f.write(content)
