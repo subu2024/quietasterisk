@@ -1,6 +1,6 @@
 ---
 title: "Half Full, Half Empty"
-date: "2025-05-03"
+date: 2025-05-03
 category: Life & Uncertainty
 featured: true
 archived: false

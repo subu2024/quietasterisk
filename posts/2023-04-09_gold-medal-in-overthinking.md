@@ -1,6 +1,6 @@
 ---
 title: "Gold Medal in Overthinking"
-date: "2023-04-09"
+date: 2023-04-09
 category: Life & Uncertainty
 featured: true
 archived: false

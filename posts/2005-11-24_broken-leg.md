@@ -2,7 +2,7 @@
 title: "Broken Leg"
 date: 2005-11-24
 category: Life & Uncertainty
-featured: true
+featured: false
 archived: false
 excerpt: "A tragic reflection on abandonment and loneliness when an injured woman finds herself forgotten by family."
 ---

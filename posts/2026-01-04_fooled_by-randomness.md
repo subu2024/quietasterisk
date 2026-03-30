@@ -11,7 +11,7 @@ I’ve been thinking a lot about randomness lately. Not in a philosophical, late
 
 It starts small. It almost always does.
 
-The Saturday after thanks giving 2025, for example, I dented someone else’s car.
+The Saturday after Thanks Giving 2025, for example, I dented someone else’s car.
 
 This is not a story about reckless driving or chaos. It happened in a perfectly ordinary parking lot, under decent daylight, with no pressure, no rush, no excuse. I’ve been parking cars for years—parallel, angled, tight city spaces where you have to fold the mirrors in and hold your breath. I’m good at it. Or at least, I thought I was.
 

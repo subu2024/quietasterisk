@@ -1,6 +1,6 @@
 ---
 title: "How to Be (Mostly) Okay"
-date: "2025-09-21"
+date: 2025-09-21
 category: Life & Uncertainty
 featured: false
 archived: false

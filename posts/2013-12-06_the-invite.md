@@ -2,8 +2,8 @@
 title: "The Invite"
 date: 2013-12-06
 category: Life & Uncertainty
-featured: true
-archived: true
+featured: false
+archived: false
 excerpt: "A man confronts a terminal cancer diagnosis with initial shock and rage, but fueled by love for his family, defiantly refuses death's invitation and chooses to fight."
 ---
 

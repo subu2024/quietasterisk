@@ -1,6 +1,6 @@
 ---
 title: "Obsessing over Time"
-date: "2023-01-15"
+date: 2023-01-15
 category: Love, Loss, and Time
 featured: false
 archived: false
