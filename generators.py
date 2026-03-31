@@ -117,7 +117,7 @@ def generate_index(posts: List[Post], related_map: Dict):
       
       <p style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); color: var(--color-slate); font-weight: 400; max-width: 42rem; margin: 0 auto 1rem; line-height: 1.6;">
         Explore <span style="color: var(--color-rust); font-weight: 600;">uncertainty</span>. 
-        <span style="color: var(--color-sage); font-weight: 600;">Notice</span>, and the 
+        <span style="color: var(--color-sage); font-weight: 600;">Notice</span>  
         <span style="color: var(--color-gold); font-weight: 600;">what others</span> overlook.
       </p>
       
