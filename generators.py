@@ -11,7 +11,7 @@ from typing import List, Dict
 from config import (
     BLOG_TITLE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, VIDEOS_FILE_HTML,
     INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE,
-    OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE
+    OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE, ARCHIVES_FILE
 )
 
 from chat_widget import get_chat_widget_html
@@ -116,14 +116,13 @@ def generate_index(posts: List[Post], related_map: Dict):
       </h1>
       
       <p style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); color: var(--color-slate); font-weight: 400; max-width: 42rem; margin: 0 auto 1rem; line-height: 1.6;">
-        Exploring <span style="color: var(--color-rust); font-weight: 600;">uncertainty</span>, 
-        <span style="color: var(--color-sage); font-weight: 600;">systems</span>, and the 
-        <span style="color: var(--color-gold); font-weight: 600;">quiet details</span> that shape how we think & live.
+        Explore <span style="color: var(--color-rust); font-weight: 600;">uncertainty</span>. 
+        <span style="color: var(--color-sage); font-weight: 600;">Notice</span>, and the 
+        <span style="color: var(--color-gold); font-weight: 600;">what others</span> overlook.
       </p>
       
       <p style="font-size: 1.125rem; color: var(--color-slate); max-width: 36rem; margin: 0 auto 3rem; line-height: 1.7;">
-        A collection of reflections on stories, patterns, and the subtle connections that bind them. 
-        Written with care for those who notice the small things.
+       Essays, books, and videos on systems, ideas, and the hidden details shaping how we think and live.
       </p>
       
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem;">
@@ -646,6 +645,176 @@ def generate_videos():
         f.write(content)
     
     logger.info(f"Generated videos page with {len(videos)} videos")
+
+
+def generate_archives(posts: List[Post]):
+    """Generate archives page with accordion-style year/month navigation."""
+    from collections import defaultdict
+    from datetime import datetime
+    
+    # Group posts by year and month
+    archive_data = defaultdict(lambda: defaultdict(list))
+    
+    for post in posts:
+        try:
+            date_obj = datetime.strptime(post.date, "%Y-%m-%d")
+            year = date_obj.year
+            month = date_obj.strftime("%B")  # Full month name
+            archive_data[year][month].append(post)
+        except:
+            continue
+    
+    # Sort years descending
+    sorted_years = sorted(archive_data.keys(), reverse=True)
+    
+    # Get latest post
+    latest_post = posts[0] if posts else None
+    
+    content = header_html("Archives - " + BLOG_TITLE, "archives")
+    
+    # Hero section
+    content += f"""
+<section class="hero" style="padding: 6rem 0 4rem; background: linear-gradient(135deg, var(--color-cream) 0%, white 100%);">
+  <div class="container">
+    <div class="hero-content" style="text-align: center;">
+      <div style="display: inline-block; padding: 0.5rem 1.5rem; background: rgba(184, 80, 62, 0.1); border: 2px solid var(--color-rust); border-radius: 50px; margin-bottom: 2rem;">
+        <p class="hero-label" style="margin: 0; font-weight: 600;">Archive</p>
+      </div>
+      <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1rem;">
+        Every Essay, <span style="color: var(--color-rust); font-style: italic;">Organized</span>
+      </h1>
+      <p class="hero-description" style="max-width: 42rem; margin: 0 auto;">
+        Explore {len(posts)} essays spanning {len(sorted_years)} years of writing
+      </p>
+    </div>
+  </div>
+</section>
+"""
+    
+    # Latest post section
+    if latest_post:
+        content += f"""
+<section class="section" style="padding: 4rem 0; background: white;">
+  <div class="container" style="max-width: 48rem;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--color-slate); text-align: center; text-transform: uppercase; letter-spacing: 0.1em; font-family: var(--font-sans); font-weight: 500;">
+      Latest Essay
+    </h2>
+    <article style="background: var(--color-cream); border-left: 4px solid var(--color-rust); padding: 2rem; border-radius: 8px;">
+      <div style="margin-bottom: 1rem;">
+        <span style="font-family: var(--font-sans); font-size: 0.875rem; color: var(--color-rust); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">{latest_post.category}</span>
+        <span style="margin: 0 0.5rem; color: var(--color-slate);">•</span>
+        <span style="font-family: var(--font-sans); font-size: 0.875rem; color: var(--color-slate);">{latest_post.formatted_date}</span>
+      </div>
+      <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--color-charcoal);">
+        <a href="{latest_post.slug}" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--color-rust)'" onmouseout="this.style.color='var(--color-charcoal)'">{latest_post.title}</a>
+      </h3>
+      <p style="color: var(--color-slate); margin-bottom: 1.5rem; line-height: 1.7; font-size: 1.125rem;">{latest_post.excerpt}</p>
+      <a href="{latest_post.slug}" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem;">
+        Read Essay
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </article>
+  </div>
+</section>
+"""
+    
+    # Archive accordion
+    content += """
+<section class="section" style="padding: 4rem 0;">
+  <div class="container" style="max-width: 56rem;">
+    <h2 style="font-size: 2rem; margin-bottom: 3rem; text-align: center; color: var(--color-charcoal);">Browse by Date</h2>
+    <div class="archive-timeline">
+"""
+    
+    for year in sorted_years:
+        months = archive_data[year]
+        # Sort months chronologically
+        month_order = ["January", "February", "March", "April", "May", "June", 
+                       "July", "August", "September", "October", "November", "December"]
+        sorted_months = sorted(months.keys(), key=lambda x: month_order.index(x), reverse=True)
+        
+        total_posts_year = sum(len(months[m]) for m in months)
+        
+        content += f"""
+      <div class="year-block" style="margin-bottom: 2rem;">
+        <button onclick="toggleYear('year-{year}')" style="width: 100%; background: linear-gradient(135deg, var(--color-rust), var(--color-terracotta)); color: white; border: none; padding: 1.5rem 2rem; border-radius: 8px; cursor: pointer; font-size: 1.5rem; font-weight: 700; font-family: var(--font-serif); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(184, 80, 62, 0.2); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(184, 80, 62, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(184, 80, 62, 0.2)'">
+          <span>{year}</span>
+          <span style="font-family: var(--font-sans); font-size: 1rem; font-weight: 500; opacity: 0.9;">{total_posts_year} essays</span>
+        </button>
+        <div id="year-{year}" style="display: none; margin-top: 1rem; padding-left: 1rem;">
+"""
+        
+        for month in sorted_months:
+            month_posts = months[month]
+            content += f"""
+          <div class="month-block" style="margin-bottom: 1.5rem;">
+            <button onclick="toggleMonth('month-{year}-{month}')" style="width: 100%; background: white; border: 2px solid var(--color-sand); padding: 1rem 1.5rem; border-radius: 6px; cursor: pointer; font-size: 1.125rem; font-weight: 600; font-family: var(--font-sans); display: flex; justify-content: space-between; align-items: center; color: var(--color-charcoal); transition: all 0.3s;" onmouseover="this.style.borderColor='var(--color-rust)'; this.style.background='var(--color-cream)'" onmouseout="this.style.borderColor='var(--color-sand)'; this.style.background='white'">
+              <span>{month}</span>
+              <span style="font-size: 0.875rem; color: var(--color-slate);">{len(month_posts)} essays</span>
+            </button>
+            <div id="month-{year}-{month}" style="display: none; margin-top: 1rem; padding-left: 1rem;">
+"""
+            
+            for post in month_posts:
+                content += f"""
+              <article style="background: var(--color-cream); border-left: 3px solid var(--color-sage); padding: 1.5rem; border-radius: 4px; margin-bottom: 1rem;">
+                <div style="margin-bottom: 0.5rem;">
+                  <span style="font-family: var(--font-sans); font-size: 0.75rem; color: var(--color-sage); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">{post.category}</span>
+                  <span style="margin: 0 0.5rem; color: var(--color-slate);">•</span>
+                  <span style="font-family: var(--font-sans); font-size: 0.75rem; color: var(--color-slate);">{post.reading_time}</span>
+                </div>
+                <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">
+                  <a href="{post.slug}" style="color: var(--color-charcoal); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--color-rust)'" onmouseout="this.style.color='var(--color-charcoal)'">{post.title}</a>
+                </h4>
+                <p style="color: var(--color-slate); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 1rem;">{post.excerpt}</p>
+                <a href="{post.slug}" style="color: var(--color-rust); text-decoration: none; font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600;">Read more →</a>
+              </article>
+"""
+            
+            content += """
+            </div>
+          </div>
+"""
+        
+        content += """
+        </div>
+      </div>
+"""
+    
+    content += """
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleYear(id) {
+  const element = document.getElementById(id);
+  if (element.style.display === 'none' || element.style.display === '') {
+    element.style.display = 'block';
+  } else {
+    element.style.display = 'none';
+  }
+}
+
+function toggleMonth(id) {
+  const element = document.getElementById(id);
+  if (element.style.display === 'none' || element.style.display === '') {
+    element.style.display = 'block';
+  } else {
+    element.style.display = 'none';
+  }
+}
+</script>
+"""
+    
+    content += footer_html()
+    
+    with open(OUTPUT_DIR / ARCHIVES_FILE, "w", encoding="utf-8") as f:
+        f.write(content)
+    
+    logger.info(f"Generated archives page with {len(posts)} posts across {len(sorted_years)} years")
 
 def get_temp_content():
     """Return temporary content for debugging."""

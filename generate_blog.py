@@ -23,6 +23,7 @@ from generators import (
     generate_categories,
     generate_about,
     generate_contact,
+    generate_archives,
     get_temp_content
 )
 
@@ -72,9 +73,12 @@ def main(write_temp: bool = False):
     logger.info("Generating books page...")
     generate_books()
 
-    logger.info("Generating videos page...")  # Add this
+    logger.info("Generating videos page...")  
     generate_videos()   
     
+    logger.info("Generating archives page...")  
+    generate_archives(posts)   
+
     logger.info("Generating categories pages...")
     generate_categories(posts)
     

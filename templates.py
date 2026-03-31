@@ -4,7 +4,7 @@ HTML template functions for generating pages.
 
 from config import (
     BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL,
-    INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, VIDEOS_FILE_HTML
+    INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, VIDEOS_FILE_HTML, ARCHIVES_FILE
 )
 from styles import get_modern_styles
 
@@ -23,7 +23,8 @@ def header_html(title: str, active_page: str = "home") -> str:
     active_classes = {
         "home": "active" if active_page == "home" else "",
         "books": "active" if active_page == "books" else "",
-        "videos": "active" if active_page == "videos" else "",  # Add this
+        "videos": "active" if active_page == "videos" else "", 
+        "archives": "active" if active_page == "archives" else "",
         "categories": "active" if active_page == "categories" else "",
         "about": "active" if active_page == "about" else "",
         "contact": "active" if active_page == "contact" else "",
@@ -55,6 +56,7 @@ def header_html(title: str, active_page: str = "home") -> str:
         <a href="{BOOKS_FILE_HTML}" class="nav-link {active_classes['books']}">Books</a>
         <a href="{VIDEOS_FILE_HTML}" class="nav-link {active_classes['videos']}">Videos</a>
         <a href="{CATEGORIES_FILE}" class="nav-link {active_classes['categories']}">Categories</a>
+        <a href="{ARCHIVES_FILE}" class="nav-link {active_classes['archives']}">Archives</a>
         <a href="{ABOUT_FILE}" class="nav-link {active_classes['about']}">About</a>
         <a href="{CONTACT_FILE}" class="nav-link {active_classes['contact']}">Contact</a>
       </nav>
@@ -84,6 +86,7 @@ def footer_html() -> str:
           <a href="{BOOKS_FILE_HTML}" class="footer-link">Books</a>
           <a href="{VIDEOS_FILE_HTML}" class="footer-link">Videos</a>
           <a href="{CATEGORIES_FILE}" class="footer-link">Categories</a>
+          <a href="{ARCHIVES_FILE}" class="footer-link">Archives</a>
           <a href="{ABOUT_FILE}" class="footer-link">About</a>
           <a href="{CONTACT_FILE}" class="footer-link">Contact</a>
         </nav>

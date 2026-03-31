@@ -2,12 +2,10 @@
 title: "Almost, and Then Gone"
 date: 2026-04-08
 category: Chance, Risk & Probability
-featured: true
-archived: true
+featured: false
+archived: false
 excerpt: "Between Vienna and Metro Center, a passing stranger and a confused March sky make a quiet case against trying to calculate what was never meant to be solved."
 ---
-
-![almost_gone](almost_gone.png)
 
 The train hums in that steady, familiar way, but today it competes with something else—the memory of stepping onto the platform at Vienna and not knowing whether to zip my coat all the way up or peel it off entirely. March in the Washington, DC does that to you. The wind cuts like it’s still winter, but the sun insists on spring, bright and almost smug about it. By the time I’m seated on the Washington Metro Orange Line, my hands are cold, my face is warm, and I’ve already made two small, unnecessary decisions about my jacket.
 

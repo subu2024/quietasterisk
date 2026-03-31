@@ -9,8 +9,8 @@ from pathlib import Path
 # Site Configuration
 # ==========================================================
 BLOG_TITLE = "quiet asterisk"
-TAG_LINE = "On chance, meaning, and the quiet details"
-COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.0.08"
+TAG_LINE = "On uncertainty, meaning, and the quiet details that matter"
+COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.1.01"
 CONTACT_EMAIL = "hello@quietasterisk.com"
 YOUTUBE_CHANNEL = "https://www.youtube.com/@quietasterisk"
 
@@ -36,6 +36,7 @@ CATEGORIES_FILE = "categories.html"
 BOOKS_FILE_HTML = "books.html"
 CONTACT_FILE = "contact.html"
 VIDEOS_FILE_HTML = "videos.html"  
+ARCHIVES_FILE = "archives.html"  # Add this
 
 # AI Chat Module
 ENABLE_AI_CHAT = False  # Set to False to disable
