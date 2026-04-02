@@ -23,7 +23,7 @@ She shifts, and I notice the ring. Simple. Quiet. The kind that doesn’t announ
 
 And still, my mind tries to edit around it.
 
-I think about that poem—the one about the woman on a train, the almost-connection, the way a glance can feel like a beginning if you let it. It felt a little exaggerated when I first read it. But sitting here now, somewhere between Vienna and Metro Center, watching sunlight move across her coat in uneven strips, I understand it differently. Not as romance exactly, but as possibility. Or maybe just the illusion of it.
+I think about that [poem—the one about the woman on a train](2025_09_23_lady_in_white.html), the almost-connection, the way a glance can feel like a beginning if you let it. It felt a little exaggerated when I first read it. But sitting here now, somewhere between Vienna and Metro Center, watching sunlight move across her coat in uneven strips, I understand it differently. Not as romance exactly, but as possibility. Or maybe just the illusion of it.
 
 She glances up for a fraction of a second. Not long enough to hold, just long enough to register. Then she’s back to her bag, as if the moment didn’t happen or didn’t qualify as one. It’s strange how quickly things can feel significant and then disappear into the background, like the sun slipping behind a cloud and taking the warmth with it.
 
@@ -39,7 +39,7 @@ I think about saying something. Nothing complicated. Just enough to acknowledge 
 
 Uncertainty has a way of doing that—stretching a moment until it collapses under its own weight.
 
-The train emerges above ground again, and the sunlight returns, almost aggressively cheerful. She finds what she was looking for this time—a set of keys—and there’s a small, quiet resolution in that. One problem solved. One variable accounted for. It feels like more closure than the rest of this moment will get.
+The train continues its under ground journey in an almost aggressively cheerful way. She finds what she was looking for this time—a set of keys—and there’s a small, quiet resolution in that. One problem solved. One variable accounted for. It feels like more closure than the rest of this moment will get.
 
 The announcement for Metro Center comes through, slightly garbled, like it’s not entirely sure of itself either. People start to shift, gathering bags, adjusting coats they probably misjudged an hour ago. She stands, smooths her coat, and for a brief second, looks in my direction again. Not at me, exactly. Just through the space I happen to occupy.
 

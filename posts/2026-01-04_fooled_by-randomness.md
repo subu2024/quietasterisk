@@ -7,6 +7,11 @@ archived: false
 excerpt: "A reflection on how randomness runs through parking lots, marriages, and money—reminding us control is limited and explanations are fragile."
 ---
 
+> It starts as a moment—unplanned, unseen,  
+> A quiet misstep in an ordinary scene.  
+> Not fate, not chaos, just something in between,  
+> Where chance taps lightly, and reminds what it means.
+
 I’ve been thinking a lot about randomness lately. Not in a philosophical, late-night, staring-at-the-ceiling way—more in the quiet, annoying way it shows up in the middle of an ordinary day and asks for my attention. The kind that doesn’t feel dramatic enough to call fate, but too disruptive to ignore. The kind we usually call _bad luck_, right before sighing and moving on.
 
 It starts small. It almost always does.

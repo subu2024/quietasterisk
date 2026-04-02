@@ -10,7 +10,7 @@ from pathlib import Path
 # ==========================================================
 BLOG_TITLE = "quiet asterisk"
 TAG_LINE = "On uncertainty, meaning, and the quiet details that matter"
-COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.1.01"
+COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.1.02"
 CONTACT_EMAIL = "hello@quietasterisk.com"
 YOUTUBE_CHANNEL = "https://www.youtube.com/@quietasterisk"
 

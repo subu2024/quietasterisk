@@ -31,9 +31,9 @@ Life, in that sense, might simply be a small moment in a much larger cycle.
 
 The idea reminds me of a few lines I wrote years ago:
 
-Music we sing every day,
-an unstoppable melody
-A destined tragedy in nature's harmony
+Music we sing every day,  
+an unstoppable melody  
+A destined tragedy in nature's harmony  
 Death is the poignant note
 
 — an excerpt from the poem ["Death", Jul 1999](1999_07_16_death.html)
@@ -68,9 +68,9 @@ We spend time regretting the past, chasing the future, and building plans for to
 
 Those same reflections appear again in my old poem:
 
-In the journey from here to there
-on the roads of rich and poor
-unaware and ignorant are we,
+In the journey from here to there  
+on the roads of rich and poor  
+unaware and ignorant are we,  
 Death is our final destination
 
 — an excerpt from the poem ["Death", Jul 1999](1999_07_16_death.html)

@@ -1,10 +1,10 @@
 ---
 title: "Eternal Embrace"
-date: "2023-06-01"
+date: 2023-06-01
 category: Love, Loss, and Time
 featured: true
-archived: true
-excerpt: "Fall in love with life, don't be shy, Even if one day she'll say goodbye. Secretly embrace the dark, sultry death, She'll be with you..."
+archived: false
+excerpt: "Embrace life fully, dance with joy, and accept death as part of the journey"
 ---
 
 Fall in love with life, don't be shy,  

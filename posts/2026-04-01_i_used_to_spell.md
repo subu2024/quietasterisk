@@ -72,3 +72,8 @@ Then I misspell “necessary” again and let the machine fix it for me.
 I consider correcting it myself this time, just to prove a point. I don’t.
 
 Progress, apparently.
+
+> We trade the struggle for the smoother road,  
+> And call it wisdom, setting down the load.  
+> The sentence forms; I'm not sure whose it is.  
+> I hit send anyway. Progress. I suppose.
