@@ -25,8 +25,6 @@ And still, my mind tries to edit around it.
 
 I think about that [poem—the one about the woman on a train](2025_09_23_lady_in_white.html), the almost-connection, the way a glance can feel like a beginning if you let it. It felt a little exaggerated when I first read it. But sitting here now, somewhere between Vienna and Metro Center, watching sunlight move across her coat in uneven strips, I understand it differently. Not as romance exactly, but as possibility. Or maybe just the illusion of it.
 
-![almost_gone](almost_gone.png)
-
 She glances up for a fraction of a second. Not long enough to hold, just long enough to register. Then she’s back to her bag, as if the moment didn’t happen or didn’t qualify as one. It’s strange how quickly things can feel significant and then disappear into the background, like the sun slipping behind a cloud and taking the warmth with it.
 
 There’s a kind of quiet math in all this. The odds of boarding the same car, choosing opposite seats, existing in the same narrow window of time between two stations. If I were more disciplined, I’d try to calculate it. Assign variables. Make it neat. But life resists that kind of order, especially in March, when even the weather refuses to settle on a single outcome.
