@@ -2,7 +2,7 @@
 title: "The Art of Doing Nothing Important"
 date: 2026-04-12
 category: Life & Uncertainty
-featured: true
+featured: false
 archived: false
 excerpt: "Life isn’t found in big moments, but in fully noticing the hilariously ordinary ones we usually call “boredom.”"
 ---
