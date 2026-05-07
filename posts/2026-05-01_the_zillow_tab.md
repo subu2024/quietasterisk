@@ -3,7 +3,7 @@ title: "The Zillow Tab I Never Close"
 date: 2026-05-01
 category: Life & Uncertainty
 featured: true
-archived: true
+archived: false
 excerpt: "On northern Virginia real estate, the permanent temporary, and the strange weight of a life that mostly fits"
 ---
 

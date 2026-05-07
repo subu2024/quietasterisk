@@ -2,7 +2,7 @@
 title: "The Hair Situation"
 date: 2026-04-19
 category: Perception, Patterns & Illusion
-featured: true
+featured: false
 archived: false
 excerpt: "The preferences we never chose are often the ones that reveal us most clearly — if we're honest enough to look"
 ---
