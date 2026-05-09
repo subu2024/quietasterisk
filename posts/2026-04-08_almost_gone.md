@@ -23,7 +23,7 @@ She shifts, and I notice the ring. Simple. Quiet. The kind that doesn’t announ
 
 And still, my mind tries to edit around it.
 
-I think about that [poem—the one about the woman on a train](2025_09_23_lady_in_white.html), the almost-connection, the way a glance can feel like a beginning if you let it. It felt a little exaggerated when I first read it. But sitting here now, somewhere between Vienna and Metro Center, watching sunlight move across her coat in uneven strips, I understand it differently. Not as romance exactly, but as possibility. Or maybe just the illusion of it.
+I think about that [poem—the one about the woman on a train](the_lady_in_white.html), the almost-connection, the way a glance can feel like a beginning if you let it. It felt a little exaggerated when I first read it. But sitting here now, somewhere between Vienna and Metro Center, watching sunlight move across her coat in uneven strips, I understand it differently. Not as romance exactly, but as possibility. Or maybe just the illusion of it.
 
 She glances up for a fraction of a second. Not long enough to hold, just long enough to register. Then she’s back to her bag, as if the moment didn’t happen or didn’t qualify as one. It’s strange how quickly things can feel significant and then disappear into the background, like the sun slipping behind a cloud and taking the warmth with it.
 

@@ -7,6 +7,8 @@ from pathlib import Path
 from datetime import datetime
 from dataclasses import dataclass
 
+from sklearn import base
+
 
 @dataclass
 class Post:
@@ -23,8 +25,31 @@ class Post:
 
     @property
     def slug(self):
-        """Generate URL-friendly slug from filename."""
-        return "_".join(re.findall(r'\w+', self.path.stem)).lower() + ".html"
+        """Generate stable, URL-friendly slug from title + id fallback."""
+        base = self.title or self.path.stem or "untitled"
+
+        
+        # normalize title into words
+        words = re.findall(r'\w+', base)
+        slug_text = "_".join(words).lower()
+
+        if not slug_text:
+            slug_text = "untitled"
+
+        
+        # ensure uniqueness + stability
+        #unique_part = getattr(self, "id", None) or self.path.stem
+
+        #print(f"{unique_part}.html")
+
+        #print(f"{slug_text}_{unique_part}.html")
+
+        #return f"{slug_text}_{unique_part}.html"
+        return f"{slug_text}.html"
+    
+#    def slug(self):
+#        """Generate URL-friendly slug from filename."""
+#        return "_".join(re.findall(r'\w+', self.path.stem)).lower() + ".html"
 
     @property
     def reading_time(self):
