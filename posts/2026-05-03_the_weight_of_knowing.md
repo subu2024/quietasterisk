@@ -2,7 +2,7 @@
 title: "The Weight of Knowing"
 date: 2026-05-03
 category: Love, Loss & Time
-featured: true
+featured: false
 archived: false
 excerpt: "There was a time when finding something out felt like crossing a distance. Now the distance has collapsed, and somehow we still feel lost"
 ---
