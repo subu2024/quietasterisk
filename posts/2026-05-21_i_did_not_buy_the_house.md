@@ -17,7 +17,7 @@ I also have TikTok. And TikTok, it turns out, is the world's most efficient mach
 
 It starts subtly. A couple in their early thirties doing a casual walkthrough of their _third_ property. "This one's just a small rental," she says, gesturing at what appears to be a home with a staircase dedicated exclusively to receiving natural light. Small rental. The square footage would make my condo weep.
 
-Scroll.
+Scroll ..
 
 A guy who _accidentally_ made $600,000 flipping homes during the pandemic. Accidentally. As though he tripped, fell, and landed on a deed.
 
