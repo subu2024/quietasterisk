@@ -2,7 +2,7 @@
 title: "The Ceiling Has Opinions"
 date: 2026-05-15
 category: Life & Uncertainty
-featured: true
+featured: false
 archived: false
 excerpt: "A water leak, a reluctant Airbnb stay, and the slow realization that chaos might actually be the point"
 ---
