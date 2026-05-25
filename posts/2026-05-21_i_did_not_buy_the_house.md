@@ -11,8 +11,6 @@ I like to think of myself as a rational adult. A thoughtful participant in the m
 
 I also have TikTok. And TikTok, it turns out, is the world's most efficient machine for making a financially stable person feel like they are quietly losing a race they didn't know they entered.
 
----
-
 ## Act I: The TikTok Economy, or "Everyone Is Rich Except Me"
 
 It starts subtly. A couple in their early thirties doing a casual walkthrough of their _third_ property. "This one's just a small rental," she says, gesturing at what appears to be a home with a staircase dedicated exclusively to receiving natural light. Small rental. The square footage would make my condo weep.
@@ -26,8 +24,6 @@ Scroll.
 And then — the cruelest blow of all — a distant acquaintance. Not a close friend. Not someone you admire. Literally a person you once shared a group project with in 2009 and haven't thought about since. They now have a primary residence, two rentals, and something they refer to with devastating casualness as _"the lake place."_
 
 I sat in my condo, holding my reasonably priced coffee, and had a moment of profound self-assessment: I have made a series of mistakes. I am unclear on what those mistakes were. But statistically, I must have made them.
-
----
 
 ## Act II: The Amazon Era, or "I Deserve This (Dishwasher Pods and an Existential Crisis)"
 
@@ -45,8 +41,6 @@ What followed was a purchasing sequence I can only describe as _vibes-based weal
 
 I closed the app. Opened it again. Closed it. This is called discipline.
 
----
-
 ## Act III: The Northern Virginia Housing Fantasy, or "These Numbers Are a Personal Attack"
 
 Enough with consumption. Time to build _real_ wealth. I opened Zillow with the energy of a man about to turn his life around.
@@ -63,8 +57,6 @@ And yet, somewhere, someone my age owns three of these.
 
 But then, like a cool breeze through an overheated browser tab, clarity arrived: _I do not, in fact, have three of these._ And with that, I made the boldest, most financially sound decision of the entire exercise: I closed Zillow. I was proud of myself for a full four minutes. I celebrated by opening Amazon.
 
----
-
 ## Act IV: The Vehicle Upgrade That Wasn't, or "A House Payment That Depreciates"
 
 Having heroically rejected a million-dollar mortgage, I decided to reward my restraint with something sensible. A car. Not extravagant — just _upgraded_. I began with integrity.
@@ -80,8 +72,6 @@ I attempted logic: _"This is different. This is mobility. This is a depreciating
 I imagined explaining it at a dinner party: _"I don't own property, but my lumbar support is exquisite."_
 
 I closed the tab. Another responsible decision. Another microscopic piece of my soul quietly evaporated.
-
----
 
 ## Act V: The Scotch Resolution, or "A Toast to Being Statistically Normal"
 
@@ -103,8 +93,6 @@ Here is the uncomfortable, slightly comforting truth I arrived at somewhere arou
 
 I raised my glass to that. To being statistically normal, emotionally confused, and financially cautious in a world that makes caution feel like a personality flaw.
 
----
-
 ## Epilogue: The Cart Is Never Empty
 
 Later that night, I opened Amazon again. Not to buy anything. Just to look. I am evolved now. A serious person.
@@ -116,7 +104,5 @@ I glanced at my glass. I considered my journey. I considered the house I didn't 
 I whispered: _"This… could complete the system."_
 
 Add to cart.
-
----
 
 _The author is doing fine. Probably._
