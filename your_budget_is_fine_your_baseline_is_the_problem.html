@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Love, Loss & Time - quiet asterisk</title>
+<title>Your Budget Is Fine. Your Baseline Is the Problem.</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap');
 
@@ -714,7 +714,7 @@ body {
         <a href="index.html" class="nav-link ">Essays</a>
         <a href="books.html" class="nav-link ">Books</a>
         <a href="videos.html" class="nav-link ">Videos</a>
-        <a href="categories.html" class="nav-link active">Categories</a>
+        <a href="categories.html" class="nav-link ">Categories</a>
         <a href="archives.html" class="nav-link ">Archives</a>
         <a href="about.html" class="nav-link ">About</a>
         <a href="contact.html" class="nav-link ">Contact</a>
@@ -725,64 +725,44 @@ body {
 
 <main>
 
-<script>
-function loadMore() {
-    const hiddenPosts = document.querySelectorAll('.hidden-post');
-    let count = 0;
-    hiddenPosts.forEach(post => {
-        if (count < 10) {
-            post.classList.remove('hidden-post');
-            post.style.display = 'block';
-            count++;
-        }
-    });
-    const remaining = document.querySelectorAll('.hidden-post');
-    const button = document.getElementById('load-more-btn');
-    if (remaining.length === 0) {
-        button.style.display = 'none';
-    } else {
-        button.innerHTML = `Load More (${remaining.length} remaining)`;
-    }
-}
-</script>
-
-<section class="hero" style="padding: 6rem 0 4rem;">
-  <div class="container">
-    <div class="hero-content">
-      <p class="hero-label">
-        <a href="categories.html" style="color: var(--color-rust); text-decoration: none;">← All Categories</a>
-      </p>
-      <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4rem);">
-        Love, Loss & Time
-      </h1>
-      <p class="hero-description" style="max-width: 48rem;">
-        Essays exploring love, loss & time
-      </p>
+<article class="post-content animate-in">
+  <header class="post-header">
+    <div class="post-meta">
+      <span class="post-category">Perception, Patterns & Illusion</span>
+      <span class="post-meta-item">June 2026</span>
+      <span class="post-meta-item">4 min read</span>
     </div>
+    <h1 class="post-title">Your Budget Is Fine. Your Baseline Is the Problem.</h1>
+    <div class="decorative-line"></div>
+  </header>
+  <div class="post-body">
+    <h1>Your Budget Is Fine. Your Baseline Is the Problem.</h1>
+<p>The draft sits in there. Not deleted, not sent. Just hovering in the Drafts folder the way unsent things do — with a subject line that felt precise once and now reads like something from a slightly different life.</p>
+<p>The subject line is: <em>What We Mean When We Say "We Can't Afford That."</em></p>
+<p>I wrote it on a Tuesday. It was late. I had a spreadsheet open in one tab and an argument I was reconstructing in my head, the way you do when you're trying to figure out where something went sideways.</p>
+<h2>The Latte Is Not the Problem</h2>
+<p>He's never thought of Starbucks as a treat.</p>
+<p>It's not a reward, not a celebration, not a little indulgence on a slow Friday. It's just... a drink. Something you get on the way to wherever you're going, the way you'd grab a bottle of water, the way you'd check your phone. The idea that it could be optional — that there is a version of a Tuesday morning that doesn't include it — registers for him the way the idea of optional electricity would register for most people.</p>
+<p><em>You mean people just... don't?</em></p>
+<p>He's not wrong to feel that way. He grew up where he grew up, with the rhythms he grew up with. The categories of necessary and unnecessary were set before he had any say in them. He didn't choose his baseline. None of us do.</p>
+<p>Which is the part the budgeting spreadsheet doesn't have a column for.</p>
+<h2>Where the Spreadsheet Goes Quiet</h2>
+<p>I got up to get a glass of water while I was writing the draft. Stood at the sink for a minute longer than I needed to.</p>
+<p>The honest version of what I was circling around is this: most budgeting advice is written as though the categories of <em>need</em> and <em>want</em> are fixed and universal. As though everyone who has ever looked at their bank statement and felt confused was simply confused about the same thing.</p>
+<p>But the confusion is personal. It's archaeological. It's about what you grew up in.</p>
+<p>A family that ate at Olive Garden only on birthdays isn't more virtuous than a family that ate there every Friday. They're not more disciplined. They just have a different map. And when you hand both families the same budgeting framework, one of them will read "dining out" as an obvious cut, and the other will read it as asking them to fundamentally reclassify something that doesn't feel optional.</p>
+<p>The advice doesn't fail because it's wrong. It fails because it doesn't ask the prior question.</p>
+<p><em>What is your discretionary? The one you actually have, not the theoretical one from the personal finance article?</em></p>
+<h2>Still in Drafts</h2>
+<p>The email is still there. I opened it again the other night while waiting for something to load. Read the subject line. Read the first paragraph, which starts with a sentence I still think is true.</p>
+<p>I didn't send it.</p>
+<p>Not because the moment passed, exactly. More because I realized I wasn't writing it for who I addressed it to. I was writing it to work something out. To figure out why the same conversation keeps going in circles, why the same advice keeps landing wrong, why someone can look at a spreadsheet and feel like they're being asked to give up something the spreadsheet can't see.</p>
+<p>The Drafts folder is where you put things that are mostly written <em>to yourself</em>.</p>
+<p>You just use someone else's name in the To field so it feels like it's going somewhere.</p>
   </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="card-grid">
-<div class="card-wrapper">
-<article class="card">
-  <div class="card-meta">
-    <span class="card-category" style="color: var(--color-rust);">Love, Loss & Time</span>
-    <span class="post-meta-item">May 2026</span>
-  </div>
-  <h3 class="card-title">The Weight of Knowing</h3>
-  <p class="card-excerpt">There was a time when finding something out felt like crossing a distance. Now the distance has collapsed, and somehow we still feel lost</p>
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-    <span class="post-meta-item">4 min read</span>
-    <a href="the_weight_of_knowing.html" class="card-link">
-      Read
-      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-      </svg>
-    </a>
-  </div>
+  
 </article>
-</div></div></div></section>
+
 </main>
 <footer class="footer">
   <div class="container">
