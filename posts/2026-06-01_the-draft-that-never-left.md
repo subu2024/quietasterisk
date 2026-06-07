@@ -25,7 +25,7 @@ It arrives certain of itself. _Cut the lattes. Skip the dining out. Cancel the s
 
 I know a family — comfortable, not wealthy, but well past worrying — who considered Olive Garden a special occasion restaurant. Not because they couldn't afford it on a Wednesday. They could. They just... didn't. Dinner out meant something. It was reserved for birthdays, report cards, the conclusion of something worth marking. The rest of the time, dinner was at home, and that felt right, not like deprivation.
 
-Their kids grew up with a particular understanding of what eating out means. It means _occasion_. It means you've earned something, or you're celebrating something. It's a dinner-shaped trophy.
+Their kid grew up with a particular understanding of what eating out means. It means _occasion_. It means you've earned something, or you're celebrating something. It's a dinner-shaped trophy.
 
 I think about that sometimes when I look at my own kid's relationship with Starbucks.
 
@@ -51,7 +51,7 @@ I saw a little girl on the metro a few weeks ago. Eight, maybe nine. She had hig
 
 I found myself doing the math I shouldn't have been doing.
 
-Then I stopped, because the math was beside the point. She wasn't thinking about the cost. She almost certainly never had. For her, this was just how hair looks. Her hair. The way some kids grow up with braces as a given, or a particular brand of sneakers as the only acceptable option, or summer camp as just what happens in July — this girl will grow up understanding highlighted hair as a baseline. Not a luxury. Not a financial decision. Just the texture of her normal life.
+Then I stopped, because the math was beside the point. She wasn't thinking about the cost. She almost certainly never had. For her, this was just how hair looks. Her hair. The way some kids grow up with braces as a given, or a particular brand of sneakers as the only acceptable option, or summer camp as just what happens in July — this girl will probably grow up understanding highlighted hair as a baseline. Not a luxury. Not a financial decision. Just the texture of her normal life.
 
 And when someone hands her a budgeting worksheet in fifteen years and tells her that salon highlights are a discretionary expense, she's going to feel something complicated. Not defiance, exactly. More like disorientation. _Discretionary_ implies a choice was made. She won't feel like she was choosing anything. She'll feel like someone is asking her to become a slightly different person.
 
