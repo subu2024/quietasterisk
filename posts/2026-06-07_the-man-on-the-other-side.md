@@ -7,10 +7,10 @@ featured: true
 archived: false
 ---
 
-Two strangers split the same sidewalk—  
-a flicker of familiarity, a face held flat.  
-How many steps does it take to decide  
-whether a stranger deserves a smile back?
+> Two strangers split the same sidewalk—  
+> a flicker of familiarity, a face held flat.  
+> How many steps does it take to decide  
+> whether a stranger deserves a smile back?
 
 The metro stop at Vienna smells like old concrete and coffee that gave up on being good. It is 7:14 in the morning. I'm already late in the low-grade, doesn't-really-matter way that accumulates on Tuesdays. And then, coming the other direction on the sidewalk, is him.
 
