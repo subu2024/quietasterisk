@@ -3,10 +3,12 @@ HTML template functions for generating pages.
 """
 
 from config import (
-    BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL,
+    BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, LOGO_PATH, 
     INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, VIDEOS_FILE_HTML, ARCHIVES_FILE
 )
 from styles import get_modern_styles
+
+from utils import show_logo
 
 
 def header_html(title: str, active_page: str = "home") -> str:
@@ -50,7 +52,7 @@ def header_html(title: str, active_page: str = "home") -> str:
 <header class="header">
   <div class="container">
     <div class="header-content">
-      <a href="{INDEX_FILE}" class="logo">{BLOG_TITLE}<span class="logo-asterisk">*</span></a>
+      <a href="{INDEX_FILE}" class="logo">{BLOG_TITLE}{show_logo(LOGO_PATH, 70)}</a>
       <nav class="nav">
         <a href="{INDEX_FILE}" class="nav-link {active_classes['home']}">Essays</a>
         <a href="{BOOKS_FILE_HTML}" class="nav-link {active_classes['books']}">Books</a>
@@ -76,7 +78,7 @@ def footer_html() -> str:
   <div class="container">
     <div class="footer-content">
       <div>
-        <a href="{INDEX_FILE}" class="logo" style="color: var(--color-cream);">{BLOG_TITLE}<span class="logo-asterisk">*</span></a>
+        <a href="{INDEX_FILE}" class="logo" style="color: var(--color-cream);">{BLOG_TITLE}{show_logo(LOGO_PATH, 20)}</a>
         <p style="margin-top: 1rem; color: var(--color-sand);">{TAG_LINE}</p>
       </div>
       <div>

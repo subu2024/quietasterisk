@@ -15,7 +15,7 @@ import argparse
 from config import OUTPUT_DIR, IMAGE_DIR, INPUT_DIR, TEMP_CONTENT_FILE
 from parser import read_markdown_files
 from similarity import compute_similarity, build_related_map
-from utils import copy_downloads
+from utils import copy_downloads, copy_image
 from generators import (
     generate_index,
     generate_books,
@@ -65,6 +65,7 @@ def main(write_temp: bool = False):
     # Compute similarity matrix for related posts
     sim_matrix = compute_similarity(posts) if len(posts) > 1 else []
     related_map = build_related_map(posts, sim_matrix) if len(posts) > 1 else {}
+
 
     # Generate all pages
     logger.info("Generating index page...")

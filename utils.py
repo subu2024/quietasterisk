@@ -7,7 +7,7 @@ import json
 import shutil
 import logging
 from pathlib import Path
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 from config import IMAGE_DIR, BOOKS_FILE, CATEGORIES_FILE_JSON, DOWNLOADS_DIR, OUTPUT_DOWNLOADS_DIR, VIDEOS_FILE
 from models import Post
@@ -102,6 +102,24 @@ def copy_image(src_path: str) -> str:
     
     return f"images/{src.name}"
 
+def show_logo(src_path: str, size: int = 50) -> str:
+    """
+    Return HTML for logo image using copy_image().
+    
+    Args:
+        src_path: Source path to logo
+        size: Width/height in px
+        
+    Returns:
+        HTML <img> string or empty string
+    """
+    img_path = copy_image(src_path)
+
+    if not img_path:
+        return ""
+
+    return f'<img src="{img_path}" alt="logo mark" class="logo-mark" width="{size}" height="{size}">'
+
 
 def load_json_file(filepath: Path, expected_type=None) -> any:
     """
@@ -132,9 +150,19 @@ def load_json_file(filepath: Path, expected_type=None) -> any:
         return [] if expected_type == list else {}
 
 
-def load_books() -> List[Dict]:
-    """Load book data from books.json."""
-    return load_json_file(BOOKS_FILE, expected_type=list)
+def load_books(limit: Optional[int] = None) -> List[Dict]:
+
+    """Load book data from books.json. Optionally limit number of books returned."""
+
+    
+
+    books = load_json_file(BOOKS_FILE, expected_type=list)
+
+    if limit is not None:
+
+        return books[:limit]
+
+    return books
 
 
 def load_categories() -> Dict[str, Dict]:

@@ -83,6 +83,13 @@ body {
   margin-left: 0.25rem;
 }
 
+.logo-mark {
+  width: 50px;        /* adjust to taste */
+  height: 50px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
 .nav {
   display: flex;
   gap: 2rem;

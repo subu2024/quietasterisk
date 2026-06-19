@@ -9,10 +9,11 @@ from pathlib import Path
 # Site Configuration
 # ==========================================================
 BLOG_TITLE = "quiet asterisk"
-TAG_LINE = "On uncertainty, meaning, and the quiet details that matter"
+TAG_LINE = "Writing that slows down thinking, so you can notice what you usually pass through."
 COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.1.02"
 CONTACT_EMAIL = "hello@quietasterisk.com"
 YOUTUBE_CHANNEL = "https://www.youtube.com/@quietasterisk"
+LOGO_PATH = "./images/logo.png"  # Relative path to logo in output
 
 
 # ==========================================================
