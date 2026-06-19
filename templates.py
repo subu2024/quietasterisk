@@ -3,7 +3,7 @@ HTML template functions for generating pages.
 """
 
 from config import (
-    BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, LOGO_PATH, 
+    BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, LOGO_PATH, INSTAGRAM_PROFILE,
     INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, VIDEOS_FILE_HTML, ARCHIVES_FILE
 )
 from styles import get_modern_styles
@@ -27,9 +27,7 @@ def header_html(title: str, active_page: str = "home") -> str:
         "books": "active" if active_page == "books" else "",
         "videos": "active" if active_page == "videos" else "", 
         "archives": "active" if active_page == "archives" else "",
-        "categories": "active" if active_page == "categories" else "",
         "about": "active" if active_page == "about" else "",
-        "contact": "active" if active_page == "contact" else "",
     }
     
     return f"""<!DOCTYPE html>
@@ -57,10 +55,10 @@ def header_html(title: str, active_page: str = "home") -> str:
         <a href="{INDEX_FILE}" class="nav-link {active_classes['home']}">Essays</a>
         <a href="{BOOKS_FILE_HTML}" class="nav-link {active_classes['books']}">Books</a>
         <a href="{VIDEOS_FILE_HTML}" class="nav-link {active_classes['videos']}">Videos</a>
-        <a href="{CATEGORIES_FILE}" class="nav-link {active_classes['categories']}">Categories</a>
+       
         <a href="{ARCHIVES_FILE}" class="nav-link {active_classes['archives']}">Archives</a>
         <a href="{ABOUT_FILE}" class="nav-link {active_classes['about']}">About</a>
-        <a href="{CONTACT_FILE}" class="nav-link {active_classes['contact']}">Contact</a>
+        
       </nav>
     </div>
   </div>
@@ -87,10 +85,8 @@ def footer_html() -> str:
           <a href="{INDEX_FILE}" class="footer-link">Essays</a>
           <a href="{BOOKS_FILE_HTML}" class="footer-link">Books</a>
           <a href="{VIDEOS_FILE_HTML}" class="footer-link">Videos</a>
-          <a href="{CATEGORIES_FILE}" class="footer-link">Categories</a>
           <a href="{ARCHIVES_FILE}" class="footer-link">Archives</a>
           <a href="{ABOUT_FILE}" class="footer-link">About</a>
-          <a href="{CONTACT_FILE}" class="footer-link">Contact</a>
         </nav>
       </div>
       <div>
@@ -104,6 +100,13 @@ def footer_html() -> str:
             </svg>{YOUTUBE_CHANNEL}
           </a>
         </div>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+  <a href="{INSTAGRAM_PROFILE}" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Instagram Profile" title="Instagram Profile">
+    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5C2 19.426 4.574 22 7.75 22h8.5C19.426 22 22 19.426 22 16.25v-8.5C22 4.574 19.426 2 16.25 2h-8.5zm0 2h8.5C18.455 4 20 5.545 20 7.75v8.5c0 2.205-1.545 3.75-3.75 3.75h-8.5C5.545 20 4 18.455 4 16.25v-8.5C4 5.545 5.545 4 7.75 4zm8.75 1.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+    </svg>{INSTAGRAM_PROFILE}
+  </a>
+</div>
       </div>
     </div>
     <div class="footer-bottom">

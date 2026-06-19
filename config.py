@@ -10,9 +10,10 @@ from pathlib import Path
 # ==========================================================
 BLOG_TITLE = "quiet asterisk"
 TAG_LINE = "Writing that slows down thinking, so you can notice what you usually pass through."
-COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.1.02"
+COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.1.05"
 CONTACT_EMAIL = "hello@quietasterisk.com"
 YOUTUBE_CHANNEL = "https://www.youtube.com/@quietasterisk"
+INSTAGRAM_PROFILE = "https://www.instagram.com/quiet.asterisk/"
 LOGO_PATH = "./images/logo.png"  # Relative path to logo in output
 
 
@@ -50,8 +51,8 @@ AWS_API_TOKEN = "your-secret-token-here"  # Your AWS API secret token
 # Content Settings
 # ==========================================================
 MIN_SNIPPET_LEN = 38
-SIMILARITY_THRESHOLD = 0.16
-POSTS_PER_CATEGORY_PAGE = 10  # Number of posts to show before "Load More"
+SIMILARITY_THRESHOLD = 0.17
+POSTS_PER_CATEGORY_PAGE = 3 # Number of posts to show before "Load More"
 BOOKS_ON_HOMEPAGE = 2  # Number of books to show on homepage
 
 # ==========================================================

@@ -14,6 +14,9 @@ from config import (
     OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE, ARCHIVES_FILE, LOGO_PATH
 )
 
+from collections import defaultdict
+from datetime import datetime
+
 from chat_widget import get_chat_widget_html
 
 
@@ -477,7 +480,7 @@ def generate_videos():
     logger.info(f"Generated videos page with {len(videos)} videos")
 
 
-def generate_archives(posts: List[Post]):
+def generate_archives_v2(posts: List[Post]):
     """Generate archives page with magazine-style year index layout."""
     from collections import defaultdict
     from datetime import datetime
@@ -496,7 +499,7 @@ def generate_archives(posts: List[Post]):
     # Sort years descending
     sorted_years = sorted(archive_data.keys(), reverse=True)
 
-    latest_post = posts[0] if posts else None
+    
 
     content = header_html("Archives - " + BLOG_TITLE, "archives")
 
@@ -521,46 +524,7 @@ def generate_archives(posts: List[Post]):
 </section>
 """
 
-    # LATEST POST SECTION
-    if latest_post:
-        content += f"""
-<section class="section" style="padding: 4rem 0; background: white;">
-  <div class="container" style="max-width: 48rem;">
-    
-    <h2 style="font-size: 1.5rem; margin-bottom: 2rem; text-align: center; color: var(--color-slate); text-transform: uppercase; letter-spacing: 0.1em;">
-      Latest Essay
-    </h2>
 
-    <article style="background: var(--color-cream); border-left: 4px solid var(--color-rust); padding: 2rem; border-radius: 8px;">
-      
-      <div style="margin-bottom: 1rem;">
-        <span style="font-size: 0.875rem; color: var(--color-rust); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">
-          {latest_post.category}
-        </span>
-        <span style="margin: 0 0.5rem; color: var(--color-slate);">•</span>
-        <span style="font-size: 0.875rem; color: var(--color-slate);">
-          {latest_post.formatted_date}
-        </span>
-      </div>
-
-      <h3 style="font-size: 2rem; margin-bottom: 1rem;">
-        <a href="{latest_post.slug}" style="color: var(--color-charcoal); text-decoration: none;">
-          {latest_post.title}
-        </a>
-      </h3>
-
-      <p style="color: var(--color-slate); font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        {latest_post.excerpt}
-      </p>
-
-      <a href="{latest_post.slug}" class="btn btn-primary">
-        Read Essay
-      </a>
-
-    </article>
-  </div>
-</section>
-"""
 
     # MAGAZINE INDEX ARCHIVE
     content += """
@@ -979,6 +943,266 @@ def generate_index(posts: List[Post], related_map: Dict):
 
     with open(OUTPUT_DIR / INDEX_FILE, "w", encoding="utf-8") as f:
         f.write(content)
+
+
+
+
+
+
+def generate_archives(posts: List[Post]):
+    """Generate archives page with a magazine-style index, toggleable
+    between grouping by year and grouping by category."""
+
+    # Group posts by year
+    archive_data = defaultdict(list)
+    for post in posts:
+        try:
+            date_obj = datetime.strptime(post.date, "%Y-%m-%d")
+            archive_data[date_obj.year].append(post)
+        except:
+            continue
+
+    sorted_years = sorted(archive_data.keys(), reverse=True)
+
+    # Group posts by category
+    category_data = defaultdict(list)
+    for post in posts:
+        category_data[post.category].append(post)
+
+    # Alphabetical, matching the order on the existing categories.html
+    sorted_categories = sorted(category_data.keys())
+    categories_meta = load_categories()
+
+    # Same initial count for every group, year or category, so the page
+    # reads consistently no matter which view you're in
+    GROUP_PREVIEW_COUNT = POSTS_PER_CATEGORY_PAGE
+
+    content = header_html("Archives - " + BLOG_TITLE, "archives")
+
+    # HERO SECTION
+    content += f"""
+<section class="hero" style="padding: 6rem 0 4rem; background: linear-gradient(135deg, var(--color-cream) 0%, white 100%);">
+  <div class="container">
+    <div class="hero-content" style="text-align: center;">
+      <div style="display: inline-block; padding: 0.5rem 1.5rem; background: rgba(184, 80, 62, 0.1); border: 2px solid var(--color-rust); border-radius: 50px; margin-bottom: 2rem;">
+        <p class="hero-label" style="margin: 0; font-weight: 600;">Archive</p>
+      </div>
+
+      <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1rem;">
+        Every Essay, <span style="color: var(--color-rust); font-style: italic;">Organized</span>
+      </h1>
+
+      <p class="hero-description" style="max-width: 42rem; margin: 0 auto;">
+        Explore {len(posts)} essays spanning {len(sorted_years)} years of writing
+      </p>
+    </div>
+  </div>
+</section>
+"""
+
+    # SECTION HEADER + TOGGLE TABS
+    content += """
+<section class="section" style="padding: 6rem 0;">
+  <div class="container" style="max-width: 64rem;">
+
+    <h2 style="font-size: 2rem; margin-bottom: 2.5rem; text-align: center; color: var(--color-charcoal); letter-spacing: 0.08em;">
+      Archive Index
+    </h2>
+
+    <div style="display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 4rem;">
+      <button id="tab-year" onclick="showArchiveView('year')"
+        style="padding: 0.6rem 1.75rem; border-radius: 50px; border: 2px solid var(--color-rust); background: var(--color-rust); color: white; font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;">
+        By year
+      </button>
+      <button id="tab-category" onclick="showArchiveView('category')"
+        style="padding: 0.6rem 1.75rem; border-radius: 50px; border: 2px solid var(--color-rust); background: transparent; color: var(--color-rust); font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;">
+        By category
+      </button>
+    </div>
+"""
+
+    # BY YEAR VIEW
+    content += """
+    <div id="view-by-year">
+"""
+
+    for year in sorted_years:
+        year_posts_sorted = sorted(archive_data[year], key=lambda x: x.date, reverse=True)
+
+        content += f"""
+    <div id="year-{year}" style="margin-bottom: 5rem; scroll-margin-top: 2rem;">
+
+      <div style="margin-bottom: 2rem; display: flex; align-items: baseline; gap: 1.5rem;">
+        <h3 style="font-size: 2rem; font-family: var(--font-serif); color: var(--color-rust); margin: 0;">
+          {year}
+        </h3>
+        <div style="flex: 1; height: 1px; background: var(--color-sand);"></div>
+        <span style="font-family: var(--font-sans); font-size: 0.9rem; color: var(--color-slate); letter-spacing: 0.1em;">
+          {len(year_posts_sorted)} ESSAYS
+        </span>
+      </div>
+
+      <div class="card-grid">
+"""
+
+        for idx, post in enumerate(year_posts_sorted):
+            hidden_class = " hidden-post" if idx >= GROUP_PREVIEW_COUNT else ""
+            content += f'<div class="card-wrapper{hidden_class}">'
+            content += format_card(post)
+            content += "</div>"
+
+        content += """
+      </div>
+"""
+
+        if len(year_posts_sorted) > GROUP_PREVIEW_COUNT:
+            remaining = len(year_posts_sorted) - GROUP_PREVIEW_COUNT
+            content += f"""
+      <div style="text-align: center; margin-top: 2rem;">
+        <button id="load-more-year-{year}" onclick="loadMoreGroup('year-{year}')" class="btn btn-secondary" style="cursor: pointer;">
+          Load more ({remaining} remaining)
+        </button>
+      </div>
+"""
+
+        content += """
+    </div>
+"""
+
+    content += """
+    </div>
+"""
+
+    # BY CATEGORY VIEW
+    content += """
+    <div id="view-by-category" style="display: none;">
+"""
+
+    for category in sorted_categories:
+        cat_posts_sorted = sorted(category_data[category], key=lambda x: x.date, reverse=True)
+        cat_slug = slugify(category)
+        category_info = categories_meta.get(category, {})
+        description = category_info.get("description", f"Essays exploring {category.lower()}")
+
+        content += f"""
+    <div id="category-{cat_slug}" style="margin-bottom: 5rem; scroll-margin-top: 2rem;">
+
+      <div style="margin-bottom: 0.75rem; display: flex; align-items: baseline; gap: 1.5rem;">
+        <h3 style="font-size: 2rem; font-family: var(--font-serif); color: var(--color-rust); margin: 0;">
+          {category}
+        </h3>
+        <div style="flex: 1; height: 1px; background: var(--color-sand);"></div>
+        <span style="font-family: var(--font-sans); font-size: 0.9rem; color: var(--color-slate); letter-spacing: 0.1em;">
+          {len(cat_posts_sorted)} ESSAYS
+        </span>
+      </div>
+
+      <p style="margin: 0 0 2rem; font-family: var(--font-sans); color: var(--color-slate); max-width: 42rem;">
+        {description}
+      </p>
+
+      <div class="card-grid">
+"""
+
+        for idx, post in enumerate(cat_posts_sorted):
+            hidden_class = " hidden-post" if idx >= GROUP_PREVIEW_COUNT else ""
+            content += f'<div class="card-wrapper{hidden_class}">'
+            content += format_card(post)
+            content += "</div>"
+
+        content += """
+      </div>
+"""
+
+        if len(cat_posts_sorted) > GROUP_PREVIEW_COUNT:
+            remaining = len(cat_posts_sorted) - GROUP_PREVIEW_COUNT
+            content += f"""
+      <div style="text-align: center; margin-top: 2rem;">
+        <button id="load-more-category-{cat_slug}" onclick="loadMoreGroup('category-{cat_slug}')" class="btn btn-secondary" style="cursor: pointer;">
+          Load more ({remaining} remaining)
+        </button>
+      </div>
+"""
+
+        content += """
+    </div>
+"""
+
+    content += """
+    </div>
+
+  </div>
+</section>
+"""
+
+    # TOGGLE + DEEP-LINK SCRIPT
+    content += """
+<script>
+function showArchiveView(view) {
+  var yearView = document.getElementById('view-by-year');
+  var catView = document.getElementById('view-by-category');
+  var yearTab = document.getElementById('tab-year');
+  var catTab = document.getElementById('tab-category');
+
+  if (view === 'category') {
+    yearView.style.display = 'none';
+    catView.style.display = 'block';
+    catTab.style.background = 'var(--color-rust)';
+    catTab.style.color = 'white';
+    yearTab.style.background = 'transparent';
+    yearTab.style.color = 'var(--color-rust)';
+  } else {
+    catView.style.display = 'none';
+    yearView.style.display = 'block';
+    yearTab.style.background = 'var(--color-rust)';
+    yearTab.style.color = 'white';
+    catTab.style.background = 'transparent';
+    catTab.style.color = 'var(--color-rust)';
+  }
+}
+
+function loadMoreGroup(groupId) {
+  var container = document.getElementById(groupId);
+  var hidden = container.querySelectorAll('.hidden-post');
+  var count = 0;
+  hidden.forEach(function (post) {
+    if (count < 6) {
+      post.classList.remove('hidden-post');
+      post.style.display = 'block';
+      count++;
+    }
+  });
+  var remaining = container.querySelectorAll('.hidden-post').length;
+  var button = document.getElementById('load-more-' + groupId);
+  if (remaining === 0) {
+    button.style.display = 'none';
+  } else {
+    button.innerHTML = 'Load more (' + remaining + ' remaining)';
+  }
+}
+
+(function () {
+  var hash = window.location.hash;
+  if (hash.indexOf('category') !== -1) {
+    showArchiveView('category');
+    var target = document.getElementById(hash.substring(1));
+    if (target) {
+      setTimeout(function () { target.scrollIntoView(); }, 0);
+    }
+  }
+})();
+</script>
+"""
+
+    content += footer_html()
+
+    with open(OUTPUT_DIR / ARCHIVES_FILE, "w", encoding="utf-8") as f:
+        f.write(content)
+
+    logger.info(
+        f"Generated archive with {len(posts)} posts across "
+        f"{len(sorted_years)} years and {len(sorted_categories)} categories"
+    )
 
 
 
