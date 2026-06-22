@@ -15,7 +15,7 @@ Four new connections. Thirty-two views. Two likes that arrived sometime while I 
 
 There's a particular flatness to numbers moving in the right direction — not excitement, more like watching an elevator climb. You don't cheer each floor. You'd only notice if it stalled.
 
-⸻
+![arthimetic of more](arthemetic_more.png)
 
 Or maybe it started earlier than that.
 
