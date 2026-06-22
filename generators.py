@@ -10,7 +10,7 @@ from typing import List, Dict
 
 from config import (
     BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, VIDEOS_FILE_HTML,
-    INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE,
+    INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, INSTAGRAM_PROFILE,
     OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE, ARCHIVES_FILE, LOGO_PATH
 )
 
@@ -344,7 +344,9 @@ def generate_about():
           You can also find me sharing thoughts (280 characters at a time) 
           and occasional video essays on 
           <a href="{YOUTUBE_CHANNEL}" target="_blank" rel="noopener noreferrer" 
-             style="color: var(--color-rust); text-decoration: underline; font-weight: 600; transition: color 0.3s;">YouTube</a>.
+             style="color: var(--color-rust); text-decoration: underline; font-weight: 600; transition: color 0.3s;">YouTube</a> and 
+          <a href="{INSTAGRAM_PROFILE}" target="_blank" rel="noopener noreferrer" 
+             style="color: var(--color-rust); text-decoration: underline; font-weight: 600; transition: color 0.3s;">Instagram</a>.
         </p>
       </div>
       
