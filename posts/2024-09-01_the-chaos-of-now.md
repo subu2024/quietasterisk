@@ -1,5 +1,6 @@
 ---
 title: "The Chaos of Now: Is It All in My Head?"
+slug: chaos-of-now
 date: 2024-09-01
 category: Life & Uncertainty
 featured: false

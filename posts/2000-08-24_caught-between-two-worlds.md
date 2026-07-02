@@ -1,5 +1,6 @@
 ---
 title: "Caught Between Two Worlds"
+slug: caught-between-two-worlds
 date: 2000-08-24
 category: Life & Uncertainty
 featured: true

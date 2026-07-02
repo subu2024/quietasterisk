@@ -1,5 +1,6 @@
 ---
 title: "Fooled by Randomness"
+slug: fooled-by-randomness
 date: 2026-01-04
 category: Chance, Risk & Probability
 featured: false

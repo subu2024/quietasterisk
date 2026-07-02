@@ -1,5 +1,6 @@
 ---
 title: "Appa, The Voice That Echoes Through Time"
+slug: appa-voice-echoes-through-time
 date: 2021-09-05
 category: Love, Loss, and Time
 featured: false

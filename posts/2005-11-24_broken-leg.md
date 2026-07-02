@@ -1,5 +1,6 @@
 ---
 title: "Broken Leg"
+slug: a-broken-leg
 date: 2005-11-24
 category: Life & Uncertainty
 featured: false

@@ -1,5 +1,6 @@
 ---
 title: "Half Full, Half Empty"
+slug: half-full-half-empty
 date: 2025-05-03
 category: Life & Uncertainty
 featured: true

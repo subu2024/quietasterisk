@@ -1,5 +1,6 @@
 ---
 title: "Obsessing over Time"
+slug: obsessing-over-time
 date: 2023-01-15
 category: Perception, Patterns & Illusion
 featured: false

@@ -1,5 +1,6 @@
 ---
 title: "That Little Moment"
+slug: that-little-moment
 date: 2012-11-23
 category: Love, Loss, and Time
 featured: true

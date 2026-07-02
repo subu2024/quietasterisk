@@ -1,5 +1,6 @@
 ---
 title: "Life's Absurdities, One Therapy Quote at a Time"
+slug: lifes-absurdities-therapy-quotes
 date: 2025-01-20
 category: Life & Uncertainty
 featured: true

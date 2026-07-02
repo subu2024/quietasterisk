@@ -1,5 +1,6 @@
 ---
 title: "Wrinkles on the face"
+slug: wrinkles-on-the-face
 date: 2011-09-08
 category: Life & Uncertainty
 featured: true

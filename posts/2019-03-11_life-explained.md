@@ -1,5 +1,6 @@
 ---
 title: "Life Explained"
+slug: life-explained
 date: 2019-03-11
 category: Life & Uncertainty
 featured: false

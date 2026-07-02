@@ -1,5 +1,6 @@
 ---
 title: "Subscriptions: Cancel Me If You Can"
+slug: subscriptions-cancel-me-if-you-can
 date: 2023-01-08
 category: Chance, Risk & Probability
 featured: true

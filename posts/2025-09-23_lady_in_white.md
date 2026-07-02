@@ -1,5 +1,6 @@
 ---
 title: "The Lady in White"
+slug: lady-in-white
 date: 2025-09-23
 category: Love, Loss, and Time
 featured: false

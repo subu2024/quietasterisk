@@ -1,5 +1,6 @@
 ---
 title: "Glimmer of Hope"
+slug: glimmer-of-hope
 date: 2012-08-08
 category: Love, Loss, and Time
 featured: true

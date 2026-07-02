@@ -1,5 +1,6 @@
 ---
 title: "The Weight of Knowing"
+slug: weight-of-knowing
 date: 2026-05-03
 category: Love, Loss, and Time
 featured: false

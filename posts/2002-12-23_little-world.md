@@ -1,5 +1,6 @@
 ---
 title: "Little World"
+slug: through-a-babys-eyes
 date: 2002-12-23
 category: Life & Uncertainty
 featured: true

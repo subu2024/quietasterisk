@@ -1,5 +1,6 @@
 ---
 title: "Frozen Tears"
+slug: frozen-tears
 date: 2007-08-23
 category: Love, Loss, and Time
 featured: true

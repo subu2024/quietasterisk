@@ -1,5 +1,6 @@
 ---
 title: "The Zillow Tab I Never Close"
+slug: zillow-tab-i-never-close
 date: 2026-05-01
 category: Life & Uncertainty
 featured: true

@@ -1,5 +1,6 @@
 ---
 title: "First Day at School"
+slug: first-day-at-school
 date: 2008-09-02
 category: Life & Uncertainty
 featured: true

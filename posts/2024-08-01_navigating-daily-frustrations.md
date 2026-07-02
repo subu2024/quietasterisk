@@ -1,5 +1,6 @@
 ---
 title: "Navigating Daily Frustrations"
+slug: navigating-daily-frustrations
 date: 2024-08-01
 category: Life & Uncertainty
 featured: false

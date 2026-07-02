@@ -1,5 +1,6 @@
 ---
 title: "Through My Eyes"
+slug: through-my-eyes
 date: 2024-10-27
 category: Perception, Patterns & Illusion
 featured: false

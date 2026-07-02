@@ -1,5 +1,6 @@
 ---
 title: "Those were the days"
+slug: those-were-the-days
 date: 2019-09-08
 category: Life & Uncertainty
 featured: false

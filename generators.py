@@ -88,7 +88,7 @@ def generate_post_pages(posts: List[Post], related_map: Dict[str, List[str]]):
             f.write(content)
 
         from utils import clean_text
-        TEMP_CONTENT += f"TITLE: {post.title}\nDATE: {post.date}\nCONTENT: {clean_text(post.body)[:500]}\n\n"
+        TEMP_CONTENT += f"TITLE: {post.title}\nDATE: {post.date}\nCONTENT: {clean_text(post.body)}\n\n"
 
 
 
@@ -326,7 +326,7 @@ def generate_about():
       <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--color-sand);">
         <p style="margin-bottom: 0.5rem; font-size: 1.125rem;">Warmly,</p>
         <p style="font-style: italic; font-size: 1.25rem; color: var(--color-charcoal); font-weight: 600;">
-          Subu Sangameswar
+          Subu
         </p>
       </div>
       

@@ -1,5 +1,6 @@
 ---
 title: "The Cost of Our Failures"
+slug: cost-of-our-failures
 date: 2024-11-28
 category: Life & Uncertainty
 featured: false

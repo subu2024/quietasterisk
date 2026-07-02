@@ -1,5 +1,6 @@
 ---
 title: "Rational Decision or Is It?"
+slug: is-it-a-rational-decision
 date: 2026-02-01
 category: Chance, Risk & Probability
 featured: true

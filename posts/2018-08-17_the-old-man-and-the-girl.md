@@ -1,5 +1,6 @@
 ---
 title: "The Old Man and The Girl"
+slug: old-man-and-the-girl
 date: 2018-08-17
 category: Love, Loss, and Time
 featured: true

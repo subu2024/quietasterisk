@@ -1,5 +1,6 @@
 ---
 title: "Dreams of Hope"
+slug: dreams-of-hope
 date: 2015-01-10
 category: Love, Loss, and Time
 featured: false

@@ -1,5 +1,6 @@
 ---
 title: "The Invite"
+slug: invitation-to-death
 date: 2013-12-06
 category: Life & Uncertainty
 featured: false

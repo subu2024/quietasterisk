@@ -1,5 +1,6 @@
 ---
 title: "Dopamine Effect"
+slug: dopamine-effect-iphone-launch
 date: 2024-11-03
 category: Chance, Risk & Probability
 featured: true

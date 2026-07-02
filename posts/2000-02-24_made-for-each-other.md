@@ -1,5 +1,6 @@
 ---
 title: "Made for Each Other"
+slug: made-for-each-other
 date: 2000-02-24
 category: Love, Loss, and Time
 featured: true

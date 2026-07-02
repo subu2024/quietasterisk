@@ -1,5 +1,6 @@
 ---
 title: "Page Turn: Whispers of Time"
+slug: page-turn-whispers-of-time
 date: 2023-09-08
 category: Love, Loss, and Time
 featured: false

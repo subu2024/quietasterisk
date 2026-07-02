@@ -1,5 +1,6 @@
 ---
 title: "Tap Tap Tap"
+slug: tap-tap-tap
 date: 2012-08-25
 category: Life & Uncertainty
 featured: false

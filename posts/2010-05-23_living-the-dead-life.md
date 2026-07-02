@@ -1,5 +1,6 @@
 ---
 title: "Living the Dead Life"
+slug: living-the-dead-life
 date: 2010-05-23
 category: Life & Uncertainty
 featured: true

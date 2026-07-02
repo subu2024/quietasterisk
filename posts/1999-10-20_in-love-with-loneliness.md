@@ -1,5 +1,6 @@
 ---
 title: "In love with Loneliness"
+slug: in-love-with-loneliness
 date: 1999-10-20
 category: Love, Loss, and Time
 featured: true

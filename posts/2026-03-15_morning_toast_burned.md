@@ -1,5 +1,6 @@
 ---
 title: "The Morning the Toast Burned Twice"
+slug: toast-burned-twice
 date: 2026-03-15
 category: Chance, Risk & Probability
 featured: false

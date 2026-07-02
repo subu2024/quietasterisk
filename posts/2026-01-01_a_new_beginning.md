@@ -1,5 +1,6 @@
 ---
 title: "A New Beginning"
+slug: a-new-beginning
 date: 2026-01-01
 category: Life & Uncertainty
 featured: false

@@ -1,5 +1,6 @@
 ---
 title: "How to Be (Mostly) Okay"
+slug: how-to-be-mostly-okay
 date: 2025-09-21
 category: Life & Uncertainty
 featured: false

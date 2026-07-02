@@ -1,5 +1,6 @@
 ---
 title: "The Art of Doing Nothing Important"
+slug: art-of-doing-nothing-important
 date: 2026-04-12
 category: Life & Uncertainty
 featured: false

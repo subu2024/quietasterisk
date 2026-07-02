@@ -1,5 +1,6 @@
 ---
 title: "This is Life"
+slug: this-is-life
 date: 2023-07-04
 category: Life & Uncertainty
 featured: true

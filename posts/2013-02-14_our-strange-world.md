@@ -1,5 +1,6 @@
 ---
 title: "Our Strange World"
+slug: our-strange-world
 date: 2013-02-14
 category: Life & Uncertainty
 featured: true

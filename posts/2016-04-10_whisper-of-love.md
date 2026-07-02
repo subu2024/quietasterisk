@@ -1,5 +1,6 @@
 ---
 title: "Whisper of Love"
+slug: whisper-of-love
 date: 2016-04-10
 category: Love, Loss, and Time
 featured: true

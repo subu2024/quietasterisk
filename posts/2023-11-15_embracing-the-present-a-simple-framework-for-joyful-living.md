@@ -1,5 +1,6 @@
 ---
 title: "Embracing the Present: A Simple Framework for Joyful Living"
+slug: embracing-the-present-joyful-living
 date: 2023-11-15
 category: Life & Uncertainty
 featured: false

@@ -1,5 +1,6 @@
 ---
 title: "The Hair Situation"
+slug: the-hair-situation
 date: 2026-04-19
 category: Perception, Patterns & Illusion
 featured: false

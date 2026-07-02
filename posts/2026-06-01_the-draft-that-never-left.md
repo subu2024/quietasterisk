@@ -1,5 +1,6 @@
 ---
 title: "Your Budget Is Fine. Your Baseline Is the Problem."
+slug: budget-vs-baseline-problem
 date: 2026-06-01
 excerpt: "What counts as a necessity and what counts as a splurge depends entirely on what you grew up treating as air"
 category: Perception, Patterns & Illusion

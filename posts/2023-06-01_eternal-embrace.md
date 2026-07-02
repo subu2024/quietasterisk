@@ -1,5 +1,6 @@
 ---
 title: "Eternal Embrace"
+slug: eternal-embrace
 date: 2023-06-01
 category: Love, Loss, and Time
 featured: true

@@ -1,5 +1,6 @@
 ---
 title: "Waiting for Her"
+slug: waiting-for-her
 date: 2011-06-14
 category: Love, Loss, and Time
 featured: false

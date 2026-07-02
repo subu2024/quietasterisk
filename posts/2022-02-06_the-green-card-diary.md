@@ -1,5 +1,6 @@
 ---
 title: "The Green Card Diary"
+slug: green-card-diary
 date: 2022-02-06
 category: Life & Uncertainty
 featured: true

@@ -1,5 +1,6 @@
 ---
 title: "Wrong Signal"
+slug: wrong-signal
 date: 2012-09-08
 category: Love, Loss, and Time
 featured: true

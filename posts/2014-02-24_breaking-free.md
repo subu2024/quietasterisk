@@ -1,5 +1,6 @@
 ---
 title: "Breaking Free"
+slug: breaking-free
 date: 2014-02-24
 category: Life & Uncertainty
 featured: false

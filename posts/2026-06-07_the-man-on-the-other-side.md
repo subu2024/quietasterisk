@@ -1,5 +1,6 @@
 ---
 title: "The Man on the Other Side of the Sidewalk"
+slug: man-on-the-other-sidewalk
 date: 2026-06-07
 excerpt: "On the daily math of not smiling at someone you almost know"
 category: Perception, Patterns & Illusion

@@ -1,5 +1,6 @@
 ---
 title: "I Did Not Buy the House"
+slug: did-not-buy-the-house
 date: 2026-05-21
 category: Life & Uncertainty
 featured: true

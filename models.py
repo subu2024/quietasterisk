@@ -22,16 +22,17 @@ class Post:
     archived: bool
     excerpt: str
     body: str
+    _slug: str = ""
 
     @property
     def slug(self):
         """Generate stable, URL-friendly slug from title + id fallback."""
-        base = self.title or self.path.stem or "untitled"
+        base = self._slug or self.title  or self.path.stem or "untitled"
 
         
         # normalize title into words
         words = re.findall(r'\w+', base)
-        slug_text = "_".join(words).lower()
+        slug_text = "-".join(words).lower()
 
         if not slug_text:
             slug_text = "untitled"

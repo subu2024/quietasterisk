@@ -1,5 +1,6 @@
 ---
 title: "Leashed by Technology: The Adventures of Elon the Human Pet"
+slug: leashed-by-technology-elon-human-pet
 date: 2024-06-09
 category: Perception, Patterns & Illusion
 featured: false

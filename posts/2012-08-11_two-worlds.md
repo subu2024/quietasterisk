@@ -1,5 +1,6 @@
 ---
 title: "Two Worlds"
+slug: two-worlds-one-child
 date: 2012-08-11
 category: Life & Uncertainty
 featured: true

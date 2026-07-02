@@ -1,5 +1,6 @@
 ---
 title: "Nothing but Lust"
+slug: nothing-but-lust
 date: 2004-11-07
 category: Love, Loss, and Time
 featured: false

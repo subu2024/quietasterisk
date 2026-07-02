@@ -1,5 +1,6 @@
 ---
 title: "What have you done for me?"
+slug: what-have-you-done-for-me
 date: 2001-02-16
 category: Love, Loss, and Time
 featured: true

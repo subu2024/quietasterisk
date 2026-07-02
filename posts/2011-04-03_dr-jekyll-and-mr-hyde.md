@@ -1,5 +1,6 @@
 ---
 title: "Dr Jekyll and Mr Hyde"
+slug: dr-jekyll-and-mr-hyde
 date: 2011-04-03
 category: Perception, Patterns & Illusion
 featured: true

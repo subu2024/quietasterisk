@@ -48,6 +48,7 @@ def parse_front_matter(content: str) -> tuple:
 
     # Extract metadata fields
     title = search(r'title:\s*"?(.+?)"?$') or "Untitled"
+    slug = search(r'slug:\s*"?(.+?)"?$') or ""
     date = search(r'date:\s*(.+?)$') or ""
     category = search(r'category:\s*(.+?)$') or "Uncategorized"
     excerpt = search(r'excerpt:\s*"?(.+?)"?$') or ""
@@ -57,7 +58,7 @@ def parse_front_matter(content: str) -> tuple:
     # Extract body content (everything after front matter)
     body = re.sub(r"---\n.*?\n---", '', content, flags=re.DOTALL).strip()
 
-    return title, date, category, featured, archived, excerpt, body
+    return title, slug, date, category, featured, archived, excerpt, body
 
 def process_youtube_embeds(html_content: str) -> str:
     """
@@ -110,6 +111,7 @@ def read_markdown_files(directory: Path) -> List[Post]:
             with open(md_file, encoding="utf-8") as f:
                 (
                     title,
+                    slug,
                     date,
                     category,
                     featured,
@@ -129,6 +131,7 @@ def read_markdown_files(directory: Path) -> List[Post]:
             Post(
                 path=md_file,
                 title=title,
+                _slug=slug,
                 date=date,
                 category=category,
                 featured=featured,

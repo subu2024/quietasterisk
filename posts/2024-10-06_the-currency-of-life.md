@@ -1,5 +1,6 @@
 ---
 title: "The Currency of Life"
+slug: currency-of-life
 date: 2024-10-06
 category: Life & Uncertainty
 featured: false

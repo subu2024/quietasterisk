@@ -11,7 +11,7 @@ def get_modern_styles() -> str:
         CSS string with all styles
     """
     return """
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@400;700&display=swap');
 
 * {
   margin: 0;

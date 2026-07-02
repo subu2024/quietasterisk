@@ -1,5 +1,6 @@
 ---
 title: "Be a Good Little Monkey"
+slug: be-a-good-little-monkey
 date: 2012-10-15
 category: Life & Uncertainty
 featured: true

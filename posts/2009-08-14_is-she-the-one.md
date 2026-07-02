@@ -1,5 +1,6 @@
 ---
 title: "Is she the one?"
+slug: is-she-the-one
 date: 2009-08-14
 category: Love, Loss, and Time
 featured: true

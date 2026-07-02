@@ -1,5 +1,6 @@
 ---
 title: "Probability Is Everywhere - Here's How to Use It Smarter"
+slug: probability-is-everywhere
 date: 2025-07-04
 category: Chance, Risk & Probability
 featured: false

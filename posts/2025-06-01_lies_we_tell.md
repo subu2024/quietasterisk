@@ -1,5 +1,6 @@
 ---
 title: "Lies We Tell Ourselves"
+slug: lies-we-tell-ourselves
 date: 2025-06-01
 category: Life & Uncertainty
 featured: true

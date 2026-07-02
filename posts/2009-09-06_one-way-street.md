@@ -1,5 +1,6 @@
 ---
 title: "One Way Street"
+slug: one-way-street
 date: 2009-09-06
 category: Life & Uncertainty
 featured: true

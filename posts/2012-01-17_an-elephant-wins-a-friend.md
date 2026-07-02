@@ -1,5 +1,6 @@
 ---
 title: "An elephant wins a friend"
+slug: elephant-wins-a-friend
 date: 2012-01-17
 category: Life & Uncertainty
 featured: true

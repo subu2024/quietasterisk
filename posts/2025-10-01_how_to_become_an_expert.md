@@ -1,5 +1,6 @@
 ---
 title: "How to Become an Overnight Expert in Everything"
+slug: overnight-expert-in-everything
 date: 2025-10-01
 category: Life & Uncertainty
 featured: false

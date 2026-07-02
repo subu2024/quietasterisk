@@ -1,5 +1,6 @@
 ---
 title: "The Mansion"
+slug: the-mansion-of-hidden-pain
 date: 2017-01-05
 category: Life & Uncertainty
 featured: false

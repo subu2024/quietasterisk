@@ -1,5 +1,6 @@
 ---
 title: "Rewind - an unfinished story"
+slug: rewind-unfinished-story
 date: 2022-09-08
 category: Life & Uncertainty
 featured: false

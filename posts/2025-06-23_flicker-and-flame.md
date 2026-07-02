@@ -1,5 +1,6 @@
 ---
 title: "Flicker and Flame: How Death Teaches Us to Live"
+slug: flicker-flame-death-teaches-us-to-live
 date: 2025-06-23
 category: Life & Uncertainty
 featured: true

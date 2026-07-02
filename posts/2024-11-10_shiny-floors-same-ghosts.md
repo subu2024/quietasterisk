@@ -1,5 +1,6 @@
 ---
 title: "Shiny Floors, Same Ghosts"
+slug: shiny-floors-same-ghosts
 date: 2024-11-10
 category: Perception, Patterns & Illusion
 featured: false

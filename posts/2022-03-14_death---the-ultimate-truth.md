@@ -1,5 +1,6 @@
 ---
 title: "Death - the Ultimate Truth"
+slug: death-the-ultimate-truth
 date: 2022-03-14
 category: Life & Uncertainty
 featured: true

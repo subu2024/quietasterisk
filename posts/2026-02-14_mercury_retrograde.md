@@ -1,5 +1,6 @@
 ---
 title: "Mercury Is in Retrograde, and So Is My Patience"
+slug: mercury-retrograde-and-my-patience
 date: 2026-02-14
 category: Chance, Risk & Probability
 featured: false

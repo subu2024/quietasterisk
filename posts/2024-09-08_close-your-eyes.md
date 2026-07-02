@@ -1,5 +1,6 @@
 ---
 title: "Close Your Eyes"
+slug: close-your-eyes
 date: 2024-09-08
 category: Love, Loss, and Time
 featured: false

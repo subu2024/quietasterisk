@@ -1,5 +1,6 @@
 ---
 title: "This Unpredictable Life"
+slug: this-unpredictable-life
 date: 2025-07-24
 category: Life & Uncertainty
 featured: false

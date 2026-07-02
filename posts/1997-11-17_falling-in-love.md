@@ -1,5 +1,6 @@
 ---
 title: "Falling in Love"
+slug: falling-in-love
 date: 1997-11-17
 category: Love, Loss, and Time
 featured: true

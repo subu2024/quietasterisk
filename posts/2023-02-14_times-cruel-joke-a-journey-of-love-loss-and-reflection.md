@@ -1,5 +1,6 @@
 ---
 title: "Time's Cruel Joke: A Journey of Love, Loss, and Reflection"
+slug: times-cruel-joke-love-loss
 date: 2023-02-14
 category: Love, Loss, and Time
 featured: false

@@ -1,5 +1,6 @@
 ---
 title: "Almost, and Then Gone"
+slug: almost-and-then-gone
 date: 2026-04-08
 category: Chance, Risk & Probability
 featured: false

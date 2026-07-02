@@ -1,5 +1,6 @@
 ---
 title: "Reflection"
+slug: reflection-in-the-rain
 date: 2011-05-11
 category: Life & Uncertainty
 featured: true

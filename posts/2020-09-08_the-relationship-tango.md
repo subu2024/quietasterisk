@@ -1,5 +1,6 @@
 ---
 title: "The Relationship Tango"
+slug: relationship-tango
 date: 2020-09-08
 category: Love, Loss, and Time
 featured: false

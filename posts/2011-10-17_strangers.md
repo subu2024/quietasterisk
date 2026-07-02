@@ -1,5 +1,6 @@
 ---
 title: "Strangers"
+slug: strangers-under-one-roof
 date: 2011-10-17
 category: Love, Loss, and Time
 featured: true

@@ -1,5 +1,6 @@
 ---
 title: "Kissing Today"
+slug: kissing-today
 date: 2025-06-15
 category: Love, Loss, and Time
 featured: false

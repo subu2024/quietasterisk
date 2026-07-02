@@ -1,5 +1,6 @@
 ---
 title: "The Drunkard"
+slug: the-drunkards-secret
 date: 2010-09-15
 category: Chance, Risk & Probability
 featured: true

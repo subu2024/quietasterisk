@@ -1,5 +1,6 @@
 ---
 title: "Signature"
+slug: your-unique-signature
 date: 2013-09-08
 category: Life & Uncertainty
 featured: true

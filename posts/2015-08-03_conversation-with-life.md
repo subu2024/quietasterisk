@@ -1,5 +1,6 @@
 ---
 title: "Conversation with Life"
+slug: conversation-with-life
 date: 2015-08-03
 category: Life & Uncertainty
 featured: false

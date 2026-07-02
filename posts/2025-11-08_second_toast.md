@@ -1,5 +1,6 @@
 ---
 title: The Second Toast
+slug: the-second-toast
 date: 2025-11-08
 category: Love, Loss, and Time
 featured: false

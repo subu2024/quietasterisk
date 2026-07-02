@@ -1,5 +1,6 @@
 ---
 title: "Gold Medal in Overthinking"
+slug: gold-medal-in-overthinking
 date: 2023-04-09
 category: Life & Uncertainty
 featured: true

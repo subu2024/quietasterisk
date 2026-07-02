@@ -1,5 +1,6 @@
 ---
 title: "Life's Little Scams: A Comedy of Errors"
+slug: lifes-little-scams
 date: 2024-08-21
 category: Chance, Risk & Probability
 featured: false

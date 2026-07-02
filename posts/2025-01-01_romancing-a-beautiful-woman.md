@@ -1,5 +1,6 @@
 ---
 title: "Romancing a Beautiful Woman"
+slug: romancing-a-beautiful-woman
 date: 2025-01-01
 category: Love, Loss, and Time
 featured: false

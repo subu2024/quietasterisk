@@ -1,5 +1,6 @@
 ---
 title: "Those Lazy Days"
+slug: those-lazy-days
 date: 2014-11-20
 category: Life & Uncertainty
 featured: false

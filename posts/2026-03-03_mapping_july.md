@@ -1,5 +1,6 @@
 ---
 title: "Mapping July in December"
+slug: mapping-july-in-december
 date: 2026-03-03
 category: Chance, Risk & Probability
 featured: true

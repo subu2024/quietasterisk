@@ -1,5 +1,6 @@
 ---
 title: "The Shrine of Disney"
+slug: shrine-of-disney
 date: 2010-12-27
 category: Perception, Patterns & Illusion
 featured: true

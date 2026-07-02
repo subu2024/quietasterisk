@@ -1,5 +1,6 @@
 ---
 title: "I Used to Know How to Spell"
+slug: i-used-to-know-how-to-spell
 date: 2026-04-01
 category: Perception, Patterns & Illusion
 featured: true

@@ -1,5 +1,6 @@
 ---
 title: "Perfect Partner"
+slug: perfect-partner
 date: 2007-08-07
 category: Love, Loss, and Time
 featured: true

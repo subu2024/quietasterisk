@@ -1,5 +1,6 @@
 ---
 title: "Thoughts, Problems, and the Space Between"
+slug: thoughts-problems-space-between
 date: 2026-01-17
 category: Life & Uncertainty
 featured: true

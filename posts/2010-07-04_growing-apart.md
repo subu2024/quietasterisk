@@ -1,5 +1,6 @@
 ---
 title: "Growing Apart"
+slug: growing-apart
 date: 2010-07-04
 category: Love, Loss, and Time
 featured: true

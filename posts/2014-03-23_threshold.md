@@ -1,5 +1,6 @@
 ---
 title: "Threshold"
+slug: crossing-the-threshold
 date: 2014-03-23
 category: Life & Uncertainty
 featured: true

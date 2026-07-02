@@ -1,5 +1,6 @@
 ---
 title: "Beautiful"
+slug: beautiful-stranger-on-the-train
 date: 2002-11-27
 category: Love, Loss, and Time
 featured: true

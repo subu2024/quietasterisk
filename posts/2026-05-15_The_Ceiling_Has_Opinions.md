@@ -1,5 +1,6 @@
 ---
 title: "The Ceiling Has Opinions"
+slug: ceiling-has-opinions
 date: 2026-05-15
 category: Life & Uncertainty
 featured: false

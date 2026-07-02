@@ -1,5 +1,6 @@
 ---
 title: "Mom"
+slug: in-memory-of-mom
 date: 2022-08-19
 category: Love, Loss, and Time
 featured: false
