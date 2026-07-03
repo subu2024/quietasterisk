@@ -25,7 +25,7 @@ I enjoyed the immense attention that she gave me. The romance was in full bloom.
 > _perk your ears_  
 > _hear the sound, the whisper of love_
 >
-> - an excerpt from the poem ["Whisper of Love", Apr 2016](2016_04_10_whisper_of_love.html)
+> - an excerpt from the poem ["Whisper of Love", Apr 2016](whisper-of-love.html)
 
 Relationships works in cycles. They start out with romance. It starts being enchanted with the person and progresses into conflictw when getting to see the darker side of each other, and finally repose in commitment; the ability to accept everything as it is.
 
@@ -46,7 +46,7 @@ Ultimately, relationship requires allowing life and love to be just what they ar
 > _In the darkness, you read my face, that I never intend to portray_  
 > _Slowly collecting tears to ease the walk into new_
 >
-> - an excerpt from the poem ["Our Strange World", Feb 2013](2013_02_14_our_strange_world.html)
+> - an excerpt from the poem ["Our Strange World", Feb 2013](our-strange-world.html)
 
 Then it happened .. Suddenly and with a bang. She walked out. It was one of the most painful events in my life. The life that I knew fell apart, tearing everything and damaging the very inner core. The fragile relationship finally collapsed under its own weight.
 
@@ -59,7 +59,7 @@ Unfortunately, Life like time only moves forward. No matter how much you regret 
 > _this tug of war has no real ending_  
 > _leaving my life seesawing in muddled light_
 >
-> - an excerpt from the poem ["Seesaw", Mar 2020](2020_03_05_seesaw.html)
+> - an excerpt from the poem ["Seesaw", Mar 2020](seesaw-love-and-memory.html)
 
 Fast forward few months. And then realization walked in.
 
@@ -73,4 +73,4 @@ She walked out **leaving behind a newer, wiser and a better person than when she
 > _in the arms of time, cozy and cuddled_  
 > _lie me and your sweet memories_
 >
-> - an excerpt from the poem ["You and Me", Nov 2001](2001_11_23_you_and_me.html)
+> - an excerpt from the poem ["You and Me", Nov 2001](you-and-me.html)

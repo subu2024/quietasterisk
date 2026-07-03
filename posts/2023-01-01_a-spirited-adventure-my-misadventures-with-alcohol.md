@@ -32,7 +32,7 @@ eventually I picked up courage to have a beer at a family dinner .. even this ex
 > In his mind, he spoke flawless theories  
 > Which were disjointed words to the people around_
 
-> _an excerpt from the poem ["the drunkard", Sep 2010](https://rhymeandreflection.blogspot.com/2010/09/the-drunkard.html)_
+> _an excerpt from the poem ["the drunkard", Sep 2010](the-drunkards-secret.html)_
 
 **University Life**
 

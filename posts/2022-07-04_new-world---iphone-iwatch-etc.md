@@ -15,30 +15,30 @@ Standing at the traffic light with cars on either side of me, I watch with amuse
 
 The introduction of iPhone in 2000's marked of the beginning of the age of connectivity. People slowly got dragged into this and soon addicted to this artificial world ..
 
-> *Their eyes focused on the iPhone*  
-> *hands typing vigorously*  
-> *oblivious to their surroundings*  
-> *They sat like zombies in the metro passively*  
+> _Their eyes focused on the iPhone_  
+> _hands typing vigorously_  
+> _oblivious to their surroundings_  
+> _They sat like zombies in the metro passively_
 
-> *With a white cable dangling from their ears*  
-> *a weird noise blaring untimely*  
-> *Their feet tapping to silent rhythm*  
-> *they were lost in their gung-ho world frequently*  
+> _With a white cable dangling from their ears_  
+> _a weird noise blaring untimely_  
+> _Their feet tapping to silent rhythm_  
+> _they were lost in their gung-ho world frequently_
 >
-> - an excerpt from the poem ["zombies", 2013](https://rhymeandreflection.blogspot.com/2013/07/zombies.html)
+> - an excerpt from the poem ["zombies", 2013](zombies-of-the-metro.html)
 
 and it is not just our daily life that has been impacted. Our relationships suffer too .. the rise of Tick Toks and Instagrams adds to this craving and deprives nurturing a healthy relationship .. we seldom talk to the spouse next to us but prefer texting .. we are more interested in "others" than someone next to us .. the insatiable FOMO - fear of missing out .. we are constantly looking online with fatal results ..
 
-> *She yearned for him*   
-> *Her eyes scanning the horizon*  
-> *to quickly zoom into him*  
-> *for in him she found her perfect partner*  
+> _She yearned for him_  
+> _Her eyes scanning the horizon_  
+> _to quickly zoom into him_  
+> _for in him she found her perfect partner_
 >
-> *She could not wait to chat*  
-> *to drench him in her emotional rain*  
-> *Narrate every moment of her day*  
-> *to drown him in her sorrow, joy and stain*  
+> _She could not wait to chat_  
+> _to drench him in her emotional rain_  
+> _Narrate every moment of her day_  
+> _to drown him in her sorrow, joy and stain_
 >
-> - an excerpt from the poem ["perfect partner", 2007](https://rhymeandreflection.blogspot.com/2007/08/perfect-partner.html)
+> - an excerpt from the poem ["perfect partner", 2007](perfect-partner.html)
 
 The light changed to green and the cars moved forward. I chuckled while continuing to drive back home.

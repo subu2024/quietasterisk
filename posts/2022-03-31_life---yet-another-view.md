@@ -3,7 +3,7 @@ title: "Life - Yet Another View"
 date: 2022-03-31
 category: Life & Uncertainty
 featured: true
-archived: true
+archived: false
 excerpt: "What is life? Many definitions abound. Over the centuries, many philosophers, religious leaders, ordinary people and gurus of various stripes have dipped their quills in..."
 ---
 
@@ -15,23 +15,23 @@ Life is something that happens to us – intimately, personally. Instead of acce
 
 We chase with a earnestness and a desire that goes like ..
 
-> *In his youth, he chased the dream job*  
-> *Other time, he raced for the beautiful girl with a bob*   
-> *Planning to live someday when he had his time to lob*  
-> *Forgetting the present, he was riding the future cob*  
+> In his youth, he chased the dream job  
+> Other time, he raced for the beautiful girl with a bob  
+> Planning to live someday when he had his time to lob  
+> Forgetting the present, he was riding the future cob
 >
-> *Now a dad, he constantly cared*  
-> *Worrying about his children all day, he prayed*  
-> *His life only revolved around them and not shared*  
-> *Eclipsed by the shadow of his family, change he not dared*  
-> *Now lying pale on his death bed*  
+> Now a dad, he constantly cared  
+> Worrying about his children all day, he prayed  
+> His life only revolved around them and not shared  
+> Eclipsed by the shadow of his family, change he not dared  
+> Now lying pale on his death bed
 >
-> *He realized a little too late instead*  
-> *He had died long back,*  
-> *life that he never lived nor led*  
-> *Today, only his body was getting ready for the heavenly bed*  
+> He realized a little too late instead  
+> He had died long back,  
+> life that he never lived nor led  
+> Today, only his body was getting ready for the heavenly bed
 >
-> - an excerpt from the poem ["Living the Dead Life", May 2010](2010_05_23_living_the_dead_life.html)
+> - an excerpt from the poem ["Living the Dead Life", May 2010](living-the-dead-life.html)
 
 We have to accept that life is not a chase. Instead, embrace it as it is. If we start chasing all the time, then it’s probable that life is something we are looking to escape from.
 
@@ -49,20 +49,20 @@ Life doesn’t remember yesterday nor has plans for tomorrow. It is just as it i
 
 Uncertainty abounds in life. Almost a giant probability model. This uncertainty shapes our world and produces an image of chaos and negativity, making the world seem wrapped in fear and anxiety. Additionally, the pressures imposed by society and its expectations regarding anything we can't touch, feel or see takes away our ability to feel comfortable inside ourselves. Instead of uncertainty making us panic, It should invigorate us. Instead of worrying about the monsters that might be lurking in corners, we should focus on all the amazing things awaiting discovery. Tools like meditation can help bring calm and create room for our inner voice to speak to us.
 
-> *The moment to live is only now*  
-> *Finding the balance between your desire and throw*  
-> *Walking the line between contentment and sorrow*  
-> *Experiencing the pain and pleasure in the field narrow*  
-> *The truth is visible to absorb and grow*  
-> *Today is the only sun you may see flow*  
-> *This hard truth is not difficult to perceive or show*  
-> *Change is the river that washes to flow*  
-> *Leaving nothing but memories that crow*  
-> *Be at peace, all will pass and not grow*  
-> *The pain, the joy, the money and even your estate and dough*  
-> *Wear the apron of contentment and sow*  
-> *bask in sunshine of happiness and glow*  
-> *Without letting go the hope of a sunny arrow*  
-> *While continuing to play the game of your destiny fashion show*  
+> The moment to live is only now  
+> Finding the balance between your desire and throw  
+> Walking the line between contentment and sorrow  
+> Experiencing the pain and pleasure in the field narrow  
+> The truth is visible to absorb and grow  
+> Today is the only sun you may see flow  
+> This hard truth is not difficult to perceive or show  
+> Change is the river that washes to flow  
+> Leaving nothing but memories that crow  
+> Be at peace, all will pass and not grow  
+> The pain, the joy, the money and even your estate and dough  
+> Wear the apron of contentment and sow  
+> bask in sunshine of happiness and glow  
+> Without letting go the hope of a sunny arrow  
+> While continuing to play the game of your destiny fashion show
 >
-> - an excerpt from the poem ["Life Explained", Mar 2019](2019_03_11_life_explained.html)
+> - an excerpt from the poem ["Life Explained", Mar 2019](life-explained.html)
