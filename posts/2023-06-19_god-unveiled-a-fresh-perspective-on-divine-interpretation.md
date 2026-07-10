@@ -1,12 +1,13 @@
 ---
-title: "God Unveiled: A Fresh Perspective on Divine Interpretation"
-date: "2023-06-19"
-category: Life & Uncertainty
+title: 'God Unveiled: A Fresh Perspective on Divine Interpretation'
+date: '2023-06-19'
+category: Authenticity & Vulnerability
 featured: true
-archived: true
-excerpt: "Our intricate and enigmatic brain, a wondrous gift bestowed upon us, holds immense potential and yet presents a conundrum .. bestowing upon us the unparalleled..."
+archived: false
+excerpt: A reflective essay questioning inherited ideas about God, free will, and
+  belief.
+slug: god-unveiled-a-fresh-perspective-on-divine-interpretation
 ---
-
 Our intricate and enigmatic brain, a wondrous gift bestowed upon us, holds immense potential and yet presents a conundrum .. bestowing upon us the unparalleled ability to scrutinize information, strategize, envision, and pioneer. This extraordinary faculty allows us to indulge in the delightful luxury of envisioning a future .. a future brimming with goodness and greatness. However, the same brain prowess also grants us the ability to wander into the abyss of pessimistic reveries, where we conjure up dire scenarios that do not exist .. tormenting our very souls. At times, our imagination even dares to make the impossible frighteningly real.
 
 In moments like these, we yearn for something that grounds us .. that steers our wandering mind back to reality, preventing it from galloping down the wrong path.

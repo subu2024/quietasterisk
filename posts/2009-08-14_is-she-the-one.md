@@ -1,13 +1,12 @@
 ---
-title: "Is she the one?"
+title: Is she the one?
 slug: is-she-the-one
 date: 2009-08-14
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: false
-excerpt: "A playful exploration of searching through appearances before realizing the right partner is the genuine one."
+archived: true
+excerpt: A poem comparing two women's appearances while questioning who is 'the one.'
 ---
-
 That girl with the loud lipstick  
  Her hair set in the salon perfect with zero nick  
  Her dress oozing the fashion shtick  

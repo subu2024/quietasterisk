@@ -1,16 +1,14 @@
 ---
-title: "Sometimes .."
+title: Sometimes ..
 date: 2022-10-01
-category: Love, Loss, and Time
+category: Old Voice
 image: ./images/medina-spahic-NhSwLTcHWvA-unsplash.jpg
 featured: true
-archived: true
-excerpt: "Sometimes, sweet memories ring countless bells in my heart ushering the bygone images as a dart Providing glimpses of you, smiling and smart Sometimes, memories..."
+archived: false
+excerpt: A poem about memories that alternate between comforting and haunting.
+slug: sometimes
 ---
-
-
-
- Sometimes, sweet memories   
+Sometimes, sweet memories   
  ring countless bells in my heart   
  ushering the bygone images as a dart   
  Providing glimpses of you, smiling and smart   

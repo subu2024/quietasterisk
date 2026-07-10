@@ -1,13 +1,13 @@
 ---
-title: "The Art of Doing Nothing Important"
-slug: art-of-doing-nothing-important
+title: The Art of Doing Nothing Important
+slug: the-art-of-doing-nothing-important
 date: 2026-04-12
-category: Life & Uncertainty
+category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: "Life isn’t found in big moments, but in fully noticing the hilariously ordinary ones we usually call “boredom.”"
+excerpt: A reflection on the myth that life should look cinematic, and the quiet dignity
+  of ordinary hours.
 ---
-
 > Life hides in Tuesday’s slowest hour,  
 > In traffic jams and dishwater power  
 > Not later—now is where it starts,  

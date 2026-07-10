@@ -1,12 +1,12 @@
 ---
-title: "Adventures in Stupidity"
+title: Adventures in Stupidity
 date: 2024-05-25
-category: Chance, Risk & Probability
+category: Self-Awareness & EQ
 featured: true
-archived: true
-excerpt: "The year is 2004. I’m feeling all smug and proud of my shiny new blue car. I'm in Washington, DC, trying to park in one..."
+archived: false
+excerpt: A self-deprecating parking mishap story, told with humor and honesty.
+slug: adventures-in-stupidity
 ---
-
 The year is 2004. I’m feeling all smug and proud of my shiny new blue car. I'm in Washington, DC, trying to park in one of the tightest, most claustrophobic parking lots ever. I think I’ve got it all under control until, whoops, I turn the steering wheel just a smidge too much. And then it happens: the dreaded "zzzx" sound as some tiny, pointy thing on the wall decides to give my car a new custom paint job. Genius move, right? I mean, how stupid can I be?   
 
 We all have our moments of brilliance, right? Unfortunately, mine tend to be moments of brilliantly executed stupidity. So, let me regale you with the epic saga of my ongoing battle with common sense, where I turn everyday activities into a series of unfortunate events.

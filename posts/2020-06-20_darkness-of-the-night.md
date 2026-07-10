@@ -1,14 +1,13 @@
 ---
-title: "Darkness of the Night"
+title: Darkness of the Night
 date: 2020-06-20
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "The day scampers quickly giving way to the darkness of the night your many memories crowd tightly teasing me, to haunt and fight Together we..."
+archived: false
+excerpt: A poem about being haunted by memories of someone who left.
+slug: darkness-of-the-night
 ---
-
-  
- The day scampers quickly   
+The day scampers quickly   
  giving way to the darkness of the night   
  your many memories crowd tightly   
  teasing me, to haunt and fight   

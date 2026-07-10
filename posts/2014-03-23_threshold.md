@@ -1,13 +1,12 @@
 ---
-title: "Threshold"
-slug: crossing-the-threshold
+title: Threshold
+slug: threshold
 date: 2014-03-23
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A reflective passage through time urges letting go of the past, embracing uncertainty, and stepping forward into life’s ever-changing unknown."
+excerpt: An abstract poem about crossing into a new, uncertain phase of life.
 ---
-
 Watch that step  
  As you thread higher in time  
  Crossing the threshold  

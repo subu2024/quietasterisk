@@ -1,13 +1,12 @@
 ---
-title: "Nothing but Lust"
+title: Nothing but Lust
 slug: nothing-but-lust
 date: 2004-11-07
-category: Love, Loss, and Time
+category: Old Voice
 featured: false
-archived: false
-excerpt: "A passionate encounter unfolds as two lovers surrender to intense desire, losing themselves in a moment of raw, consuming attraction"
+archived: true
+excerpt: An explicit poem depicting physical desire and a sexual encounter.
 ---
-
 With her auburn colored curls  
  flying in the breeze, she frolicked with desire  
  Her well-shaped breasts danced in rhythm  

@@ -1,13 +1,12 @@
 ---
-title: "Every Gesture, Every Glance"
+title: Every Gesture, Every Glance
 date: 2025-04-15
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "You’re beautiful, I don’t just mean the way you look— it’s in how you laugh, how you move, how you turn a room with just..."
+archived: false
+excerpt: A romantic poem admiring a partner's beauty and presence.
+slug: every-gesture-every-glance
 ---
-
-  
 You’re beautiful,    
 I don’t just mean the way you look—    
 it’s in how you laugh, how you move,    

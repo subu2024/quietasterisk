@@ -1,14 +1,13 @@
 ---
-title: "The Pale Blue Dot"
+title: The Pale Blue Dot
 date: 2024-09-22
-category: Perception, Patterns & Illusion
+category: Old Voice
 featured: true
-archived: true
-excerpt: "Floating in the dark endless sea of space A tiny blue speck, my home, my place This pale blue dot, my world, my own Here..."
+archived: false
+excerpt: A poem inspired by Earth's smallness in the universe, on love and belonging.
+slug: the-pale-blue-dot
 ---
-
-  
- Floating in the dark endless sea of space   
+Floating in the dark endless sea of space   
  A tiny blue speck, my home, my place   
    
  This pale blue dot, my world, my own   

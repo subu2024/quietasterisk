@@ -1,13 +1,13 @@
 ---
-title: "Finding the Signal in a World of Status Updates"
-slug: signal-in-world-of-status-updates
+title: Finding the Signal in a World of Status Updates
+slug: finding-the-signal-in-a-world-of-status-updates
 date: 2025-08-08
-category: Perception, Patterns & Illusion
+category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: "Life is full of loud, distracting noise, but real value comes from noticing the quiet signals—those small, meaningful moments that truly matter."
+excerpt: A sharp, honest take on LinkedIn hustle-culture and finding authenticity
+  within the noise.
 ---
-
 **_I’m excited to announce that I’m joining as …_**
 
 Well, not really. But that’s how it feels every time I open LinkedIn—like I’ve wandered onto a crowded subway platform where everyone’s shouting their wins into a megaphone. Promotions, thought leadership, “Top Voice in 15 Things You Didn’t Know Existed.” You stand there, trying to catch a whisper—a signal—amid the announcements and noise.

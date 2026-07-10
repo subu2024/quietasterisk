@@ -1,13 +1,13 @@
 ---
-title: "I Used to Know How to Spell"
+title: I Used to Know How to Spell
 slug: i-used-to-know-how-to-spell
 date: 2026-04-01
-category: Perception, Patterns & Illusion
+category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: "We didn’t lose our skills—we quietly outsourced them and kept the confidence."
+excerpt: A conversation with his teenager about using ChatGPT for essays raises questions
+  about authentic effort and originality.
 ---
-
 ![i used to spell](i_used_to_spell.png)
 
 I was trying to teach my teenager how to write a proper high school essay when he looked up and asked, almost casually, “Why can’t I just use ChatGPT?”

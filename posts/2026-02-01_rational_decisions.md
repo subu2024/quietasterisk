@@ -1,13 +1,13 @@
 ---
-title: "Rational Decision or Is It?"
-slug: is-it-a-rational-decision
+title: Rational Decision or Is It?
+slug: rational-decision-or-is-it
 date: 2026-02-01
-category: Chance, Risk & Probability
+category: Financial Awareness
 featured: true
 archived: false
-excerpt: "An ordinary life—coffee purchases, missed houses—reveals how quietly and consistently our decisions are shaped by the invisible rules of behavioral economics."
+excerpt: A daily coffee habit that defies his own price complaints becomes a window
+  into irrational 'rational' choices.
 ---
-
 Every morning, I walk to the same Starbucks, stand in the same line, and buy the same coffee I’ve been buying for years. I complain—quietly, internally—about the price every time. I always notice the number on the screen. I always think, _This is getting ridiculous._ Then I tap my card without protest.
 
 This is how most of my economic life goes: **_I notice the price, think it’s absurd, and pay anyway._**

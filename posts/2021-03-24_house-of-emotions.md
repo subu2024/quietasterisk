@@ -1,14 +1,14 @@
 ---
-title: "House of Emotions"
+title: House of Emotions
 date: 2021-03-24
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "Living in the house of emotions the many women fight to seek my attention their intention abstruse when the philistine in me hugs one of..."
+archived: false
+excerpt: A poem personifying emotions like anger and depression as women competing
+  for attention.
+slug: house-of-emotions
 ---
-
-  
- Living in the house of emotions   
+Living in the house of emotions   
  the many women fight to seek my attention   
  their intention abstruse   
  when the philistine in me hugs one of them   

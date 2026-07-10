@@ -1,13 +1,13 @@
 ---
-title: "The Joy of Single hood"
+title: The Joy of Single hood
 date: 2025-01-30
-category: Life & Uncertainty
+category: Love, Loss & Family
 featured: true
-archived: true
-excerpt: "They say life has a peculiar sense of humor, often dropping us into arenas we never signed up for, where the rules seem to change..."
+archived: false
+excerpt: A reflection on an arranged marriage entered by circumstance rather than
+  choice, and what came after.
+slug: the-joy-of-single-hood
 ---
-
-  
 They say life has a peculiar sense of humor, often dropping us into arenas we never signed up for, where the rules seem to change faster than we can learn them. At least, that’s how it’s always felt for me. My entry into marriage, many years ago, wasn’t so much a bold choice as it was an intricate convergence of circumstances — a roll of the cosmic dice that landed me in a union I neither actively sought nor vehemently resisted. Life, in its mischievous wisdom, shuffled the deck, and suddenly there I was, married. It wasn’t bad — in fact, it was quite good, often blissful, though not without its fair share of challenges. And then, one day, life pulled the rug out from under me, and there I was — suddenly single again, standing in my fifties, wondering how on earth I got there .. And once again, I accepted the hand dealt and played along.   
   
 Singleness, I’ve discovered, is a paradox wrapped in freedom. On one hand, it offers an all-you-can-eat buffet of indulgences. Want to wake up at noon without anyone poking you about the “to-do” list? Go ahead. Feel like declaring a week-long strike against the tyranny of showers? Who’s there to stop you? I can whip up an elaborate dinner for one and conveniently “forget” to do the dishes, or lounge on the couch with a beer in hand, binge-watching absurd shows with no one hovering over me suggesting something more “productive.” That nagging, ever-present voice of judgment is blissfully absent, replaced by a glorious silence — the kind that’s both liberating and, let’s be honest, eerily loud.   

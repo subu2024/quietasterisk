@@ -1,13 +1,13 @@
 ---
-title: "Wrinkles on the face"
+title: Wrinkles on the face
 slug: wrinkles-on-the-face
 date: 2011-09-08
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A thoughtful reflection on aging where wrinkles become symbols of memories and lived experiences."
+excerpt: A poem about confronting aging and reflecting on a life's achievements and
+  failures.
 ---
-
 Waking up on this September day  
  She saw her wrinkled image in the mirror  
  Sending her heart in total despair  

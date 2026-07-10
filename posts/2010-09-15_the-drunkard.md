@@ -1,13 +1,12 @@
 ---
-title: "The Drunkard"
-slug: the-drunkards-secret
+title: The Drunkard
+slug: the-drunkard
 date: 2010-09-15
-category: Chance, Risk & Probability
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A reflective portrayal of a man lost in drunken illusion while the world around him sees only disorder."
+excerpt: A poem portraying a man who appears composed while visibly drunk to others.
 ---
-
 His eyes seemed deep in thought  
  Face mesmerized by an unknown joy  
  His hand held a glass of chilled wine  

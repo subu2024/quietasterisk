@@ -1,14 +1,14 @@
 ---
-title: "Pillars of My Life"
+title: Pillars of My Life
 date: 2019-08-31
-category: Life & Uncertainty
+category: Love, Loss & Family
 featured: true
-archived: true
-excerpt: "She was the silent one Bringing me into this world of light Always standing behind patiently accepting as I grew from a child to an..."
+archived: false
+excerpt: A tribute to the mother and aunt who shaped his sense of strength and personal
+  boundaries.
+slug: pillars-of-my-life
 ---
-
-  
- She was the silent one   
+She was the silent one   
  Bringing me into this world of light   
  Always standing behind patiently   
  accepting as I grew from a child to an adult right   

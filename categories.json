@@ -1,14 +1,20 @@
 {
-  "Life & Uncertainty": {
-    "description": "Unpredictability in life, personal growth, existential questions"
+  "Uncertainty": {
+    "description": "probability, randomness, planning vs. letting go, the unpredictability of life"
   },
-  "Love, Loss, and Time": {
-    "description": "Relationships, emotional uncertainty, passage of time"
+  "Love, Loss & Family": {
+    "description": "real, narrative stories about spouse, parents, children, grief"
   },
-  "Perception, Patterns & Illusion": {
-    "description": "Cognitive biases, how we interpret reality, seeing patterns (real or illusory)"
+  "Financial Awareness": {
+    "description": "budgeting, housing, market psychology, everyday financial behavior"
   },
-  "Chance, Risk & Probability": {
-    "description": "Randomness, probability, risk, decision-making under uncertainty"
+  "Authenticity & Vulnerability": {
+    "description": "identity, integrity, immigrant journey, mortality, faith, addiction — the leadership-adjacent qualities"
+  },
+  "Self-Awareness & EQ": {
+    "description": "small daily moments (commutes, coffee, habits) that build into reflections on attention, patience, and presence"
+  },
+  "Old Voice": {
+    "description": "older posts that are still relevant, but represent a different voice or perspective than the current one"
   }
 }

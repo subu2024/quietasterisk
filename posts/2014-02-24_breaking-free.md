@@ -1,13 +1,13 @@
 ---
-title: "Breaking Free"
+title: Breaking Free
 slug: breaking-free
 date: 2014-02-24
-category: Life & Uncertainty
+category: Authenticity & Vulnerability
 featured: false
 archived: false
-excerpt: "A journey of immigration evolves from attachment and nostalgia to emotional detachment, as the speaker redefines identity beyond their homeland."
+excerpt: Leaving India as a young adult becomes the origin story for choosing a self-defined
+  path.
 ---
-
 Today I grew out of India  
  Liberated I stand, breathing free with no remorse  
  With pride on the past yet remaining in present trivia  

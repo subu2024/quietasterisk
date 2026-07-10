@@ -1,13 +1,13 @@
 ---
-title: "Beautiful"
-slug: beautiful-stranger-on-the-train
+title: Beautiful
+slug: beautiful
 date: 2002-11-27
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: false
-excerpt: "A quiet moment of admiration where the narrator is captivated by the beauty of a woman on a train."
+archived: true
+excerpt: A poem admiring a woman's hair and appearance while seated behind her on
+  a train.
 ---
-
 She sat in front of me in the train  
  with her shampooed but still damp hair  
  Oozing a sweet smell of water and her  

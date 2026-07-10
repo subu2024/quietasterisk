@@ -1,13 +1,12 @@
 ---
-title: "Tap Tap Tap"
+title: Tap Tap Tap
 slug: tap-tap-tap
 date: 2012-08-25
-category: Life & Uncertainty
+category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: "Living life one 'tap' at a time, as the mundane becomes endlessly shareable."
+excerpt: A satirical poem about compulsive social media status-updating.
 ---
-
 I wake up in the morning and go tap tap tap tap  
  updating my status on Twitter, Facebook and Tumblr  
  Announcing to the world my quibbles, my fuss, my dripping sap

@@ -1,12 +1,13 @@
 ---
-title: "I Traded You for a Ghost"
+title: I Traded You for a Ghost
 date: 2025-12-06
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "I traded you for a ghost You were here, Next to me I could share A joke A smile A story My body- And everything..."
+archived: false
+excerpt: A poem about choosing solitude over connection and being haunted by that
+  choice.
+slug: i-traded-you-for-a-ghost
 ---
-
 I traded you for a ghost
 
 You were here,  

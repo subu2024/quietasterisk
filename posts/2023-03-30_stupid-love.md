@@ -1,12 +1,13 @@
 ---
-title: "Stupid Love"
+title: Stupid Love
 date: 2023-03-30
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: ".. sometimes, love can be stupid .. seeing a silhouette of a person, the mind wanders and conjures up a complete love story .. it..."
+archived: false
+excerpt: A poem about the mind's tendency to invent whole love stories from a glimpse
+  of a stranger.
+slug: stupid-love
 ---
-
 .. sometimes, love can be stupid .. seeing a silhouette of a person, the mind wanders and conjures up a complete love story .. it does not even pause for a reason .. 
 
 > _As I walked past the door_  

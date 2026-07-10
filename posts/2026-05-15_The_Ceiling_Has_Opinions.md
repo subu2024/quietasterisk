@@ -1,13 +1,13 @@
 ---
-title: "The Ceiling Has Opinions"
-slug: ceiling-has-opinions
+title: The Ceiling Has Opinions
+slug: the-ceiling-has-opinions
 date: 2026-05-15
-category: Life & Uncertainty
+category: Financial Awareness
 featured: false
 archived: false
-excerpt: "A water leak, a reluctant Airbnb stay, and the slow realization that chaos might actually be the point"
+excerpt: A surprise home repair becomes a lesson in how much financial stability quietly
+  depends on luck.
 ---
-
 ## It Started With the Ceiling
 
 There is a specific kind of dread that arrives not with a bang but with a drip.

@@ -1,13 +1,12 @@
 ---
-title: "Dreams of Hope"
+title: Dreams of Hope
 slug: dreams-of-hope
 date: 2015-01-10
-category: Love, Loss, and Time
+category: Old Voice
 featured: false
 archived: false
-excerpt: "Time and fate separate us, leaving hearts alone, wandering through hope, regret, and uncertainty."
+excerpt: A poem about love that once held promise but left both people unresolved.
 ---
-
 [youtube:hJvfz7S1TCQ]
 
 Time my love, has played a cruel joke  

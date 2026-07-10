@@ -1,13 +1,12 @@
 ---
-title: "Those Lazy Days"
+title: Those Lazy Days
 slug: those-lazy-days
 date: 2014-11-20
-category: Life & Uncertainty
+category: Old Voice
 featured: false
 archived: false
-excerpt: "A busy adult nostalgically yearns for the carefree, gloriously lazy days of youth spent cloud-watching, daydreaming, and wandering without purpose or worry."
+excerpt: A nostalgic poem about carefree rooftop afternoons.
 ---
-
 Lying on the rooftop watching the blue sky  
  I tug you close, shielding from the blazing sun  
  Sometimes I sleep curled like a fetus in the sty  

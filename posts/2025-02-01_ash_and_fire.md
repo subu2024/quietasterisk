@@ -1,13 +1,12 @@
 ---
-title: "Ash and Fire"
+title: Ash and Fire
 date: 2025-02-01
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "From my heart, you run away Pride holds my love like sculpted clay Believe it or not, this tale of us Will echo long after..."
+archived: false
+excerpt: A poem about pride, longing, and a love that turned to dust.
+slug: ash-and-fire
 ---
-
-  
 From my heart, you run away   
 Pride holds my love like sculpted clay   
 Believe it or not, this tale of us    

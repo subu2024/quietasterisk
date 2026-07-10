@@ -1,14 +1,12 @@
 ---
-title: "Corona Virus - A Love Story"
+title: Corona Virus - A Love Story
 date: 2022-01-15
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: ".. she walked into my life .. with no fanfare, silently on New Year's day .. I had heard about her and her penchant to..."
+archived: false
+excerpt: COVID-19 personified as a dangerous, seductive lover who upended the world.
+slug: corona-virus-a-love-story
 ---
-
-  
-
 .. she walked into my life .. with no fanfare, silently on New Year's day ..
 
 I had heard about her and her penchant to take over your life. I had heard that she was quick to seek many partners and suffocate their lives. Yet she was known to be scared of vaccines and masks. Many others refused to acknowledge her presence and paid a heavy price with health. She single handedly changed the world ..

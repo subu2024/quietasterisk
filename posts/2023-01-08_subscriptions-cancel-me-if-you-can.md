@@ -1,13 +1,13 @@
 ---
-title: "Subscriptions: Cancel Me If You Can"
+title: 'Subscriptions: Cancel Me If You Can'
 slug: subscriptions-cancel-me-if-you-can
 date: 2023-01-08
-category: Chance, Risk & Probability
+category: Financial Awareness
 featured: true
 archived: false
-excerpt: "Somewhere between car loans, streaming services, and phone plans, life transformed from owning things to endlessly subscribing to them."
+excerpt: The maddening effort of canceling a subscription, and what it reveals about
+  consumer traps.
 ---
-
 I logged into the app to cancel the subscription. There was few more hours before the automatic charge would kick in .. frantically I searched and could not find a easy way to cancel it. Next stop, I started chatting with the automated chat bot .. a few pleasant exchanges but it remained clueless .. next I dialed the phone number .. a stern voice at the other end announced .. we are currently closed. please call between 8:00am and 8:00pm EST .. ah!!! Desperate, I sent an email and a text to the subscription department asking to cancel and waited ….
 
 I did not realize that my life is a tangle of subscriptions .. subscription for movies, music, gym, food, love etc etc .. In fact, I could extrapolate that my house, car, phone, utilities are all some form of recurring expenses .. albeit with different names of mortgage, loan payment but really subscription behind the scenes.

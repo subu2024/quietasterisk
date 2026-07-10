@@ -1,13 +1,12 @@
 ---
-title: "Gold Medal in Overthinking"
+title: Gold Medal in Overthinking
 slug: gold-medal-in-overthinking
 date: 2023-04-09
-category: Life & Uncertainty
+category: Self-Awareness & EQ
 featured: true
 archived: false
-excerpt: "Worry, according to the Cambridge Dictionary, is “to think about problems or unpleasant things that might happen in a way that makes you feel unhappy..."
+excerpt: A candid, funny confession of lifelong worry, anxiety, and overthinking.
 ---
-
 Worry, according to the **Cambridge Dictionary**, is “to think about problems or unpleasant things that might happen in a way that makes you feel unhappy and frightened.”
 
 If that’s the definition, then I have been fluent in worry for most of my life.

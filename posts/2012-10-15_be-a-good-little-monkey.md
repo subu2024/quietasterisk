@@ -1,13 +1,12 @@
 ---
-title: "Be a Good Little Monkey"
+title: Be a Good Little Monkey
 slug: be-a-good-little-monkey
 date: 2012-10-15
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A mischievous, curious little explorer—just like Curious George—turns everyday moments into playful adventures that leave his mom equal parts amazed, exasperated, and amused."
+excerpt: A light, anecdotal poem about a mischievous toddler's antics.
 ---
-
 He tramped with a plan and glow  
  pouring water on the floor to watch the flow  
  Next he decided to wipe it clean  

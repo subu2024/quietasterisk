@@ -1,13 +1,13 @@
 ---
-title: "Death - the Ultimate Truth"
+title: Death - the Ultimate Truth
 slug: death-the-ultimate-truth
 date: 2022-03-14
-category: Life & Uncertainty
+category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: "Our fear of death has shaped religions, myths, and philosophies for centuries, yet the real irony is that in worrying about death we often forget to fully live the life we already have."
+excerpt: A direct essay on why we avoid talking about death honestly, and what facing
+  it plainly might teach.
 ---
-
 Human beings have always been uneasy about death.
 
 We don’t talk about it easily, and when we do, we often disguise the conversation with philosophy, religion, or quiet humor. Yet somewhere deep inside, the fear remains. It has probably been there since the first human being watched a loved one die and wondered what had just happened.

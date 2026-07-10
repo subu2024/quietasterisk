@@ -1,13 +1,13 @@
 ---
-title: "One Way Street"
+title: One Way Street
 slug: one-way-street
 date: 2009-09-06
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A reflection on the irreversible passage of time and the realization that life only moves forward."
+excerpt: A poem about a parent reflecting on raising a child while time moves irreversibly
+  forward.
 ---
-
 I saw the road ahead clear  
  Holding my child, I marched with no fear  
  Behind me was the parent of me dear  

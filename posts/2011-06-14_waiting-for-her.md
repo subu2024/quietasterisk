@@ -1,13 +1,12 @@
 ---
-title: "Waiting for Her"
+title: Waiting for Her
 slug: waiting-for-her
 date: 2011-06-14
-category: Love, Loss, and Time
+category: Old Voice
 featured: false
 archived: false
-excerpt: "A man longs for the loving woman he remembers while daily life slowly turns her into a stranger."
+excerpt: A surreal poem about waking to an unrecognizable, changed relationship.
 ---
-
 Waking up in the morning  
  I turned around to kiss the  
  sweet girl next to me  

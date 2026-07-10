@@ -1,13 +1,12 @@
 ---
-title: "The Girl at Arc Coffee"
-slug: girl-at-arc-coffee
+title: The Girl at Arc Coffee
+slug: the-girl-at-arc-coffee
 date: 2025-11-02
-category: Love, Loss, and Time
+category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: "Amid brief encounters and quiet mornings, Kavya taught me to live fully, love openly, and face loss without shrinking"
+excerpt: A gray morning at a coffee shop marks the unexpected start of a new relationship.
 ---
-
 I met Kavya on one of those gray mornings when the sky pressed down like a low ceiling and everything — even breathing — felt like effort.
 
 Arc Coffee was half-awake, smelling faintly of burnt toast and espresso, humming with quiet discontent. I stood in line, half-asleep, muttering about my cappuccino having more foam than coffee. It was the kind of trivial complaint that fills the space where purpose should be.

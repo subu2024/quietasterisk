@@ -1,13 +1,13 @@
 ---
-title: "The Cost of Our Failures"
-slug: cost-of-our-failures
+title: The Cost of Our Failures
+slug: the-cost-of-our-failures
 date: 2024-11-28
-category: Life & Uncertainty
+category: Authenticity & Vulnerability
 featured: false
 archived: false
-excerpt: "In the quiet ritual of cooking his own meal, Jai carries both the absence of love and the radiant proof of his own resilience—reminding me that some strength is born, not given."
+excerpt: Watching a partner cook effortlessly turns into a reflection on measuring
+  self-worth against someone else's ease.
 ---
-
 [youtube:GQrphwjWyqg]
 
 Jai stood quietly in the kitchen, assembling a modest plate of fish and rice. The aroma drifted through the air, weaving its magic into every corner of the room—so comforting, so familiar. I watched him with a gentle admiration. He approached dinner not as a chore, but as a ritual—something he found almost artisanal, more graceful than anything I might have prepared.

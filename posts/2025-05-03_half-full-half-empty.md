@@ -1,13 +1,13 @@
 ---
-title: "Half Full, Half Empty"
+title: Half Full, Half Empty
 slug: half-full-half-empty
 date: 2025-05-03
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "I stand at crossroads Life’s experiences leave me standing— glass half full, half empty In you walk, dazzling, slipping into my heart with something real..."
+excerpt: A poem about the uncertainty of a relationship's outcome, framed as a glass
+  half full or empty.
 ---
-
 I stand at crossroads  
 Life’s experiences leave me standing—  
 glass half full, half empty

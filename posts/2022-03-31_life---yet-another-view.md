@@ -1,12 +1,13 @@
 ---
-title: "Life - Yet Another View"
+title: Life - Yet Another View
 date: 2022-03-31
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "What is life? Many definitions abound. Over the centuries, many philosophers, religious leaders, ordinary people and gurus of various stripes have dipped their quills in..."
+excerpt: A broad philosophical musing on the many historical definitions of life's
+  purpose.
+slug: life-yet-another-view
 ---
-
 What is life? Many definitions abound. Over the centuries, many philosophers, religious leaders, ordinary people and gurus of various stripes have dipped their quills in ink, bent over their manuscripts, and tried to come up with a satisfactory answer. Perhaps you’re asking yourself the same question right now like me.
 
 Bob Geldof said: “**The purpose of life is life itself**”

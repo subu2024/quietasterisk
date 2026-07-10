@@ -1,13 +1,12 @@
 ---
-title: "Dr Jekyll and Mr Hyde"
+title: Dr Jekyll and Mr Hyde
 slug: dr-jekyll-and-mr-hyde
 date: 2011-04-03
-category: Perception, Patterns & Illusion
+category: Old Voice
 featured: true
 archived: false
-excerpt: "An introspective poem about the inner conflict between the good and dark sides of one's personality."
+excerpt: A poem personifying an internal battle between good and destructive impulses.
 ---
-
 Looking into the mirror  
  As I brushed my teeth  
  I saw my twin  

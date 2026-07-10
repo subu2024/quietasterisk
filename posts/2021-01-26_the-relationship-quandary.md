@@ -1,14 +1,13 @@
 ---
-title: "The Relationship Quandary"
+title: The Relationship Quandary
 date: 2021-01-26
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "Some call it a wild ride together a rollercoaster of emotions, desire in cold weather offering nothing more than a companionship to savor Yet freely..."
+archived: false
+excerpt: A poem about embracing the instability and unpredictability of a relationship.
+slug: the-relationship-quandary
 ---
-
-  
- Some call it a wild ride together   
+Some call it a wild ride together   
  a rollercoaster of emotions, desire in cold weather   
  offering nothing more than a companionship to savor   
  Yet freely embrace this instability of a relationship tether   

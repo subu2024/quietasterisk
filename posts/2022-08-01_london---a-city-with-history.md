@@ -1,12 +1,13 @@
 ---
-title: "London - a modern city with history"
+title: London - a modern city with history
 date: 2022-08-01
-category: Perception, Patterns & Illusion
+category: Old Voice
 featured: true
 archived: true
-excerpt: "Landing at Heathrow, I half-expected chaos: long lines, frantic announcements, lost luggage. Instead, it was almost disappointingly smooth. Passport scanned, stamp in hand, and I..."
+excerpt: A travel reflection on London's blend of smooth modernity and centuries of
+  history.
+slug: london-a-modern-city-with-history
 ---
-
 Landing at Heathrow, I half-expected chaos: long lines, frantic announcements, lost luggage. Instead, it was almost disappointingly smooth. Passport scanned, stamp in hand, and I was officially in London. No drama. Just history waiting outside the gates.  
 
 ## History  

@@ -1,13 +1,12 @@
 ---
-title: "Leashed by Technology: The Adventures of Elon the Human Pet"
-slug: leashed-by-technology-elon-human-pet
+title: 'Leashed by Technology: The Adventures of Elon the Human Pet'
+slug: leashed-by-technology-the-adventures-of-elon-the-human-pet
 date: 2024-06-09
-category: Perception, Patterns & Illusion
+category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: "A human navigates life as a pampered “pet” to their AI, reflecting on freedom, control, and the absurdity of luxury without choice."
+excerpt: A satirical future where AI 'adopts' humans, a sharp take on technology dependence.
 ---
-
 **Year 2050**
 
 I remember the day my AI came to adopt me like it was yesterday. There I was, in the adoption center, wide-eyed, a little trembling, like a human on Christmas morning—or maybe like a dog meeting its new owner for the first time. I had heard the stories: AI masters could be controlling, exacting, efficient. But also strangely caring, like overprotective parents who never sleep and always notice if you didn’t stretch before breakfast.

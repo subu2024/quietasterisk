@@ -1,13 +1,12 @@
 ---
-title: "Shades of Tree"
+title: Shades of Tree
 date: 2015-06-24
-category: Perception, Patterns & Illusion
+category: Old Voice
 featured: true
-archived: true
-excerpt: "This summer day, the long arching wings of the tree shielding me from the blaze of the furious sun keeping me cool in the afternoon..."
+archived: false
+excerpt: A poem about finding comfort and shade under a tree on a hot day.
+slug: shades-of-tree
 ---
-
-  
 > This summer day, the long arching wings of the tree   
 > shielding me from the blaze of the furious sun   
 > keeping me cool in the afternoon time   

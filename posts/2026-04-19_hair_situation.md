@@ -1,13 +1,13 @@
 ---
-title: "The Hair Situation"
+title: The Hair Situation
 slug: the-hair-situation
 date: 2026-04-19
-category: Perception, Patterns & Illusion
+category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: "The preferences we never chose are often the ones that reveal us most clearly — if we're honest enough to look"
+excerpt: A small daily grooming ritual becomes a lens for noticing how much of behavior
+  runs on autopilot.
 ---
-
 I've been thinking about the fridge thing lately.
 
 You know the one. You walk to the refrigerator, open it, stand there for a full ten seconds like you're waiting for a divine revelation, then close it having achieved nothing. You weren't even hungry. You just .. went. Some internal process issued a command, and your body obeyed without asking questions.

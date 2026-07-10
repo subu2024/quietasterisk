@@ -1,13 +1,12 @@
 ---
-title: "The Invite"
-slug: invitation-to-death
+title: The Invite
+slug: the-invite
 date: 2013-12-06
-category: Life & Uncertainty
+category: Old Voice
 featured: false
 archived: false
-excerpt: "A man confronts a terminal cancer diagnosis with initial shock and rage, but fueled by love for his family, defiantly refuses death's invitation and chooses to fight."
+excerpt: A poem about a cancer diagnosis and the anger and fear that follow.
 ---
-
 The doctor pronounced the verdict  
  The cancer had taken over his world of breathe  
  The soft comfortable voice masked the dire predict  

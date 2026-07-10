@@ -1,13 +1,13 @@
 ---
-title: "Rewind - an unfinished story"
-slug: rewind-unfinished-story
+title: Rewind - an unfinished story
+slug: rewind-an-unfinished-story
 date: 2022-09-08
-category: Life & Uncertainty
+category: Authenticity & Vulnerability
 featured: false
 archived: false
-excerpt: "A mid-air scare triggers a flood of memories about a lost love, revealing the lingering battle between heart, ego, and the ache of what might have been."
+excerpt: A violent bout of airplane turbulence forces a sudden, visceral confrontation
+  with mortality.
 ---
-
 The airplane shuddered violently .. tethering in the thin air at 37,000 feet while speeding at 527 miles per hour .. the jolt pushed the hostess down .. everyone was screaming .. the lady on my right grabbed me hard by wrist while I was pulled away from my seat stretching my seatbelt. The time stood still ..
 
 I'm on a flight to USA .. the jitter shuffles my brain cells .. instantly switching my focus from the movie on the screen to the present situation while bringing to the front many images from the past in a fast rewind.

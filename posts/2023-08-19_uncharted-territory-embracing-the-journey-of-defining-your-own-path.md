@@ -1,12 +1,12 @@
 ---
-title: "Uncharted Territory: Embracing the Journey of Defining Your Own Path"
+title: 'Uncharted Territory: Embracing the Journey of Defining Your Own Path'
 date: 2023-08-19
-category: Life & Uncertainty
+category: Authenticity & Vulnerability
 featured: true
-archived: true
-excerpt: "A note to my son in his senior year in college .. and senior year college begins .. ah! college days .. the days of..."
+archived: false
+excerpt: A letter to his son entering college about finding one's own unique path.
+slug: uncharted-territory-embracing-the-journey-of-defining-your-own-path
 ---
-
 _A note to my son in his senior year in college_
 
 .. and senior year college begins ..

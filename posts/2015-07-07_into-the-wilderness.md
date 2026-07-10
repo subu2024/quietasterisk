@@ -1,13 +1,12 @@
 ---
-title: "Into the Wilderness"
+title: Into the Wilderness
 date: 2015-07-07
-category: Life & Uncertainty
+category: Old Voice
 featured: true
-archived: true
-excerpt: "Standing at the doors of the jungle peering into the unknown dark horizon beholding the strange world work and fumble you smile with joy and..."
+archived: false
+excerpt: A poem about the fear and thrill of stepping into the unknown.
+slug: into-the-wilderness
 ---
-
-  
 > Standing at the doors of the jungle  
 >  peering into the unknown dark horizon  
 >  beholding the strange world work and fumble  

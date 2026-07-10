@@ -1,13 +1,13 @@
 ---
-title: "The Beautiful Absurdity of Waking Up"
-slug: beautiful-absurdity-of-waking-up
+title: The Beautiful Absurdity of Waking Up
+slug: the-beautiful-absurdity-of-waking-up
 date: 2024-10-01
-category: Life & Uncertainty
+category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: "A parent moves through the chaotic sweetness of a morning routine with his son, finding quiet beauty in the everyday."
+excerpt: An early alarm and the daily negotiation with oneself over whether to get
+  up.
 ---
-
 Ah, the early morning… the hour when dreams still cling to the corners of your mind, whispering sweet nothings, while your alarm clock plays its subtle warning. It’s 5:30 AM, and I’m groaning into my pillow, contemplating the profound question: why on earth did I set that alarm? The thought of indulging in a few more minutes of blissful oblivion dances teasingly in my head. It’s a delicate negotiation — one I usually lose.
 
 In my half-asleep daze, I stumble toward the kitchen, my legs still tangled in last night’s hopes and dreams. I switch on the coffee pot, and the rich, earthy aroma fills the air, wrapping around me like a warm, caffeinated hug. Outside, the sun plays peekaboo with the horizon, slowly prying itself away from the cozy embrace of night.

@@ -1,13 +1,13 @@
 ---
-title: "Strangers"
-slug: strangers-under-one-roof
+title: Strangers
+slug: strangers
 date: 2011-10-17
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A melancholy look at a marriage where two people live together yet remain emotionally distant strangers."
+excerpt: A poem about two people bound by circumstance who remain emotionally distant
+  strangers.
 ---
-
 Me and you in a relation  
  Bound by children, tradition, without any reason  
  Day after day that we spend together  

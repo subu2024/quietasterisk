@@ -1,13 +1,12 @@
 ---
-title: "Frozen Tears"
+title: Frozen Tears
 slug: frozen-tears
 date: 2007-08-23
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A haunting poem about a child whose innocence is destroyed by a brutal act of violence."
+excerpt: A poem about a child permanently harmed by a violent act.
 ---
-
 The tears dried at the source  
  The time froze for the moment  
  The innocence was violently ripped away  

@@ -1,13 +1,13 @@
 ---
-title: "The Man on the Other Side of the Sidewalk"
-slug: man-on-the-other-sidewalk
+title: The Man on the Other Side of the Sidewalk
+slug: the-man-on-the-other-side-of-the-sidewalk
 date: 2026-06-07
-excerpt: "On the daily math of not smiling at someone you almost know"
-category: Perception, Patterns & Illusion
+excerpt: A brief moment with a stranger on the commute raises the question of who
+  we decide deserves a smile.
+category: Self-Awareness & EQ
 featured: true
 archived: false
 ---
-
 > Two strangers split the same sidewalk—  
 > a flicker of familiarity, a face held flat.  
 > How many steps does it take to decide  

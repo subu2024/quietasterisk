@@ -1,13 +1,13 @@
 ---
-title: "Seven Minutes Until Arrival"
+title: Seven Minutes Until Arrival
 slug: seven-minutes-until-arrival
 date: 2026-01-11
-category: Life & Uncertainty
+category: Uncertainty
 featured: false
 archived: false
-excerpt: "A quiet metro meditation on memory, identity, and the freedom of not being the voice in our heads"
+excerpt: A delayed train becomes a meditation on whether 'arriving,' in transit and
+  in life, is ever really a promise.
 ---
-
 Most mornings begin the same way. I stand at the metro stop two blocks from my apartment, coffee cooling too fast in my hand, watching the digital sign confidently insist the train is “arriving” in the next few minutes. It will say this for a while. Sometimes for a very long while. Long enough for me to consider whether arriving is more of a suggestion than a promise.
 
 This is usually when my mind starts doing what it does best: narrating, complaining, replaying yesterday, forecasting disaster. I think about the email I forgot to answer, the conversation I wish I’d handled better, the strange ache in my knee that Google insists is either nothing or the beginning of the end. I briefly wonder if everyone else on the platform is calmer, wiser, or simply better at pretending.

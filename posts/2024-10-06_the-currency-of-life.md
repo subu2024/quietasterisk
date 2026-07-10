@@ -1,13 +1,13 @@
 ---
-title: "The Currency of Life"
-slug: currency-of-life
+title: The Currency of Life
+slug: the-currency-of-life
 date: 2024-10-06
-category: Life & Uncertainty
+category: Financial Awareness
 featured: false
 archived: false
-excerpt: "A simple argument about costly running shoes becomes a meditation on how money quietly runs the theater of our lives."
+excerpt: A kid's request for expensive sneakers turns into a real conversation about
+  values and money.
 ---
-
 The day kicked off with the all-too-familiar request for a pair of _NIKE_ running shoes costing a small fortune. The justification? They were the golden ticket to the hallowed halls of the school running club. The conversation? A meandering river of “Why can’t I have nice things?” and “But everyone else has them!” — the classic plea of youth, wrapped neatly in entitlement.
 
 As the conversation drifted, it inevitably led to that omnipresent specter: money. That glorified green paper — or the shimmering digits on our screens — whose quiet power looms larger than we care to admit.

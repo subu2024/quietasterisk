@@ -1,14 +1,14 @@
 ---
-title: "Shadowed love"
+title: Shadowed love
 date: 2018-09-16
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "She followed me always staying in the vicinity letting me aware, she was always there My shadow, my loneliness I loved her never yet I..."
+archived: false
+excerpt: A poem personifying depression, isolation, and anxiety as a persistent secret
+  companion.
+slug: shadowed-love
 ---
-
-  
- She followed me  
+She followed me  
  always staying in the vicinity  
  letting me aware, she was always there  
  My shadow, my loneliness  

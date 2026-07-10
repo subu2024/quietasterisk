@@ -1,13 +1,12 @@
 ---
-title: "This Unpredictable Life"
+title: This Unpredictable Life
 slug: this-unpredictable-life
 date: 2025-07-24
-category: Life & Uncertainty
+category: Old Voice
 featured: false
 archived: false
-excerpt: "A reflection on life’s unpredictability, where chance, loss, and fleeting moments intertwine to create meaning, resilience, and quiet hope."
+excerpt: A rhyming poem on fate, chance encounters, and life's unpredictability.
 ---
-
 Strangers meet and worlds collide,  
 It’s been like this since time began.  
 Odd fits, wrong turns, surprise goodbyes —  

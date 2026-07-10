@@ -1,13 +1,13 @@
 ---
-title: "The Plan Was Never the Plan"
+title: The Plan Was Never the Plan
 date: 2026-07-04
-slug: plan-was-never-the-plan
-excerpt: "A recurring question about long-term planning quietly reveals the invisible frameworks people use to navigate a universe that never agreed to behave"
-category: Life & Uncertainty
+slug: the-plan-was-never-the-plan
+excerpt: A stranger's color-coded planner sparks a meditation on why some people plan
+  obsessively and others refuse to.
+category: Uncertainty
 featured: true
 archived: false
 ---
-
 The first time I noticed it, I was waiting for a delayed train, staring at a departure board that kept pushing the time forward in five-minute increments — the classic small humiliation of public transit — and the man next to me was doing something I found quietly strange. He was writing in a paper planner. Not a phone. A planner. With tabs. Color-coded, from what I could see, in a way that suggested genuine emotional investment.
 
 It was a Tuesday on a hot June morning. Nothing about the scene was dramatic. But I kept looking at that planner and thinking: _what does he know that I don't?_

@@ -1,13 +1,12 @@
 ---
-title: "In love with Loneliness"
+title: In love with Loneliness
 slug: in-love-with-loneliness
 date: 1999-10-20
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A dark metaphorical poem where loneliness appears as a seductive yet abandoning companion."
+excerpt: A poem personifying loneliness as a seductive, ever-present companion.
 ---
-
 A damsel called Loneliness  
  captivates me with her dark smile
 

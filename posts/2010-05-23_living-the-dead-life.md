@@ -1,13 +1,13 @@
 ---
-title: "Living the Dead Life"
+title: Living the Dead Life
 slug: living-the-dead-life
 date: 2010-05-23
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A life story showing how constantly postponing happiness can lead to a lifetime never truly lived."
+excerpt: A poem tracing a life spent always chasing the next stage instead of living
+  the present.
 ---
-
 As an eight year old, he lived like a king  
  Immersed in the little world with a baby zing  
  Soon he was forced to imbibe the knowledge drink  

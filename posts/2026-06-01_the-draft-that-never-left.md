@@ -1,13 +1,13 @@
 ---
-title: "Your Budget Is Fine. Your Baseline Is the Problem."
-slug: budget-vs-baseline-problem
+title: Your Budget Is Fine. Your Baseline Is the Problem.
+slug: your-budget-is-fine-your-baseline-is-the-problem
 date: 2026-06-01
-excerpt: "What counts as a necessity and what counts as a splurge depends entirely on what you grew up treating as air"
-category: Perception, Patterns & Illusion
+excerpt: An unsent email about money reveals that financial struggle is often about
+  a silently shifting baseline, not the budget.
+category: Financial Awareness
 featured: true
 archived: false
 ---
-
 # Your Budget Is Fine. Your Baseline Is the Problem.
 
 The draft sits in there. Not deleted, not sent. Just hovering in the Drafts folder the way unsent things do — with a subject line that felt precise once and now reads like something from a slightly different life.

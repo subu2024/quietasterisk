@@ -1,13 +1,12 @@
 ---
-title: "Close Your Eyes"
+title: Close Your Eyes
 slug: close-your-eyes
 date: 2024-09-08
-category: Love, Loss, and Time
+category: Old Voice
 featured: false
 archived: false
-excerpt: "A reflective plea to pause amid life’s rush, remember a lost connection, and quietly reckon with the weight of past choices and unspoken pain."
+excerpt: A poem urging a pause to remember love and moments that have slipped away.
 ---
-
 Rushing through the bustle, the days feel the same,  
  Could you pause today, just a second, step off the fast lane?  
  Close your eyes, breathe deep, and forget the game,  

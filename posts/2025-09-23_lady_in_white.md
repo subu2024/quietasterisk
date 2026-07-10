@@ -1,13 +1,12 @@
 ---
-title: "The Lady in White"
-slug: lady-in-white
+title: The Lady in White
+slug: the-lady-in-white
 date: 2025-09-23
-category: Love, Loss, and Time
+category: Old Voice
 featured: false
 archived: false
-excerpt: "A fleeting encounter on a train captures a moment of quiet, unattainable beauty that lingers as a bittersweet memory"
+excerpt: A poem observing a stranger on a train and imagining her inner world.
 ---
-
 Elegant, with a hint of smile,  
 draped in floral white,  
 her shoes whispered grace  

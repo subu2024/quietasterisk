@@ -1,13 +1,13 @@
 ---
-title: "Caught Between Two Worlds"
+title: Caught Between Two Worlds
 slug: caught-between-two-worlds
 date: 2000-08-24
-category: Life & Uncertainty
+category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: "An introspective essay about immigrants torn between returning home and staying in the comfort of a new country."
+excerpt: A sunset triggers the recurring, unresolved question of whether to move back
+  to India after years abroad.
 ---
-
 There I was, standing in my living room, watching the sun take its sweet time setting. Twilight time .. it’s got that magic .. Perfect weather, the right mood, and an atmosphere that just screams "think about your life choices." Naturally, my brain decided to wander down this road .. What’s the deal with life anyway? .. and out of nowhere, the classic question popped into my head: should I go back to India? It's been eight years since I set foot in the land of the brave and the home of the free. And let's not forget, even Bombay feels like a foreign land to me now, so we're talking about a solid eleven years of away from the place that I grew up.
 
 Every kid in India dreams about coming to the US. Seriously, it's like a rite of passage. Maybe it's the leftover British influence, who knows? The Brits might've left our shores, but they sure didn't leave our minds.

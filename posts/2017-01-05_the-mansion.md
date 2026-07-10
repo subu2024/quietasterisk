@@ -1,13 +1,13 @@
 ---
-title: "The Mansion"
-slug: the-mansion-of-hidden-pain
+title: The Mansion
+slug: the-mansion
 date: 2017-01-05
-category: Life & Uncertainty
+category: Old Voice
 featured: false
 archived: false
-excerpt: "A portrayal of a seemingly perfect, wealthy life masking control, emotional loss, and unseen suffering behind a carefully crafted facade."
+excerpt: A poem contrasting a wealthy host's outward pride with his wife's hidden
+  unhappiness.
 ---
-
 He welcomed the guests with a forced smile  
  Ushering them into the palace he built  
  Hidden in the art and decor for a mile  

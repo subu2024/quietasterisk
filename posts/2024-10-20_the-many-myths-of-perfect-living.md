@@ -1,12 +1,13 @@
 ---
-title: "The Many Myths of Perfect Living"
+title: The Many Myths of Perfect Living
 date: 2024-10-20
-category: Perception, Patterns & Illusion
+category: Self-Awareness & EQ
 featured: true
-archived: true
-excerpt: "I keep noticing how much of life is made up of tiny chases. Not the grand, dramatic ones—the “quit your job, buy a ticket, change..."
+archived: false
+excerpt: A look at the endless 'tiny chases,' like the perfect couch, that we mistake
+  for meaningful pursuit.
+slug: the-many-myths-of-perfect-living
 ---
-
 I keep noticing how much of life is made up of tiny chases. Not the grand, dramatic ones—the “quit your job, buy a ticket, change your life” kind. No, I mean the little chases: the hunt for the right brand of olive oil, the endless scrolling for the “perfect” couch that looks cozy in the picture but turns out to be the same lumpy shape as the last one you bought. Sometimes I stop and laugh at myself. Do these things really matter? Probably not. And yet, there I am, caught up in them, like everyone else.  
 
 The funny part is, while I’m caught up chasing these tiny details, life is sitting right there in front of me—unfolding, unfiltered, and usually not very Instagram-worthy. Meanwhile, social media serves me highlight reels of strangers drinking wine on rooftops, couples who never seem to argue about the dishes, and families smiling as if no one has ever raised their voice over Monopoly. And I wonder, in a quiet, guilty moment: is everyone else living the dream, and I somehow missed the invitation?  

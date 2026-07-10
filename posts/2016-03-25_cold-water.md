@@ -1,13 +1,12 @@
 ---
-title: "Cold Water"
+title: Cold Water
 date: 2016-03-25
-category: Life & Uncertainty
+category: Old Voice
 featured: true
-archived: true
-excerpt: "Jumping into the cold cold water I feel my shivering lips go pritter-pratter All other senses stand numb with no matter Jumping into the cold..."
+archived: false
+excerpt: A poem about the shock and eventual comfort of jumping into cold water.
+slug: cold-water
 ---
-
-  
 > Jumping into the cold cold water  
 >  I feel my shivering lips go pritter-pratter   
 >  All other senses stand numb with no matter  

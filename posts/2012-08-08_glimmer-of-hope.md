@@ -1,13 +1,12 @@
 ---
-title: "Glimmer of Hope"
+title: Glimmer of Hope
 slug: glimmer-of-hope
 date: 2012-08-08
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A tender moment of comfort where closeness with a loved one briefly restores hope."
+excerpt: A romantic poem about reviving passion and hope in an embrace.
 ---
-
 Tired and exhausted, I rush back to her  
 Embracing her from behind, I rest my head  
 On her dark, black cascade of hair  

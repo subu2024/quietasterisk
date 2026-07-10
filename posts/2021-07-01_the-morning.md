@@ -1,13 +1,12 @@
 ---
-title: "The Morning"
+title: The Morning
 date: 2021-07-01
-category: Life & Uncertainty
+category: Old Voice
 featured: true
-archived: true
-excerpt: "The gushing river refused to stop Taking yesterday through the fall Renewing the space for a bright today without worrying about the debris big or..."
+archived: false
+excerpt: A short poetic fragment about a river renewing itself each day.
+slug: the-morning
 ---
-
-  
 > The gushing river refused to stop   
 > Taking yesterday through the fall   
 > Renewing the space for a bright today   

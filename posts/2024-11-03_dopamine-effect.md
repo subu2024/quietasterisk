@@ -1,13 +1,13 @@
 ---
-title: "Dopamine Effect"
-slug: dopamine-effect-iphone-launch
+title: Dopamine Effect
+slug: dopamine-effect
 date: 2024-11-03
-category: Chance, Risk & Probability
+category: Self-Awareness & EQ
 featured: true
 archived: false
-excerpt: "Life’s a chase for fleeting thrills—whether iPhones or kisses—always rising, always fading."
+excerpt: The anticipation-and-letdown cycle, from product launches to dating, examined
+  honestly.
 ---
-
 Every year, we wait,  
  a buzz in the air,  
  the promise of something new,  

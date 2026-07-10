@@ -1,13 +1,13 @@
 ---
-title: "Dream Girl"
+title: Dream Girl
 date: 2020-10-11
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "At the most inopportune time, At the least expected place, She stood inconspicuous, Dwarfed by the many who towered over her- Unknowingly becoming the person..."
+archived: false
+excerpt: A poem/narrative about an unexpected friendship that blossoms into something
+  more.
+slug: dream-girl
 ---
-
-  
 At the most inopportune time,  
 At the least expected place,  
 She stood inconspicuous,  

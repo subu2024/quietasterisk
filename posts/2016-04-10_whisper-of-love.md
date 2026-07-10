@@ -1,13 +1,12 @@
 ---
-title: "Whisper of Love"
+title: Whisper of Love
 slug: whisper-of-love
 date: 2016-04-10
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
 archived: false
-excerpt: "Two souls find that love speaks loudest in shared silence, where fog, forest, and clasped hands need no words."
+excerpt: A poem about a quiet, wordless walk shared with someone loved.
 ---
-
 Two people walking in the woods  
  clasping hands, leaning in as they should  
  nothing said but silence engulfing the hood  

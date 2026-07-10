@@ -1,13 +1,12 @@
 ---
-title: "Reflection"
-slug: reflection-in-the-rain
+title: Reflection
+slug: reflection
 date: 2011-05-11
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A lyrical meditation on nature’s beauty and the peaceful emotions it awakens."
+excerpt: A sensory nature poem about rain, wind, and twilight.
 ---
-
 The cool droplets of water raining  
  Persuades the harsh sun to calm down finitely  
  Sensuously wrapping its arms around me  

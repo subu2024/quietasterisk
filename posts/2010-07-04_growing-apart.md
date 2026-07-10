@@ -1,13 +1,12 @@
 ---
-title: "Growing Apart"
+title: Growing Apart
 slug: growing-apart
 date: 2010-07-04
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A somber poem about relationships slowly eroding as time and changing priorities build emotional distance."
+excerpt: A poem about a relationship slowly eroded by changing priorities.
 ---
-
 Time creates the divide  
  You and I will recognize  
  Growing slowly apart  

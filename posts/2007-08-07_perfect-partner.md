@@ -1,13 +1,12 @@
 ---
-title: "Perfect Partner"
+title: Perfect Partner
 slug: perfect-partner
 date: 2007-08-07
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A story of emotional dependence where a woman falls deeply for a man she knows only through a virtual world."
+excerpt: A poem idealizing a partner as an emotional refuge.
 ---
-
 She yearned for him  
  Her eyes scanning the horizon  
  to quickly zoom into him  

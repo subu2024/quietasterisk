@@ -1,13 +1,13 @@
 ---
-title: "Shifting Lens"
+title: Shifting Lens
 date: 2025-04-01
-category: Perception, Patterns & Illusion
+category: Old Voice
 featured: true
-archived: true
-excerpt: "Nothing to blame, no one to hold accountable— only moments, choices, woven from what I knew, what felt right beneath my hands I move forward,..."
+archived: false
+excerpt: An abstract poem about how perspective on one's own choices changes with
+  time.
+slug: shifting-lens
 ---
-
-  
 Nothing to blame,   
 no one to hold accountable—    
 only moments, choices,     

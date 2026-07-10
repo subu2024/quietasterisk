@@ -1,14 +1,14 @@
 ---
-title: "Awakening"
+title: Awakening
 date: 2020-08-21
-category: Life & Uncertainty
+category: Old Voice
 featured: true
-archived: true
-excerpt: "Today I stand awakened Asking questions that I seldom asked Who am I? Why am I alive? What is my purpose? Feeling a deep sense..."
+archived: false
+excerpt: A poem about spiritual detachment and finding inner peace by letting go of
+  desire.
+slug: awakening
 ---
-
-  
- Today I stand awakened   
+Today I stand awakened   
  Asking questions that I seldom asked   
  Who am I? Why am I alive? What is my purpose?   
    

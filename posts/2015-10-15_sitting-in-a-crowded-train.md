@@ -1,13 +1,13 @@
 ---
-title: "Sitting in a Crowded Train"
+title: Sitting in a Crowded Train
 date: 2015-10-15
-category: Life & Uncertainty
+category: Old Voice
 featured: true
-archived: true
-excerpt: "Sitting in the crowded train Letting wild thoughts run in the brain Watching the I66 get blanketed with rain Counting the stopped traffic and drivers..."
+archived: false
+excerpt: A poem observing strangers and reflections during a crowded, rainy train
+  commute.
+slug: sitting-in-a-crowded-train
 ---
-
-  
 > Sitting in the crowded train  
 >  Letting wild thoughts run in the brain  
 >  Watching the I66 get blanketed with rain  

@@ -1,12 +1,13 @@
 ---
-title: "The Probability of Aliens, and Other Things I Can’t Predict"
+title: The Probability of Aliens, and Other Things I Can’t Predict
 date: 2026-02-22
-category: Chance, Risk & Probability
+category: Uncertainty
 featured: false
 archived: false
-excerpt: "One person’s meditation on aliens, uncertainty, and the quiet absurdity of trying to calculate a universe that barely explains itself"
+excerpt: A casual news headline about aliens becomes a springboard for thinking about
+  how little we can predict, big or small.
+slug: the-probability-of-aliens-and-other-things-i-cant-predict
 ---
-
 A few days ago, the news carried a line both absurd and ordinary: President Barack Obama said [aliens are “real”](https://time.com/7378768/7378768-obama-aliens-real-area-51/) — but they aren’t being kept at Area 51.
 
 No flashing lights. No ceremony. Just a calm, steady comment: there are objects we don’t understand. I haven’t seen aliens myself.

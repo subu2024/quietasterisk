@@ -1,13 +1,12 @@
 ---
-title: "What have you done for me?"
+title: What have you done for me?
 slug: what-have-you-done-for-me
 date: 2001-02-16
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A poem capturing the pain and heartbreak caused by a cold accusation in a failing relationship."
+excerpt: A poem about the lasting pain of a callous remark from a loved one.
 ---
-
 Deep in the heart  
  Etched for life  
  Echo it did  

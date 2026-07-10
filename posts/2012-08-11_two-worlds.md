@@ -1,13 +1,12 @@
 ---
-title: "Two Worlds"
-slug: two-worlds-one-child
+title: Two Worlds
+slug: two-worlds
 date: 2012-08-11
-category: Life & Uncertainty
+category: Self-Awareness & EQ
 featured: true
 archived: false
-excerpt: "A parent reflects on the growing divide between adult concerns and a child’s simpler world."
+excerpt: A father and son on opposite sides of a generational tech and attention divide.
 ---
-
 The guns went bang  
  Sending the bad guys  
  Down the castles and chutes  

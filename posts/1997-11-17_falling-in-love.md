@@ -1,13 +1,12 @@
 ---
-title: "Falling in Love"
+title: Falling in Love
 slug: falling-in-love
 date: 1997-11-17
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A poetic reflection on fleeting romance where passion briefly blossoms before fading back into loneliness."
+excerpt: A poem about a serendipitous encounter that blossoms into a shared kiss.
 ---
-
 Alone and lonely was I  
  Seated on a bench, staring at the sky  
  In you walk, elegant and charming  

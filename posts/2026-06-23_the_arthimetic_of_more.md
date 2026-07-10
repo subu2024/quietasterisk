@@ -1,13 +1,13 @@
 ---
-title: "The Arithmetic of More"
+title: The Arithmetic of More
 date: 2026-06-23
-slug: arithmetic-of-more
-excerpt: "A late-night scroll turns into an inventory of who taught us to count, and why the counting never felt optional"
-category: Perception, Patterns & Illusion
+slug: the-arithmetic-of-more
+excerpt: A morning phone scroll becomes a look at the quiet, constant math of always
+  wanting more.
+category: Self-Awareness & EQ
 featured: true
 archived: false
 ---
-
 The phone is already warm by the time I pick it up again.
 
 Not hot — just holding the residual heat of my last scroll, like a chair someone has only just left. My thumb moves before I've decided anything, a small upward flick that feels less like intention and more like reflex. Notifications bloom in the corner. A number next to a name. A number under a post. A quiet, constant arithmetic humming under everything else I'm supposedly doing.

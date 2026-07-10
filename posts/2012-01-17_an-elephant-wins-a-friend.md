@@ -1,13 +1,12 @@
 ---
-title: "An elephant wins a friend"
-slug: elephant-wins-a-friend
+title: An elephant wins a friend
+slug: an-elephant-wins-a-friend
 date: 2012-01-17
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A gentle children’s story about a lonely elephant who eventually finds friendship with a brave little girl."
+excerpt: A whimsical fable about a lonely elephant seeking friendship in a city.
 ---
-
 A lonely baby elephant  
  Yearned for a friend one day  
  Walking through the jungles into a large city  

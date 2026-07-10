@@ -1,13 +1,12 @@
 ---
-title: "Once, We Danced"
+title: Once, We Danced
 date: 2024-11-01
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "Life’s a strange kind of clown— clever with jokes, quick with its twists Just when I thought time had folded in on itself, and love..."
+archived: false
+excerpt: A poem about an unexpected, sudden reawakening of love.
+slug: once-we-danced
 ---
-
-  
 Life’s a strange kind of clown—  
 clever with jokes,  
 quick with its twists  

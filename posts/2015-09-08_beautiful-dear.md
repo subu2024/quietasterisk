@@ -1,13 +1,12 @@
 ---
-title: "Beautiful Dear"
+title: Beautiful Dear
 slug: beautiful-dear
 date: 2015-09-08
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A tender portrayal of everyday love, where repeated reassurance becomes a quiet anchor of affirmation, care, and emotional connection"
+excerpt: A poem of repeated reassurance to a partner throughout the stages of a day.
 ---
-
 Climbing out of the shower,  
 brushing her shiny dark hair,  
 she winked at me and said—  

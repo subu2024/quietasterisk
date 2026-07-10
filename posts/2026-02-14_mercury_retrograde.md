@@ -1,13 +1,13 @@
 ---
-title: "Mercury Is in Retrograde, and So Is My Patience"
-slug: mercury-retrograde-and-my-patience
+title: Mercury Is in Retrograde, and So Is My Patience
+slug: mercury-is-in-retrograde-and-so-is-my-patience
 date: 2026-02-14
-category: Chance, Risk & Probability
+category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: "A meditation on astrology, physics, and probability that argues our lives are shaped less by destiny than by noise, tendency, and the stories we tell about both"
+excerpt: A string of small annoyances tempts blaming Mercury retrograde, a look at
+  externalizing our own thinning patience.
 ---
-
 Some mornings I wake up already suspicious of the day.
 
 The coffee tastes slightly off. The train arrives just as I’m walking into the platform, doors closing like a polite refusal. My phone dies at 12 percent, which feels personal. On days like that, it’s very tempting to blame Mercury - the planet.

@@ -1,13 +1,12 @@
 ---
-title: "Signature"
-slug: your-unique-signature
+title: Signature
+slug: signature
 date: 2013-09-08
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "Life is a personal journey of creating your own unique 'signature,' guided by experiences, emotions, and destiny that echo beyond time."
+excerpt: An abstract poem about leaving a unique personal mark on the world.
 ---
-
 Nature sings, time provides the ride  
  It is your unique journey in this tide  
  To leave behind your signature, your frequency, your pride  

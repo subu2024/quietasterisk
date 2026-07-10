@@ -1,12 +1,13 @@
 ---
-title: "Don't Follow Me"
+title: Don't Follow Me
 date: 2025-10-05
-category: Love, Loss, and Time
+category: Old Voice
 featured: false
-archived: true
-excerpt: "Be my girlfriend, sit across the table, Clinking glasses where the night feels stable. Velvet shadows, your laughter spilling bright, Pretending we’re flawless in the..."
+archived: false
+excerpt: A poem about masking imperfection behind a polished, guarded exterior in
+  a new relationship.
+slug: dont-follow-me
 ---
-
 Be my girlfriend, sit across the table,  
 Clinking glasses where the night feels stable.  
 Velvet shadows, your laughter spilling bright,  

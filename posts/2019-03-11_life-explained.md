@@ -1,13 +1,12 @@
 ---
-title: "Life Explained"
+title: Life Explained
 slug: life-explained
 date: 2019-03-11
-category: Life & Uncertainty
+category: Old Voice
 featured: false
 archived: false
-excerpt: "Life is an uncertain balancing act between desire and contentment, where the only truth is the fleeting present and the only wisdom is to embrace change"
+excerpt: A philosophical poem musing on how to define and understand life.
 ---
-
 What is life?  
  A question that I ponder  
  To look beyond awe and wonder  

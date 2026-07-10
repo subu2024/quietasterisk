@@ -1,13 +1,12 @@
 ---
-title: "Memories of Another Day"
+title: Memories of Another Day
 slug: memories-of-another-day
 date: 1996-12-01
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A reflective poem about running through life while memories of the past cling tightly to the present"
+excerpt: A poem about being swept up in nostalgia for people and places from the past.
 ---
-
 Running with the mad crowd in this restless world  
 I pause and look back, one fine day  
 Memories cloud me while I gasp for breath  

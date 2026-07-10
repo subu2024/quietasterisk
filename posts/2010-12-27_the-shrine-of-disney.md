@@ -1,13 +1,12 @@
 ---
-title: "The Shrine of Disney"
-slug: shrine-of-disney
+title: The Shrine of Disney
+slug: the-shrine-of-disney
 date: 2010-12-27
-category: Perception, Patterns & Illusion
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A humorous comparison of a trip to Disney with a religious pilgrimage filled with devotion and ritual."
+excerpt: A poem about the anticipation and ritual of a Disney theme park visit.
 ---
-
 My wait begins the moment I book the tickets  
  The expectations surge daily, running high in adrenaline  
  The anticipation overwhelms as I step on the magical land  

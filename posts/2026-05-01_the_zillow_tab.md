@@ -1,13 +1,13 @@
 ---
-title: "The Zillow Tab I Never Close"
-slug: zillow-tab-i-never-close
+title: The Zillow Tab I Never Close
+slug: the-zillow-tab-i-never-close
 date: 2026-05-01
-category: Life & Uncertainty
+category: Financial Awareness
 featured: true
 archived: false
-excerpt: "On northern Virginia real estate, the permanent temporary, and the strange weight of a life that mostly fits"
+excerpt: 'A dripping faucet and an open Zillow tab both ask the same unanswered question:
+  stay or go.'
 ---
-
 _The same four walls ask the same old question —_  
 _stay or go, and who exactly is deciding?_  
 _The condo does not care. The equity does._  

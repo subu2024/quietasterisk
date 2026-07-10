@@ -1,13 +1,12 @@
 ---
-title: "The Old Man and The Girl"
-slug: old-man-and-the-girl
+title: The Old Man and The Girl
+slug: the-old-man-and-the-girl
 date: 2018-08-17
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: false
-excerpt: "An unexpected age-gap encounter grows from a fleeting, forbidden kiss into a bold and passionate romance."
+archived: true
+excerpt: A poem depicting an age-gap romantic relationship.
 ---
-
 Our eyes met for the first time at a wedding harbor  
  Me an old man and she many many years younger  
  Lust penetrated the gap as she blushed each time I walked past her  

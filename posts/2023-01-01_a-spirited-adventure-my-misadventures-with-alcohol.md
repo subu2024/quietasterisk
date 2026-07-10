@@ -1,12 +1,13 @@
 ---
-title: "A Spirited Adventure: My Misadventures with Alcohol"
-date: "2023-01-01"
-category: Chance, Risk & Probability
+title: 'A Spirited Adventure: My Misadventures with Alcohol'
+date: '2023-01-01'
+category: Authenticity & Vulnerability
 featured: true
-archived: true
-excerpt: "“I can feel my head spinning .. I’m going to fall down“ That was my mind churning when I stumbled out of the dingy bar..."
+archived: false
+excerpt: A candid, vulnerable account of a decades-long relationship with drinking,
+  from first beer to present-day habits.
+slug: a-spirited-adventure-my-misadventures-with-alcohol
 ---
-
 “I can feel my head spinning .. I’m going to fall down“
 
 That was my mind churning when I stumbled out of the dingy bar into the open air .. the sun shining directly on my face.

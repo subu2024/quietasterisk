@@ -1,13 +1,12 @@
 ---
-title: "Strawberry Honey"
+title: Strawberry Honey
 slug: strawberry-honey
 date: 2016-09-08
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "Shining brightly in crystal white she wrapped her arms around me looking directly into my eyes she shook her head albeit with a smile I..."
+archived: false
+excerpt: A romantic, sensory poem about an intimate dance with a partner.
 ---
-
 Shining brightly in crystal white  
  she wrapped her arms around me  
  looking directly into my eyes  

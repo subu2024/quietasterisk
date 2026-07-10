@@ -1,13 +1,13 @@
 ---
-title: "Appa, The Voice That Echoes Through Time"
-slug: appa-voice-echoes-through-time
+title: Appa, The Voice That Echoes Through Time
+slug: appa-the-voice-that-echoes-through-time
 date: 2021-09-05
-category: Love, Loss, and Time
+category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: "Reflection on memory, loss, and the fragile mathematics of love, discovering that life’s meaning may lie not in certainty, but in its improbability."
+excerpt: A child's call of 'Appa' prompts reflection on his own relationship with
+  his late father.
 ---
-
 “Appa”, “Appa” the voice came loud, clear, and urgent. That was my 12 year old calling for me. A voice filled with love and a brashness only a child can possess. “Appa” is another word for Daddy.
 
 And as it echoed through the hallway, probability shifted its weight inside me.

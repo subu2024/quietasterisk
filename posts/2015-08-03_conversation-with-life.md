@@ -1,13 +1,12 @@
 ---
-title: "Conversation with Life"
+title: Conversation with Life
 slug: conversation-with-life
 date: 2015-08-03
-category: Life & Uncertainty
+category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: "'Letting go' is the quiet acceptance of life as it is—allowing thoughts, pain, and joy to pass without attachment, and awakening to the deeper self that walks alongside it all."
+excerpt: An essay unpacking what 'letting go' actually means as a practice of awareness.
 ---
-
 What do we mean by “let go” .. we are not capable of forgetting past events or stop dreaming of future events .. so what is let go? Let go means “let it be” ..  it is the act of letting thoughts come and go and not be worried about it. Everything will change .. so let the thoughts come but don’t identify with it .. just let it be ..
 
 Awakening to our true self isn’t a journey outward toward something new – it’s a journey inward toward something that’s always been there within us ..

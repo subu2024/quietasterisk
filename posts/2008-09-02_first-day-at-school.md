@@ -1,13 +1,13 @@
 ---
-title: "First Day at School"
+title: First Day at School
 slug: first-day-at-school
 date: 2008-09-02
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A tender moment where a parent watches a child bravely step into the world on their first day of school."
+excerpt: A poem about a father's nerves and pride watching his child's first day of
+  school.
 ---
-
 Your first day at school  
  Excited as you were  
  Totally oblivious were you  

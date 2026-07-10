@@ -1,13 +1,12 @@
 ---
-title: "Page Turn: Whispers of Time"
+title: 'Page Turn: Whispers of Time'
 slug: page-turn-whispers-of-time
 date: 2023-09-08
-category: Love, Loss, and Time
+category: Old Voice
 featured: false
 archived: false
-excerpt: "Life unfolds like a bittersweet book of intertwined stories, where love, loss, and memory shape a journey that is ultimately passed on."
+excerpt: A poem about the emotional journey of reading a book.
 ---
-
 Amidst laughter and tears, the book unfolds,  
  A journey through time, memories it holds  
  Emotions woven in a tapestry so fine,  

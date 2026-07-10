@@ -1,13 +1,13 @@
 ---
-title: "The Green Card Diary"
-slug: green-card-diary
+title: The Green Card Diary
+slug: the-green-card-diary
 date: 2022-02-06
-category: Life & Uncertainty
+category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: "A journey that began with glamorous dreams slowly revealed itself through cereal dinners, snowstorms, strange friendships, and the quiet resilience required to build a life far from home."
+excerpt: The story of immigrating to the U.S. in the early '90s and the hope and naivety
+  that carried it.
 ---
-
 Sometimes I look back at the early 1990s and wonder if we were all a little naïve—or maybe just wonderfully hopeful.
 
 Back then, the idea of going to the United States from India carried a certain glamour. For many of us students, America seemed like a distant movie set: big houses, fast cars, effortless success, and a life where talent alone could open every door. Somewhere in that dreamy picture were also dollars, adventure, and perhaps the vague possibility of romance.

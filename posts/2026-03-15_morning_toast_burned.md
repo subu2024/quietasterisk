@@ -1,13 +1,13 @@
 ---
-title: "The Morning the Toast Burned Twice"
-slug: toast-burned-twice
+title: The Morning the Toast Burned Twice
+slug: the-morning-the-toast-burned-twice
 date: 2026-03-15
-category: Chance, Risk & Probability
+category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: "Every day is a small sequence of guesses — and the toast will burn anyway."
+excerpt: Burnt toast on a quiet Sunday opens into reflection on how most days actually
+  begin, without drama.
 ---
-
 ![morning toast](philosophy_burnt_toast.png)
 
 The smell hit me before the alarm did. Burnt toast — not catastrophically burnt, just the low-grade, slightly accusatory kind that means you walked away for thirty seconds too long. I stood in the kitchen in yesterday's socks, staring at two dark rectangles as if they owed me an explanation. They didn't, of course. They were just toast.

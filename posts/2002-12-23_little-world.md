@@ -1,13 +1,12 @@
 ---
-title: "Little World"
-slug: through-a-babys-eyes
+title: Little World
+slug: little-world
 date: 2002-12-23
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A playful poem imagining the world through the curious and innocent eyes of a nine-month-old baby."
+excerpt: A whimsical poem written from the perspective of a nine-month-old baby.
 ---
-
 Look at the world  
  through my nine month old eyes  
  You will see an interesting world  

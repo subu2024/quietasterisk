@@ -1,14 +1,13 @@
 ---
-title: "Two Couples"
+title: Two Couples
 date: 2023-08-01
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "With a stoic gaze, they sat, A beer, an evening to share, Minds wandering afar, Her form, partly turned away, Age's wisdom not contesting The..."
+archived: false
+excerpt: A poem contrasting two couples at different stages of intimacy and connection.
+slug: two-couples
 ---
-
-  
- With a stoic gaze, they sat,   
+With a stoic gaze, they sat,   
  A beer, an evening to share,   
  Minds wandering afar,   
  Her form, partly turned away,   

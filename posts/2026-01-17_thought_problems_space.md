@@ -1,13 +1,13 @@
 ---
-title: "Thoughts, Problems, and the Space Between"
-slug: thoughts-problems-space-between
+title: Thoughts, Problems, and the Space Between
+slug: thoughts-problems-and-the-space-between
 date: 2026-01-17
-category: Life & Uncertainty
+category: Self-Awareness & EQ
 featured: true
 archived: false
-excerpt: "Peace isn’t the lack of hardship—it’s staying steady with your thoughts and uncertainty without letting them take over."
+excerpt: Peace is framed as a moment-by-moment practice rather than a permanent, unattainable
+  state.
 ---
-
 Peace isn’t a permanent emotional high or a life without difficulty. It’s a way of living daily life—moment by moment—without being constantly pulled into regret about the past or anxiety about the future. It shows up when we’re doing what feels appropriate in the moment, without demanding that the outcome guarantee our happiness. When that happens, there’s a quiet sense of ease. Not excitement. Not escape. Just enough.
 
 Why does this matter?

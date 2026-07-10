@@ -1,14 +1,13 @@
 ---
-title: "Echoes of Lost Dreams"
+title: Echoes of Lost Dreams
 date: 2024-07-01
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "The many vivid dreams Fade like flowers, flowers dropping from their stems, Happiness quietly dissolves, painfully pricking my heart Like thorns piercing deep With the..."
+archived: false
+excerpt: A poem mourning dreams and happiness that faded with time.
+slug: echoes-of-lost-dreams
 ---
-
-  
- The many vivid dreams   
+The many vivid dreams   
  Fade like flowers, flowers dropping from their stems,   
  Happiness quietly dissolves,   
  painfully pricking my heart   

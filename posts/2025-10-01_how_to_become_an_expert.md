@@ -1,13 +1,13 @@
 ---
-title: "How to Become an Overnight Expert in Everything"
-slug: overnight-expert-in-everything
+title: How to Become an Overnight Expert in Everything
+slug: how-to-become-an-overnight-expert-in-everything
 date: 2025-10-01
-category: Life & Uncertainty
+category: Authenticity & Vulnerability
 featured: false
 archived: false
-excerpt: "Crossing oceans changes how others see you, but the real measure of life lies in the ordinary moments and small routines that define each day"
+excerpt: An immigrant story about being seen as 'a nobody' by family, and building
+  confidence from nothing.
 ---
-
 When I boarded the flight from Bombay to the U.S. all those years ago, I was still, in the eyes of my family, something of a nobody. A good kid, yes. A hardworking student, sure. But nothing extraordinary. My cousins with stable jobs in Indian companies, who wore crisp shirts to the office every day, were the ones seen as “settled.” I was just the boy still asking his parents for spending money .. while clinging to the dream of graduate school abroad.
 
 And then — overnight, or rather, over one 18-hour flight — I became someone else entirely. My worth seemed to multiply the moment I landed in America. I hadn’t achieved much yet, not really. I was still learning to navigate grocery stores with ten brands of yogurt and professors who spoke too quickly. But back home, the news that I had “gone to the U.S.” created a ripple. Suddenly my phone calls were put on speakerphone during family gatherings. Relatives listened with respect to my opinions on everything from computer training courses to hot stock tips, even though I barely knew how to balance a checkbook or use an ATM.

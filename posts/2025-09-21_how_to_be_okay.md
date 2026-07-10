@@ -1,13 +1,12 @@
 ---
-title: "How to Be (Mostly) Okay"
+title: How to Be (Mostly) Okay
 slug: how-to-be-mostly-okay
 date: 2025-09-21
-category: Life & Uncertainty
+category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: "A quiet reflection on coffee, comparison, and the small daily experiments that pass for living."
+excerpt: A morning coffee ritual and the modest, honest goal of just being okay today.
 ---
-
 I press the plunger of the French press and watch a small curl of steam rise toward the kitchen window. The smell of coffee fills the room—warm, earthy, and quietly reassuring. Outside, someone is already mowing a lawn that probably doesn’t need mowing yet. I stand there holding my chipped mug, waiting for the coffee to cool just enough, and thinking—very seriously for about twelve seconds—that today might finally be the day I get my life sorted out.
 
 Of course, this thought usually fades somewhere between the first sip and the moment I notice the cereal box is almost empty again.

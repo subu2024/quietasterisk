@@ -1,14 +1,13 @@
 ---
-title: "From Stranger to Soulmate"
+title: From Stranger to Soulmate
 date: 2025-01-12
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "Day by day, you became The reason I began to live From anger to warmth, then compassion’s grace, Your personality drove me wild; I couldn’t..."
+archived: false
+excerpt: A poem tracing a relationship's arc from first meeting to deep love.
+slug: from-stranger-to-soulmate
 ---
-
-  
- Day by day, you became  
+Day by day, you became  
  The reason I began to live   
    
  From anger to warmth, then compassion’s grace,  

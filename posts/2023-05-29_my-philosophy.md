@@ -1,12 +1,13 @@
 ---
-title: "My Philosophy"
+title: My Philosophy
 date: 2023-05-29
-category: Life & Uncertainty
+category: Authenticity & Vulnerability
 featured: true
-archived: true
-excerpt: "Here, I wanted to explore the essence of who I am and discover the many reasons that excite me. These reasons are unique to me..."
+archived: false
+excerpt: A personal essay laying out the values and ideas that define how he tries
+  to live.
+slug: my-philosophy
 ---
-
 Here, I wanted to explore the essence of who I am and discover the many reasons that excite me. These reasons are unique to me and add richness to my life, even if they may not interest others. However, the underlying philosophy behind them seems universal. So, I will share them with you and let you decide which parts resonate with you.
 
 I have written about this in different versions before, as my thoughts continuously evolve and flow, much like water that picks up and discards debris along its path. Some of my previous writings include:

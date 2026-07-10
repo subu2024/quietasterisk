@@ -1,13 +1,12 @@
 ---
-title: "Fooled by Randomness"
+title: Fooled by Randomness
 slug: fooled-by-randomness
 date: 2026-01-04
-category: Chance, Risk & Probability
+category: Uncertainty
 featured: false
 archived: false
-excerpt: "A reflection on how randomness runs through parking lots, marriages, and money—reminding us control is limited and explanations are fragile."
+excerpt: A reflection on how randomness quietly shapes the middle of an ordinary day.
 ---
-
 > It starts as a moment—unplanned, unseen,  
 > A quiet misstep in an ordinary scene.  
 > Not fate, not chaos, just something in between,  

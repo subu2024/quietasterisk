@@ -1,13 +1,12 @@
 ---
-title: "That Little Moment"
+title: That Little Moment
 slug: that-little-moment
 date: 2012-11-23
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A haunting moment of loss freezes time, trapping the speaker in lingering grief, longing, and unanswered questions."
+excerpt: A poem about a frozen, unresolved emotional moment that refuses to fade.
 ---
-
 That little moment  
  Stood still  
  As memories flooded in  

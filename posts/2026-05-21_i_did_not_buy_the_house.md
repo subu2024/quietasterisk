@@ -1,13 +1,13 @@
 ---
-title: "I Did Not Buy the House"
-slug: did-not-buy-the-house
+title: I Did Not Buy the House
+slug: i-did-not-buy-the-house
 date: 2026-05-21
-category: Life & Uncertainty
+category: Financial Awareness
 featured: true
 archived: false
-excerpt: "A financial memoir in five acts and one very full Amazon cart"
+excerpt: A financially stable adult still feels like he's losing a race after scrolling
+  TikTok, exposing how comparison distorts money confidence.
 ---
-
 I like to think of myself as a rational adult. A thoughtful participant in the modern economy. Someone who reads the Fed minutes for fun and understands, at a molecular level, the difference between an asset and a liability.
 
 I also have TikTok. And TikTok, it turns out, is the world's most efficient machine for making a financially stable person feel like they are quietly losing a race they didn't know they entered.

@@ -1,13 +1,13 @@
 ---
-title: "Wrong Signal"
+title: Wrong Signal
 slug: wrong-signal
 date: 2012-09-08
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A humorous story about a husband misreading his wife's exhaustion as romantic interest."
+excerpt: A poem about a miscommunication between husband and wife over an intended
+  signal.
 ---
-
 A long tiring day, she returned after a son’s soccer game  
  Urging the family to sleep early so she could retire strong  
  Her husband overheard and winked to himself  

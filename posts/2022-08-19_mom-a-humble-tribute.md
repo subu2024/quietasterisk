@@ -1,13 +1,13 @@
 ---
-title: "Mom"
-slug: in-memory-of-mom
+title: Mom
+slug: mom
 date: 2022-08-19
-category: Love, Loss, and Time
+category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: "A quiet reflection on a mother whose life unfolded mostly in the background — and the strength that only becomes fully visible when we stop and look back."
+excerpt: A deeply personal account of a mother's cremation and the quiet dignity found
+  in that ritual.
 ---
-
 Three years back, I stood there watching the flames begin their slow work, and it struck me how strange our rituals can be.
 
 She lay still on the raised wooden platform, the funeral pyre carefully arranged around her. In a few minutes, fire would take over, reducing a long, complicated life to smoke and memory. Yet her face looked peaceful — calmer than I had ever seen it. There was a quiet dignity about her, as if she had already made peace with everything we were still struggling to understand.

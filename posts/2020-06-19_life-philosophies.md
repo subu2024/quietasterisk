@@ -1,13 +1,13 @@
 ---
-title: "Life Philosophies"
+title: Life Philosophies
 date: 2020-06-19
-category: Life & Uncertainty
+category: Old Voice
 featured: true
-archived: true
-excerpt: "I let go the need to be perfect Illusion it is, to aim for this object Mistakes happen every day but call it not a..."
+archived: false
+excerpt: A repetitive poem listing things the writer chooses to 'let go' of, like
+  perfectionism and blame.
+slug: life-philosophies
 ---
-
-  
 I let go the need to be perfect   
 Illusion it is, to aim for this object   
 Mistakes happen every day but call it not a defect   

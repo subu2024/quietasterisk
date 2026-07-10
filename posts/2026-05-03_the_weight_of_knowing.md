@@ -1,13 +1,13 @@
 ---
-title: "The Weight of Knowing"
-slug: weight-of-knowing
+title: The Weight of Knowing
+slug: the-weight-of-knowing
 date: 2026-05-03
-category: Love, Loss, and Time
+category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: "There was a time when finding something out felt like crossing a distance. Now the distance has collapsed, and somehow we still feel lost"
+excerpt: A barista who 'knows' a regular's order prompts reflection on how the meaning
+  of knowing keeps shifting.
 ---
-
 _We used to walk miles for a single word_  
 _Now words arrive before we think to ask_  
 _What we call knowing keeps shifting shape_  

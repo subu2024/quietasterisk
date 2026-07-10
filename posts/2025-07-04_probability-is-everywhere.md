@@ -1,13 +1,13 @@
 ---
-title: "Probability Is Everywhere - Here's How to Use It Smarter"
-slug: probability-is-everywhere
+title: Probability Is Everywhere - Here's How to Use It Smarter
+slug: probability-is-everywhere-heres-how-to-use-it-smarter
 date: 2025-07-04
-category: Chance, Risk & Probability
+category: Uncertainty
 featured: false
 archived: false
-excerpt: "Every choice you make is a bet under uncertainty while understanding probability, expected value, and your edge turns blind gambling into strategic advantage"
+excerpt: A remark about avoiding gambling becomes a look at how we all navigate life
+  like a one-person craps table.
 ---
-
 **_I don’t buy Bitcoin because I don’t gamble._**
 
 The words pinged from my phone, bold and innocent, like a coin dropped on a marble floor. I smirked, letting the notification sit. Funny, how someone could claim they avoid gambling while stepping through life like a one-person craps table.

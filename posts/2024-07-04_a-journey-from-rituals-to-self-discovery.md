@@ -1,12 +1,13 @@
 ---
-title: "A Journey from Rituals to Self-Discovery"
+title: A Journey from Rituals to Self-Discovery
 date: 2024-07-04
-category: Life & Uncertainty
+category: Authenticity & Vulnerability
 featured: true
-archived: true
-excerpt: "I refused to pray. I stood there, staring at the idol, feeling the tension radiate from the people around me. Some muttered in hushed tones,..."
+archived: false
+excerpt: Refusing to pray at a religious ceremony opens into questioning inherited
+  belief.
+slug: a-journey-from-rituals-to-self-discovery
 ---
-
 I refused to pray. I stood there, staring at the idol, feeling the tension radiate from the people around me. Some muttered in hushed tones, “The gods will be angry.” Honestly, have we not heard this before? If we don’t appease the gods with gifts and money, they'll unleash their wrath upon us.
 
 You might be thinking, “Who is this person to question age-old beliefs?” .. well that's what I want to rant in this writing.

@@ -1,14 +1,13 @@
 ---
-title: "I want to sing a song"
+title: I want to sing a song
 date: 2016-10-26
-category: Life & Uncertainty
+category: Old Voice
 featured: true
-archived: true
-excerpt: "I want to sing a song I really want to sing a song I want to sing a song I really want to sing a..."
+archived: false
+excerpt: A repetitive lyrical poem about wanting to be heard and understood.
+slug: i-want-to-sing-a-song
 ---
-
-  
-  I want to sing a song  
+I want to sing a song  
   I really want to sing a song  
   I want to sing a song  
   I really want to sing a song  

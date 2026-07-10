@@ -1,13 +1,12 @@
 ---
-title: "Romancing a Beautiful Woman"
+title: Romancing a Beautiful Woman
 slug: romancing-a-beautiful-woman
 date: 2025-01-01
-category: Love, Loss, and Time
+category: Old Voice
 featured: false
 archived: false
-excerpt: "A man is utterly captivated by a woman whose breathtaking beauty, graceful presence, and enigmatic depth consume his heart and transform his entire world."
+excerpt: A poem admiring a woman's physical beauty and presence.
 ---
-
 Her long black hair, a silken tide,  
  Calls out to touch, to pull inside  
  It frames her face, a radiant glow,  

@@ -1,14 +1,13 @@
 ---
-title: "A Flame Once Loved"
+title: A Flame Once Loved
 date: 2025-02-16
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
-archived: true
-excerpt: "Sitting by the window, gazing at the rain, I thought of the flame that once eased my pain Its warmth was fleeting, but still, it..."
+archived: false
+excerpt: A poem mourning the fading warmth of a past love.
+slug: a-flame-once-loved
 ---
-
-  
- Sitting by the window, gazing at the rain,   
+Sitting by the window, gazing at the rain,   
  I thought of the flame that once eased my pain   
  Its warmth was fleeting, but still, it stayed,   
  Lingering in shadows where memories played   

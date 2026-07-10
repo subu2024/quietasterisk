@@ -1,11 +1,11 @@
 ---
-title: "Broken Leg"
-slug: a-broken-leg
+title: Broken Leg
+slug: broken-leg
 date: 2005-11-24
-category: Life & Uncertainty
+category: Old Voice
 featured: false
-archived: false
-excerpt: "A tragic reflection on abandonment and loneliness when an injured woman finds herself forgotten by family."
+archived: true
+excerpt: A poem about an elderly woman injured and left unsupported by her family.
 ---
 
 There she was  

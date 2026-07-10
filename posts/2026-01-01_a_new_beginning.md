@@ -1,13 +1,13 @@
 ---
-title: "A New Beginning"
+title: A New Beginning
 slug: a-new-beginning
 date: 2026-01-01
-category: Life & Uncertainty
+category: Old Voice
 featured: false
 archived: false
-excerpt: "A reflective meditation on second chances, self-growth, and the hope of a steadier love born from experience rather than innocence"
+excerpt: A New Year's reflection on starting fresh and meeting the past with who you've
+  become.
 ---
-
 A new beginning,  
 a new thought—  
 a chance to touch the life  

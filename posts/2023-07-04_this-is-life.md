@@ -1,13 +1,12 @@
 ---
-title: "This is Life"
+title: This is Life
 slug: this-is-life
 date: 2023-07-04
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "Life is a gentle, unfolding rhythm—meant to be embraced, savored, and woven with care"
+excerpt: A philosophical poem on accepting life as it is, without needing accolades.
 ---
-
 This is life, a gentle melody  
  Not a game of triumph or defeat  
  Not a race where you can retreat  

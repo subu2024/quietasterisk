@@ -1,13 +1,13 @@
 ---
-title: "Corona Virus"
+title: Corona Virus
 date: 2020-08-23
-category: Life & Uncertainty
+category: Love, Loss & Family
 featured: true
-archived: true
-excerpt: "Corona virus came unannounced in twenty-twenty Disrupting the life that we knew Making us pause and think about the life that we now live and..."
+archived: false
+excerpt: A family's pandemic experience, told through each family member's differing
+  reaction to lockdown.
+slug: corona-virus
 ---
-
-  
 Corona virus came unannounced in twenty-twenty   
 Disrupting the life that we knew   
 Making us pause and think   

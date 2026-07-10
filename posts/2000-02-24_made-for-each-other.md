@@ -1,13 +1,12 @@
 ---
-title: "Made for Each Other"
+title: Made for Each Other
 slug: made-for-each-other
 date: 2000-02-24
-category: Love, Loss, and Time
+category: Old Voice
 featured: true
 archived: false
-excerpt: "A poetic look at a couple whose constant conflict reveals they were never truly meant for each other."
+excerpt: A poem about a mismatched couple who never quite fit together.
 ---
-
 She cried, he laughed  
  He fretted, she threw tantrums  
  Day every day, they grew far apart  

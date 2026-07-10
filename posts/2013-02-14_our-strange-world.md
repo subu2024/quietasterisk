@@ -1,13 +1,12 @@
 ---
-title: "Our Strange World"
+title: Our Strange World
 slug: our-strange-world
 date: 2013-02-14
-category: Life & Uncertainty
+category: Old Voice
 featured: true
 archived: false
-excerpt: "Two hearts weighed down by pain and misunderstanding wonder if love can ever bridge the distance time has created."
+excerpt: A poem about growing emotional distance within a relationship.
 ---
-
 Standing at the doorsteps of life's turmoil  
  I wonder what, together have we achieved?  
  Nothing but fragments of life shattered by pain  

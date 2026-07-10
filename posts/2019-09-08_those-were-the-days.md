@@ -1,13 +1,12 @@
 ---
-title: "Those were the days"
+title: Those were the days
 slug: those-were-the-days
 date: 2019-09-08
-category: Life & Uncertainty
+category: Old Voice
 featured: false
 archived: false
-excerpt: "A nostalgic reflection on a passionate young love—tender, imperfect, and beautifully alive in memory."
+excerpt: A nostalgic poem remembering the innocence of young love.
 ---
-
 Those were the days  
  When we were in love and alive  
  You would wait for me  

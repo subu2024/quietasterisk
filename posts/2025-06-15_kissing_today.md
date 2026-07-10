@@ -1,13 +1,12 @@
 ---
-title: "Kissing Today"
+title: Kissing Today
 slug: kissing-today
 date: 2025-06-15
-category: Love, Loss, and Time
+category: Old Voice
 featured: false
 archived: false
-excerpt: "A meditation on choosing to fully embrace the present without abandoning the pull of past memories and future possibilities."
+excerpt: A poem about choosing the present over the pull of old memories.
 ---
-
 Wrapped in the shroud of memory’s thread  
 I straddle the living, the long-loved dead  
 To chase the lustful arms of today  

@@ -2,12 +2,12 @@
 title: The Second Toast
 slug: the-second-toast
 date: 2025-11-08
-category: Love, Loss, and Time
+category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: "Years later, at a wedding and across time, I learned that love doesn't vanish; it transforms, teaching forgiveness, presence, and what truly matters."
+excerpt: At his son's wedding, a husband reflects on decades of marriage through a
+  single shared nickname.
 ---
-
 She hated being called _babe._ Said it made her feel like an accessory.
 So somewhere in the first few years of our marriage, it changed — softened — into **babo.**
 A silly, affectionate nickname that belonged to us and no one else.

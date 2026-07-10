@@ -1,12 +1,13 @@
 ---
-title: "A Satirical Take on the Wild Rollercoaster of the USA"
+title: A Satirical Take on the Wild Rollercoaster of the USA
 date: 2023-10-14
-category: Chance, Risk & Probability
+category: Old Voice
 featured: false
-archived: true
-excerpt: "Is it me or Is it the twilight of the land we lovingly call the USA? These recent years have seen quite the wild show,..."
+archived: false
+excerpt: A satirical commentary on chaotic recent events in American politics and
+  culture.
+slug: a-satirical-take-on-the-wild-rollercoaster-of-the-usa
 ---
-
 Is it me or Is it the twilight of the land we lovingly call the USA? These recent years have seen quite the wild show, with racism, xenophobia, gunplay, natural disasters, and the drama in Congress .. It's enough to make you scratch your head and wonder where is this all heading to ? 
 
 Honestly, I'm not entirely certain how this grand spectacle will untangle itself. There's a mix of radical elements and some folks who should've retired like, a decade ago, still steering the ship, even if it seems to be headed in the opposite direction of progress.
