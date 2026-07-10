@@ -2,12 +2,12 @@
 title: The Man on the Other Side of the Sidewalk
 slug: the-man-on-the-other-side-of-the-sidewalk
 date: 2026-06-07
-excerpt: A brief moment with a stranger on the commute raises the question of who
-  we decide deserves a smile.
+excerpt: I still can't explain why I decided, in half a second, that this stranger deserved my smile and another one didn't.
 category: Self-Awareness & EQ
 featured: true
 archived: false
 ---
+
 > Two strangers split the same sidewalk—  
 > a flicker of familiarity, a face held flat.  
 > How many steps does it take to decide  

@@ -5,7 +5,7 @@ date: 2012-11-23
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about a frozen, unresolved emotional moment that refuses to fade.
+excerpt: There's one moment I keep replaying that never quite resolves itself.
 ---
 That little moment  
  Stood still  

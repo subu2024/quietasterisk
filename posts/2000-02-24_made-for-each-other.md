@@ -5,7 +5,8 @@ date: 2000-02-24
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about a mismatched couple who never quite fit together.
+excerpt: We were supposed to fit, and I'm still trying to understand why we never
+  quite did.
 ---
 She cried, he laughed  
  He fretted, she threw tantrums  

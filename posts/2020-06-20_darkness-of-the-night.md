@@ -4,7 +4,7 @@ date: 2020-06-20
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about being haunted by memories of someone who left.
+excerpt: I still get haunted, some nights, by someone who isn't here anymore.
 slug: darkness-of-the-night
 ---
 The day scampers quickly   

@@ -5,8 +5,8 @@ date: 2010-05-23
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem tracing a life spent always chasing the next stage instead of living
-  the present.
+excerpt: I keep chasing the next stage of life instead of actually living the one
+  I'm in.
 ---
 As an eight year old, he lived like a king  
  Immersed in the little world with a baby zing  

@@ -5,9 +5,9 @@ date: 2026-03-15
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: Burnt toast on a quiet Sunday opens into reflection on how most days actually
-  begin, without drama.
+excerpt: Nothing dramatic happened on the Sunday the toast burned twice, and that's exactly why I can't stop thinking about it.
 ---
+
 ![morning toast](philosophy_burnt_toast.png)
 
 The smell hit me before the alarm did. Burnt toast — not catastrophically burnt, just the low-grade, slightly accusatory kind that means you walked away for thirty seconds too long. I stood in the kitchen in yesterday's socks, staring at two dark rectangles as if they owed me an explanation. They didn't, of course. They were just toast.

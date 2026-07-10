@@ -4,7 +4,7 @@ date: 2025-04-15
 category: Old Voice
 featured: true
 archived: false
-excerpt: A romantic poem admiring a partner's beauty and presence.
+excerpt: Every small thing you do keeps convincing me I noticed the right person.
 slug: every-gesture-every-glance
 ---
 You’re beautiful,    

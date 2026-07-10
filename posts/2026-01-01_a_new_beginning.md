@@ -5,8 +5,8 @@ date: 2026-01-01
 category: Old Voice
 featured: false
 archived: false
-excerpt: A New Year's reflection on starting fresh and meeting the past with who you've
-  become.
+excerpt: I wanted to know what it would feel like to start over from that quiet place
+  I keep imagining.
 ---
 A new beginning,  
 a new thought—  

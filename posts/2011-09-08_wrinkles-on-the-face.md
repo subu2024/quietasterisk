@@ -5,8 +5,8 @@ date: 2011-09-08
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about confronting aging and reflecting on a life's achievements and
-  failures.
+excerpt: I looked in the mirror and had to make peace with everything the lines on
+  my face are keeping score of.
 ---
 Waking up on this September day  
  She saw her wrinkled image in the mirror  

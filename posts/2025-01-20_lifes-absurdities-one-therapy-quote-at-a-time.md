@@ -5,8 +5,8 @@ date: 2025-01-20
 category: Self-Awareness & EQ
 featured: true
 archived: false
-excerpt: Daily frustrations navigated with caffeine, imagination, and half-understood
-  therapy quotes.
+excerpt: I got through another chaotic morning on caffeine and half-remembered therapy
+  quotes, and somehow it worked.
 ---
 I’ve realized that life is mostly made up of little absurdities — those quiet, daily frustrations that never make the highlight reels but somehow define our days. And I’ve been navigating it armed with caffeine, a slightly overactive imagination, and a suspicious collection of therapy quotes that promise enlightenment in bite-sized doses.
 

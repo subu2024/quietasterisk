@@ -4,7 +4,8 @@ date: 2016-03-25
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about the shock and eventual comfort of jumping into cold water.
+excerpt: The shock of jumping in was nothing compared to how good it felt once I stopped
+  resisting it.
 slug: cold-water
 ---
 > Jumping into the cold cold water  

@@ -5,7 +5,8 @@ date: 2025-09-21
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: A morning coffee ritual and the modest, honest goal of just being okay today.
+excerpt: Some mornings my only real goal is getting to okay, and I've stopped apologizing
+  for that.
 ---
 I press the plunger of the French press and watch a small curl of steam rise toward the kitchen window. The smell of coffee fills the room—warm, earthy, and quietly reassuring. Outside, someone is already mowing a lawn that probably doesn’t need mowing yet. I stand there holding my chipped mug, waiting for the coffee to cool just enough, and thinking—very seriously for about twelve seconds—that today might finally be the day I get my life sorted out.
 

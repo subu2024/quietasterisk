@@ -5,7 +5,7 @@ date: 2015-01-10
 category: Old Voice
 featured: false
 archived: false
-excerpt: A poem about love that once held promise but left both people unresolved.
+excerpt: I keep circling back to a love that once felt promising and never quite resolved.
 ---
 [youtube:hJvfz7S1TCQ]
 

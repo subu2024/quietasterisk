@@ -5,8 +5,8 @@ date: 2025-05-03
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about the uncertainty of a relationship's outcome, framed as a glass
-  half full or empty.
+excerpt: I keep staring at the same glass, unable to decide which version of us I
+  actually believe.
 ---
 I stand at crossroads  
 Life’s experiences leave me standing—  

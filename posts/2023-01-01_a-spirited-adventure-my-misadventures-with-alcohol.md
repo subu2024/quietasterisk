@@ -4,8 +4,8 @@ date: '2023-01-01'
 category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: A candid, vulnerable account of a decades-long relationship with drinking,
-  from first beer to present-day habits.
+excerpt: I'm finally telling the truth about my long, complicated relationship with
+  drinking.
 slug: a-spirited-adventure-my-misadventures-with-alcohol
 ---
 “I can feel my head spinning .. I’m going to fall down“

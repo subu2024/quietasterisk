@@ -4,7 +4,8 @@ date: '2025-11-01'
 category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: A guarded, book-loving narrator's vulnerability reopens after past heartbreak.
+excerpt: I've kept my guard up since I got hurt, and somehow, in a bookstore of all
+  places, it started coming down.
 slug: love-in-the-aisles
 ---
 _Let me say this first_: I wasn’t looking for love.

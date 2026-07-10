@@ -8,9 +8,10 @@ from pathlib import Path
 # ==========================================================
 # Site Configuration
 # ==========================================================
+
 BLOG_TITLE = "quiet asterisk"
-TAG_LINE = "Notes on uncertainty, money, and showing up anyway"
-COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.1.05"
+TAG_LINE = "Writing that slows down thinking, so you can notice what you usually pass through"
+COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.1.07"
 CONTACT_EMAIL = "hello@quietasterisk.com"
 YOUTUBE_CHANNEL = "https://www.youtube.com/@quietasterisk"
 INSTAGRAM_PROFILE = "https://www.instagram.com/quiet.asterisk/"

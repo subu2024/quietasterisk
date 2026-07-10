@@ -5,7 +5,8 @@ date: 2023-11-15
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: A shattered bottle snaps focus back to the present moment and away from rumination.
+excerpt: A bottle shattered on my kitchen floor and, oddly, pulled me straight back
+  into the present moment.
 ---
 Clash! A bottle shattered somewhere nearby, and just like that, the present snapped into focus. My mind, usually wandering like a kite in an unpredictable wind, stumbled over old memories, brushing against regrets I hadn’t noticed carrying so heavily.
 

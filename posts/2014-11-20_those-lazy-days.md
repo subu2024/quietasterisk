@@ -5,7 +5,7 @@ date: 2014-11-20
 category: Old Voice
 featured: false
 archived: false
-excerpt: A nostalgic poem about carefree rooftop afternoons.
+excerpt: I miss the version of us that had nowhere better to be than a rooftop.
 ---
 Lying on the rooftop watching the blue sky  
  I tug you close, shielding from the blazing sun  

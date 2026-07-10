@@ -4,8 +4,8 @@ date: 2020-10-11
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem/narrative about an unexpected friendship that blossoms into something
-  more.
+excerpt: I wasn't looking for anything more than friendship, and then, somehow, I
+  was.
 slug: dream-girl
 ---
 At the most inopportune time,  

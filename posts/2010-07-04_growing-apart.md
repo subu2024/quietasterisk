@@ -5,7 +5,7 @@ date: 2010-07-04
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about a relationship slowly eroded by changing priorities.
+excerpt: I can trace the exact moment our priorities stopped lining up.
 ---
 Time creates the divide  
  You and I will recognize  

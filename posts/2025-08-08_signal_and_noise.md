@@ -5,8 +5,8 @@ date: 2025-08-08
 category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: A sharp, honest take on LinkedIn hustle-culture and finding authenticity
-  within the noise.
+excerpt: Scrolling through everyone's curated wins made me ask what I'm actually chasing
+  when I post mine.
 ---
 **_I’m excited to announce that I’m joining as …_**
 

@@ -5,9 +5,9 @@ date: 2026-04-19
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: A small daily grooming ritual becomes a lens for noticing how much of behavior
-  runs on autopilot.
+excerpt: There's a ritual I perform every morning without thinking, and the day I finally noticed it, I couldn't stop.
 ---
+
 I've been thinking about the fridge thing lately.
 
 You know the one. You walk to the refrigerator, open it, stand there for a full ten seconds like you're waiting for a divine revelation, then close it having achieved nothing. You weren't even hungry. You just .. went. Some internal process issued a command, and your body obeyed without asking questions.

@@ -5,7 +5,8 @@ date: 2009-08-14
 category: Old Voice
 featured: true
 archived: true
-excerpt: A poem comparing two women's appearances while questioning who is 'the one.'
+excerpt: I keep comparing two very different women and wondering if that question
+  even has a real answer.
 ---
 That girl with the loud lipstick  
  Her hair set in the salon perfect with zero nick  

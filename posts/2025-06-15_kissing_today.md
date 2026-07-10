@@ -5,7 +5,7 @@ date: 2025-06-15
 category: Old Voice
 featured: false
 archived: false
-excerpt: A poem about choosing the present over the pull of old memories.
+excerpt: I had to choose between chasing an old memory and staying here, in this one.
 ---
 Wrapped in the shroud of memory’s thread  
 I straddle the living, the long-loved dead  

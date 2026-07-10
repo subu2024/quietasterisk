@@ -5,7 +5,8 @@ category: Old Voice
 image: ./images/medina-spahic-NhSwLTcHWvA-unsplash.jpg
 featured: true
 archived: false
-excerpt: A poem about memories that alternate between comforting and haunting.
+excerpt: Some memories comfort me and some ambush me, and I never know which one is
+  coming.
 slug: sometimes
 ---
 Sometimes, sweet memories   

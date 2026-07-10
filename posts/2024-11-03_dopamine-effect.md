@@ -5,8 +5,8 @@ date: 2024-11-03
 category: Self-Awareness & EQ
 featured: true
 archived: false
-excerpt: The anticipation-and-letdown cycle, from product launches to dating, examined
-  honestly.
+excerpt: I keep chasing that same rush of anticipation, even though I already know
+  how the letdown feels.
 ---
 Every year, we wait,  
  a buzz in the air,  

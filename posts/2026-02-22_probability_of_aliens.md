@@ -4,8 +4,8 @@ date: 2026-02-22
 category: Uncertainty
 featured: false
 archived: false
-excerpt: A casual news headline about aliens becomes a springboard for thinking about
-  how little we can predict, big or small.
+excerpt: A stray headline about aliens sent me down a rabbit hole about everything
+  else I'm certain I don't actually know.
 slug: the-probability-of-aliens-and-other-things-i-cant-predict
 ---
 A few days ago, the news carried a line both absurd and ordinary: President Barack Obama said [aliens are “real”](https://time.com/7378768/7378768-obama-aliens-real-area-51/) — but they aren’t being kept at Area 51.

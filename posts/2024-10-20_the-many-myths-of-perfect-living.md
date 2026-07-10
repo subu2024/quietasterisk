@@ -4,8 +4,8 @@ date: 2024-10-20
 category: Self-Awareness & EQ
 featured: true
 archived: false
-excerpt: A look at the endless 'tiny chases,' like the perfect couch, that we mistake
-  for meaningful pursuit.
+excerpt: I keep chasing the right olive oil, the right couch, the right everything,
+  and calling it progress.
 slug: the-many-myths-of-perfect-living
 ---
 I keep noticing how much of life is made up of tiny chases. Not the grand, dramatic ones—the “quit your job, buy a ticket, change your life” kind. No, I mean the little chases: the hunt for the right brand of olive oil, the endless scrolling for the “perfect” couch that looks cozy in the picture but turns out to be the same lumpy shape as the last one you bought. Sometimes I stop and laugh at myself. Do these things really matter? Probably not. And yet, there I am, caught up in them, like everyone else.  

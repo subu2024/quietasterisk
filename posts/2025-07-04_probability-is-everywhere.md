@@ -5,8 +5,8 @@ date: 2025-07-04
 category: Uncertainty
 featured: false
 archived: false
-excerpt: A remark about avoiding gambling becomes a look at how we all navigate life
-  like a one-person craps table.
+excerpt: I don't gamble, or so I thought, until I noticed how many bets I place every
+  single day.
 ---
 **_I don’t buy Bitcoin because I don’t gamble._**
 

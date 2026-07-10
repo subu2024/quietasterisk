@@ -4,8 +4,8 @@ date: 2023-10-14
 category: Old Voice
 featured: false
 archived: false
-excerpt: A satirical commentary on chaotic recent events in American politics and
-  culture.
+excerpt: I tried to make sense of a year that felt less like news and more like a
+  rollercoaster nobody agreed to ride.
 slug: a-satirical-take-on-the-wild-rollercoaster-of-the-usa
 ---
 Is it me or Is it the twilight of the land we lovingly call the USA? These recent years have seen quite the wild show, with racism, xenophobia, gunplay, natural disasters, and the drama in Congress .. It's enough to make you scratch your head and wonder where is this all heading to ? 

@@ -5,8 +5,8 @@ date: 2009-09-06
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about a parent reflecting on raising a child while time moves irreversibly
-  forward.
+excerpt: I'm raising a child while time keeps moving in a direction I can't reverse,
+  and I feel every bit of that.
 ---
 I saw the road ahead clear  
  Holding my child, I marched with no fear  

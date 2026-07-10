@@ -5,7 +5,8 @@ date: 2014-03-23
 category: Old Voice
 featured: true
 archived: false
-excerpt: An abstract poem about crossing into a new, uncertain phase of life.
+excerpt: I'm standing right at the edge of something new, and I can't tell yet if
+  I'm ready.
 ---
 Watch that step  
  As you thread higher in time  

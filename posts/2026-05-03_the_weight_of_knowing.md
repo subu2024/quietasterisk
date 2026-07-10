@@ -5,13 +5,13 @@ date: 2026-05-03
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: A barista who 'knows' a regular's order prompts reflection on how the meaning
-  of knowing keeps shifting.
+excerpt: My barista remembers my order, and somehow that small fact keeps unraveling into something bigger about what it means to know anyone at all.
 ---
-_We used to walk miles for a single word_  
-_Now words arrive before we think to ask_  
-_What we call knowing keeps shifting shape_  
-_a door that opens only as we pass_
+
+> We used to walk miles for a single word  
+> Now words arrive before we think to ask  
+> What we call knowing keeps shifting shape  
+> a door that opens only as we pass
 
 The Starbucks near Metro Center fills quickly in the morning. I find a seat by the window before it's gone, set my bag down, and look up at the board without really reading it. The woman behind the counter knows a regular's order before he finishes saying it. He pauses mid-sentence, a small surprised look, then just nods. There's a particular ease in being anticipated that most people don't notice until it's already happened.
 

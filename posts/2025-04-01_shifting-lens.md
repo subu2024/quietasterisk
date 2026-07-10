@@ -4,8 +4,8 @@ date: 2025-04-01
 category: Old Voice
 featured: true
 archived: false
-excerpt: An abstract poem about how perspective on one's own choices changes with
-  time.
+excerpt: The choices I once regretted look completely different depending on which
+  day I examine them.
 slug: shifting-lens
 ---
 Nothing to blame,   

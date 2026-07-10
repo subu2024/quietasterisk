@@ -5,9 +5,8 @@ date: 2005-11-24
 category: Old Voice
 featured: false
 archived: true
-excerpt: A poem about an elderly woman injured and left unsupported by her family.
+excerpt: I watched someone who once held a family together get left to manage alone.
 ---
-
 There she was  
  walking with him, hand in hand  
  until she fell with a thud and pause  

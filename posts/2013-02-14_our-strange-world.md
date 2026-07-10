@@ -5,7 +5,7 @@ date: 2013-02-14
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about growing emotional distance within a relationship.
+excerpt: I can feel us drifting further apart, even sitting in the same room.
 ---
 Standing at the doorsteps of life's turmoil  
  I wonder what, together have we achieved?  

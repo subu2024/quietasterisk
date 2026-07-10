@@ -4,7 +4,7 @@ date: 2025-02-16
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem mourning the fading warmth of a past love.
+excerpt: I keep trying to warm myself on something that's already gone out.
 slug: a-flame-once-loved
 ---
 Sitting by the window, gazing at the rain,   

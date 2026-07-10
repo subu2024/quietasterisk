@@ -5,7 +5,7 @@ date: 2013-12-06
 category: Old Voice
 featured: false
 archived: false
-excerpt: A poem about a cancer diagnosis and the anger and fear that follow.
+excerpt: The diagnosis came, and so did an anger I didn't know I was capable of.
 ---
 The doctor pronounced the verdict  
  The cancer had taken over his world of breathe  

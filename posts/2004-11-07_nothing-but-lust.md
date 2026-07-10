@@ -5,7 +5,7 @@ date: 2004-11-07
 category: Old Voice
 featured: false
 archived: true
-excerpt: An explicit poem depicting physical desire and a sexual encounter.
+excerpt: I wanted to call it more than what it was, and some nights I still do.
 ---
 With her auburn colored curls  
  flying in the breeze, she frolicked with desire  

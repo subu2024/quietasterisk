@@ -5,8 +5,8 @@ date: 2020-09-08
 category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: The real story of an arranged marriage in the 1990s and the trust it required
-  from a stranger.
+excerpt: I married a stranger in the '90s and had to learn, fast, what trust actually
+  means.
 ---
 ![The Relationship Tango](relationship_tango.png)
 

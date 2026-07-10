@@ -5,7 +5,8 @@ date: 2001-02-16
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about the lasting pain of a callous remark from a loved one.
+excerpt: One careless sentence from someone I loved is still living rent-free in my
+  head.
 ---
 Deep in the heart  
  Etched for life  

@@ -4,8 +4,8 @@ date: 2020-08-21
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about spiritual detachment and finding inner peace by letting go of
-  desire.
+excerpt: I let go of wanting things, and something quieter finally had room to show
+  up.
 slug: awakening
 ---
 Today I stand awakened   

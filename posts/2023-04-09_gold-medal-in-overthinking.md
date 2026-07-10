@@ -5,7 +5,8 @@ date: 2023-04-09
 category: Self-Awareness & EQ
 featured: true
 archived: false
-excerpt: A candid, funny confession of lifelong worry, anxiety, and overthinking.
+excerpt: If overthinking were an Olympic sport, I'd have a shelf full of medals and
+  no idea how I got there.
 ---
 Worry, according to the **Cambridge Dictionary**, is “to think about problems or unpleasant things that might happen in a way that makes you feel unhappy and frightened.”
 

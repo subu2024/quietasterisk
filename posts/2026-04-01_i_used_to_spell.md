@@ -5,9 +5,9 @@ date: 2026-04-01
 category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: A conversation with his teenager about using ChatGPT for essays raises questions
-  about authentic effort and originality.
+excerpt: My teenager asked if ChatGPT could write the essay, and I still don't know if my answer was about honesty or fear.
 ---
+
 ![i used to spell](i_used_to_spell.png)
 
 I was trying to teach my teenager how to write a proper high school essay when he looked up and asked, almost casually, “Why can’t I just use ChatGPT?”

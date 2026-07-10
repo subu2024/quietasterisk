@@ -4,8 +4,8 @@ date: 2020-06-19
 category: Old Voice
 featured: true
 archived: false
-excerpt: A repetitive poem listing things the writer chooses to 'let go' of, like
-  perfectionism and blame.
+excerpt: I keep making the same list of things I'm trying to let go of, and I keep
+  needing to make it again.
 slug: life-philosophies
 ---
 I let go the need to be perfect   

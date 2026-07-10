@@ -5,7 +5,7 @@ date: 2011-06-14
 category: Old Voice
 featured: false
 archived: false
-excerpt: A surreal poem about waking to an unrecognizable, changed relationship.
+excerpt: I woke up to a relationship I almost didn't recognize anymore.
 ---
 Waking up in the morning  
  I turned around to kiss the  

@@ -5,8 +5,8 @@ date: 2022-03-14
 category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: A direct essay on why we avoid talking about death honestly, and what facing
-  it plainly might teach.
+excerpt: I keep wondering why we'll talk about almost anything except the one thing
+  guaranteed to happen to all of us.
 ---
 Human beings have always been uneasy about death.
 

@@ -4,7 +4,8 @@ date: 2023-08-01
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem contrasting two couples at different stages of intimacy and connection.
+excerpt: I watched two couples across the room and couldn't stop comparing what closeness
+  looks like from a distance.
 slug: two-couples
 ---
 With a stoic gaze, they sat,   

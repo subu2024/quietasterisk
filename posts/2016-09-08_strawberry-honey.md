@@ -5,7 +5,7 @@ date: 2016-09-08
 category: Old Voice
 featured: true
 archived: false
-excerpt: A romantic, sensory poem about an intimate dance with a partner.
+excerpt: I lost myself completely in one dance, one moment, with you.
 ---
 Shining brightly in crystal white  
  she wrapped her arms around me  

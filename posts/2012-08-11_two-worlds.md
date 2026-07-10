@@ -5,7 +5,8 @@ date: 2012-08-11
 category: Self-Awareness & EQ
 featured: true
 archived: false
-excerpt: A father and son on opposite sides of a generational tech and attention divide.
+excerpt: My son and I sit two feet apart, him in a video game and me in the stock
+  market, and neither of us is really looking up.
 ---
 The guns went bang  
  Sending the bad guys  

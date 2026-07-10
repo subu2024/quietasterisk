@@ -5,7 +5,8 @@ date: 2025-11-02
 category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: A gray morning at a coffee shop marks the unexpected start of a new relationship.
+excerpt: I wasn't looking for anything that gray morning, which might be exactly why
+  I found it.
 ---
 I met Kavya on one of those gray mornings when the sky pressed down like a low ceiling and everything — even breathing — felt like effort.
 

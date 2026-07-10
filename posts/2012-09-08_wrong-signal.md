@@ -5,8 +5,8 @@ date: 2012-09-08
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about a miscommunication between husband and wife over an intended
-  signal.
+excerpt: I thought I was being clear, and somehow my own spouse read it completely
+  backwards.
 ---
 A long tiring day, she returned after a son’s soccer game  
  Urging the family to sleep early so she could retire strong  

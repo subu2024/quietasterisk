@@ -5,7 +5,8 @@ date: 2013-09-08
 category: Old Voice
 featured: true
 archived: false
-excerpt: An abstract poem about leaving a unique personal mark on the world.
+excerpt: I keep wondering what mark I'm actually leaving behind, and whether anyone
+  will notice it.
 ---
 Nature sings, time provides the ride  
  It is your unique journey in this tide  

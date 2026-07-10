@@ -5,8 +5,8 @@ date: 2023-02-14
 category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: A new relationship's small, uncanny familiarities are examined against the
-  backdrop of time and probability.
+excerpt: Something about this new relationship felt oddly familiar, and I still can't
+  decide if that's comforting or a warning.
 ---
 Time works its quiet arithmetic whether we consent to it or not.
 

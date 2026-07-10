@@ -5,8 +5,8 @@ date: 2025-06-23
 category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: A meditation on mortality that revisits his own earlier writing about life's
-  chaos and unpredictability.
+excerpt: I went back and reread my own words about chaos and mortality, and they hit
+  differently this time.
 ---
 For the longest time, I found myself [writing](2022_03_31_life_yet_another_view.html) about how _weird_ life is .. chaotic .. complicated ..unpredictable .. messy. At times poetic, at other times, completely absurd. There was always something elusive about it—something I couldn't quite grasp but couldn’t ignore either. It felt like walking through a fog where the path keeps shifting, even as you take each step forward. That weirdness, that mystery, has defined my understanding of life for years.
 

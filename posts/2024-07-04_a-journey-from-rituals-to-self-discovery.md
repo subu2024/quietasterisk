@@ -4,8 +4,8 @@ date: 2024-07-04
 category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: Refusing to pray at a religious ceremony opens into questioning inherited
-  belief.
+excerpt: I refused to pray the way I was expected to, and that refusal cracked something
+  open in me.
 slug: a-journey-from-rituals-to-self-discovery
 ---
 I refused to pray. I stood there, staring at the idol, feeling the tension radiate from the people around me. Some muttered in hushed tones, “The gods will be angry.” Honestly, have we not heard this before? If we don’t appease the gods with gifts and money, they'll unleash their wrath upon us.

@@ -5,8 +5,8 @@ date: 2008-09-02
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about a father's nerves and pride watching his child's first day of
-  school.
+excerpt: I was more nervous than my kid was on their first day of school, and I'm
+  still not over it.
 ---
 Your first day at school  
  Excited as you were  

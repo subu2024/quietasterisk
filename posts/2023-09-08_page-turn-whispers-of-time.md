@@ -5,7 +5,8 @@ date: 2023-09-08
 category: Old Voice
 featured: false
 archived: false
-excerpt: A poem about the emotional journey of reading a book.
+excerpt: A single book pulled me through more emotions than I expected a few hundred
+  pages to hold.
 ---
 Amidst laughter and tears, the book unfolds,  
  A journey through time, memories it holds  

@@ -4,8 +4,8 @@ date: 2022-08-01
 category: Old Voice
 featured: true
 archived: true
-excerpt: A travel reflection on London's blend of smooth modernity and centuries of
-  history.
+excerpt: Walking through a city built on centuries of history, I felt oddly at home
+  in something so much older than me.
 slug: london-a-modern-city-with-history
 ---
 Landing at Heathrow, I half-expected chaos: long lines, frantic announcements, lost luggage. Instead, it was almost disappointingly smooth. Passport scanned, stamp in hand, and I was officially in London. No drama. Just history waiting outside the gates.  

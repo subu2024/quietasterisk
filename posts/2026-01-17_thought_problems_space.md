@@ -5,8 +5,8 @@ date: 2026-01-17
 category: Self-Awareness & EQ
 featured: true
 archived: false
-excerpt: Peace is framed as a moment-by-moment practice rather than a permanent, unattainable
-  state.
+excerpt: I'm learning, slowly and imperfectly, that peace isn't something I arrive
+  at once and keep.
 ---
 Peace isn’t a permanent emotional high or a life without difficulty. It’s a way of living daily life—moment by moment—without being constantly pulled into regret about the past or anxiety about the future. It shows up when we’re doing what feels appropriate in the moment, without demanding that the outcome guarantee our happiness. When that happens, there’s a quiet sense of ease. Not excitement. Not escape. Just enough.
 

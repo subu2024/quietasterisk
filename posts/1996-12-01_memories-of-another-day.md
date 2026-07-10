@@ -5,7 +5,8 @@ date: 1996-12-01
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about being swept up in nostalgia for people and places from the past.
+excerpt: I keep getting pulled back into people and places I thought I'd already left
+  behind.
 ---
 Running with the mad crowd in this restless world  
 I pause and look back, one fine day  

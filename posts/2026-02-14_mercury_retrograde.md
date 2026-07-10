@@ -5,8 +5,8 @@ date: 2026-02-14
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: A string of small annoyances tempts blaming Mercury retrograde, a look at
-  externalizing our own thinning patience.
+excerpt: I wanted to blame the planets for my short temper today, which tells you
+  everything about how the week went.
 ---
 Some mornings I wake up already suspicious of the day.
 

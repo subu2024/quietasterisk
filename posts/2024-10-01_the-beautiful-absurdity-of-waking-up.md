@@ -5,8 +5,8 @@ date: 2024-10-01
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: An early alarm and the daily negotiation with oneself over whether to get
-  up.
+excerpt: Every morning I negotiate with myself over getting out of bed, and I still
+  haven't figured out who wins.
 ---
 Ah, the early morning… the hour when dreams still cling to the corners of your mind, whispering sweet nothings, while your alarm clock plays its subtle warning. It’s 5:30 AM, and I’m groaning into my pillow, contemplating the profound question: why on earth did I set that alarm? The thought of indulging in a few more minutes of blissful oblivion dances teasingly in my head. It’s a delicate negotiation — one I usually lose.
 

@@ -4,8 +4,8 @@ date: '2024-01-01'
 category: Uncertainty
 featured: false
 archived: false
-excerpt: An essay comparing three lenses -- probability, fatalism, realism -- for
-  making peace with an unpredictable life.
+excerpt: I've been testing three different ways of making peace with how little I
+  actually control.
 slug: navigating-lifes-three-big-ideas-probability-fatalism-and-realism
 ---
 Life moves like water over stones, winding and unsteady, sometimes calm, sometimes breaking over edges we didn’t know were there. We walk forward, feet brushing the unseen threads of possibility, and wonder—are we shaping our path, or simply tracing one already drawn? In the quiet spaces between events, three ways of seeing life hover, each a lens, each a gentle nudge toward reflection: **_the Probability, the Fatalist, and the Realistic._**

@@ -5,7 +5,7 @@ date: 2016-04-10
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about a quiet, wordless walk shared with someone loved.
+excerpt: We didn't need words on that walk, and I still think about the silence.
 ---
 Two people walking in the woods  
  clasping hands, leaning in as they should  

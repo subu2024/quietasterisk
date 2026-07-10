@@ -5,7 +5,8 @@ date: 2026-01-04
 category: Uncertainty
 featured: false
 archived: false
-excerpt: A reflection on how randomness quietly shapes the middle of an ordinary day.
+excerpt: I started noticing how much of my ordinary day is just randomness wearing
+  a disguise.
 ---
 > It starts as a moment—unplanned, unseen,  
 > A quiet misstep in an ordinary scene.  

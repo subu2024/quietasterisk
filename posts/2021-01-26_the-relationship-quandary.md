@@ -4,7 +4,8 @@ date: 2021-01-26
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about embracing the instability and unpredictability of a relationship.
+excerpt: I've stopped expecting certainty from this relationship and started trying
+  to make peace with not having it.
 slug: the-relationship-quandary
 ---
 Some call it a wild ride together   

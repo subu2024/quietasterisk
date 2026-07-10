@@ -5,7 +5,8 @@ date: 1999-10-20
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem personifying loneliness as a seductive, ever-present companion.
+excerpt: Loneliness has become such a familiar companion that I'm not sure I know
+  how to be without it.
 ---
 A damsel called Loneliness  
  captivates me with her dark smile

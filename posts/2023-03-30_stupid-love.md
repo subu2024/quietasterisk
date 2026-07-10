@@ -4,10 +4,10 @@ date: 2023-03-30
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about the mind's tendency to invent whole love stories from a glimpse
-  of a stranger.
+excerpt: I built an entire relationship in my head from one glance at a stranger, and I'm not even a little sorry.
 slug: stupid-love
 ---
+
 .. sometimes, love can be stupid .. seeing a silhouette of a person, the mind wanders and conjures up a complete love story .. it does not even pause for a reason .. 
 
 > _As I walked past the door_  
@@ -15,7 +15,7 @@ slug: stupid-love
 > _in the darkness of the early morning_  
 > _The light behind making her radiant to glow_
 >
-> - an excerpt from the poem [the flirt, aug 2010](the-flirt-behind-glass.html)
+> - an excerpt from the poem [the flirt, aug 2010]
 
 And this stupidity doesn’t stop with age .. it matures .. like this story of a old guy falling in love with a younger person and chasing her ..
 
@@ -24,7 +24,7 @@ And this stupidity doesn’t stop with age .. it matures .. like this story of a
 > _Lust penetrated the gap as she blushed each time I walked past her_  
 > _Under the dark night, I grabbed her, planting a kiss drawing her closer_
 >
-> - an excerpt from the poem [the old man and the girl, aug 2018](old-man-and-the-girl.html)
+> - an excerpt from the poem [the old man and the girl, aug 2018]
 
 the obsession can slowly take the path of deeper feelings like depression and loneliness .. a need remains unfulfilled while it seems the world around is satiated in awesome love and happy endings ..
 
@@ -55,6 +55,6 @@ even the British royal wedding did not fail to inspire another of this inane wri
 
 Ah! the many forms of love .. yet nothing is real .. love is the feeling generated within you .. the other elements are merely a trigger ..
 
-**part 1, [Love](2021_09_08_love.html)**
+**part 1, [Love](love.html)**
 
-**part 2, [Dark Love](2022_01_08_dark_love.html)**
+**part 2, [Dark Love](dark_love.html)**

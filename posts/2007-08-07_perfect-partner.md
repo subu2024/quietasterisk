@@ -5,7 +5,7 @@ date: 2007-08-07
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem idealizing a partner as an emotional refuge.
+excerpt: I found the one place I can fully exhale, and it's whenever I'm with you.
 ---
 She yearned for him  
  Her eyes scanning the horizon  

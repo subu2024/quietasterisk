@@ -4,7 +4,8 @@ date: 2024-09-22
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem inspired by Earth's smallness in the universe, on love and belonging.
+excerpt: Knowing how small our planet really is somehow made the love I have here
+  feel bigger, not smaller.
 slug: the-pale-blue-dot
 ---
 Floating in the dark endless sea of space   

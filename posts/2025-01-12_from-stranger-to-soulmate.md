@@ -4,7 +4,7 @@ date: 2025-01-12
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem tracing a relationship's arc from first meeting to deep love.
+excerpt: I still remember the exact moment you stopped being someone I didn't know.
 slug: from-stranger-to-soulmate
 ---
 Day by day, you became  

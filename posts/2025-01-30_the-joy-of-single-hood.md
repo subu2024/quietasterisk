@@ -4,8 +4,8 @@ date: 2025-01-30
 category: Love, Loss & Family
 featured: true
 archived: false
-excerpt: A reflection on an arranged marriage entered by circumstance rather than
-  choice, and what came after.
+excerpt: I married someone I didn't choose, and it took me years to understand what
+  came after that.
 slug: the-joy-of-single-hood
 ---
 They say life has a peculiar sense of humor, often dropping us into arenas we never signed up for, where the rules seem to change faster than we can learn them. At least, that’s how it’s always felt for me. My entry into marriage, many years ago, wasn’t so much a bold choice as it was an intricate convergence of circumstances — a roll of the cosmic dice that landed me in a union I neither actively sought nor vehemently resisted. Life, in its mischievous wisdom, shuffled the deck, and suddenly there I was, married. It wasn’t bad — in fact, it was quite good, often blissful, though not without its fair share of challenges. And then, one day, life pulled the rug out from under me, and there I was — suddenly single again, standing in my fifties, wondering how on earth I got there .. And once again, I accepted the hand dealt and played along.   

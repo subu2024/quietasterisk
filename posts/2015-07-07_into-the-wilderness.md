@@ -4,7 +4,7 @@ date: 2015-07-07
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about the fear and thrill of stepping into the unknown.
+excerpt: Stepping into the unknown terrified me right up until it didn't.
 slug: into-the-wilderness
 ---
 > Standing at the doors of the jungle  

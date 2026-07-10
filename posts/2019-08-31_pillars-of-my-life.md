@@ -4,8 +4,8 @@ date: 2019-08-31
 category: Love, Loss & Family
 featured: true
 archived: false
-excerpt: A tribute to the mother and aunt who shaped his sense of strength and personal
-  boundaries.
+excerpt: My mother and my aunt taught me what strength actually looks like, and I'm
+  still leaning on what they built in me.
 slug: pillars-of-my-life
 ---
 She was the silent one   

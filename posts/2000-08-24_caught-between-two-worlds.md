@@ -5,8 +5,8 @@ date: 2000-08-24
 category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: A sunset triggers the recurring, unresolved question of whether to move back
-  to India after years abroad.
+excerpt: Watching the sunset, I found myself asking, again, whether it's finally time
+  to move back to India.
 ---
 There I was, standing in my living room, watching the sun take its sweet time setting. Twilight time .. it’s got that magic .. Perfect weather, the right mood, and an atmosphere that just screams "think about your life choices." Naturally, my brain decided to wander down this road .. What’s the deal with life anyway? .. and out of nowhere, the classic question popped into my head: should I go back to India? It's been eight years since I set foot in the land of the brave and the home of the free. And let's not forget, even Bombay feels like a foreign land to me now, so we're talking about a solid eleven years of away from the place that I grew up.
 

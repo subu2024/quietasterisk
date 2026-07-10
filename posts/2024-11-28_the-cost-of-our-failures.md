@@ -5,8 +5,8 @@ date: 2024-11-28
 category: Authenticity & Vulnerability
 featured: false
 archived: false
-excerpt: Watching a partner cook effortlessly turns into a reflection on measuring
-  self-worth against someone else's ease.
+excerpt: I watched him cook dinner with effortless grace and spent the rest of the
+  night quietly measuring myself against it.
 ---
 [youtube:GQrphwjWyqg]
 

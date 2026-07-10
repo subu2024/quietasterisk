@@ -4,8 +4,8 @@ date: 2015-10-15
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem observing strangers and reflections during a crowded, rainy train
-  commute.
+excerpt: I watched the rain and the strangers around me and lost track of which thoughts
+  were even mine.
 slug: sitting-in-a-crowded-train
 ---
 > Sitting in the crowded train  

@@ -5,9 +5,9 @@ date: 2021-09-05
 category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: A child's call of 'Appa' prompts reflection on his own relationship with
-  his late father.
+excerpt: My son calling out "Appa" stopped me cold and pulled my own father right back into the room.
 ---
+
 “Appa”, “Appa” the voice came loud, clear, and urgent. That was my 12 year old calling for me. A voice filled with love and a brashness only a child can possess. “Appa” is another word for Daddy.
 
 And as it echoed through the hallway, probability shifted its weight inside me.

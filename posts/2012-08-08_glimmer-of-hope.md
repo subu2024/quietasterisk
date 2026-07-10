@@ -5,7 +5,7 @@ date: 2012-08-08
 category: Old Voice
 featured: true
 archived: false
-excerpt: A romantic poem about reviving passion and hope in an embrace.
+excerpt: One embrace was enough to convince me the passion hadn't actually gone anywhere.
 ---
 Tired and exhausted, I rush back to her  
 Embracing her from behind, I rest my head  

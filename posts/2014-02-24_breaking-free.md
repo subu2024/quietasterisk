@@ -5,8 +5,8 @@ date: 2014-02-24
 category: Authenticity & Vulnerability
 featured: false
 archived: false
-excerpt: Leaving India as a young adult becomes the origin story for choosing a self-defined
-  path.
+excerpt: Leaving India as a young adult taught me that choosing the unfamiliar path
+  is a habit, not a one-time decision.
 ---
 Today I grew out of India  
  Liberated I stand, breathing free with no remorse  

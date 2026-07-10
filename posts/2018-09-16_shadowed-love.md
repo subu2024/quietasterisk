@@ -4,8 +4,7 @@ date: 2018-09-16
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem personifying depression, isolation, and anxiety as a persistent secret
-  companion.
+excerpt: I've been keeping a companion no one else can see, and it never quite leaves.
 slug: shadowed-love
 ---
 She followed me  

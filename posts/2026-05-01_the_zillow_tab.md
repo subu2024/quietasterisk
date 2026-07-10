@@ -5,9 +5,9 @@ date: 2026-05-01
 category: Financial Awareness
 featured: true
 archived: false
-excerpt: 'A dripping faucet and an open Zillow tab both ask the same unanswered question:
-  stay or go.'
+excerpt: I have a browser tab open to a house I'll probably never buy, and I think it's asking me a question I keep avoiding.
 ---
+
 _The same four walls ask the same old question —_  
 _stay or go, and who exactly is deciding?_  
 _The condo does not care. The equity does._  

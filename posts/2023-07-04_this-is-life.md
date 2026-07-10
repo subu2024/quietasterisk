@@ -5,7 +5,7 @@ date: 2023-07-04
 category: Old Voice
 featured: true
 archived: false
-excerpt: A philosophical poem on accepting life as it is, without needing accolades.
+excerpt: I stopped needing applause to believe my life meant something.
 ---
 This is life, a gentle melody  
  Not a game of triumph or defeat  

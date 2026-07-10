@@ -4,7 +4,8 @@ date: 2022-01-15
 category: Old Voice
 featured: true
 archived: false
-excerpt: COVID-19 personified as a dangerous, seductive lover who upended the world.
+excerpt: I started thinking of the pandemic as a dangerous lover none of us asked
+  to fall for.
 slug: corona-virus-a-love-story
 ---
 .. she walked into my life .. with no fanfare, silently on New Year's day ..

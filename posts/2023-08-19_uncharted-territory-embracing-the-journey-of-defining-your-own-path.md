@@ -4,7 +4,8 @@ date: 2023-08-19
 category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: A letter to his son entering college about finding one's own unique path.
+excerpt: I wrote my son a letter about leaving for college, and ended up reminding
+  myself of the same thing.
 slug: uncharted-territory-embracing-the-journey-of-defining-your-own-path
 ---
 _A note to my son in his senior year in college_

@@ -4,8 +4,8 @@ date: 2021-03-24
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem personifying emotions like anger and depression as women competing
-  for attention.
+excerpt: I keep letting the loudest feeling in the room win, and I'm trying to understand
+  why.
 slug: house-of-emotions
 ---
 Living in the house of emotions   

@@ -5,8 +5,8 @@ date: 2024-08-21
 category: Financial Awareness
 featured: false
 archived: false
-excerpt: A Zelle fraud story becomes a candid, funny look at getting scammed and what
-  it says about trust.
+excerpt: I got scammed out of money over Zelle, and somehow I can't decide if I'm
+  angrier or more amused.
 ---
 [All I wanted was a status symbol. What I got was a $31,000 lesson in the downside of payment apps](https://www.businessinsider.com/zelle-fraud-scam-swimming-pool-online-payment-apps-mobile-banking-2023-10)This article triggered my memory to run back and see how many times I have been scammed .. although I would love to blame someone for the folly, I was the naive and dumb person to fall for the scam.
 

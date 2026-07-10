@@ -5,7 +5,8 @@ date: 2024-06-09
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: A satirical future where AI 'adopts' humans, a sharp take on technology dependence.
+excerpt: I imagined a future where AI decided humans needed adopting, and I laughed
+  less than I expected to.
 ---
 **Year 2050**
 

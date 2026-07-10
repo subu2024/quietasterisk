@@ -5,8 +5,8 @@ date: 2022-02-06
 category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: The story of immigrating to the U.S. in the early '90s and the hope and naivety
-  that carried it.
+excerpt: I arrived in America in the early '90s with more hope than plan, and I'm
+  still not sure which one carried me further.
 ---
 Sometimes I look back at the early 1990s and wonder if we were all a little naïve—or maybe just wonderfully hopeful.
 

@@ -4,7 +4,8 @@ date: 2015-06-24
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about finding comfort and shade under a tree on a hot day.
+excerpt: I found more comfort under one tree on a hot day than I expected from anything
+  else that week.
 slug: shades-of-tree
 ---
 > This summer day, the long arching wings of the tree   

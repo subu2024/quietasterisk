@@ -5,7 +5,8 @@ date: 2015-09-08
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem of repeated reassurance to a partner throughout the stages of a day.
+excerpt: I keep finding new moments in the day to remind you how much you mean to
+  me.
 ---
 Climbing out of the shower,  
 brushing her shiny dark hair,  

@@ -4,7 +4,7 @@ date: 2024-11-01
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about an unexpected, sudden reawakening of love.
+excerpt: One dance was enough to wake up feelings I thought I'd buried.
 slug: once-we-danced
 ---
 Life’s a strange kind of clown—  

@@ -5,7 +5,8 @@ date: 2012-08-25
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: A satirical poem about compulsive social media status-updating.
+excerpt: I caught myself updating my status again before I'd even decided if anything
+  worth saying had happened.
 ---
 I wake up in the morning and go tap tap tap tap  
  updating my status on Twitter, Facebook and Tumblr  

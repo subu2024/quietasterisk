@@ -5,8 +5,8 @@ date: 2025-10-01
 category: Authenticity & Vulnerability
 featured: false
 archived: false
-excerpt: An immigrant story about being seen as 'a nobody' by family, and building
-  confidence from nothing.
+excerpt: My own family once treated me like I was nobody, and it took me years to
+  build the confidence that proved them wrong.
 ---
 When I boarded the flight from Bombay to the U.S. all those years ago, I was still, in the eyes of my family, something of a nobody. A good kid, yes. A hardworking student, sure. But nothing extraordinary. My cousins with stable jobs in Indian companies, who wore crisp shirts to the office every day, were the ones seen as “settled.” I was just the boy still asking his parents for spending money .. while clinging to the dream of graduate school abroad.
 

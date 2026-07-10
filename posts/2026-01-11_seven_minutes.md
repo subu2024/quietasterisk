@@ -5,8 +5,8 @@ date: 2026-01-11
 category: Uncertainty
 featured: false
 archived: false
-excerpt: A delayed train becomes a meditation on whether 'arriving,' in transit and
-  in life, is ever really a promise.
+excerpt: My train was delayed by exactly seven minutes, long enough to wonder if arriving
+  anywhere is ever really guaranteed.
 ---
 Most mornings begin the same way. I stand at the metro stop two blocks from my apartment, coffee cooling too fast in my hand, watching the digital sign confidently insist the train is “arriving” in the next few minutes. It will say this for a while. Sometimes for a very long while. Long enough for me to consider whether arriving is more of a suggestion than a promise.
 

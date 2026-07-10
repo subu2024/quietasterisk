@@ -5,8 +5,8 @@ date: 2011-10-17
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about two people bound by circumstance who remain emotionally distant
-  strangers.
+excerpt: We're bound together by circumstance, and somehow that's not the same as
+  being close.
 ---
 Me and you in a relation  
  Bound by children, tradition, without any reason  

@@ -4,7 +4,8 @@ date: 2021-07-01
 category: Old Voice
 featured: true
 archived: false
-excerpt: A short poetic fragment about a river renewing itself each day.
+excerpt: Every day the river renews itself, and I keep wondering if I'm capable of
+  doing the same.
 slug: the-morning
 ---
 > The gushing river refused to stop   

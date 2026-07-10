@@ -5,7 +5,8 @@ date: 2024-09-01
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: A 3am bout of insomnia and mental noise, examined without judgment.
+excerpt: It's 3am and my mind won't stop talking, so I decided to finally listen to
+  what it's saying.
 ---
 ![chaos of now](chaos_of_now.png)
 

@@ -5,9 +5,9 @@ date: 2026-04-08
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: An unsettled spring train ride becomes a meditation on things that almost
-  happen and then quietly don't.
+excerpt: A season that couldn't decide what it wanted to be got me thinking about everything in my life that almost happened.
 ---
+
 The train hums in that steady, familiar way, but today it competes with something else—the memory of stepping onto the platform at Vienna and not knowing whether to zip my coat all the way up or peel it off entirely. March in the Washington, DC does that to you. The wind cuts like it’s still winter, but the sun insists on spring, bright and almost smug about it. By the time I’m seated on the Washington Metro Orange Line, my hands are cold, my face is warm, and I’ve already made two small, unnecessary decisions about my jacket.
 
 Across from me, a beautiful woman leans slightly forward, one hand inside her bag, the other holding a slim, gray tablet at an angle that suggests she started one thing and got pulled into another. The train pulls out of Vienna, steady and indifferent, carrying us all toward Metro Center and whatever version of the day is waiting there.

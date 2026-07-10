@@ -5,7 +5,8 @@ date: 2012-10-15
 category: Old Voice
 featured: true
 archived: false
-excerpt: A light, anecdotal poem about a mischievous toddler's antics.
+excerpt: My toddler's mischief today reminded me how much joy there is in not taking
+  any of this too seriously.
 ---
 He tramped with a plan and glow  
  pouring water on the floor to watch the flow  

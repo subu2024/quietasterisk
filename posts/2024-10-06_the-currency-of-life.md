@@ -5,8 +5,8 @@ date: 2024-10-06
 category: Financial Awareness
 featured: false
 archived: false
-excerpt: A kid's request for expensive sneakers turns into a real conversation about
-  values and money.
+excerpt: My kid wanted expensive sneakers, and I found myself trying to explain what
+  money actually means.
 ---
 The day kicked off with the all-too-familiar request for a pair of _NIKE_ running shoes costing a small fortune. The justification? They were the golden ticket to the hallowed halls of the school running club. The conversation? A meandering river of “Why can’t I have nice things?” and “But everyone else has them!” — the classic plea of youth, wrapped neatly in entitlement.
 

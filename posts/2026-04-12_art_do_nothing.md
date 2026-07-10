@@ -5,9 +5,9 @@ date: 2026-04-12
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: A reflection on the myth that life should look cinematic, and the quiet dignity
-  of ordinary hours.
+excerpt: I used to think my life needed a highlight reel until I noticed how much I actually love the unremarkable hours.
 ---
+
 > Life hides in Tuesday’s slowest hour,  
 > In traffic jams and dishwater power  
 > Not later—now is where it starts,  
@@ -40,7 +40,7 @@ Without constant stimulation, the brain panics slightly and begins broadcasting 
 
 This is why phones exist. Not officially—but functionally. Emotional vending machines. Insert silence, receive distraction snacks. We reach for them not because we need them, but because we are briefly alone in an elevator with our own thoughts and nobody taught us how to behave there.
 
-The philosophy behind [Life Is Happening](https://www.amazon.com/dp/B0GGV7PPYG) suggests something quietly radical: boredom is not empty. It is exposed.
+The philosophy behind [The Space Between Knowing](https://www.amazon.com/dp//B0GHZMSKY5) suggests something quietly radical: boredom is not empty. It is exposed.
 
 When you stop escaping it, you notice that what feels like “nothing happening” is actually just life without commentary.
 

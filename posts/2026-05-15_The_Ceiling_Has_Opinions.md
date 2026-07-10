@@ -5,9 +5,9 @@ date: 2026-05-15
 category: Financial Awareness
 featured: false
 archived: false
-excerpt: A surprise home repair becomes a lesson in how much financial stability quietly
-  depends on luck.
+excerpt: My ceiling picked the one day I couldn't afford chaos to remind me how little control I actually have.
 ---
+
 ## It Started With the Ceiling
 
 There is a specific kind of dread that arrives not with a bang but with a drip.

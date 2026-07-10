@@ -4,7 +4,8 @@ date: 2024-05-25
 category: Self-Awareness & EQ
 featured: true
 archived: false
-excerpt: A self-deprecating parking mishap story, told with humor and honesty.
+excerpt: I did something so avoidably dumb in a parking lot that I had no choice but
+  to write about it.
 slug: adventures-in-stupidity
 ---
 The year is 2004. I’m feeling all smug and proud of my shiny new blue car. I'm in Washington, DC, trying to park in one of the tightest, most claustrophobic parking lots ever. I think I’ve got it all under control until, whoops, I turn the steering wheel just a smidge too much. And then it happens: the dreaded "zzzx" sound as some tiny, pointy thing on the wall decides to give my car a new custom paint job. Genius move, right? I mean, how stupid can I be?   

@@ -4,7 +4,7 @@ date: 2025-02-01
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about pride, longing, and a love that turned to dust.
+excerpt: My pride and my longing keep burning the same thing down.
 slug: ash-and-fire
 ---
 From my heart, you run away   

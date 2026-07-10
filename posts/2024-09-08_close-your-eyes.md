@@ -5,7 +5,8 @@ date: 2024-09-08
 category: Old Voice
 featured: false
 archived: false
-excerpt: A poem urging a pause to remember love and moments that have slipped away.
+excerpt: I asked you to close your eyes so we could both remember what we're at risk
+  of forgetting.
 ---
 Rushing through the bustle, the days feel the same,  
  Could you pause today, just a second, step off the fast lane?  

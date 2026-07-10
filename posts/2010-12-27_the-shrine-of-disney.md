@@ -5,7 +5,8 @@ date: 2010-12-27
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about the anticipation and ritual of a Disney theme park visit.
+excerpt: The anticipation leading up to that trip turned out to be its own kind of
+  magic.
 ---
 My wait begins the moment I book the tickets  
  The expectations surge daily, running high in adrenaline  

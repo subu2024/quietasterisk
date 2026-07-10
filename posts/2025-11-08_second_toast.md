@@ -5,8 +5,8 @@ date: 2025-11-08
 category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: At his son's wedding, a husband reflects on decades of marriage through a
-  single shared nickname.
+excerpt: At my son's wedding, one old nickname was enough to unravel decades of my
+  own marriage in my head.
 ---
 She hated being called _babe._ Said it made her feel like an accessory.
 So somewhere in the first few years of our marriage, it changed — softened — into **babo.**

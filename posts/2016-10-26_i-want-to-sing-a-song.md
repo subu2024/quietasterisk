@@ -4,7 +4,7 @@ date: 2016-10-26
 category: Old Voice
 featured: true
 archived: false
-excerpt: A repetitive lyrical poem about wanting to be heard and understood.
+excerpt: I just want someone to actually hear me, not just listen.
 slug: i-want-to-sing-a-song
 ---
 I want to sing a song  

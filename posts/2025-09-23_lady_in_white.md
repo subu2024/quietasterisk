@@ -5,7 +5,8 @@ date: 2025-09-23
 category: Old Voice
 featured: false
 archived: false
-excerpt: A poem observing a stranger on a train and imagining her inner world.
+excerpt: I watched a stranger on the train and built an entire life for her in my
+  head before she ever looked up.
 ---
 Elegant, with a hint of smile,  
 draped in floral white,  

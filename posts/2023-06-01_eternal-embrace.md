@@ -5,7 +5,8 @@ date: 2023-06-01
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about embracing love and death as inseparable parts of life.
+excerpt: I've started to believe love and loss were never really separate from each
+  other.
 ---
 Fall in love with life, don't be shy,  
  Even if one day she'll say goodbye.  

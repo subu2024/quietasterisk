@@ -4,8 +4,8 @@ date: 2025-12-06
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about choosing solitude over connection and being haunted by that
-  choice.
+excerpt: I chose being alone over being with you, and I'm still not sure it was the
+  right trade.
 slug: i-traded-you-for-a-ghost
 ---
 I traded you for a ghost

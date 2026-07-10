@@ -4,7 +4,7 @@ date: 2024-07-01
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem mourning dreams and happiness that faded with time.
+excerpt: I keep hearing what my dreams used to sound like before life got louder.
 slug: echoes-of-lost-dreams
 ---
 The many vivid dreams   

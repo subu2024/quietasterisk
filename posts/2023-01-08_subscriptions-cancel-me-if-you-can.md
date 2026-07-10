@@ -5,8 +5,8 @@ date: 2023-01-08
 category: Financial Awareness
 featured: true
 archived: false
-excerpt: The maddening effort of canceling a subscription, and what it reveals about
-  consumer traps.
+excerpt: I just wanted to cancel a subscription, and instead I got a masterclass in
+  how badly companies don't want to let me go.
 ---
 I logged into the app to cancel the subscription. There was few more hours before the automatic charge would kick in .. frantically I searched and could not find a easy way to cancel it. Next stop, I started chatting with the automated chat bot .. a few pleasant exchanges but it remained clueless .. next I dialed the phone number .. a stern voice at the other end announced .. we are currently closed. please call between 8:00am and 8:00pm EST .. ah!!! Desperate, I sent an email and a text to the subscription department asking to cancel and waited ….
 

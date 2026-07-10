@@ -5,7 +5,8 @@ date: 2015-08-03
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: An essay unpacking what 'letting go' actually means as a practice of awareness.
+excerpt: I keep trying to understand what "letting go" actually requires of me, moment
+  to moment.
 ---
 What do we mean by “let go” .. we are not capable of forgetting past events or stop dreaming of future events .. so what is let go? Let go means “let it be” ..  it is the act of letting thoughts come and go and not be worried about it. Everything will change .. so let the thoughts come but don’t identify with it .. just let it be ..
 

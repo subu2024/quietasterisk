@@ -5,8 +5,8 @@ date: 2023-01-15
 category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: A chance reunion with someone from the past, in a Home Depot parking lot,
-  reopens old memory.
+excerpt: I ran into someone from my past in a hardware store parking lot, and it undid
+  me more than I expected.
 ---
 She smiled at me like we had just paused a conversation yesterday, not ten years ago, and for a moment I believed her.
 

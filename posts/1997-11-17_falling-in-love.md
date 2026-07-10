@@ -5,8 +5,9 @@ date: 1997-11-17
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem about a serendipitous encounter that blossoms into a shared kiss.
+excerpt: One unplanned encounter and, before I knew it, we were sharing a kiss neithern of us expected.
 ---
+
 Alone and lonely was I  
  Seated on a bench, staring at the sky  
  In you walk, elegant and charming  

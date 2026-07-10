@@ -5,7 +5,7 @@ date: 2002-12-23
 category: Old Voice
 featured: true
 archived: false
-excerpt: A whimsical poem written from the perspective of a nine-month-old baby.
+excerpt: At nine months old, apparently, I already had opinions about everything.
 ---
 Look at the world  
  through my nine month old eyes  

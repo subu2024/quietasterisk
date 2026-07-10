@@ -5,7 +5,8 @@ date: 2019-09-08
 category: Old Voice
 featured: false
 archived: false
-excerpt: A nostalgic poem remembering the innocence of young love.
+excerpt: I keep going back, in my head, to a version of love that was simpler than
+  I knew at the time.
 ---
 Those were the days  
  When we were in love and alive  

@@ -5,8 +5,8 @@ date: 2022-09-08
 category: Authenticity & Vulnerability
 featured: false
 archived: false
-excerpt: A violent bout of airplane turbulence forces a sudden, visceral confrontation
-  with mortality.
+excerpt: The plane shook so violently I genuinely thought that flight might be my
+  last, and I still think about what almost happened.
 ---
 The airplane shuddered violently .. tethering in the thin air at 37,000 feet while speeding at 527 miles per hour .. the jolt pushed the hostess down .. everyone was screaming .. the lady on my right grabbed me hard by wrist while I was pulled away from my seat stretching my seatbelt. The time stood still ..
 

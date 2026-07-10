@@ -5,7 +5,8 @@ date: 2018-08-17
 category: Old Voice
 featured: true
 archived: true
-excerpt: A poem depicting an age-gap romantic relationship.
+excerpt: I can't stop watching this and wondering what pulled them together in the
+  first place.
 ---
 Our eyes met for the first time at a wedding harbor  
  Me an old man and she many many years younger  

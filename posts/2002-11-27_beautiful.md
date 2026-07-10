@@ -5,8 +5,8 @@ date: 2002-11-27
 category: Old Voice
 featured: true
 archived: true
-excerpt: A poem admiring a woman's hair and appearance while seated behind her on
-  a train.
+excerpt: I couldn't stop noticing her, sitting there on the train, and I'm still thinking
+  about why.
 ---
 She sat in front of me in the train  
  with her shampooed but still damp hair  

@@ -5,7 +5,7 @@ date: 2011-04-03
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem personifying an internal battle between good and destructive impulses.
+excerpt: I can feel two very different versions of myself fighting for the same seat.
 ---
 Looking into the mirror  
  As I brushed my teeth  

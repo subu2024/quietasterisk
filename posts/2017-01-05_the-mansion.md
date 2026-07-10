@@ -5,8 +5,8 @@ date: 2017-01-05
 category: Old Voice
 featured: false
 archived: false
-excerpt: A poem contrasting a wealthy host's outward pride with his wife's hidden
-  unhappiness.
+excerpt: Behind all that visible wealth, I noticed something quietly falling apart
+  that no one else seemed to see.
 ---
 He welcomed the guests with a forced smile  
  Ushering them into the palace he built  

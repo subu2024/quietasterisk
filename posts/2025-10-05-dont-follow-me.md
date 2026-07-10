@@ -4,8 +4,8 @@ date: 2025-10-05
 category: Old Voice
 featured: false
 archived: false
-excerpt: A poem about masking imperfection behind a polished, guarded exterior in
-  a new relationship.
+excerpt: I keep showing you the version of me I've polished, and I don't know how
+  to stop.
 slug: dont-follow-me
 ---
 Be my girlfriend, sit across the table,  

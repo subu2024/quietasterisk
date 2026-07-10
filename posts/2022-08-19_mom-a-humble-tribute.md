@@ -5,9 +5,9 @@ date: 2022-08-19
 category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: A deeply personal account of a mother's cremation and the quiet dignity found
-  in that ritual.
+excerpt: I watched the flames take my mother, and somehow, in that moment, I finally felt at peace.
 ---
+
 Three years back, I stood there watching the flames begin their slow work, and it struck me how strange our rituals can be.
 
 She lay still on the raised wooden platform, the funeral pyre carefully arranged around her. In a few minutes, fire would take over, reducing a long, complicated life to smoke and memory. Yet her face looked peaceful — calmer than I had ever seen it. There was a quiet dignity about her, as if she had already made peace with everything we were still struggling to understand.

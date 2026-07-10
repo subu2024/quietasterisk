@@ -5,7 +5,8 @@ date: 2010-09-15
 category: Old Voice
 featured: true
 archived: false
-excerpt: A poem portraying a man who appears composed while visibly drunk to others.
+excerpt: Everyone else could see it before I let myself admit how far gone I actually
+  was.
 ---
 His eyes seemed deep in thought  
  Face mesmerized by an unknown joy  
