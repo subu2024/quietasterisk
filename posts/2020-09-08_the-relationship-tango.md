@@ -5,9 +5,9 @@ date: 2020-09-08
 category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: I married a stranger in the '90s and had to learn, fast, what trust actually
-  means.
+excerpt: I married in the '90s and had to learn, fast, what trust actually means.
 ---
+
 ![The Relationship Tango](relationship_tango.png)
 
 She walked into my life - unannounced, bouncing from a photo into my life. We met for a few minutes and she decided to marry me. I stood flabbergasted not at the decision but the trust that she implied in me .. an unknown stranger and only because our families agreed that this was right. This is the 90s and arranged marriages were still in vogue.

@@ -5,9 +5,9 @@ date: 2019-03-11
 category: Old Voice
 featured: false
 archived: false
-excerpt: I went looking for one clean definition of life and, unsurprisingly, never
-  found it.
+excerpt: I went looking for one clean definition of life and, unsurprisingly, never found it.
 ---
+
 What is life?  
  A question that I ponder  
  To look beyond awe and wonder  

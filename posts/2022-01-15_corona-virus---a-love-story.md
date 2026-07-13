@@ -4,10 +4,10 @@ date: 2022-01-15
 category: Old Voice
 featured: true
 archived: false
-excerpt: I started thinking of the pandemic as a dangerous lover none of us asked
-  to fall for.
+excerpt: I started thinking of the pandemic as a dangerous lover none of us asked to fall for.
 slug: corona-virus-a-love-story
 ---
+
 .. she walked into my life .. with no fanfare, silently on New Year's day ..
 
 I had heard about her and her penchant to take over your life. I had heard that she was quick to seek many partners and suffocate their lives. Yet she was known to be scared of vaccines and masks. Many others refused to acknowledge her presence and paid a heavy price with health. She single handedly changed the world ..
@@ -26,9 +26,9 @@ After two weeks, she was bored of me and left the way she came in .. silently. S
 
 Today, I smiled and felt good and not worried about her anymore .. but I know she could visit anytime she chooses and that’s the power she has on me and the others ..
 
-> *The virus disrupted our life and dame*  
-> *Sleep was never the same*  
-> *Dinner merged with time and had no shame*  
-> *Eating at odd hours - breakfast, dinner or give any name*  
+> _The virus disrupted our life and dame_  
+> _Sleep was never the same_  
+> _Dinner merged with time and had no shame_  
+> _Eating at odd hours - breakfast, dinner or give any name_
 >
 > - an excerpt from the poem ["Corona Virus", Aug 2020](2020_08_23_corona_virus.html)

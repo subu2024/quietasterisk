@@ -68,7 +68,7 @@ def format_card(post: Post, is_small: bool = False) -> str:
 """
 
 
-def format_book_card(book: dict, show_full_description: bool = False) -> str:
+def format_book_card_old(book: dict, show_full_description: bool = False) -> str:
     """
     Generate book card with cover image and buy button.
     
@@ -138,5 +138,86 @@ def format_book_card(book: dict, show_full_description: bool = False) -> str:
   <p class="book-description">{description}</p>
   {video_html}
   {link_html}
+</div>
+"""
+
+def format_book_card(book: dict, show_full_description: bool = False) -> str:
+    """
+    Generate book card with cover image and buy button.
+    
+    Args:
+        book: Book dictionary from books.json
+        show_full_description: Whether to show full or truncated description
+        
+    Returns:
+        HTML string for book card
+    """
+    # Handle book cover image
+    img_html = ""
+    if book.get("image"):
+        img = copy_image(book.get("image"))
+        if img:
+            img_html = (
+                f'<img src="{img}" class="book-image" '
+                f'alt="{book.get("title", "")}" '
+                f'style="width: 120px; height: auto; flex-shrink: 0; border-radius: 4px;">'
+            )
+    
+    # Truncate description if needed
+    description = book.get("description", "")
+    if not show_full_description and len(description) > 150:
+        description = description[:150] + "..."
+    
+    # YouTube video embed if video_id exists
+    video_html = ""
+    if book.get("video_id"):
+        video_id = book.get("video_id")
+        video_html = f'''
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 1.5rem 0; border-radius: 4px;">
+            <iframe 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                src="https://www.youtube.com/embed/{video_id}?rel=0&modestbranding=1" 
+                title="Video about {book.get('title', '')}"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+        '''
+        
+    # Buy button if link exists
+    link_html = ""
+    link_url = book.get("link", "")
+    if link_url:
+        link_html = f'''
+        <a href="{link_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" 
+           style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block;">
+          {book.get("linkDescription", "Buy Book")}
+        </a>
+        '''
+    
+    # Optional metadata
+    author_html = ""
+    if book.get("author"):
+        author_html = f'<p style="color: var(--color-slate); margin-bottom: 0.5rem; font-family: var(--font-sans); font-size: 0.875rem;">by {book.get("author")}</p>'
+    
+    year_html = ""
+    if book.get("year"):
+        year_html = f'<p style="color: var(--color-slate); margin-bottom: 1rem; font-family: var(--font-sans); font-size: 0.875rem;">Published {book.get("year")}</p>'
+    
+    return f"""
+<div class="book-card">
+  <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
+    {img_html}
+    <div style="flex: 1; min-width: 0;">
+      <h4 class="book-title">{book.get("title", "")}</h4>
+      {author_html}
+      {year_html}
+      <p class="book-description">{description}</p>
+      {link_html}
+    </div>
+  </div>
+  {video_html}
 </div>
 """

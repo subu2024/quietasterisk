@@ -5,9 +5,9 @@ date: 2026-01-04
 category: Uncertainty
 featured: false
 archived: false
-excerpt: I started noticing how much of my ordinary day is just randomness wearing
-  a disguise.
+excerpt: I started noticing how much of my ordinary day is just randomness wearing a disguise.
 ---
+
 > It starts as a moment—unplanned, unseen,  
 > A quiet misstep in an ordinary scene.  
 > Not fate, not chaos, just something in between,  

@@ -5,9 +5,9 @@ date: 2026-02-14
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: I wanted to blame the planets for my short temper today, which tells you
-  everything about how the week went.
+excerpt: I wanted to blame the planets for my short temper today, which tells you everything about how the week went.
 ---
+
 Some mornings I wake up already suspicious of the day.
 
 The coffee tastes slightly off. The train arrives just as I’m walking into the platform, doors closing like a polite refusal. My phone dies at 12 percent, which feels personal. On days like that, it’s very tempting to blame Mercury - the planet.

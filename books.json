@@ -40,10 +40,10 @@
   },
   {
     "title": "Funny Money",
-    "description": "This book is an introduction to the basics of money and investing. It is geared towards absolute beginners and teenagers. There is no math involved. The book is written in a lighthearted and humorous style. It covers topics such as the history of money, how banks work, how to save and invest, and how to avoid common financial pitfalls.",
-    "image": "",
-    "linkDescription": "Download Free PDF",
-    "link": "downloads/FunnyMoney.pdf"
+    "description": "What They Don’t Teach You About Money in High School (But Should). Most finance books for teens are either painfully boring textbooks or get-rich-quick schemes full of risky gimmicks. Funny Money is different. Born from a series of real, unfiltered conversations between a tech-executive father and his teenage son, this book demystifies the financial world without a single lecture. Using clear, everyday analogies—from Uber and phone financing to football and video games—this guide transforms complex economic principles into intuitive, bite-sized strategies. Your teen won't just memorize formulas; they will learn how to outsmart their own brain’s psychological biases, decode corporate income statements, and leverage the wealth-building magic of compound interest before they even finish high school.",
+    "image": "funny_money.jpg",
+    "linkDescription": "Buy on Amazon",
+    "link": "https://www.amazon.com/dp/B0H8MJP1KH"
   },
   {
     "title": "Cloud Computing – An Introduction",

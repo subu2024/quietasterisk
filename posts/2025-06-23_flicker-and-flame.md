@@ -1,13 +1,13 @@
 ---
-title: 'Flicker and Flame: How Death Teaches Us to Live'
+title: "Flicker and Flame: How Death Teaches Us to Live"
 slug: flicker-and-flame-how-death-teaches-us-to-live
 date: 2025-06-23
 category: Authenticity & Vulnerability
 featured: true
-archived: false
-excerpt: I went back and reread my own words about chaos and mortality, and they hit
-  differently this time.
+archived: true
+excerpt: I went back and reread my own words about chaos and mortality, and they hit differently this time.
 ---
+
 For the longest time, I found myself [writing](2022_03_31_life_yet_another_view.html) about how _weird_ life is .. chaotic .. complicated ..unpredictable .. messy. At times poetic, at other times, completely absurd. There was always something elusive about it—something I couldn't quite grasp but couldn’t ignore either. It felt like walking through a fog where the path keeps shifting, even as you take each step forward. That weirdness, that mystery, has defined my understanding of life for years.
 
 But time has a way of offering new vantage points. With every passing year, life invites you to re-read the same chapters with wiser eyes. The strange becomes familiar. The complicated becomes clear—or at least clearer. And what once seemed like chaos reveals itself to be a different kind of order.

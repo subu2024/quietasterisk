@@ -5,9 +5,9 @@ date: 2025-08-08
 category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: Scrolling through everyone's curated wins made me ask what I'm actually chasing
-  when I post mine.
+excerpt: Scrolling through everyone's curated wins made me ask what I'm actually chasing when I post mine.
 ---
+
 **_I’m excited to announce that I’m joining as …_**
 
 Well, not really. But that’s how it feels every time I open LinkedIn—like I’ve wandered onto a crowded subway platform where everyone’s shouting their wins into a megaphone. Promotions, thought leadership, “Top Voice in 15 Things You Didn’t Know Existed.” You stand there, trying to catch a whisper—a signal—amid the announcements and noise.

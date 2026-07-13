@@ -5,9 +5,9 @@ date: 2025-01-20
 category: Self-Awareness & EQ
 featured: true
 archived: false
-excerpt: I got through another chaotic morning on caffeine and half-remembered therapy
-  quotes, and somehow it worked.
+excerpt: I got through another chaotic morning on caffeine and half-remembered therapy quotes, and somehow it worked.
 ---
+
 I’ve realized that life is mostly made up of little absurdities — those quiet, daily frustrations that never make the highlight reels but somehow define our days. And I’ve been navigating it armed with caffeine, a slightly overactive imagination, and a suspicious collection of therapy quotes that promise enlightenment in bite-sized doses.
 
 Take, for example, the time my therapist told me I was an orange. Not metaphorically “bright” or “cheerful”—literally an orange. The idea was, “Not everyone likes oranges. Doesn’t mean there’s something wrong with the orange.” I tried applying this wisdom when someone ghosted me. “It’s fine. I’m an orange,” I repeated like a mantra. It worked—until I noticed that the apples in my life seemed to be doing better. Suddenly, existential fruit comparisons were a thing.

@@ -1,13 +1,13 @@
 ---
-title: 'Navigating Life''s Three Big Ideas: Probability, Fatalism, and Realism'
-date: '2024-01-01'
+title: "Navigating Life's Three Big Ideas: Probability, Fatalism, and Realism"
+date: "2024-01-01"
 category: Uncertainty
 featured: false
 archived: false
-excerpt: I've been testing three different ways of making peace with how little I
-  actually control.
+excerpt: I've been testing three different ways of making peace with how little I actually control.
 slug: navigating-lifes-three-big-ideas-probability-fatalism-and-realism
 ---
+
 Life moves like water over stones, winding and unsteady, sometimes calm, sometimes breaking over edges we didn’t know were there. We walk forward, feet brushing the unseen threads of possibility, and wonder—are we shaping our path, or simply tracing one already drawn? In the quiet spaces between events, three ways of seeing life hover, each a lens, each a gentle nudge toward reflection: **_the Probability, the Fatalist, and the Realistic._**
 
 There is a strange beauty in randomness. The Probability Model whispers that the world is not a machine but a scatter of events, a delicate collision of chance. One morning the sun spills across the floorboards, and in the next instant, rain erases it. We laugh, we lose, we love—none of it predictable, yet each moment carries the full weight of significance. Life asks us to witness, to engage, to feel, without the illusion of control. Our minds, restless and searching, weave patterns in the chaos. We assign meaning, we chase narratives—but perhaps the truest experience lies in letting life happen, letting ourselves be touched, astonished, and undone.

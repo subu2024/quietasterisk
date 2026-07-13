@@ -4,10 +4,10 @@ date: 2025-10-05
 category: Old Voice
 featured: false
 archived: false
-excerpt: I keep showing you the version of me I've polished, and I don't know how
-  to stop.
+excerpt: I keep showing you the version of me I've polished, and I don't know how to stop.
 slug: dont-follow-me
 ---
+
 Be my girlfriend, sit across the table,  
 Clinking glasses where the night feels stable.  
 Velvet shadows, your laughter spilling bright,  

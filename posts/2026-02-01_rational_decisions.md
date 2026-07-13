@@ -5,9 +5,9 @@ date: 2026-02-01
 category: Financial Awareness
 featured: true
 archived: false
-excerpt: I complain about the price of my coffee every single morning and buy it anyway,
-  and I finally asked myself why.
+excerpt: I complain about the price of my coffee every single morning and buy it anyway, and I finally asked myself why.
 ---
+
 Every morning, I walk to the same Starbucks, stand in the same line, and buy the same coffee I’ve been buying for years. I complain—quietly, internally—about the price every time. I always notice the number on the screen. I always think, _This is getting ridiculous._ Then I tap my card without protest.
 
 This is how most of my economic life goes: **_I notice the price, think it’s absurd, and pay anyway._**

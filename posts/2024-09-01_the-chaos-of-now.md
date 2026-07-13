@@ -1,13 +1,13 @@
 ---
-title: 'The Chaos of Now: Is It All in My Head?'
+title: "The Chaos of Now: Is It All in My Head?"
 slug: the-chaos-of-now-is-it-all-in-my-head
 date: 2024-09-01
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: It's 3am and my mind won't stop talking, so I decided to finally listen to
-  what it's saying.
+excerpt: It's 3am and my mind won't stop talking, so I decided to finally listen to what it's saying.
 ---
+
 ![chaos of now](chaos_of_now.png)
 
 It’s 3 a.m. and I’m wide awake, staring at the clock ticking .. a mocking rhythm, a percussive reminder that sleep is a distant fantasy. The fan above me whirs lazily, completely indifferent to my existential dread, while shadows tango across the walls like they’re in on a cosmic joke I have yet to decipher. I’m nestled in a mountain of laundry that’s somehow morphed into my sanctuary. Crumpled shirts and empty snack wrappers are my only companions as I drift in and out of an emotional tug-of-war between laughter and bewilderment. “Is everything happening inside me?” I ponder, and just like that, the absurdity wraps around me like a comforting hug .. a very warm blanket of chaos.
@@ -43,4 +43,4 @@ And who knows? Maybe one day I’ll figure it all out. But until then, I’ll em
 > _A rain can make me dance_  
 > _While you may cry wrapped in sadness advance_
 
-> - an excerpt from the poem [Maya ,Sep 2021](2022_03_01_maya.html)
+> - an excerpt from the poem [Maya ,Sep 2021](maya.html)

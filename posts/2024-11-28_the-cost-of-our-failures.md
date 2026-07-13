@@ -5,9 +5,9 @@ date: 2024-11-28
 category: Authenticity & Vulnerability
 featured: false
 archived: false
-excerpt: I watched him cook dinner with effortless grace and spent the rest of the
-  night quietly measuring myself against it.
+excerpt: I watched him cook dinner with effortless grace and spent the rest of the night quietly measuring myself against it.
 ---
+
 [youtube:GQrphwjWyqg]
 
 Jai stood quietly in the kitchen, assembling a modest plate of fish and rice. The aroma drifted through the air, weaving its magic into every corner of the room—so comforting, so familiar. I watched him with a gentle admiration. He approached dinner not as a chore, but as a ritual—something he found almost artisanal, more graceful than anything I might have prepared.

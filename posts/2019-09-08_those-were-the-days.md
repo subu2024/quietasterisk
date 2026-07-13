@@ -5,9 +5,9 @@ date: 2019-09-08
 category: Old Voice
 featured: false
 archived: false
-excerpt: I keep going back, in my head, to a version of love that was simpler than
-  I knew at the time.
+excerpt: I keep going back, in my head, to a version of love that was simpler than I knew at the time.
 ---
+
 Those were the days  
  When we were in love and alive  
  You would wait for me  

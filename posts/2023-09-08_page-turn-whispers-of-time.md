@@ -1,13 +1,13 @@
 ---
-title: 'Page Turn: Whispers of Time'
+title: "Page Turn: Whispers of Time"
 slug: page-turn-whispers-of-time
 date: 2023-09-08
 category: Old Voice
 featured: false
-archived: false
-excerpt: A single book pulled me through more emotions than I expected a few hundred
-  pages to hold.
+archived: true
+excerpt: A single book pulled me through more emotions than I expected a few hundred pages to hold.
 ---
+
 Amidst laughter and tears, the book unfolds,  
  A journey through time, memories it holds  
  Emotions woven in a tapestry so fine,  

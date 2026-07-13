@@ -1,13 +1,13 @@
 ---
-title: 'A Spirited Adventure: My Misadventures with Alcohol'
-date: '2023-01-01'
+title: "A Spirited Adventure: My Misadventures with Alcohol"
+date: "2023-01-01"
 category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: I'm finally telling the truth about my long, complicated relationship with
-  drinking.
+excerpt: I'm finally telling the truth about my long, complicated relationship with drinking.
 slug: a-spirited-adventure-my-misadventures-with-alcohol
 ---
+
 “I can feel my head spinning .. I’m going to fall down“
 
 That was my mind churning when I stumbled out of the dingy bar into the open air .. the sun shining directly on my face.

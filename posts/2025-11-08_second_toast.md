@@ -5,9 +5,9 @@ date: 2025-11-08
 category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: At my son's wedding, one old nickname was enough to unravel decades of my
-  own marriage in my head.
+excerpt: At my son's wedding, one old nickname was enough to unravel decades of my own marriage in my head.
 ---
+
 She hated being called _babe._ Said it made her feel like an accessory.
 So somewhere in the first few years of our marriage, it changed — softened — into **babo.**
 A silly, affectionate nickname that belonged to us and no one else.
@@ -210,7 +210,10 @@ It sheds its need to own or explain and becomes something simpler: recognition.
 The kind that asks for nothing but peace.
 
 As I drove home through the sleeping city, the windshield misting with drizzle, I found myself smiling — without reason, without ache.
+
 Maybe this was what forgiveness felt like.
 Not forgetting.
 Not holding on.
 Just… carrying less.
+
+note - my attempt at writing fiction

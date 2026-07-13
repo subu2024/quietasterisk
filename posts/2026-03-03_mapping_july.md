@@ -5,9 +5,9 @@ date: 2026-03-03
 category: Uncertainty
 featured: true
 archived: false
-excerpt: Riding a cold train while dreaming of summer, I realized how much of my life
-  I spend somewhere other than now.
+excerpt: Riding a cold train while dreaming of summer, I realized how much of our life we spend somewhere other than NOW.
 ---
+
 The metro doors sighed open, and a ribbon of cold morning air slipped inside, carrying the faint smell of metal and last night’s rain. I found my usual spot by the pole, one hand on my laptop, the other fishing for my transit card I had, of course, already put away. The carriage was quiet in that particular way only a morning train can be—people zipped into coats, eyes fixed on phones, headphones sealing them off like polite little borders.
 
 And then she began.

@@ -5,9 +5,9 @@ date: 2024-08-01
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: One bad morning cascaded into another, and I'm still figuring out how much
-  of that was actually about me.
+excerpt: One bad morning cascaded into another, and I'm still figuring out how much of that was actually about me.
 ---
+
 Did you ever have one of those days where everything seems to conspire against you? .. Not the big, earth-shattering disasters, but a relentless parade of minor annoyances that pile up and make you question everything .. I’m talking about the kind of day where you start wondering if the universe is playing some elaborate prank on you.
 
 Take this morning, for example. I woke up with grand ambitions, ready to conquer the world .. But then, my iPhone decided to snooze itself. I mean, how does that even happen? So, I scrambled out of bed, tripped over my own feet, and narrowly avoided a face plant. Not exactly the start I envisioned.

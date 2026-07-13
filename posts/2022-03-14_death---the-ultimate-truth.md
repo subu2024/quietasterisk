@@ -5,9 +5,9 @@ date: 2022-03-14
 category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: I keep wondering why we'll talk about almost anything except the one thing
-  guaranteed to happen to all of us.
+excerpt: I keep wondering why we'll talk about almost anything except the one thing guaranteed to happen to all of us.
 ---
+
 Human beings have always been uneasy about death.
 
 We don’t talk about it easily, and when we do, we often disguise the conversation with philosophy, religion, or quiet humor. Yet somewhere deep inside, the fear remains. It has probably been there since the first human being watched a loved one die and wondered what had just happened.

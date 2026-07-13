@@ -5,9 +5,9 @@ date: 2025-06-01
 category: Authenticity & Vulnerability
 featured: true
 archived: false
-excerpt: I keep waiting for my life to look like the one I imagined, and I finally
-  asked why I expected that in the first place.
+excerpt: I keep waiting for my life to look like the one I imagined, and I finally asked why I expected that in the first place.
 ---
+
 Life, in all its messy, magnificent glory, often feels like a long-running sitcom — except the jokes aren’t always funny, and the laugh track is broken. We march through it with the sincere hope that we’re heading somewhere meaningful, only to frequently trip over our own expectations and land face-first in a puddle of, “Oh no, not this again.”
 
 Let me take you back to a magical vacation I once had — oh yes, that one. The honeymoon.

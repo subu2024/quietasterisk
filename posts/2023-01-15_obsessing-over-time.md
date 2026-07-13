@@ -5,9 +5,9 @@ date: 2023-01-15
 category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: I ran into someone from my past in a hardware store parking lot, and it undid
-  me more than I expected.
+excerpt: I ran into someone from my past in a hardware store parking lot, and it undid me more than I expected.
 ---
+
 She smiled at me like we had just paused a conversation yesterday, not ten years ago, and for a moment I believed her.
 
 We were standing in the Home Depot parking lot, the faint smell of sawdust and wet cement drifting around us, the sliding doors sighing open and shut as if they had opinions about our reunion. She looked familiar in the way memory edits out inconvenient details—just enough warmth to feel comfortable, just enough difference to make me unsure where to look.

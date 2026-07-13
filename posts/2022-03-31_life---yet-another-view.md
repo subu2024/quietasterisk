@@ -4,10 +4,10 @@ date: 2022-03-31
 category: Old Voice
 featured: true
 archived: false
-excerpt: I went looking through history for an answer to what life is actually for,
-  and came back with more questions.
+excerpt: I went looking through history for an answer to what life is actually for, and came back with more questions.
 slug: life-yet-another-view
 ---
+
 What is life? Many definitions abound. Over the centuries, many philosophers, religious leaders, ordinary people and gurus of various stripes have dipped their quills in ink, bent over their manuscripts, and tried to come up with a satisfactory answer. Perhaps you’re asking yourself the same question right now like me.
 
 Bob Geldof said: “**The purpose of life is life itself**”

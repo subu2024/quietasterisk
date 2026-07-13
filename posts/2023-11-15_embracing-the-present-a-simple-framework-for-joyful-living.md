@@ -1,13 +1,13 @@
 ---
-title: 'Embracing the Present: A Simple Framework for Joyful Living'
+title: "Embracing the Present: A Simple Framework for Joyful Living"
 slug: embracing-the-present-a-simple-framework-for-joyful-living
 date: 2023-11-15
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: A bottle shattered on my kitchen floor and, oddly, pulled me straight back
-  into the present moment.
+excerpt: A bottle shattered on my kitchen floor and, oddly, pulled me straight back into the present moment.
 ---
+
 Clash! A bottle shattered somewhere nearby, and just like that, the present snapped into focus. My mind, usually wandering like a kite in an unpredictable wind, stumbled over old memories, brushing against regrets I hadn’t noticed carrying so heavily.
 
 The struggle to stay anchored lingered, pulled toward familiar patterns of worry and rumination. Slowly, though, a realization unfurled—a quiet roadmap back to now.

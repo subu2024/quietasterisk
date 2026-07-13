@@ -5,9 +5,9 @@ date: 2024-11-10
 category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: The stains in our old carpet turned out to be the only honest record of our
-  family's history.
+excerpt: The stains in our old carpet turned out to be the only honest record of our family's history.
 ---
+
 In the quiet stillness of my living room, the floor beneath me bore witness to years of wear and tear, a patchwork of life’s small disasters. The carpet—once vibrant and inviting—had dulled over time, fading into an unremarkable hue that whispered stories of spilled drinks, hurried footsteps, and unacknowledged dust bunnies. Each stain held a memory, perhaps a moment of laughter or the remnants of a forgotten snack. The carpet silently stood as an intimate witness to the ebbs and flows of life, and yet its presence had begun to feel like a burden, a ghost that clung to the space.
 
 Then, one day, like the abrupt shift in a plot twist of a half-remembered dream, the carpet was ripped away, replaced with a hardwood floor—sleek, shining, and boasting an elegance that made everything around it shimmer with a sense of luxury. It felt like an upgrade, a promise of new beginnings and the kind of fresh start we often yearn for but seldom achieve in life. I watched as the room transformed before my eyes, the old, tired atmosphere giving way to a crisp, polished space that seemed to breathe new life into the walls, marveling at how the simple act of changing the floor could shift the very energy of the room.

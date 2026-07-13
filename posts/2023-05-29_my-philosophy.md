@@ -3,11 +3,13 @@ title: My Philosophy
 date: 2023-05-29
 category: Authenticity & Vulnerability
 featured: true
-archived: false
-excerpt: I finally tried to write down what I actually believe, instead of what I
+archived: true
+excerpt:
+  I finally tried to write down what I actually believe, instead of what I
   think I'm supposed to.
 slug: my-philosophy
 ---
+
 Here, I wanted to explore the essence of who I am and discover the many reasons that excite me. These reasons are unique to me and add richness to my life, even if they may not interest others. However, the underlying philosophy behind them seems universal. So, I will share them with you and let you decide which parts resonate with you.
 
 I have written about this in different versions before, as my thoughts continuously evolve and flow, much like water that picks up and discards debris along its path. Some of my previous writings include:

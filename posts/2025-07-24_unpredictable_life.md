@@ -5,9 +5,9 @@ date: 2025-07-24
 category: Old Voice
 featured: false
 archived: false
-excerpt: I keep colliding with strangers and moments I never saw coming, and somehow
-  that's the whole point.
+excerpt: I keep colliding with strangers and moments I never saw coming, and somehow that's the whole point.
 ---
+
 Strangers meet and worlds collide,  
 It’s been like this since time began.  
 Odd fits, wrong turns, surprise goodbyes —  

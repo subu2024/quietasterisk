@@ -4,7 +4,7 @@ date: 2022-07-04
 category: Perception, Patterns & Illusion
 featured: true
 archived: true
-excerpt: ""When did this obsession begin? Do we blame Steve Jobs or Apple?" I blustered while standing in the Apple store and softly caressing the new..."
+excerpt: When did this obsession begin? Do we blame Steve Jobs or Apple?" I blustered while standing in the Apple store and softly caressing the new...
 ---
 
 "When did this obsession begin? Do we blame Steve Jobs or Apple?"  I blustered while standing in the Apple store and softly caressing the new watch.

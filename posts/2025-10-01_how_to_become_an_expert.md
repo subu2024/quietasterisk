@@ -5,9 +5,9 @@ date: 2025-10-01
 category: Authenticity & Vulnerability
 featured: false
 archived: false
-excerpt: My own family once treated me like I was nobody, and it took me years to
-  build the confidence that proved them wrong.
+excerpt: My own family once treated me like I was nobody, and it took me years to build the confidence that proved them wrong.
 ---
+
 When I boarded the flight from Bombay to the U.S. all those years ago, I was still, in the eyes of my family, something of a nobody. A good kid, yes. A hardworking student, sure. But nothing extraordinary. My cousins with stable jobs in Indian companies, who wore crisp shirts to the office every day, were the ones seen as “settled.” I was just the boy still asking his parents for spending money .. while clinging to the dream of graduate school abroad.
 
 And then — overnight, or rather, over one 18-hour flight — I became someone else entirely. My worth seemed to multiply the moment I landed in America. I hadn’t achieved much yet, not really. I was still learning to navigate grocery stores with ten brands of yogurt and professors who spoke too quickly. But back home, the news that I had “gone to the U.S.” created a ripple. Suddenly my phone calls were put on speakerphone during family gatherings. Relatives listened with respect to my opinions on everything from computer training courses to hot stock tips, even though I barely knew how to balance a checkbook or use an ATM.

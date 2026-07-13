@@ -5,8 +5,9 @@ date: 2025-06-15
 category: Old Voice
 featured: false
 archived: false
-excerpt: I had to choose between chasing an old memory and staying here, in this one.
+excerpt: I had to choose between chasing an old memory, dreaming of a future and staying here.
 ---
+
 Wrapped in the shroud of memory’s thread  
 I straddle the living, the long-loved dead  
 To chase the lustful arms of today  

@@ -5,9 +5,9 @@ date: 2025-07-04
 category: Uncertainty
 featured: false
 archived: false
-excerpt: I don't gamble, or so I thought, until I noticed how many bets I place every
-  single day.
+excerpt: I don't gamble, or so I thought, until I noticed how many bets I place every single day.
 ---
+
 **_I don’t buy Bitcoin because I don’t gamble._**
 
 The words pinged from my phone, bold and innocent, like a coin dropped on a marble floor. I smirked, letting the notification sit. Funny, how someone could claim they avoid gambling while stepping through life like a one-person craps table.

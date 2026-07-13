@@ -1,13 +1,13 @@
 ---
-title: 'Leashed by Technology: The Adventures of Elon the Human Pet'
+title: "Leashed by Technology: The Adventures of Elon the Human Pet"
 slug: leashed-by-technology-the-adventures-of-elon-the-human-pet
 date: 2024-06-09
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: I imagined a future where AI decided humans needed adopting, and I laughed
-  less than I expected to.
+excerpt: I imagined a future where AI decided humans needed adopting, and I laughed less than I expected to.
 ---
+
 **Year 2050**
 
 I remember the day my AI came to adopt me like it was yesterday. There I was, in the adoption center, wide-eyed, a little trembling, like a human on Christmas morning—or maybe like a dog meeting its new owner for the first time. I had heard the stories: AI masters could be controlling, exacting, efficient. But also strangely caring, like overprotective parents who never sleep and always notice if you didn’t stretch before breakfast.

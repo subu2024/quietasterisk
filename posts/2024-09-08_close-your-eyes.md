@@ -4,10 +4,12 @@ slug: close-your-eyes
 date: 2024-09-08
 category: Old Voice
 featured: false
-archived: false
-excerpt: I asked you to close your eyes so we could both remember what we're at risk
+archived: true
+excerpt:
+  I asked you to close your eyes so we could both remember what we're at risk
   of forgetting.
 ---
+
 Rushing through the bustle, the days feel the same,  
  Could you pause today, just a second, step off the fast lane?  
  Close your eyes, breathe deep, and forget the game,  

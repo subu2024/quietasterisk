@@ -5,9 +5,9 @@ date: 2025-05-03
 category: Old Voice
 featured: true
 archived: false
-excerpt: I keep staring at the same glass, unable to decide which version of us I
-  actually believe.
+excerpt: I keep staring at the same glass, unable to decide which version of us I actually believe.
 ---
+
 I stand at crossroads  
 Life’s experiences leave me standing—  
 glass half full, half empty

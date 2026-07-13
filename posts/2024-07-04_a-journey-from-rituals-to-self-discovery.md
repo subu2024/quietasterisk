@@ -3,16 +3,16 @@ title: A Journey from Rituals to Self-Discovery
 date: 2024-07-04
 category: Authenticity & Vulnerability
 featured: true
-archived: false
-excerpt: I refused to pray the way I was expected to, and that refusal cracked something
-  open in me.
+archived: true
+excerpt: I refused to pray the way I was expected to, and that refusal cracked something open in me.
 slug: a-journey-from-rituals-to-self-discovery
 ---
+
 I refused to pray. I stood there, staring at the idol, feeling the tension radiate from the people around me. Some muttered in hushed tones, “The gods will be angry.” Honestly, have we not heard this before? If we don’t appease the gods with gifts and money, they'll unleash their wrath upon us.
 
 You might be thinking, “Who is this person to question age-old beliefs?” .. well that's what I want to rant in this writing.
 
-What is God? Who is God? Is there even a God? If so, why has no one in the history of mankind seen one yet? Did you ever take a moment to ponder this? .. We have countless stories of people *experiencing* God but never actually seeing God. What is this power that makes us believe so strongly in something invisible?
+What is God? Who is God? Is there even a God? If so, why has no one in the history of mankind seen one yet? Did you ever take a moment to ponder this? .. We have countless stories of people _experiencing_ God but never actually seeing God. What is this power that makes us believe so strongly in something invisible?
 
 One example for similarity maybe placebos .. Generally used in medical studies, these objects imbued with “power” have long been part of human tradition. Remember King Solomon’s seal warding off demons? Or how Michael Jordan always wore his old college shorts under his uniform for good luck? Here, the message is if we believe something can make us feel better, it will.
 
@@ -26,11 +26,11 @@ Back in 1995, as I sat on the metro riding to work, straddling the line between 
 
 In the beginning, there was the universe, then came man. With man came ego, superiority, religion, and then God. Since then, man has been of two types: those who need God to prop them up and those who let God take over.
 
-How strange! When miseries strike, despite your best efforts, you need someone powerful to look up to, someone to keep your hopes alive, support you, nourish you, save you. You need a placebo to convince you to continue .. This need probably birthed the concept of God, the savior. Stories were crafted to make *Him* ubiquitous, ensuring we always knew where to turn for help, thus creating believers.
+How strange! When miseries strike, despite your best efforts, you need someone powerful to look up to, someone to keep your hopes alive, support you, nourish you, save you. You need a placebo to convince you to continue .. This need probably birthed the concept of God, the savior. Stories were crafted to make _Him_ ubiquitous, ensuring we always knew where to turn for help, thus creating believers.
 
 But then came the second type of man, the one who exploited God. This person didn’t want to shoulder responsibilities and blamed everything on God, making it seem like God would handle everything. He forgot his efforts and, when things went wrong, blamed God, birthing the atheist.
 
-Why am I talking about this? .. *Because I reasoned for the first time*. I realized my mistakes ..
+Why am I talking about this? .. _Because I reasoned for the first time_. I realized my mistakes ..
 
 As time progressed and I continued on my discovery, certain questions and points stuck out:
 
@@ -52,4 +52,4 @@ Rituals and ignorance: Rituals might have served a purpose in the past but now a
 
 Prayers: The power of prayers lies in their ability to make us pause, ponder, and rationalize, akin to meditation. Married to rituals, prayers are stronger and bigger. They’re like performing a magic trick on yourself to achieve a larger goal.
 
-In the end, as I stood there, refusing to pray, I realized something profound. It wasn’t about angering the gods or adhering to rituals. It was about finding my strength, questioning beliefs, and embracing the journey of self-discovery. In the silence of that temple, amidst the whispers and disapproving glances, I found a new faith—in myself. *And that’s the most powerful belief of all.*
+In the end, as I stood there, refusing to pray, I realized something profound. It wasn’t about angering the gods or adhering to rituals. It was about finding my strength, questioning beliefs, and embracing the journey of self-discovery. In the silence of that temple, amidst the whispers and disapproving glances, I found a new faith—in myself. _And that’s the most powerful belief of all._

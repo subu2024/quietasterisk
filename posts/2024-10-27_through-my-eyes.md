@@ -5,9 +5,9 @@ date: 2024-10-27
 category: Self-Awareness & EQ
 featured: false
 archived: false
-excerpt: I sat and watched strangers pass by and couldn't stop wondering what today
-  looks like through their eyes instead of mine.
+excerpt: I sat and watched strangers pass by and couldn't stop wondering what today looks like through their eyes instead of mine.
 ---
+
 You ever sit there, just staring at people going about their day, and think, "What the heck is everyone else seeing that I’m not?" Like, we’re all in this world together, bumping into each other (sometimes literally), but somehow, none of us seem to agree on what’s actually happening. It’s like that classic line from a rom-com: "We’re on the same planet but in completely different worlds." And honestly, the more I think about it, the more ridiculous—and kind of beautiful—that realization is.
 
 It all boils down to the fact that, no matter who you are—monk, millionaire, your average Joe—we’re all seeing life through our own personal set of glasses. we’re rocking those funky, uniquely tinted ones that make everything look just a little bit different for each of us. And .. no matter how hard you try, you can't swap glasses with anyone else.

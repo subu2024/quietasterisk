@@ -1,13 +1,13 @@
 ---
-title: 'Life''s Little Scams: A Comedy of Errors'
+title: "Life's Little Scams: A Comedy of Errors"
 slug: lifes-little-scams-a-comedy-of-errors
 date: 2024-08-21
 category: Financial Awareness
 featured: false
 archived: false
-excerpt: I got scammed out of money over Zelle, and somehow I can't decide if I'm
-  angrier or more amused.
+excerpt: I got scammed out of money over Zelle, and somehow I can't decide if I'm angrier or more amused.
 ---
+
 [All I wanted was a status symbol. What I got was a $31,000 lesson in the downside of payment apps](https://www.businessinsider.com/zelle-fraud-scam-swimming-pool-online-payment-apps-mobile-banking-2023-10)This article triggered my memory to run back and see how many times I have been scammed .. although I would love to blame someone for the folly, I was the naive and dumb person to fall for the scam.
 
 Oh, life .. It has a way of making you feel like you're cruising on a high-speed highway, only to realize you're on a one-way street to "Why did I do that again?" lane. I've had my fair share of life's little surprises, and trust me, they're not always the good kind. You know, like a surprise pizza delivery. More like a surprise call from your bank asking why you've just wired $5,000 to a shady guy named "Steve" who promised to keep your lights on.

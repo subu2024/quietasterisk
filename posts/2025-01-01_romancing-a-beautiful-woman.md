@@ -4,9 +4,10 @@ slug: romancing-a-beautiful-woman
 date: 2025-01-01
 category: Old Voice
 featured: false
-archived: false
+archived: true
 excerpt: I can't stop noticing every detail of you, and I've given up pretending otherwise.
 ---
+
 Her long black hair, a silken tide,  
  Calls out to touch, to pull inside  
  It frames her face, a radiant glow,  

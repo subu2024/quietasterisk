@@ -1,13 +1,13 @@
 ---
-title: 'Time''s Cruel Joke: A Journey of Love, Loss, and Reflection'
+title: "Time's Cruel Joke: A Journey of Love, Loss, and Reflection"
 slug: times-cruel-joke-a-journey-of-love-loss-and-reflection
 date: 2023-02-14
 category: Love, Loss & Family
 featured: false
 archived: false
-excerpt: Something about this new relationship felt oddly familiar, and I still can't
-  decide if that's comforting or a warning.
+excerpt: Something about this new relationship felt oddly familiar, and I still can't decide if that's comforting or a warning.
 ---
+
 Time works its quiet arithmetic whether we consent to it or not.
 
 One day, without ceremony, a new person steps into the margins of your life and begins to rearrange the text. The probability of it feels abstract at first—some vast statistical field of strangers crossing paths—but then she laughs at the same obscure movie you love, orders coffee exactly as you do, lingers over travel stories as if she’s been waiting for yours. The odds tighten. The world narrows.
