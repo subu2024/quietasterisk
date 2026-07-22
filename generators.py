@@ -75,7 +75,7 @@ def generate_reading_notes():
         Short, running notes on books that gave me one good idea worth keeping —
         not full essays, just what stuck.
       </p>
-      <p>note: I will receive a small compensation from Amazon if you purchase through my links.Thank you for your support.</p>
+      <p>note: As an Amazon Associate I earn from qualifying purchases.Thank you for your support.</p>
     </div>
   </div>
 </section>

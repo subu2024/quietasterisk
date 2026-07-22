@@ -113,7 +113,7 @@ def format_reading_note_card(note: dict) -> str:
     if note.get("link"):
         link_html = (
             f'<a href="{escape(note.get("link"))}" target="_blank" '
-            f'rel="noopener noreferrer" class="card-link" style="display: inline-flex;">'
+            f'rel="nofollow sponsored noopener noreferrer" class="card-link" style="display: inline-flex;">'
             f'More on this book →</a>'
         )
 
