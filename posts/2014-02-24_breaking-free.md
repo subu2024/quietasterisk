@@ -5,9 +5,9 @@ date: 2014-02-24
 category: Authenticity & Vulnerability
 featured: false
 archived: false
-excerpt: Leaving India as a young adult taught me that choosing the unfamiliar path
-  is a habit, not a one-time decision.
+excerpt: Leaving India as a young adult taught me that choosing the unfamiliar path is a habit, not a one-time decision.
 ---
+
 Today I grew out of India  
  Liberated I stand, breathing free with no remorse  
  With pride on the past yet remaining in present trivia  

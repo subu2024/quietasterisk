@@ -8,10 +8,10 @@ featured: true
 archived: false
 ---
 
-_What is a draft but a staircase mid-repair,_  
-_steps you build while still walking there?_  
-_The words keep moving, the shape keeps changing—_  
-_who's doing the labor, and who's just arranging?_
+> What is a draft but a staircase mid-repair,  
+> steps you build while still walking there?  
+> The words keep moving, the shape keeps changing—  
+> who's doing the labor, and who's just arranging?
 
 The escalator at L'Enfant Plaza has been broken, in one direction or another, for something like six years. Not the whole time, obviously — they fix it, it runs for a while, something groans wrong deep in its gears, and it's roped off again with yellow tape that's gone the color of an old banana. This morning one is roped off entirely, and the other just sits there, paused, doing an impression of a staircase. I look up along with the other commuters, and we all quietly start the trek — about 110 steps, one at a time, in a suit that was fine twenty minutes ago. Outside it's 85 degrees at 8:40 a.m., unusual even for a D.C. July, and I can feel that heat already in the underground before I've climbed a third of the way. It's the kind of heat that shows up early and makes everyone look personally betrayed by their own commute.
 

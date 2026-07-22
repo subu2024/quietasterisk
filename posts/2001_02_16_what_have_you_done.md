@@ -5,9 +5,9 @@ date: 2001-02-16
 category: Old Voice
 featured: true
 archived: false
-excerpt: One careless sentence from someone I loved is still living rent-free in my
-  head.
+excerpt: One careless sentence from someone I loved is still living rent-free in my head.
 ---
+
 Deep in the heart  
  Etched for life  
  Echo it did  

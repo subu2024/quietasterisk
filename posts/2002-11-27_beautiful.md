@@ -5,9 +5,9 @@ date: 2002-11-27
 category: Old Voice
 featured: true
 archived: true
-excerpt: I couldn't stop noticing her, sitting there on the train, and I'm still thinking
-  about why.
+excerpt: I couldn't stop noticing her, sitting there on the train, and I'm still thinking about why.
 ---
+
 She sat in front of me in the train  
  with her shampooed but still damp hair  
  Oozing a sweet smell of water and her  

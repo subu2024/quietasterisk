@@ -5,9 +5,9 @@ date: 2015-09-08
 category: Old Voice
 featured: true
 archived: false
-excerpt: I keep finding new moments in the day to remind you how much you mean to
-  me.
+excerpt: I keep finding new moments in the day to remind you how much you mean to me.
 ---
+
 Climbing out of the shower,  
 brushing her shiny dark hair,  
 she winked at me and said—  

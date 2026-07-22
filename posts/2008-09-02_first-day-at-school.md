@@ -5,9 +5,9 @@ date: 2008-09-02
 category: Old Voice
 featured: true
 archived: false
-excerpt: I was more nervous than my kid was on their first day of school, and I'm
-  still not over it.
+excerpt: I was more nervous than my kid was on their first day of school, and I'm still not over it.
 ---
+
 Your first day at school  
  Excited as you were  
  Totally oblivious were you  

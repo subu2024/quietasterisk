@@ -5,9 +5,9 @@ date: 2010-12-27
 category: Old Voice
 featured: true
 archived: false
-excerpt: The anticipation leading up to that trip turned out to be its own kind of
-  magic.
+excerpt: The anticipation leading up to that trip turned out to be its own kind of magic.
 ---
+
 My wait begins the moment I book the tickets  
  The expectations surge daily, running high in adrenaline  
  The anticipation overwhelms as I step on the magical land  

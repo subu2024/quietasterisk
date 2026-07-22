@@ -8,11 +8,17 @@ import logging
 import markdown
 from typing import List, Dict
 
+
+
 from config import (
     BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, VIDEOS_FILE_HTML,
     INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, INSTAGRAM_PROFILE,
-    OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE, ARCHIVES_FILE, LOGO_PATH
+    OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE, ARCHIVES_FILE, LOGO_PATH,
+    READING_FILE_HTML  # add this
 )
+
+
+
 
 from collections import defaultdict
 from datetime import datetime
@@ -22,8 +28,9 @@ from chat_widget import get_chat_widget_html
 
 from models import Post
 from templates import header_html, footer_html
-from cards import format_card, format_featured_card, format_book_card
-from utils import copy_image, load_books, load_categories, slugify, load_videos, show_logo
+from cards import format_card, format_featured_card, format_book_card, format_reading_note_card
+from utils import copy_image, load_books, load_categories, slugify, load_videos, show_logo, load_reading_notes
+
 #from parser import YouTubeExtension
 from parser import process_youtube_embeds
 logger = logging.getLogger("BlogGen")
@@ -31,6 +38,44 @@ logger = logging.getLogger("BlogGen")
 # Global variable for temp content
 TEMP_CONTENT = ""
 
+
+
+def generate_reading_notes():
+    """Generate the running reading-notes / book log page."""
+    notes = load_reading_notes()
+    if not notes:
+        return
+
+    content = header_html("Reading Notes - " + BLOG_TITLE, "reading")
+    content += """
+<section class="hero" style="padding: 6rem 0 4rem;">
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-label">Reading Log</p>
+      <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4rem);">
+        Notes on What I've Been Reading
+      </h1>
+      <p class="hero-description" style="max-width: 48rem;">
+        Short, running notes on books that gave me one good idea worth keeping —
+        not full essays, just what stuck.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="books-grid">
+"""
+    for note in notes:
+        content += format_reading_note_card(note)
+    content += """
+    </div>
+  </div>
+</section>
+"""
+    content += footer_html()
+    with open(OUTPUT_DIR / READING_FILE_HTML, "w", encoding="utf-8") as f:
+        f.write(content)
 
 def generate_post_pages(posts: List[Post], related_map: Dict[str, List[str]]):
     """Generate individual blog post pages."""
@@ -283,7 +328,13 @@ def generate_about():
       
       
       <p style="margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.8;">
-        I write about love and loss, money and the stories we tell ourselves about it, parenting chaos, and our deeply human habit of demanding clarity from a world that mostly offers probability.
+       I'm fascinated by one question:
+
+How do we live well when certainty isn't an option? <br/><br/>
+
+That's the thread running through everything I write.
+
+Sometimes it looks like essays about love and loss. Sometimes it's money and the stories we tell ourselves about it. Sometimes it's parenting, technology, work, or the quiet assumptions that shape our days. Different subjects, same curiosity.
       </p>
       
       <p style="margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.8;">
@@ -293,13 +344,23 @@ def generate_about():
         meets philosophy—observant, self-aware, mildly neurotic, and uncomfortably honest about the small stuff that turns out to be the big stuff: a leaking ceiling, a burnt piece of toast, a stranger on a train platform.
       </p>
       
-      <blockquote style="border-left: 4px solid var(--color-rust); padding-left: 1.5rem; margin: 2.5rem 0; font-style: italic; color: var(--color-slate); font-size: 1.25rem;">
-        In a culture obsessed with certainty, I've made peace with risk, chance, and hope.
-      </blockquote>
+     
       
       <p style="margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.8;">
-        Not because I'm brave, but because pretending to have it all figured out is exhausting — and I've never met anyone who actually does. Uncertainty isn't a flaw to eliminate. It's a traveling companion. Preferably one that appreciates humor. And coffee. Definitely coffee.
-      </p>
+        I'm drawn to the space between certainty and probability, noise and meaning, information and wisdom. We spend a surprising amount of our lives trying to eliminate uncertainty, when perhaps the better question is how to live with it well.
+
+Not because I'm particularly brave, but because pretending to have everything figured out is exhausting—and I've never met anyone who actually does.
+
+ </p>
+
+ <blockquote style="border-left: 4px solid var(--color-rust); padding-left: 1.5rem; margin: 2.5rem 0; font-style: italic; color: var(--color-slate); font-size: 1.25rem;">
+        In a culture obsessed with certainty, I've made peace with Uncertainty. Mostly.
+      </blockquote>
+
+      <p style="margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.8;">
+It's less an obstacle than a traveling companion. Occasionally annoying. Often humbling. Best experienced with a sense of humor. And coffee. Definitely coffee.
+</P
+
       
       
       
@@ -801,7 +862,7 @@ def generate_index(posts: List[Post], related_map: Dict):
     </p>
 
     <h1 style="font-size: clamp(3rem, 6vw, 5rem); font-family: var(--font-serif); line-height: 1.2; margin-bottom: 2rem; color: var(--color-charcoal);">
-      Essays on perception, thought, and attention
+      Essays on uncertainty, attention, and what it means to be human
     </h1>
 
     <p style="font-size: 1.25rem; color: var(--color-slate); line-height: 1.8; max-width: 40rem; margin: 0 auto;">

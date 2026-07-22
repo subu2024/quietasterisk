@@ -5,9 +5,9 @@ date: 2012-01-17
 category: Old Voice
 featured: true
 archived: false
-excerpt: I wrote about a lonely elephant looking for a friend in the city, and I'm
-  not sure who I was really writing about.
+excerpt: I wrote about a lonely elephant looking for a friend in the city, and I'm not sure who I was really writing about.
 ---
+
 A lonely baby elephant  
  Yearned for a friend one day  
  Walking through the jungles into a large city  

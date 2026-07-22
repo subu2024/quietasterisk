@@ -5,9 +5,9 @@ date: 2012-10-15
 category: Old Voice
 featured: true
 archived: false
-excerpt: My toddler's mischief today reminded me how much joy there is in not taking
-  any of this too seriously.
+excerpt: My toddler's mischief today reminded me how much joy there is in not taking any of this too seriously.
 ---
+
 He tramped with a plan and glow  
  pouring water on the floor to watch the flow  
  Next he decided to wipe it clean  

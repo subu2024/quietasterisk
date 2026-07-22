@@ -5,9 +5,9 @@ date: 2017-01-05
 category: Old Voice
 featured: false
 archived: false
-excerpt: Behind all that visible wealth, I noticed something quietly falling apart
-  that no one else seemed to see.
+excerpt: Behind all that visible wealth, I noticed something quietly falling apart that no one else seemed to see.
 ---
+
 He welcomed the guests with a forced smile  
  Ushering them into the palace he built  
  Hidden in the art and decor for a mile  

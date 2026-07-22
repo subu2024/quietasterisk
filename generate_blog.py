@@ -24,6 +24,7 @@ from generators import (
     generate_about,
     generate_contact,
     generate_archives,
+    generate_reading_notes,
     get_temp_content
 )
 
@@ -73,6 +74,9 @@ def main(write_temp: bool = False):
     
     logger.info("Generating books page...")
     generate_books()
+
+    logger.info("Generating reading notes page...")
+    generate_reading_notes()
 
     logger.info("Generating videos page...")  
     generate_videos()   

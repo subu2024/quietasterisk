@@ -5,9 +5,9 @@ date: 2010-09-15
 category: Old Voice
 featured: true
 archived: false
-excerpt: Everyone else could see it before I let myself admit how far gone I actually
-  was.
+excerpt: Everyone else could see it before I let myself admit how far gone I actually was.
 ---
+
 His eyes seemed deep in thought  
  Face mesmerized by an unknown joy  
  His hand held a glass of chilled wine  

@@ -9,7 +9,7 @@ import logging
 from pathlib import Path
 from typing import List, Dict, Optional
 
-from config import IMAGE_DIR, BOOKS_FILE, CATEGORIES_FILE_JSON, DOWNLOADS_DIR, OUTPUT_DOWNLOADS_DIR, VIDEOS_FILE
+from config import IMAGE_DIR, BOOKS_FILE, CATEGORIES_FILE_JSON, DOWNLOADS_DIR, OUTPUT_DOWNLOADS_DIR, VIDEOS_FILE, READING_NOTES_FILE
 from models import Post
 
 logger = logging.getLogger("BlogGen")
@@ -173,6 +173,14 @@ def load_categories() -> Dict[str, Dict]:
 def load_videos() -> List[Dict]:
     """Load video data from videos.json."""
     return load_json_file(VIDEOS_FILE, expected_type=list)
+
+def load_reading_notes(limit: Optional[int] = None) -> List[Dict]:
+    """Load short reading notes from reading_notes.json, newest first."""
+    notes = load_json_file(READING_NOTES_FILE, expected_type=list)
+    notes = sorted(notes, key=lambda n: n.get("date", ""), reverse=True)
+    if limit is not None:
+        return notes[:limit]
+    return notes
 
 # ==========================================================
 # Text Processing

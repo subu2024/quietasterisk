@@ -10,7 +10,7 @@ from pathlib import Path
 # ==========================================================
 
 BLOG_TITLE = "quiet asterisk"
-TAG_LINE = "Writing that slows down thinking, so you can notice what you usually pass through"
+TAG_LINE = "Writing that slows thinking just enough to notice what uncertainty is trying to teach us"
 COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.1.07"
 CONTACT_EMAIL = "hello@quietasterisk.com"
 YOUTUBE_CHANNEL = "https://www.youtube.com/@quietasterisk"
@@ -31,6 +31,7 @@ OUTPUT_DOWNLOADS_DIR = OUTPUT_DIR / "downloads"  # Destination in output
 BOOKS_FILE = Path("./books.json")
 CATEGORIES_FILE_JSON = Path("./categories.json")
 VIDEOS_FILE = Path("./videos.json")  
+READING_NOTES_FILE = Path("./reading_notes.json")
 
 # Output HTML files
 INDEX_FILE = "index.html"
@@ -39,7 +40,8 @@ CATEGORIES_FILE = "categories.html"
 BOOKS_FILE_HTML = "books.html"
 CONTACT_FILE = "contact.html"
 VIDEOS_FILE_HTML = "videos.html"  
-ARCHIVES_FILE = "archives.html"  # Add this
+ARCHIVES_FILE = "archives.html" 
+READING_FILE_HTML = "reading.html"
 
 # AI Chat Module
 ENABLE_AI_CHAT = False  # Set to False to disable

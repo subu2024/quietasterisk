@@ -5,9 +5,9 @@ date: 2009-08-14
 category: Old Voice
 featured: true
 archived: true
-excerpt: I keep comparing two very different women and wondering if that question
-  even has a real answer.
+excerpt: I keep comparing two very different women and wondering if that question even has a real answer.
 ---
+
 That girl with the loud lipstick  
  Her hair set in the salon perfect with zero nick  
  Her dress oozing the fashion shtick  

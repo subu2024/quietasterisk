@@ -5,9 +5,9 @@ date: 2014-03-23
 category: Old Voice
 featured: true
 archived: false
-excerpt: I'm standing right at the edge of something new, and I can't tell yet if
-  I'm ready.
+excerpt: She was standing right at the edge of something new, and yet she was not sure if she was ready.
 ---
+
 Watch that step  
  As you thread higher in time  
  Crossing the threshold  

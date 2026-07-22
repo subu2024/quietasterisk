@@ -5,9 +5,9 @@ date: 2011-09-08
 category: Old Voice
 featured: true
 archived: false
-excerpt: I looked in the mirror and had to make peace with everything the lines on
-  my face are keeping score of.
+excerpt: She looked in the mirror and had to make peace with everything the lines on here face were keeping score of.
 ---
+
 Waking up on this September day  
  She saw her wrinkled image in the mirror  
  Sending her heart in total despair  

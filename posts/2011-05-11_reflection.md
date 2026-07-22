@@ -5,9 +5,9 @@ date: 2011-05-11
 category: Old Voice
 featured: true
 archived: false
-excerpt: I sat still long enough to actually notice the rain, the wind, and the light
-  changing.
+excerpt: I sat still long enough to actually notice the rain, the wind, and the light changing.
 ---
+
 The cool droplets of water raining  
  Persuades the harsh sun to calm down finitely  
  Sensuously wrapping its arms around me  

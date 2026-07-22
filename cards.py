@@ -67,6 +67,24 @@ def format_card(post: Post, is_small: bool = False) -> str:
 </article>
 """
 
+def format_reading_note_card(note: dict) -> str:
+    """Generate a compact card for a short reading-log entry."""
+    author_html = ""
+    if note.get("author"):
+        author_html = f'<p style="color: var(--color-slate); margin-bottom: 0.5rem; font-family: var(--font-sans); font-size: 0.875rem;">by {note.get("author")}</p>'
+
+    link_html = ""
+    if note.get("link"):
+        link_html = f'<a href="{note.get("link")}" target="_blank" rel="noopener noreferrer" style="color: var(--color-rust); font-size: 0.875rem;">More on this book →</a>'
+
+    return f"""
+<div class="book-card">
+  <h4 class="book-title">{note.get("title", "")}</h4>
+  {author_html}
+  <p class="book-description">{note.get("note", "")}</p>
+  {link_html}
+</div>
+"""
 
 def format_book_card_old(book: dict, show_full_description: bool = False) -> str:
     """

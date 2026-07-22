@@ -5,9 +5,9 @@ date: 2007-08-23
 category: Old Voice
 featured: true
 archived: false
-excerpt: I can't shake what happened to a child who never should have had to endure
-  it.
+excerpt: I can't shake what happened to a child who never should have had to endure it.
 ---
+
 The tears dried at the source  
  The time froze for the moment  
  The innocence was violently ripped away  

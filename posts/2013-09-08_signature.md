@@ -5,9 +5,9 @@ date: 2013-09-08
 category: Old Voice
 featured: true
 archived: false
-excerpt: I keep wondering what mark I'm actually leaving behind, and whether anyone
-  will notice it.
+excerpt: I keep wondering what mark I'm actually leaving behind, and whether anyone will notice it.
 ---
+
 Nature sings, time provides the ride  
  It is your unique journey in this tide  
  To leave behind your signature, your frequency, your pride  

@@ -5,9 +5,9 @@ date: 2011-10-17
 category: Old Voice
 featured: true
 archived: false
-excerpt: We're bound together by circumstance, and somehow that's not the same as
-  being close.
+excerpt: We're bound together by circumstance, and somehow that's not the same as being close.
 ---
+
 Me and you in a relation  
  Bound by children, tradition, without any reason  
  Day after day that we spend together  
