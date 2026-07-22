@@ -20,7 +20,6 @@ from generators import (
     generate_index,
     generate_books,
     generate_videos,
-    generate_categories,
     generate_about,
     generate_contact,
     generate_archives,
@@ -83,9 +82,6 @@ def main(write_temp: bool = False):
     
     logger.info("Generating archives page...")  
     generate_archives(posts)   
-
-    logger.info("Generating categories pages...")
-    generate_categories(posts)
     
     logger.info("Generating about page...")
     generate_about()

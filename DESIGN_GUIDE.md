@@ -1,723 +1,284 @@
 # Quiet Asterisk Design Guide
 
-Complete design system documentation for the Quiet Asterisk blog.
-
-## 🎨 Design Philosophy
-
-The Quiet Asterisk blog features a **modern literary editorial** aesthetic that balances:
-- Warmth and approachability (earth tones, soft gradients)
-- Sophistication and readability (premium typography, generous spacing)
-- Modern interactivity (glassmorphism, smooth animations, hover effects)
-- Content-first focus (minimal chrome, clear hierarchy)
+This documents the design system as it's actually implemented in the code,
+so it stays trustworthy. Every pattern below maps to a real CSS class in
+`styles.py` or a real Python helper — if you add a new visual pattern,
+add it here in the same form (class/function name → what it does → where
+it's used), not as aspirational description.
 
 ---
 
-## 🌈 Color Palette
+## Design Philosophy
 
-### Primary Colors
-
-```css
---color-cream: #FAF8F3      /* Main background, light neutral */
---color-sand: #E8E3D8       /* Borders, dividers, subtle backgrounds */
---color-charcoal: #2B2826   /* Primary text, dark elements */
-```
-
-### Accent Colors
-
-```css
---color-rust: #B8503E       /* Primary accent, links, CTAs */
---color-terracotta: #D17458 /* Lighter rust variant, gradients */
---color-sage: #8B9B7E       /* Secondary accent, calm elements */
---color-gold: #C9A767       /* Tertiary accent, highlights */
---color-slate: #5A5450      /* Secondary text, muted content */
-```
-
-### Usage Guidelines
-
-**Rust (`#B8503E`):**
-- Primary buttons and CTAs
-- Important links
-- Featured badges
-- Active navigation states
-- Category labels
-
-**Sage (`#8B9B7E`):**
-- Secondary accents
-- Divider dots
-- Calm call-outs
-- Alternative badges
-
-**Gold (`#C9A767`):**
-- Premium elements
-- Book-related content
-- Tertiary highlights
-- Gradient accents
-
-**Charcoal (`#2B2826`):**
-- All body text
-- Headings
-- Navigation text
-- High-contrast elements
-
-**Slate (`#5A5450`):**
-- Metadata (dates, reading time)
-- Secondary text
-- Muted labels
-- Inactive states
+Modern literary editorial: warm earth tones, premium serif/sans pairing,
+generous spacing, restrained glassmorphism for a few key moments (hero
+stats, pill badges), content-first hierarchy. Every page — home, category,
+book, archive — should feel like the same publication, built from the
+same handful of components.
 
 ---
 
-## ✍️ Typography
-
-### Font Families
+## Color Palette
 
 ```css
---font-serif: 'Crimson Pro', serif    /* Headings, body text */
---font-sans: 'Work Sans', sans-serif  /* UI elements, labels */
+--color-cream: #faf8f3 /* Main background */ --color-sand: #e8e3d8
+  /* Borders, dividers */ --color-charcoal: #2b2826 /* Primary text */
+  --color-slate: #5a5450 /* Secondary/muted text */ --color-rust: #b8503e
+  /* Primary accent, CTAs, links */ --color-terracotta: #d17458
+  /* Rust gradient partner */ --color-sage: #8b9b7e /* Secondary accent */
+  --color-gold: #c9a767 /* Tertiary accent, books */;
 ```
 
-**Crimson Pro (Serif):**
-- All headings (H1-H6)
-- Article body text
-- Pull quotes
-- Hero titles
-- Signature text
+### Category accent system
 
-**Work Sans (Sans-serif):**
-- Navigation menus
-- Buttons and CTAs
-- Labels and badges
-- Metadata
-- Footer text
-- Form inputs
+Every category gets one of four accent colors — **rust, sage, gold,
+terracotta** — assigned deterministically by `utils.category_accent(category)`
+(a stable hash of the category name). This is what makes card grids with
+mixed categories scannable instead of monochrome. Never hardcode a
+category's color; always go through this function so the same category
+looks the same everywhere.
 
-### Type Scale
+Used by:
 
-```css
-/* Hero/Display */
-7rem (112px)    - Homepage hero title
-4.5rem (72px)   - Section hero titles
-3.5rem (56px)   - Page titles
+- `cards._category_badge()` → renders `.card-category .card-category-{accent}` pill
+- `cards._accent_border()` → renders a matching 4px top border on the card
 
-/* Headings */
-3rem (48px)     - H1
-2.5rem (40px)   - H2
-2rem (32px)     - H3
-1.5rem (24px)   - H4
-1.25rem (20px)  - H5
-
-/* Body */
-1.125rem (18px) - Large body text, about page
-1rem (16px)     - Standard body text
-0.9375rem (15px)- Small body text
-
-/* UI */
-0.875rem (14px) - Labels, metadata, captions
-0.75rem (12px)  - Tiny labels, badges
-```
-
-### Font Weights
-
-```css
-400 - Regular   (body text)
-500 - Medium    (emphasis, labels)
-600 - Semibold  (subheadings, UI)
-700 - Bold      (headings)
-800 - Extrabold (hero titles)
-```
-
-### Line Heights
-
-```css
-1.1 - Hero titles, display text
-1.2 - Section headings
-1.5 - Card titles
-1.6 - Subheadings, descriptions
-1.7 - About page, featured text
-1.8 - Article body, long-form content
-```
+Don't invent a 5th accent color without also adding its `.card-category-*`
+and `.stat-card-glass.accent-*` CSS variants — see below.
 
 ---
 
-## 🎭 Modern Design Elements
-
-### Glassmorphism
-
-Semi-transparent elements with blur effects for depth:
+## Typography
 
 ```css
-background: rgba(255, 255, 255, 0.7);
-backdrop-filter: blur(10px);
-border: 2px solid rgba(184, 80, 62, 0.2);
+--font-serif:
+  "Crimson Pro",
+  serif /* Headings, article body, card titles */ --font-sans: "Work Sans",
+  sans-serif /* Nav, buttons, labels, metadata, pills */;
 ```
 
-**Used in:**
-- Hero stat cards
-- Badge pills
-- Secondary buttons
-- Floating elements
+Both are loaded via the `@import` at the top of `get_modern_styles()` in
+`styles.py`. **If you ever change these variables, update the `@import`
+URL to match** — they drifted out of sync once already (the import was
+loading Merriweather/Lato while every variable pointed to Crimson
+Pro/Work Sans, so the whole site silently fell back to system fonts).
 
-### Gradient Backgrounds
+### Type scale
 
-Subtle color transitions for visual interest:
+| Use                     | Size                                                |
+| ----------------------- | --------------------------------------------------- |
+| Homepage hero title     | `clamp(3rem, 6vw, 5rem)` (`.hero-title`)            |
+| Section title           | `clamp(2.5rem, 5vw, 3.75rem)` (`.section-title`)    |
+| Card title              | 1.875rem (`.card-title`), 3rem in `.card-featured`  |
+| Body / excerpt          | 1rem–1.125rem                                       |
+| Labels, metadata, pills | 0.75–0.875rem, uppercase, letter-spacing 0.1–0.15em |
 
-```css
-/* Hero gradient */
-background: linear-gradient(135deg, #FAF8F3 0%, #E8E3D8 50%, #F5E6D3 100%);
+### Weights
 
-/* Section gradient */
-background: linear-gradient(180deg, var(--color-cream) 0%, white 100%);
-
-/* Button gradient */
-background: linear-gradient(135deg, var(--color-rust), var(--color-terracotta));
-```
-
-### Gradient Text
-
-Multi-color text using background-clip:
-
-```css
-background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-rust) 50%, var(--color-gold) 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-```
-
-**Used in:**
-- Hero titles
-- Stat numbers
-- Feature headings
-
-### Floating Background Blobs
-
-Animated radial gradients for depth:
-
-```css
-position: absolute;
-width: 500px;
-height: 500px;
-background: radial-gradient(circle, rgba(184, 80, 62, 0.15), transparent);
-border-radius: 50%;
-filter: blur(60px);
-animation: float 20s infinite ease-in-out;
-```
-
-**Animation:**
-```css
-@keyframes float {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(30px, -30px) rotate(5deg); }
-  66% { transform: translate(-20px, 20px) rotate(-5deg); }
-}
-```
-
-### Pill Badges
-
-Rounded badges with colored borders:
-
-```css
-padding: 0.5rem 1.5rem;
-background: rgba(184, 80, 62, 0.1);
-border: 2px solid var(--color-rust);
-border-radius: 50px;
-text-transform: uppercase;
-letter-spacing: 0.15em;
-font-size: 0.875rem;
-font-weight: 600;
-```
-
-**Color variants:**
-- Rust border - Featured content
-- Sage border - Latest/recent content
-- Gold border - Premium/books
+400 body · 500 emphasis/labels · 600 subheadings/pills · 700 headings · 800 hero numbers/gradient titles
 
 ---
 
-## 🎴 Card Components
+## Core Components
 
-### Standard Card
+Reuse these. Don't hand-roll a new card, badge, or embed with inline
+styles — every time that happened previously it drifted from the rest
+of the site (see git history / prior review notes).
 
-```css
-background: white;
-border: 2px solid var(--color-sand);
-padding: 2.5rem;
-border-radius: 4px;
-transition: all 0.3s;
+### Cards — `cards.py`
+
+| Function                                              | Used for                                                                                                            |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `format_card(post, is_small=False)`                   | Standard post card. `is_small=True` → `.card-compact` (tighter padding, clamped 2-line excerpt) for dense sidebars. |
+| `format_featured_card(post)`                          | Large hero card, spans 2 grid rows (`.card-featured`).                                                              |
+| `format_book_card(book, show_full_description=False)` | Book card with cover thumbnail, author/year, optional YouTube embed, buy button.                                    |
+| `format_reading_note_card(note)`                      | Compact book-log entry.                                                                                             |
+
+All four escape user/JSON-authored text automatically (`html.escape`) — don't
+re-escape or bypass them by writing markup manually.
+
+Every card gets:
+
+- A colored category pill (`_category_badge`)
+- A matching colored top border (`_accent_border`)
+
+Grid containers: `.card-grid` (uniform cards), `.featured-grid` (1 large +
+stacked smalls, see homepage), `.books-grid`.
+
+### Pill badges — `templates.pill_badge(text, accent="rust")`
+
+```python
+pill_badge("Curated Reading", "rust")
+# -> <span class="pill-badge pill-badge-rust">Curated Reading</span>
 ```
 
-**Hover state:**
-```css
-border-color: var(--color-charcoal);
-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-transform: translateY(-4px);
-```
+Accents: `rust`, `sage`, `gold` (`.pill-badge-rust/sage/gold` in styles.py).
+Used as the small uppercase eyebrow above section titles and in the hero.
 
-### Featured Card (Large)
+### Glass stat cards — `.stat-card-glass.accent-{rust,sage,gold}`
 
-- Spans 2 rows in grid
-- 3rem padding
-- Featured badge at top
-- Larger title (3rem)
-- Larger excerpt (1.25rem)
-
-### Glassmorphic Card (Stats)
-
-```css
-background: rgba(255, 255, 255, 0.7);
-backdrop-filter: blur(10px);
-border: 2px solid rgba(184, 80, 62, 0.2);
-border-radius: 16px;
-padding: 2rem;
-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-```
-
-**Hover:**
-```css
-transform: translateY(-8px);
-box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-```
-
----
-
-## 🔘 Buttons
-
-### Primary Button
-
-```css
-background: var(--color-rust);
-color: white;
-border: 2px solid var(--color-rust);
-padding: 1.25rem 2.5rem;
-font-family: var(--font-sans);
-font-weight: 500;
-font-size: 1.125rem;
-border-radius: 2px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-transition: all 0.3s;
-```
-
-**Hover:**
-```css
-background: #A03D2F;
-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-transform: translateY(-2px);
-```
-
-### Secondary Button
-
-```css
-background: transparent;
-color: var(--color-charcoal);
-border: 2px solid var(--color-charcoal);
-```
-
-**Hover:**
-```css
-background: var(--color-charcoal);
-color: white;
-```
-
-### Glassmorphic Button
-
-```css
-backdrop-filter: blur(10px);
-background: rgba(255, 255, 255, 0.5);
-border: 2px solid var(--color-charcoal);
-```
-
----
-
-## 📐 Spacing System
-
-### Container Widths
-
-```css
-max-width: 1280px  /* Main container */
-max-width: 56rem   /* Video/content sections */
-max-width: 48rem   /* Article content, forms */
-max-width: 42rem   /* About page, narrow content */
-max-width: 36rem   /* Descriptions, subtitles */
-```
-
-### Section Padding
-
-```css
-padding: 8rem 0 6rem  /* Hero sections */
-padding: 6rem 0       /* Major sections */
-padding: 4rem 0       /* Minor sections */
-padding: 3rem 0       /* Compact sections */
-```
-
-### Element Spacing
-
-```css
-margin-bottom: 3rem   /* Between major elements */
-margin-bottom: 2rem   /* Between paragraphs (about page) */
-margin-bottom: 1.5rem /* Between card elements */
-margin-bottom: 1rem   /* Between small elements */
-margin-bottom: 0.5rem /* Between tightly grouped items */
-```
-
-### Grid Gaps
-
-```css
-gap: 2rem        /* Card grids */
-gap: 1.5rem      /* Stat cards, modern grids */
-gap: 1rem        /* Button groups, inline items */
-gap: 0.5rem      /* Tight groupings */
-```
-
----
-
-## 🖼️ Layout Patterns
-
-### Hero Section
+Real glassmorphism (`backdrop-filter: blur(10px)`, translucent white,
+16px radius, lift-on-hover) with a gradient-text `.stat-number`. Used in
+the homepage hero (`.hero-stats` grid). This is the _one_ place true
+glass panels appear — keep it that way; overusing glassmorphism dilutes it.
 
 ```html
-<section class="hero" style="
-  background: linear-gradient(...);
-  position: relative;
-  overflow: hidden;
-  padding: 8rem 0 6rem;
-">
-  <!-- Floating blobs -->
-  <div style="position: absolute; ...animated blob..."></div>
-  
-  <div class="container" style="position: relative; z-index: 10;">
-    <div style="text-align: center;">
-      <!-- Pill badge -->
-      <!-- Large title with gradient -->
-      <!-- Subtitle -->
-      <!-- Description -->
-      <!-- CTA buttons -->
-      <!-- Stats cards -->
+<div class="hero-stats">
+  <div class="stat-card-glass accent-rust">
+    <div class="stat-number">42+</div>
+    <div class="stat-label">Essays Published</div>
+  </div>
+</div>
+```
+
+### YouTube embeds — `utils.youtube_embed(video_id, title, css_class="youtube-embed")`
+
+One implementation, used everywhere a video appears (post bodies via
+`parser.process_youtube_embeds`, book cards, the videos page, the
+homepage featured-video section). Never paste the iframe markup by hand.
+
+### Poems / verse
+
+Default markdown collapses single newlines inside a paragraph — a poem
+typed as consecutive lines in the `.md` source renders as one run-on
+line, since both markdown and HTML ignore bare line breaks. Two ways to
+fix that exist (trailing double-space, or the `nl2br` extension); both
+are rejected here — see below.
+
+**Convention: wrap poems in a raw HTML block with an explicit `.poem` class.**
+
+```html
+<div class="poem">
+  <p>
+    Roses are red<br />
+    Violets are blue
+  </p>
+
+  <p>
+    Sugar is sweet<br />
+    And so are you
+  </p>
+</div>
+```
+
+Python-Markdown passes block-level raw HTML through untouched, so this
+renders exactly as written — one `<p>` per stanza (blank line = stanza
+break), `<br>` for a line break within a stanza. Styled by
+`.post-body .poem` in `styles.py`: italic, tighter line-height, a
+neutral sand rule on the left — deliberately _not_ the rust
+`blockquote` style, which is reserved for pull-quotes/attributions, so
+a poem never reads as something being quoted from elsewhere.
+
+Why not the alternatives:
+
+- **Trailing double-space for a line break** — technically valid
+  markdown, but the whitespace is invisible in an editor, and most
+  editors/git hooks strip trailing whitespace on save, silently
+  breaking the poem.
+- **The `nl2br` extension** — would fix poems, but it changes markdown
+  parsing globally: every single newline in every post becomes a
+  `<br>`, including ordinary hard-wrapped prose paragraphs. Too blunt
+  for a site-wide setting.
+- **Fenced code block** — preserves line breaks correctly but renders
+  in a monospace/code font, which reads wrong for verse.
+
+### Hero section pattern
+
+Every hero (`.hero`) follows the same skeleton:
+
+```html
+<section class="hero">
+  <div class="hero-bg-blob hero-bg-blob-1"></div>
+  <!-- optional, homepage only -->
+  <div class="hero-bg-blob hero-bg-blob-2"></div>
+  <div class="container">
+    <div class="hero-content">
+      <!-- pill_badge(...) -->
+      <h1 class="hero-title">...</h1>
+      <!-- add .hero-title-gradient for the multicolor homepage treatment -->
+      <p class="hero-description">...</p>
+      <!-- optional .hero-cta buttons, optional .hero-stats -->
     </div>
   </div>
 </section>
 ```
 
-### Section Header (Centered)
+Interior pages (about, contact, categories, archives) use a plainer
+version: pill badge + `.hero-title` + `.hero-description`, no blobs/stats —
+those are reserved for the homepage so it still feels special.
+
+### Section header pattern
 
 ```html
-<div style="text-align: center; margin-bottom: 4rem;">
-  <!-- Pill badge -->
-  <div style="...badge styles...">Label</div>
-  
-  <!-- Title -->
-  <h2 style="font-size: clamp(2.5rem, 5vw, 3.5rem); ...">Title</h2>
-  
-  <!-- Description -->
-  <p style="font-size: 1.25rem; max-width: 36rem; margin: 0 auto;">Description</p>
-  
-  <!-- Decorative line -->
-  <div style="width: 80px; height: 4px; background: linear-gradient(...); margin: 0 auto;"></div>
+<div class="section-header section-header-centered">
+  <!-- pill_badge(...) -->
+  <h2 class="section-title">Section Name</h2>
+  <p class="section-description section-description-centered">
+    One-line description
+  </p>
 </div>
 ```
 
-### Card Grid
+### Buttons
 
-```html
-<div class="card-grid" style="
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-">
-  <!-- Cards -->
-</div>
-```
-
-### Featured Grid (1 large + 3 small)
-
-```html
-<div class="featured-grid" style="
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
-">
-  <!-- Large featured card (grid-row: span 2) -->
-  <div style="display: flex; flex-direction: column; gap: 2rem;">
-    <!-- 3 small cards -->
-  </div>
-</div>
-```
-
----
-
-## 🎬 Animations & Transitions
-
-### Standard Transitions
-
-```css
-transition: all 0.3s;           /* General purpose */
-transition: transform 0.3s;     /* Movement only */
-transition: color 0.3s;         /* Color changes */
-transition: box-shadow 0.3s;    /* Shadow changes */
-```
-
-### Hover Effects
-
-**Card Lift:**
-```css
-transform: translateY(-4px);
-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-```
-
-**Button Lift:**
-```css
-transform: translateY(-2px);
-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-```
-
-**Stat Card Lift:**
-```css
-transform: translateY(-8px);
-box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-```
-
-**Color Transition:**
-```css
-onmouseover="this.style.color='var(--color-rust)'"
-onmouseout="this.style.color='var(--color-charcoal)'"
-```
-
-### Keyframe Animations
-
-**Float (background blobs):**
-```css
-@keyframes float {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(30px, -30px) rotate(5deg); }
-  66% { transform: translate(-20px, 20px) rotate(-5deg); }
-}
-animation: float 20s infinite ease-in-out;
-```
-
----
-
-## 📱 Responsive Design
-
-### Breakpoints
-
-```css
-/* Mobile first - base styles for mobile */
-@media (max-width: 768px) {
-  /* Tablets and below */
-}
-
-@media (max-width: 480px) {
-  /* Small phones */
-}
-```
-
-### Responsive Typography
-
-Use `clamp()` for fluid typography:
-
-```css
-font-size: clamp(3.5rem, 8vw, 7rem);    /* Hero */
-font-size: clamp(2.5rem, 5vw, 3.5rem);  /* Section titles */
-font-size: clamp(1.25rem, 2.5vw, 1.75rem); /* Subtitles */
-font-size: clamp(3rem, 5vw, 4rem);      /* Page titles */
-```
-
-### Mobile Adjustments
-
-**Hero:**
-- Reduce padding: `4rem 0 3rem`
-- Stack stats vertically: `grid-template-columns: 1fr`
-
-**Navigation:**
-- Stack vertically
-- Center items
-- Increase touch targets
-
-**Cards:**
-- Single column: `grid-template-columns: 1fr`
-- Reduce padding
-
----
-
-## 🎯 Component Specifications
-
-### Navigation Header
-
-- Sticky position
-- Backdrop blur
-- 2px sand border bottom
-- Active state: rust underline (2px, 0.25rem below)
-- Hover: color change charcoal
-
-### Footer
-
-- Dark background (charcoal)
-- Cream text
-- 3-column grid (auto-fit, 250px min)
-- Rust section titles
-- 1px slate border-top for copyright
+`.btn.btn-primary` (solid rust, for the main action) and `.btn.btn-secondary`
+(outlined charcoal, for secondary actions). One primary button per section,
+maximum.
 
 ### Dividers
 
 ```html
-<div class="divider" style="
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 3rem 0;
-">
-  <div style="width: 4rem; height: 2px; background: var(--color-rust);"></div>
-  <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-rust);"></div>
-  <div style="width: 4rem; height: 2px; background: var(--color-rust);"></div>
+<div class="divider">
+  <div class="divider-line" style="background: var(--color-rust);"></div>
+  <div class="divider-dot" style="background: var(--color-rust);"></div>
+  <div class="divider-line" style="background: var(--color-rust);"></div>
 </div>
 ```
 
-### Video Embeds
+---
+
+## Layout
 
 ```css
-position: relative;
-padding-bottom: 56.25%;  /* 16:9 aspect ratio */
-height: 0;
-overflow: hidden;
-border-radius: 8px;
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+max-width: 1280px  /* .container, page-wide sections */
+max-width: 64rem   /* Featured/video sections */
+max-width: 56rem   /* Books, archive teaser */
+max-width: 48rem   /* Article content, forms */
+max-width: 42rem   /* About page */
 ```
 
-Iframe inside:
-```css
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-```
-
-### Archive Accordion
-
-**Year button:**
-- Gradient background (rust to terracotta)
-- White text
-- 1.5rem padding
-- Box shadow with hover lift
-
-**Month button:**
-- White background
-- Sand border → rust on hover
-- Cream background on hover
-
-**Post cards:**
-- Cream background
-- Left border: 3px sage
-- Hover: title color → rust
+Section padding: `6rem 0` standard (`.section`), `8rem 0 6rem` for hero.
+Card grid gaps: `2rem` standard, `1.5rem` for stat cards.
 
 ---
 
-## 🎨 Best Practices
+## Adding a New Page
 
-### Do's ✅
-
-- Use gradient text for hero titles
-- Add hover effects to all interactive elements
-- Maintain generous white space
-- Use glassmorphism for overlay elements
-- Stick to the color palette
-- Use clamp() for responsive typography
-- Add loading states and transitions
-- Keep borders minimal (2px max)
-- Use backdrop-filter for depth
-
-### Don'ts ❌
-
-- Don't use black (#000) - use charcoal
-- Don't use pure white backgrounds everywhere
-- Don't overuse animations
-- Don't mix serif/sans inappropriately
-- Don't ignore mobile breakpoints
-- Don't use more than 3 accent colors per section
-- Don't create jarring color transitions
-- Don't forget hover states
+1. `header_html(title, active_page)` → `...content...` → `footer_html()`,
+   written to `OUTPUT_DIR / <name>.html`. Add the page's key to
+   `templates.header_html`'s nav list if it should appear in the header;
+   otherwise it's still reachable from the footer nav.
+2. Build the hero with the pattern above.
+3. For any listing of posts/books, use the existing card functions and
+   grid classes — don't write a new card.
+4. Any pill/eyebrow label → `pill_badge()`, not inline styles.
+5. Any YouTube video → `youtube_embed()`.
+6. Escape any text sourced from markdown front matter or `*.json` data
+   files with `html.escape` unless it's already going through a helper
+   that does it for you (all of `cards.py` does).
 
 ---
 
-## 🔍 Accessibility
+## Known Constraints / Don'ts
 
-### Color Contrast
-
-All text meets WCAG AA standards:
-- Charcoal on cream: 8.5:1 ✅
-- Rust on white: 4.8:1 ✅
-- Slate on white: 7.2:1 ✅
-- White on rust: 4.8:1 ✅
-
-### Interactive Elements
-
-- All buttons have clear hover states
-- Links are underlined in body text
-- Focus states visible for keyboard navigation
-- Touch targets minimum 44x44px
-- Alt text for all images
-
-### Semantic HTML
-
-- Proper heading hierarchy (H1 → H2 → H3)
-- `<article>` for blog posts
-- `<nav>` for navigation
-- `<section>` for content sections
-- `<main>` for primary content
-
----
-
-## 🎨 Theme Variations
-
-### Light Mode (Current)
-- Cream backgrounds
-- Charcoal text
-- Soft shadows
-
-### Potential Dark Mode
-```css
---color-cream: #1A1816      /* Dark background */
---color-charcoal: #FAF8F3   /* Light text */
---color-sand: #2B2826       /* Borders */
-/* Keep accent colors same */
-```
-
----
-
-## 📦 Design Assets
-
-### Icons
-- SVG icons for arrows, navigation
-- Inline SVG for performance
-- Single color (currentColor)
-- 16px-24px typical sizes
-
-### Images
-- Book covers: consistent aspect ratio
-- Border-radius: 4px
-- Max-width: 100%
-- Lazy loading for performance
-
-### Fonts
-- Google Fonts CDN
-- Preload for performance
-- Display: swap for FOUT prevention
-
----
-
-## 🚀 Performance
-
-### CSS Optimization
-- Minimal selectors
-- Inline critical CSS
-- Avoid !important
-- Use CSS variables
-
-### Animation Performance
-- Use transform and opacity
-- Avoid animating width/height
-- Use will-change sparingly
-- requestAnimationFrame for JS
-
----
-
-This design system ensures consistency, accessibility, and modern aesthetics across the entire Quiet Asterisk blog. 🎨✨
+- **Don't** import optional feature modules (like the AI chat widget)
+  at the top of a file unconditionally — a missing optional module
+  should degrade gracefully, not crash the whole generator. See
+  `generators.get_chat_widget_html()` for the pattern (lazy import,
+  gated on a config flag, falls back to `""` with a logged warning).
+- **Don't** hardcode secrets/tokens in `config.py` — pull from
+  environment variables (see `AWS_API_TOKEN`/`AWS_API_ENDPOINT`).
+- **Don't** duplicate a component's markup inline "just this once" —
+  it will drift. Extend the shared function/class instead.
+- Keep true glassmorphism (`.stat-card-glass`) rare and intentional;
+  it's a homepage-hero accent, not a default card style.

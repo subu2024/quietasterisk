@@ -11,7 +11,7 @@ from pathlib import Path
 
 BLOG_TITLE = "quiet asterisk"
 TAG_LINE = "Writing that slows thinking just enough to notice what uncertainty is trying to teach us"
-COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.1.07"
+COPYRIGHT = "© 2026 pathway llc. All rights reserved. v1.2"
 CONTACT_EMAIL = "hello@quietasterisk.com"
 YOUTUBE_CHANNEL = "https://www.youtube.com/@quietasterisk"
 INSTAGRAM_PROFILE = "https://www.instagram.com/quiet.asterisk/"
@@ -44,11 +44,17 @@ ARCHIVES_FILE = "archives.html"
 READING_FILE_HTML = "reading.html"
 
 # AI Chat Module
+# Optional feature: requires a separate `chat_widget.py` module (not part of
+# this repo) that exports get_chat_widget_html(). If that module isn't
+# present, generators.py falls back to skipping the widget rather than
+# crashing, even when this flag is True.
+import os
+
 ENABLE_AI_CHAT = False  # Set to False to disable
 AI_CHAT_TITLE = "Ask Devi"
-AI_CHAT_PLACEHOLDER = "Ask a question about uncertainity in your life ..."
-AWS_API_ENDPOINT = "https://your-api-gateway-url.execute-api.region.amazonaws.com/prod/chat"
-AWS_API_TOKEN = "your-secret-token-here"  # Your AWS API secret token
+AI_CHAT_PLACEHOLDER = "Ask a question about uncertainty in your life ..."
+AWS_API_ENDPOINT = os.environ.get("BLOG_CHAT_API_ENDPOINT", "")
+AWS_API_TOKEN = os.environ.get("BLOG_CHAT_API_TOKEN", "")  # never hardcode secrets here
 
 # ==========================================================
 # Content Settings

@@ -213,3 +213,60 @@ def slugify(text: str) -> str:
         Lowercase slug with hyphens
     """
     return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
+
+
+# ==========================================================
+# Design System Helpers
+# ==========================================================
+
+_CATEGORY_ACCENTS = ("rust", "sage", "gold", "terracotta")
+
+
+def category_accent(category: str) -> str:
+    """
+    Deterministically map a category name to one of the accent colors
+    defined in styles.py (card-category-rust/sage/gold/terracotta).
+
+    Using a stable hash means the same category always gets the same
+    color across every page, while different categories get visually
+    distinct colors instead of everything defaulting to rust.
+
+    Args:
+        category: Category name
+
+    Returns:
+        One of "rust", "sage", "gold", "terracotta"
+    """
+    if not category:
+        return _CATEGORY_ACCENTS[0]
+    index = sum(ord(ch) for ch in category) % len(_CATEGORY_ACCENTS)
+    return _CATEGORY_ACCENTS[index]
+
+
+def youtube_embed(video_id: str, title: str = "YouTube video player", css_class: str = "youtube-embed") -> str:
+    """
+    Return a responsive 16:9 YouTube iframe embed.
+
+    Centralizes markup that was previously duplicated across parser.py,
+    cards.py, and generators.py with three slightly different copies.
+
+    Args:
+        video_id: YouTube video ID
+        title: Accessible iframe title
+        css_class: Wrapper class (styled in styles.py .post-body .youtube-embed)
+
+    Returns:
+        HTML string for the embed, or empty string if no video_id given
+    """
+    if not video_id:
+        return ""
+    return f'''<div class="{css_class}">
+    <iframe
+        src="https://www.youtube.com/embed/{video_id}?rel=0&modestbranding=1"
+        title="{title}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>'''

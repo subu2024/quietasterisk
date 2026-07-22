@@ -11,6 +11,20 @@ from styles import get_modern_styles
 from utils import show_logo
 
 
+def pill_badge(text: str, accent: str = "rust") -> str:
+    """
+    Return a small uppercase pill badge, e.g. for section eyebrows.
+
+    Args:
+        text: Badge text
+        accent: One of "rust", "sage", "gold" (see .pill-badge-* in styles.py)
+
+    Returns:
+        HTML string for the badge
+    """
+    return f'<span class="pill-badge pill-badge-{accent}">{text}</span>'
+
+
 def header_html(title: str, active_page: str = "home") -> str:
     """
     Generate HTML header with navigation.
@@ -22,14 +36,9 @@ def header_html(title: str, active_page: str = "home") -> str:
     Returns:
         HTML string for header
     """
-    active_classes = {
-        "home": "active" if active_page == "home" else "",
-        "books": "active" if active_page == "books" else "",
-        "videos": "active" if active_page == "videos" else "", 
-        "archives": "active" if active_page == "archives" else "",
-        "about": "active" if active_page == "about" else "",
-    }
-    
+    def active(page: str) -> str:
+        return "active" if active_page == page else ""
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,13 +61,11 @@ def header_html(title: str, active_page: str = "home") -> str:
     <div class="header-content">
       <a href="{INDEX_FILE}" class="logo">{BLOG_TITLE}{show_logo(LOGO_PATH, 70)}</a>
       <nav class="nav">
-        <a href="{INDEX_FILE}" class="nav-link {active_classes['home']}">Essays</a>
-        <a href="{BOOKS_FILE_HTML}" class="nav-link {active_classes['books']}">Books</a>
-        <a href="{VIDEOS_FILE_HTML}" class="nav-link {active_classes['videos']}">Videos</a>
-       
-        <a href="{ARCHIVES_FILE}" class="nav-link {active_classes['archives']}">Archives</a>
-        <a href="{ABOUT_FILE}" class="nav-link {active_classes['about']}">About</a>
-        
+        <a href="{INDEX_FILE}" class="nav-link {active('home')}">Essays</a>
+        <a href="{BOOKS_FILE_HTML}" class="nav-link {active('books')}">Books</a>
+        <a href="{VIDEOS_FILE_HTML}" class="nav-link {active('videos')}">Videos</a>
+        <a href="{ARCHIVES_FILE}" class="nav-link {active('archives')}">Archives</a>
+        <a href="{ABOUT_FILE}" class="nav-link {active('about')}">About</a>
       </nav>
     </div>
   </div>
