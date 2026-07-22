@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Books - quiet asterisk</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:wght@400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -129,6 +129,7 @@ body {
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.05;
+  animation: float 20s infinite ease-in-out;
 }
 
 .hero-bg-blob-1 {
@@ -162,6 +163,23 @@ body {
   margin-bottom: 2rem;
 }
 
+.pill-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  border: 2px solid;
+  backdrop-filter: blur(10px);
+}
+
+.pill-badge-rust { color: var(--color-rust); background: rgba(184, 80, 62, 0.1); border-color: var(--color-rust); }
+.pill-badge-sage { color: #5F7350; background: rgba(139, 155, 126, 0.15); border-color: var(--color-sage); }
+.pill-badge-gold { color: #8A6A2E; background: rgba(201, 167, 103, 0.18); border-color: var(--color-gold); }
+
 .hero-title {
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 700;
@@ -172,6 +190,13 @@ body {
 
 .hero-title-accent {
   font-style: italic;
+}
+
+.hero-title-gradient {
+  background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-rust) 50%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-subtitle {
@@ -237,22 +262,28 @@ body {
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  max-width: 48rem;
+  gap: 1.5rem;
+  max-width: 56rem;
 }
 
-.stat-item {
-  padding-left: 1.5rem;
-  border-left: 4px solid;
+.stat-card-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(184, 80, 62, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.stat-item:nth-child(1) { border-color: var(--color-rust); }
-.stat-item:nth-child(2) { border-color: var(--color-sage); }
-.stat-item:nth-child(3) { border-color: var(--color-gold); }
+.stat-card-glass:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
 
 .stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 800;
   font-family: var(--font-serif);
   margin-bottom: 0.5rem;
 }
@@ -263,6 +294,31 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-slate);
+  font-weight: 600;
+}
+
+.stat-card-glass.accent-rust { border-color: rgba(184, 80, 62, 0.2); }
+.stat-card-glass.accent-rust .stat-number {
+  background: linear-gradient(135deg, var(--color-rust), var(--color-terracotta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-card-glass.accent-sage { border-color: rgba(139, 155, 126, 0.2); }
+.stat-card-glass.accent-sage .stat-number {
+  background: linear-gradient(135deg, var(--color-sage), #6B8B5E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-card-glass.accent-gold { border-color: rgba(201, 167, 103, 0.2); }
+.stat-card-glass.accent-gold .stat-number {
+  background: linear-gradient(135deg, var(--color-gold), #B8954F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Section Headers */
@@ -341,10 +397,50 @@ body {
   font-family: var(--font-sans);
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 500;
-  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
   display: inline-block;
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  border: 1.5px solid currentColor;
+}
+
+/* Category accent variants - gives each category a distinct, colorful identity
+   instead of every card using the same rust tone. Assigned deterministically
+   by category name in utils.category_accent(). */
+.card-category-rust {
+  color: var(--color-rust);
+  background: rgba(184, 80, 62, 0.1);
+}
+.card-category-sage {
+  color: #5F7350;
+  background: rgba(139, 155, 126, 0.15);
+}
+.card-category-gold {
+  color: #8A6A2E;
+  background: rgba(201, 167, 103, 0.18);
+}
+.card-category-terracotta {
+  color: #A6472F;
+  background: rgba(209, 116, 88, 0.14);
+}
+
+.card-compact {
+  padding: 1.75rem;
+}
+
+.card-compact .card-title {
+  font-size: 1.375rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-compact .card-excerpt {
+  font-size: 0.9375rem;
+  margin-bottom: 1rem;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .card-title {
@@ -504,6 +600,23 @@ body {
   color: var(--color-slate);
 }
 
+.post-body .poem {
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--color-charcoal);
+  margin: 2.5rem 0;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--color-sand);
+}
+
+.post-body .poem p {
+  margin-bottom: 1.25rem;
+}
+
+.post-body .poem p:last-child {
+  margin-bottom: 0;
+}
+
 .post-body iframe {
   max-width: 100%;
   aspect-ratio: 16/9;
@@ -511,7 +624,7 @@ body {
   border-radius: 8px;
 }
 
-.post-body .youtube-embed {
+.youtube-embed {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
@@ -520,9 +633,10 @@ body {
     margin: 2rem 0;
     border-radius: 8px;
     background: #000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.post-body .youtube-embed iframe {
+.youtube-embed iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -637,9 +751,11 @@ body {
 }
 
 .book-image {
-  width: 100%;
+  width: 120px;
+  height: auto;
+  flex-shrink: 0;
   border-radius: 4px;
-  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .book-title {
@@ -652,6 +768,13 @@ body {
   color: var(--color-slate);
   margin-bottom: 1.5rem;
   line-height: 1.6;
+}
+
+.book-meta-line {
+  color: var(--color-slate);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
 }
 
 /* Responsive */
@@ -721,10 +844,8 @@ body {
         <a href="index.html" class="nav-link ">Essays</a>
         <a href="books.html" class="nav-link active">Books</a>
         <a href="videos.html" class="nav-link ">Videos</a>
-       
         <a href="archives.html" class="nav-link ">Archives</a>
         <a href="about.html" class="nav-link ">About</a>
-        
       </nav>
     </div>
   </div>
@@ -751,107 +872,98 @@ body {
 
 <div class="book-card">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
-    <img src="images/the_quiet_asterisk.jpg" class="book-image" alt="The Quiet Asterisk" style="width: 120px; height: auto; flex-shrink: 0; border-radius: 4px;">
+    <img src="images/the_quiet_asterisk.jpg" class="book-image" alt="The Quiet Asterisk">
     <div style="flex: 1; min-width: 0;">
       <h4 class="book-title">The Quiet Asterisk</h4>
       
       
       <p class="book-description">A meditation on probability and everyday resilience. Through human stories, it reframes uncertainty as something to live with—rather than conquer.</p>
       
-        <a href="https://www.amazon.com/Quiet-Asterisk-Chance-Patience-Keeping-ebook/dp/B0GPLJCMXH" target="_blank" rel="noopener noreferrer" class="btn btn-primary" 
+        <a href="https://www.amazon.com/Quiet-Asterisk-Chance-Patience-Keeping-ebook/dp/B0GPLJCMXH" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
            style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block;">
           Buy on Amazon
         </a>
         
     </div>
   </div>
-  
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 1.5rem 0; border-radius: 4px;">
-            <iframe 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                src="https://www.youtube.com/embed/HT-PeIHZtSo?rel=0&modestbranding=1" 
-                title="Video about The Quiet Asterisk"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
-        </div>
-        
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/HT-PeIHZtSo?rel=0&modestbranding=1"
+        title="Video about The Quiet Asterisk"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>
 </div>
 
 <div class="book-card">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
-    <img src="images/space_between_knowing.jpg" class="book-image" alt="Space Between Knowing" style="width: 120px; height: auto; flex-shrink: 0; border-radius: 4px;">
+    <img src="images/space_between_knowing.jpg" class="book-image" alt="Space Between Knowing">
     <div style="flex: 1; min-width: 0;">
       <h4 class="book-title">Space Between Knowing</h4>
       
       
-      <p class="book-description">A reflective exploration of thoughts, uncertainty, and outcomes we don't fully control. It challenges the belief that mindset guarantees results and suggests peace comes from changing our relationship to chance.</p>
+      <p class="book-description">A reflective exploration of thoughts, uncertainty, and outcomes we don&#x27;t fully control. It challenges the belief that mindset guarantees results and suggests peace comes from changing our relationship to chance.</p>
       
-        <a href="https://www.amazon.com/Space-Between-Knowing-Subu-Sangameswar-ebook/dp/B0GHZMSKY5" target="_blank" rel="noopener noreferrer" class="btn btn-primary" 
+        <a href="https://www.amazon.com/Space-Between-Knowing-Subu-Sangameswar-ebook/dp/B0GHZMSKY5" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
            style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block;">
           Buy on Amazon
         </a>
         
     </div>
   </div>
-  
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 1.5rem 0; border-radius: 4px;">
-            <iframe 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                src="https://www.youtube.com/embed/n0L9BYM3Oqo?rel=0&modestbranding=1" 
-                title="Video about Space Between Knowing"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
-        </div>
-        
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/n0L9BYM3Oqo?rel=0&modestbranding=1"
+        title="Video about Space Between Knowing"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>
 </div>
 
 <div class="book-card">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
-    <img src="images/life_is_happening.jpg" class="book-image" alt="Life Is Happening—You Might As Well Be Here" style="width: 120px; height: auto; flex-shrink: 0; border-radius: 4px;">
+    <img src="images/life_is_happening.jpg" class="book-image" alt="Life Is Happening—You Might As Well Be Here">
     <div style="flex: 1; min-width: 0;">
       <h4 class="book-title">Life Is Happening—You Might As Well Be Here</h4>
       
       
       <p class="book-description">A Practical, Funny, and Occasionally Enlightening Guide to Actually Showing Up for Your Own Life</p>
       
-        <a href="downloads/life_is_happening.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" 
+        <a href="downloads/life_is_happening.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
            style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block;">
           Download Free PDF
         </a>
         
     </div>
   </div>
-  
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 1.5rem 0; border-radius: 4px;">
-            <iframe 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                src="https://www.youtube.com/embed/P1fi-0WlJJk?rel=0&modestbranding=1" 
-                title="Video about Life Is Happening—You Might As Well Be Here"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
-        </div>
-        
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/P1fi-0WlJJk?rel=0&modestbranding=1"
+        title="Video about Life Is Happening—You Might As Well Be Here"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>
 </div>
 
 <div class="book-card">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
-    <img src="images/ai_unleashed.jpg" class="book-image" alt="AI Unleashed: An Executive's Roadmap to Unleashing Innovation" style="width: 120px; height: auto; flex-shrink: 0; border-radius: 4px;">
+    <img src="images/ai_unleashed.jpg" class="book-image" alt="AI Unleashed: An Executive&#x27;s Roadmap to Unleashing Innovation">
     <div style="flex: 1; min-width: 0;">
-      <h4 class="book-title">AI Unleashed: An Executive's Roadmap to Unleashing Innovation</h4>
+      <h4 class="book-title">AI Unleashed: An Executive&#x27;s Roadmap to Unleashing Innovation</h4>
       
       
       <p class="book-description">Artificial intelligence (AI) and machine learning (ML) are important emerging technologies that have the potential to transform organizations through improved customer service, streamlined operations, and the realization of new business models. To unlock this potential, leaders and frontline managers have to collaborate with data scientists while being responsible for the strategic directions. This primer for executives will provide a high-level introduction to AI including a simple framework for building a business case and planning for effective implementation of AI within your organization.</p>
       
-        <a href="downloads/AI Unleashed - An Executive’s Roadmap to Unleashing Innovation.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" 
+        <a href="downloads/AI Unleashed - An Executive’s Roadmap to Unleashing Innovation.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
            style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block;">
           Download Free PDF
         </a>
@@ -863,14 +975,14 @@ body {
 
 <div class="book-card">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
-    <img src="images/understanding_ai.jpg" class="book-image" alt="Understanding AI and Digital Technology: An Introduction" style="width: 120px; height: auto; flex-shrink: 0; border-radius: 4px;">
+    <img src="images/understanding_ai.jpg" class="book-image" alt="Understanding AI and Digital Technology: An Introduction">
     <div style="flex: 1; min-width: 0;">
       <h4 class="book-title">Understanding AI and Digital Technology: An Introduction</h4>
       
       
-      <p class="book-description">In Understanding AI and Digital Technology, you'll discover how everyday innovations—from the smartphone in your pocket to the algorithms shaping your online experience—are part of a much bigger transformation. This introductory book takes you on a fascinating journey through the evolution of computing, the rise of AI, and the possibilities of quantum computing that lie just over the horizon.</p>
+      <p class="book-description">In Understanding AI and Digital Technology, you&#x27;ll discover how everyday innovations—from the smartphone in your pocket to the algorithms shaping your online experience—are part of a much bigger transformation. This introductory book takes you on a fascinating journey through the evolution of computing, the rise of AI, and the possibilities of quantum computing that lie just over the horizon.</p>
       
-        <a href="https://www.amazon.com/Understanding-AI-Digital-Technology-Introduction-ebook/dp/B0F3W4CKFY/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" 
+        <a href="https://www.amazon.com/Understanding-AI-Digital-Technology-Introduction-ebook/dp/B0F3W4CKFY/" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
            style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block;">
           Buy on Amazon
         </a>
@@ -882,14 +994,14 @@ body {
 
 <div class="book-card">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
-    <img src="images/funny_money.jpg" class="book-image" alt="Funny Money" style="width: 120px; height: auto; flex-shrink: 0; border-radius: 4px;">
+    <img src="images/funny_money.jpg" class="book-image" alt="Funny Money">
     <div style="flex: 1; min-width: 0;">
       <h4 class="book-title">Funny Money</h4>
       
       
-      <p class="book-description">What They Don’t Teach You About Money in High School (But Should). Most finance books for teens are either painfully boring textbooks or get-rich-quick schemes full of risky gimmicks. Funny Money is different. Born from a series of real, unfiltered conversations between a tech-executive father and his teenage son, this book demystifies the financial world without a single lecture. Using clear, everyday analogies—from Uber and phone financing to football and video games—this guide transforms complex economic principles into intuitive, bite-sized strategies. Your teen won't just memorize formulas; they will learn how to outsmart their own brain’s psychological biases, decode corporate income statements, and leverage the wealth-building magic of compound interest before they even finish high school.</p>
+      <p class="book-description">What They Don’t Teach You About Money in High School (But Should). Most finance books for teens are either painfully boring textbooks or get-rich-quick schemes full of risky gimmicks. Funny Money is different. Born from a series of real, unfiltered conversations between a tech-executive father and his teenage son, this book demystifies the financial world without a single lecture. Using clear, everyday analogies—from Uber and phone financing to football and video games—this guide transforms complex economic principles into intuitive, bite-sized strategies. Your teen won&#x27;t just memorize formulas; they will learn how to outsmart their own brain’s psychological biases, decode corporate income statements, and leverage the wealth-building magic of compound interest before they even finish high school.</p>
       
-        <a href="https://www.amazon.com/dp/B0H8MJP1KH" target="_blank" rel="noopener noreferrer" class="btn btn-primary" 
+        <a href="https://www.amazon.com/dp/B0H8MJP1KH" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
            style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block;">
           Buy on Amazon
         </a>
@@ -901,14 +1013,14 @@ body {
 
 <div class="book-card">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
-    <img src="images/cloud.jpg" class="book-image" alt="Cloud Computing – An Introduction" style="width: 120px; height: auto; flex-shrink: 0; border-radius: 4px;">
+    <img src="images/cloud.jpg" class="book-image" alt="Cloud Computing – An Introduction">
     <div style="flex: 1; min-width: 0;">
       <h4 class="book-title">Cloud Computing – An Introduction</h4>
       
       
       <p class="book-description">Cloud is the next wave in technology evolution. Instead of purchasing expensive hardware and software and struggling with installation and maintenance, businesses big and small can leverage cloud for all their computing needs. This book provides a quick introduction to cloud and helps with a framework that you can use to make the cloud transition smooth and painless.</p>
       
-        <a href="downloads/Cloud_Computing_An_Introduction.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" 
+        <a href="downloads/Cloud_Computing_An_Introduction.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
            style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block;">
           Download Free PDF
         </a>
@@ -920,7 +1032,7 @@ body {
 
 <div class="book-card">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
-    <img src="images/tableau_an_introduction.jpg" class="book-image" alt="Tableau - An Introduction" style="width: 120px; height: auto; flex-shrink: 0; border-radius: 4px;">
+    <img src="images/tableau_an_introduction.jpg" class="book-image" alt="Tableau - An Introduction">
     <div style="flex: 1; min-width: 0;">
       <h4 class="book-title">Tableau - An Introduction</h4>
       
@@ -934,7 +1046,7 @@ body {
 
 <div class="book-card">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
-    <img src="images/big_data_an_introduction.jpg" class="book-image" alt="Big Data - An Introduction" style="width: 120px; height: auto; flex-shrink: 0; border-radius: 4px;">
+    <img src="images/big_data_an_introduction.jpg" class="book-image" alt="Big Data - An Introduction">
     <div style="flex: 1; min-width: 0;">
       <h4 class="book-title">Big Data - An Introduction</h4>
       
@@ -990,7 +1102,7 @@ body {
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 pathway llc. All rights reserved. v1.1.07</p>
+      <p>© 2026 pathway llc. All rights reserved. v1.2</p>
     </div>
   </div>
 </footer>

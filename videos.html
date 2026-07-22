@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Videos - quiet asterisk</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:wght@400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -129,6 +129,7 @@ body {
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.05;
+  animation: float 20s infinite ease-in-out;
 }
 
 .hero-bg-blob-1 {
@@ -162,6 +163,23 @@ body {
   margin-bottom: 2rem;
 }
 
+.pill-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  border: 2px solid;
+  backdrop-filter: blur(10px);
+}
+
+.pill-badge-rust { color: var(--color-rust); background: rgba(184, 80, 62, 0.1); border-color: var(--color-rust); }
+.pill-badge-sage { color: #5F7350; background: rgba(139, 155, 126, 0.15); border-color: var(--color-sage); }
+.pill-badge-gold { color: #8A6A2E; background: rgba(201, 167, 103, 0.18); border-color: var(--color-gold); }
+
 .hero-title {
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 700;
@@ -172,6 +190,13 @@ body {
 
 .hero-title-accent {
   font-style: italic;
+}
+
+.hero-title-gradient {
+  background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-rust) 50%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-subtitle {
@@ -237,22 +262,28 @@ body {
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  max-width: 48rem;
+  gap: 1.5rem;
+  max-width: 56rem;
 }
 
-.stat-item {
-  padding-left: 1.5rem;
-  border-left: 4px solid;
+.stat-card-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(184, 80, 62, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.stat-item:nth-child(1) { border-color: var(--color-rust); }
-.stat-item:nth-child(2) { border-color: var(--color-sage); }
-.stat-item:nth-child(3) { border-color: var(--color-gold); }
+.stat-card-glass:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
 
 .stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 800;
   font-family: var(--font-serif);
   margin-bottom: 0.5rem;
 }
@@ -263,6 +294,31 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-slate);
+  font-weight: 600;
+}
+
+.stat-card-glass.accent-rust { border-color: rgba(184, 80, 62, 0.2); }
+.stat-card-glass.accent-rust .stat-number {
+  background: linear-gradient(135deg, var(--color-rust), var(--color-terracotta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-card-glass.accent-sage { border-color: rgba(139, 155, 126, 0.2); }
+.stat-card-glass.accent-sage .stat-number {
+  background: linear-gradient(135deg, var(--color-sage), #6B8B5E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-card-glass.accent-gold { border-color: rgba(201, 167, 103, 0.2); }
+.stat-card-glass.accent-gold .stat-number {
+  background: linear-gradient(135deg, var(--color-gold), #B8954F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Section Headers */
@@ -341,10 +397,50 @@ body {
   font-family: var(--font-sans);
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 500;
-  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
   display: inline-block;
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  border: 1.5px solid currentColor;
+}
+
+/* Category accent variants - gives each category a distinct, colorful identity
+   instead of every card using the same rust tone. Assigned deterministically
+   by category name in utils.category_accent(). */
+.card-category-rust {
+  color: var(--color-rust);
+  background: rgba(184, 80, 62, 0.1);
+}
+.card-category-sage {
+  color: #5F7350;
+  background: rgba(139, 155, 126, 0.15);
+}
+.card-category-gold {
+  color: #8A6A2E;
+  background: rgba(201, 167, 103, 0.18);
+}
+.card-category-terracotta {
+  color: #A6472F;
+  background: rgba(209, 116, 88, 0.14);
+}
+
+.card-compact {
+  padding: 1.75rem;
+}
+
+.card-compact .card-title {
+  font-size: 1.375rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-compact .card-excerpt {
+  font-size: 0.9375rem;
+  margin-bottom: 1rem;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .card-title {
@@ -504,6 +600,23 @@ body {
   color: var(--color-slate);
 }
 
+.post-body .poem {
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--color-charcoal);
+  margin: 2.5rem 0;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--color-sand);
+}
+
+.post-body .poem p {
+  margin-bottom: 1.25rem;
+}
+
+.post-body .poem p:last-child {
+  margin-bottom: 0;
+}
+
 .post-body iframe {
   max-width: 100%;
   aspect-ratio: 16/9;
@@ -511,7 +624,7 @@ body {
   border-radius: 8px;
 }
 
-.post-body .youtube-embed {
+.youtube-embed {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
@@ -520,9 +633,10 @@ body {
     margin: 2rem 0;
     border-radius: 8px;
     background: #000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.post-body .youtube-embed iframe {
+.youtube-embed iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -637,9 +751,11 @@ body {
 }
 
 .book-image {
-  width: 100%;
+  width: 120px;
+  height: auto;
+  flex-shrink: 0;
   border-radius: 4px;
-  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .book-title {
@@ -652,6 +768,13 @@ body {
   color: var(--color-slate);
   margin-bottom: 1.5rem;
   line-height: 1.6;
+}
+
+.book-meta-line {
+  color: var(--color-slate);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
 }
 
 /* Responsive */
@@ -721,10 +844,8 @@ body {
         <a href="index.html" class="nav-link ">Essays</a>
         <a href="books.html" class="nav-link ">Books</a>
         <a href="videos.html" class="nav-link active">Videos</a>
-       
         <a href="archives.html" class="nav-link ">Archives</a>
         <a href="about.html" class="nav-link ">About</a>
-        
       </nav>
     </div>
   </div>
@@ -752,33 +873,31 @@ body {
 
 <article class="card">
   <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Introduction to Quiet Asterisk</h3>
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; margin-bottom: 1rem;">
-    <iframe 
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      src="https://www.youtube.com/embed/cPwFdCmHWq4?rel=0&modestbranding=1"
-      title="Introduction to Quiet Asterisk"
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/cPwFdCmHWq4?rel=0&modestbranding=1"
+        title="Introduction to Quiet Asterisk"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
     </iframe>
-  </div>
+</div>
   
 </article>
 
 <article class="card">
   <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">I used to know how to spell</h3>
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; margin-bottom: 1rem;">
-    <iframe 
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      src="https://www.youtube.com/embed/8jm2Db_y-qs?rel=0&modestbranding=1"
-      title="I used to know how to spell"
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/8jm2Db_y-qs?rel=0&modestbranding=1"
+        title="I used to know how to spell"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
     </iframe>
-  </div>
+</div>
   
             <div style="margin-top: 1rem;">
               <a href="2026_04_01_i_used_to_spell.html" class="card-link">
@@ -793,17 +912,16 @@ body {
 
 <article class="card">
   <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Fooled by Randomness</h3>
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; margin-bottom: 1rem;">
-    <iframe 
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      src="https://www.youtube.com/embed/5bdbbk_JWjY?rel=0&modestbranding=1"
-      title="Fooled by Randomness"
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/5bdbbk_JWjY?rel=0&modestbranding=1"
+        title="Fooled by Randomness"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
     </iframe>
-  </div>
+</div>
   
             <div style="margin-top: 1rem;">
               <a href="2026_01_04_fooled_by_randomness.html" class="card-link">
@@ -818,17 +936,16 @@ body {
 
 <article class="card">
   <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Connected, But Alone</h3>
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; margin-bottom: 1rem;">
-    <iframe 
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      src="https://www.youtube.com/embed/3YT3gxf-oBA?rel=0&modestbranding=1"
-      title="Connected, But Alone"
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/3YT3gxf-oBA?rel=0&modestbranding=1"
+        title="Connected, But Alone"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
     </iframe>
-  </div>
+</div>
   
             <div style="margin-top: 1rem;">
               <a href="2025_08_17_year2025.html" class="card-link">
@@ -843,17 +960,16 @@ body {
 
 <article class="card">
   <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">The Chaos of Now</h3>
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; margin-bottom: 1rem;">
-    <iframe 
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      src="https://www.youtube.com/embed/4KOC-MIGCi8?rel=0&modestbranding=1"
-      title="The Chaos of Now"
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/4KOC-MIGCi8?rel=0&modestbranding=1"
+        title="The Chaos of Now"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
     </iframe>
-  </div>
+</div>
   
             <div style="margin-top: 1rem;">
               <a href="2024_09_01_the_chaos_of_now.html" class="card-link">
@@ -868,17 +984,16 @@ body {
 
 <article class="card">
   <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">The Morning the Toast Burned Twice</h3>
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; margin-bottom: 1rem;">
-    <iframe 
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      src="https://www.youtube.com/embed/Mf8g6ZD0qsg?rel=0&modestbranding=1"
-      title="The Morning the Toast Burned Twice"
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/Mf8g6ZD0qsg?rel=0&modestbranding=1"
+        title="The Morning the Toast Burned Twice"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
     </iframe>
-  </div>
+</div>
   
             <div style="margin-top: 1rem;">
               <a href="2026_03_15_morning_toast_burned.html" class="card-link">
@@ -893,17 +1008,16 @@ body {
 
 <article class="card">
   <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Relationship Tango</h3>
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; margin-bottom: 1rem;">
-    <iframe 
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      src="https://www.youtube.com/embed/0G_NdNk7CwU?rel=0&modestbranding=1"
-      title="Relationship Tango"
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/0G_NdNk7CwU?rel=0&modestbranding=1"
+        title="Relationship Tango"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
     </iframe>
-  </div>
+</div>
   
             <div style="margin-top: 1rem;">
               <a href="2020_09_08_the_relationship_tango.html" class="card-link">
@@ -918,17 +1032,16 @@ body {
 
 <article class="card">
   <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Dreams of Hope</h3>
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; margin-bottom: 1rem;">
-    <iframe 
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      src="https://www.youtube.com/embed/hJvfz7S1TCQ?rel=0&modestbranding=1"
-      title="Dreams of Hope"
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/hJvfz7S1TCQ?rel=0&modestbranding=1"
+        title="Dreams of Hope"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
     </iframe>
-  </div>
+</div>
   
             <div style="margin-top: 1rem;">
               <a href="2015_01_10_dreams_of_hope.html" class="card-link">
@@ -943,17 +1056,16 @@ body {
 
 <article class="card">
   <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Mom: A Humble Tribute</h3>
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; margin-bottom: 1rem;">
-    <iframe 
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      src="https://www.youtube.com/embed/kwJPoOJD068?rel=0&modestbranding=1"
-      title="Mom: A Humble Tribute"
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/kwJPoOJD068?rel=0&modestbranding=1"
+        title="Mom: A Humble Tribute"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
     </iframe>
-  </div>
+</div>
   
             <div style="margin-top: 1rem;">
               <a href="2022_08_19_mom_a_humble_tribute.html" class="card-link">
@@ -968,17 +1080,16 @@ body {
 
 <article class="card">
   <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Mapping July in December</h3>
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; margin-bottom: 1rem;">
-    <iframe 
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      src="https://www.youtube.com/embed/XVXGZbIsBsw?rel=0&modestbranding=1"
-      title="Mapping July in December"
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/XVXGZbIsBsw?rel=0&modestbranding=1"
+        title="Mapping July in December"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
     </iframe>
-  </div>
+</div>
   
             <div style="margin-top: 1rem;">
               <a href="2026_03_03_mapping_july.html" class="card-link">
@@ -993,17 +1104,16 @@ body {
 
 <article class="card">
   <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">The Cost of Our Failures</h3>
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; margin-bottom: 1rem;">
-    <iframe 
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      src="https://www.youtube.com/embed/GQrphwjWyqg?rel=0&modestbranding=1"
-      title="The Cost of Our Failures"
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
+  <div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/GQrphwjWyqg?rel=0&modestbranding=1"
+        title="The Cost of Our Failures"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
     </iframe>
-  </div>
+</div>
   
             <div style="margin-top: 1rem;">
               <a href="2024_11_28_the_cost_of_our_failures.html" class="card-link">
@@ -1060,7 +1170,7 @@ body {
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 pathway llc. All rights reserved. v1.1.07</p>
+      <p>© 2026 pathway llc. All rights reserved. v1.2</p>
     </div>
   </div>
 </footer>
