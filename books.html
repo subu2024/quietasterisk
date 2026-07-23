@@ -777,6 +777,95 @@ body {
   font-size: 0.875rem;
 }
 
+/* Books page: jump-nav pills, visual language borrowed from the Archives
+   tab toggle. Unlike Archives, both sections stay visible/stacked here —
+   these are plain anchor links, not JS show/hide toggles, since "My Books"
+   and "What I'm Reading" are different content types that shouldn't be
+   hidden behind a click. */
+.jump-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.jump-pill {
+  padding: 0.6rem 1.75rem;
+  border-radius: 50px;
+  border: 2px solid var(--color-rust);
+  background: transparent;
+  color: var(--color-rust);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.jump-pill:hover {
+  background: rgba(184, 80, 62, 0.1);
+}
+
+.jump-pill-filled {
+  background: var(--color-rust);
+  color: white;
+}
+
+.jump-pill-filled:hover {
+  background: #A03D2F;
+}
+
+.books-section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  scroll-margin-top: 2rem;
+}
+
+.books-section-heading h2 {
+  font-size: 2rem;
+  font-family: var(--font-serif);
+  color: var(--color-charcoal);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.books-section-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--color-sand);
+}
+
+.book-cross-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-slate);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--color-slate);
+}
+
+.book-cross-link:hover {
+  color: var(--color-rust);
+  border-color: var(--color-rust);
+}
+
+.affiliate-disclosure {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-slate);
+  background: var(--color-sand);
+  border-radius: 8px;
+  padding: 0.85rem 1.25rem;
+  margin: 0 0 2.5rem;
+  display: inline-block;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .header-content {
@@ -856,21 +945,32 @@ body {
 <section class="hero" style="padding: 6rem 0 4rem;">
   <div class="container">
     <div class="hero-content">
-      <p class="hero-label">Published Works</p>
+      <p class="hero-label">Books</p>
       <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4rem);">
-        Published Books and Ongoing Projects
+        What I've Written, What I've Read
       </h1>
       <p class="hero-description" style="max-width: 48rem;">
-        A collection of works exploring life, meaning, technology and the human experience.
+        My own published works and ongoing projects, alongside short running notes
+        on other books that gave me one good idea worth keeping.
       </p>
     </div>
   </div>
 </section>
 <section class="section">
   <div class="container">
-    <div class="books-grid">
 
-<div class="book-card">
+    <div class="jump-nav">
+      <a href="#my-books" class="jump-pill jump-pill-filled">My Books</a>
+      <a href="#reading-notes" class="jump-pill">What I'm Reading</a>
+    </div>
+
+    <div id="my-books" class="books-section-heading">
+      <h2>Books I've Written</h2>
+      <div class="books-section-rule"></div>
+    </div>
+    <div class="books-grid" style="margin-bottom: 5rem;">
+
+<div class="book-card" id="book-the-quiet-asterisk">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
     <img src="images/the_quiet_asterisk.jpg" class="book-image" alt="The Quiet Asterisk">
     <div style="flex: 1; min-width: 0;">
@@ -884,6 +984,7 @@ body {
           Buy on Amazon
         </a>
         
+      
     </div>
   </div>
   <div class="youtube-embed">
@@ -898,7 +999,7 @@ body {
 </div>
 </div>
 
-<div class="book-card">
+<div class="book-card" id="book-space-between-knowing">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
     <img src="images/space_between_knowing.jpg" class="book-image" alt="Space Between Knowing">
     <div style="flex: 1; min-width: 0;">
@@ -912,6 +1013,7 @@ body {
           Buy on Amazon
         </a>
         
+      <a href="#note-space-between-knowing" class="book-cross-link">I wrote a reading note on this one too →</a>
     </div>
   </div>
   <div class="youtube-embed">
@@ -926,7 +1028,7 @@ body {
 </div>
 </div>
 
-<div class="book-card">
+<div class="book-card" id="book-life-is-happening-you-might-as-well-be-here">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
     <img src="images/life_is_happening.jpg" class="book-image" alt="Life Is Happening—You Might As Well Be Here">
     <div style="flex: 1; min-width: 0;">
@@ -940,6 +1042,7 @@ body {
           Download Free PDF
         </a>
         
+      
     </div>
   </div>
   <div class="youtube-embed">
@@ -954,7 +1057,7 @@ body {
 </div>
 </div>
 
-<div class="book-card">
+<div class="book-card" id="book-ai-unleashed-an-executive-s-roadmap-to-unleashing-innovation">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
     <img src="images/ai_unleashed.jpg" class="book-image" alt="AI Unleashed: An Executive&#x27;s Roadmap to Unleashing Innovation">
     <div style="flex: 1; min-width: 0;">
@@ -968,12 +1071,13 @@ body {
           Download Free PDF
         </a>
         
+      
     </div>
   </div>
   
 </div>
 
-<div class="book-card">
+<div class="book-card" id="book-understanding-ai-and-digital-technology-an-introduction">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
     <img src="images/understanding_ai.jpg" class="book-image" alt="Understanding AI and Digital Technology: An Introduction">
     <div style="flex: 1; min-width: 0;">
@@ -987,12 +1091,13 @@ body {
           Buy on Amazon
         </a>
         
+      
     </div>
   </div>
   
 </div>
 
-<div class="book-card">
+<div class="book-card" id="book-funny-money">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
     <img src="images/funny_money.jpg" class="book-image" alt="Funny Money">
     <div style="flex: 1; min-width: 0;">
@@ -1006,12 +1111,13 @@ body {
           Buy on Amazon
         </a>
         
+      
     </div>
   </div>
   
 </div>
 
-<div class="book-card">
+<div class="book-card" id="book-cloud-computing-an-introduction">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
     <img src="images/cloud.jpg" class="book-image" alt="Cloud Computing – An Introduction">
     <div style="flex: 1; min-width: 0;">
@@ -1025,12 +1131,13 @@ body {
           Download Free PDF
         </a>
         
+      
     </div>
   </div>
   
 </div>
 
-<div class="book-card">
+<div class="book-card" id="book-tableau-an-introduction">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
     <img src="images/tableau_an_introduction.jpg" class="book-image" alt="Tableau - An Introduction">
     <div style="flex: 1; min-width: 0;">
@@ -1039,12 +1146,13 @@ body {
       
       <p class="book-description">Data analysis is fun and easy with Tableau. This introductory book will let you harness the power of Tableau. It will help you get comfortable finding your way around the software, connect to various data sources, and create analyses, visualizations, and dashboards to share throughout your organization.</p>
       
+      
     </div>
   </div>
   
 </div>
 
-<div class="book-card">
+<div class="book-card" id="book-big-data-an-introduction">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
     <img src="images/big_data_an_introduction.jpg" class="book-image" alt="Big Data - An Introduction">
     <div style="flex: 1; min-width: 0;">
@@ -1053,12 +1161,53 @@ body {
       
       <p class="book-description">This book provides a quick introduction to Big Data. Big Data is a phrase that has been bubbling up from the high performance computing niche of the technology market. Increasingly suppliers and vendors have begun to flog Big Data in their presentations. What, exactly, does this phrase mean? What are the available technologies?</p>
       
+      
     </div>
   </div>
   
 </div>
 
     </div>
+
+    <div id="reading-notes" class="books-section-heading">
+      <h2>What I've Been Reading</h2>
+      <div class="books-section-rule"></div>
+    </div>
+    <p class="section-description" style="margin-bottom: 1rem;">
+      Short, running notes on books that gave me one good idea worth keeping —
+      not full essays, just what stuck.
+    </p>
+    <p class="affiliate-disclosure">
+      As an Amazon Associate I earn from qualifying purchases. Thank you for your support.
+    </p>
+    <div class="books-grid">
+
+<div class="book-card" id="note-the-meaning-of-your-life">
+  <h4 class="book-title">The Meaning of Your Life</h4>
+  <p class="book-meta-line">by Arthur C. Brooks</p>
+  <p class="book-description">The detail that stuck was the monk who spends decades chopping wood and carrying water waiting for enlightenment to change his life, and once he gets it, his teacher just tells him to keep chopping wood and carrying water. I keep waiting for the version of my life where the task list finally looks different.</p>
+  <a href="https://amzn.to/4wQx28y" target="_blank" rel="nofollow sponsored noopener noreferrer" class="card-link" style="display: inline-flex;">More on this book →</a>
+  
+</div>
+
+<div class="book-card" id="note-your-mind-your-rules">
+  <h4 class="book-title">Your Mind, Your Rules</h4>
+  <p class="book-meta-line">by Marisa Peer</p>
+  <p class="book-description">The idea that stuck: your mind can&#x27;t process a negative — tell it &#x27;don&#x27;t panic&#x27; and it has to picture panic first. Worth remembering next time I&#x27;m rehearsing the wrong outcome in my head.</p>
+  <a href="https://amzn.to/3Rpn2Em" target="_blank" rel="nofollow sponsored noopener noreferrer" class="card-link" style="display: inline-flex;">More on this book →</a>
+  
+</div>
+
+<div class="book-card" id="note-space-between-knowing">
+  <h4 class="book-title">Space Between Knowing</h4>
+  <p class="book-meta-line">by Subu Sangameswar</p>
+  <p class="book-description">A reflective exploration of thoughts, uncertainty, and outcomes we don&#x27;t fully control. It challenges the belief that mindset guarantees results and suggests peace comes from changing our relationship to chance.</p>
+  <a href="https://www.amazon.com/dp/B0GHZMSKY5" target="_blank" rel="nofollow sponsored noopener noreferrer" class="card-link" style="display: inline-flex;">More on this book →</a>
+  <a href="#book-space-between-knowing" class="book-cross-link">This one's actually mine — see the full book →</a>
+</div>
+
+    </div>
+
   </div>
 </section>
 
@@ -1076,7 +1225,7 @@ body {
           <a href="index.html" class="footer-link">Essays</a>
           <a href="books.html" class="footer-link">Books</a>
           <a href="videos.html" class="footer-link">Videos</a>
-          <a href="reading.html" class="footer-link">Reading Notes</a>
+          <a href="books.html#reading-notes" class="footer-link">Reading Notes</a>
           <a href="archives.html" class="footer-link">Archives</a>
           <a href="about.html" class="footer-link">About</a>
         </nav>
