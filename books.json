@@ -1,7 +1,7 @@
 [
   {
     "title": "The Quiet Asterisk",
-    "description": "A meditation on probability and everyday resilience. Through human stories, it reframes uncertainty as something to live with—rather than conquer.",
+    "description": "A meditation on probability and everyday resilience, reframing uncertainty as something to live with — not conquer.",
     "image": "the_quiet_asterisk.jpg",
     "linkDescription": "Buy on Amazon",
     "link": "https://www.amazon.com/Quiet-Asterisk-Chance-Patience-Keeping-ebook/dp/B0GPLJCMXH",
@@ -10,7 +10,7 @@
 
   {
     "title": "Space Between Knowing",
-    "description": "A reflective exploration of thoughts, uncertainty, and outcomes we don't fully control. It challenges the belief that mindset guarantees results and suggests peace comes from changing our relationship to chance.",
+    "description": "A reflective look at thoughts, uncertainty, and outcomes we don't fully control — and how peace comes from changing our relationship to chance.",
     "image": "space_between_knowing.jpg",
     "linkDescription": "Buy on Amazon",
     "link": "https://www.amazon.com/Space-Between-Knowing-Subu-Sangameswar-ebook/dp/B0GHZMSKY5",
@@ -18,7 +18,7 @@
   },
   {
     "title": "Life Is Happening—You Might As Well Be Here",
-    "description": "A Practical, Funny, and Occasionally Enlightening Guide to Actually Showing Up for Your Own Life",
+    "description": "A practical, funny, and occasionally enlightening guide to actually showing up for your own life.",
     "image": "life_is_happening.jpg",
     "linkDescription": "Download Free PDF",
     "link": "downloads/life_is_happening.pdf",
@@ -26,42 +26,42 @@
   },
   {
     "title": "AI Unleashed: An Executive's Roadmap to Unleashing Innovation",
-    "description": "Artificial intelligence (AI) and machine learning (ML) are important emerging technologies that have the potential to transform organizations through improved customer service, streamlined operations, and the realization of new business models. To unlock this potential, leaders and frontline managers have to collaborate with data scientists while being responsible for the strategic directions. This primer for executives will provide a high-level introduction to AI including a simple framework for building a business case and planning for effective implementation of AI within your organization.",
+    "description": "A high-level primer on AI and ML for executives and managers — a simple framework for building the business case and planning effective implementation.",
     "image": "ai_unleashed.jpg",
     "linkDescription": "Download Free PDF",
     "link": "downloads/AI Unleashed - An Executive’s Roadmap to Unleashing Innovation.pdf"
   },
   {
     "title": "Understanding AI and Digital Technology: An Introduction",
-    "description": "In Understanding AI and Digital Technology, you'll discover how everyday innovations—from the smartphone in your pocket to the algorithms shaping your online experience—are part of a much bigger transformation. This introductory book takes you on a fascinating journey through the evolution of computing, the rise of AI, and the possibilities of quantum computing that lie just over the horizon.",
+    "description": "A fascinating journey through the evolution of computing, the rise of AI, and the quantum computing possibilities just over the horizon.",
     "image": "understanding_ai.jpg",
     "linkDescription": "Buy on Amazon",
     "link": "https://www.amazon.com/Understanding-AI-Digital-Technology-Introduction-ebook/dp/B0F3W4CKFY/"
   },
   {
     "title": "Funny Money",
-    "description": "What They Don’t Teach You About Money in High School (But Should). Most finance books for teens are either painfully boring textbooks or get-rich-quick schemes full of risky gimmicks. Funny Money is different. Born from a series of real, unfiltered conversations between a tech-executive father and his teenage son, this book demystifies the financial world without a single lecture. Using clear, everyday analogies—from Uber and phone financing to football and video games—this guide transforms complex economic principles into intuitive, bite-sized strategies. Your teen won't just memorize formulas; they will learn how to outsmart their own brain’s psychological biases, decode corporate income statements, and leverage the wealth-building magic of compound interest before they even finish high school.",
+    "description": "What they don't teach you about money in high school. Born from real conversations between a tech-executive father and his teenage son, it turns compound interest, biases, and financial statements into everyday, bite-sized lessons.",
     "image": "funny_money.jpg",
     "linkDescription": "Buy on Amazon",
     "link": "https://www.amazon.com/dp/B0H8MJP1KH"
   },
   {
     "title": "Cloud Computing – An Introduction",
-    "description": "Cloud is the next wave in technology evolution. Instead of purchasing expensive hardware and software and struggling with installation and maintenance, businesses big and small can leverage cloud for all their computing needs. This book provides a quick introduction to cloud and helps with a framework that you can use to make the cloud transition smooth and painless.",
+    "description": "A quick introduction to cloud computing, with a framework to make the transition smooth and painless for businesses of any size.",
     "image": "cloud.jpg",
     "linkDescription": "Download Free PDF",
     "link": "downloads/Cloud_Computing_An_Introduction.pdf"
   },
   {
     "title": "Tableau - An Introduction",
-    "description": "Data analysis is fun and easy with Tableau. This introductory book will let you harness the power of Tableau. It will help you get comfortable finding your way around the software, connect to various data sources, and create analyses, visualizations, and dashboards to share throughout your organization.",
+    "description": "A friendly introduction to Tableau — connecting to data sources and building analyses, visualizations, and dashboards.",
     "image": "tableau_an_introduction.jpg",
     "linkDescription": "Not Available",
     "link": ""
   },
   {
     "title": "Big Data - An Introduction",
-    "description": "This book provides a quick introduction to Big Data. Big Data is a phrase that has been bubbling up from the high performance computing niche of the technology market. Increasingly suppliers and vendors have begun to flog Big Data in their presentations. What, exactly, does this phrase mean? What are the available technologies?",
+    "description": "A quick introduction to Big Data — what the phrase actually means and the technologies behind it.",
     "image": "big_data_an_introduction.jpg",
     "linkDescription": "Not Available",
     "link": ""
