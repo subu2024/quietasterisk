@@ -56,41 +56,29 @@ TEMP_CONTENT = ""
 
 
 
-def generate_reading_notes():
-    """Generate the running reading-notes / book log page."""
-    notes = load_reading_notes()
-    if not notes:
-        return
+def generate_reading_notes_redirect():
+    """
+    Write a small redirect page at the old reading.html URL.
 
-    content = header_html("Reading Notes - " + BLOG_TITLE, "reading")
-    content += """
-<section class="hero" style="padding: 6rem 0 4rem;">
-  <div class="container">
-    <div class="hero-content">
-      <p class="hero-label">Reading Log</p>
-      <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4rem);">
-        Notes on What I've Been Reading
-      </h1>
-      <p class="hero-description" style="max-width: 48rem;">
-        Short, running notes on books that gave me one good idea worth keeping —
-        not full essays, just what stuck.
-      </p>
-      <p>note: As an Amazon Associate I earn from qualifying purchases.Thank you for your support.</p>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="books-grid">
+    Reading Notes now lives as a section on the merged Books page
+    (see generate_books). This keeps any bookmarks, backlinks, or search
+    results pointing at the old standalone URL from turning into a 404.
+    """
+    target = f"{BOOKS_FILE_HTML}#reading-notes"
+    content = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="0; url={target}">
+<link rel="canonical" href="https://www.quietasterisk.com/{target}">
+<title>Reading Notes - {BLOG_TITLE}</title>
+</head>
+<body>
+<p>Reading Notes has moved to the <a href="{target}">Books page</a>.</p>
+</body>
+</html>
 """
-    for note in notes:
-        content += format_reading_note_card(note)
-    content += """
-    </div>
-  </div>
-</section>
-"""
-    content += footer_html()
     with open(OUTPUT_DIR / READING_FILE_HTML, "w", encoding="utf-8") as f:
         f.write(content)
 
@@ -157,34 +145,112 @@ def generate_post_pages(posts: List[Post], related_map: Dict[str, List[str]]):
 
 
 def generate_books():
-    """Generate dedicated books page."""
+    """
+    Generate the merged Books page: "Books I've Written" stacked above
+    "What I've Been Reading" (the former Reading Notes page).
+
+    Design notes:
+    - Both sections are always visible/stacked, not toggled — they're
+      different content types (authored vs. curated/affiliate), so hiding
+      either behind a click would bury the wrong thing for some visitors.
+    - The pill nav at the top borrows its visual language from the
+      Archives page's "By year / By category" tabs, but behaves as plain
+      anchor jumps rather than a JS show/hide toggle, since nothing here
+      needs to be hidden.
+    - When a title appears in both books.json and reading_notes.json
+      (e.g. "Space Between Knowing"), each card gets a small cross-link
+      to the other entry instead of the two sitting as disconnected
+      duplicates.
+    """
     books = load_books()
-    if not books:
+    notes = load_reading_notes()
+
+    if not books and not notes:
         return
-    
+
+    book_titles = {b.get("title", "").strip().lower() for b in books}
+    note_titles = {n.get("title", "").strip().lower() for n in notes}
+
     content = header_html("Books - " + BLOG_TITLE, "books")
     content += """
 <section class="hero" style="padding: 6rem 0 4rem;">
   <div class="container">
     <div class="hero-content">
-      <p class="hero-label">Published Works</p>
+      <p class="hero-label">Books</p>
       <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4rem);">
-        Published Books and Ongoing Projects
+        What I've Written, What I've Read
       </h1>
       <p class="hero-description" style="max-width: 48rem;">
-        A collection of works exploring life, meaning, technology and the human experience.
+        My own published works and ongoing projects, alongside short running notes
+        on other books that gave me one good idea worth keeping.
       </p>
     </div>
   </div>
 </section>
 <section class="section">
   <div class="container">
+"""
+
+    if books and notes:
+        content += """
+    <div class="jump-nav">
+      <a href="#my-books" class="jump-pill jump-pill-filled">My Books</a>
+      <a href="#reading-notes" class="jump-pill">What I'm Reading</a>
+    </div>
+"""
+
+    if books:
+        content += """
+    <div id="my-books" class="books-section-heading">
+      <h2>Books I've Written</h2>
+      <div class="books-section-rule"></div>
+    </div>
+    <div class="books-grid" style="margin-bottom: 5rem;">
+"""
+        for book in books:
+            cross_link_html = ""
+            title_key = book.get("title", "").strip().lower()
+            if title_key in note_titles:
+                anchor = slugify(book.get("title", ""))
+                cross_link_html = (
+                    f'<a href="#note-{anchor}" class="book-cross-link">'
+                    f"I wrote a reading note on this one too →</a>"
+                )
+            content += format_book_card(book, show_full_description=True, cross_link_html=cross_link_html)
+        content += """
+    </div>
+"""
+
+    if notes:
+        content += """
+    <div id="reading-notes" class="books-section-heading">
+      <h2>What I've Been Reading</h2>
+      <div class="books-section-rule"></div>
+    </div>
+    <p class="section-description" style="margin-bottom: 1rem;">
+      Short, running notes on books that gave me one good idea worth keeping —
+      not full essays, just what stuck.
+    </p>
+    <p class="affiliate-disclosure">
+      As an Amazon Associate I earn from qualifying purchases. Thank you for your support.
+    </p>
     <div class="books-grid">
 """
-    for book in books:
-        content += format_book_card(book, show_full_description=True)
-    content += """
+        for note in notes:
+            cross_link_html = ""
+            title_key = note.get("title", "").strip().lower()
+            if title_key in book_titles:
+                anchor = slugify(note.get("title", ""))
+                cross_link_html = (
+                    f'<a href="#book-{anchor}" class="book-cross-link">'
+                    f"This one's actually mine — see the full book →</a>"
+                )
+            content += format_reading_note_card(note, cross_link_html=cross_link_html)
+        content += """
     </div>
+"""
+
+    content += """
   </div>
 </section>
 """

@@ -3,7 +3,7 @@ HTML template functions for generating pages.
 """
 
 from config import (
-    BLOG_TITLE, READING_FILE_HTML, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, LOGO_PATH, INSTAGRAM_PROFILE,
+    BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, LOGO_PATH, INSTAGRAM_PROFILE,
     INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, VIDEOS_FILE_HTML, ARCHIVES_FILE
 )
 from styles import get_modern_styles
@@ -92,7 +92,7 @@ def footer_html() -> str:
           <a href="{INDEX_FILE}" class="footer-link">Essays</a>
           <a href="{BOOKS_FILE_HTML}" class="footer-link">Books</a>
           <a href="{VIDEOS_FILE_HTML}" class="footer-link">Videos</a>
-          <a href="{READING_FILE_HTML}" class="footer-link">Reading Notes</a>
+          <a href="{BOOKS_FILE_HTML}#reading-notes" class="footer-link">Reading Notes</a>
           <a href="{ARCHIVES_FILE}" class="footer-link">Archives</a>
           <a href="{ABOUT_FILE}" class="footer-link">About</a>
         </nav>

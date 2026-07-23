@@ -16,7 +16,7 @@ Design notes:
 from html import escape
 
 from models import Post
-from utils import copy_image, category_accent, youtube_embed
+from utils import copy_image, category_accent, youtube_embed, slugify
 
 _ACCENT_VARS = {
     "rust": "var(--color-rust)",
@@ -103,8 +103,17 @@ def format_card(post: Post, is_small: bool = False) -> str:
 """
 
 
-def format_reading_note_card(note: dict) -> str:
-    """Generate a compact card for a short reading-log entry."""
+def format_reading_note_card(note: dict, cross_link_html: str = "") -> str:
+    """
+    Generate a compact card for a short reading-log entry.
+
+    Args:
+        note: Reading-note dictionary from reading_notes.json
+        cross_link_html: Optional pre-built HTML link, used when this note's
+            title matches one of the author's own books (see generate_books
+            in generators.py), so a visitor can jump straight to "the real
+            book" instead of the two entries sitting disconnected.
+    """
     author_html = ""
     if note.get("author"):
         author_html = f'<p class="book-meta-line">by {escape(note.get("author"))}</p>'
@@ -117,23 +126,30 @@ def format_reading_note_card(note: dict) -> str:
             f'More on this book →</a>'
         )
 
+    anchor_id = slugify(note.get("title", ""))
+
     return f"""
-<div class="book-card">
+<div class="book-card" id="note-{anchor_id}">
   <h4 class="book-title">{escape(note.get("title", ""))}</h4>
   {author_html}
   <p class="book-description">{escape(note.get("note", ""))}</p>
   {link_html}
+  {cross_link_html}
 </div>
 """
 
 
-def format_book_card(book: dict, show_full_description: bool = False) -> str:
+def format_book_card(book: dict, show_full_description: bool = False, cross_link_html: str = "") -> str:
     """
     Generate book card with cover image and buy button.
 
     Args:
         book: Book dictionary from books.json
         show_full_description: Whether to show full or truncated description
+        cross_link_html: Optional pre-built HTML link, used when this book
+            also has a reading note (see generate_books in generators.py),
+            so the two entries point at each other instead of sitting on
+            disconnected pages.
 
     Returns:
         HTML string for book card
@@ -175,8 +191,10 @@ def format_book_card(book: dict, show_full_description: bool = False) -> str:
     if book.get("year"):
         year_html = f'<p class="book-meta-line" style="margin-bottom: 1rem;">Published {escape(str(book.get("year")))}</p>'
 
+    anchor_id = slugify(book.get("title", ""))
+
     return f"""
-<div class="book-card">
+<div class="book-card" id="book-{anchor_id}">
   <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
     {img_html}
     <div style="flex: 1; min-width: 0;">
@@ -185,6 +203,7 @@ def format_book_card(book: dict, show_full_description: bool = False) -> str:
       {year_html}
       <p class="book-description">{escape(description)}</p>
       {link_html}
+      {cross_link_html}
     </div>
   </div>
   {video_html}

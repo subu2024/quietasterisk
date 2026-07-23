@@ -23,7 +23,7 @@ from generators import (
     generate_about,
     generate_contact,
     generate_archives,
-    generate_reading_notes,
+    generate_reading_notes_redirect,
     get_temp_content
 )
 
@@ -71,11 +71,11 @@ def main(write_temp: bool = False):
     logger.info("Generating index page...")
     generate_index(posts, related_map)
     
-    logger.info("Generating books page...")
+    logger.info("Generating books page (includes reading notes)...")
     generate_books()
 
-    logger.info("Generating reading notes page...")
-    generate_reading_notes()
+    logger.info("Generating reading notes redirect (legacy URL)...")
+    generate_reading_notes_redirect()
 
     logger.info("Generating videos page...")  
     generate_videos()   
