@@ -10,7 +10,7 @@ excerpt: I married in the '90s and had to learn, fast, what trust actually means
 
 ![The Relationship Tango](relationship_tango.png)
 
-She walked into my life - unannounced, bouncing from a photo into my life. We met for a few minutes and she decided to marry me. I stood flabbergasted not at the decision but the trust that she implied in me .. an unknown stranger and only because our families agreed that this was right. This is the 90s and arranged marriages were still in vogue.
+She walked into my life .. unannounced, bouncing from a photo into my life. We met for a few minutes and she decided to marry me. I stood flabbergasted not at the decision but the trust that she implied in me .. an unknown stranger and only because our families agreed that this was right. This is the 90s and arranged marriages were still in vogue.
 
 Our relationship started on a high note. Her personality intrigued me. Her charm, her smile, her eyes and just everything about her enveloped my life. Simply said, I walked mesmerized at her positive attitude towards life.
 
@@ -29,7 +29,7 @@ I enjoyed the immense attention that she gave me. The romance was in full bloom.
 
 Relationships works in cycles. They start out with romance. It starts being enchanted with the person and progresses into conflictw when getting to see the darker side of each other, and finally repose in commitment; the ability to accept everything as it is.
 
-I was totally lax in building on this initial euphoria. I never discussed anything significant; her likes, dislikes, interests, career, family. It was all fun and frolic. Yet we quickly realized that we were two diametrically opposite personality. Our ideas of life and living clashed. Soon silly fights over even insipid reasons started creeping in. The relationship craved for the missing nurturing - tender and caring to let it grow and cement forever and to work out the conflict into commitment.
+I was totally lax in building on this initial euphoria. I never discussed anything significant; her likes, dislikes, interests, career, family. It was all fun and frolic. Yet we quickly realized that we were two diametrically opposite personality. Our ideas of life and living clashed. Soon silly fights over even insipid reasons started creeping in. The relationship craved for the missing nurturing .. tender and caring to let it grow and cement forever and to work out the conflict into commitment.
 
 The bedrock of any healthy relationship is mutual acceptance. Disagreements are not unusual. But when you find yourself arguing daily, or when you feel emotionally insecure a lot of the time, then it’s a sign. When we find someone who loves us – with all our faults and emotional burdens – we feel liberated. She embraced me while I stood unattached. It was time to pause and fix it. The signs were everywhere. I just walked past it ignorant.
 
