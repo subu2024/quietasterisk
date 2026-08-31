@@ -32,7 +32,7 @@ We’ve all agreed, more or less, that convenience is good. Automatic transmissi
 
 So it feels slightly ironic that writing—simple, everyday writing—is where we hesitate.
 
-I read recently that a large number of college students are using AI tools to start their papers, summarize dense readings, and brainstorm ideas. It didn’t surprise me. It sounded exactly like what I would have done, given the chance. Sitting in a dorm room at midnight, staring at a blank page, hoping for a first sentence to appear like a small miracle.
+I read recently that a [large number of college students](https://www.highereddive.com/news/90-of-students-use-ai-in-the-classroom-instructure-poll-finds/825714/) are using AI tools to start their papers, summarize dense readings, and brainstorm ideas. It didn’t surprise me. It sounded exactly like what I would have done, given the chance. Sitting in a dorm room at midnight, staring at a blank page, hoping for a first sentence to appear like a small miracle.
 
 What’s less clear to me is why this feels like a line we’re not supposed to cross.
 
