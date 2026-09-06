@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home - quiet asterisk</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
 
 * {
   margin: 0;
@@ -22,8 +22,8 @@
   --color-terracotta: #D17458;
   --color-sage: #8B9B7E;
   --color-gold: #C9A767;
-  --font-serif: 'Crimson Pro', serif;
-  --font-sans: 'Work Sans', sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body {
@@ -731,6 +731,99 @@ body {
   color: var(--color-sand);
 }
 
+/* Topics Nav (homepage "browse by theme" strip) */
+.topics-nav {
+  border-bottom: 2px solid var(--color-sand);
+  background: white;
+}
+
+.topics-nav-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1.5rem 1.5rem;
+}
+
+.topics-nav-label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-slate);
+  margin-right: 0.5rem;
+}
+
+.topic-chip {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 50px;
+  border: 1.5px solid var(--color-sand);
+  color: var(--color-slate);
+  text-decoration: none;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.topic-chip:hover {
+  border-color: var(--color-rust);
+  color: var(--color-rust);
+}
+
+.topic-chip-all {
+  border-style: dashed;
+}
+
+/* Newsletter — reuses the same highlight-panel look as the About page's
+   "Want to Connect?" box (cream/white gradient, sand border, rust left
+   accent) so it reads as the site's established "do something" pattern
+   rather than a new visual language. */
+.newsletter-section {
+  padding: 4rem 0;
+}
+
+.newsletter-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background: linear-gradient(135deg, white 0%, var(--color-cream) 100%);
+  border: 2px solid var(--color-sand);
+  border-left: 6px solid var(--color-rust);
+  border-radius: 8px;
+  padding: 3rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  border: 2px solid var(--color-sand);
+  border-radius: 2px;
+  background: white;
+  color: var(--color-charcoal);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--color-rust);
+}
+
+.newsletter-fine {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-slate);
+  margin-top: 0.75rem;
+}
+
 /* Books Section */
 .books-grid {
   display: grid;
@@ -898,6 +991,11 @@ body {
   .card-featured {
     grid-row: auto;
   }
+
+  .newsletter-grid {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
 }
 
 /* Animations */
@@ -913,6 +1011,81 @@ body {
 /* Load More functionality */
 .hidden-post {
   display: none !important;
+}
+
+/* Quiet Asterisk homepage redesign */
+.quiet-home {
+  --paper: #EDE9E1;
+  --paper-deep: #E2DBCC;
+  --ink: #211F1D;
+  --ink-soft: #4A453E;
+  --meta: #8A8172;
+  --accent: #A5732E;
+  --line: #D6CCB8;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+.quiet-home *, .quiet-home *::before, .quiet-home *::after { box-sizing: border-box; }
+.quiet-home .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+.quiet-home h1, .quiet-home h2, .quiet-home h3, .quiet-home h4 { font-family: var(--font-serif); font-weight: 500; letter-spacing: -0.01em; }
+.quiet-home a { color: inherit; text-decoration: none; }
+.quiet-home a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.quiet-home .qa-hero { padding: 88px 0 56px; }
+.quiet-home .qa-hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: center; }
+.quiet-home .qa-hero h1 { font-size: clamp(40px, 5.2vw, 64px); line-height: 1.05; max-width: 11ch; margin: 0; }
+.quiet-home .qa-sub { margin: 22px 0 34px; font-size: 18px; line-height: 1.6; color: var(--ink-soft); max-width: 42ch; }
+.quiet-home .qa-actions { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+.quiet-home .qa-button { display: inline-block; background: var(--ink); border: 1px solid var(--ink); border-radius: 2px; color: var(--paper); padding: 13px 24px; font-size: 15px; font-weight: 500; }
+.quiet-home .qa-button:hover { background: transparent; color: var(--ink); }
+.quiet-home .qa-ghost { font-size: 15px; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.quiet-home .qa-ghost:hover { color: var(--ink); border-color: var(--ink); }
+.quiet-home .qa-asterisk { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
+.quiet-home .qa-asterisk svg { width: 78%; height: 78%; }
+
+.quiet-home .qa-strip { border-top: 1px solid var(--line); padding: 18px 0; font-size: 14.5px; color: var(--meta); }
+.quiet-home .qa-strip .wrap { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.quiet-home .qa-strip strong { color: var(--ink-soft); font-weight: 500; }
+.quiet-home .qa-topics { padding: 38px 0; border-bottom: 1px solid var(--line); }
+.quiet-home .qa-topics .wrap { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.quiet-home .qa-topic-label { font-size: 14px; color: var(--meta); margin-right: 6px; }
+.quiet-home .qa-topic { font-size: 13.5px; padding: 7px 14px; border: 1px solid var(--line); border-radius: 20px; color: var(--ink-soft); }
+.quiet-home .qa-topic:hover { border-color: var(--accent); color: var(--ink); }
+
+.quiet-home .qa-featured { padding: 72px 0 40px; }
+.quiet-home .qa-section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 40px; gap: 20px; flex-wrap: wrap; }
+.quiet-home .qa-section-head h2 { font-size: 30px; margin: 0; }
+.quiet-home .qa-see-all { font-size: 14.5px; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.quiet-home .qa-featured-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 56px; }
+.quiet-home .qa-lead { border-top: 2px solid var(--ink); padding-top: 22px; }
+.quiet-home .qa-list { border-top: 1px solid var(--line); }
+.quiet-home .qa-lead .card, .quiet-home .qa-lead article { border: 0 !important; background: transparent !important; box-shadow: none !important; padding: 0 !important; }
+.quiet-home .qa-list .card, .quiet-home .qa-list article { border: 0 !important; border-bottom: 1px solid var(--line) !important; background: transparent !important; box-shadow: none !important; border-radius: 0 !important; padding: 22px 0 !important; margin: 0 !important; }
+.quiet-home .qa-lead h3 { font-size: 32px; line-height: 1.15; margin: 0 0 16px; }
+.quiet-home .qa-list h3, .quiet-home .qa-list h4 { font-size: 19px; line-height: 1.3; margin: 0 0 8px; }
+.quiet-home .qa-lead p { font-size: 16.5px; line-height: 1.65; color: var(--ink-soft); }
+.quiet-home .qa-list p { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); }
+.quiet-home .qa-list a:hover h3, .quiet-home .qa-list a:hover h4 { color: var(--accent); }
+
+.quiet-home .qa-newsletter { background: var(--paper-deep); margin: 80px 0; padding: 56px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.quiet-home .qa-newsletter .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.quiet-home .qa-newsletter h2 { font-size: 26px; margin: 0 0 12px; }
+.quiet-home .qa-newsletter p { font-size: 15.5px; color: var(--ink-soft); line-height: 1.6; max-width: 40ch; }
+.quiet-home .qa-about { padding: 0 0 76px; }
+.quiet-home .qa-about .wrap { display: flex; align-items: center; gap: 28px; border: 1px solid var(--line); padding: 26px 30px; flex-wrap: wrap; }
+.quiet-home .qa-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--ink); flex-shrink: 0; }
+.quiet-home .qa-about p { font-size: 15.5px; color: var(--ink-soft); margin: 0; flex: 1; min-width: 220px; }
+.quiet-home .qa-about-link { font-size: 14.5px; color: var(--accent); white-space: nowrap; }
+.quiet-home .qa-archive { padding: 0 0 76px; text-align: center; }
+.quiet-home .qa-archive h2 { font-size: 30px; margin: 0 0 12px; }
+.quiet-home .qa-archive p { color: var(--ink-soft); margin: 0 auto 24px; }
+
+@media (max-width: 820px) {
+  .quiet-home .qa-hero .wrap, .quiet-home .qa-featured-grid, .quiet-home .qa-newsletter .wrap { grid-template-columns: 1fr; }
+  .quiet-home .qa-asterisk { order: -1; max-width: 220px; margin: 0 auto; }
+  .quiet-home .wrap { padding: 0 22px; }
 }
 </style>
 </head>
@@ -942,79 +1115,28 @@ body {
 
 <main>
 
-<section class="hero">
-  <div class="hero-bg-blob hero-bg-blob-1"></div>
-  <div class="hero-bg-blob hero-bg-blob-2"></div>
-
-  <div class="container">
-    <div class="hero-content" style="text-align: center;">
-      <div style="margin-bottom: 2rem;">
-        <span class="pill-badge pill-badge-rust">Welcome to quiet asterisk</span>
-      </div>
-
-      <h1 class="hero-title hero-title-gradient" style="margin: 0 auto 1.5rem; text-align: center;">
-        Essays on Life
-      </h1>
-
-      <p class="hero-subtitle" style="margin: 0 auto 1rem;">Writing that slows thinking just enough to notice what uncertainty is trying to teach us</p>
-
-      <div class="hero-cta" style="justify-content: center;">
-        <a href="#featured" class="btn btn-primary">Explore Essays</a>
-        <a href="about.html" class="btn btn-secondary">About the Author</a>
-      </div>
-
-      <div class="hero-stats" style="margin: 0 auto;">
-        <div class="stat-card-glass accent-rust">
-          <div class="stat-number">165+</div>
-          <div class="stat-label">Essays Published</div>
-        </div>
-        <div class="stat-card-glass accent-sage">
-          <div class="stat-number">7</div>
-          <div class="stat-label">Categories</div>
-        </div>
-        <div class="stat-card-glass accent-gold">
-          <div class="stat-number">2</div>
-          <div class="stat-label">Books Written</div>
+<div class="quiet-home">
+  <section class="qa-hero">
+    <div class="wrap">
+      <div>
+        <h1>Essays on life, written from inside the uncertainty.</h1>
+        <p class="qa-sub">Writing that slows thinking just enough to notice what uncertainty is trying to teach us</p>
+        <div class="qa-actions">
+          <a class="qa-button" href="#featured">Start reading</a>
+          <a class="qa-ghost" href="about.html">About the author →</a>
         </div>
       </div>
+      <div class="qa-asterisk" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none"><g stroke="#211F1D" stroke-width="2.5" stroke-linecap="round"><line x1="100" y1="20" x2="100" y2="180"/><line x1="30" y1="60" x2="170" y2="140"/><line x1="170" y1="60" x2="30" y2="140"/></g><circle cx="100" cy="100" r="6" fill="#A5732E"/></svg>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  <div class="qa-strip"><div class="wrap"><span><strong>165 essays.</strong> 2 books. One long argument with certainty.</span><span>Writing from the uncertainty</span></div></div>
+  <section class="qa-topics"><div class="wrap"><span class="qa-topic-label">Browse by theme</span><a href="category-authenticity-vulnerability.html" class="qa-topic">Authenticity &amp; Vulnerability</a><a href="category-financial-awareness.html" class="qa-topic">Financial Awareness</a><a href="category-love-loss-family.html" class="qa-topic">Love, Loss &amp; Family</a><a href="category-old-voice.html" class="qa-topic">Old Voice</a><a href="category-perception-patterns-illusion.html" class="qa-topic">Perception, Patterns &amp; Illusion</a><a href="category-self-awareness-eq.html" class="qa-topic">Self-Awareness &amp; EQ</a><a href="category-uncertainty.html" class="qa-topic">Uncertainty</a><a href="categories.html" class="qa-topic">All topics →</a></div></section>
 
-<div class="divider">
-  <div class="divider-line" style="background: var(--color-rust);"></div>
-  <div class="divider-dot" style="background: var(--color-rust);"></div>
-  <div class="divider-line" style="background: var(--color-rust);"></div>
-</div>
-
-<section class="section" style="background: white; padding: 4rem 0;">
-  <div class="container" style="max-width: 56rem;">
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <h2 class="section-title" style="font-size: 2.5rem;">Introduction to Quiet Asterisk</h2>
-      
-    </div>
-    <div class="youtube-embed">
-    <iframe
-        src="https://www.youtube.com/embed/cPwFdCmHWq4?rel=0&modestbranding=1"
-        title="Introduction to Quiet Asterisk"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-    </iframe>
-</div>
-  </div>
-</section>
-
-<section class="section" id="featured" style="background: linear-gradient(180deg, var(--color-cream) 0%, white 100%);">
-  <div class="container">
-    <div class="section-header section-header-centered">
-      <span class="pill-badge pill-badge-rust">Curated Reading</span>
-      <h2 class="section-title" style="margin-top: 1rem;">Featured Essays</h2>
-      <p class="section-description section-description-centered">Recent explorations worth your time</p>
-    </div>
-    <div class="featured-grid">
-
+  <section class="qa-featured" id="featured"><div class="wrap">
+    <div class="qa-section-head"><h2>Recent essays</h2><a class="qa-see-all" href="archives.html">Browse the archive →</a></div>
+    <div class="qa-featured-grid"><div class="qa-lead">
 <article class="card card-featured" style="border-top: 4px solid var(--color-terracotta);">
   <span class="featured-badge">Featured</span>
   <div class="card-meta" style="margin-bottom: 1.5rem;">
@@ -1031,7 +1153,7 @@ body {
     </svg>
   </a>
 </article>
-<div style="display: flex; flex-direction: column; gap: 2rem;">
+</div><div class="qa-list">
 <article class="card card-compact" style="border-top: 4px solid var(--color-rust);">
   <div class="card-meta">
     <span class="card-category card-category-rust">Self-Awareness &amp; EQ</span>
@@ -1056,7 +1178,7 @@ body {
     <span class="post-meta-item">August 2026</span>
   </div>
   <h3 class="card-title">The Blueprint You Didn&#x27;t Write</h3>
-  <p class="card-excerpt">Some mornings the machine is broken and I find out how much of the walking I was never actually doing.</p>
+  <p class="card-excerpt">I’m learning to replace old self-protective patterns—like dismissing praise—with kinder, more empowering beliefs I consciously rehearse</p>
   <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
     <span class="post-meta-item">8 min read</span>
     <a href="blueprint-you-did-not-write.html" class="card-link">
@@ -1085,17 +1207,37 @@ body {
     </a>
   </div>
 </article>
-</div></div></div></section>
-<section class="section" style="background: white;">
-  <div class="container" style="max-width: 56rem; text-align: center;">
-    <h2 class="section-title" style="font-size: 2rem;">Archive</h2>
-    <p class="section-description section-description-centered" style="margin: 1rem auto 2rem;">
-      A chronological index of essays, organized by year.
-    </p>
-    <a href="archives.html" class="btn btn-secondary">Browse Index →</a>
+</div></div>
+  </div></section>
+<section class="qa-featured"><div class="wrap"><div class="qa-section-head"><h2>Introduction to Quiet Asterisk</h2></div><div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/cPwFdCmHWq4?rel=0&modestbranding=1"
+        title="Introduction to Quiet Asterisk"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div></div></section><div class="qa-newsletter">
+<section class="section newsletter-section">
+  <div class="container newsletter-grid">
+    <div>
+      <h2 class="section-title" style="font-size: 2rem; margin-bottom: 0.75rem;">New essays land here first</h2>
+      <p class="section-description">One email, roughly once a week. No noise, no growth-hacking — just the next thing I&#x27;m working through.</p>
+    </div>
+    <div>
+      <form class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="you@email.com"
+               aria-label="Email address" disabled>
+        <button type="button" class="btn btn-primary" disabled>Subscribe</button>
+      </form>
+      <p class="newsletter-fine">Signup is being set up — check back soon.</p>
+    </div>
   </div>
 </section>
-
+</div><section class="qa-about"><div class="wrap"><div class="qa-avatar" aria-hidden="true"></div><p>Written by quiet asterisk — fascinated by one question: how do we live well when certainty isn't an option?</p><a class="qa-about-link" href="about.html">Meet the author →</a></div></section>
+  <section class="qa-archive"><div class="wrap"><h2>Archive</h2><p>A chronological index of essays, organized by year.</p><a class="qa-button" href="archives.html">Browse the archive →</a></div></section>
+</div>
 </main>
 <footer class="footer">
   <div class="container">
@@ -1136,7 +1278,7 @@ body {
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 pathway llc. All rights reserved. v1.2</p>
+      <p>© 2026 pathway llc. All rights reserved.</p>
     </div>
   </div>
 </footer>
