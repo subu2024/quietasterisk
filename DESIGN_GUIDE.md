@@ -182,6 +182,73 @@ Why not the alternatives:
 - **Fenced code block** — preserves line breaks correctly but renders
   in a monospace/code font, which reads wrong for verse.
 
+### Newsletter signup — `templates.newsletter_html()`
+
+Homepage-only email capture, placed right after Featured Essays and before
+the Archive teaser — the point where a visitor has just read a couple of
+titles and decided they like the voice, which is the moment to ask them to
+come back.
+
+```python
+templates.newsletter_html()
+# -> full <section class="newsletter-section">...</section> plus an inline
+#    <script>, or a disabled-state version if the proxy isn't configured,
+#    or "" if config.NEWSLETTER_ENABLED is False
+```
+
+**Backend: Resend, via a proxy — not a direct form POST.** Resend's
+Audiences API needs a secret bearer key on every call, which can never sit
+in static HTML/JS (anyone can read it from the page source). So the form
+submits via `fetch()` as JSON to your own small Lambda proxy
+(`newsletter_lambda/handler.py`, deployed separately — see its README),
+and that proxy holds the real Resend key and audience ID as Lambda
+environment variables, never in this repo. The generator only needs to
+know the proxy's public URL:
+
+- `NEWSLETTER_API_ENDPOINT` (env `BLOG_NEWSLETTER_API_ENDPOINT`) — the
+  deployed proxy's URL. Safe to expose; it can only add an email to your
+  audience, not read your Resend key.
+- `NEWSLETTER_HEADING` / `NEWSLETTER_SUBHEAD` — the copy.
+
+If `NEWSLETTER_API_ENDPOINT` is unset, the section renders with the input
+and button disabled and a "being set up" note, rather than posting to
+nowhere and giving the visitor a silent failure — and the generator logs
+a warning. Don't ignore that warning; it means signups currently go
+nowhere.
+
+**Don't** point this at a generic ESP embed form (Mailchimp/ConvertKit/
+Buttondown-style `<form action="...">`) without also updating the
+JS — those expect a plain form POST, not the JSON-over-fetch flow this
+component uses to talk to the Resend proxy.
+
+Styled by `.newsletter-section` / `.newsletter-grid` / `.newsletter-form`
+/ `.newsletter-input` in `styles.py`. Deliberately reuses the same
+gradient-panel-with-rust-left-border look as the About page's "Want to
+Connect?" box rather than inventing a new visual treatment for "here's a
+thing to do" — that panel style is now the site's general call-to-action
+pattern, not a one-off.
+
+### Topics nav — `templates.topics_nav_html(categories)`
+
+A row of pill-shaped links on the homepage, placed right after the hero,
+letting a visitor jump straight into a theme (Self-Awareness & EQ, Money &
+Meaning, etc.) instead of only seeing the site chronologically.
+
+```python
+topics_nav_html(sorted(set(p.category for p in posts)))
+```
+
+Each chip links to the same `category-<slug>.html` page that
+`generators.generate_categories()` already builds — this is a second
+entry point into existing pages, not a new page type, so there's nothing
+to keep in sync beyond passing in the current category list. A trailing
+"All topics →" chip always links to `categories.html`.
+
+Styled by `.topics-nav` / `.topic-chip` in `styles.py`. Uses its own chip
+style rather than `pill_badge()` — `pill_badge` is documented above as an
+eyebrow label *above* a heading, and overloading it as a clickable nav
+element would blur that meaning the next time someone reaches for it.
+
 ### Hero section pattern
 
 Every hero (`.hero`) follows the same skeleton:
@@ -282,3 +349,9 @@ Card grid gaps: `2rem` standard, `1.5rem` for stat cards.
   it will drift. Extend the shared function/class instead.
 - Keep true glassmorphism (`.stat-card-glass`) rare and intentional;
   it's a homepage-hero accent, not a default card style.
+- **Don't** copy-paste one post's front matter as a starting point for a
+  new post without rewriting the `excerpt` — this shipped to production
+  once already (two posts sharing one teaser). `generate_blog.py` now
+  calls `utils.check_duplicate_excerpts(posts)` on every build and logs a
+  warning if any two posts share identical excerpt text; don't ignore
+  that warning when it appears in the build log.

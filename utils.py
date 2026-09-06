@@ -243,6 +243,35 @@ def category_accent(category: str) -> str:
     return _CATEGORY_ACCENTS[index]
 
 
+def check_duplicate_excerpts(posts: List[Post]) -> None:
+    """
+    Log a warning for any posts that share an identical excerpt.
+
+    Two posts with the same excerpt text is almost always a mistake — an
+    excerpt copied from a neighboring post's front matter and never
+    rewritten. That's easy to miss eyeballing one .md file at a time but
+    obvious once every post is compared, so this runs once per build
+    rather than relying on manual review to catch it.
+
+    Args:
+        posts: List of Post objects (call after read_markdown_files).
+    """
+    seen: Dict[str, List[str]] = {}
+    for post in posts:
+        excerpt = (post.excerpt or "").strip()
+        if not excerpt:
+            continue
+        seen.setdefault(excerpt, []).append(post.title or post.path.name)
+
+    for excerpt, titles in seen.items():
+        if len(titles) > 1:
+            preview = excerpt if len(excerpt) <= 80 else excerpt[:77] + "..."
+            logger.warning(
+                "Duplicate excerpt shared by %d posts (%s): %r",
+                len(titles), ", ".join(titles), preview
+            )
+
+
 def youtube_embed(video_id: str, title: str = "YouTube video player", css_class: str = "youtube-embed") -> str:
     """
     Return a responsive 16:9 YouTube iframe embed.

@@ -2,7 +2,7 @@
 title: The Blueprint You Didn't Write
 date: 2026-08-03
 slug: blueprint-you-did-not-write
-excerpt: Some mornings the machine is broken and I find out how much of the walking I was never actually doing.
+excerpt: I’m learning to replace old self-protective patterns—like dismissing praise—with kinder, more empowering beliefs I consciously rehearse
 category: Self-Awareness & EQ
 featured: true
 archived: false

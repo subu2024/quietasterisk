@@ -2,13 +2,21 @@
 HTML template functions for generating pages.
 """
 
+import logging
+import json
+from html import escape
+from typing import List
+
 from config import (
     BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, LOGO_PATH, INSTAGRAM_PROFILE,
-    INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, VIDEOS_FILE_HTML, ARCHIVES_FILE
+    INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, VIDEOS_FILE_HTML, ARCHIVES_FILE,
+    NEWSLETTER_ENABLED, NEWSLETTER_API_ENDPOINT, NEWSLETTER_HEADING, NEWSLETTER_SUBHEAD
 )
 from styles import get_modern_styles
 
-from utils import show_logo
+from utils import show_logo, slugify
+
+logger = logging.getLogger("BlogGen")
 
 
 def pill_badge(text: str, accent: str = "rust") -> str:
@@ -23,6 +31,159 @@ def pill_badge(text: str, accent: str = "rust") -> str:
         HTML string for the badge
     """
     return f'<span class="pill-badge pill-badge-{accent}">{text}</span>'
+
+
+def newsletter_html() -> str:
+    """
+    Return the email-signup section shown on the homepage.
+
+    Submits via JS fetch() as JSON, not a plain HTML form POST — Resend's
+    Audiences API needs a JSON body and a secret bearer key, so the actual
+    Resend call has to happen server-side in your own proxy (see
+    newsletter_lambda/handler.py). This section only ever talks to that
+    proxy's public URL (NEWSLETTER_API_ENDPOINT), never to Resend directly.
+
+    Gracefully degrades: if NEWSLETTER_API_ENDPOINT isn't configured, the
+    section renders with the input/button disabled and a note in place of
+    a live form — better than posting to nowhere and giving the visitor a
+    silent failure — and the generator logs a warning. Same graceful-degrade
+    posture as generators.get_chat_widget_html for a missing dependency.
+
+    Returns:
+        HTML string for the newsletter section, or "" if disabled.
+    """
+    if not NEWSLETTER_ENABLED:
+        return ""
+
+    endpoint = NEWSLETTER_API_ENDPOINT
+    if not endpoint:
+        logger.warning(
+            "NEWSLETTER_API_ENDPOINT is not set (env var BLOG_NEWSLETTER_API_ENDPOINT) "
+            "— the newsletter section will render in a disabled state until you deploy "
+            "the proxy in newsletter_lambda/ and point this at its URL."
+        )
+        return f"""
+<section class="section newsletter-section">
+  <div class="container newsletter-grid">
+    <div>
+      <h2 class="section-title" style="font-size: 2rem; margin-bottom: 0.75rem;">{escape(NEWSLETTER_HEADING)}</h2>
+      <p class="section-description">{escape(NEWSLETTER_SUBHEAD)}</p>
+    </div>
+    <div>
+      <form class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="you@email.com"
+               aria-label="Email address" disabled>
+        <button type="button" class="btn btn-primary" disabled>Subscribe</button>
+      </form>
+      <p class="newsletter-fine">Signup is being set up — check back soon.</p>
+    </div>
+  </div>
+</section>
+"""
+
+    return f"""
+<section class="section newsletter-section">
+  <div class="container newsletter-grid">
+    <div>
+      <h2 class="section-title" style="font-size: 2rem; margin-bottom: 0.75rem;">{escape(NEWSLETTER_HEADING)}</h2>
+      <p class="section-description">{escape(NEWSLETTER_SUBHEAD)}</p>
+    </div>
+    <div>
+      <form class="newsletter-form" id="newsletter-form" novalidate>
+        <input type="email" name="email" id="newsletter-email" class="newsletter-input"
+               placeholder="you@email.com" aria-label="Email address" required>
+        <button type="submit" class="btn btn-primary" id="newsletter-submit">Subscribe</button>
+      </form>
+      <p class="newsletter-fine" id="newsletter-status" aria-live="polite">Unsubscribe any time. I mean it.</p>
+    </div>
+  </div>
+</section>
+<script>
+(function () {{
+  var form = document.getElementById('newsletter-form');
+  if (!form) return;
+  var endpoint = {json.dumps(endpoint)};
+  var input = document.getElementById('newsletter-email');
+  var button = document.getElementById('newsletter-submit');
+  var status = document.getElementById('newsletter-status');
+  var defaultStatus = status.textContent;
+
+  form.addEventListener('submit', function (event) {{
+    event.preventDefault();
+    var email = input.value.trim();
+    if (!email) return;
+
+    button.disabled = true;
+    button.textContent = 'Subscribing…';
+    status.textContent = defaultStatus;
+
+    fetch(endpoint, {{
+      method: 'POST',
+      headers: {{ 'Content-Type': 'application/json' }},
+      body: JSON.stringify({{ email: email }})
+    }})
+      .then(function (response) {{
+        if (!response.ok) throw new Error('Request failed');
+        return response.json().catch(function () {{ return {{}}; }});
+      }})
+      .then(function () {{
+        form.reset();
+        status.textContent = "You're in — thanks for subscribing.";
+        button.textContent = 'Subscribed';
+      }})
+      .catch(function () {{
+        status.textContent = 'Something went wrong — please try again in a moment.';
+        button.disabled = false;
+        button.textContent = 'Subscribe';
+      }});
+  }});
+}})();
+</script>
+"""
+
+
+def topic_chips_html(categories: List[str], css_class: str = "topic-chip") -> str:
+    """Return category links for use in a topic-navigation layout.
+
+    The shared helper keeps category URL construction in one place while
+    allowing the homepage and the standalone topic strip to use their own
+    visual treatment.
+    """
+    if not categories:
+        return ""
+
+    chips = "".join(
+        f'<a href="category-{slugify(category)}.html" class="{css_class}">{escape(category)}</a>'
+        for category in sorted(categories)
+    )
+    return chips + f'<a href="{CATEGORIES_FILE}" class="{css_class}">All topics →</a>'
+
+
+def topics_nav_html(categories: List[str]) -> str:
+    """Return the standalone row of topic chips used on legacy layouts.
+
+    Gives the homepage a way to browse by theme instead of only by recency.
+    This is a second entry point into the same category-<slug>.html pages
+    that generators.generate_categories() already builds — not a new page
+    type, so there's nothing else to keep in sync.
+
+    Args:
+        categories: Distinct category names present in the published posts.
+
+    Returns:
+        HTML string for the topics strip, or "" if there are no categories.
+    """
+    if not categories:
+        return ""
+
+    return f"""
+<section class="topics-nav">
+  <div class="container topics-nav-inner">
+    <span class="topics-nav-label">Browse by theme</span>
+    {topic_chips_html(categories)}
+  </div>
+</section>
+"""
 
 
 def header_html(title: str, active_page: str = "home") -> str:

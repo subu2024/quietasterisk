@@ -26,13 +26,15 @@ from datetime import datetime
 
 from config import ENABLE_AI_CHAT
 from models import Post
-from templates import header_html, footer_html, pill_badge
+from templates import header_html, footer_html, pill_badge, newsletter_html, topic_chips_html, topics_nav_html
 from cards import format_card, format_featured_card, format_book_card, format_reading_note_card
 from utils import copy_image, load_books, load_categories, slugify, load_videos, show_logo, load_reading_notes, youtube_embed
 from parser import process_youtube_embeds
 
 logger = logging.getLogger("BlogGen")
 
+# Global variable for temp content
+TEMP_CONTENT = ""
 
 def get_chat_widget_html() -> str:
     """
@@ -50,10 +52,6 @@ def get_chat_widget_html() -> str:
     except ImportError:
         logger.warning("ENABLE_AI_CHAT is True but chat_widget module was not found. Skipping chat widget.")
         return ""
-
-# Global variable for temp content
-TEMP_CONTENT = ""
-
 
 
 def generate_reading_notes_redirect():
@@ -194,30 +192,8 @@ def generate_books():
     if books and notes:
         content += """
     <div class="jump-nav">
-      <a href="#my-books" class="jump-pill jump-pill-filled">My Books</a>
-      <a href="#reading-notes" class="jump-pill">What I'm Reading</a>
-    </div>
-"""
-
-    if books:
-        content += """
-    <div id="my-books" class="books-section-heading">
-      <h2>Books I've Written</h2>
-      <div class="books-section-rule"></div>
-    </div>
-    <div class="books-grid" style="margin-bottom: 5rem;">
-"""
-        for book in books:
-            cross_link_html = ""
-            title_key = book.get("title", "").strip().lower()
-            if title_key in note_titles:
-                anchor = slugify(book.get("title", ""))
-                cross_link_html = (
-                    f'<a href="#note-{anchor}" class="book-cross-link">'
-                    f"I wrote a reading note on this one too →</a>"
-                )
-            content += format_book_card(book, show_full_description=True, cross_link_html=cross_link_html)
-        content += """
+      <a href="#my-books" class="jump-pill ">My Books</a>
+      <a href="#reading-notes" class="jump-pill jump-pill-filled">What I'm Reading</a>
     </div>
 """
 
@@ -249,6 +225,30 @@ def generate_books():
         content += """
     </div>
 """
+
+    if books:
+        content += """
+    <div id="my-books" class="books-section-heading">
+      <h2>Books I've Written</h2>
+      <div class="books-section-rule"></div>
+    </div>
+    <div class="books-grid" style="margin-bottom: 5rem;">
+"""
+        for book in books:
+            cross_link_html = ""
+            title_key = book.get("title", "").strip().lower()
+            if title_key in note_titles:
+                anchor = slugify(book.get("title", ""))
+                cross_link_html = (
+                    f'<a href="#note-{anchor}" class="book-cross-link">'
+                    f"I wrote a reading note on this one too →</a>"
+                )
+            content += format_book_card(book, show_full_description=True, cross_link_html=cross_link_html)
+        content += """
+    </div>
+"""
+
+
 
     content += """
   </div>
@@ -442,7 +442,7 @@ Not because I'm particularly brave, but because pretending to have everything fi
 
       <p style="margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.8;">
 It's less an obstacle than a traveling companion. Occasionally annoying. Often humbling. Best experienced with a sense of humor. And coffee. Definitely coffee.
-</P
+</p>
 
       
       
@@ -613,6 +613,73 @@ def get_temp_content():
     return TEMP_CONTENT
 
 def generate_index(posts: List[Post], related_map: Dict):
+    """Generate the editorial, quiet-asterisk-inspired homepage."""
+    books = load_books(BOOKS_ON_HOMEPAGE)
+    videos = load_videos()
+    featured_video = next((v for v in videos if v.get("featured")), None)
+    categories_present = sorted(set(p.category for p in posts))
+
+    logger.info(f"Generating index page with {len(posts)} posts and {len(books)} books")
+    generate_post_pages(posts, related_map)
+
+    content = header_html("Home - " + BLOG_TITLE, "home")
+    content += """
+<div class="quiet-home">
+  <section class="qa-hero">
+    <div class="wrap">
+      <div>
+        <h1>Essays on life, written from inside the uncertainty.</h1>
+        <p class="qa-sub">{tagline}</p>
+        <div class="qa-actions">
+          <a class="qa-button" href="#featured">Start reading</a>
+          <a class="qa-ghost" href="{about_file}">About the author →</a>
+        </div>
+      </div>
+      <div class="qa-asterisk" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none"><g stroke="#211F1D" stroke-width="2.5" stroke-linecap="round"><line x1="100" y1="20" x2="100" y2="180"/><line x1="30" y1="60" x2="170" y2="140"/><line x1="170" y1="60" x2="30" y2="140"/></g><circle cx="100" cy="100" r="6" fill="#A5732E"/></svg>
+      </div>
+    </div>
+  </section>
+  <div class="qa-strip"><div class="wrap"><span><strong>{post_count} essays.</strong> {book_count} books. One long argument with certainty.</span><span>Writing from the uncertainty</span></div></div>
+  <section class="qa-topics"><div class="wrap"><span class="qa-topic-label">Browse by theme</span>{topics}</div></section>
+""".format(
+        tagline=escape(TAG_LINE),
+        about_file=ABOUT_FILE,
+        post_count=len(posts),
+        book_count=len(books),
+        topics=topic_chips_html(categories_present, "qa-topic"),
+    )
+
+    featured_posts = [post for post in posts if post.featured][:4]
+    if featured_posts:
+        content += """
+  <section class="qa-featured" id="featured"><div class="wrap">
+    <div class="qa-section-head"><h2>Recent essays</h2><a class="qa-see-all" href="{archive}">Browse the archive →</a></div>
+    <div class="qa-featured-grid"><div class="qa-lead">{lead}</div><div class="qa-list">{rest}</div></div>
+  </div></section>
+""".format(
+            archive=ARCHIVES_FILE,
+            lead=format_featured_card(featured_posts[0]),
+            rest="".join(format_card(post, is_small=True) for post in featured_posts[1:]),
+        )
+
+    if featured_video:
+        video_title = escape(featured_video.get("title", "Featured video"))
+        content += f'''<section class="qa-featured"><div class="wrap"><div class="qa-section-head"><h2>{video_title}</h2></div>{youtube_embed(featured_video.get("video_id", ""), title=video_title)}</div></section>'''
+
+    # Keep the project's live signup integration instead of replacing it with
+    # a decorative form from the reference file.
+    content += '<div class="qa-newsletter">' + newsletter_html() + '</div>'
+    content += f'''<section class="qa-about"><div class="wrap"><div class="qa-avatar" aria-hidden="true"></div><p>Written by {escape(BLOG_TITLE)} — fascinated by one question: how do we live well when certainty isn't an option?</p><a class="qa-about-link" href="{ABOUT_FILE}">Meet the author →</a></div></section>
+  <section class="qa-archive"><div class="wrap"><h2>Archive</h2><p>A chronological index of essays, organized by year.</p><a class="qa-button" href="{ARCHIVES_FILE}">Browse the archive →</a></div></section>
+</div>'''
+
+    content += get_chat_widget_html()
+    content += footer_html()
+    with open(OUTPUT_DIR / INDEX_FILE, "w", encoding="utf-8") as f:
+        f.write(content)
+
+def generate_index_old(posts: List[Post], related_map: Dict):
     """
     Generate the homepage.
 
@@ -636,7 +703,8 @@ def generate_index(posts: List[Post], related_map: Dict):
     # =========================
     # HERO
     # =========================
-    num_categories = len(set(p.category for p in posts))
+    categories_present = sorted(set(p.category for p in posts))
+    num_categories = len(categories_present)
     content += f"""
 <section class="hero">
   <div class="hero-bg-blob hero-bg-blob-1"></div>
@@ -677,6 +745,11 @@ def generate_index(posts: List[Post], related_map: Dict):
   </div>
 </section>
 """
+
+    # =========================
+    # TOPICS NAV
+    # =========================
+    content += topics_nav_html(categories_present)
 
     # =========================
     # FEATURED VIDEO (optional)
@@ -727,9 +800,10 @@ def generate_index(posts: List[Post], related_map: Dict):
             content += format_card(post, is_small=True)
         content += "</div></div></div></section>"
 
-    
-
-
+    # =========================
+    # NEWSLETTER SIGNUP
+    # =========================
+    content += newsletter_html()
 
     # =========================
     # ARCHIVE TEASER
@@ -1009,6 +1083,4 @@ function loadMoreGroup(groupId) {
         f"Generated archive with {len(posts)} posts across "
         f"{len(sorted_years)} years and {len(sorted_categories)} categories"
     )
-
-
 
