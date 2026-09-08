@@ -14,7 +14,7 @@ from typing import List, Dict
 from config import (
     BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, VIDEOS_FILE_HTML,
     INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, INSTAGRAM_PROFILE,
-    OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE, ARCHIVES_FILE,
+    OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE, ARCHIVES_FILE, SITE_URL,
     READING_FILE_HTML  # add this
 )
 
@@ -314,6 +314,54 @@ def generate_categories(posts: List[Post]):
         generate_category_page(category, cat_posts, categories_meta.get(category, {}))
 
 
+def generate_sitemap(posts: List[Post], categories: List[str]):
+    """
+    Generate sitemap.xml listing every public page on the site.
+
+    Search engines discover pages by crawling links, but category pages
+    (category-<slug>.html) aren't in the main nav — they're only reachable
+    via the homepage's topic pills or a direct link — so listing them
+    explicitly here is the difference between them getting indexed
+    promptly and not at all. Same idea for the reading-notes redirect,
+    which is deliberately excluded since it isn't a real destination page.
+
+    Args:
+        posts: List of Post objects (used for post URLs + lastmod dates)
+        categories: Distinct category names present in the published posts
+    """
+    static_pages = [
+        INDEX_FILE, ABOUT_FILE, CONTACT_FILE, BOOKS_FILE_HTML,
+        VIDEOS_FILE_HTML, ARCHIVES_FILE, CATEGORIES_FILE,
+    ]
+
+    # (relative URL, lastmod-or-None) pairs
+    urls = [(page, None) for page in static_pages]
+    urls += [(f"category-{slugify(category)}.html", None) for category in sorted(categories)]
+
+    date_pattern = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+    for post in posts:
+        lastmod = post.date if date_pattern.match(post.date or "") else None
+        urls.append((post.slug, lastmod))
+
+    entries = []
+    for path, lastmod in urls:
+        loc = escape(f"{SITE_URL}/{path}")
+        lastmod_xml = f"<lastmod>{lastmod}</lastmod>" if lastmod else ""
+        entries.append(f"  <url><loc>{loc}</loc>{lastmod_xml}</url>")
+
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(entries) +
+        "\n</urlset>\n"
+    )
+
+    with open(OUTPUT_DIR / "sitemap.xml", "w", encoding="utf-8") as f:
+        f.write(xml)
+
+    logger.info(f"Generated sitemap.xml with {len(urls)} URLs")
+
+
 def generate_category_page(category: str, posts: List[Post], category_meta: dict):
     """Generate individual category page with load more."""
     posts.sort(key=lambda p: p.date or "", reverse=True)
@@ -396,94 +444,90 @@ def generate_about():
     content += f"""
 <section class="section">
   <div class="container">
-    <article class="post-content" style="max-width: 42rem;">
-      
-      <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--color-charcoal);">Dear Curious Internet Stranger,</h2>
-      
-      <p style="margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.8;">
-        First, thank you for clicking "About" instead of immediately leaving. 
-        That shows either genuine curiosity or excellent procrastination skills. 
+    <article class="post-content letter">
+
+      <h2 class="letter-heading">Dear Curious Internet Stranger,</h2>
+
+      <p>
+        First, thank you for clicking "About" instead of immediately leaving.
+        That shows either genuine curiosity or excellent procrastination skills.
         Either way, I respect it.
       </p>
-      
-      
-      
-      <p style="margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.8;">
-       I'm fascinated by one question:
 
-How do we live well when certainty isn't an option? <br/><br/>
-
-That's the thread running through everything I write.
-
-Sometimes it looks like essays about love and loss. Sometimes it's money and the stories we tell ourselves about it. Sometimes it's parenting, technology, work, or the quiet assumptions that shape our days. Different subjects, same curiosity.
+      <p>
+        I'm fascinated by one question: how do we live well when certainty isn't an option?
       </p>
-      
-      <p style="margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.8;">
-        Think of this space as what happens when 
-        <a href="https://en.wikipedia.org/wiki/Seinfeld" target="_blank" rel="noopener noreferrer" 
-           style="color: var(--color-rust); text-decoration: underline; font-weight: 500;">Seinfeld</a> 
-        meets philosophy—observant, self-aware, mildly neurotic, and uncomfortably honest about the small stuff that turns out to be the big stuff: a leaking ceiling, a burnt piece of toast, a stranger on a train platform.
+
+      <p>
+        That's the thread running through everything I write. Sometimes it looks like
+        essays about love and loss. Sometimes it's money and the stories we tell ourselves
+        about it. Sometimes it's parenting, technology, work, or the quiet assumptions that
+        shape our days. Different subjects, same curiosity.
       </p>
-      
-     
-      
-      <p style="margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.8;">
-        I'm drawn to the space between certainty and probability, noise and meaning, information and wisdom. We spend a surprising amount of our lives trying to eliminate uncertainty, when perhaps the better question is how to live with it well.
 
-Not because I'm particularly brave, but because pretending to have everything figured out is exhausting—and I've never met anyone who actually does.
+      <p>
+        Think of this space as what happens when
+        <a href="https://en.wikipedia.org/wiki/Seinfeld" target="_blank" rel="noopener noreferrer" class="text-link">Seinfeld</a>
+        meets philosophy—observant, self-aware, mildly neurotic, and uncomfortably honest
+        about the small stuff that turns out to be the big stuff: a leaking ceiling, a
+        burnt piece of toast, a stranger on a train platform.
+      </p>
 
- </p>
+      <p>
+        I'm drawn to the space between certainty and probability, noise and meaning,
+        information and wisdom. We spend a surprising amount of our lives trying to
+        eliminate uncertainty, when perhaps the better question is how to live with it well.
+      </p>
 
- <blockquote style="border-left: 4px solid var(--color-rust); padding-left: 1.5rem; margin: 2.5rem 0; font-style: italic; color: var(--color-slate); font-size: 1.25rem;">
+      <p>
+        Not because I'm particularly brave, but because pretending to have everything
+        figured out is exhausting—and I've never met anyone who actually does.
+      </p>
+
+      <blockquote>
         In a culture obsessed with certainty, I've made peace with Uncertainty. Mostly.
       </blockquote>
 
-      <p style="margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.8;">
-It's less an obstacle than a traveling companion. Occasionally annoying. Often humbling. Best experienced with a sense of humor. And coffee. Definitely coffee.
-</p>
+      <p>
+        It's less an obstacle than a traveling companion. Occasionally annoying. Often
+        humbling. Best experienced with a sense of humor. And coffee. Definitely coffee.
+      </p>
 
-      
-      
-      
-      <p style="margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.8;">
-        You'll find essays here that ramble a bit, the occasional poem when prose won't cut it, and observations about the things we usually ignore until they're suddenly the only things that matter.
+      <p>
+        You'll find essays here that ramble a bit, the occasional poem when prose won't
+        cut it, and observations about the things we usually ignore until they're
+        suddenly the only things that matter.
       </p>
-      
-      <p style="margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.8;">
-        If you're the kind of person who reads the footnotes, questions the premise, and occasionally pauses mid-sentence to wonder if any of this means anything — well, you're in the right place.
+
+      <p>
+        If you're the kind of person who reads the footnotes, questions the premise, and
+        occasionally pauses mid-sentence to wonder if any of this means anything — well,
+        you're in the right place.
       </p>
-      
-      <p style="margin-bottom: 3rem; font-size: 1.125rem; line-height: 1.8;">
+
+      <p>
         Thanks for stopping by. The asterisk is silent, but the questions are loud.
       </p>
-      
-      <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--color-sand);">
-        <p style="margin-bottom: 0.5rem; font-size: 1.125rem;">Warmly,</p>
-        <p style="font-style: italic; font-size: 1.25rem; color: var(--color-charcoal); font-weight: 600;">
-          Subu
+
+      <div class="letter-signoff">
+        <p style="margin-bottom: 0.5rem;">Warmly,</p>
+        <p class="name">Subu</p>
+      </div>
+
+      <div class="letter-callout">
+        <h3>Want to Connect?</h3>
+        <p>
+          I'd love to hear from you. Questions, thoughts, disagreements, or just to say
+          hello—<a href="{CONTACT_FILE}" class="text-link">drop me a line</a>.
+        </p>
+        <p>
+          You can also find me sharing thoughts (280 characters at a time) and occasional
+          video essays on
+          <a href="{YOUTUBE_CHANNEL}" target="_blank" rel="noopener noreferrer" class="text-link">YouTube</a> and
+          <a href="{INSTAGRAM_PROFILE}" target="_blank" rel="noopener noreferrer" class="text-link">Instagram</a>.
         </p>
       </div>
-      
-      <div style="margin-top: 4rem; padding: 2.5rem; background: var(--color-cream-deep); border-top: 1px solid var(--color-sand); border-bottom: 1px solid var(--color-sand);">
-        <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem; color: var(--color-charcoal);">
-          Want to Connect?
-        </h3>
-        
-        <p style="margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.7; color: var(--color-slate);">
-          I'd love to hear from you. Questions, thoughts, disagreements, or just to say hello—
-          <a href="{CONTACT_FILE}" style="color: var(--color-rust); text-decoration: underline; font-weight: 600; transition: color 0.3s;">drop me a line</a>.
-        </p>
-        
-        <p style="font-size: 1.125rem; line-height: 1.7; color: var(--color-slate);">
-          You can also find me sharing thoughts (280 characters at a time) 
-          and occasional video essays on 
-          <a href="{YOUTUBE_CHANNEL}" target="_blank" rel="noopener noreferrer" 
-             style="color: var(--color-rust); text-decoration: underline; font-weight: 600; transition: color 0.3s;">YouTube</a> and 
-          <a href="{INSTAGRAM_PROFILE}" target="_blank" rel="noopener noreferrer" 
-             style="color: var(--color-rust); text-decoration: underline; font-weight: 600; transition: color 0.3s;">Instagram</a>.
-        </p>
-      </div>
-      
+
     </article>
   </div>
 </section>
@@ -502,7 +546,7 @@ def generate_contact():
     <div class="hero-content">
       <p class="hero-label">Get in Touch</p>
       <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4rem);">
-        Let's <span style="color: var(--color-rust); font-style: italic;">Connect</span>
+        Let's <span class="hero-title-accent">Connect</span>
       </h1>
       <p class="hero-description" style="max-width: 48rem;">
         Whether you have thoughts on an essay, questions about a book, or just want to say hello—I'd love to hear from you.
@@ -512,8 +556,8 @@ def generate_contact():
 </section>
 <section class="section">
   <div class="container" style="max-width: 48rem;">
-    <div style="background: var(--color-cream); border: 1px solid var(--color-sand); padding: 3rem; border-radius: var(--radius); text-align: center;">
-      <div style="width: 80px; height: 80px; background: var(--color-rust); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+    <div class="contact-card">
+      <div class="contact-icon">
         <svg width="40" height="40" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
         </svg>
@@ -549,7 +593,7 @@ def generate_videos():
     <div class="hero-content">
       <p class="hero-label">Video Library</p>
       <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4rem);">
-        Watch & <span style="color: var(--color-rust); font-style: italic;">Learn</span>
+        Watch & <span class="hero-title-accent">Learn</span>
       </h1>
       <p class="hero-description" style="max-width: 48rem;">
         Video essays, explanations, and explorations on the topics covered in the blog.
@@ -716,7 +760,7 @@ def generate_archives(posts: List[Post]):
       </div>
 
       <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1rem;">
-        Every Essay, <span style="color: var(--color-rust); font-style: italic;">Organized</span>
+        Every Essay, <span class="hero-title-accent">Organized</span>
       </h1>
 
       <p class="hero-description" style="max-width: 42rem; margin: 0 auto;">

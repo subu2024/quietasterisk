@@ -18,6 +18,11 @@ YOUTUBE_CHANNEL = "https://www.youtube.com/@quietasterisk"
 INSTAGRAM_PROFILE = "https://www.instagram.com/quiet.asterisk/"
 LOGO_PATH = "./images/logo.png"  # Relative path to logo in output
 
+# The site's public URL, with no trailing slash. Used to build the absolute
+# <loc> links in sitemap.xml — search engines need full URLs there, not
+# relative paths. Update this (or set BLOG_SITE_URL) before deploying.
+SITE_URL = os.environ.get("BLOG_SITE_URL", "https://www.quietasterisk.com").rstrip("/")
+
 # ==========================================================
 # Typography
 # ==========================================================

@@ -21,6 +21,7 @@ from generators import (
     generate_post_pages,
     generate_books,
     generate_categories,
+    generate_sitemap,
     generate_videos,
     generate_about,
     generate_contact,
@@ -98,6 +99,9 @@ def main(write_temp: bool = False):
     
     logger.info("Generating contact page...")
     generate_contact()
+
+    logger.info("Generating sitemap.xml...")
+    generate_sitemap(posts, categories=sorted(set(p.category for p in posts)))
 
     # Write temporary content if requested
     if write_temp:
