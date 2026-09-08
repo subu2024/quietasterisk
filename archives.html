@@ -148,6 +148,7 @@ body {
 
 .hero-title-accent {
   font-style: italic;
+  color: var(--color-rust);
 }
 
 .hero-description {
@@ -452,6 +453,106 @@ body {
   aspect-ratio: 16/9;
   margin: 2rem 0;
   border-radius: var(--radius);
+}
+
+/* Inline text links inside prose (About/Contact copy, etc.) — one shared
+   rule instead of the same color/weight/underline repeated per-link. */
+.text-link {
+  color: var(--color-rust);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.text-link:hover {
+  color: var(--color-rust-deep);
+}
+
+/* "Letter" style narrative pages (About). Reuses .post-body's type scale
+   for the prose itself; these add the page-specific bits: a wider paragraph
+   rhythm, the sign-off, and the closing callout panel. */
+.letter {
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.letter p {
+  margin-bottom: 2rem;
+}
+
+.letter-heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--color-charcoal);
+}
+
+.letter blockquote {
+  border-left: 3px solid var(--color-rust);
+  padding-left: 1.75rem;
+  font-style: italic;
+  color: var(--color-slate);
+  font-size: 1.25rem;
+  margin: 2.5rem 0;
+}
+
+.letter-signoff {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--color-sand);
+}
+
+.letter-signoff .name {
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--color-charcoal);
+  font-weight: 600;
+}
+
+.letter-callout {
+  margin-top: 4rem;
+  padding: 2.5rem;
+  background: var(--color-cream-deep);
+  border-top: 1px solid var(--color-sand);
+  border-bottom: 1px solid var(--color-sand);
+}
+
+.letter-callout h3 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-charcoal);
+}
+
+.letter-callout p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-slate);
+  margin-bottom: 1.5rem;
+}
+
+.letter-callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* Contact page card */
+.contact-card {
+  background: var(--color-cream);
+  border: 1px solid var(--color-sand);
+  padding: 3rem;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--color-rust);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .youtube-embed {
@@ -902,7 +1003,7 @@ body {
       </div>
 
       <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1rem;">
-        Every Essay, <span style="color: var(--color-rust); font-style: italic;">Organized</span>
+        Every Essay, <span class="hero-title-accent">Organized</span>
       </h1>
 
       <p class="hero-description" style="max-width: 42rem; margin: 0 auto;">
