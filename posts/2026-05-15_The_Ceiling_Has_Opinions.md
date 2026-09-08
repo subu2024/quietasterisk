@@ -12,11 +12,11 @@ excerpt: My ceiling picked the one day I couldn't afford chaos to remind me how 
 
 There is a specific kind of dread that arrives not with a bang but with a drip.
 
-It was a weekday afternoon — and this is the part where luck makes a brief cameo — one of those days I'd decided, for no particularly strategic reason, to work from home. Just a mood. A vibe. A small, arbitrary choice that turned out to matter enormously. I was at my desk, doing whatever it is I do, when I heard it. A soft, rhythmic _tock_ from the somewhere nearby. I told myself it was the faucet. I told myself this with real conviction, the way you tell yourself the noise downstairs is the cat and not a burglar, even though you don't have a cat. Then I turned left, looked up, and watched water push through the ceiling like it had somewhere to be.
+It was a weekday afternoon — and this is the part where luck makes a brief cameo .. one of those days I'd decided, for no particularly strategic reason, to work from home. Just a mood. A vibe. A small, arbitrary choice that turned out to matter enormously. I was at my desk, doing whatever it is I do, when I heard it. A soft, rhythmic _tock_ from the somewhere nearby. I told myself it was the faucet. I told myself this with real conviction, the way you tell yourself the noise downstairs is the cat and not a burglar, even though you don't have a cat. Then I turned left, looked up, and watched water push through the ceiling like it had somewhere to be.
 
 Not a drip. A _pour_. The upstairs neighbor had a situation and that situation was now my situation.
 
-The first thing I did — before calling anyone, before processing anything — was lunge back to my desk and move my laptop. It missed getting soaked by what I can only describe as a philosophically significant distance. Close enough that I now have a complicated relationship with the word "luckily." Had I been in the office that day, I would have come home to a very expensive puddle and some questions about my backup situation.
+The first thing I did .. before calling anyone, before processing anything .. was lunge back to my desk and move my laptop. It missed getting soaked by what I can only describe as a philosophically significant distance. Close enough that I now have a complicated relationship with the word "luckily." Had I been in the office that day, I would have come home to a very expensive puddle and some questions about my backup situation.
 
 The HOA, to their credit, was on it. Calls made, remediation crew dispatched, industrial fans and worried faces arriving with impressive speed. The building was doing its part. The problem was that doing its part involved a lot of loud equipment and the strong implication that I should not be sleeping there that night.
 
@@ -44,7 +44,7 @@ I stood there for a moment. He didn't look up. I got my water.
 
 ## The YMCA with Better Wifi
 
-Let me be precise about what I was witnessing: this apartment had become a micro-hostel, informally, one booking at a time. The owner, who is doing nothing wrong — I want to emphasize this — had simply discovered that three people paying Airbnb rates generates more money than one person paying rent, and had acted accordingly. Rational. Efficient. Pure market logic.
+Let me be precise about what I was witnessing: this apartment had become a micro-hostel, informally, one booking at a time. The owner, who is doing nothing wrong .. I want to emphasize this .. had simply discovered that three people paying Airbnb rates generates more money than one person paying rent, and had acted accordingly. Rational. Efficient. Pure market logic.
 
 The man on the air mattress was, presumably, in the same position I was. Some version of _well, it was available and cheap and I just needed somewhere._ He was a commuter. Or between apartments. Or just passing through. I don't know. We never spoke beyond a nod that I think meant "we are both going to pretend this is normal."
 

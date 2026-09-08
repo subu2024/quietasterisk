@@ -19,7 +19,7 @@ The condo is in Vienna. I own it, which is the part that makes the whole questio
 
 The irony of that phrasing is not lost on me. The family is just me.
 
-I moved in thinking I'd stay two years. That was not two years ago. The math on that is something I do not do in the mornings. The building is fine — it's more than fine, actually. It has in-unit laundry and a parking space that is, miraculously, close to the elevator. These are the things you learn to lead with once you've lived somewhere long enough to understand that in-unit laundry is not a luxury but a philosophical position.
+I moved in thinking I'd stay two years. That was not two years ago. The math on that is something I do not do in the mornings. The building is fine .. it's more than fine, actually. It has in-unit laundry and a parking space that is, miraculously, close to the elevator. These are the things you learn to lead with once you've lived somewhere long enough to understand that in-unit laundry is not a luxury but a philosophical position.
 
 And still. The thing about a condo in Vienna is that it is almost never only a condo. It is also a question, present-tense and patient, idling at the edge of most mornings like a car with good gas mileage that you nonetheless cannot afford to drive anywhere interesting.
 
@@ -29,11 +29,11 @@ There's a version of this where I just fix the faucet and repaint the closet and
 
 The thing nobody tells you about owning is that it raises the stakes of every small complaint. When you rented, a dripping faucet was the landlord's problem. When you own, it is a referendum on your stewardship, your priorities, your willingness to show up for yourself in minor, uncelebrated ways. I am still working out what the faucet says about me, exactly. Nothing good, probably. Nothing catastrophic either.
 
-And so the larger question sits alongside the smaller one. Sell this place, which is mine, in a neighborhood where I know which CVS has the shorter checkout lines and where the library parking lot fills up on Saturday mornings — sell all of that institutional knowledge — and buy something bigger in Ashburn, or Fairfax, or somewhere else entirely, something designed in theory for a different life than the one I currently have. A single-family home for a single-person family. A yard I would mow on principle. Extra bedrooms that would wait, furnished or not, for a future I have not yet arranged.
+And so the larger question sits alongside the smaller one. Sell this place, which is mine, in a neighborhood where I know which CVS has the shorter checkout lines and where the library parking lot fills up on Saturday mornings .. sell all of that institutional knowledge .. and buy something bigger in Ashburn, or Fairfax, or somewhere else entirely, something designed in theory for a different life than the one I currently have. A single-family home for a single-person family. A yard I would mow on principle. Extra bedrooms that would wait, furnished or not, for a future I have not yet arranged.
 
 The irony is not lost on me. I mentioned that. But it keeps arriving freshly anyway, the way certain jokes do.
 
-I looked at a place in Ashburn last week. Four bedrooms. Listed at a number that made my chest do something briefly. It had a photo of a backyard that was, actually, a backyard — not a patio described creatively, a real yard with a tree in it, the kind of tree that suggests the house has been there long enough to have earned its own shade.
+I looked at a place in Ashburn last week. Four bedrooms. Listed at a number that made my chest do something briefly. It had a photo of a backyard that was, actually, a backyard .. not a patio described creatively, a real yard with a tree in it, the kind of tree that suggests the house has been there long enough to have earned its own shade.
 
 I looked at the photos eleven times. I did not schedule a tour. I am not sure what I was waiting for, but I suspect I was waiting for the decision to make itself, which is a strategy I return to with some regularity, and which has a mixed track record.
 

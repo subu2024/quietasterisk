@@ -17,7 +17,7 @@ The metro stop at Vienna smells like old concrete and coffee that gave up on bei
 
 I don't know his name. I know his gait—slightly favoring the left, bag slung high. I know the approximate time he appears, give or take the randomness of traffic signals. I have clocked, without meaning to, that he wears dark colors on Mondays and something lighter mid-week. This is not surveillance. This is just what the brain does when a face appears often enough: it begins to file it, quietly, in a drawer marked familiar.
 
-And then comes the moment. Maybe two seconds of actual proximity. The specific geometry of the city—two lanes of pedestrian traffic narrowing past a bus shelter—means you will be close enough to see the precise expression on each other's faces. And both of us, for a fraction of that two seconds, are running the same silent negotiation.
+And then comes the moment. Maybe two seconds of actual proximity .. The specific geometry of the city—two lanes of pedestrian traffic narrowing past a bus shelter—means you will be close enough to see the precise expression on each other's faces. And both of us, for a fraction of that two seconds, are running the same silent negotiation.
 
 This time, like most times, I give him nothing. Not coldness, exactly. More like a face that has agreed to remain neutral on all questions until further notice. He returns something similar. And then I've passed, and the calculation dissolves, and I'm thinking about something else entirely by the time I reach the escalator.
 

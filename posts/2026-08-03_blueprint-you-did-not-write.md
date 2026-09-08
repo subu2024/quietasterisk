@@ -13,7 +13,7 @@ archived: false
 > a sentence rehearsed so many times  
 > your mind mistook it for the territory?
 
-I caught myself doing it again last week — the small, automatic thing where someone offers me a compliment and I hand it back like it was delivered to the wrong address. _Oh, it's not that hard, really. I just got lucky._ I said it so fast I didn't notice I'd said it until I was already three sentences past it, explaining away something I'd actually worked for. It's such a reflex that I've never once stopped to ask where I learned it, or who I learned it from, or whether it's even mine.
+I caught myself doing it again last week .. the small, automatic thing where someone offers me a compliment and I hand it back like it was delivered to the wrong address. _Oh, it's not that hard, really. I just got lucky._ I said it so fast I didn't notice I'd said it until I was already three sentences past it, explaining away something I'd actually worked for. It's such a reflex that I've never once stopped to ask where I learned it, or who I learned it from, or whether it's even mine.
 
 That's the question sitting underneath [Your Mind, Your Rules](https://www.amazon.com/dp/B0G7KXSGJH), a book I picked up expecting the usual self-help scaffolding and found, instead, oddly literal in its claims. The premise is this: your mind doesn't run on facts. It runs on instructions. And most of those instructions were written a long time ago, by a much younger version of you, in response to something that made sense at the time and stopped making sense somewhere around adulthood, except nobody sent the update.
 

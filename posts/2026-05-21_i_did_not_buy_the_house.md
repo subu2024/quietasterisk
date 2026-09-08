@@ -22,7 +22,7 @@ A guy who _accidentally_ made $600,000 flipping homes during the pandemic. Accid
 
 Scroll.
 
-And then — the cruelest blow of all — a distant acquaintance. Not a close friend. Not someone you admire. Literally a person you once shared a group project with in 2009 and haven't thought about since. They now have a primary residence, two rentals, and something they refer to with devastating casualness as _"the lake place."_
+And then .. the cruelest blow of all .. a distant acquaintance. Not a close friend. Not someone you admire. Literally a person you once shared a group project with in 2009 and haven't thought about since. They now have a primary residence, two rentals, and something they refer to with devastating casualness as _"the lake place."_
 
 I sat in my condo, holding my reasonably priced coffee, and had a moment of profound self-assessment: I have made a series of mistakes. I am unclear on what those mistakes were. But statistically, I must have made them.
 
@@ -46,13 +46,13 @@ I closed the app. Opened it again. Closed it. This is called discipline.
 
 Enough with consumption. Time to build _real_ wealth. I opened Zillow with the energy of a man about to turn his life around.
 
-Northern Virginia. Search.
+Northern Virginia. Search ..
 
 I experienced what I can only describe as a spiritual event.
 
 _"Charming home" — $1.7 million. "Cozy starter" — $950,000. "Needs TLC" — priced as though TLC has already been applied by a team of Swiss engineers on overtime._
 
-I zoomed in on backyards that radiated generational stability. I toured, virtually, kitchens larger than my entire living situation. Then I ran the numbers. The numbers ran me back — faster, and without breaking a sweat. The monthly payment was not a figure. It was a philosophy. A total lifestyle realignment that involved sacrifice, discipline, and possibly a side hustle I wasn't emotionally prepared for. And then there was taxes, insurance, insurance on mortgage, HOA fees, maintenance ..argg??
+I zoomed in on backyards that radiated generational stability. I toured, virtually, kitchens larger than my entire living situation. Then I ran the numbers. The numbers ran me back .. faster, and without breaking a sweat. The monthly payment was not a figure. It was a philosophy. A total lifestyle realignment that involved sacrifice, discipline, and possibly a side hustle I wasn't emotionally prepared for. And then there was taxes, insurance, insurance on mortgage, HOA fees, maintenance .. argg??
 
 And yet, somewhere, someone my age owns three of these.
 
@@ -62,7 +62,7 @@ But then, like a cool breeze through an overheated browser tab, clarity arrived:
 
 Having heroically rejected a million-dollar mortgage, I decided to reward my restraint with something sensible. A car. Not extravagant — just _upgraded_. I began with integrity.
 
-Within eleven minutes I was configuring ambient lighting and temperature-controlled seating, features that sound less like transportation and more like a therapist who also drives you to the airport. I built my perfect car. It was beautiful. It cost less than a house — but emotionally, not by much.
+Within eleven minutes I was configuring ambient lighting and temperature-controlled seating, features that sound less like transportation and more like a therapist who also drives you to the airport. I built my perfect car. It was beautiful. It cost less than a house .. but emotionally, not by much.
 
 The monthly payment appeared on screen.
 
@@ -76,7 +76,7 @@ I closed the tab. Another responsible decision. Another microscopic piece of my 
 
 ## Act V: The Scotch Resolution, or "A Toast to Being Statistically Normal"
 
-At this point, I had done everything right. I resisted meaningless consumption — briefly, but sincerely. I avoided an overleveraged housing catastrophe. I walked away from a car payment dressed up as a personality. By any objective measure, I was _winning_.
+At this point, I had done everything right. I resisted meaningless consumption .. briefly, but sincerely. I avoided an overleveraged housing catastrophe. I walked away from a car payment dressed up as a personality. By any objective measure, I was _winning_.
 
 So why did it feel like I was losing?
 
@@ -104,6 +104,4 @@ I glanced at my glass. I considered my journey. I considered the house I didn't 
 
 I whispered: _"This… could complete the system."_
 
-Add to cart.
-
-_The author is doing fine. Probably._
+Add to cart ..
