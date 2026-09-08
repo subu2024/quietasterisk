@@ -14,7 +14,7 @@ from typing import List, Dict
 from config import (
     BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, VIDEOS_FILE_HTML,
     INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, INSTAGRAM_PROFILE,
-    OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE, ARCHIVES_FILE, LOGO_PATH,
+    OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE, ARCHIVES_FILE,
     READING_FILE_HTML  # add this
 )
 
@@ -26,9 +26,9 @@ from datetime import datetime
 
 from config import ENABLE_AI_CHAT
 from models import Post
-from templates import header_html, footer_html, pill_badge, newsletter_html, topic_chips_html, topics_nav_html
+from templates import header_html, footer_html, newsletter_html, topic_chips_html
 from cards import format_card, format_featured_card, format_book_card, format_reading_note_card
-from utils import copy_image, load_books, load_categories, slugify, load_videos, show_logo, load_reading_notes, youtube_embed
+from utils import copy_image, load_books, load_categories, slugify, load_videos, load_reading_notes, youtube_embed, arrow_icon
 from parser import process_youtube_embeds
 
 logger = logging.getLogger("BlogGen")
@@ -111,7 +111,7 @@ def generate_post_pages(posts: List[Post], related_map: Dict[str, List[str]]):
             related_html += '</ul></div>'
 
         # Build page
-        content = header_html(post.title, "")
+        content = header_html(post.title, "home")
         content += f"""
 <article class="post-content animate-in">
   <header class="post-header">
@@ -298,9 +298,7 @@ def generate_categories(posts: List[Post]):
         <p class="card-excerpt">{description}</p>
         <div class="card-link" style="margin-top: 1rem;">
           Explore {category}
-          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
+          {arrow_icon()}
         </div>
       </article>
     </a>
@@ -466,7 +464,7 @@ It's less an obstacle than a traveling companion. Occasionally annoying. Often h
         </p>
       </div>
       
-      <div style="margin-top: 4rem; padding: 2.5rem; background: linear-gradient(135deg, white 0%, var(--color-cream) 100%); border: 2px solid var(--color-sand); border-left: 6px solid var(--color-rust); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+      <div style="margin-top: 4rem; padding: 2.5rem; background: var(--color-cream-deep); border-top: 1px solid var(--color-sand); border-bottom: 1px solid var(--color-sand);">
         <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem; color: var(--color-charcoal);">
           Want to Connect?
         </h3>
@@ -514,13 +512,13 @@ def generate_contact():
 </section>
 <section class="section">
   <div class="container" style="max-width: 48rem;">
-    <div style="background: white; border: 2px solid var(--color-sand); padding: 3rem; border-radius: 4px; text-align: center;">
+    <div style="background: var(--color-cream); border: 1px solid var(--color-sand); padding: 3rem; border-radius: var(--radius); text-align: center;">
       <div style="width: 80px; height: 80px; background: var(--color-rust); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
         <svg width="40" height="40" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
         </svg>
       </div>
-      <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem;">Email {show_logo(LOGO_PATH, 70)}</h2>
+      <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem;">Email</h2>
       <p style="color: var(--color-slate); margin-bottom: 2rem;">I typically respond within a 48 hours</p>
       <a href="mailto:{CONTACT_EMAIL}" class="btn btn-primary" style="font-size: 1.125rem; padding: 1rem 2.5rem;">
         {CONTACT_EMAIL}
@@ -579,9 +577,7 @@ def generate_videos():
             <div style="margin-top: 1rem;">
               <a href="{escape(article_link)}" class="card-link">
                 Read this Essay
-                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
+                {arrow_icon()}
               </a>
             </div>
             '''
@@ -620,7 +616,6 @@ def generate_index(posts: List[Post], related_map: Dict):
     categories_present = sorted(set(p.category for p in posts))
 
     logger.info(f"Generating index page with {len(posts)} posts and {len(books)} books")
-    generate_post_pages(posts, related_map)
 
     content = header_html("Home - " + BLOG_TITLE, "home")
     content += """
@@ -640,13 +635,15 @@ def generate_index(posts: List[Post], related_map: Dict):
       </div>
     </div>
   </section>
-  <div class="qa-strip"><div class="wrap"><span><strong>{post_count} essays.</strong> {book_count} books. One long argument with certainty.</span><span>Writing from the uncertainty</span></div></div>
+  <div class="qa-strip"><div class="wrap"><span><strong>{post_count} {post_word}.</strong> {book_count} {book_word}. One long argument with certainty.</span><span>Writing from the uncertainty</span></div></div>
   <section class="qa-topics"><div class="wrap"><span class="qa-topic-label">Browse by theme</span>{topics}</div></section>
 """.format(
         tagline=escape(TAG_LINE),
         about_file=ABOUT_FILE,
         post_count=len(posts),
+        post_word="essay" if len(posts) == 1 else "essays",
         book_count=len(books),
+        book_word="book" if len(books) == 1 else "books",
         topics=topic_chips_html(categories_present, "qa-topic"),
     )
 
@@ -678,156 +675,6 @@ def generate_index(posts: List[Post], related_map: Dict):
     content += footer_html()
     with open(OUTPUT_DIR / INDEX_FILE, "w", encoding="utf-8") as f:
         f.write(content)
-
-def generate_index_old(posts: List[Post], related_map: Dict):
-    """
-    Generate the homepage.
-
-    Uses the same rich hero/glassmorphism visual language (pill badges,
-    gradient title, glass stat cards, floating blobs) and the same card
-    components (format_featured_card/format_card/format_book_card) as the
-    rest of the site, instead of the ad hoc plain-list layout this used
-    to have.
-    """
-    books = load_books(BOOKS_ON_HOMEPAGE)
-    videos = load_videos()
-    featured_video = next((v for v in videos if v.get("featured")), None)
-
-    logger.info(f"Generating index page with {len(posts)} posts and {len(books)} books")
-
-    # Generate individual post pages
-    generate_post_pages(posts, related_map)
-
-    content = header_html("Home - " + BLOG_TITLE, "home")
-
-    # =========================
-    # HERO
-    # =========================
-    categories_present = sorted(set(p.category for p in posts))
-    num_categories = len(categories_present)
-    content += f"""
-<section class="hero">
-  <div class="hero-bg-blob hero-bg-blob-1"></div>
-  <div class="hero-bg-blob hero-bg-blob-2"></div>
-
-  <div class="container">
-    <div class="hero-content" style="text-align: center;">
-      <div style="margin-bottom: 2rem;">
-        {pill_badge("Welcome to " + BLOG_TITLE, "rust")}
-      </div>
-
-      <h1 class="hero-title hero-title-gradient" style="margin: 0 auto 1.5rem; text-align: center;">
-        Essays on Life
-      </h1>
-
-      <p class="hero-subtitle" style="margin: 0 auto 1rem;">{escape(TAG_LINE)}</p>
-
-      <div class="hero-cta" style="justify-content: center;">
-        <a href="#featured" class="btn btn-primary">Explore Essays</a>
-        <a href="{ABOUT_FILE}" class="btn btn-secondary">About the Author</a>
-      </div>
-
-      <div class="hero-stats" style="margin: 0 auto;">
-        <div class="stat-card-glass accent-rust">
-          <div class="stat-number">{len(posts)}+</div>
-          <div class="stat-label">Essays Published</div>
-        </div>
-        <div class="stat-card-glass accent-sage">
-          <div class="stat-number">{num_categories}</div>
-          <div class="stat-label">Categories</div>
-        </div>
-        <div class="stat-card-glass accent-gold">
-          <div class="stat-number">{len(books)}</div>
-          <div class="stat-label">Books Written</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-"""
-
-    # =========================
-    # TOPICS NAV
-    # =========================
-    content += topics_nav_html(categories_present)
-
-    # =========================
-    # FEATURED VIDEO (optional)
-    # =========================
-    if featured_video:
-        video_title = escape(featured_video.get("title", "Featured Video"))
-        article_link = featured_video.get("article_link", "")
-        article_html = ""
-        if article_link:
-            article_html = f'<a href="{escape(article_link)}" class="card-link" style="justify-content: center; margin-top: 1rem;">Read the related article →</a>'
-
-        content += f"""
-<div class="divider">
-  <div class="divider-line" style="background: var(--color-rust);"></div>
-  <div class="divider-dot" style="background: var(--color-rust);"></div>
-  <div class="divider-line" style="background: var(--color-rust);"></div>
-</div>
-
-<section class="section" style="background: white; padding: 4rem 0;">
-  <div class="container" style="max-width: 56rem;">
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <h2 class="section-title" style="font-size: 2.5rem;">{video_title}</h2>
-      {article_html}
-    </div>
-    {youtube_embed(featured_video.get("video_id", ""), title=video_title)}
-  </div>
-</section>
-"""
-
-    # =========================
-    # FEATURED ESSAYS
-    # =========================
-    featured_posts = [p for p in posts if p.featured][:4]
-    if featured_posts:
-        content += f"""
-<section class="section" id="featured" style="background: linear-gradient(180deg, var(--color-cream) 0%, white 100%);">
-  <div class="container">
-    <div class="section-header section-header-centered">
-      {pill_badge("Curated Reading", "rust")}
-      <h2 class="section-title" style="margin-top: 1rem;">Featured Essays</h2>
-      <p class="section-description section-description-centered">Recent explorations worth your time</p>
-    </div>
-    <div class="featured-grid">
-"""
-        content += format_featured_card(featured_posts[0])
-        content += '<div style="display: flex; flex-direction: column; gap: 2rem;">'
-        for post in featured_posts[1:]:
-            content += format_card(post, is_small=True)
-        content += "</div></div></div></section>"
-
-    # =========================
-    # NEWSLETTER SIGNUP
-    # =========================
-    content += newsletter_html()
-
-    # =========================
-    # ARCHIVE TEASER
-    # =========================
-    content += f"""
-<section class="section" style="background: white;">
-  <div class="container" style="max-width: 56rem; text-align: center;">
-    <h2 class="section-title" style="font-size: 2rem;">Archive</h2>
-    <p class="section-description section-description-centered" style="margin: 1rem auto 2rem;">
-      A chronological index of essays, organized by year.
-    </p>
-    <a href="{ARCHIVES_FILE}" class="btn btn-secondary">Browse Index →</a>
-  </div>
-</section>
-"""
-
-    # AI Chat Widget (if enabled)
-    content += get_chat_widget_html()
-
-    content += footer_html()
-
-    with open(OUTPUT_DIR / INDEX_FILE, "w", encoding="utf-8") as f:
-        f.write(content)
-
 
 def generate_archives(posts: List[Post]):
     """Generate archives page with a magazine-style index, toggleable
@@ -861,10 +708,10 @@ def generate_archives(posts: List[Post]):
 
     # HERO SECTION
     content += f"""
-<section class="hero" style="padding: 6rem 0 4rem; background: linear-gradient(135deg, var(--color-cream) 0%, white 100%);">
+<section class="hero" style="padding: 6rem 0 4rem;">
   <div class="container">
     <div class="hero-content" style="text-align: center;">
-      <div style="display: inline-block; padding: 0.5rem 1.5rem; background: rgba(184, 80, 62, 0.1); border: 2px solid var(--color-rust); border-radius: 50px; margin-bottom: 2rem;">
+      <div style="display: inline-block; padding: 0.5rem 1.5rem; background: rgba(165, 115, 46, 0.1); border: 1px solid var(--color-rust); border-radius: var(--radius); margin-bottom: 2rem;">
         <p class="hero-label" style="margin: 0; font-weight: 600;">Archive</p>
       </div>
 
@@ -891,11 +738,11 @@ def generate_archives(posts: List[Post]):
 
     <div style="display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 4rem;">
       <button id="tab-year" onclick="showArchiveView('year')"
-        style="padding: 0.6rem 1.75rem; border-radius: 50px; border: 2px solid var(--color-rust); background: var(--color-rust); color: white; font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;">
+        style="padding: 0.6rem 1.75rem; border-radius: var(--radius); border: 1px solid var(--color-rust); background: var(--color-rust); color: white; font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;">
         By year
       </button>
       <button id="tab-category" onclick="showArchiveView('category')"
-        style="padding: 0.6rem 1.75rem; border-radius: 50px; border: 2px solid var(--color-rust); background: transparent; color: var(--color-rust); font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;">
+        style="padding: 0.6rem 1.75rem; border-radius: var(--radius); border: 1px solid var(--color-rust); background: transparent; color: var(--color-rust); font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;">
         By category
       </button>
     </div>

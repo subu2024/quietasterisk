@@ -18,7 +18,9 @@ from similarity import compute_similarity, build_related_map
 from utils import copy_downloads, copy_image, check_duplicate_excerpts
 from generators import (
     generate_index,
+    generate_post_pages,
     generate_books,
+    generate_categories,
     generate_videos,
     generate_about,
     generate_contact,
@@ -70,6 +72,9 @@ def main(write_temp: bool = False):
 
 
     # Generate all pages
+    logger.info("Generating individual post pages...")
+    generate_post_pages(posts, related_map)
+
     logger.info("Generating index page...")
     generate_index(posts, related_map)
     
@@ -81,7 +86,10 @@ def main(write_temp: bool = False):
 
     logger.info("Generating videos page...")  
     generate_videos()   
-    
+
+    logger.info("Generating category pages...")
+    generate_categories(posts)
+
     logger.info("Generating archives page...")  
     generate_archives(posts)   
     

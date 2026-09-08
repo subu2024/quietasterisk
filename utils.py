@@ -272,6 +272,21 @@ def check_duplicate_excerpts(posts: List[Post]) -> None:
             )
 
 
+def arrow_icon() -> str:
+    """
+    Return the small right-pointing arrow SVG used on card/category links.
+
+    Centralizes markup that was previously duplicated across cards.py and
+    generators.py (categories page, videos page) with identical copies.
+
+    Returns:
+        HTML string for a 16x16 inline arrow icon
+    """
+    return ('<svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">'
+            '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>'
+            '</svg>')
+
+
 def youtube_embed(video_id: str, title: str = "YouTube video player", css_class: str = "youtube-embed") -> str:
     """
     Return a responsive 16:9 YouTube iframe embed.

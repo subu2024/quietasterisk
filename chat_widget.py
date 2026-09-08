@@ -7,7 +7,6 @@ from config import (
     AI_CHAT_TITLE, 
     AI_CHAT_PLACEHOLDER,
     AWS_API_ENDPOINT,
-    AWS_API_TOKEN
 )
 
 
@@ -57,7 +56,6 @@ def get_chat_widget_html() -> str:
 
 <script>
 const AWS_API_ENDPOINT = '{AWS_API_ENDPOINT}';
-const AWS_API_TOKEN = '{AWS_API_TOKEN}';
 
 async function sendMessage() {{
   const input = document.getElementById('chat-input');
@@ -103,11 +101,16 @@ async function sendMessage() {{
   messagesDiv.scrollTop = messagesDiv.scrollHeight;
   
   try {{
+    // No Authorization header here on purpose: this script runs in the
+    // visitor's browser, so any token placed here would be public. The
+    // endpoint itself is responsible for its own abuse protection (see
+    // config.ENABLE_AI_CHAT's docstring / newsletter_lambda/handler.py
+    // for the pattern this project uses for secrets that must stay
+    // server-side).
     const response = await fetch(AWS_API_ENDPOINT, {{
       method: 'POST',
       headers: {{
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${{AWS_API_TOKEN}}`
+        'Content-Type': 'application/json'
       }},
       body: JSON.stringify({{
         message: message

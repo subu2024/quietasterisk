@@ -16,7 +16,7 @@ Design notes:
 from html import escape
 
 from models import Post
-from utils import copy_image, category_accent, youtube_embed, slugify
+from utils import copy_image, category_accent, youtube_embed, slugify, arrow_icon
 
 _ACCENT_VARS = {
     "rust": "var(--color-rust)",
@@ -60,9 +60,7 @@ def format_featured_card(post: Post) -> str:
   <p class="card-excerpt">{escape(post.excerpt)}</p>
   <a href="{post.slug}" class="card-link">
     Read Essay
-    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-    </svg>
+    {arrow_icon()}
   </a>
 </article>
 """

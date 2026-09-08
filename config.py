@@ -3,6 +3,7 @@ Configuration module for the Quiet Asterisk blog generator.
 Contains all constants and settings used throughout the application.
 """
 
+import os
 from pathlib import Path
 
 # ==========================================================
@@ -16,6 +17,27 @@ CONTACT_EMAIL = "hello@quietasterisk.com"
 YOUTUBE_CHANNEL = "https://www.youtube.com/@quietasterisk"
 INSTAGRAM_PROFILE = "https://www.instagram.com/quiet.asterisk/"
 LOGO_PATH = "./images/logo.png"  # Relative path to logo in output
+
+# ==========================================================
+# Typography
+# ==========================================================
+# The whole site pulls its fonts from these three values (see
+# styles.get_modern_styles), so changing the site's typeface is a matter of
+# editing this block only — no need to touch styles.py or hunt for a
+# hardcoded @import elsewhere.
+#
+# GOOGLE_FONTS_URL is loaded via @import at the top of the stylesheet.
+# FONT_SERIF / FONT_SANS become the --font-serif / --font-sans CSS custom
+# properties used throughout styles.py; keep a generic fallback (serif /
+# sans-serif) at the end of each stack in case the Google Fonts request
+# fails or is blocked.
+GOOGLE_FONTS_URL = (
+    "https://fonts.googleapis.com/css2?"
+    "family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600"
+    "&family=Inter:wght@400;500;600&display=swap"
+)
+FONT_SERIF = "'Fraunces', Georgia, serif"
+FONT_SANS = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
 
 
 # ==========================================================
@@ -48,13 +70,20 @@ READING_FILE_HTML = "reading.html"
 # this repo) that exports get_chat_widget_html(). If that module isn't
 # present, generators.py falls back to skipping the widget rather than
 # crashing, even when this flag is True.
-import os
-
+#
+# IMPORTANT — architecture: this widget's JS runs in every visitor's
+# browser, so anything in that JS is public, view-source data — the same
+# constraint documented for the newsletter integration above. That means
+# AWS_API_ENDPOINT must NOT require a bearer token/API key to answer a
+# request; there is no secret that can survive being shipped to the client.
+# If the Lambda behind this endpoint needs protecting (rate limiting, abuse
+# prevention), do it server-side — Origin checks, a WAF rule, or API
+# Gateway throttling — the same way newsletter_lambda/handler.py keeps its
+# Resend key out of the static page entirely.
 ENABLE_AI_CHAT = False  # Set to False to disable
 AI_CHAT_TITLE = "Ask Devi"
 AI_CHAT_PLACEHOLDER = "Ask a question about uncertainty in your life ..."
 AWS_API_ENDPOINT = os.environ.get("BLOG_CHAT_API_ENDPOINT", "")
-AWS_API_TOKEN = os.environ.get("BLOG_CHAT_API_TOKEN", "")  # never hardcode secrets here
 
 # ==========================================================
 # Newsletter Signup (Resend)
@@ -85,7 +114,6 @@ NEWSLETTER_SUBHEAD = (
 # ==========================================================
 # Content Settings
 # ==========================================================
-MIN_SNIPPET_LEN = 38
 SIMILARITY_THRESHOLD = 0.17
 POSTS_PER_CATEGORY_PAGE = 3 # Number of posts to show before "Load More"
 BOOKS_ON_HOMEPAGE = 2  # Number of books to show on homepage

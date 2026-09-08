@@ -19,20 +19,6 @@ from utils import show_logo, slugify
 logger = logging.getLogger("BlogGen")
 
 
-def pill_badge(text: str, accent: str = "rust") -> str:
-    """
-    Return a small uppercase pill badge, e.g. for section eyebrows.
-
-    Args:
-        text: Badge text
-        accent: One of "rust", "sage", "gold" (see .pill-badge-* in styles.py)
-
-    Returns:
-        HTML string for the badge
-    """
-    return f'<span class="pill-badge pill-badge-{accent}">{text}</span>'
-
-
 def newsletter_html() -> str:
     """
     Return the email-signup section shown on the homepage.
@@ -159,40 +145,14 @@ def topic_chips_html(categories: List[str], css_class: str = "topic-chip") -> st
     return chips + f'<a href="{CATEGORIES_FILE}" class="{css_class}">All topics →</a>'
 
 
-def topics_nav_html(categories: List[str]) -> str:
-    """Return the standalone row of topic chips used on legacy layouts.
-
-    Gives the homepage a way to browse by theme instead of only by recency.
-    This is a second entry point into the same category-<slug>.html pages
-    that generators.generate_categories() already builds — not a new page
-    type, so there's nothing else to keep in sync.
-
-    Args:
-        categories: Distinct category names present in the published posts.
-
-    Returns:
-        HTML string for the topics strip, or "" if there are no categories.
-    """
-    if not categories:
-        return ""
-
-    return f"""
-<section class="topics-nav">
-  <div class="container topics-nav-inner">
-    <span class="topics-nav-label">Browse by theme</span>
-    {topic_chips_html(categories)}
-  </div>
-</section>
-"""
-
-
 def header_html(title: str, active_page: str = "home") -> str:
     """
     Generate HTML header with navigation.
     
     Args:
         title: Page title for <title> tag
-        active_page: Which nav item is active ("home", "books", "categories", "about", "contact")
+        active_page: Which nav item is active ("home", "books", "videos",
+            "categories", "archives", "about", "contact")
         
     Returns:
         HTML string for header
@@ -225,6 +185,7 @@ def header_html(title: str, active_page: str = "home") -> str:
         <a href="{INDEX_FILE}" class="nav-link {active('home')}">Essays</a>
         <a href="{BOOKS_FILE_HTML}" class="nav-link {active('books')}">Books</a>
         <a href="{VIDEOS_FILE_HTML}" class="nav-link {active('videos')}">Videos</a>
+        <a href="{CATEGORIES_FILE}" class="nav-link {active('categories')}">Categories</a>
         <a href="{ARCHIVES_FILE}" class="nav-link {active('archives')}">Archives</a>
         <a href="{ABOUT_FILE}" class="nav-link {active('about')}">About</a>
       </nav>
@@ -244,8 +205,8 @@ def footer_html() -> str:
   <div class="container">
     <div class="footer-content">
       <div>
-        <a href="{INDEX_FILE}" class="logo" style="color: var(--color-cream);">{BLOG_TITLE}{show_logo(LOGO_PATH, 20)}</a>
-        <p style="margin-top: 1rem; color: var(--color-sand);">{TAG_LINE}</p>
+        <a href="{INDEX_FILE}" class="logo">{BLOG_TITLE}{show_logo(LOGO_PATH, 20)}</a>
+        <p style="margin-top: 1rem; color: var(--color-slate);">{TAG_LINE}</p>
       </div>
       <div>
         <h4 class="footer-section-title">Explore</h4>
@@ -260,7 +221,7 @@ def footer_html() -> str:
       </div>
       <div>
         <h4 class="footer-section-title">Connect</h4>
-        <p style="color: var(--color-sand); margin-bottom: 1rem;">Get in touch</p>
+        <p style="color: var(--color-slate); margin-bottom: 1rem;">Get in touch</p>
         <a href="mailto:{CONTACT_EMAIL}" class="footer-link" style="display: block; margin-bottom: 0.5rem;">{CONTACT_EMAIL}</a>
         <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
           <a href="{YOUTUBE_CHANNEL}" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="YouTube Channel" title="YouTube Channel">
