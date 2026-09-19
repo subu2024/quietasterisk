@@ -84,7 +84,7 @@ READING_FILE_HTML = "reading.html"
 # If the Lambda behind this endpoint needs protecting (rate limiting, abuse
 # prevention), do it server-side — Origin checks, a WAF rule, or API
 # Gateway throttling — the same way newsletter_lambda/handler.py keeps its
-# Resend key out of the static page entirely.
+# Resend key out of the static page entirely 
 ENABLE_AI_CHAT = False  # Set to False to disable
 AI_CHAT_TITLE = "Ask Devi"
 AI_CHAT_PLACEHOLDER = "Ask a question about uncertainty in your life ..."
