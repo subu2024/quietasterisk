@@ -1,13 +1,12 @@
 ---
 title: The Half-Second Before the Horn
 date: 2026-10-01
-slug: descale
+slug: half-second-before-horn
 excerpt: presence and autopilot are both modes you're supposed to use, not one you're supposed to win — the actual skill is switching between them on purpose, in a life where effort shifts your odds but never fixes your outcome.
 category: Self-Awareness & EQ
 featured: true
 archived: false
 ---
-
 
 > A thought arrives already dressed,  
 > already certain, already yours —  
