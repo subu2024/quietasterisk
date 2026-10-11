@@ -14,8 +14,12 @@ Design notes:
 """
 
 from html import escape
+from typing import List, Tuple
+from urllib.parse import quote
 
+from config import BOOK_READ_LABEL
 from models import Post
+from chapters import get_book_chapters
 from utils import copy_image, category_accent, youtube_embed, slugify, arrow_icon
 
 _ACCENT_VARS = {
@@ -137,7 +141,7 @@ def format_reading_note_card(note: dict, cross_link_html: str = "") -> str:
 """
 
 
-def format_book_card(book: dict, show_full_description: bool = False, cross_link_html: str = "") -> str:
+def format_book_card(book: dict, show_full_description: bool = False, cross_link_html: str = "", read_url: str = "") -> str:
     """
     Generate book card with cover image and buy button.
 
@@ -148,6 +152,9 @@ def format_book_card(book: dict, show_full_description: bool = False, cross_link
             also has a reading note (see generate_books in generators.py),
             so the two entries point at each other instead of sitting on
             disconnected pages.
+        read_url: Optional chapter-list page (chapters.BookChapters.toc_url).
+            When given, a "Read Me" button is shown next to the buy/download
+            button.
 
     Returns:
         HTML string for book card
@@ -169,13 +176,20 @@ def format_book_card(book: dict, show_full_description: bool = False, cross_link
     if book.get("video_id"):
         video_html = youtube_embed(book.get("video_id"), title=f"Video about {book.get('title', '')}")
 
-    # Buy button if link exists
+    # Read button (chapters on this site) + buy/download button if link exists
     link_html = ""
     link_url = book.get("link", "")
+    if read_url:
+        link_html += f'''
+        <a href="{escape(read_url)}" class="btn btn-secondary"
+           style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block; margin-right: 0.5rem; margin-bottom: 0.5rem;">
+          {escape(BOOK_READ_LABEL)}
+        </a>
+        '''
     if link_url:
-        link_html = f'''
+        link_html += f'''
         <a href="{escape(link_url)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
-           style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block;">
+           style="font-size: 0.875rem; padding: 0.75rem 1.5rem; display: inline-block; margin-bottom: 0.5rem;">
           {escape(book.get("linkDescription", "Buy Book"))}
         </a>
         '''
@@ -206,4 +220,92 @@ def format_book_card(book: dict, show_full_description: bool = False, cross_link
   </div>
   {video_html}
 </div>
+"""
+
+
+def book_actions(book: dict) -> List[Tuple[str, str, str, bool]]:
+    """
+    Work out which action buttons a book gets.
+
+    Returns a list of (kind, label, href, is_external) tuples, in display
+    order, where kind is "read", "buy" or "download":
+
+    - "read": the book has chapters on this site (see config.BOOK_CHAPTER_FOLDERS).
+    - "buy": books.json `link` is an absolute http(s) URL (e.g. Amazon).
+    - "download": books.json `link` is a relative path (e.g. downloads/x.pdf).
+
+    The buy/download label comes from books.json `linkDescription`
+    ("Buy on Amazon", "Download Free PDF") with a plain default.
+    A book with an empty `link` (the "Not Available" entries) gets no
+    buy/download action.
+    """
+    actions: List[Tuple[str, str, str, bool]] = []
+
+    chapters = get_book_chapters(book.get("title", ""))
+    if chapters:
+        actions.append(("read", BOOK_READ_LABEL, chapters.toc_url, False))
+
+    link = (book.get("link") or "").strip()
+    if link:
+        if link.lower().startswith(("http://", "https://")):
+            actions.append(("buy", book.get("linkDescription") or "Buy Me", link, True))
+        else:
+            actions.append(("download", book.get("linkDescription") or "Download",
+                            quote(link, safe="/"), False))
+    return actions
+
+
+def book_action_buttons(book: dict, include_read: bool = True) -> str:
+    """
+    Render book_actions() as anchor buttons using the shared .btn classes
+    (the first one is primary). Pass include_read=False on the book's own
+    chapter-list page, where a "Read Me" button would just link to itself.
+    """
+    html = []
+    actions = [a for a in book_actions(book) if include_read or a[0] != "read"]
+    for index, (kind, label, href, external) in enumerate(actions):
+        variant = "btn-primary" if index == 0 else "btn-secondary"
+        attrs = ' target="_blank" rel="noopener noreferrer"' if external else ""
+        if kind == "download":
+            attrs += " download"
+        html.append(f'<a href="{escape(href)}" class="btn {variant}"{attrs}>{escape(label)}</a>')
+    return "".join(html)
+
+
+def format_book_action_row(book: dict) -> str:
+    """
+    Compact homepage row for one book: cover, title, description, and its
+    Read Me / Download / Buy buttons (see book_actions).
+
+    Styled by .qa-book* in styles.py (scoped under .quiet-home).
+    """
+    title = book.get("title", "")
+
+    img_html = ""
+    if book.get("image"):
+        img = copy_image(book.get("image"))
+        if img:
+            img_html = f'<div class="qa-book-cover"><img src="{img}" alt="Cover of {escape(title)}" loading="lazy"></div>'
+
+    buttons = []
+    for kind, label, href, external in book_actions(book):
+        variant = "qa-book-btn--outline" if buttons else "qa-book-btn--solid"
+        attrs = ' target="_blank" rel="noopener noreferrer"' if external else ""
+        if kind == "download":
+            attrs += " download"
+        buttons.append(f'<a class="qa-book-btn {variant}" href="{escape(href)}"{attrs}>{escape(label)}</a>')
+
+    if not buttons:
+        buttons.append(f'<span class="qa-book-unavailable">{escape(book.get("linkDescription") or "Not available")}</span>')
+
+    modifier = "" if img_html else " qa-book--no-cover"
+    return f"""
+<article class="qa-book{modifier}" id="book-{slugify(title)}">
+  {img_html}
+  <div class="qa-book-body">
+    <h3>{escape(title)}</h3>
+    <p>{escape(book.get("description", ""))}</p>
+  </div>
+  <div class="qa-book-actions">{"".join(buttons)}</div>
+</article>
 """

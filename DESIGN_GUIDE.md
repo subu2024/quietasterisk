@@ -93,6 +93,7 @@ of the site (see git history / prior review notes).
 | `format_featured_card(post)`                          | Large hero card, spans 2 grid rows (`.card-featured`).                                                              |
 | `format_book_card(book, show_full_description=False)` | Book card with cover thumbnail, author/year, optional YouTube embed, buy button.                                    |
 | `format_reading_note_card(note)`                      | Compact book-log entry.                                                                                             |
+| `format_book_action_row(book)`                        | Compact homepage book row: cover, title, description, Read Me / Download / Buy buttons (`.qa-book*`).               |
 
 All four escape user/JSON-authored text automatically (`html.escape`) — don't
 re-escape or bypass them by writing markup manually.
@@ -181,6 +182,31 @@ Why not the alternatives:
   for a site-wide setting.
 - **Fenced code block** — preserves line breaks correctly but renders
   in a monospace/code font, which reads wrong for verse.
+
+### Book chapters — `chapters.py`, `generators.generate_book_chapter_pages()`
+
+A book in `books.json` becomes readable online when `config.BOOK_CHAPTER_FOLDERS`
+maps its title (exactly as written in the JSON) to a folder under
+`config.BOOK_CHAPTERS_DIR`. One markdown file per chapter, ordered by filename
+(natural sort, so `2-x.md` precedes `10-x.md`). Front matter:
+
+```
+---
+title: Chapter title
+synopsis: One line.
+keywords: a, b, c
+lock: false        # true/yes/1 = locked
+---
+```
+
+Pages generated (flat, in the output root):
+
+- `book-<folder>.html` — chapter list (`.chapter-list`, `.chapter-item`), each with its synopsis and a `.chapter-lock-badge` if locked. This is the target of the **Home** button.
+- `book-<folder>-<file-slug>.html` — one page per chapter, reusing `.post-content` / `.post-header` / `.post-body`, plus `.chapter-lead` (synopsis), `.chapter-keywords`, and `.chapter-nav` (Previous / Home / Next, shown top and bottom; Previous/Next only render when that chapter exists).
+
+**Locked chapters** keep their title, synopsis, keywords and nav buttons, but the body is *never rendered* (not hidden by CSS — it isn't in the HTML at all). `config.BOOK_LOCKED_MESSAGE` is shown in `.chapter-locked` instead.
+
+**Buttons** come from one function, `cards.book_actions(book)`: *Read Me* if the book has chapters, plus *Buy* (absolute `http(s)` link) or *Download* (relative link) using `linkDescription` from `books.json` for the label. The homepage row, the Books page card and the chapter-list hero all use it, so they can't disagree.
 
 ### Newsletter signup — `templates.newsletter_html()`
 

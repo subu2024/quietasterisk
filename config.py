@@ -124,6 +124,47 @@ POSTS_PER_CATEGORY_PAGE = 3 # Number of posts to show before "Load More"
 BOOKS_ON_HOMEPAGE = 2  # Number of books to show on homepage
 
 # ==========================================================
+# Book Chapters (online reading)
+# ==========================================================
+# A book listed in books.json can optionally be readable on the site, one
+# page per chapter. Each chapter is a markdown file; all chapters of a book
+# live together in their own folder under BOOK_CHAPTERS_DIR:
+#
+#   book_chapters/
+#     the_quiet_asterisk/        <- folder name goes in BOOK_CHAPTER_FOLDERS
+#       01-the-asterisk.md
+#       02-small-numbers.md      <- chapters are ordered by filename
+#
+# Each chapter file starts with front matter:
+#
+#   ---
+#   title: The Asterisk
+#   synopsis: One line describing the chapter.
+#   keywords: probability, patience, chance
+#   lock: false                 <- true/yes/1 hides the body (see below)
+#   ---
+#
+# BOOK_CHAPTER_FOLDERS maps a book's title, EXACTLY as written in
+# books.json, to its folder name inside BOOK_CHAPTERS_DIR. A book with no
+# entry here simply doesn't get a "Read Me" button. A mismatched title or a
+# missing folder is logged as a warning on every build.
+BOOK_CHAPTERS_DIR = Path("./book_chapters")
+BOOK_CHAPTER_FOLDERS = {
+    "Life is Happenning": "life_is_happenning",
+}
+
+BOOK_READ_LABEL = "Read Me"
+
+# Shown in place of the chapter text when a chapter has `lock: true`.
+# The locked chapter's body is never written into the generated HTML at
+# all (it isn't just hidden with CSS), so it can't be read via view-source.
+# Plain text only; it is HTML-escaped when rendered.
+BOOK_LOCKED_MESSAGE = (
+    "This chapter is locked for now. Check back soon, or pick up the book "
+    "to read it in full."
+)
+
+# ==========================================================
 # Temporary Files
 # ==========================================================
 TEMP_CONTENT_FILE = "temp_content.txt"
