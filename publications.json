@@ -1,0 +1,32 @@
+{
+  "defaults": {
+    "start_label": "Start with Chapter 1",
+    "see_all_label": "See all chapters",
+    "home_label": "All chapters",
+    "locked_message": "This chapter is locked for now. Check back soon, or pick up the book to read it in full.",
+    "show_on_home": true
+  },
+  "publications": [
+    {
+      "title": "Sunday Odds",
+      "folder": "sunday_odds",
+      "page_prefix": "series",
+      "eyebrow": "The Series",
+      "premise": "A fiction series about money. Each Sunday, in her mother's kitchen in Fairfax, Virginia, Anika brings a question about her first real paycheck, and Revathi, who has worked in markets for twenty-six years, answers in odds instead of certainties.",
+      "intro": "Every Sunday, Anika drives to her mother's kitchen with a question she can't get a straight answer to online. Revathi sketches the numbers on a napkin, disagrees with her, and ends with one Monday Move. Money, here, is a set of odds, not a set of rules.",
+      "read_note": "New chapters on Sundays. Best read in order.",
+      "disclaimer": "Sunday Odds is a fiction series about money. Revathi and Anika are fictional, and the figures are illustrative. This is education, not personalized financial, tax or legal advice.",
+      "speakers": ["Revathi", "Anika"],
+      "locked_message": "This chapter is locked for now. Check back soon, or pick up the book to read it in full."
+    },
+    {
+      "title": "Life is Happenning",
+      "folder": "life_is_happenning",
+      "linked_book": "Life is Happenning",
+      "eyebrow": "← All Books",
+      "eyebrow_url": "books.html",
+      "premise": "A practical, funny, and occasionally enlightening guide to actually showing up for your own life.",
+      "start_label": "Start reading"
+    }
+  ]
+}

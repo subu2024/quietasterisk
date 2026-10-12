@@ -9,10 +9,9 @@ from typing import List
 
 from config import (
     BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, LOGO_PATH, INSTAGRAM_PROFILE,
-    INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, ESSAYS_FILE,
+    INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, CONTACT_FILE, ESSAYS_FILE,
     NEWSLETTER_ENABLED, NEWSLETTER_API_ENDPOINT, NEWSLETTER_HEADING, NEWSLETTER_SUBHEAD
 )
-from chapters import get_series
 from styles import get_modern_styles
 
 from utils import show_logo, slugify
@@ -138,22 +137,15 @@ def header_html(title: str, active_page: str = "home") -> str:
     
     Args:
         title: Page title for <title> tag
-        active_page: Which nav item is active: "series", "essays" or "about".
-            Any other value ("home", "books", "contact", ...) highlights
-            nothing — those pages aren't in the main nav.
+        active_page: Which nav item is active: "essays" or "about".
+            Any other value ("home", "books", "contact", reading pages, ...)
+            highlights nothing — those pages aren't in the main nav.
         
     Returns:
         HTML string for header
     """
     def active(page: str) -> str:
         return "active" if active_page == page else ""
-
-    # The Series link only appears once the series has chapters to read.
-    series = get_series()
-    series_link = (
-        f'<a href="{series.toc_url}" class="nav-link {active("series")}">Series</a>\n        '
-        if series else ""
-    )
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -177,7 +169,7 @@ def header_html(title: str, active_page: str = "home") -> str:
     <div class="header-content">
       <a href="{INDEX_FILE}" class="logo">{BLOG_TITLE}{show_logo(LOGO_PATH, 70)}</a>
       <nav class="nav" aria-label="Main">
-        {series_link}<a href="{ESSAYS_FILE}" class="nav-link {active('essays')}">Essays</a>
+        <a href="{ESSAYS_FILE}" class="nav-link {active('essays')}">Essays</a>
         <a href="{ABOUT_FILE}" class="nav-link {active('about')}">About</a>
       </nav>
     </div>
@@ -190,8 +182,6 @@ def header_html(title: str, active_page: str = "home") -> str:
 
 def footer_html() -> str:
     """Generate the footer: brand line, a short link list, and contact."""
-    series = get_series()
-    series_link = f'<a href="{series.toc_url}" class="footer-link">Series</a>\n          ' if series else ""
     return f"""
 </main>
 <footer class="footer">
@@ -200,12 +190,11 @@ def footer_html() -> str:
       <div>
         <a href="{INDEX_FILE}" class="logo">{BLOG_TITLE}{show_logo(LOGO_PATH, 20)}</a>
         <p style="margin-top: 1rem; color: var(--color-slate);">{TAG_LINE}</p>
-        <p class="footer-also">Also by the author: <a href="{BOOKS_FILE_HTML}" class="footer-link footer-link-underlined">books</a></p>
       </div>
       <div>
         <h4 class="footer-section-title">Explore</h4>
         <nav class="footer-nav" aria-label="Footer">
-          {series_link}<a href="{ESSAYS_FILE}" class="footer-link">Essays</a>
+          <a href="{ESSAYS_FILE}" class="footer-link">Essays</a>
           <a href="{ABOUT_FILE}" class="footer-link">About</a>
           <a href="{CONTACT_FILE}" class="footer-link">Contact</a>
         </nav>

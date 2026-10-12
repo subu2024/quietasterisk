@@ -20,7 +20,7 @@ from urllib.parse import quote
 
 from config import BOOK_READ_LABEL
 from models import Post
-from chapters import get_book_chapters
+from chapters import get_publication_for_book
 from utils import copy_image, category_accent, youtube_embed, slugify, arrow_icon
 
 _ACCENT_VARS = {
@@ -176,7 +176,7 @@ def format_book_card(book: dict, show_full_description: bool = False, cross_link
             also has a reading note (see generate_books in generators.py),
             so the two entries point at each other instead of sitting on
             disconnected pages.
-        read_url: Optional chapter-list page (chapters.BookChapters.toc_url).
+        read_url: Optional chapter-list page (chapters.Publication.toc_url).
             When given, a "Read Me" button is shown next to the buy/download
             button.
 
@@ -254,7 +254,7 @@ def book_actions(book: dict) -> List[Tuple[str, str, str, bool]]:
     Returns a list of (kind, label, href, is_external) tuples, in display
     order, where kind is "read", "buy" or "download":
 
-    - "read": the book has chapters on this site (see config.BOOK_CHAPTER_FOLDERS).
+    - "read": the book has chapters on this site (a publications.json entry whose "linked_book" is this title).
     - "buy": books.json `link` is an absolute http(s) URL (e.g. Amazon).
     - "download": books.json `link` is a relative path (e.g. downloads/x.pdf).
 
@@ -265,9 +265,9 @@ def book_actions(book: dict) -> List[Tuple[str, str, str, bool]]:
     """
     actions: List[Tuple[str, str, str, bool]] = []
 
-    chapters = get_book_chapters(book.get("title", ""))
-    if chapters:
-        actions.append(("read", BOOK_READ_LABEL, chapters.toc_url, False))
+    publication = get_publication_for_book(book.get("title", ""))
+    if publication:
+        actions.append(("read", BOOK_READ_LABEL, publication.toc_url, False))
 
     link = (book.get("link") or "").strip()
     if link:

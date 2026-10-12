@@ -1,32 +1,56 @@
 """
-Book chapters: model, loading, ordering, and URL helpers.
+Publications: online-readable series and books, loaded from publications.json.
 
-A book in books.json becomes "readable" when config.BOOK_CHAPTER_FOLDERS
-maps its title to a folder of markdown files under config.BOOK_CHAPTERS_DIR.
-Each file is one chapter; chapters are ordered by filename (natural sort, so
-2-x.md comes before 10-x.md).
+A "publication" is anything readable chapter by chapter on the site, whether
+it is a fiction series like Sunday Odds or a book from books.json. Every
+publication is one entry in config.PUBLICATIONS_FILE and has its own folder of
+markdown chapters under config.BOOK_CHAPTERS_DIR. Adding another one needs no
+code changes: add a folder and add an entry.
 
-Page naming (all flat, in the output root like every other page):
-    book-<folder-slug>.html                     chapter list ("Home" button)
-    book-<folder-slug>-<chapter-file-slug>.html one page per chapter
+publications.json shape:
 
-The site's one non-fiction series (config.SERIES_TITLE) uses the same
-machinery, but with its own page names:
-    series.html                                 chapter list
-    series-<chapter-file-slug>.html             one page per chapter
+    {
+      "defaults": { ...values used when an entry omits them... },
+      "publications": [
+        {
+          "title": "Sunday Odds",          required, shown on pages
+          "folder": "sunday_odds",         required, under BOOK_CHAPTERS_DIR
+          "page_prefix": "series",         optional, default "book-<folder-slug>"
+          "linked_book": "<title>",        optional, exact title in books.json;
+                                           adds Buy/Download buttons and falls
+                                           back to that book's description
+          "eyebrow": "The Series",         small label above the title
+          "eyebrow_url": "books.html",     optional, makes the eyebrow a link
+          "premise": "...",                homepage card text
+          "intro": "...",                  top of the chapter-list page
+          "read_note": "...",              line under the intro
+          "disclaimer": "...",             shown on every chapter + chapter list
+          "speakers": ["Revathi", ...],    enables **Name:** dialogue styling
+          "locked_message": "...",         shown instead of a locked chapter
+          "start_label": "...",            first-chapter button label
+          "see_all_label": "...",          homepage secondary button label
+          "home_label": "...",             chapter-nav "up" button label
+          "show_on_home": true             feature on the homepage
+        }
+      ]
+    }
+
+Page naming (flat, in the output root):
+    <page_prefix>.html                      chapter list
+    <page_prefix>-<chapter-file-slug>.html  one page per chapter
+
+Chapters are ordered by filename (natural sort, so 2-x.md comes before 10-x.md).
 """
 
 import re
+import json
 import logging
 from dataclasses import dataclass, field
 from functools import lru_cache
 from pathlib import Path
 from typing import List, Optional, Dict, Tuple
 
-from config import (
-    BOOK_CHAPTERS_DIR, BOOK_CHAPTER_FOLDERS,
-    SERIES_TITLE, SERIES_FOLDER, SERIES_FILE,
-)
+from config import BOOK_CHAPTERS_DIR, PUBLICATIONS_FILE
 from utils import slugify
 
 logger = logging.getLogger("BlogGen")
@@ -34,22 +58,31 @@ logger = logging.getLogger("BlogGen")
 _FRONT_MATTER_RE = re.compile(r"\A\s*---[ \t]*\n(.*?)\n---[ \t]*(?:\n|\Z)(.*)\Z", re.DOTALL)
 _TRUE_VALUES = ("true", "yes", "1")
 
+# Used only if publications.json has no "defaults" block (or omits a key).
+_BUILTIN_DEFAULTS = {
+    "start_label": "Start with Chapter 1",
+    "see_all_label": "See all chapters",
+    "home_label": "All chapters",
+    "locked_message": "This chapter is locked for now. Check back soon.",
+    "show_on_home": True,
+}
+
 
 @dataclass
 class Chapter:
-    """One chapter of a book, parsed from a markdown file."""
+    """One chapter of a publication, parsed from a markdown file."""
 
     path: Path
-    slug: str          # file-based slug, unique within the book
-    number: int        # 1-based position in the book
+    slug: str          # file-based slug, unique within the publication
+    number: int        # 1-based position
     title: str
     synopsis: str
     keywords: List[str]
     locked: bool
     body: str
-    page_prefix: str = ""   # "book-<folder>" for books, "series" for the series
-    asterisk: str = ""      # optional closing note: the line this chapter leaves you with
-    teaser: str = ""        # optional "Next Sunday, ..." line shown after the closing note
+    page_prefix: str = ""
+    asterisk: str = ""   # optional closing note: the line this chapter leaves you with
+    teaser: str = ""     # optional "Next Sunday, ..." line shown after the closing note
 
     @property
     def url(self) -> str:
@@ -62,24 +95,41 @@ class Chapter:
 
 
 @dataclass
-class BookChapters:
-    """All chapters of one book, in reading order."""
+class Publication:
+    """A series or book and all its chapters, in reading order."""
 
-    book_title: str
+    title: str
     slug: str
-    page_prefix: str = ""
-    is_series: bool = False
+    page_prefix: str
+    folder: str
     chapters: List[Chapter] = field(default_factory=list)
+    linked_book: str = ""
+    eyebrow: str = ""
+    eyebrow_url: str = ""
+    premise: str = ""
+    intro: str = ""
+    read_note: str = ""
+    disclaimer: str = ""
+    speakers: Tuple[str, ...] = ()
+    locked_message: str = ""
+    start_label: str = ""
+    see_all_label: str = ""
+    home_label: str = ""
+    show_on_home: bool = True
 
     @property
     def toc_url(self) -> str:
-        """The chapter-list page (also the target of the Home / All chapters button)."""
+        """The chapter-list page (also the target of the up/"All chapters" button)."""
         return f"{self.page_prefix}.html"
 
     @property
     def first_chapter(self) -> Optional[Chapter]:
         return self.chapters[0] if self.chapters else None
 
+
+# ----------------------------------------------------------------------
+# Chapter files
+# ----------------------------------------------------------------------
 
 def _natural_key(path: Path):
     return [int(t) if t.isdigit() else t.lower() for t in re.split(r"(\d+)", path.name)]
@@ -114,35 +164,8 @@ def _parse_keywords(raw: str) -> List[str]:
     return [k.strip().strip("\"'") for k in raw.split(",") if k.strip().strip("\"'")]
 
 
-@lru_cache(maxsize=None)
-def get_book_chapters(book_title: str) -> Optional[BookChapters]:
-    """
-    Load a book's chapters, or None if the book has no chapter folder
-    configured / the folder is missing or empty.
-
-    Cached per title so the homepage, the Books page and the chapter
-    generator all share one read (and each warning is logged only once).
-    """
-    is_series = book_title == SERIES_TITLE
-    folder_name = SERIES_FOLDER if is_series else BOOK_CHAPTER_FOLDERS.get(book_title)
-    if not folder_name:
-        return None
-
-    folder = BOOK_CHAPTERS_DIR / folder_name
-    if not folder.is_dir():
-        logger.warning(
-            "%r maps to chapter folder %s, which does not exist — "
-            "no chapters will be published for it.", book_title, folder
-        )
-        return None
-
+def _load_chapters(folder: Path, page_prefix: str) -> List[Chapter]:
     files = sorted(folder.glob("*.md"), key=_natural_key)
-    if not files:
-        logger.warning("Chapter folder %s has no .md files — skipping book %r.", folder, book_title)
-        return None
-
-    book_slug = slugify(folder_name) or slugify(book_title) or "book"
-    page_prefix = Path(SERIES_FILE).stem if is_series else f"book-{book_slug}"
     chapters: List[Chapter] = []
     used_slugs = set()
 
@@ -182,41 +205,125 @@ def get_book_chapters(book_title: str) -> Optional[BookChapters]:
             asterisk=meta.get("asterisk", ""),
             teaser=meta.get("teaser", ""),
         ))
+    return chapters
 
-    if not chapters:
-        return None
-    return BookChapters(
-        book_title=book_title, slug=book_slug, page_prefix=page_prefix,
-        is_series=is_series, chapters=chapters,
-    )
+
+# ----------------------------------------------------------------------
+# publications.json
+# ----------------------------------------------------------------------
+
+def _read_publications_config() -> Tuple[dict, List[dict]]:
+    """Return (defaults, entries) from PUBLICATIONS_FILE; ({}, []) if absent."""
+    path = Path(PUBLICATIONS_FILE)
+    if not path.exists():
+        logger.warning("%s not found — no series or book chapters will be published.", path)
+        return {}, []
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as e:
+        raise SystemExit(f"Cannot read {path}: {e}")
+
+    # Accept a bare list of entries as well as {"defaults": ..., "publications": [...]}.
+    if isinstance(data, list):
+        return {}, data
+    return data.get("defaults", {}) or {}, data.get("publications", []) or []
 
 
 @lru_cache(maxsize=None)
-def get_series() -> Optional[BookChapters]:
+def get_publications() -> Tuple[Publication, ...]:
     """
-    The site's non-fiction series, or None if it has no chapters yet.
+    Every publication that has at least one chapter, in the order listed in
+    publications.json.
 
-    Cached because every page header asks for it (to decide whether to show
-    the Series nav link), and the placeholder-title warning should be logged
-    once per build, not once per page.
+    Cached so the homepage, the Books page and the page generator share one
+    read (and each warning is logged only once per build). Entries with a
+    missing/invalid folder or no chapters are skipped with a warning.
     """
-    series = get_book_chapters(SERIES_TITLE)
-    if series and SERIES_TITLE.startswith("["):
-        logger.warning(
-            "config.SERIES_TITLE is still the placeholder %r — set the real "
-            "series title before publishing.", SERIES_TITLE
-        )
-    return series
+    defaults, entries = _read_publications_config()
+    defaults = {**_BUILTIN_DEFAULTS, **defaults}
+
+    publications: List[Publication] = []
+    used_prefixes = set()
+
+    for position, entry in enumerate(entries, start=1):
+        title = (entry.get("title") or "").strip()
+        folder_name = (entry.get("folder") or "").strip()
+        if not title or not folder_name:
+            logger.warning("%s entry #%d needs both \"title\" and \"folder\" — skipped.",
+                           PUBLICATIONS_FILE, position)
+            continue
+        if title.startswith("["):
+            logger.warning("Publication title %r looks like a placeholder — set the real "
+                           "title before publishing.", title)
+
+        folder = Path(BOOK_CHAPTERS_DIR) / folder_name
+        if not folder.is_dir():
+            logger.warning("%r maps to chapter folder %s, which does not exist — "
+                           "no chapters will be published for it.", title, folder)
+            continue
+
+        slug = slugify(folder_name) or slugify(title) or "publication"
+        page_prefix = (entry.get("page_prefix") or f"book-{slug}").strip()
+        if page_prefix in used_prefixes:
+            logger.warning("Publication %r reuses page_prefix %r already used above — "
+                           "its pages would overwrite the other's. Skipped.", title, page_prefix)
+            continue
+        used_prefixes.add(page_prefix)
+
+        chapters = _load_chapters(folder, page_prefix)
+        if not chapters:
+            logger.warning("Chapter folder %s has no readable .md files — skipping %r.", folder, title)
+            continue
+
+        def pick(key: str) -> str:
+            return entry.get(key, defaults.get(key, "")) or ""
+
+        publications.append(Publication(
+            title=title,
+            slug=slug,
+            page_prefix=page_prefix,
+            folder=folder_name,
+            chapters=chapters,
+            linked_book=(entry.get("linked_book") or "").strip(),
+            eyebrow=pick("eyebrow"),
+            eyebrow_url=pick("eyebrow_url"),
+            premise=pick("premise"),
+            intro=pick("intro"),
+            read_note=pick("read_note"),
+            disclaimer=pick("disclaimer"),
+            speakers=tuple(entry.get("speakers", defaults.get("speakers", [])) or []),
+            locked_message=pick("locked_message"),
+            start_label=pick("start_label"),
+            see_all_label=pick("see_all_label"),
+            home_label=pick("home_label"),
+            show_on_home=bool(entry.get("show_on_home", defaults.get("show_on_home", True))),
+        ))
+
+    return tuple(publications)
 
 
-def warn_about_unmatched_folder_config(books: List[dict]) -> None:
-    """Warn if BOOK_CHAPTER_FOLDERS has a key that matches no book in books.json."""
-    titles = {b.get("title", "") for b in books}
-    for key in BOOK_CHAPTER_FOLDERS:
-        if key not in titles:
+def get_publication_for_book(book_title: str) -> Optional[Publication]:
+    """The publication linked to a books.json title (via "linked_book"), if any."""
+    key = (book_title or "").strip().casefold()
+    if not key:
+        return None
+    for pub in get_publications():
+        if pub.linked_book and pub.linked_book.strip().casefold() == key:
+            return pub
+    return None
+
+
+def warn_about_unmatched_book_links(books: List[dict]) -> None:
+    """Warn if a publication's "linked_book" matches no title in books.json."""
+    titles = {b.get("title", "").strip().casefold() for b in books}
+    _, entries = _read_publications_config()
+    for entry in entries:
+        link = (entry.get("linked_book") or "").strip()
+        if link and link.casefold() not in titles:
             logger.warning(
-                "BOOK_CHAPTER_FOLDERS has an entry for %r, but no book in books.json "
-                "has that exact title — its chapters will not be published.", key
+                "Publication %r has linked_book %r, but no book in books.json has that "
+                "title — its Buy/Download buttons and description fallback won't apply.",
+                entry.get("title"), link
             )
 
 

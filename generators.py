@@ -15,9 +15,7 @@ from config import (
     BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, VIDEOS_FILE_HTML,
     INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, INSTAGRAM_PROFILE,
     OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, HOME_ESSAYS_COUNT, ESSAYS_FILE, ARCHIVES_FILE, SITE_URL,
-    READING_FILE_HTML, BOOK_LOCKED_MESSAGE,
-    SERIES_TITLE, SERIES_EYEBROW, SERIES_PREMISE, SERIES_INTRO, SERIES_READ_NOTE,
-    SERIES_SPEAKERS, SERIES_LOCKED_MESSAGE, SERIES_DISCLAIMER,
+    READING_FILE_HTML,
 )
 
 
@@ -34,7 +32,8 @@ from cards import (
     book_action_buttons,
 )
 from chapters import (
-    get_book_chapters, get_series, warn_about_unmatched_folder_config, lock_icon, BookChapters,
+    get_publications, get_publication_for_book, warn_about_unmatched_book_links,
+    lock_icon, Publication,
 )
 from utils import (
     copy_image, load_books, load_categories, slugify, load_videos, load_reading_notes,
@@ -281,7 +280,7 @@ def generate_books():
                     f'<a href="#note-{anchor}" class="book-cross-link">'
                     f"I wrote a reading note on this one too →</a>"
                 )
-            book_chapters = get_book_chapters(book.get("title", ""))
+            book_chapters = get_publication_for_book(book.get("title", ""))
             content += format_book_card(
                 book,
                 show_full_description=True,
@@ -303,17 +302,17 @@ def generate_books():
         f.write(content)
 
 
-def _chapter_nav_html(book: BookChapters, index: int, home_label: str = "Home") -> str:
+def _chapter_nav_html(pub: Publication, index: int) -> str:
     """
-    Previous / Home / Next buttons for a chapter page.
+    Previous / up / Next buttons for a chapter page.
 
-    Home goes to the chapter list (labelled "All chapters" for the series).
+    The middle button goes to the chapter list (label: pub.home_label).
     Previous/Next only render when that neighbouring chapter exists; an empty
-    placeholder keeps Home centred when one side is missing. Locked
-    neighbours still get a button — the lock is handled on the destination
-    page.
+    placeholder keeps the middle button centred when one side is missing.
+    Locked neighbours still get a button — the lock is handled on the
+    destination page.
     """
-    chapters = book.chapters
+    chapters = pub.chapters
     prev_html = next_html = "<span></span>"
     if index > 0:
         prev_html = f'<a href="{chapters[index - 1].url}" class="btn btn-secondary chapter-nav-prev" rel="prev">← Previous</a>'
@@ -322,32 +321,33 @@ def _chapter_nav_html(book: BookChapters, index: int, home_label: str = "Home") 
     return (
         f'<nav class="chapter-nav" aria-label="Chapter navigation">'
         f'{prev_html}'
-        f'<a href="{book.toc_url}" class="btn btn-primary">{escape(home_label)}</a>'
+        f'<a href="{pub.toc_url}" class="btn btn-primary">{escape(pub.home_label)}</a>'
         f'{next_html}</nav>'
     )
 
 
-def _format_dialogue(html_body: str) -> str:
+def _format_dialogue(html_body: str, speakers) -> str:
     """
     Turn speaker-tagged paragraphs into labelled dialogue.
 
-    In a series chapter's markdown, start a paragraph with the speaker in
-    bold:
+    In a chapter's markdown, start a paragraph with the speaker in bold:
 
         **Daughter:** Why does everyone talk about money like it's a secret?
 
-    and it renders as a small "Daughter" label above the paragraph. Only
-    the names in config.SERIES_SPEAKERS are recognised; follow-on paragraphs
-    from the same speaker are written as plain paragraphs. Each speaker also
-    gets a position class (dialogue-s0, dialogue-s1) so the stylesheet can
-    give each a different side-rule colour without knowing their names.
+    and it renders as a small "Daughter" label above the paragraph. Only the
+    names in the publication's "speakers" list (publications.json) are
+    recognised; follow-on paragraphs from the same speaker are written as
+    plain paragraphs. Each speaker also gets a position class (dialogue-s0,
+    dialogue-s1) so the stylesheet can give each a different side-rule colour
+    without knowing their names. A publication with no speakers is returned
+    unchanged.
     """
-    if not SERIES_SPEAKERS:
+    if not speakers:
         return html_body
-    names = "|".join(re.escape(name) for name in SERIES_SPEAKERS)
+    names = "|".join(re.escape(name) for name in speakers)
     pattern = re.compile(rf"<p>\s*<strong>({names}):</strong>\s*", re.IGNORECASE)
 
-    order = [n.lower() for n in SERIES_SPEAKERS]
+    order = [n.lower() for n in speakers]
 
     def label(match):
         name = match.group(1)
@@ -360,28 +360,28 @@ def _format_dialogue(html_body: str) -> str:
     return pattern.sub(label, html_body)
 
 
-def _write_reading_pages(book_chapters: BookChapters, description: str, buttons: str) -> List[str]:
+def _write_reading_pages(pub: Publication, description: str, buttons: str) -> List[str]:
     """
-    Write one readable work: its chapter-list page and one page per chapter.
+    Write one readable publication: its chapter-list page and one page per chapter.
 
-    Used for both the series (book_chapters.is_series) and every book that
-    has a chapter folder, so the two can't drift apart. Differences for the
-    series: it is highlighted under "Series" in the nav, has no "← All Books"
-    link, speaker-tagged paragraphs become dialogue, a chapter's optional
-    `asterisk:` front-matter line is shown as a closing note, and the nav's
-    Home button reads "All chapters".
+    Every series and book goes through here, so they can't drift apart. What
+    differs between publications comes from its publications.json entry:
+    eyebrow (and optional link), read note, disclaimer, speakers (dialogue
+    styling) and locked-chapter message. A chapter's optional `asterisk:`
+    front-matter line is shown as a closing note for any publication.
+
+    Args:
+        pub: the publication to write.
+        description: intro text for the chapter-list page.
+        buttons: extra hero buttons (HTML) shown next to "Start" — e.g. a
+            linked book's Buy / Download buttons.
 
     Returns:
         Relative URLs worth listing in sitemap.xml (the chapter list and
         every unlocked chapter).
     """
-    is_series = book_chapters.is_series
-    active_page = "series" if is_series else "books"
-    locked_message = SERIES_LOCKED_MESSAGE if is_series else BOOK_LOCKED_MESSAGE
-    home_label = "All chapters" if is_series else "Home"
-
-    book_title = escape(book_chapters.book_title)
-    chapters = book_chapters.chapters
+    pub_title = escape(pub.title)
+    chapters = pub.chapters
     sitemap_urls: List[str] = []
 
     # ---------- chapter list ----------
@@ -402,33 +402,37 @@ def _write_reading_pages(book_chapters: BookChapters, description: str, buttons:
         </a>
       </li>"""
 
-    if is_series:
-        first = book_chapters.first_chapter
-        eyebrow = f'<p class="hero-label">{escape(SERIES_EYEBROW)}</p>'
-        read_note = f'<p class="chapter-read-note">{escape(SERIES_READ_NOTE)}</p>' if SERIES_READ_NOTE else ""
-        buttons = f'<a href="{first.url}" class="btn btn-primary">Start with Chapter 1</a>'
-    else:
-        eyebrow = (
-            f'<p class="hero-label"><a href="{BOOKS_FILE_HTML}" '
-            f'style="color: var(--color-rust); text-decoration: none;">← All Books</a></p>'
-        )
-        read_note = ""
+    eyebrow = ""
+    if pub.eyebrow:
+        if pub.eyebrow_url:
+            eyebrow = (
+                f'<p class="hero-label"><a href="{escape(pub.eyebrow_url)}" '
+                f'style="color: var(--color-rust); text-decoration: none;">{escape(pub.eyebrow)}</a></p>'
+            )
+        else:
+            eyebrow = f'<p class="hero-label">{escape(pub.eyebrow)}</p>'
+    read_note = f'<p class="chapter-read-note">{escape(pub.read_note)}</p>' if pub.read_note else ""
+
+    start_button = (
+        f'<a href="{pub.first_chapter.url}" class="btn btn-primary">{escape(pub.start_label)}</a>'
+    )
+    hero_buttons = start_button + (buttons or "")
 
     disclaimer_html = (
-        f'<p class="chapter-disclaimer chapter-disclaimer-list">{escape(SERIES_DISCLAIMER)}</p>'
-        if is_series and SERIES_DISCLAIMER else ""
+        f'<p class="chapter-disclaimer chapter-disclaimer-list">{escape(pub.disclaimer)}</p>'
+        if pub.disclaimer else ""
     )
 
-    content = header_html(f"{book_chapters.book_title} - " + BLOG_TITLE, active_page)
+    content = header_html(f"{pub.title} - " + BLOG_TITLE, "reading")
     content += f"""
 <section class="hero" style="padding: 6rem 0 4rem;">
   <div class="container">
     <div class="hero-content">
       {eyebrow}
-      <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4rem);">{book_title}</h1>
+      <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4rem);">{pub_title}</h1>
       <p class="hero-description" style="max-width: 48rem;">{escape(description)}</p>
       {read_note}
-      {f'<div class="chapter-hero-actions">{buttons}</div>' if buttons else ''}
+      <div class="chapter-hero-actions">{hero_buttons}</div>
     </div>
   </div>
 </section>
@@ -441,9 +445,9 @@ def _write_reading_pages(book_chapters: BookChapters, description: str, buttons:
 </section>
 """
     content += footer_html()
-    with open(OUTPUT_DIR / book_chapters.toc_url, "w", encoding="utf-8") as f:
+    with open(OUTPUT_DIR / pub.toc_url, "w", encoding="utf-8") as f:
         f.write(content)
-    sitemap_urls.append(book_chapters.toc_url)
+    sitemap_urls.append(pub.toc_url)
 
     # ---------- one page per chapter ----------
     for index, chapter in enumerate(chapters):
@@ -461,14 +465,13 @@ def _write_reading_pages(book_chapters: BookChapters, description: str, buttons:
             body_html = f"""
   <div class="chapter-locked" role="note">
     <div class="chapter-locked-icon">{lock_icon()}</div>
-    <p>{escape(locked_message)}</p>
+    <p>{escape(pub.locked_message)}</p>
   </div>"""
             reading_time_html = ""
         else:
             html_body = markdown.markdown(chapter.body, extensions=["extra", "codehilite"])
             html_body = process_youtube_embeds(html_body)
-            if is_series:
-                html_body = _format_dialogue(html_body)
+            html_body = _format_dialogue(html_body, pub.speakers)
             for img_src in re.findall(r'<img.*?src=[\'"](.*?)[\'"]', html_body):
                 copied = copy_image(img_src)
                 if copied:
@@ -483,18 +486,18 @@ def _write_reading_pages(book_chapters: BookChapters, description: str, buttons:
   </aside>"""
             if chapter.teaser:
                 closing_html += f'\n  <p class="chapter-teaser">{escape(chapter.teaser)}</p>'
-            if is_series and SERIES_DISCLAIMER:
-                closing_html += f'\n  <p class="chapter-disclaimer">{escape(SERIES_DISCLAIMER)}</p>'
+            if pub.disclaimer:
+                closing_html += f'\n  <p class="chapter-disclaimer">{escape(pub.disclaimer)}</p>'
 
-        nav_html = _chapter_nav_html(book_chapters, index, home_label)
+        nav_html = _chapter_nav_html(pub, index)
 
-        content = header_html(f"{chapter.title} - {book_chapters.book_title} - " + BLOG_TITLE, active_page)
+        content = header_html(f"{chapter.title} - {pub.title} - " + BLOG_TITLE, "reading")
         content += f"""
 <article class="post-content animate-in">
   {nav_html}
   <header class="post-header">
     <div class="post-meta">
-      <a href="{book_chapters.toc_url}" class="post-category" style="text-decoration: none;">{book_title}</a>
+      <a href="{pub.toc_url}" class="post-category" style="text-decoration: none;">{pub_title}</a>
       <span class="post-meta-item">Chapter {chapter.number} of {len(chapters)}</span>
       {reading_time_html}
     </div>
@@ -514,7 +517,7 @@ def _write_reading_pages(book_chapters: BookChapters, description: str, buttons:
 
     locked_count = sum(1 for c in chapters if c.locked)
     logger.info(
-        f"Generated {'series' if is_series else 'book'} {book_chapters.book_title!r}: "
+        f"Generated publication {pub.title!r}: "
         f"{len(chapters)} chapters ({locked_count} locked)"
     )
     return sitemap_urls
@@ -522,41 +525,35 @@ def _write_reading_pages(book_chapters: BookChapters, description: str, buttons:
 
 def generate_reading_pages() -> List[str]:
     """
-    Generate every readable work on the site:
+    Generate every readable publication listed in publications.json:
+    <page_prefix>.html (chapter list) + <page_prefix>-<chapter>.html.
 
-    - the series (config.SERIES_TITLE): series.html + series-<chapter>.html
-    - each book with a chapter folder (config.BOOK_CHAPTER_FOLDERS):
-      book-<folder>.html + book-<folder>-<chapter>.html
-
-    See _write_reading_pages for what each page contains. Locked chapters
-    (`lock: true`) still get a page with their title, synopsis, keywords and
-    navigation, but the body is never rendered.
+    A publication linked to a books.json entry ("linked_book") also gets
+    that book's Buy / Download buttons, and its description is used when the
+    entry has no "intro". See _write_reading_pages for what each page
+    contains. Locked chapters (`lock: true`) still get a page with their
+    title, synopsis, keywords and navigation, but the body is never rendered.
 
     Returns:
         Relative URLs of the pages worth listing in sitemap.xml.
     """
     books = load_books()
-    warn_about_unmatched_folder_config(books)
+    warn_about_unmatched_book_links(books)
+    books_by_title = {b.get("title", "").strip().casefold(): b for b in books}
     sitemap_urls: List[str] = []
 
-    series = get_series()
-    if series:
-        sitemap_urls += _write_reading_pages(series, description=SERIES_INTRO, buttons="")
-    else:
+    publications = get_publications()
+    if not publications:
         logger.info(
-            "No series chapters found (config.SERIES_FOLDER) — the Series page, "
-            "nav link and homepage feature are skipped."
+            "No publications with chapters found (publications.json / book_chapters/) — "
+            "no reading pages or homepage features were generated."
         )
 
-    for book in books:
-        book_chapters = get_book_chapters(book.get("title", ""))
-        if not book_chapters:
-            continue
-        sitemap_urls += _write_reading_pages(
-            book_chapters,
-            description=book.get("description", ""),
-            buttons=book_action_buttons(book, include_read=False),
-        )
+    for pub in publications:
+        book = books_by_title.get(pub.linked_book.strip().casefold()) if pub.linked_book else None
+        description = pub.intro or pub.premise or (book.get("description", "") if book else "")
+        buttons = book_action_buttons(book, include_read=False) if book else ""
+        sitemap_urls += _write_reading_pages(pub, description=description, buttons=buttons)
 
     return sitemap_urls
 
@@ -962,19 +959,24 @@ def generate_index(posts: List[Post], related_map: Dict):
     """
     Generate the homepage: a deliberately short, quiet page.
 
-    Order: hero → the Series feature → recent essays → newsletter.
+    Order: hero → one feature card per publication (every entry in
+    publications.json with show_on_home true) → recent essays → newsletter.
     Everything else (books, videos, topic pills, stats, archive teaser,
-    author card) was removed on purpose; those live on their own pages or in
-    the footer. Each block is optional: no series chapters means no Series
-    feature, no newsletter endpoint means no signup box.
+    author card) was removed on purpose; those live on their own pages. Each
+    block is optional: no publications means no feature cards, no newsletter
+    endpoint means no signup box.
 
     The "Recent essays" list is simply the newest HOME_ESSAYS_COUNT posts.
     (The `featured` front-matter flag is no longer used here.)
     """
-    series = get_series()
+    featured = [p for p in get_publications() if p.show_on_home and p.first_chapter]
+    books_by_title = {b.get("title", "").strip().casefold(): b for b in load_books()}
     recent = posts[:HOME_ESSAYS_COUNT]
 
-    logger.info(f"Generating index page with {len(recent)} recent essays (series: {bool(series)})")
+    logger.info(
+        f"Generating index page with {len(recent)} recent essays "
+        f"({len(featured)} featured publications)"
+    )
 
     content = header_html("Home - " + BLOG_TITLE, "home")
     content += f"""
@@ -987,22 +989,33 @@ def generate_index(posts: List[Post], related_map: Dict):
   </section>
 """
 
-    if series and series.first_chapter:
-        content += f"""
-  <section class="qa-series">
-    <div class="wrap">
-      <div class="qa-series-card">
+    if featured:
+        cards = ""
+        for i, pub in enumerate(featured):
+            book = books_by_title.get(pub.linked_book.strip().casefold()) if pub.linked_book else None
+            premise = pub.premise or pub.intro or (book.get("description", "") if book else "")
+            eyebrow = f'<p class="qa-eyebrow">{escape(pub.eyebrow)}</p>' if pub.eyebrow else ""
+            spacing = ' style="margin-top: 2rem;"' if i else ""
+            ghost = (
+                f'<a class="qa-ghost" href="{pub.toc_url}">{escape(pub.see_all_label)}</a>'
+                if pub.see_all_label else ""
+            )
+            cards += f"""
+      <div class="qa-series-card"{spacing}>
         <div class="qa-series-mark">{asterisk_icon(132, 0.7)}</div>
         <div class="qa-series-body">
-          <p class="qa-eyebrow">{escape(SERIES_EYEBROW)}</p>
-          <h2>{escape(series.book_title)}</h2>
-          <p class="qa-series-premise">{escape(SERIES_PREMISE)}</p>
+          {eyebrow}
+          <h2>{escape(pub.title)}</h2>
+          <p class="qa-series-premise">{escape(premise)}</p>
           <div class="qa-actions">
-            <a class="qa-button" href="{series.first_chapter.url}">Start with Chapter 1</a>
-            <a class="qa-ghost" href="{series.toc_url}">See all chapters</a>
+            <a class="qa-button" href="{pub.first_chapter.url}">{escape(pub.start_label)}</a>
+            {ghost}
           </div>
         </div>
-      </div>
+      </div>"""
+        content += f"""
+  <section class="qa-series">
+    <div class="wrap">{cards}
     </div>
   </section>
 """

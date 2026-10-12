@@ -73,7 +73,6 @@ VIDEOS_FILE_HTML = "videos.html"
 ESSAYS_FILE = "essays.html"
 ARCHIVES_FILE = "archives.html"
 READING_FILE_HTML = "reading.html"
-SERIES_FILE = "series.html"  # the series chapter list (see "The Series" below)
 
 # AI Chat Module
 # Optional feature: requires a separate `chat_widget.py` module (not part of
@@ -129,69 +128,24 @@ POSTS_PER_CATEGORY_PAGE = 3 # Number of posts to show before "Load More"
 HOME_ESSAYS_COUNT = 3  # Number of recent essays shown on the homepage
 
 # ==========================================================
-# The Series (homepage feature + Series page)
+# Publications (online-readable series and books)
 # ==========================================================
-# One non-fiction series, read online chapter by chapter. It reuses the
-# book-chapter machinery (chapters.py): each chapter is a markdown file with
-# front matter, in SERIES_FOLDER under BOOK_CHAPTERS_DIR, ordered by filename.
+# Everything about an individual series or book (title, premise, intro,
+# disclaimer, speakers, locked-chapter message, page names, whether it is
+# featured on the homepage, ...) lives in PUBLICATIONS_FILE, not here.
+# This file only says where things are.
 #
-#   book_chapters/
-#     sunday_odds/
+# Each publication has its own folder directly under BOOK_CHAPTERS_DIR, and
+# the folder name is given by the "folder" key of its entry in
+# publications.json. Each chapter is a markdown file in that folder, ordered
+# by filename (natural sort):
+#
+#   book_chapters/                 <- BOOK_CHAPTERS_DIR (the root folder)
+#     sunday_odds/                 <- "folder": "sunday_odds"
 #       01-plan-for-the-bad-month.md
 #       02-how-big-is-big-enough.md
-#
-# Pages produced: series.html (chapter list) and series-<chapter-slug>.html
-# (one per chapter). If the folder is missing or empty, the Series nav link
-# and the homepage feature simply don't appear.
-#
-# The build logs a warning if SERIES_TITLE still starts with "[" (a placeholder).
-SERIES_TITLE = "Sunday Odds"
-SERIES_FOLDER = "sunday_odds"
-SERIES_EYEBROW = "The Series"
-
-# Short premise, shown on the homepage feature block.
-SERIES_PREMISE = (
-    "A fiction series about money. Each Sunday, in her mother's kitchen in "
-    "Fairfax, Virginia, Anika brings a question about her first real "
-    "paycheck, and Revathi, who has worked in markets for twenty-six years, "
-    "answers in odds instead of certainties."
-)
-# Longer introduction, shown at the top of the Series page.
-SERIES_INTRO = (
-    "Every Sunday, Anika drives to her mother's kitchen with a question she "
-    "can't get a straight answer to online. Revathi sketches the numbers on a "
-    "napkin, disagrees with her, and ends with one Monday Move. Money, here, "
-    "is a set of odds, not a set of rules."
-)
-SERIES_READ_NOTE = "New chapters on Sundays. Best read in order."
-
-# Shown at the foot of every series chapter and under the chapter list.
-SERIES_DISCLAIMER = (
-    "Sunday Odds is a fiction series about money. Revathi and Anika are "
-    "fictional, and the figures are illustrative. This is education, not "
-    "personalized financial, tax or legal advice."
-)
-
-# Speaker names used in the chapters, mother first. A paragraph that starts
-# with **Revathi:** or **Anika:** in the markdown is rendered with the speaker
-# name as a small label above the text, and a side rule whose colour depends
-# on the speaker's position in this list (see generators._format_dialogue).
-SERIES_SPEAKERS = ("Revathi", "Anika")
-
-# Shown instead of the text of a chapter with `lock: true`.
-SERIES_LOCKED_MESSAGE = "This chapter is locked for now. Check back soon, or pick up the book to read it in full."
-
-# ==========================================================
-# Book Chapters (online reading)
-# ==========================================================
-# A book listed in books.json can optionally be readable on the site, one
-# page per chapter. Each chapter is a markdown file; all chapters of a book
-# live together in their own folder under BOOK_CHAPTERS_DIR:
-#
-#   book_chapters/
-#     the_quiet_asterisk/        <- folder name goes in BOOK_CHAPTER_FOLDERS
-#       01-the-asterisk.md
-#       02-small-numbers.md      <- chapters are ordered by filename
+#     life_is_happenning/          <- "folder": "life_is_happenning"
+#       01-....md
 #
 # Each chapter file starts with front matter:
 #
@@ -199,28 +153,18 @@ SERIES_LOCKED_MESSAGE = "This chapter is locked for now. Check back soon, or pic
 #   title: The Asterisk
 #   synopsis: One line describing the chapter.
 #   keywords: probability, patience, chance
-#   lock: false                 <- true/yes/1 hides the body (see below)
+#   lock: false                 <- true/yes/1 hides the body entirely
+#   asterisk: optional closing line
+#   teaser: optional "Next Sunday, ..." line
 #   ---
 #
-# BOOK_CHAPTER_FOLDERS maps a book's title, EXACTLY as written in
-# books.json, to its folder name inside BOOK_CHAPTERS_DIR. A book with no
-# entry here simply doesn't get a "Read Me" button. A mismatched title or a
-# missing folder is logged as a warning on every build.
+# To add another series or book: drop a folder of chapters under
+# BOOK_CHAPTERS_DIR and add one entry to publications.json. No code changes.
 BOOK_CHAPTERS_DIR = Path("./book_chapters")
-BOOK_CHAPTER_FOLDERS = {
-    "Life is Happenning": "life_is_happenning",
-}
+PUBLICATIONS_FILE = Path("./publications.json")
 
+# Label on the "Read Me" button of a book card on the Books page (used by cards.py).
 BOOK_READ_LABEL = "Read Me"
-
-# Shown in place of the chapter text when a chapter has `lock: true`.
-# The locked chapter's body is never written into the generated HTML at
-# all (it isn't just hidden with CSS), so it can't be read via view-source.
-# Plain text only; it is HTML-escaped when rendered.
-BOOK_LOCKED_MESSAGE = (
-    "This chapter is locked for now. Check back soon, or pick up the book "
-    "to read it in full."
-)
 
 # ==========================================================
 # Temporary Files
