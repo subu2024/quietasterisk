@@ -58,7 +58,7 @@ Revathi slides a napkin across the yellow table. Assumptions first, all illustra
 - **Anika's contribution now:** 4%.
 - **Vesting:** the employer's money becomes hers on August 17, 2027. Her own contributions are hers immediately.
 - **Her odds of staying that long:** 70% (her own Ledger entry).
-- **Taxes:** pre-tax contributions, at a combined marginal rate of about 28% [CHECK CURRENT: your own rate]. In a Roth plan, take-home falls by the full amount.
+- **Taxes:** pre-tax contributions, at a combined marginal rate of about 28%. In a Roth plan, take-home falls by the full amount.
 
 </div>
 

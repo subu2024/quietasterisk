@@ -88,7 +88,7 @@ Revathi tears a paper napkin in half and flattens it on the yellow table. Assump
 
 </div>
 
-**Revathi:** About a hundred dollars a year in expected interest. A $1,000 buffer costs you roughly $30 a year in forgone return, if you assume stocks would have earned about 7% and a savings account pays less than 1%. On the small surprises, it's nearly a wash.
+**Revathi:** About a hundred dollars a year in expected interest. A $1,000 buffer costs you roughly $70 a year in forgone return, if you assume stocks would have earned about 7% and a savings account pays less than 1%. On the small surprises, it's nearly a wash.
 
 **Anika:** Wait. Then why do it?
 
