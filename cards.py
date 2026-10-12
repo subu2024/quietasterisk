@@ -1,5 +1,6 @@
 """
 Card components for displaying posts, books, and categories.
+(format_essay_row is the one non-card: a plain list row for the homepage.)
 
 Design notes:
 - Every category gets a consistent, distinct accent color (see
@@ -102,6 +103,29 @@ def format_card(post: Post, is_small: bool = False) -> str:
     </a>
   </div>
 </article>
+"""
+
+
+def format_essay_row(post: Post) -> str:
+    """
+    Generate a quiet, typographic list row for the homepage "Recent essays".
+
+    Deliberately not a card: no colored pill, no accent border, no button.
+    Just a small meta line, the title, and the excerpt, with the whole row
+    as one link. Use format_card() for grids (Essays page, category pages);
+    use this for short vertical lists where less chrome reads better.
+
+    Styled by .qa-essay* in styles.py (scoped under .quiet-home).
+    """
+    meta = " · ".join(
+        part for part in (post.category, post.formatted_date, post.reading_time) if part
+    )
+    return f"""
+<a class="qa-essay" href="{post.slug}">
+  <div class="qa-essay-meta">{escape(meta)}</div>
+  <h3>{escape(post.title)}</h3>
+  <p>{escape(post.excerpt)}</p>
+</a>
 """
 
 

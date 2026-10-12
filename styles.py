@@ -675,6 +675,33 @@ body {
   color: var(--color-slate);
 }
 
+.footer-also {
+  margin-top: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-slate);
+}
+
+.footer-link-underlined {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
 /* Newsletter — the background/borders live on the outer .newsletter-section
    so the panel spans full width (like every other section break on the
    site) while .newsletter-grid just handles the two-column layout inside
@@ -906,10 +933,9 @@ body {
 }
 
 /* ==========================================================
-   Homepage (quiet-asterisk editorial layout)
-   Scoped under .quiet-home. Uses the same shared tokens as the rest of
-   the site (var(--color-*)) rather than a separate palette, so the
-   homepage and every other page are guaranteed to match.
+   Homepage. Deliberately short: hero, the Series, recent essays,
+   newsletter. Scoped under .quiet-home; uses the same shared tokens
+   (var(--color-*)) as every other page so the homepage can't drift.
    ========================================================== */
 .quiet-home {
   background: var(--color-cream);
@@ -919,88 +945,56 @@ body {
 
 .quiet-home *, .quiet-home *::before, .quiet-home *::after { box-sizing: border-box; }
 .quiet-home .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
-.quiet-home h1, .quiet-home h2, .quiet-home h3, .quiet-home h4 { font-family: var(--font-serif); font-weight: 500; letter-spacing: -0.01em; }
+.quiet-home .wrap.qa-narrow { max-width: 760px; }
+.quiet-home h1, .quiet-home h2, .quiet-home h3 { font-family: var(--font-serif); font-weight: 500; letter-spacing: -0.01em; }
 .quiet-home a { color: inherit; text-decoration: none; }
 .quiet-home a:focus-visible { outline: 2px solid var(--color-rust); outline-offset: 3px; }
 
-.quiet-home .qa-hero { padding: 88px 0 56px; }
-.quiet-home .qa-hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: center; }
-.quiet-home .qa-hero h1 { font-size: clamp(40px, 5.2vw, 64px); line-height: 1.05; max-width: 11ch; margin: 0; }
-.quiet-home .qa-sub { margin: 22px 0 34px; font-size: 18px; line-height: 1.6; color: var(--color-slate); max-width: 42ch; }
-.quiet-home .qa-actions { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
-.quiet-home .qa-button { display: inline-block; background: var(--color-charcoal); border: 1px solid var(--color-charcoal); border-radius: var(--radius); color: var(--color-cream); padding: 13px 24px; font-size: 15px; font-weight: 500; }
+.quiet-home .qa-hero { padding: 96px 0 72px; text-align: center; }
+.quiet-home .qa-hero h1 { font-size: clamp(40px, 5.6vw, 64px); line-height: 1.08; max-width: 18ch; margin: 0 auto; }
+.quiet-home .qa-sub { margin: 26px auto 0; font-family: var(--font-serif); font-style: italic; font-size: 20px; line-height: 1.55; color: var(--color-slate); max-width: 34rem; }
+
+.quiet-home .qa-button { display: inline-block; background: var(--color-charcoal); border: 1px solid var(--color-charcoal); border-radius: var(--radius); color: var(--color-cream); padding: 13px 28px; font-size: 15px; font-weight: 500; }
 .quiet-home .qa-button:hover { background: transparent; color: var(--color-charcoal); }
-.quiet-home .qa-ghost { font-size: 15px; color: var(--color-slate); border-bottom: 1px solid var(--color-sand); padding-bottom: 2px; }
+.quiet-home .qa-ghost { font-size: 15px; color: var(--color-slate); border-bottom: 1px solid var(--color-slate); padding: 12px 0 2px; }
 .quiet-home .qa-ghost:hover { color: var(--color-charcoal); border-color: var(--color-charcoal); }
-.quiet-home .qa-asterisk { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
-.quiet-home .qa-asterisk svg { width: 78%; height: 78%; }
+.quiet-home .qa-actions { display: flex; align-items: center; gap: 16px 28px; flex-wrap: wrap; margin-top: 8px; }
 
-.quiet-home .qa-strip { border-top: 1px solid var(--color-sand); padding: 18px 0; font-size: 14.5px; color: var(--color-meta); }
-.quiet-home .qa-strip .wrap { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-.quiet-home .qa-strip strong { color: var(--color-slate); font-weight: 500; }
-.quiet-home .qa-topics { padding: 38px 0; border-bottom: 1px solid var(--color-sand); }
-.quiet-home .qa-topics .wrap { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-.quiet-home .qa-topic-label { font-size: 14px; color: var(--color-meta); margin-right: 6px; }
-.quiet-home .qa-topic { font-size: 13.5px; padding: 7px 14px; border: 1px solid var(--color-sand); border-radius: 20px; color: var(--color-slate); }
-.quiet-home .qa-topic:hover { border-color: var(--color-rust); color: var(--color-charcoal); }
+/* The Series feature: one block, one call to action. */
+.quiet-home .qa-series-card { display: grid; grid-template-columns: 1fr 2fr; background: var(--color-cream-deep); border: 1px solid var(--color-sand); border-radius: var(--radius); overflow: hidden; }
+.quiet-home .qa-series-mark { display: flex; align-items: center; justify-content: center; min-height: 300px; border-right: 1px solid var(--color-sand); color: var(--color-rust); }
+.quiet-home .qa-series-body { padding: 56px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.quiet-home .qa-eyebrow { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-rust-deep); }
+.quiet-home .qa-series-body h2 { font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12; margin: 0; }
+.quiet-home .qa-series-premise { margin: 0; max-width: 34rem; font-family: var(--font-serif); font-size: 20px; line-height: 1.55; color: var(--color-slate); }
 
-.quiet-home .qa-featured { padding: 72px 0 40px; }
-.quiet-home .qa-section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 40px; gap: 20px; flex-wrap: wrap; }
-.quiet-home .qa-section-head h2 { font-size: 30px; margin: 0; }
-.quiet-home .qa-see-all { font-size: 14.5px; color: var(--color-slate); border-bottom: 1px solid var(--color-sand); padding-bottom: 2px; }
-.quiet-home .qa-featured-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 56px; }
-.quiet-home .qa-lead { border-top: 2px solid var(--color-charcoal); padding-top: 22px; }
-.quiet-home .qa-list { border-top: 1px solid var(--color-sand); }
-.quiet-home .qa-lead .card, .quiet-home .qa-lead article { border: 0 !important; background: transparent !important; box-shadow: none !important; padding: 0 !important; }
-.quiet-home .qa-list .card, .quiet-home .qa-list article { border: 0 !important; border-bottom: 1px solid var(--color-sand) !important; background: transparent !important; box-shadow: none !important; border-radius: 0 !important; padding: 22px 0 !important; margin: 0 !important; }
-.quiet-home .qa-lead .featured-badge { display: none; }
-.quiet-home .qa-lead h3 { font-size: 32px; line-height: 1.15; margin: 0 0 16px; }
-.quiet-home .qa-list h3, .quiet-home .qa-list h4 { font-size: 19px; line-height: 1.3; margin: 0 0 8px; }
-.quiet-home .qa-lead p { font-size: 16.5px; line-height: 1.65; color: var(--color-slate); }
-.quiet-home .qa-list p { font-size: 14.5px; line-height: 1.55; color: var(--color-slate); }
-.quiet-home .qa-list a:hover h3, .quiet-home .qa-list a:hover h4 { color: var(--color-rust); }
+/* Recent essays: a quiet typographic list, not cards. */
+.quiet-home .qa-essays { padding: 112px 0 40px; }
+.quiet-home .qa-section-head { margin-bottom: 24px; }
+.quiet-home .qa-section-head h2 { font-size: 32px; margin: 0; }
+.quiet-home .qa-essay-list { border-top: 1px solid var(--color-sand); }
+.quiet-home .qa-essay { display: block; padding: 32px 0; border-bottom: 1px solid var(--color-sand); }
+.quiet-home .qa-essay-meta { font-size: 14px; color: var(--color-slate); }
+.quiet-home .qa-essay h3 { font-size: 28px; line-height: 1.2; margin: 10px 0 0; transition: color 0.15s; }
+.quiet-home .qa-essay:hover h3 { color: var(--color-rust); }
+.quiet-home .qa-essay p { margin: 12px 0 0; font-family: var(--font-serif); font-size: 18px; line-height: 1.55; color: var(--color-slate); }
+.quiet-home .qa-see-all { display: inline-block; margin-top: 32px; font-size: 15px; font-weight: 500; color: var(--color-charcoal); border-bottom: 1px solid var(--color-slate); padding: 12px 0 2px; }
+.quiet-home .qa-see-all:hover { color: var(--color-rust); border-color: var(--color-rust); }
 
-.quiet-home .qa-newsletter { background: var(--color-cream-deep); margin: 80px 0; padding: 56px 0; border-top: 1px solid var(--color-sand); border-bottom: 1px solid var(--color-sand); }
-.quiet-home .qa-newsletter .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-.quiet-home .qa-newsletter h2 { font-size: 26px; margin: 0 0 12px; }
-.quiet-home .qa-newsletter p { font-size: 15.5px; color: var(--color-slate); line-height: 1.6; max-width: 40ch; }
-.quiet-home .qa-about { padding: 0 0 76px; }
-.quiet-home .qa-about .wrap { display: flex; align-items: center; gap: 28px; border: 1px solid var(--color-sand); padding: 26px 30px; flex-wrap: wrap; }
-.quiet-home .qa-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--color-charcoal); flex-shrink: 0; }
-.quiet-home .qa-about p { font-size: 15.5px; color: var(--color-slate); margin: 0; flex: 1; min-width: 220px; }
-.quiet-home .qa-about-link { font-size: 14.5px; color: var(--color-rust); white-space: nowrap; }
-.quiet-home .qa-archive { padding: 0 0 76px; text-align: center; }
-.quiet-home .qa-archive h2 { font-size: 30px; margin: 0 0 12px; }
-.quiet-home .qa-archive p { color: var(--color-slate); margin: 0 auto 24px; }
+/* Newsletter: centred, one line of copy, one field. */
+.quiet-home .qa-newsletter { margin-top: 88px; }
+.quiet-home .qa-newsletter .newsletter-grid { grid-template-columns: 1fr; max-width: 34rem; margin: 0 auto; gap: 1.5rem; text-align: center; }
+.quiet-home .qa-newsletter .newsletter-form { justify-content: center; }
+.quiet-home .qa-newsletter .section-description { margin-left: auto; margin-right: auto; }
 
 @media (max-width: 820px) {
-  .quiet-home .qa-hero .wrap, .quiet-home .qa-featured-grid, .quiet-home .qa-newsletter .wrap { grid-template-columns: 1fr; }
-  .quiet-home .qa-asterisk { order: -1; max-width: 220px; margin: 0 auto; }
   .quiet-home .wrap { padding: 0 22px; }
-}
-/* ==========================================================
-   Homepage book list (.qa-book*): one row per book with its
-   Read Me / Download / Buy buttons. Scoped under .quiet-home.
-   ========================================================== */
-.quiet-home .qa-book-list { border-top: 2px solid var(--color-charcoal); }
-.quiet-home .qa-book { display: grid; grid-template-columns: 72px 1fr auto; gap: 24px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--color-sand); }
-.quiet-home .qa-book--no-cover { grid-template-columns: 1fr auto; }
-.quiet-home .qa-book-cover img { display: block; width: 72px; height: auto; border: 1px solid var(--color-sand); border-radius: var(--radius); }
-.quiet-home .qa-book h3 { font-size: 20px; line-height: 1.3; margin: 0 0 6px; }
-.quiet-home .qa-book p { font-size: 14.5px; line-height: 1.55; color: var(--color-slate); margin: 0; max-width: 62ch; }
-.quiet-home .qa-book-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
-.quiet-home .qa-book-btn { display: inline-block; padding: 9px 18px; border: 1px solid var(--color-charcoal); border-radius: var(--radius); font-family: var(--font-sans); font-size: 14px; font-weight: 500; white-space: nowrap; transition: background 0.15s, color 0.15s; }
-.quiet-home .qa-book-btn--solid { background: var(--color-charcoal); color: var(--color-cream); }
-.quiet-home .qa-book-btn--solid:hover { background: transparent; color: var(--color-charcoal); }
-.quiet-home .qa-book-btn--outline { background: transparent; color: var(--color-charcoal); }
-.quiet-home .qa-book-btn--outline:hover { background: var(--color-charcoal); color: var(--color-cream); }
-.quiet-home .qa-book-unavailable { font-size: 13.5px; font-style: italic; color: var(--color-meta); }
-
-@media (max-width: 820px) {
-  .quiet-home .qa-book, .quiet-home .qa-book--no-cover { grid-template-columns: 56px 1fr; gap: 16px; align-items: start; }
-  .quiet-home .qa-book--no-cover { grid-template-columns: 1fr; }
-  .quiet-home .qa-book-cover img { width: 56px; }
-  .quiet-home .qa-book-actions { grid-column: 1 / -1; justify-content: flex-start; }
+  .quiet-home .qa-hero { padding: 64px 0 48px; }
+  .quiet-home .qa-series-card { grid-template-columns: 1fr; }
+  .quiet-home .qa-series-mark { min-height: 160px; border-right: 0; border-bottom: 1px solid var(--color-sand); }
+  .quiet-home .qa-series-mark svg { width: 88px; height: 88px; }
+  .quiet-home .qa-series-body { padding: 32px 24px; }
+  .quiet-home .qa-essays { padding-top: 72px; }
 }
 
 /* ==========================================================
@@ -1039,6 +1033,67 @@ body {
   .chapter-link { gap: 1rem; }
   .chapter-lock-badge { display: flex; width: fit-content; margin: 0.4rem 0 0; }
 }
+
+/* ----------------------------------------------------------
+   The Series: read-me line, mother/daughter dialogue, closing note.
+   Written in a chapter's markdown as:  **Mother:** text...
+   and, optionally, `asterisk: one sentence` in its front matter.
+   ---------------------------------------------------------- */
+.chapter-read-note { margin-top: 1.25rem; font-size: 1.1rem; font-style: italic; color: var(--color-slate); }
+
+.post-body p.dialogue { margin: 1.4rem 0 0; padding-left: 1rem; border-left: 3px solid var(--color-sand); }
+.post-body p.dialogue:first-child { margin-top: 0; }
+.post-body p.dialogue + p:not(.dialogue), .post-body p.dialogue + .napkin, .post-body p.dialogue + .move { margin-top: 1.75rem; }
+.post-body p.dialogue-s0 { border-left-color: var(--color-sage); }
+.post-body p.dialogue-s1 { border-left-color: var(--color-terracotta); }
+.dialogue-speaker {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+
+/* Boxes inside chapters, written in markdown as
+   <div class="napkin" markdown="1"> ... </div>  (and .move, .tw). */
+.post-body .napkin, .post-body .move {
+  margin: 1.75rem 0;
+  padding: 1.1rem 1.5rem;
+  background: var(--color-cream-deep);
+  border-radius: var(--radius);
+}
+.post-body .napkin { border: 2px dashed var(--color-sand); }
+.post-body .move { border: 1px solid var(--color-sand); border-left: 4px solid var(--color-rust); }
+.post-body .napkin > :last-child, .post-body .move > :last-child { margin-bottom: 0; }
+.post-body .napkin ul, .post-body .napkin ol, .post-body .move ul, .post-body .move ol { margin: 0.5rem 0 0.75rem 1.25rem; }
+.post-body .napkin li, .post-body .move li { margin-bottom: 0.5rem; }
+
+.post-body .tw { margin: 1.75rem 0; overflow-x: auto; }
+.post-body table { width: 100%; min-width: 440px; border-collapse: collapse; font-family: var(--font-sans); font-size: 0.9rem; line-height: 1.5; }
+.post-body th, .post-body td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--color-sand); }
+.post-body th { font-weight: 600; color: var(--color-charcoal); border-bottom: 2px solid var(--color-charcoal); }
+
+.chapter-teaser { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--color-sand); font-style: italic; color: var(--color-slate); }
+.chapter-disclaimer { margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.82rem; line-height: 1.5; color: var(--color-slate); }
+.chapter-disclaimer-list { max-width: 48rem; margin: 2.5rem auto 0; }
+
+.chapter-asterisk { margin-top: 4.5rem; padding-top: 2rem; border-top: 1px solid var(--color-sand); }
+.chapter-asterisk-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-rust-deep);
+}
+.chapter-asterisk-text { font-size: 1.35rem; font-style: italic; line-height: 1.55; color: var(--color-slate); }
 
 """
 

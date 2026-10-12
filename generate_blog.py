@@ -20,13 +20,14 @@ from generators import (
     generate_index,
     generate_post_pages,
     generate_books,
-    generate_book_chapter_pages,
+    generate_reading_pages,
     generate_categories,
     generate_sitemap,
     generate_videos,
     generate_about,
     generate_contact,
-    generate_archives,
+    generate_essays,
+    generate_archives_redirect,
     generate_reading_notes_redirect,
     get_temp_content
 )
@@ -83,8 +84,8 @@ def main(write_temp: bool = False):
     logger.info("Generating books page (includes reading notes)...")
     generate_books()
 
-    logger.info("Generating book chapter pages...")
-    book_urls = generate_book_chapter_pages()
+    logger.info("Generating series and book chapter pages...")
+    reading_urls = generate_reading_pages()
 
     logger.info("Generating reading notes redirect (legacy URL)...")
     generate_reading_notes_redirect()
@@ -95,8 +96,9 @@ def main(write_temp: bool = False):
     logger.info("Generating category pages...")
     generate_categories(posts)
 
-    logger.info("Generating archives page...")  
-    generate_archives(posts)   
+    logger.info("Generating essays page (and the old archives.html redirect)...")
+    generate_essays(posts)
+    generate_archives_redirect()
     
     logger.info("Generating about page...")
     generate_about()
@@ -105,7 +107,7 @@ def main(write_temp: bool = False):
     generate_contact()
 
     logger.info("Generating sitemap.xml...")
-    generate_sitemap(posts, categories=sorted(set(p.category for p in posts)), extra_urls=book_urls)
+    generate_sitemap(posts, categories=sorted(set(p.category for p in posts)), extra_urls=reading_urls)
 
     # Write temporary content if requested
     if write_temp:

@@ -287,6 +287,29 @@ def arrow_icon() -> str:
             '</svg>')
 
 
+def asterisk_icon(size: int = 16, stroke_width: float = 2, css_class: str = "") -> str:
+    """
+    Return the site's asterisk mark as an inline SVG (decorative, aria-hidden).
+
+    Drawn with currentColor so the surrounding CSS decides the color (the
+    accent ochre in most places). A larger size with a thinner stroke gives
+    the big mark on the homepage Series block.
+
+    Args:
+        size: Width/height in px
+        stroke_width: SVG stroke width in the 24x24 viewBox
+        css_class: Optional class on the <svg>
+    """
+    cls = f' class="{css_class}"' if css_class else ""
+    return (
+        f'<svg{cls} width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+        f'stroke="currentColor" stroke-width="{stroke_width}" stroke-linecap="round" aria-hidden="true">'
+        '<line x1="12" y1="2" x2="12" y2="22"/>'
+        '<line x1="3.3" y1="7" x2="20.7" y2="17"/>'
+        '<line x1="3.3" y1="17" x2="20.7" y2="7"/></svg>'
+    )
+
+
 def youtube_embed(video_id: str, title: str = "YouTube video player", css_class: str = "youtube-embed") -> str:
     """
     Return a responsive 16:9 YouTube iframe embed.

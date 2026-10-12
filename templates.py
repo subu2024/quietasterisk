@@ -9,9 +9,10 @@ from typing import List
 
 from config import (
     BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, LOGO_PATH, INSTAGRAM_PROFILE,
-    INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, VIDEOS_FILE_HTML, ARCHIVES_FILE,
+    INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, ESSAYS_FILE,
     NEWSLETTER_ENABLED, NEWSLETTER_API_ENDPOINT, NEWSLETTER_HEADING, NEWSLETTER_SUBHEAD
 )
+from chapters import get_series
 from styles import get_modern_styles
 
 from utils import show_logo, slugify
@@ -30,10 +31,10 @@ def newsletter_html() -> str:
     proxy's public URL (NEWSLETTER_API_ENDPOINT), never to Resend directly.
 
     Gracefully degrades: if NEWSLETTER_API_ENDPOINT isn't configured, the
-    section renders with the input/button disabled and a note in place of
-    a live form — better than posting to nowhere and giving the visitor a
-    silent failure — and the generator logs a warning. Same graceful-degrade
-    posture as generators.get_chat_widget_html for a missing dependency.
+    section is left out entirely (better than posting to nowhere, and better
+    than a visible "coming soon" box) and the generator logs a warning. Same
+    graceful-degrade posture as generators.get_chat_widget_html for a missing
+    dependency.
 
     Returns:
         HTML string for the newsletter section, or "" if disabled.
@@ -43,29 +44,15 @@ def newsletter_html() -> str:
 
     endpoint = NEWSLETTER_API_ENDPOINT
     if not endpoint:
+        # Hide the whole section rather than showing a disabled form with a
+        # "being set up" note: a visible dead end tells visitors the site is
+        # unfinished. Fix the warning and the section appears on its own.
         logger.warning(
             "NEWSLETTER_API_ENDPOINT is not set (env var BLOG_NEWSLETTER_API_ENDPOINT) "
-            "— the newsletter section will render in a disabled state until you deploy "
-            "the proxy in newsletter_lambda/ and point this at its URL."
+            "— the newsletter section is HIDDEN until you deploy the proxy in "
+            "newsletter_lambda/ and point this at its URL."
         )
-        return f"""
-<section class="section newsletter-section">
-  <div class="container newsletter-grid">
-    <div>
-      <h2 class="section-title" style="font-size: 2rem; margin-bottom: 0.75rem;">{escape(NEWSLETTER_HEADING)}</h2>
-      <p class="section-description">{escape(NEWSLETTER_SUBHEAD)}</p>
-    </div>
-    <div>
-      <form class="newsletter-form">
-        <input type="email" class="newsletter-input" placeholder="you@email.com"
-               aria-label="Email address" disabled>
-        <button type="button" class="btn btn-primary" disabled>Subscribe</button>
-      </form>
-      <p class="newsletter-fine">Signup is being set up — check back soon.</p>
-    </div>
-  </div>
-</section>
-"""
+        return ""
 
     return f"""
 <section class="section newsletter-section">
@@ -131,9 +118,9 @@ def newsletter_html() -> str:
 def topic_chips_html(categories: List[str], css_class: str = "topic-chip") -> str:
     """Return category links for use in a topic-navigation layout.
 
-    The shared helper keeps category URL construction in one place while
-    allowing the homepage and the standalone topic strip to use their own
-    visual treatment.
+    Currently unused: the homepage no longer shows a topic strip (themes
+    live on the Essays page's "By category" view). Kept so category URL
+    construction stays in one place if a topic strip comes back.
     """
     if not categories:
         return ""
@@ -151,14 +138,22 @@ def header_html(title: str, active_page: str = "home") -> str:
     
     Args:
         title: Page title for <title> tag
-        active_page: Which nav item is active ("home", "books", "videos",
-            "categories", "archives", "about", "contact")
+        active_page: Which nav item is active: "series", "essays" or "about".
+            Any other value ("home", "books", "contact", ...) highlights
+            nothing — those pages aren't in the main nav.
         
     Returns:
         HTML string for header
     """
     def active(page: str) -> str:
         return "active" if active_page == page else ""
+
+    # The Series link only appears once the series has chapters to read.
+    series = get_series()
+    series_link = (
+        f'<a href="{series.toc_url}" class="nav-link {active("series")}">Series</a>\n        '
+        if series else ""
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -181,12 +176,8 @@ def header_html(title: str, active_page: str = "home") -> str:
   <div class="container">
     <div class="header-content">
       <a href="{INDEX_FILE}" class="logo">{BLOG_TITLE}{show_logo(LOGO_PATH, 70)}</a>
-      <nav class="nav">
-        <a href="{INDEX_FILE}" class="nav-link {active('home')}">Essays</a>
-        <a href="{BOOKS_FILE_HTML}" class="nav-link {active('books')}">Books</a>
-        <a href="{VIDEOS_FILE_HTML}" class="nav-link {active('videos')}">Videos</a>
-        <a href="{CATEGORIES_FILE}" class="nav-link {active('categories')}">Categories</a>
-        <a href="{ARCHIVES_FILE}" class="nav-link {active('archives')}">Archives</a>
+      <nav class="nav" aria-label="Main">
+        {series_link}<a href="{ESSAYS_FILE}" class="nav-link {active('essays')}">Essays</a>
         <a href="{ABOUT_FILE}" class="nav-link {active('about')}">About</a>
       </nav>
     </div>
@@ -198,7 +189,9 @@ def header_html(title: str, active_page: str = "home") -> str:
 
 
 def footer_html() -> str:
-    """Generate HTML footer with navigation and contact info."""
+    """Generate the footer: brand line, a short link list, and contact."""
+    series = get_series()
+    series_link = f'<a href="{series.toc_url}" class="footer-link">Series</a>\n          ' if series else ""
     return f"""
 </main>
 <footer class="footer">
@@ -207,36 +200,31 @@ def footer_html() -> str:
       <div>
         <a href="{INDEX_FILE}" class="logo">{BLOG_TITLE}{show_logo(LOGO_PATH, 20)}</a>
         <p style="margin-top: 1rem; color: var(--color-slate);">{TAG_LINE}</p>
+        <p class="footer-also">Also by the author: <a href="{BOOKS_FILE_HTML}" class="footer-link footer-link-underlined">books</a></p>
       </div>
       <div>
         <h4 class="footer-section-title">Explore</h4>
-        <nav class="footer-nav">
-          <a href="{INDEX_FILE}" class="footer-link">Essays</a>
-          <a href="{BOOKS_FILE_HTML}" class="footer-link">Books</a>
-          <a href="{VIDEOS_FILE_HTML}" class="footer-link">Videos</a>
-          <a href="{BOOKS_FILE_HTML}#reading-notes" class="footer-link">Reading Notes</a>
-          <a href="{ARCHIVES_FILE}" class="footer-link">Archives</a>
+        <nav class="footer-nav" aria-label="Footer">
+          {series_link}<a href="{ESSAYS_FILE}" class="footer-link">Essays</a>
           <a href="{ABOUT_FILE}" class="footer-link">About</a>
+          <a href="{CONTACT_FILE}" class="footer-link">Contact</a>
         </nav>
       </div>
       <div>
         <h4 class="footer-section-title">Connect</h4>
-        <p style="color: var(--color-slate); margin-bottom: 1rem;">Get in touch</p>
-        <a href="mailto:{CONTACT_EMAIL}" class="footer-link" style="display: block; margin-bottom: 0.5rem;">{CONTACT_EMAIL}</a>
-        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-          <a href="{YOUTUBE_CHANNEL}" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="YouTube Channel" title="YouTube Channel">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <a href="mailto:{CONTACT_EMAIL}" class="footer-link">{CONTACT_EMAIL}</a>
+        <div class="footer-social">
+          <a href="{YOUTUBE_CHANNEL}" target="_blank" rel="noopener noreferrer" class="footer-link">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-            </svg>{YOUTUBE_CHANNEL}
+            </svg>YouTube
+          </a>
+          <a href="{INSTAGRAM_PROFILE}" target="_blank" rel="noopener noreferrer" class="footer-link">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5C2 19.426 4.574 22 7.75 22h8.5C19.426 22 22 19.426 22 16.25v-8.5C22 4.574 19.426 2 16.25 2h-8.5zm0 2h8.5C18.455 4 20 5.545 20 7.75v8.5c0 2.205-1.545 3.75-3.75 3.75h-8.5C5.545 20 4 18.455 4 16.25v-8.5C4 5.545 5.545 4 7.75 4zm8.75 1.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+            </svg>Instagram
           </a>
         </div>
-        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-  <a href="{INSTAGRAM_PROFILE}" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Instagram Profile" title="Instagram Profile">
-    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5C2 19.426 4.574 22 7.75 22h8.5C19.426 22 22 19.426 22 16.25v-8.5C22 4.574 19.426 2 16.25 2h-8.5zm0 2h8.5C18.455 4 20 5.545 20 7.75v8.5c0 2.205-1.545 3.75-3.75 3.75h-8.5C5.545 20 4 18.455 4 16.25v-8.5C4 5.545 5.545 4 7.75 4zm8.75 1.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
-    </svg>{INSTAGRAM_PROFILE}
-  </a>
-</div>
       </div>
     </div>
     <div class="footer-bottom">

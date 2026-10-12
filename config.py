@@ -67,8 +67,13 @@ CATEGORIES_FILE = "categories.html"
 BOOKS_FILE_HTML = "books.html"
 CONTACT_FILE = "contact.html"
 VIDEOS_FILE_HTML = "videos.html"  
-ARCHIVES_FILE = "archives.html" 
+# The old "Archives" page is now the "Essays" page. ESSAYS_FILE is the real
+# page; ARCHIVES_FILE is kept only so generators.generate_archives_redirect()
+# can leave a redirect at the old URL (bookmarks, backlinks, search results).
+ESSAYS_FILE = "essays.html"
+ARCHIVES_FILE = "archives.html"
 READING_FILE_HTML = "reading.html"
+SERIES_FILE = "series.html"  # the series chapter list (see "The Series" below)
 
 # AI Chat Module
 # Optional feature: requires a separate `chat_widget.py` module (not part of
@@ -121,7 +126,60 @@ NEWSLETTER_SUBHEAD = (
 # ==========================================================
 SIMILARITY_THRESHOLD = 0.17
 POSTS_PER_CATEGORY_PAGE = 3 # Number of posts to show before "Load More"
-BOOKS_ON_HOMEPAGE = 2  # Number of books to show on homepage
+HOME_ESSAYS_COUNT = 3  # Number of recent essays shown on the homepage
+
+# ==========================================================
+# The Series (homepage feature + Series page)
+# ==========================================================
+# One non-fiction series, read online chapter by chapter. It reuses the
+# book-chapter machinery (chapters.py): each chapter is a markdown file with
+# front matter, in SERIES_FOLDER under BOOK_CHAPTERS_DIR, ordered by filename.
+#
+#   book_chapters/
+#     sunday_odds/
+#       01-plan-for-the-bad-month.md
+#       02-how-big-is-big-enough.md
+#
+# Pages produced: series.html (chapter list) and series-<chapter-slug>.html
+# (one per chapter). If the folder is missing or empty, the Series nav link
+# and the homepage feature simply don't appear.
+#
+# The build logs a warning if SERIES_TITLE still starts with "[" (a placeholder).
+SERIES_TITLE = "Sunday Odds"
+SERIES_FOLDER = "sunday_odds"
+SERIES_EYEBROW = "The Series"
+
+# Short premise, shown on the homepage feature block.
+SERIES_PREMISE = (
+    "A fiction series about money. Each Sunday, in her mother's kitchen in "
+    "Fairfax, Virginia, Anika brings a question about her first real "
+    "paycheck, and Revathi, who has worked in markets for twenty-six years, "
+    "answers in odds instead of certainties."
+)
+# Longer introduction, shown at the top of the Series page.
+SERIES_INTRO = (
+    "Every Sunday, Anika drives to her mother's kitchen with a question she "
+    "can't get a straight answer to online. Revathi sketches the numbers on a "
+    "napkin, disagrees with her, and ends with one Monday Move. Money, here, "
+    "is a set of odds, not a set of rules."
+)
+SERIES_READ_NOTE = "New chapters on Sundays. Best read in order."
+
+# Shown at the foot of every series chapter and under the chapter list.
+SERIES_DISCLAIMER = (
+    "Sunday Odds is a fiction series about money. Revathi and Anika are "
+    "fictional, and the figures are illustrative. This is education, not "
+    "personalized financial, tax or legal advice."
+)
+
+# Speaker names used in the chapters, mother first. A paragraph that starts
+# with **Revathi:** or **Anika:** in the markdown is rendered with the speaker
+# name as a small label above the text, and a side rule whose colour depends
+# on the speaker's position in this list (see generators._format_dialogue).
+SERIES_SPEAKERS = ("Revathi", "Anika")
+
+# Shown instead of the text of a chapter with `lock: true`.
+SERIES_LOCKED_MESSAGE = "This chapter is locked for now. Check back soon, or pick up the book to read it in full."
 
 # ==========================================================
 # Book Chapters (online reading)

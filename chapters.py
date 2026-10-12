@@ -9,6 +9,11 @@ Each file is one chapter; chapters are ordered by filename (natural sort, so
 Page naming (all flat, in the output root like every other page):
     book-<folder-slug>.html                     chapter list ("Home" button)
     book-<folder-slug>-<chapter-file-slug>.html one page per chapter
+
+The site's one non-fiction series (config.SERIES_TITLE) uses the same
+machinery, but with its own page names:
+    series.html                                 chapter list
+    series-<chapter-file-slug>.html             one page per chapter
 """
 
 import re
@@ -18,7 +23,10 @@ from functools import lru_cache
 from pathlib import Path
 from typing import List, Optional, Dict, Tuple
 
-from config import BOOK_CHAPTERS_DIR, BOOK_CHAPTER_FOLDERS
+from config import (
+    BOOK_CHAPTERS_DIR, BOOK_CHAPTER_FOLDERS,
+    SERIES_TITLE, SERIES_FOLDER, SERIES_FILE,
+)
 from utils import slugify
 
 logger = logging.getLogger("BlogGen")
@@ -39,11 +47,13 @@ class Chapter:
     keywords: List[str]
     locked: bool
     body: str
-    book_slug: str = ""
+    page_prefix: str = ""   # "book-<folder>" for books, "series" for the series
+    asterisk: str = ""      # optional closing note: the line this chapter leaves you with
+    teaser: str = ""        # optional "Next Sunday, ..." line shown after the closing note
 
     @property
     def url(self) -> str:
-        return f"book-{self.book_slug}-{self.slug}.html"
+        return f"{self.page_prefix}-{self.slug}.html"
 
     @property
     def reading_time(self) -> str:
@@ -57,12 +67,18 @@ class BookChapters:
 
     book_title: str
     slug: str
+    page_prefix: str = ""
+    is_series: bool = False
     chapters: List[Chapter] = field(default_factory=list)
 
     @property
     def toc_url(self) -> str:
-        """The book's chapter-list page (also the target of the Home button)."""
-        return f"book-{self.slug}.html"
+        """The chapter-list page (also the target of the Home / All chapters button)."""
+        return f"{self.page_prefix}.html"
+
+    @property
+    def first_chapter(self) -> Optional[Chapter]:
+        return self.chapters[0] if self.chapters else None
 
 
 def _natural_key(path: Path):
@@ -107,15 +123,16 @@ def get_book_chapters(book_title: str) -> Optional[BookChapters]:
     Cached per title so the homepage, the Books page and the chapter
     generator all share one read (and each warning is logged only once).
     """
-    folder_name = BOOK_CHAPTER_FOLDERS.get(book_title)
+    is_series = book_title == SERIES_TITLE
+    folder_name = SERIES_FOLDER if is_series else BOOK_CHAPTER_FOLDERS.get(book_title)
     if not folder_name:
         return None
 
     folder = BOOK_CHAPTERS_DIR / folder_name
     if not folder.is_dir():
         logger.warning(
-            "Book %r maps to chapter folder %s, which does not exist — "
-            "no 'Read Me' button will be shown for it.", book_title, folder
+            "%r maps to chapter folder %s, which does not exist — "
+            "no chapters will be published for it.", book_title, folder
         )
         return None
 
@@ -125,6 +142,7 @@ def get_book_chapters(book_title: str) -> Optional[BookChapters]:
         return None
 
     book_slug = slugify(folder_name) or slugify(book_title) or "book"
+    page_prefix = Path(SERIES_FILE).stem if is_series else f"book-{book_slug}"
     chapters: List[Chapter] = []
     used_slugs = set()
 
@@ -140,6 +158,13 @@ def get_book_chapters(book_title: str) -> Optional[BookChapters]:
             slug = f"{slug}-{number}"
         used_slugs.add(slug)
 
+        locked = meta.get("lock", "").lower() in _TRUE_VALUES
+        if not locked and "[CHECK" in body:
+            logger.warning(
+                "Chapter %s is published but still contains a [CHECK ...] marker "
+                "(an unresolved fact-check note) — resolve it before deploying.", md_file.name
+            )
+
         title = meta.get("title") or md_file.stem.replace("_", " ").replace("-", " ").strip().title()
         if not meta.get("title"):
             logger.warning("Chapter %s has no title in its front matter; using %r.", md_file.name, title)
@@ -151,14 +176,37 @@ def get_book_chapters(book_title: str) -> Optional[BookChapters]:
             title=title,
             synopsis=meta.get("synopsis", ""),
             keywords=_parse_keywords(meta.get("keywords", "")),
-            locked=meta.get("lock", "").lower() in _TRUE_VALUES,
+            locked=locked,
             body=body,
-            book_slug=book_slug,
+            page_prefix=page_prefix,
+            asterisk=meta.get("asterisk", ""),
+            teaser=meta.get("teaser", ""),
         ))
 
     if not chapters:
         return None
-    return BookChapters(book_title=book_title, slug=book_slug, chapters=chapters)
+    return BookChapters(
+        book_title=book_title, slug=book_slug, page_prefix=page_prefix,
+        is_series=is_series, chapters=chapters,
+    )
+
+
+@lru_cache(maxsize=None)
+def get_series() -> Optional[BookChapters]:
+    """
+    The site's non-fiction series, or None if it has no chapters yet.
+
+    Cached because every page header asks for it (to decide whether to show
+    the Series nav link), and the placeholder-title warning should be logged
+    once per build, not once per page.
+    """
+    series = get_book_chapters(SERIES_TITLE)
+    if series and SERIES_TITLE.startswith("["):
+        logger.warning(
+            "config.SERIES_TITLE is still the placeholder %r — set the real "
+            "series title before publishing.", SERIES_TITLE
+        )
+    return series
 
 
 def warn_about_unmatched_folder_config(books: List[dict]) -> None:

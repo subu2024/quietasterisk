@@ -14,8 +14,10 @@ from typing import List, Dict
 from config import (
     BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, VIDEOS_FILE_HTML,
     INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, BOOKS_FILE_HTML, CONTACT_FILE, INSTAGRAM_PROFILE,
-    OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, BOOKS_ON_HOMEPAGE, ARCHIVES_FILE, SITE_URL,
-    READING_FILE_HTML, BOOK_LOCKED_MESSAGE  # add this
+    OUTPUT_DIR, POSTS_PER_CATEGORY_PAGE, HOME_ESSAYS_COUNT, ESSAYS_FILE, ARCHIVES_FILE, SITE_URL,
+    READING_FILE_HTML, BOOK_LOCKED_MESSAGE,
+    SERIES_TITLE, SERIES_EYEBROW, SERIES_PREMISE, SERIES_INTRO, SERIES_READ_NOTE,
+    SERIES_SPEAKERS, SERIES_LOCKED_MESSAGE, SERIES_DISCLAIMER,
 )
 
 
@@ -26,13 +28,18 @@ from datetime import datetime
 
 from config import ENABLE_AI_CHAT
 from models import Post
-from templates import header_html, footer_html, newsletter_html, topic_chips_html
+from templates import header_html, footer_html, newsletter_html
 from cards import (
-    format_card, format_featured_card, format_book_card, format_reading_note_card,
-    format_book_action_row, book_action_buttons,
+    format_card, format_essay_row, format_book_card, format_reading_note_card,
+    book_action_buttons,
 )
-from chapters import get_book_chapters, warn_about_unmatched_folder_config, lock_icon, BookChapters
-from utils import copy_image, load_books, load_categories, slugify, load_videos, load_reading_notes, youtube_embed, arrow_icon
+from chapters import (
+    get_book_chapters, get_series, warn_about_unmatched_folder_config, lock_icon, BookChapters,
+)
+from utils import (
+    copy_image, load_books, load_categories, slugify, load_videos, load_reading_notes,
+    youtube_embed, arrow_icon, asterisk_icon,
+)
 from parser import process_youtube_embeds
 
 logger = logging.getLogger("BlogGen")
@@ -84,6 +91,33 @@ def generate_reading_notes_redirect():
     with open(OUTPUT_DIR / READING_FILE_HTML, "w", encoding="utf-8") as f:
         f.write(content)
 
+def generate_archives_redirect():
+    """
+    Write a small redirect page at the old archives.html URL.
+
+    The Archives page was renamed Essays (see generate_essays). Old links to
+    archives.html, including deep links like archives.html#category-uncertainty,
+    keep working: the script forwards the #fragment to the new page.
+    """
+    content = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="0; url={ESSAYS_FILE}">
+<link rel="canonical" href="{SITE_URL}/{ESSAYS_FILE}">
+<title>Essays - {BLOG_TITLE}</title>
+<script>window.location.replace("{ESSAYS_FILE}" + window.location.hash);</script>
+</head>
+<body>
+<p>The archive is now <a href="{ESSAYS_FILE}">Essays</a>.</p>
+</body>
+</html>
+"""
+    with open(OUTPUT_DIR / ARCHIVES_FILE, "w", encoding="utf-8") as f:
+        f.write(content)
+
+
 def generate_post_pages(posts: List[Post], related_map: Dict[str, List[str]]):
     """Generate individual blog post pages."""
     global TEMP_CONTENT
@@ -115,7 +149,7 @@ def generate_post_pages(posts: List[Post], related_map: Dict[str, List[str]]):
             related_html += '</ul></div>'
 
         # Build page
-        content = header_html(post.title, "home")
+        content = header_html(post.title, "essays")
         content += f"""
 <article class="post-content animate-in">
   <header class="post-header">
@@ -269,14 +303,15 @@ def generate_books():
         f.write(content)
 
 
-def _chapter_nav_html(book: BookChapters, index: int) -> str:
+def _chapter_nav_html(book: BookChapters, index: int, home_label: str = "Home") -> str:
     """
     Previous / Home / Next buttons for a chapter page.
 
-    Home goes to the book's chapter list. Previous/Next only render when
-    that neighbouring chapter exists; an empty placeholder keeps Home
-    centred when one side is missing. Locked neighbours still get a button —
-    the lock is handled on the destination page.
+    Home goes to the chapter list (labelled "All chapters" for the series).
+    Previous/Next only render when that neighbouring chapter exists; an empty
+    placeholder keeps Home centred when one side is missing. Locked
+    neighbours still get a button — the lock is handled on the destination
+    page.
     """
     chapters = book.chapters
     prev_html = next_html = "<span></span>"
@@ -287,49 +322,76 @@ def _chapter_nav_html(book: BookChapters, index: int) -> str:
     return (
         f'<nav class="chapter-nav" aria-label="Chapter navigation">'
         f'{prev_html}'
-        f'<a href="{book.toc_url}" class="btn btn-primary">Home</a>'
+        f'<a href="{book.toc_url}" class="btn btn-primary">{escape(home_label)}</a>'
         f'{next_html}</nav>'
     )
 
 
-def generate_book_chapter_pages() -> List[str]:
+def _format_dialogue(html_body: str) -> str:
     """
-    Generate, for every book that has a chapter folder configured
-    (config.BOOK_CHAPTER_FOLDERS):
+    Turn speaker-tagged paragraphs into labelled dialogue.
 
-    - a chapter-list page (title, description, buy/download buttons, then
-      each chapter with its one-line synopsis), and
-    - one page per chapter, with Previous / Home / Next buttons.
+    In a series chapter's markdown, start a paragraph with the speaker in
+    bold:
 
-    Locked chapters (`lock: true`) still get a page, with their title,
-    synopsis, keywords and the navigation buttons, but the body is never
-    rendered — config.BOOK_LOCKED_MESSAGE is shown instead.
+        **Daughter:** Why does everyone talk about money like it's a secret?
+
+    and it renders as a small "Daughter" label above the paragraph. Only
+    the names in config.SERIES_SPEAKERS are recognised; follow-on paragraphs
+    from the same speaker are written as plain paragraphs. Each speaker also
+    gets a position class (dialogue-s0, dialogue-s1) so the stylesheet can
+    give each a different side-rule colour without knowing their names.
+    """
+    if not SERIES_SPEAKERS:
+        return html_body
+    names = "|".join(re.escape(name) for name in SERIES_SPEAKERS)
+    pattern = re.compile(rf"<p>\s*<strong>({names}):</strong>\s*", re.IGNORECASE)
+
+    order = [n.lower() for n in SERIES_SPEAKERS]
+
+    def label(match):
+        name = match.group(1)
+        position = order.index(name.lower())
+        return (
+            f'<p class="dialogue dialogue-s{position} dialogue-{slugify(name)}">'
+            f'<span class="dialogue-speaker">{escape(name)}</span>'
+        )
+
+    return pattern.sub(label, html_body)
+
+
+def _write_reading_pages(book_chapters: BookChapters, description: str, buttons: str) -> List[str]:
+    """
+    Write one readable work: its chapter-list page and one page per chapter.
+
+    Used for both the series (book_chapters.is_series) and every book that
+    has a chapter folder, so the two can't drift apart. Differences for the
+    series: it is highlighted under "Series" in the nav, has no "← All Books"
+    link, speaker-tagged paragraphs become dialogue, a chapter's optional
+    `asterisk:` front-matter line is shown as a closing note, and the nav's
+    Home button reads "All chapters".
 
     Returns:
-        Relative URLs of the pages worth listing in sitemap.xml (chapter
-        lists and unlocked chapters).
+        Relative URLs worth listing in sitemap.xml (the chapter list and
+        every unlocked chapter).
     """
-    books = load_books()
-    warn_about_unmatched_folder_config(books)
+    is_series = book_chapters.is_series
+    active_page = "series" if is_series else "books"
+    locked_message = SERIES_LOCKED_MESSAGE if is_series else BOOK_LOCKED_MESSAGE
+    home_label = "All chapters" if is_series else "Home"
+
+    book_title = escape(book_chapters.book_title)
+    chapters = book_chapters.chapters
     sitemap_urls: List[str] = []
 
-    for book in books:
-        book_chapters = get_book_chapters(book.get("title", ""))
-        if not book_chapters:
-            continue
-
-        book_title = escape(book_chapters.book_title)
-        chapters = book_chapters.chapters
-        buttons = book_action_buttons(book, include_read=False)
-
-        # ---------- chapter list ("Home" for the book) ----------
-        items = ""
-        for chapter in chapters:
-            lock_badge = (
-                f'<span class="chapter-lock-badge">{lock_icon()} Locked</span>' if chapter.locked else ""
-            )
-            synopsis = f'<span class="chapter-synopsis">{escape(chapter.synopsis)}</span>' if chapter.synopsis else ""
-            items += f"""
+    # ---------- chapter list ----------
+    items = ""
+    for chapter in chapters:
+        lock_badge = (
+            f'<span class="chapter-lock-badge">{lock_icon()} Locked</span>' if chapter.locked else ""
+        )
+        synopsis = f'<span class="chapter-synopsis">{escape(chapter.synopsis)}</span>' if chapter.synopsis else ""
+        items += f"""
       <li class="chapter-item">
         <a href="{chapter.url}" class="chapter-link">
           <span class="chapter-number">{chapter.number:02d}</span>
@@ -340,17 +402,32 @@ def generate_book_chapter_pages() -> List[str]:
         </a>
       </li>"""
 
-        description = escape(book.get("description", ""))
-        content = header_html(f"{book_chapters.book_title} - " + BLOG_TITLE, "books")
-        content += f"""
+    if is_series:
+        first = book_chapters.first_chapter
+        eyebrow = f'<p class="hero-label">{escape(SERIES_EYEBROW)}</p>'
+        read_note = f'<p class="chapter-read-note">{escape(SERIES_READ_NOTE)}</p>' if SERIES_READ_NOTE else ""
+        buttons = f'<a href="{first.url}" class="btn btn-primary">Start with Chapter 1</a>'
+    else:
+        eyebrow = (
+            f'<p class="hero-label"><a href="{BOOKS_FILE_HTML}" '
+            f'style="color: var(--color-rust); text-decoration: none;">← All Books</a></p>'
+        )
+        read_note = ""
+
+    disclaimer_html = (
+        f'<p class="chapter-disclaimer chapter-disclaimer-list">{escape(SERIES_DISCLAIMER)}</p>'
+        if is_series and SERIES_DISCLAIMER else ""
+    )
+
+    content = header_html(f"{book_chapters.book_title} - " + BLOG_TITLE, active_page)
+    content += f"""
 <section class="hero" style="padding: 6rem 0 4rem;">
   <div class="container">
     <div class="hero-content">
-      <p class="hero-label">
-        <a href="{BOOKS_FILE_HTML}" style="color: var(--color-rust); text-decoration: none;">← All Books</a>
-      </p>
+      {eyebrow}
       <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4rem);">{book_title}</h1>
-      <p class="hero-description" style="max-width: 48rem;">{description}</p>
+      <p class="hero-description" style="max-width: 48rem;">{escape(description)}</p>
+      {read_note}
       {f'<div class="chapter-hero-actions">{buttons}</div>' if buttons else ''}
     </div>
   </div>
@@ -359,45 +436,60 @@ def generate_book_chapter_pages() -> List[str]:
   <div class="container">
     <ol class="chapter-list">{items}
     </ol>
+    {disclaimer_html}
   </div>
 </section>
 """
-        content += footer_html()
-        with open(OUTPUT_DIR / book_chapters.toc_url, "w", encoding="utf-8") as f:
-            f.write(content)
-        sitemap_urls.append(book_chapters.toc_url)
+    content += footer_html()
+    with open(OUTPUT_DIR / book_chapters.toc_url, "w", encoding="utf-8") as f:
+        f.write(content)
+    sitemap_urls.append(book_chapters.toc_url)
 
-        # ---------- one page per chapter ----------
-        for index, chapter in enumerate(chapters):
-            keywords_html = ""
-            if chapter.keywords:
-                chips = "".join(f'<span class="chapter-keyword">{escape(k)}</span>' for k in chapter.keywords)
-                keywords_html = f'<div class="chapter-keywords" aria-label="Keywords">{chips}</div>'
+    # ---------- one page per chapter ----------
+    for index, chapter in enumerate(chapters):
+        keywords_html = ""
+        if chapter.keywords:
+            chips = "".join(f'<span class="chapter-keyword">{escape(k)}</span>' for k in chapter.keywords)
+            keywords_html = f'<div class="chapter-keywords" aria-label="Keywords">{chips}</div>'
 
-            synopsis_html = f'<p class="chapter-lead">{escape(chapter.synopsis)}</p>' if chapter.synopsis else ""
+        synopsis_html = f'<p class="chapter-lead">{escape(chapter.synopsis)}</p>' if chapter.synopsis else ""
+        asterisk_html = ""
+        closing_html = ""
 
-            if chapter.locked:
-                # Deliberately do NOT render chapter.body here.
-                body_html = f"""
+        if chapter.locked:
+            # Deliberately do NOT render chapter.body (or the asterisk note) here.
+            body_html = f"""
   <div class="chapter-locked" role="note">
     <div class="chapter-locked-icon">{lock_icon()}</div>
-    <p>{escape(BOOK_LOCKED_MESSAGE)}</p>
+    <p>{escape(locked_message)}</p>
   </div>"""
-                reading_time_html = ""
-            else:
-                html_body = markdown.markdown(chapter.body, extensions=["extra", "codehilite"])
-                html_body = process_youtube_embeds(html_body)
-                for img_src in re.findall(r'<img.*?src=[\'"](.*?)[\'"]', html_body):
-                    copied = copy_image(img_src)
-                    if copied:
-                        html_body = html_body.replace(img_src, copied)
-                body_html = f'\n  <div class="post-body">\n    {html_body}\n  </div>'
-                reading_time_html = f'<span class="post-meta-item">{chapter.reading_time}</span>'
+            reading_time_html = ""
+        else:
+            html_body = markdown.markdown(chapter.body, extensions=["extra", "codehilite"])
+            html_body = process_youtube_embeds(html_body)
+            if is_series:
+                html_body = _format_dialogue(html_body)
+            for img_src in re.findall(r'<img.*?src=[\'"](.*?)[\'"]', html_body):
+                copied = copy_image(img_src)
+                if copied:
+                    html_body = html_body.replace(img_src, copied)
+            body_html = f'\n  <div class="post-body">\n    {html_body}\n  </div>'
+            reading_time_html = f'<span class="post-meta-item">{chapter.reading_time}</span>'
+            if chapter.asterisk:
+                asterisk_html = f"""
+  <aside class="chapter-asterisk">
+    <p class="chapter-asterisk-label">{asterisk_icon(14)} The asterisk</p>
+    <p class="chapter-asterisk-text">{escape(chapter.asterisk)}</p>
+  </aside>"""
+            if chapter.teaser:
+                closing_html += f'\n  <p class="chapter-teaser">{escape(chapter.teaser)}</p>'
+            if is_series and SERIES_DISCLAIMER:
+                closing_html += f'\n  <p class="chapter-disclaimer">{escape(SERIES_DISCLAIMER)}</p>'
 
-            nav_html = _chapter_nav_html(book_chapters, index)
+        nav_html = _chapter_nav_html(book_chapters, index, home_label)
 
-            content = header_html(f"{chapter.title} - {book_chapters.book_title} - " + BLOG_TITLE, "books")
-            content += f"""
+        content = header_html(f"{chapter.title} - {book_chapters.book_title} - " + BLOG_TITLE, active_page)
+        content += f"""
 <article class="post-content animate-in">
   {nav_html}
   <header class="post-header">
@@ -410,20 +502,60 @@ def generate_book_chapter_pages() -> List[str]:
     {synopsis_html}
     {keywords_html}
     <div class="decorative-line"></div>
-  </header>{body_html}
+  </header>{body_html}{asterisk_html}{closing_html}
   {nav_html}
 </article>
 """
-            content += footer_html()
-            with open(OUTPUT_DIR / chapter.url, "w", encoding="utf-8") as f:
-                f.write(content)
-            if not chapter.locked:
-                sitemap_urls.append(chapter.url)
+        content += footer_html()
+        with open(OUTPUT_DIR / chapter.url, "w", encoding="utf-8") as f:
+            f.write(content)
+        if not chapter.locked:
+            sitemap_urls.append(chapter.url)
 
-        locked_count = sum(1 for c in chapters if c.locked)
+    locked_count = sum(1 for c in chapters if c.locked)
+    logger.info(
+        f"Generated {'series' if is_series else 'book'} {book_chapters.book_title!r}: "
+        f"{len(chapters)} chapters ({locked_count} locked)"
+    )
+    return sitemap_urls
+
+
+def generate_reading_pages() -> List[str]:
+    """
+    Generate every readable work on the site:
+
+    - the series (config.SERIES_TITLE): series.html + series-<chapter>.html
+    - each book with a chapter folder (config.BOOK_CHAPTER_FOLDERS):
+      book-<folder>.html + book-<folder>-<chapter>.html
+
+    See _write_reading_pages for what each page contains. Locked chapters
+    (`lock: true`) still get a page with their title, synopsis, keywords and
+    navigation, but the body is never rendered.
+
+    Returns:
+        Relative URLs of the pages worth listing in sitemap.xml.
+    """
+    books = load_books()
+    warn_about_unmatched_folder_config(books)
+    sitemap_urls: List[str] = []
+
+    series = get_series()
+    if series:
+        sitemap_urls += _write_reading_pages(series, description=SERIES_INTRO, buttons="")
+    else:
         logger.info(
-            f"Generated book {book_chapters.book_title!r}: {len(chapters)} chapters "
-            f"({locked_count} locked)"
+            "No series chapters found (config.SERIES_FOLDER) — the Series page, "
+            "nav link and homepage feature are skipped."
+        )
+
+    for book in books:
+        book_chapters = get_book_chapters(book.get("title", ""))
+        if not book_chapters:
+            continue
+        sitemap_urls += _write_reading_pages(
+            book_chapters,
+            description=book.get("description", ""),
+            buttons=book_action_buttons(book, include_read=False),
         )
 
     return sitemap_urls
@@ -438,7 +570,7 @@ def generate_categories(posts: List[Post]):
     categories_meta = load_categories()
 
     # Main categories page
-    content = header_html("Categories - " + BLOG_TITLE, "categories")
+    content = header_html("Categories - " + BLOG_TITLE, "essays")
     content += """
 <section class="section">
   <div class="container">
@@ -490,7 +622,7 @@ def generate_sitemap(posts: List[Post], categories: List[str], extra_urls: List[
 
     Search engines discover pages by crawling links, but category pages
     (category-<slug>.html) aren't in the main nav — they're only reachable
-    via the homepage's topic pills or a direct link — so listing them
+    via a direct link — so listing them
     explicitly here is the difference between them getting indexed
     promptly and not at all. Same idea for the reading-notes redirect,
     which is deliberately excluded since it isn't a real destination page.
@@ -498,12 +630,13 @@ def generate_sitemap(posts: List[Post], categories: List[str], extra_urls: List[
     Args:
         posts: List of Post objects (used for post URLs + lastmod dates)
         categories: Distinct category names present in the published posts
-        extra_urls: Additional relative page URLs to list (e.g. the book
-            chapter pages returned by generate_book_chapter_pages)
+        extra_urls: Additional relative page URLs to list (e.g. the series and
+            book chapter pages returned by generate_reading_pages)
     """
+    # archives.html is deliberately absent: it is only a redirect to essays.html.
     static_pages = [
         INDEX_FILE, ABOUT_FILE, CONTACT_FILE, BOOKS_FILE_HTML,
-        VIDEOS_FILE_HTML, ARCHIVES_FILE, CATEGORIES_FILE,
+        VIDEOS_FILE_HTML, ESSAYS_FILE, CATEGORIES_FILE,
     ]
 
     # (relative URL, lastmod-or-None) pairs
@@ -542,7 +675,7 @@ def generate_category_page(category: str, posts: List[Post], category_meta: dict
     category_file = f"category-{category_slug}.html"
     description = category_meta.get("description", f"Essays exploring {category.lower()}")
     
-    content = header_html(f"{category} - " + BLOG_TITLE, "categories")
+    content = header_html(f"{category} - " + BLOG_TITLE, "essays")
     content += """
 <script>
 function loadMore() {
@@ -826,82 +959,84 @@ def get_temp_content():
     return TEMP_CONTENT
 
 def generate_index(posts: List[Post], related_map: Dict):
-    """Generate the editorial, quiet-asterisk-inspired homepage."""
-    books = load_books()
-    videos = load_videos()
-    featured_video = next((v for v in videos if v.get("featured")), None)
-    categories_present = sorted(set(p.category for p in posts))
+    """
+    Generate the homepage: a deliberately short, quiet page.
 
-    logger.info(f"Generating index page with {len(posts)} posts and {len(books)} books")
+    Order: hero → the Series feature → recent essays → newsletter.
+    Everything else (books, videos, topic pills, stats, archive teaser,
+    author card) was removed on purpose; those live on their own pages or in
+    the footer. Each block is optional: no series chapters means no Series
+    feature, no newsletter endpoint means no signup box.
+
+    The "Recent essays" list is simply the newest HOME_ESSAYS_COUNT posts.
+    (The `featured` front-matter flag is no longer used here.)
+    """
+    series = get_series()
+    recent = posts[:HOME_ESSAYS_COUNT]
+
+    logger.info(f"Generating index page with {len(recent)} recent essays (series: {bool(series)})")
 
     content = header_html("Home - " + BLOG_TITLE, "home")
-    content += """
+    content += f"""
 <div class="quiet-home">
   <section class="qa-hero">
     <div class="wrap">
-      <div>
-        <h1>Essays on life, written from inside the uncertainty.</h1>
-        <p class="qa-sub">{tagline}</p>
-        <div class="qa-actions">
-          <a class="qa-button" href="#featured">Start reading</a>
-          <a class="qa-ghost" href="{about_file}">About the author →</a>
+      <h1>Essays on life, written from inside the uncertainty.</h1>
+      <p class="qa-sub">{escape(TAG_LINE)}</p>
+    </div>
+  </section>
+"""
+
+    if series and series.first_chapter:
+        content += f"""
+  <section class="qa-series">
+    <div class="wrap">
+      <div class="qa-series-card">
+        <div class="qa-series-mark">{asterisk_icon(132, 0.7)}</div>
+        <div class="qa-series-body">
+          <p class="qa-eyebrow">{escape(SERIES_EYEBROW)}</p>
+          <h2>{escape(series.book_title)}</h2>
+          <p class="qa-series-premise">{escape(SERIES_PREMISE)}</p>
+          <div class="qa-actions">
+            <a class="qa-button" href="{series.first_chapter.url}">Start with Chapter 1</a>
+            <a class="qa-ghost" href="{series.toc_url}">See all chapters</a>
+          </div>
         </div>
-      </div>
-      <div class="qa-asterisk" aria-hidden="true">
-        <svg viewBox="0 0 200 200" fill="none"><g stroke="#211F1D" stroke-width="2.5" stroke-linecap="round"><line x1="100" y1="20" x2="100" y2="180"/><line x1="30" y1="60" x2="170" y2="140"/><line x1="170" y1="60" x2="30" y2="140"/></g><circle cx="100" cy="100" r="6" fill="#A5732E"/></svg>
       </div>
     </div>
   </section>
-  <div class="qa-strip"><div class="wrap"><span><strong>{post_count} {post_word}.</strong> {book_count} {book_word}. One long argument with certainty.</span><span>Writing from the uncertainty</span></div></div>
-  <section class="qa-topics"><div class="wrap"><span class="qa-topic-label">Browse by theme</span>{topics}</div></section>
-""".format(
-        tagline=escape(TAG_LINE),
-        about_file=ABOUT_FILE,
-        post_count=len(posts),
-        post_word="essay" if len(posts) == 1 else "essays",
-        book_count=len(books),
-        book_word="book" if len(books) == 1 else "books",
-        topics=topic_chips_html(categories_present, "qa-topic"),
-    )
+"""
 
-    featured_posts = [post for post in posts if post.featured][:4]
-    if featured_posts:
-        content += """
-  <section class="qa-featured" id="featured"><div class="wrap">
-    <div class="qa-section-head"><h2>Recent essays</h2><a class="qa-see-all" href="{archive}">Browse the archive →</a></div>
-    <div class="qa-featured-grid"><div class="qa-lead">{lead}</div><div class="qa-list">{rest}</div></div>
-  </div></section>
-""".format(
-            archive=ARCHIVES_FILE,
-            lead=format_featured_card(featured_posts[0]),
-            rest="".join(format_card(post, is_small=True) for post in featured_posts[1:]),
-        )
+    if recent:
+        rows = "".join(format_essay_row(post) for post in recent)
+        content += f"""
+  <section class="qa-essays" id="essays">
+    <div class="wrap qa-narrow">
+      <div class="qa-section-head"><h2>Recent essays</h2></div>
+      <div class="qa-essay-list">{rows}</div>
+      <a class="qa-see-all" href="{ESSAYS_FILE}">Browse all essays →</a>
+    </div>
+  </section>
+"""
 
-    if featured_video:
-        video_title = escape(featured_video.get("title", "Featured video"))
-        content += f'''<section class="qa-featured"><div class="wrap"><div class="qa-section-head"><h2>{video_title}</h2></div>{youtube_embed(featured_video.get("video_id", ""), title=video_title)}</div></section>'''
+    # Keep the project's live signup integration (hidden if not configured).
+    newsletter = newsletter_html()
+    if newsletter:
+        content += '<div class="qa-newsletter">' + newsletter + '</div>'
 
-    if books:
-        content += f'''<section class="qa-featured qa-books" id="books"><div class="wrap">
-    <div class="qa-section-head"><h2>Books</h2><a class="qa-see-all" href="{BOOKS_FILE_HTML}">More about the books →</a></div>
-    <div class="qa-book-list">{"".join(format_book_action_row(book) for book in books)}</div>
-  </div></section>'''
-
-    # Keep the project's live signup integration instead of replacing it with
-    # a decorative form from the reference file.
-    content += '<div class="qa-newsletter">' + newsletter_html() + '</div>'
-    content += f'''<section class="qa-about"><div class="wrap"><div class="qa-avatar" aria-hidden="true"></div><p>Written by {escape(BLOG_TITLE)} — fascinated by one question: how do we live well when certainty isn't an option?</p><a class="qa-about-link" href="{ABOUT_FILE}">Meet the author →</a></div></section>
-  <section class="qa-archive"><div class="wrap"><h2>Archive</h2><p>A chronological index of essays, organized by year.</p><a class="qa-button" href="{ARCHIVES_FILE}">Browse the archive →</a></div></section>
-</div>'''
-
+    content += "</div>"
     content += get_chat_widget_html()
     content += footer_html()
     with open(OUTPUT_DIR / INDEX_FILE, "w", encoding="utf-8") as f:
         f.write(content)
 
-def generate_archives(posts: List[Post]):
-    """Generate archives page with a magazine-style index, toggleable
-    between grouping by year and grouping by category."""
+
+def generate_essays(posts: List[Post]):
+    """Generate the Essays page (formerly "Archives"): every essay in a
+    magazine-style index, toggleable between grouping by year and by category.
+
+    Written to config.ESSAYS_FILE. The old archives.html URL is kept alive by
+    generate_archives_redirect()."""
 
     # Group posts by year
     archive_data = defaultdict(list)
@@ -927,7 +1062,7 @@ def generate_archives(posts: List[Post]):
     # reads consistently no matter which view you're in
     GROUP_PREVIEW_COUNT = POSTS_PER_CATEGORY_PAGE
 
-    content = header_html("Archives - " + BLOG_TITLE, "archives")
+    content = header_html("Essays - " + BLOG_TITLE, "essays")
 
     # HERO SECTION
     content += f"""
@@ -935,7 +1070,7 @@ def generate_archives(posts: List[Post]):
   <div class="container">
     <div class="hero-content" style="text-align: center;">
       <div style="display: inline-block; padding: 0.5rem 1.5rem; background: rgba(165, 115, 46, 0.1); border: 1px solid var(--color-rust); border-radius: var(--radius); margin-bottom: 2rem;">
-        <p class="hero-label" style="margin: 0; font-weight: 600;">Archive</p>
+        <p class="hero-label" style="margin: 0; font-weight: 600;">Essays</p>
       </div>
 
       <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1rem;">
@@ -954,10 +1089,6 @@ def generate_archives(posts: List[Post]):
     content += """
 <section class="section" style="padding: 6rem 0;">
   <div class="container" style="max-width: 64rem;">
-
-    <h2 style="font-size: 2rem; margin-bottom: 2.5rem; text-align: center; color: var(--color-charcoal); letter-spacing: 0.08em;">
-      Archive Index
-    </h2>
 
     <div style="display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 4rem;">
       <button id="tab-year" onclick="showArchiveView('year')"
@@ -1146,11 +1277,11 @@ function loadMoreGroup(groupId) {
 
     content += footer_html()
 
-    with open(OUTPUT_DIR / ARCHIVES_FILE, "w", encoding="utf-8") as f:
+    with open(OUTPUT_DIR / ESSAYS_FILE, "w", encoding="utf-8") as f:
         f.write(content)
 
     logger.info(
-        f"Generated archive with {len(posts)} posts across "
+        f"Generated essays page with {len(posts)} posts across "
         f"{len(sorted_years)} years and {len(sorted_categories)} categories"
     )
 

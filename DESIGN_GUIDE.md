@@ -18,6 +18,23 @@ same handful of components.
 
 ---
 
+## Site Structure
+
+Three items in the main nav, plus the logo (home):
+
+| Nav item | Page | Notes |
+| -------- | ---- | ----- |
+| Series   | `series.html` | Chapter list of the non-fiction series; chapters are `series-<slug>.html`. Hidden if the series has no chapters. |
+| Essays   | `essays.html` | Every essay, toggle **By year / By category**. This is the former Archives page. |
+| About    | `about.html` | |
+
+- **Renames/redirects:** `archives.html` is now only a redirect to `essays.html` (it forwards `#fragments`). `reading.html` still redirects to the Books page.
+- **Not in the nav, still published:** `books.html`, `videos.html`, `categories.html`, `category-<slug>.html`, `contact.html`. The footer links to Books ("Also by the author"), Contact, Series, Essays and About.
+- **Homepage** (`generators.generate_index`): hero → Series feature → 3 recent essays → newsletter. Nothing else. Recent essays are simply the newest `HOME_ESSAYS_COUNT` posts; the `featured` front-matter flag is no longer used there.
+- `header_html(title, active_page)` highlights only `"series"`, `"essays"` or `"about"`. Essay posts, the Essays page and category pages all pass `"essays"`.
+
+---
+
 ## Color Palette
 
 ```css
@@ -57,6 +74,12 @@ and `.stat-card-glass.accent-*` CSS variants — see below.
   sans-serif /* Nav, buttons, labels, metadata, pills */;
 ```
 
+> **Out of date:** the live fonts are set in `config.py` (`FONT_SERIF` = Fraunces,
+> `FONT_SANS` = Inter, with `GOOGLE_FONTS_URL`), and the palette above has been
+> replaced by the paper/ink tokens at the top of `styles.py` (`--color-cream:
+> #EDE9E1`, `--color-rust: #A5732E`, ...). Treat `styles.py` and `config.py` as
+> the source of truth until this section is rewritten.
+
 Both are loaded via the `@import` at the top of `get_modern_styles()` in
 `styles.py`. **If you ever change these variables, update the `@import`
 URL to match** — they drifted out of sync once already (the import was
@@ -93,7 +116,8 @@ of the site (see git history / prior review notes).
 | `format_featured_card(post)`                          | Large hero card, spans 2 grid rows (`.card-featured`).                                                              |
 | `format_book_card(book, show_full_description=False)` | Book card with cover thumbnail, author/year, optional YouTube embed, buy button.                                    |
 | `format_reading_note_card(note)`                      | Compact book-log entry.                                                                                             |
-| `format_book_action_row(book)`                        | Compact homepage book row: cover, title, description, Read Me / Download / Buy buttons (`.qa-book*`).               |
+| `format_book_action_row(book)`                        | Compact book row with Read Me / Download / Buy buttons. Not used on the homepage any more; kept for reuse.         |
+| `format_essay_row(post)`                              | Plain list row (meta line, title, excerpt, whole row is a link) for the homepage "Recent essays" (`.qa-essay*`). The one non-card. |
 
 All four escape user/JSON-authored text automatically (`html.escape`) — don't
 re-escape or bypass them by writing markup manually.
@@ -208,10 +232,23 @@ Pages generated (flat, in the output root):
 
 **Buttons** come from one function, `cards.book_actions(book)`: *Read Me* if the book has chapters, plus *Buy* (absolute `http(s)` link) or *Download* (relative link) using `linkDescription` from `books.json` for the label. The homepage row, the Books page card and the chapter-list hero all use it, so they can't disagree.
 
+### The Series — `config.SERIES_*`, `chapters.get_series()`, `generators.generate_reading_pages()`
+
+One non-fiction series reuses the book-chapter machinery above, with its own page names (`series.html`, `series-<slug>.html`) and a few differences, all in `generators._write_reading_pages()` (shared with books so the two can't drift):
+
+- Chapters live in `book_chapters/<SERIES_FOLDER>/*.md` (currently `sunday_odds/`), same front matter as book chapters plus two optional keys below.
+- **Dialogue:** start a paragraph with `**Revathi:**` or `**Anika:**` (names, mother first, in `config.SERIES_SPEAKERS`) and it renders with the speaker as a small label above the text and a coloured side rule per speaker (`.dialogue`, `.dialogue-s0/-s1`, `.dialogue-speaker`). Follow-on paragraphs stay plain.
+- **Front-matter keys:** `asterisk: "one line"` renders as a closing note (`.chapter-asterisk`); `teaser: "Next Sunday, ..."` renders after it (`.chapter-teaser`). Neither is rendered for locked chapters. Keep values on one line; wrap them in double quotes.
+- **Boxes and tables** are raw HTML blocks with `markdown="1"` so the inside is still markdown: `<div class="napkin" markdown="1">` (dashed worked-numbers box), `<div class="move" markdown="1">` (the Monday Move) and `<div class="tw" markdown="1">` around a pipe table (scrolls sideways on phones). Leave a blank line after the opening tag and before `</div>`.
+- **Disclaimer:** `config.SERIES_DISCLAIMER` is added under every chapter and under the chapter list, so don't paste it into chapter files.
+- **Fact-check markers:** the build warns about any published chapter that still contains a `[CHECK ...]` note.
+- The chapter-nav Home button reads "All chapters"; the list page hero has a "Start with Chapter 1" button instead of buy/download buttons.
+- **Homepage feature:** `.qa-series-card` (asterisk mark, eyebrow, title, premise, one primary button). Copy comes from `SERIES_TITLE`, `SERIES_PREMISE`, `SERIES_EYEBROW`.
+- The build warns while `SERIES_TITLE` is still the `[Series title]` placeholder.
+
 ### Newsletter signup — `templates.newsletter_html()`
 
-Homepage-only email capture, placed right after Featured Essays and before
-the Archive teaser — the point where a visitor has just read a couple of
+Homepage-only email capture, placed right after Recent essays, at the end of the page — the point where a visitor has just read a couple of
 titles and decided they like the voice, which is the moment to ask them to
 come back.
 
@@ -236,11 +273,10 @@ know the proxy's public URL:
   audience, not read your Resend key.
 - `NEWSLETTER_HEADING` / `NEWSLETTER_SUBHEAD` — the copy.
 
-If `NEWSLETTER_API_ENDPOINT` is unset, the section renders with the input
-and button disabled and a "being set up" note, rather than posting to
-nowhere and giving the visitor a silent failure — and the generator logs
-a warning. Don't ignore that warning; it means signups currently go
-nowhere.
+If `NEWSLETTER_API_ENDPOINT` is unset, the section is **hidden entirely**
+(a visible "being set up" box makes the site look unfinished, and posting to
+nowhere would fail silently) and the generator logs a warning. Don't ignore
+that warning; it means there is currently no signup on the site.
 
 **Don't** point this at a generic ESP embed form (Mailchimp/ConvertKit/
 Buttondown-style `<form action="...">`) without also updating the
@@ -254,9 +290,11 @@ Connect?" box rather than inventing a new visual treatment for "here's a
 thing to do" — that panel style is now the site's general call-to-action
 pattern, not a one-off.
 
-### Topics nav — `templates.topics_nav_html(categories)`
+### Topics nav — `templates.topic_chips_html(categories)` (currently unused)
 
-A row of pill-shaped links on the homepage, placed right after the hero,
+The homepage no longer shows a topic strip; themes live on the Essays page's
+"By category" view. The helper is kept in case it returns. When it was in
+use it was a row of pill-shaped links on the homepage, placed right after the hero,
 letting a visitor jump straight into a theme (Self-Awareness & EQ, Money &
 Meaning, etc.) instead of only seeing the site chronologically.
 
