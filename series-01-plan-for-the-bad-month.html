@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan for the Bad Month - Sunday Odds - quiet asterisk</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Paper / ink editorial palette. Every page — homepage included — pulls
+     from this single set of tokens, so there is one accent color and one
+     set of surfaces for the whole site instead of a separate palette per
+     page. */
+  --color-cream: #EDE9E1;       /* page background ("paper") */
+  --color-cream-deep: #E2DBCC;  /* recessed panel background */
+  --color-sand: #D6CCB8;        /* borders / rules / dividers */
+  --color-charcoal: #211F1D;    /* primary text ("ink") */
+  --color-slate: #4A453E;       /* secondary text ("ink-soft") */
+  --color-meta: #8A8172;        /* tertiary / metadata text */
+  --color-rust: #A5732E;        /* primary accent (muted ochre) */
+  --color-rust-deep: #8A5E24;   /* accent hover/active state */
+  --color-terracotta: #8F5A3C;  /* secondary accent (warm brown) */
+  --color-sage: #7C8B6B;        /* category accent: muted green */
+  --color-gold: #B8944F;        /* category accent: deep gold */
+  --radius: 2px;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  font-family: var(--font-serif);
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header */
+.header {
+  border-bottom: 1px solid var(--color-sand);
+  background: var(--color-cream);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.75rem 0;
+}
+
+.logo {
+  font-size: 1.375rem;
+  font-weight: 600;
+  font-family: var(--font-serif);
+  color: var(--color-charcoal);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.logo:hover {
+  color: var(--color-rust);
+}
+
+.logo-asterisk {
+  color: var(--color-rust);
+  margin-left: 0.25rem;
+}
+
+.logo-mark {
+  width: 50px;        /* adjust to taste */
+  height: 50px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-slate);
+  text-decoration: none;
+  transition: color 0.15s;
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-charcoal);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.35rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-rust);
+}
+
+/* Hero Section (interior pages: About, Contact, Videos, Archives, Categories) */
+.hero {
+  padding: 6rem 0 4rem;
+  background: var(--color-cream);
+  border-bottom: 1px solid var(--color-sand);
+}
+
+.hero-content {
+  position: relative;
+}
+
+.hero-label {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-rust);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  max-width: 80rem;
+}
+
+.hero-title-accent {
+  font-style: italic;
+  color: var(--color-rust);
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: var(--color-slate);
+  line-height: 1.6;
+  max-width: 42rem;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  padding: 0.9rem 1.85rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  display: inline-block;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-charcoal);
+  color: var(--color-cream);
+  border: 1px solid var(--color-charcoal);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--color-charcoal);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-charcoal);
+  border: 1px solid var(--color-charcoal);
+}
+
+.btn-secondary:hover {
+  background: var(--color-charcoal);
+  color: var(--color-cream);
+}
+
+/* Section Headers */
+.section {
+  padding: 5rem 0;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-header-centered {
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 600;
+  font-family: var(--font-serif);
+  margin-bottom: 1.5rem;
+}
+
+.section-description {
+  font-size: 1.25rem;
+  color: var(--color-slate);
+  line-height: 1.6;
+  max-width: 48rem;
+}
+
+.section-description-centered {
+  margin: 0 auto;
+}
+
+/* Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--color-cream);
+  border: 1px solid var(--color-sand);
+  padding: 2rem;
+  transition: border-color 0.15s;
+}
+
+.card:hover {
+  border-color: var(--color-charcoal);
+}
+
+/* Category label — a plain colored small-caps tag, not a filled pill, so
+   category color-coding reads as a quiet accent rather than UI chrome.
+   Variants assigned deterministically by category name in
+   utils.category_accent(). */
+.card-category {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.card-category-rust { color: var(--color-rust); }
+.card-category-sage { color: var(--color-sage); }
+.card-category-gold { color: var(--color-gold); }
+.card-category-terracotta { color: var(--color-terracotta); }
+
+.card-compact {
+  padding: 1.5rem;
+}
+
+.card-compact .card-title {
+  font-size: 1.375rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-compact .card-excerpt {
+  font-size: 0.9375rem;
+  margin-bottom: 1rem;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  font-family: var(--font-serif);
+  margin-bottom: 1rem;
+  color: var(--color-charcoal);
+  transition: color 0.15s;
+}
+
+.card:hover .card-title {
+  color: var(--color-rust);
+}
+
+.card-excerpt {
+  color: var(--color-slate);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.card-meta {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-meta);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-rust);
+  text-decoration: none;
+  transition: transform 0.15s;
+}
+
+.card:hover .card-link {
+  transform: translateX(0.35rem);
+}
+
+/* Featured Card (Large) */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.card-featured {
+  grid-row: span 2;
+  padding: 2.5rem;
+}
+
+.featured-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: var(--color-rust);
+  margin-bottom: 1rem;
+}
+
+.card-featured .card-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-featured .card-excerpt {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+/* Post Content */
+.post-content {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.post-header {
+  margin-bottom: 3rem;
+}
+
+.post-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.post-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.post-meta-item {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-slate);
+}
+
+.post-category {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  color: var(--color-rust);
+}
+
+.decorative-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-rust), var(--color-terracotta));
+  margin: 2rem 0;
+}
+
+.post-body {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.post-body h2, .post-body h3 {
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-body p {
+  margin-bottom: 1.5rem;
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin: 2rem 0;
+}
+
+.post-body blockquote {
+  border-left: 3px solid var(--color-rust);
+  padding-left: 2rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--color-slate);
+}
+
+.post-body .poem {
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--color-charcoal);
+  margin: 2.5rem 0;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--color-sand);
+}
+
+.post-body .poem p {
+  margin-bottom: 1.25rem;
+}
+
+.post-body .poem p:last-child {
+  margin-bottom: 0;
+}
+
+.post-body iframe {
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  margin: 2rem 0;
+  border-radius: var(--radius);
+}
+
+/* Inline text links inside prose (About/Contact copy, etc.) — one shared
+   rule instead of the same color/weight/underline repeated per-link. */
+.text-link {
+  color: var(--color-rust);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.text-link:hover {
+  color: var(--color-rust-deep);
+}
+
+/* "Letter" style narrative pages (About). Reuses .post-body's type scale
+   for the prose itself; these add the page-specific bits: a wider paragraph
+   rhythm, the sign-off, and the closing callout panel. */
+.letter {
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.letter p {
+  margin-bottom: 2rem;
+}
+
+.letter-heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--color-charcoal);
+}
+
+.letter blockquote {
+  border-left: 3px solid var(--color-rust);
+  padding-left: 1.75rem;
+  font-style: italic;
+  color: var(--color-slate);
+  font-size: 1.25rem;
+  margin: 2.5rem 0;
+}
+
+.letter-signoff {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--color-sand);
+}
+
+.letter-signoff .name {
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--color-charcoal);
+  font-weight: 600;
+}
+
+.letter-callout {
+  margin-top: 4rem;
+  padding: 2.5rem;
+  background: var(--color-cream-deep);
+  border-top: 1px solid var(--color-sand);
+  border-bottom: 1px solid var(--color-sand);
+}
+
+.letter-callout h3 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-charcoal);
+}
+
+.letter-callout p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-slate);
+  margin-bottom: 1.5rem;
+}
+
+.letter-callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* Contact page card */
+.contact-card {
+  background: var(--color-cream);
+  border: 1px solid var(--color-sand);
+  padding: 3rem;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--color-rust);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.youtube-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 2rem 0;
+    border-radius: var(--radius);
+    background: #000;
+}
+
+.youtube-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Related Posts */
+.related-posts {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--color-sand);
+}
+
+.related-posts-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.related-posts-list {
+  list-style: none;
+  padding: 0;
+}
+
+.related-posts-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-sand);
+}
+
+.related-posts-link {
+  color: var(--color-charcoal);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.related-posts-link:hover {
+  color: var(--color-rust);
+}
+
+/* Footer — light paper panel, matching every other surface on the site
+   (previously a dark inverted charcoal block, which was the one part of
+   the page that never matched the rest of the design). */
+.footer {
+  background: var(--color-cream-deep);
+  color: var(--color-charcoal);
+  padding: 4rem 0 2rem;
+  margin-top: 6rem;
+  border-top: 1px solid var(--color-sand);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section-title {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-terracotta);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link {
+  color: var(--color-slate);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-link:hover {
+  color: var(--color-charcoal);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-sand);
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-slate);
+}
+
+.footer-also {
+  margin-top: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-slate);
+}
+
+.footer-link-underlined {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
+/* Newsletter — the background/borders live on the outer .newsletter-section
+   so the panel spans full width (like every other section break on the
+   site) while .newsletter-grid just handles the two-column layout inside
+   the constrained .container. */
+.newsletter-section {
+  padding: 4rem 0;
+  background: var(--color-cream-deep);
+  border-top: 1px solid var(--color-sand);
+  border-bottom: 1px solid var(--color-sand);
+}
+
+.newsletter-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  border: 1px solid var(--color-sand);
+  border-radius: var(--radius);
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--color-rust);
+}
+
+.newsletter-fine {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-slate);
+  margin-top: 0.75rem;
+}
+
+/* Books Section */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.book-card {
+  background: var(--color-cream);
+  border: 1px solid var(--color-sand);
+  padding: 2rem;
+  transition: border-color 0.15s;
+}
+
+.book-card:hover {
+  border-color: var(--color-gold);
+}
+
+.book-image {
+  width: 120px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: var(--radius);
+}
+
+.book-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.book-description {
+  color: var(--color-slate);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.book-meta-line {
+  color: var(--color-slate);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+}
+
+/* Books page: jump-nav pills, plain anchor links (not JS show/hide toggles)
+   since "My Books" and "What I'm Reading" are different content types that
+   shouldn't be hidden behind a click. */
+.jump-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.jump-pill {
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-rust);
+  background: transparent;
+  color: var(--color-rust);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  cursor: pointer;
+}
+
+.jump-pill:hover {
+  background: rgba(165, 115, 46, 0.1);
+}
+
+.jump-pill-filled {
+  background: var(--color-rust);
+  color: white;
+}
+
+.jump-pill-filled:hover {
+  background: var(--color-rust-deep);
+  color: white;
+}
+
+.books-section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  scroll-margin-top: 2rem;
+}
+
+.books-section-heading h2 {
+  font-size: 2rem;
+  font-family: var(--font-serif);
+  color: var(--color-charcoal);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.books-section-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--color-sand);
+}
+
+.book-cross-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-slate);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--color-slate);
+}
+
+.book-cross-link:hover {
+  color: var(--color-rust);
+  border-color: var(--color-rust);
+}
+
+.affiliate-disclosure {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-slate);
+  background: var(--color-cream-deep);
+  border: 1px solid var(--color-sand);
+  border-radius: var(--radius);
+  padding: 0.85rem 1.25rem;
+  margin: 0 0 2.5rem;
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero {
+    padding: 4rem 0 3rem;
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-featured {
+    grid-row: auto;
+  }
+
+  .newsletter-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Load More functionality */
+.hidden-post {
+  display: none !important;
+}
+
+/* ==========================================================
+   Homepage. Deliberately short: hero, the Series, recent essays,
+   newsletter. Scoped under .quiet-home; uses the same shared tokens
+   (var(--color-*)) as every other page so the homepage can't drift.
+   ========================================================== */
+.quiet-home {
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+}
+
+.quiet-home *, .quiet-home *::before, .quiet-home *::after { box-sizing: border-box; }
+.quiet-home .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+.quiet-home .wrap.qa-narrow { max-width: 760px; }
+.quiet-home h1, .quiet-home h2, .quiet-home h3 { font-family: var(--font-serif); font-weight: 500; letter-spacing: -0.01em; }
+.quiet-home a { color: inherit; text-decoration: none; }
+.quiet-home a:focus-visible { outline: 2px solid var(--color-rust); outline-offset: 3px; }
+
+.quiet-home .qa-hero { padding: 96px 0 72px; text-align: center; }
+.quiet-home .qa-hero h1 { font-size: clamp(40px, 5.6vw, 64px); line-height: 1.08; max-width: 18ch; margin: 0 auto; }
+.quiet-home .qa-sub { margin: 26px auto 0; font-family: var(--font-serif); font-style: italic; font-size: 20px; line-height: 1.55; color: var(--color-slate); max-width: 34rem; }
+
+.quiet-home .qa-button { display: inline-block; background: var(--color-charcoal); border: 1px solid var(--color-charcoal); border-radius: var(--radius); color: var(--color-cream); padding: 13px 28px; font-size: 15px; font-weight: 500; }
+.quiet-home .qa-button:hover { background: transparent; color: var(--color-charcoal); }
+.quiet-home .qa-ghost { font-size: 15px; color: var(--color-slate); border-bottom: 1px solid var(--color-slate); padding: 12px 0 2px; }
+.quiet-home .qa-ghost:hover { color: var(--color-charcoal); border-color: var(--color-charcoal); }
+.quiet-home .qa-actions { display: flex; align-items: center; gap: 16px 28px; flex-wrap: wrap; margin-top: 8px; }
+
+/* The Series feature: one block, one call to action. */
+.quiet-home .qa-series-card { display: grid; grid-template-columns: 1fr 2fr; background: var(--color-cream-deep); border: 1px solid var(--color-sand); border-radius: var(--radius); overflow: hidden; }
+.quiet-home .qa-series-mark { display: flex; align-items: center; justify-content: center; min-height: 300px; border-right: 1px solid var(--color-sand); color: var(--color-rust); }
+.quiet-home .qa-series-body { padding: 56px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.quiet-home .qa-eyebrow { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-rust-deep); }
+.quiet-home .qa-series-body h2 { font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12; margin: 0; }
+.quiet-home .qa-series-premise { margin: 0; max-width: 34rem; font-family: var(--font-serif); font-size: 20px; line-height: 1.55; color: var(--color-slate); }
+
+/* Recent essays: a quiet typographic list, not cards. */
+.quiet-home .qa-essays { padding: 112px 0 40px; }
+.quiet-home .qa-section-head { margin-bottom: 24px; }
+.quiet-home .qa-section-head h2 { font-size: 32px; margin: 0; }
+.quiet-home .qa-essay-list { border-top: 1px solid var(--color-sand); }
+.quiet-home .qa-essay { display: block; padding: 32px 0; border-bottom: 1px solid var(--color-sand); }
+.quiet-home .qa-essay-meta { font-size: 14px; color: var(--color-slate); }
+.quiet-home .qa-essay h3 { font-size: 28px; line-height: 1.2; margin: 10px 0 0; transition: color 0.15s; }
+.quiet-home .qa-essay:hover h3 { color: var(--color-rust); }
+.quiet-home .qa-essay p { margin: 12px 0 0; font-family: var(--font-serif); font-size: 18px; line-height: 1.55; color: var(--color-slate); }
+.quiet-home .qa-see-all { display: inline-block; margin-top: 32px; font-size: 15px; font-weight: 500; color: var(--color-charcoal); border-bottom: 1px solid var(--color-slate); padding: 12px 0 2px; }
+.quiet-home .qa-see-all:hover { color: var(--color-rust); border-color: var(--color-rust); }
+
+/* Newsletter: centred, one line of copy, one field. */
+.quiet-home .qa-newsletter { margin-top: 88px; }
+.quiet-home .qa-newsletter .newsletter-grid { grid-template-columns: 1fr; max-width: 34rem; margin: 0 auto; gap: 1.5rem; text-align: center; }
+.quiet-home .qa-newsletter .newsletter-form { justify-content: center; }
+.quiet-home .qa-newsletter .section-description { margin-left: auto; margin-right: auto; }
+
+@media (max-width: 820px) {
+  .quiet-home .wrap { padding: 0 22px; }
+  .quiet-home .qa-hero { padding: 64px 0 48px; }
+  .quiet-home .qa-series-card { grid-template-columns: 1fr; }
+  .quiet-home .qa-series-mark { min-height: 160px; border-right: 0; border-bottom: 1px solid var(--color-sand); }
+  .quiet-home .qa-series-mark svg { width: 88px; height: 88px; }
+  .quiet-home .qa-series-body { padding: 32px 24px; }
+  .quiet-home .qa-essays { padding-top: 72px; }
+}
+
+/* ==========================================================
+   Book chapters: chapter list page + chapter pages.
+   ========================================================== */
+.chapter-hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2rem; }
+
+.chapter-list { list-style: none; max-width: 48rem; margin: 0 auto; border-top: 2px solid var(--color-charcoal); }
+.chapter-item { border-bottom: 1px solid var(--color-sand); }
+.chapter-link { display: flex; gap: 1.5rem; align-items: baseline; padding: 1.4rem 0.25rem; color: inherit; text-decoration: none; }
+.chapter-link:hover .chapter-title { color: var(--color-rust); }
+.chapter-number { flex-shrink: 0; min-width: 2rem; font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.1em; color: var(--color-meta); }
+.chapter-main { flex: 1; min-width: 0; }
+.chapter-title { font-size: 1.35rem; font-weight: 600; line-height: 1.3; transition: color 0.15s; }
+.chapter-synopsis { display: block; margin-top: 0.25rem; font-size: 1rem; line-height: 1.5; color: var(--color-slate); }
+
+.chapter-lock-badge { display: inline-flex; align-items: center; gap: 0.35rem; margin-left: 0.75rem; padding: 0.15rem 0.55rem; border: 1px solid var(--color-sand); border-radius: var(--radius); font-family: var(--font-sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-meta); vertical-align: middle; }
+
+.chapter-lead { font-size: 1.25rem; font-style: italic; line-height: 1.5; color: var(--color-slate); margin-bottom: 1.25rem; }
+.chapter-keywords { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chapter-keyword { padding: 0.2rem 0.75rem; border: 1px solid var(--color-sand); border-radius: 20px; font-family: var(--font-sans); font-size: 0.8rem; color: var(--color-slate); }
+
+.chapter-locked { margin: 1rem 0 2rem; padding: 2.5rem 2rem; text-align: center; background: var(--color-cream-deep); border: 1px solid var(--color-sand); border-left: 3px solid var(--color-rust); }
+.chapter-locked-icon { display: flex; justify-content: center; margin-bottom: 0.75rem; color: var(--color-rust); }
+.chapter-locked-icon svg { width: 28px; height: 28px; }
+.chapter-locked p { margin: 0 auto; max-width: 34rem; color: var(--color-slate); }
+
+.chapter-nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 0.75rem; margin: 0 0 2.5rem; }
+.chapter-nav .btn { padding: 0.65rem 1.25rem; font-size: 0.9rem; }
+.chapter-nav-prev { justify-self: start; }
+.chapter-nav-next { justify-self: end; }
+.post-content .chapter-nav:last-child { margin: 3rem 0 0; padding-top: 2rem; border-top: 1px solid var(--color-sand); }
+
+@media (max-width: 520px) {
+  .chapter-nav .btn { padding: 0.55rem 0.8rem; font-size: 0.85rem; }
+  .chapter-link { gap: 1rem; }
+  .chapter-lock-badge { display: flex; width: fit-content; margin: 0.4rem 0 0; }
+}
+
+/* ----------------------------------------------------------
+   The Series: read-me line, mother/daughter dialogue, closing note.
+   Written in a chapter's markdown as:  **Mother:** text...
+   and, optionally, `asterisk: one sentence` in its front matter.
+   ---------------------------------------------------------- */
+.chapter-read-note { margin-top: 1.25rem; font-size: 1.1rem; font-style: italic; color: var(--color-slate); }
+
+.post-body p.dialogue { margin: 1.4rem 0 0; padding-left: 1rem; border-left: 3px solid var(--color-sand); }
+.post-body p.dialogue:first-child { margin-top: 0; }
+.post-body p.dialogue + p:not(.dialogue), .post-body p.dialogue + .napkin, .post-body p.dialogue + .move { margin-top: 1.75rem; }
+.post-body p.dialogue-s0 { border-left-color: var(--color-sage); }
+.post-body p.dialogue-s1 { border-left-color: var(--color-terracotta); }
+.dialogue-speaker {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+
+/* Boxes inside chapters, written in markdown as
+   <div class="napkin" markdown="1"> ... </div>  (and .move, .tw). */
+.post-body .napkin, .post-body .move {
+  margin: 1.75rem 0;
+  padding: 1.1rem 1.5rem;
+  background: var(--color-cream-deep);
+  border-radius: var(--radius);
+}
+.post-body .napkin { border: 2px dashed var(--color-sand); }
+.post-body .move { border: 1px solid var(--color-sand); border-left: 4px solid var(--color-rust); }
+.post-body .napkin > :last-child, .post-body .move > :last-child { margin-bottom: 0; }
+.post-body .napkin ul, .post-body .napkin ol, .post-body .move ul, .post-body .move ol { margin: 0.5rem 0 0.75rem 1.25rem; }
+.post-body .napkin li, .post-body .move li { margin-bottom: 0.5rem; }
+
+.post-body .tw { margin: 1.75rem 0; overflow-x: auto; }
+.post-body table { width: 100%; min-width: 440px; border-collapse: collapse; font-family: var(--font-sans); font-size: 0.9rem; line-height: 1.5; }
+.post-body th, .post-body td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--color-sand); }
+.post-body th { font-weight: 600; color: var(--color-charcoal); border-bottom: 2px solid var(--color-charcoal); }
+
+.chapter-teaser { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--color-sand); font-style: italic; color: var(--color-slate); }
+.chapter-disclaimer { margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.82rem; line-height: 1.5; color: var(--color-slate); }
+.chapter-disclaimer-list { max-width: 48rem; margin: 2.5rem auto 0; }
+
+.chapter-asterisk { margin-top: 4.5rem; padding-top: 2rem; border-top: 1px solid var(--color-sand); }
+.chapter-asterisk-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-rust-deep);
+}
+.chapter-asterisk-text { font-size: 1.35rem; font-style: italic; line-height: 1.55; color: var(--color-slate); }
+
+</style>
+</head>
+<body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4FF5RJXE7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-H4FF5RJXE7', { page_path: window.location.pathname });
+</script>
+
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="index.html" class="logo">quiet asterisk<img src="images/logo.png" alt="logo mark" class="logo-mark" width="70" height="70"></a>
+      <nav class="nav" aria-label="Main">
+        <a href="series.html" class="nav-link active">Series</a>
+        <a href="essays.html" class="nav-link ">Essays</a>
+        <a href="about.html" class="nav-link ">About</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<article class="post-content animate-in">
+  <nav class="chapter-nav" aria-label="Chapter navigation"><span></span><a href="series.html" class="btn btn-primary">All chapters</a><a href="series-02-how-big-is-big-enough.html" class="btn btn-secondary chapter-nav-next" rel="next">Next →</a></nav>
+  <header class="post-header">
+    <div class="post-meta">
+      <a href="series.html" class="post-category" style="text-decoration: none;">Sunday Odds</a>
+      <span class="post-meta-item">Chapter 1 of 3</span>
+      <span class="post-meta-item">9 min read</span>
+    </div>
+    <h1 class="post-title">Plan for the Bad Month</h1>
+    <p class="chapter-lead">Anika&#x27;s first full paycheck, and why a budget needs error bars.</p>
+    <div class="chapter-keywords" aria-label="Keywords"><span class="chapter-keyword">budgeting</span><span class="chapter-keyword">averages</span><span class="chapter-keyword">emergency fund</span><span class="chapter-keyword">probability</span></div>
+    <div class="decorative-line"></div>
+  </header>
+  <div class="post-body">
+    <p><em>Sunday, September 27, 2026. Revathi's kitchen, Fairfax, Virginia.</em></p>
+<p>On Saturday night, Anika's budgeting app greets her with a green ring and the words <em>You're crushing it.</em> The balance reads $5,200, her first full month of salary, landed in two neat checks. The app has never met her landlord, her student loans, or her best friend Emma, but it is very proud of her anyway.</p>
+<p>She screenshots it and sends it to no one. The next afternoon she drives to her mother's house in Fairfax with the phone face up on the passenger seat, glowing.</p>
+<p>Revathi is at the stove in her navy cardigan, a pencil in one hand, tipping mustard seeds into hot oil with the other. They pop like tiny applause.</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>Don't tell me. You have discovered money.</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>I've discovered <em>my</em> money. All $5,200 of it showed up. Look.</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>Annie. Phone down. Taste this.</p>
+<h3>The Question</h3>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>Okay, real question. $92,000 sounds enormous when I say it out loud. Then $5,200 lands and I realize I have no plan for it. Every video I watch says "pay yourself first" and then cuts to a sponsor. What do I actually do on Monday?</p>
+<h3>Revathi's Frame: plan for the bad month</h3>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>Start with something dull. What did you spend the last three months?</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>(scrolling) $4,700, $4,400, $4,100.</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>And what does your app say you can spend?</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>"Safe to spend: $4,400 a month." That's the average. If I come in under it, there's confetti.</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>Then the app is built to be wrong in about half your months and to flatter you in the other half. An average describes a typical month. It says nothing about the bad one, and the bad one is the one that hurts.</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>So what number do I use?</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>The bad month. Call it $4,700. Budget to that and your good months turn into savings without any heroics. A budget is a forecast, not a prison. Forecasts need error bars.</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>You're about to say "eightieth percentile."</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>I was going to say that.</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>Out of three months? That's not a percentile. That's three vibes.</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>(the pencil stops) Three data points are a rumor, not a distribution. You're right. Call it a guess with good manners. Use $4,700 until you have twelve months, and I'd rather be wrong on the cautious side.</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>Fine. But here's what the app taught me. That $4,700 month was June. Move-in. First month's rent, a mattress, a shower curtain I am still emotionally recovering from. The app tagged all of it "one-time."</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>And the next one-time expense?</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>Flights home for the holidays. My roommate's wedding in the spring. A dentist I've been avoiding for two years.</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>So the one-time expense happens every year. Only the label changes.</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>That's the part the app can't see. It treats "one-time" like an exception.</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>That is a better point than the one I was making. Surprises aren't rare. Each individual surprise is.</p>
+<h3>The Napkin</h3>
+<p>Revathi tears a paper napkin in half and flattens it on the yellow table. Assumptions come first, and they are illustrative: swap in your own.</p>
+<div class="napkin">
+<ul>
+<li>Take-home pay: <strong>$5,200</strong> a month (after tax and a 4% 401(k) contribution), in two checks of about $2,600</li>
+<li>Planned spending, bad-month version: <strong>$4,700</strong></li>
+<li>Left over: $5,200 − $4,700 = <strong>$500</strong> a month into a buffer</li>
+</ul>
+</div>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>Now, why does the buffer exist? Don't say "because it's smart." Give me a number.</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>...I can't.</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>Then let's price it. Say you hit a $1,000 surprise in about half of all years: car, dentist, a flight you can't skip. Say you hit a $5,000 one in about one year in ten: a laptop, a bigger repair, a rough stretch. Rough numbers, all of them. With no buffer, those go on a credit card at about 24%.</p>
+<div class="tw">
+<table>
+<thead>
+<tr>
+<th>Surprise</th>
+<th>Chance in a year</th>
+<th>Interest on a ~24% APR card</th>
+<th>Expected cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$1,000, paid off over 6 months</td>
+<td>50%</td>
+<td>~$72</td>
+<td>~$36</td>
+</tr>
+<tr>
+<td>$5,000, paid off over 12 months</td>
+<td>10%</td>
+<td>~$674</td>
+<td>~$67</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td></td>
+<td><strong>~$103 a year</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>About a hundred dollars a year in expected interest. A $1,000 buffer costs you roughly $30 a year in forgone return, if you assume stocks would have earned about 7% and a savings account pays less than 1%. On the small surprises, it's nearly a wash.</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>Wait. Then why do it?</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>Because insurance has a negative expected value by design. You don't buy it for the average year. You buy it for the ugly one: two surprises in a single month, or the market down 20 percent the week your car dies, so you're selling investments at the bottom. The buffer isn't for the middle of the distribution. It's for the left tail.</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>So my first investment is a savings account.</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>Boring is a position. You're buying the right not to panic.</p>
+<h3>The Disagreement</h3>
+<p>Anika's phone buzzes. She holds it up. It's Emma, with a chart that runs from the bottom left to the top right: <em>this one is going to 5x by spring, I'm in, don't be dumb.</em></p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>Okay, hear me out. $500 in that, versus $500 in a savings account, is obviously the better bet. Emma has literally never been wrong.</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>Is it a lock, or is it a story that ends with the word "5x"?</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>Be so for real, what are the odds?</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>You tell me. What would you have to believe for it to 5x?</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>...That Emma's right?</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>That's the most honest answer anyone has given about a stock this year. I'm not forbidding it. I'm sequencing it. Buffer first. Your 401(k) match second. Then a small, capped account to learn on, and I'll help you build it. That is later.</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>And you? You keep forty thousand dollars in cash. I've seen the statement. It's been sitting there for ten years.</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>(turning back to the stove) That is a different chapter.</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>It's going to be a <em>very</em> good chapter.</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>I am aware.</p>
+<h3>Monday Move (25 minutes)</h3>
+<div class="move">
+<ol>
+<li><strong>Find your bad month.</strong> Pull the last three months of spending from your bank app and take the highest. That is your budget number for now. Revisit it when you have twelve months. Ask which of those "one-time" expenses is a kind that happens every year.</li>
+<li><strong>Open a separate savings account</strong> at a different bank from your checking. The small friction of logging in somewhere else is the point. Check today's rate rather than trusting last year's.</li>
+<li><strong>Automate $500 the day after your first payday each month.</strong> If your employer allows split direct deposit, send it straight there so you never see it. Name the account something that keeps you honest, like "Future Anika's Car Repair."</li>
+<li><strong>Look up your 401(k) match.</strong> Find out whether your employer matches, and up to what percentage. If you aren't contributing enough to get all of it, write that down as next week's job.</li>
+</ol>
+<p><em>First target:</em> $1,000. That covers most ordinary surprises. How big the whole fund should be is Chapter 2.</p>
+</div>
+<h3>The Ledger</h3>
+<p>Anika opens the Ledger, a notes app on her phone where every entry gets a date stamp, a prediction and a percentage. She types her first three entries before she knows any of the answers.</p>
+<div class="tw">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Prediction</th>
+<th>Probability</th>
+<th>Resolves</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>I have at least $1,000 in the buffer</td>
+<td>85%</td>
+<td>Dec 31, 2026</td>
+</tr>
+<tr>
+<td>2</td>
+<td>I am still at this job</td>
+<td>70%</td>
+<td>Sept 27, 2027</td>
+</tr>
+<tr>
+<td>3</td>
+<td>I break the Emma's-stock rule and buy something impulsively</td>
+<td>60%</td>
+<td>Dec 25, 2026</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>(reading over her shoulder) Number three. You're low.</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>What would you put?</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>Seventy-five. Add mine too. If I'm right, I get to say I told you so on Christmas. If I'm wrong, it goes in the Kill Journal.</p>
+<p class="dialogue dialogue-s1 dialogue-anika"><span class="dialogue-speaker">Anika</span>The what?</p>
+<p class="dialogue dialogue-s0 dialogue-revathi"><span class="dialogue-speaker">Revathi</span>(tapping a black notebook on the shelf above the stove) Paper. My worst calls, and what I believed at the time. September 2008: "The exposure is contained." It was not. Eat.</p>
+<p>Anika picks up her spoon. On the napkin between them, Revathi has written one line in pencil and turned it to face her: <em>Survival number = ?</em></p>
+  </div>
+  <aside class="chapter-asterisk">
+    <p class="chapter-asterisk-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="22"/><line x1="3.3" y1="7" x2="20.7" y2="17"/><line x1="3.3" y1="17" x2="20.7" y2="7"/></svg> The asterisk</p>
+    <p class="chapter-asterisk-text">Three data points are a rumor, not a distribution.</p>
+  </aside>
+  <p class="chapter-teaser">Next Sunday, Chapter 2: How Big Is Big Enough? Anika asks how many months of expenses a person really needs, and Revathi shows her what a job search is worth in odds.</p>
+  <p class="chapter-disclaimer">Sunday Odds is a fiction series about money. Revathi and Anika are fictional, and the figures are illustrative. This is education, not personalized financial, tax or legal advice.</p>
+  <nav class="chapter-nav" aria-label="Chapter navigation"><span></span><a href="series.html" class="btn btn-primary">All chapters</a><a href="series-02-how-big-is-big-enough.html" class="btn btn-secondary chapter-nav-next" rel="next">Next →</a></nav>
+</article>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <a href="index.html" class="logo">quiet asterisk<img src="images/logo.png" alt="logo mark" class="logo-mark" width="20" height="20"></a>
+        <p style="margin-top: 1rem; color: var(--color-slate);">Writing that slows thinking just enough to notice what uncertainty is trying to teach us</p>
+        <p class="footer-also">Also by the author: <a href="books.html" class="footer-link footer-link-underlined">books</a></p>
+      </div>
+      <div>
+        <h4 class="footer-section-title">Explore</h4>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="series.html" class="footer-link">Series</a>
+          <a href="essays.html" class="footer-link">Essays</a>
+          <a href="about.html" class="footer-link">About</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <h4 class="footer-section-title">Connect</h4>
+        <a href="mailto:hello@quietasterisk.com" class="footer-link">hello@quietasterisk.com</a>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@quietasterisk" target="_blank" rel="noopener noreferrer" class="footer-link">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>YouTube
+          </a>
+          <a href="https://www.instagram.com/quiet.asterisk/" target="_blank" rel="noopener noreferrer" class="footer-link">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5C2 19.426 4.574 22 7.75 22h8.5C19.426 22 22 19.426 22 16.25v-8.5C22 4.574 19.426 2 16.25 2h-8.5zm0 2h8.5C18.455 4 20 5.545 20 7.75v8.5c0 2.205-1.545 3.75-3.75 3.75h-8.5C5.545 20 4 18.455 4 16.25v-8.5C4 5.545 5.545 4 7.75 4zm8.75 1.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+            </svg>Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 pathway llc. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
