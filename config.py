@@ -125,7 +125,7 @@ NEWSLETTER_SUBHEAD = (
 # ==========================================================
 # Content Settings
 # ==========================================================
-SIMILARITY_THRESHOLD = 0.17
+SIMILARITY_THRESHOLD = 0.18
 POSTS_PER_CATEGORY_PAGE = 3 # Number of posts to show before "Load More"
 HOME_ESSAYS_COUNT = 3  # Number of recent essays shown on the homepage
 

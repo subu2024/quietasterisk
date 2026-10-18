@@ -755,6 +755,105 @@ def generate_about():
       <h2 class="letter-heading">Dear Curious Internet Stranger,</h2>
 
       <p>
+        Thank you for clicking "About" instead of immediately leaving. That shows either
+        genuine curiosity or excellent procrastination skills, and I'm told they feel
+        identical from the inside.
+      </p>
+
+      <p>
+        Let me explain the name. An asterisk is the smallest, quietest mark in typography,
+        and it does one job: it says <em>this claim comes with conditions.</em> Every
+        confident sentence you've ever read has one hiding somewhere. "Guaranteed
+        results.*" "Everything happens for a reason.*" "I'm fine.*" This site is where I
+        read the fine print out loud.
+      </p>
+
+      <p>
+        Because whenever life asks me to make a decision, my honest answer is a quiet
+        <em>I don't know.</em> Most of life gets decided anyway, with partial information
+        and a mild stomachache. So the question that runs through everything I write is
+        how to live well when certainty isn't on the menu.
+      </p>
+
+      <p>
+        I've been working on it for years. The ceiling still leaks, and the toast still
+        burns. I once boarded the wrong train with total confidence. The evidence is in.
+      </p>
+
+      <p>
+        Think of this space as
+        <a href="https://en.wikipedia.org/wiki/Seinfeld" target="_blank" rel="noopener noreferrer" class="text-link">Seinfeld</a>
+        meets philosophy: observant, mildly neurotic, and uncomfortably honest about the
+        small stuff that turns out to be the big stuff.
+      </p>
+
+      <p>
+        What I've found is that uncertainty isn't the enemy. It's more like a partner,
+        someone who always welcomes you home, occasionally leaves the lights on, and, if
+        you're patient, turns out to be good company.
+      </p>
+
+      <p>
+        So you'll find essays on love, loss, money, parenting, technology and work. They
+        share one habit: noticing the small thing that turns out to be the big thing.
+        You'll also find <a href="series.html" class="text-link"><em>Sunday Odds</em></a>, a fiction series about money in which a
+        mother answers her daughter's questions in probabilities, because "it depends"
+        deserved better PR. And there are daily thoughts, short enough to read before the
+        coffee cools.
+      </p>
+
+      <p>
+        Is this a philosophy blog? Is it a comedy blog? Is it just me, talking to the
+        walls with better formatting? Probably yes to all three.*
+      </p>
+
+      <p>
+        If you read the footnotes, question the premise, or pause mid-sentence to wonder
+        whether any of this means anything, you'll fit right in.
+      </p>
+
+      <p>
+        Thanks for stopping by. The asterisk is silent, but the questions are loud.
+      </p>
+
+      <div class="letter-signoff">
+        <p style="margin-bottom: 0.5rem;">Warmly,</p>
+        <p class="name">Subu</p>
+      </div>
+
+      <div class="letter-callout">
+        <h3>Want to Connect?</h3>
+        <p>
+          I'd love to hear from you. Questions, thoughts, disagreements, or just to say
+          hello—<a href="{CONTACT_FILE}" class="text-link">drop me a line</a>.
+        </p>
+        <p>
+          You can also find me sharing thoughts (280 characters at a time) and occasional
+          video essays on
+          <a href="{YOUTUBE_CHANNEL}" target="_blank" rel="noopener noreferrer" class="text-link">YouTube</a> and
+          <a href="{INSTAGRAM_PROFILE}" target="_blank" rel="noopener noreferrer" class="text-link">Instagram</a>.
+        </p>
+      </div>
+
+    </article>
+  </div>
+</section>
+"""
+    content += footer_html()
+    with open(OUTPUT_DIR / ABOUT_FILE, "w", encoding="utf-8") as f:
+        f.write(content)
+
+def generate_about_old():
+    """Generate about page."""
+    content = header_html("About - " + BLOG_TITLE, "about")
+    content += f"""
+<section class="section">
+  <div class="container">
+    <article class="post-content letter">
+
+      <h2 class="letter-heading">Dear Curious Internet Stranger,</h2>
+
+      <p>
         First, thank you for clicking "About" instead of immediately leaving.
         That shows either genuine curiosity or excellent procrastination skills.
         Either way, I respect it.
