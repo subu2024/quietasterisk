@@ -27,6 +27,7 @@ from generators import (
     generate_about,
     generate_contact,
     generate_essays,
+    generate_thoughts,
     generate_archives_redirect,
     generate_reading_notes_redirect,
     get_temp_content
@@ -93,6 +94,9 @@ def main(write_temp: bool = False):
     logger.info("Generating videos page...")  
     generate_videos()   
 
+    logger.info("Generating daily thoughts page...")
+    thought_urls = generate_thoughts()
+
     logger.info("Generating category pages...")
     generate_categories(posts)
 
@@ -107,7 +111,7 @@ def main(write_temp: bool = False):
     generate_contact()
 
     logger.info("Generating sitemap.xml...")
-    generate_sitemap(posts, categories=sorted(set(p.category for p in posts)), extra_urls=reading_urls)
+    generate_sitemap(posts, categories=sorted(set(p.category for p in posts)), extra_urls=reading_urls + thought_urls)
 
     # Write temporary content if requested
     if write_temp:

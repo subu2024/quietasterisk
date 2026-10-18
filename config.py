@@ -59,6 +59,7 @@ BOOKS_FILE = Path("./books.json")
 CATEGORIES_FILE_JSON = Path("./categories.json")
 VIDEOS_FILE = Path("./videos.json")  
 READING_NOTES_FILE = Path("./reading_notes.json")
+THOUGHTS_FILE = Path("./thoughts.json")
 
 # Output HTML files
 INDEX_FILE = "index.html"
@@ -73,6 +74,7 @@ VIDEOS_FILE_HTML = "videos.html"
 ESSAYS_FILE = "essays.html"
 ARCHIVES_FILE = "archives.html"
 READING_FILE_HTML = "reading.html"
+THOUGHTS_FILE_HTML = "thoughts.html"
 
 # AI Chat Module
 # Optional feature: requires a separate `chat_widget.py` module (not part of
@@ -165,6 +167,25 @@ PUBLICATIONS_FILE = Path("./publications.json")
 
 # Label on the "Read Me" button of a book card on the Books page (used by cards.py).
 BOOK_READ_LABEL = "Read Me"
+
+# ==========================================================
+# Daily Thoughts
+# ==========================================================
+# A short-form, tweet-style feed read from THOUGHTS_FILE (thoughts.json), a
+# JSON list of {"date": "YYYY-MM-DD", "text": "..."} entries. It is
+# published on its own page (THOUGHTS_FILE_HTML), linked from the main menu,
+# and the homepage shows only the most recent entry. If the file is missing
+# or empty, the page, the menu item and the homepage block all disappear.
+#
+# THOUGHTS_NEWEST_FIRST: True = newest at the top (like Twitter/X);
+# False = oldest first. The homepage always shows the newest entry.
+THOUGHTS_NAV_LABEL = "Daily Thoughts"
+THOUGHTS_NEWEST_FIRST = True
+THOUGHTS_PAGE_LABEL = "Daily Thoughts"
+THOUGHTS_PAGE_TITLE = "Small thoughts, as they come"
+THOUGHTS_PAGE_INTRO = "Short notes too small for an essay. One at a time, newest first."
+THOUGHTS_HOME_HEADING = "Today's thought"
+THOUGHTS_HOME_LINK_LABEL = "Read all daily thoughts →"
 
 # ==========================================================
 # Temporary Files

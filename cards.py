@@ -21,7 +21,7 @@ from urllib.parse import quote
 from config import BOOK_READ_LABEL
 from models import Post
 from chapters import get_publication_for_book
-from utils import copy_image, category_accent, youtube_embed, slugify, arrow_icon
+from utils import copy_image, category_accent, youtube_embed, slugify, arrow_icon, format_thought_date
 
 _ACCENT_VARS = {
     "rust": "var(--color-rust)",
@@ -126,6 +126,25 @@ def format_essay_row(post: Post) -> str:
   <h3>{escape(post.title)}</h3>
   <p>{escape(post.excerpt)}</p>
 </a>
+"""
+
+
+def format_thought_item(thought: dict) -> str:
+    """
+    One entry in the Daily Thoughts feed: the text, then the date in small
+    type below it. The feed's CSS (.thought-item) draws the line between
+    entries. Line breaks in the text are kept (white-space: pre-line).
+    """
+    date = thought.get("date", "")
+    date_html = (
+        f'<time class="thought-date" datetime="{escape(date)}">{escape(format_thought_date(date))}</time>'
+        if date else ""
+    )
+    return f"""
+<article class="thought-item">
+  <p class="thought-text">{escape(thought.get("text", ""))}</p>
+  {date_html}
+</article>
 """
 
 

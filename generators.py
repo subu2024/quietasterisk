@@ -24,12 +24,15 @@ from config import (
 from collections import defaultdict
 from datetime import datetime
 
-from config import ENABLE_AI_CHAT
+from config import (
+    ENABLE_AI_CHAT, THOUGHTS_FILE_HTML, THOUGHTS_NEWEST_FIRST, THOUGHTS_PAGE_LABEL,
+    THOUGHTS_PAGE_TITLE, THOUGHTS_PAGE_INTRO, THOUGHTS_HOME_HEADING, THOUGHTS_HOME_LINK_LABEL,
+)
 from models import Post
 from templates import header_html, footer_html, newsletter_html
 from cards import (
     format_card, format_essay_row, format_book_card, format_reading_note_card,
-    book_action_buttons,
+    book_action_buttons, format_thought_item,
 )
 from chapters import (
     get_publications, get_publication_for_book, warn_about_unmatched_book_links,
@@ -37,7 +40,7 @@ from chapters import (
 )
 from utils import (
     copy_image, load_books, load_categories, slugify, load_videos, load_reading_notes,
-    youtube_embed, arrow_icon, asterisk_icon,
+    youtube_embed, arrow_icon, asterisk_icon, load_thoughts, format_thought_date,
 )
 from parser import process_youtube_embeds
 
@@ -951,6 +954,51 @@ def generate_videos():
     logger.info(f"Generated videos page with {len(videos)} videos")
 
 
+def generate_thoughts() -> List[str]:
+    """
+    Generate the Daily Thoughts page: a single-page, tweet-style feed.
+
+    Each entry is its text with the date in small type below, a thin rule,
+    then the next entry. Order follows config.THOUGHTS_NEWEST_FIRST. Skipped
+    (and nothing written) when thoughts.json is missing or empty; the menu
+    item and homepage block are hidden in that case too.
+
+    Returns:
+        Relative URLs for sitemap.xml ([] if no page was written).
+    """
+    thoughts = load_thoughts(newest_first=THOUGHTS_NEWEST_FIRST)
+    if not thoughts:
+        logger.info("No daily thoughts found, skipping thoughts page generation")
+        return []
+
+    items = "".join(format_thought_item(t) for t in thoughts)
+
+    content = header_html(f"{THOUGHTS_PAGE_LABEL} - " + BLOG_TITLE, "thoughts")
+    content += f"""
+<section class="hero" style="padding: 6rem 0 3rem;">
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-label">{escape(THOUGHTS_PAGE_LABEL)}</p>
+      <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4rem);">{escape(THOUGHTS_PAGE_TITLE)}</h1>
+      <p class="hero-description" style="max-width: 48rem;">{escape(THOUGHTS_PAGE_INTRO)}</p>
+    </div>
+  </div>
+</section>
+<section class="section" style="padding-top: 1rem;">
+  <div class="container">
+    <div class="thought-feed">{items}
+    </div>
+  </div>
+</section>
+"""
+    content += footer_html()
+    with open(OUTPUT_DIR / THOUGHTS_FILE_HTML, "w", encoding="utf-8") as f:
+        f.write(content)
+
+    logger.info(f"Generated daily thoughts page with {len(thoughts)} thoughts")
+    return [THOUGHTS_FILE_HTML]
+
+
 def get_temp_content():
     """Return temporary content for debugging."""
     return TEMP_CONTENT
@@ -1016,6 +1064,27 @@ def generate_index(posts: List[Post], related_map: Dict):
         content += f"""
   <section class="qa-series">
     <div class="wrap">{cards}
+    </div>
+  </section>
+"""
+
+    latest_thought = load_thoughts(limit=1)  # newest, regardless of the page's display order
+    if latest_thought:
+        thought = latest_thought[0]
+        thought_date = (
+            f'<time class="qa-thought-date" datetime="{escape(thought["date"])}">'
+            f'{escape(format_thought_date(thought["date"]))}</time>'
+            if thought["date"] else ""
+        )
+        content += f"""
+  <section class="qa-thought" id="daily-thought">
+    <div class="wrap qa-narrow">
+      <div class="qa-section-head"><h2>{escape(THOUGHTS_HOME_HEADING)}</h2></div>
+      <div class="qa-thought-card">
+        <p class="qa-thought-text">{escape(thought["text"])}</p>
+        {thought_date}
+      </div>
+      <a class="qa-see-all" href="{THOUGHTS_FILE_HTML}">{escape(THOUGHTS_HOME_LINK_LABEL)}</a>
     </div>
   </section>
 """

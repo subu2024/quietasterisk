@@ -10,11 +10,12 @@ from typing import List
 from config import (
     BLOG_TITLE, TAG_LINE, COPYRIGHT, CONTACT_EMAIL, YOUTUBE_CHANNEL, LOGO_PATH, INSTAGRAM_PROFILE,
     INDEX_FILE, ABOUT_FILE, CATEGORIES_FILE, CONTACT_FILE, ESSAYS_FILE,
+    THOUGHTS_FILE_HTML, THOUGHTS_NAV_LABEL,
     NEWSLETTER_ENABLED, NEWSLETTER_API_ENDPOINT, NEWSLETTER_HEADING, NEWSLETTER_SUBHEAD
 )
 from styles import get_modern_styles
 
-from utils import show_logo, slugify
+from utils import show_logo, slugify, has_thoughts
 
 logger = logging.getLogger("BlogGen")
 
@@ -137,7 +138,7 @@ def header_html(title: str, active_page: str = "home") -> str:
     
     Args:
         title: Page title for <title> tag
-        active_page: Which nav item is active: "essays" or "about".
+        active_page: Which nav item is active: "essays", "thoughts" or "about".
             Any other value ("home", "books", "contact", reading pages, ...)
             highlights nothing — those pages aren't in the main nav.
         
@@ -146,6 +147,12 @@ def header_html(title: str, active_page: str = "home") -> str:
     """
     def active(page: str) -> str:
         return "active" if active_page == page else ""
+
+    # The Daily Thoughts menu item only appears when thoughts.json has entries.
+    thoughts_link = (
+        f'<a href="{THOUGHTS_FILE_HTML}" class="nav-link {active("thoughts")}">{escape(THOUGHTS_NAV_LABEL)}</a>'
+        if has_thoughts() else ""
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -170,6 +177,7 @@ def header_html(title: str, active_page: str = "home") -> str:
       <a href="{INDEX_FILE}" class="logo">{BLOG_TITLE}{show_logo(LOGO_PATH, 70)}</a>
       <nav class="nav" aria-label="Main">
         <a href="{ESSAYS_FILE}" class="nav-link {active('essays')}">Essays</a>
+        {thoughts_link}
         <a href="{ABOUT_FILE}" class="nav-link {active('about')}">About</a>
       </nav>
     </div>
@@ -182,6 +190,10 @@ def header_html(title: str, active_page: str = "home") -> str:
 
 def footer_html() -> str:
     """Generate the footer: brand line, a short link list, and contact."""
+    thoughts_footer_link = (
+        f'<a href="{THOUGHTS_FILE_HTML}" class="footer-link">{escape(THOUGHTS_NAV_LABEL)}</a>'
+        if has_thoughts() else ""
+    )
     return f"""
 </main>
 <footer class="footer">
@@ -195,6 +207,7 @@ def footer_html() -> str:
         <h4 class="footer-section-title">Explore</h4>
         <nav class="footer-nav" aria-label="Footer">
           <a href="{ESSAYS_FILE}" class="footer-link">Essays</a>
+          {thoughts_footer_link}
           <a href="{ABOUT_FILE}" class="footer-link">About</a>
           <a href="{CONTACT_FILE}" class="footer-link">Contact</a>
         </nav>

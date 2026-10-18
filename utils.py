@@ -6,10 +6,12 @@ import re
 import json
 import shutil
 import logging
+from datetime import datetime
+from functools import lru_cache
 from pathlib import Path
 from typing import List, Dict, Optional
 
-from config import IMAGE_DIR, BOOKS_FILE, CATEGORIES_FILE_JSON, DOWNLOADS_DIR, OUTPUT_DOWNLOADS_DIR, VIDEOS_FILE, READING_NOTES_FILE
+from config import IMAGE_DIR, BOOKS_FILE, CATEGORIES_FILE_JSON, DOWNLOADS_DIR, OUTPUT_DOWNLOADS_DIR, VIDEOS_FILE, READING_NOTES_FILE, THOUGHTS_FILE
 from models import Post
 
 logger = logging.getLogger("BlogGen")
@@ -181,6 +183,71 @@ def load_reading_notes(limit: Optional[int] = None) -> List[Dict]:
     if limit is not None:
         return notes[:limit]
     return notes
+
+def _parse_thought_date(raw: str) -> Optional[datetime]:
+    """Parse 'YYYY-MM-DD' (optionally with a time) into a datetime, else None."""
+    try:
+        return datetime.fromisoformat(str(raw).strip())
+    except (ValueError, TypeError):
+        return None
+
+
+@lru_cache(maxsize=1)
+def _load_thoughts_cached() -> tuple:
+    """
+    Read thoughts.json once per build (the header asks on every page).
+
+    Each entry needs "text"; "date" is expected as YYYY-MM-DD. Entries with
+    no text are skipped with a warning. Returned oldest-to-newest as
+    (parsed_date_or_None, date_string, text) tuples; entries with an
+    unparseable date sort first, and entries sharing a date keep their file
+    order (later in the file counts as newer).
+    """
+    raw = load_json_file(THOUGHTS_FILE, expected_type=list)
+    items = []
+    for position, entry in enumerate(raw):
+        if not isinstance(entry, dict):
+            logger.warning("thoughts.json entry #%d is not an object; skipped.", position + 1)
+            continue
+        text = str(entry.get("text", "")).strip()
+        date = str(entry.get("date", "")).strip()
+        if not text:
+            logger.warning("thoughts.json entry #%d has no text; skipped.", position + 1)
+            continue
+        parsed = _parse_thought_date(date)
+        if date and parsed is None:
+            logger.warning("thoughts.json entry #%d has an unrecognised date %r "
+                           "(use YYYY-MM-DD).", position + 1, date)
+        items.append((parsed or datetime.min, position, date, text))
+    items.sort(key=lambda t: (t[0], t[1]))
+    return tuple(items)
+
+
+def load_thoughts(newest_first: bool = True, limit: Optional[int] = None) -> List[Dict]:
+    """
+    Load daily thoughts from thoughts.json as [{"date", "text"}, ...].
+
+    Sorted by date (ties keep file order). newest_first=False gives
+    oldest-first. limit=1 with the default order gives the latest thought.
+    """
+    thoughts = [{"date": d, "text": t} for _, _, d, t in _load_thoughts_cached()]
+    if newest_first:
+        thoughts.reverse()
+    return thoughts[:limit] if limit is not None else thoughts
+
+
+def has_thoughts() -> bool:
+    """True if there is at least one daily thought (controls the menu item)."""
+    return bool(_load_thoughts_cached())
+
+
+def format_thought_date(date_str: str) -> str:
+    """'2026-10-17' -> 'October 17, 2026'; unparseable dates are returned as written."""
+    parsed = _parse_thought_date(date_str)
+    if parsed is None:
+        return date_str or ""
+    return f"{parsed:%B} {parsed.day}, {parsed.year}"
+
 
 # ==========================================================
 # Text Processing
