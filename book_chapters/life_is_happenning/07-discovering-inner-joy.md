@@ -1,7 +1,7 @@
 ---
 title: "Chapter 7: Discovering Inner Joy"
 summary: "Joy isn't a reward waiting at the end of the to-do list; it's your natural state, available the moment you stop blocking it."
-lock: false
+lock: true
 ---
 
 # Chapter 7: Discovering Inner Joy

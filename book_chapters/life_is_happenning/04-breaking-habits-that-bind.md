@@ -1,7 +1,7 @@
 ---
 title: "Chapter 4: Breaking Habits That Bind"
 summary: "Habits can't be beaten by willpower alone; a ten-second pause lets you understand what a habit protects you from and choose consciously."
-lock: true
+lock: false
 ---
 
 # Chapter 4: Breaking Habits That Bind
