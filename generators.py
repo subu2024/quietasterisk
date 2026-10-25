@@ -49,6 +49,9 @@ logger = logging.getLogger("BlogGen")
 # Global variable for temp content
 TEMP_CONTENT = ""
 
+# Title (casefolded) of the series card shown directly under the recent essays.
+HOME_SERIES_TITLE = "sunday odds"
+
 def get_chat_widget_html() -> str:
     """
     Return the AI chat widget HTML, or an empty string if disabled/unavailable.
@@ -1106,8 +1109,11 @@ def generate_index(posts: List[Post], related_map: Dict):
     """
     Generate the homepage: a deliberately short, quiet page.
 
-    Order: hero → one feature card per publication (every entry in
-    publications.json with show_on_home true) → recent essays → newsletter.
+    Order: hero → recent essays → the Sunday Odds series card → daily thought
+    → any other featured publications (e.g. the book) → newsletter.
+    Featured publications are every entry in publications.json with
+    show_on_home true; the series card is picked out by title (see
+    HOME_SERIES_TITLE below), everything else follows the daily thought.
     Everything else (books, videos, topic pills, stats, archive teaser,
     author card) was removed on purpose; those live on their own pages. Each
     block is optional: no publications means no feature cards, no newsletter
@@ -1136,9 +1142,12 @@ def generate_index(posts: List[Post], related_map: Dict):
   </section>
 """
 
-    if featured:
+    def render_publication_cards(pubs):
+        """One feature card per publication, wrapped in the series section."""
+        if not pubs:
+            return ""
         cards = ""
-        for i, pub in enumerate(featured):
+        for i, pub in enumerate(pubs):
             book = books_by_title.get(pub.linked_book.strip().casefold()) if pub.linked_book else None
             premise = pub.premise or pub.intro or (book.get("description", "") if book else "")
             eyebrow = f'<p class="qa-eyebrow">{escape(pub.eyebrow)}</p>' if pub.eyebrow else ""
@@ -1160,13 +1169,35 @@ def generate_index(posts: List[Post], related_map: Dict):
           </div>
         </div>
       </div>"""
-        content += f"""
+        return f"""
   <section class="qa-series">
     <div class="wrap">{cards}
     </div>
   </section>
 """
 
+    # Split featured publications: the Sunday Odds series goes right after the
+    # essays; anything else (the book, etc.) goes after the daily thought.
+    series_pubs = [p for p in featured if p.title.strip().casefold() == HOME_SERIES_TITLE]
+    other_pubs = [p for p in featured if p not in series_pubs]
+
+    # 1. Recent essays
+    if recent:
+        rows = "".join(format_essay_row(post) for post in recent)
+        content += f"""
+  <section class="qa-essays" id="essays">
+    <div class="wrap qa-narrow">
+      <div class="qa-section-head"><h2>Recent essays</h2></div>
+      <div class="qa-essay-list">{rows}</div>
+      <a class="qa-see-all" href="{ESSAYS_FILE}">Browse all essays →</a>
+    </div>
+  </section>
+"""
+
+    # 2. Sunday Odds series
+    content += render_publication_cards(series_pubs)
+
+    # 3. Daily thought
     latest_thought = load_thoughts(limit=1)  # newest, regardless of the page's display order
     if latest_thought:
         thought = latest_thought[0]
@@ -1188,17 +1219,8 @@ def generate_index(posts: List[Post], related_map: Dict):
   </section>
 """
 
-    if recent:
-        rows = "".join(format_essay_row(post) for post in recent)
-        content += f"""
-  <section class="qa-essays" id="essays">
-    <div class="wrap qa-narrow">
-      <div class="qa-section-head"><h2>Recent essays</h2></div>
-      <div class="qa-essay-list">{rows}</div>
-      <a class="qa-see-all" href="{ESSAYS_FILE}">Browse all essays →</a>
-    </div>
-  </section>
-"""
+    # 4. Everything else: remaining featured publications, then newsletter
+    content += render_publication_cards(other_pubs)
 
     # Keep the project's live signup integration (hidden if not configured).
     newsletter = newsletter_html()

@@ -27,6 +27,13 @@
       "eyebrow_url": "books.html",
       "premise": "A practical, funny, and occasionally enlightening guide to actually showing up for your own life.",
       "start_label": "Start reading"
+    },
+    {
+      "title": "Pocket Poems",
+      "folder": "pocket_poems",
+      "eyebrow": "← All Poems",
+      "premise": "Short, plainspoken poems about love, longing, loss, and memory, and the quiet work of seeing yourself and the people you’ve lost without disguise.",
+      "start_label": "Start reading"
     }
   ]
 }

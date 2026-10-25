@@ -39,6 +39,11 @@ Page naming (flat, in the output root):
     <page_prefix>.html                      chapter list
     <page_prefix>-<chapter-file-slug>.html  one page per chapter
 
+A chapter can override its own page name with a `slug:` line in its front
+matter (e.g. `slug: plan-for-the-bad-month`). That is used as the URL instead
+of the generated name, with ".html" added if it has no extension. Chapters
+without one keep the generated name.
+
 Chapters are ordered by filename (natural sort, so 2-x.md comes before 10-x.md).
 """
 
@@ -83,9 +88,17 @@ class Chapter:
     page_prefix: str = ""
     asterisk: str = ""   # optional closing note: the line this chapter leaves you with
     teaser: str = ""     # optional "Next Sunday, ..." line shown after the closing note
+    custom_slug: str = ""  # optional `slug:` front-matter line; overrides the generated URL
 
     @property
     def url(self) -> str:
+        """
+        The chapter's page filename. A `slug:` in the chapter's front matter is
+        used as-is (".html" added if it has no extension); otherwise the URL is
+        generated from the publication prefix and the file name.
+        """
+        if self.custom_slug:
+            return self.custom_slug
         return f"{self.page_prefix}-{self.slug}.html"
 
     @property
@@ -164,10 +177,21 @@ def _parse_keywords(raw: str) -> List[str]:
     return [k.strip().strip("\"'") for k in raw.split(",") if k.strip().strip("\"'")]
 
 
+def _normalize_custom_slug(raw: str) -> str:
+    """Front-matter `slug:` -> page filename ("" if blank/unusable)."""
+    value = (raw or "").strip().strip("/")
+    if not value:
+        return ""
+    if "/" in value or "\\" in value or value.startswith("."):
+        return ""  # pages are flat in the output root; reject paths
+    return value if re.search(r"\.[A-Za-z0-9]+$", value) else f"{value}.html"
+
+
 def _load_chapters(folder: Path, page_prefix: str) -> List[Chapter]:
     files = sorted(folder.glob("*.md"), key=_natural_key)
     chapters: List[Chapter] = []
     used_slugs = set()
+    used_urls = set()
 
     for number, md_file in enumerate(files, start=1):
         try:
@@ -192,6 +216,12 @@ def _load_chapters(folder: Path, page_prefix: str) -> List[Chapter]:
         if not meta.get("title"):
             logger.warning("Chapter %s has no title in its front matter; using %r.", md_file.name, title)
 
+        raw_custom = meta.get("slug", "")
+        custom_slug = _normalize_custom_slug(raw_custom)
+        if raw_custom.strip() and not custom_slug:
+            logger.warning("Chapter %s has an unusable slug %r (no paths or leading dots); "
+                           "using the generated URL.", md_file.name, raw_custom)
+
         chapters.append(Chapter(
             path=md_file,
             slug=slug,
@@ -204,7 +234,14 @@ def _load_chapters(folder: Path, page_prefix: str) -> List[Chapter]:
             page_prefix=page_prefix,
             asterisk=meta.get("asterisk", ""),
             teaser=meta.get("teaser", ""),
+            custom_slug=custom_slug,
         ))
+        url = chapters[-1].url
+        if url in used_urls:
+            logger.warning("Chapter %s resolves to URL %s, already used by another chapter "
+                           "in this publication — one page will overwrite the other.",
+                           md_file.name, url)
+        used_urls.add(url)
     return chapters
 
 

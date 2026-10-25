@@ -59,7 +59,7 @@ Unfortunately, Life like time only moves forward. No matter how much you regret 
 > _this tug of war has no real ending_  
 > _leaving my life seesawing in muddled light_
 >
-> - an excerpt from the poem ["Seesaw", Mar 2020](seesaw-love-and-memory.html)
+> - an excerpt from the poem ["Seesaw", Mar 2020](seesaw.html)
 
 Fast forward few months. And then realization walked in.
 
