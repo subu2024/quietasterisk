@@ -1,27 +1,59 @@
-name: build
+name: build and deploy
+
 on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:          # "Run workflow" button in the Actions tab
+  # To publish essays that are future-dated on the day they are due, set
+  # publishing.hide_future_dated to true in content/site.json and uncomment:
+  # schedule:
+  #   - cron: "0 6 * * *"     # every day at 06:00 UTC
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
+
       - run: pip install -r requirements.txt
+
       - name: Tests
         run: python -m pytest -q
-      - name: Build (strict: any warning fails the job)
+
+      - name: Build with strict mode (any warning fails the job, nothing is deployed)
         env:
           BLOG_NEWSLETTER_API_ENDPOINT: ${{ secrets.NEWSLETTER_ENDPOINT }}
         run: python build.py --strict
-      - uses: actions/upload-artifact@v4
+
+      - name: Package site for GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: site
           path: dist
-      # Deploy step goes here (S3 sync, GitHub Pages, Netlify, ...). The folder to publish is dist/.
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write            # publish to GitHub Pages
+      id-token: write         # verify the deployment source
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
