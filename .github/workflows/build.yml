@@ -2,7 +2,7 @@ name: build and deploy
 
 on:
   push:
-    branches: [main, v2]      # v2 builds and tests only; deploy below runs on main only
+    branches: [v2]      # v2 builds and tests only; deploy below runs on main only
   pull_request:
   workflow_dispatch:          # "Run workflow" button in the Actions tab
   # To publish essays that are future-dated on the day they are due, set
@@ -46,7 +46,7 @@ jobs:
 
   deploy:
     needs: build
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    if: github.ref == 'refs/heads/v2' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       pages: write            # publish to GitHub Pages
