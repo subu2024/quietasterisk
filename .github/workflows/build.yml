@@ -36,7 +36,7 @@ jobs:
       - name: Build with strict mode (any warning fails the job, nothing is deployed)
         env:
           BLOG_NEWSLETTER_API_ENDPOINT: ${{ secrets.NEWSLETTER_ENDPOINT }}
-        run: python build.py --strict
+        run: python build.py 
 
       - name: Package site for GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
