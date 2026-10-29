@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{# A first-person letter (About). The markdown body carries the headings, callout and sign-off. #}
+{% block content %}
+<section class="block block--tight">
+  <div class="wrap wrap--read">
+    <article class="letter prose">{{ doc.body_html|safe }}</article>
+  </div>
+</section>
+{% endblock %}

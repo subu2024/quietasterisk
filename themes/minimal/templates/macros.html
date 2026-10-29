@@ -1,0 +1,9 @@
+{% macro youtube(video_id, title="YouTube video") -%}
+<p><a href="https://www.youtube.com/watch?v={{ video_id }}">▶ {{ title }}</a></p>
+{%- endmacro %}
+{% macro dialogue(speaker, index, html) -%}
+<p><strong>{{ speaker }}:</strong> {{ html }}</p>
+{%- endmacro %}
+{% macro item(e) -%}
+<li><a href="{{ e.url }}">{{ e.title }}</a> <span class="muted">{{ e.date_display }}</span><br>{{ e.synopsis }}</li>
+{%- endmacro %}

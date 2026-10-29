@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% import "macros.html" as m %}
+{% block content %}
+<h1>{{ category.name }}</h1><p>{{ category.description }}</p>
+<ul>{% for e in category.entries %}{{ m.item(e) }}{% endfor %}</ul>
+{% endblock %}

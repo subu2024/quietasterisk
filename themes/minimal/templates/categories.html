@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ copy.title }}</h1>
+<ul>{% for c in categories %}<li><a href="{{ c.url }}">{{ c.name }}</a> ({{ c.count }}) — {{ c.description }}</li>{% endfor %}</ul>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+{{ m.page_head(copy.page_title, eyebrow=copy.page_label, description=copy.page_intro) }}
+<section class="block block--tight">
+  <div class="wrap wrap--read">
+    <div class="thoughts">
+      {% for t in thoughts %}
+      <article class="thought tone-{{ m.TONES[loop.index0 % 5] }}">
+        <span class="thought-star" aria-hidden="true">{{ m.asterisk(28) }}</span>
+        <p class="thought-text">{{ t.text }}</p>
+        {% if t.iso_date %}<time class="thought-date" datetime="{{ t.iso_date }}">{{ t.date_display }}</time>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

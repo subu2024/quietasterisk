@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ copy.page_title }}</h1>{% for t in thoughts %}<p>{{ t.text }}<br><span class="muted">{{ t.date_display }}</span></p>{% endfor %}
+{% endblock %}

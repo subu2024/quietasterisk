@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+{{ m.page_head(copy.title, eyebrow=copy.eyebrow, accent=copy.accent, description=copy.description, centered=true) }}
+<section class="block block--tight">
+  <div class="wrap">
+    <div class="tabs" role="group" aria-label="Group essays by">
+      <button type="button" class="tab is-active" id="tab-year" data-view-tab="year" aria-pressed="true">{{ copy.tab_year }}</button>
+      <button type="button" class="tab" id="tab-category" data-view-tab="category" aria-pressed="false">{{ copy.tab_category }}</button>
+    </div>
+
+    <div id="view-by-year" data-view="year">
+      {% for y in years %}
+      <section id="year-{{ y.year }}" class="group">
+        <div class="group-head">
+          <h2 class="group-title">{{ y.year }}</h2>
+          <span class="group-count">{{ y.count }} {{ 'essay' if y.count == 1 else 'essays' }}</span>
+        </div>
+        {{ m.card_group('year-' ~ y.year, y.entries, preview_count) }}
+      </section>
+      {% endfor %}
+    </div>
+
+    <div id="view-by-category" data-view="category" hidden>
+      {% for c in categories %}
+      <section id="category-{{ c.slug }}" class="group">
+        <div class="group-head">
+          <h2 class="group-title group-title--word">{{ c.name }}</h2>
+          <span class="group-count">{{ c.count }} {{ 'essay' if c.count == 1 else 'essays' }}</span>
+        </div>
+        <p class="group-text">{{ c.description }}</p>
+        {{ m.card_group('category-' ~ c.slug, c.entries, preview_count) }}
+      </section>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

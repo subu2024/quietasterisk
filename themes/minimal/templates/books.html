@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% import "macros.html" as m %}
+{% block content %}
+<h1>{{ copy.title }}</h1><p>{{ copy.description }}</p>
+{% for b in books %}<h3 id="{{ b.anchor }}">{{ b.title }}</h3><p>{{ b.description }}</p>
+{% for a in b.actions %}<a href="{{ a.href }}">{{ a.label }}</a> {% endfor %}
+{% if b.video_id %}{{ m.youtube(b.video_id, b.title) }}{% endif %}{% endfor %}
+<h2 id="reading-notes">{{ copy.notes_heading }}</h2>
+{% for n in notes %}<h3 id="{{ n.anchor }}">{{ n.title }}</h3><p>{{ n.note }}</p>{% endfor %}
+{% endblock %}

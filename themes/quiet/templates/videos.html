@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+{{ m.hero(copy.title, eyebrow=copy.eyebrow, accent=copy.accent, description=copy.description) }}
+<section class="section">
+  <div class="container">
+    <div class="card-grid">
+      {% for v in videos %}
+      <article class="card">
+        <h3 class="card-title card-title--video">{{ v.title }}</h3>
+        {{ m.youtube(v.video_id, v.title) }}
+        {% if v.article_link %}<div class="card-extra"><a href="{{ v.article_link }}" class="card-link">Read this Essay {{ m.arrow() }}</a></div>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

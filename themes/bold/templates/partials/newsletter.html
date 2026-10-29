@@ -1,0 +1,17 @@
+{% set n = site.newsletter %}
+<section class="newsletter">
+  <div class="wrap newsletter-box">
+    <div class="newsletter-copy">
+      <h2>{{ n.heading }}</h2>
+      <p>{{ n.subhead }}</p>
+    </div>
+    <div class="newsletter-action">
+      <form class="newsletter-form" id="newsletter-form" novalidate
+            data-endpoint="{{ n.endpoint }}" data-success="{{ n.success_message }}" data-error="{{ n.error_message }}">
+        <input type="email" name="email" id="newsletter-email" placeholder="you@email.com" aria-label="Email address" required>
+        <button type="submit" class="btn btn-sun" id="newsletter-submit" data-label="{{ n.button_label }}">{{ n.button_label }}</button>
+      </form>
+      <p class="newsletter-fine" id="newsletter-status" aria-live="polite">{{ n.fine_print }}</p>
+    </div>
+  </div>
+</section>

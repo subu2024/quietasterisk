@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+{{ m.hero("That page wandered off.", eyebrow="404", description="The link may be old, or the page may have moved. Try the essays page.") }}
+<section class="section">
+  <div class="container">
+    <a href="{{ urls.home }}" class="btn btn-primary">Back to the homepage</a>
+  </div>
+</section>
+{% endblock %}

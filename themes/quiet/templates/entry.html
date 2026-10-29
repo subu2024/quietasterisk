@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{# Essays and chapters share this template; collection.layout tells them apart. #}
+{% block content %}
+{% set is_chapter = collection.layout == 'chapters' %}
+{% macro chapter_nav() %}
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  {% if prev %}<a href="{{ prev.url }}" class="btn btn-secondary chapter-nav-prev" rel="prev">← Previous</a>{% else %}<span></span>{% endif %}
+  <a href="{{ collection.url }}" class="btn btn-primary">{{ collection.home_label }}</a>
+  {% if next %}<a href="{{ next.url }}" class="btn btn-secondary chapter-nav-next" rel="next">Next →</a>{% else %}<span></span>{% endif %}
+</nav>
+{% endmacro %}
+<article class="post-content animate-in">
+  {% if is_chapter %}{{ chapter_nav() }}{% endif %}
+  <header class="post-header">
+    <div class="post-meta">
+      {% if is_chapter %}
+      <a href="{{ collection.url }}" class="post-category post-category-link">{{ collection.title }}</a>
+      <span class="post-meta-item">Chapter {{ position.number }} of {{ position.total }}</span>
+      {% else %}
+      <span class="post-category">{{ entry.category }}</span>
+      {% endif %}
+      {% if entry.date %}<span class="post-meta-item">{{ entry.date_display }}</span>{% endif %}
+      <span class="post-meta-item">{{ entry.reading_minutes }} min read</span>
+    </div>
+    <h1 class="post-title">{{ entry.title }}</h1>
+    {% if is_chapter and entry.synopsis %}<p class="chapter-lead">{{ entry.synopsis }}</p>{% endif %}
+    {% if entry.keywords %}
+    <div class="chapter-keywords" aria-label="Keywords">{% for k in entry.keywords %}<span class="chapter-keyword">{{ k }}</span>{% endfor %}</div>
+    {% endif %}
+    <div class="decorative-line"></div>
+  </header>
+  <div class="post-body">
+    {{ entry.body_html|safe }}
+  </div>
+  {% if entry.asterisk %}
+  <aside class="chapter-asterisk">
+    <p class="chapter-asterisk-label">{{ m.asterisk(14) }} The asterisk</p>
+    <p class="chapter-asterisk-text">{{ entry.asterisk }}</p>
+  </aside>
+  {% endif %}
+  {% if entry.teaser %}<p class="chapter-teaser">{{ entry.teaser }}</p>{% endif %}
+  {% if collection.disclaimer %}<p class="chapter-disclaimer">{{ collection.disclaimer }}</p>{% endif %}
+  {% if related %}
+  <div class="related-posts">
+    <h4 class="related-posts-title">Related Essays</h4>
+    <ul class="related-posts-list">
+      {% for r in related %}<li class="related-posts-item"><a href="{{ r.url }}" class="related-posts-link">{{ r.title }}</a></li>{% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  {% if is_chapter %}{{ chapter_nav() }}{% endif %}
+</article>
+{% endblock %}

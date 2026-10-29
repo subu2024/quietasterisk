@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{# Essays and chapters share this template; collection.layout tells them apart. #}
+{% block before_header %}<div class="progress" id="progress" aria-hidden="true"></div>{% endblock %}
+{% block content %}
+{% set is_chapter = collection.layout == 'chapters' %}
+{% set t = entry.category_hash if entry.category else entry.number %}
+{% macro chapter_nav() %}
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  {% if prev %}<a href="{{ prev.url }}" class="btn btn-ghost" rel="prev">← Previous</a>{% else %}<span></span>{% endif %}
+  <a href="{{ collection.url }}" class="btn btn-ink">{{ collection.home_label }}</a>
+  {% if next %}<a href="{{ next.url }}" class="btn btn-coral" rel="next">Next →</a>{% else %}<span></span>{% endif %}
+</nav>
+{% endmacro %}
+<article class="entry" data-reading>
+  <header class="entry-head">
+    <div class="wrap wrap--read">
+      {% if is_chapter %}{{ chapter_nav() }}{% endif %}
+      <div class="entry-meta">
+        {% if is_chapter %}
+        <a href="{{ collection.url }}" class="chip tone-{{ m.TONES[t % 5] }}">{{ collection.title }}</a>
+        <span>Chapter {{ position.number }} of {{ position.total }}</span>
+        {% else %}
+        {{ m.chip(entry.category, t) }}
+        {% endif %}
+        {% if entry.date %}<span>{{ entry.date_display }}</span>{% endif %}
+        <span>{{ entry.reading_minutes }} min read</span>
+      </div>
+      <h1 class="entry-title">{{ entry.title }}</h1>
+      {% if is_chapter and entry.synopsis %}<p class="entry-lede">{{ entry.synopsis }}</p>{% endif %}
+      {% if entry.keywords %}
+      <ul class="keywords" aria-label="Keywords">{% for k in entry.keywords %}<li>{{ k }}</li>{% endfor %}</ul>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="wrap wrap--read">
+    <div class="prose">{{ entry.body_html|safe }}</div>
+
+    {% if entry.asterisk %}
+    <aside class="note">
+      <div class="note-star" aria-hidden="true">{{ m.asterisk(40) }}</div>
+      <p class="note-label">The asterisk</p>
+      <p class="note-text">{{ entry.asterisk }}</p>
+    </aside>
+    {% endif %}
+    {% if entry.teaser %}<p class="teaser">{{ entry.teaser }}</p>{% endif %}
+    {% if collection.disclaimer %}<p class="disclaimer">{{ collection.disclaimer }}</p>{% endif %}
+    {% if is_chapter %}{{ chapter_nav() }}{% endif %}
+  </div>
+
+  {% if related %}
+  <aside class="related">
+    <div class="wrap">
+      <h2 class="related-title">Related Essays</h2>
+      <ul class="related-list">
+        {% for r in related %}<li><a class="related-link tone-{{ m.TONES[loop.index0 % 5] }}" href="{{ r.url }}">{{ r.title }} {{ m.arrow() }}</a></li>{% endfor %}
+      </ul>
+    </div>
+  </aside>
+  {% endif %}
+</article>
+{% endblock %}

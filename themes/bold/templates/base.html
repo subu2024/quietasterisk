@@ -1,0 +1,97 @@
+{% import "macros.html" as m %}
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="canonical" href="{{ page.canonical }}">
+{% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
+<meta name="theme-color" content="#15121B">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:type" content="{{ page.og_type }}">
+<meta property="og:title" content="{{ page.heading }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:url" content="{{ page.canonical }}">
+{% if page.image_url %}
+<meta property="og:image" content="{{ page.image_url }}">
+<meta name="twitter:card" content="summary_large_image">
+{% else %}
+<meta name="twitter:card" content="summary">
+{% endif %}
+{% if site.feed_url %}<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.feed_url }}">{% endif %}
+{% if page.jsonld_json %}<script type="application/ld+json">{{ page.jsonld_json|safe }}</script>{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
+<link rel="stylesheet" href="{{ static('css/style.css') }}">
+{% block head_extra %}{% endblock %}
+</head>
+<body>
+{% if site.analytics_id %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', '{{ site.analytics_id }}', { page_path: window.location.pathname });
+</script>
+{% endif %}
+<a class="skip-link" href="#main">Skip to content</a>
+{% block before_header %}{% endblock %}
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a href="{{ urls.home }}" class="brand">
+      {% if site.logo_url %}<img src="{{ site.logo_url }}" alt="" class="brand-logo" width="36" height="36">{% else %}{{ m.asterisk(30, "brand-mark") }}{% endif %}
+      <span class="brand-name">{{ site.title }}</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      {% for item in site.nav %}
+      <a href="{{ item.href }}" class="nav-pill{% if item.page and item.page == page.section %} is-active{% endif %}">{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    {% for n in range(2) %}
+    <div class="ticker-set">
+      {% for i in range(6) %}<span>{{ site.title }}</span>{{ m.asterisk(22, "ticker-star") }}{% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="{{ urls.home }}" class="footer-title">{{ site.title }}{{ m.asterisk(34, "footer-star") }}</a>
+      <p>{{ site.tagline }}</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <nav class="footer-nav" aria-label="Footer">
+        {% for item in site.footer_nav %}<a href="{{ item.href }}">{{ item.label }}</a>{% endfor %}
+        {% if site.feed_url %}<a href="{{ site.feed_url }}">RSS</a>{% endif %}
+      </nav>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <div class="footer-nav">
+        {% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}
+        {% for s in site.social %}<a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" class="social">{{ m.social_icon(s.icon) }}{{ s.label }}</a>{% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-base"><p>{{ site.copyright }}</p></div>
+</footer>
+<script src="{{ static('js/site.js') }}" defer></script>
+</body>
+</html>

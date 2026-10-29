@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+{% set words = hero.title.split() %}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1 class="hero-title">{{ words[:-1]|join(' ') }}{% if words|length > 1 %} {% endif %}<span class="mark">{{ words[-1] }}</span></h1>
+      <p class="hero-sub">{{ hero.subtitle }}</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="blob blob-1"></div><div class="blob blob-2"></div>
+      {{ m.asterisk(320, "hero-star") }}
+    </div>
+  </div>
+</section>
+
+{% for block in blocks %}
+{% if block.kind == 'card' %}
+<section class="block" id="{{ block.id }}">
+  <div class="wrap">
+    <div class="panel tone-{{ m.TONES[loop.index0 % 5] }}">
+      <div class="panel-star" aria-hidden="true">{{ m.asterisk(260) }}</div>
+      <div class="panel-body">
+        {% if block.eyebrow %}<p class="eyebrow eyebrow--panel">{{ block.eyebrow }}</p>{% endif %}
+        <h2 class="panel-title">{{ block.title }}</h2>
+        <p class="panel-text">{{ block.synopsis }}</p>
+        <a class="btn btn-ink" href="{{ block.see_all_url }}">{{ block.see_all_label|trim(' →') }} {{ m.arrow() }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elif block.kind == 'list' %}
+<section class="block" id="{{ block.id }}">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="block-title">{{ block.heading }}</h2>
+      <a class="link-arrow" href="{{ block.see_all_url }}">{{ block.see_all_label|trim(' →') }}</a>
+    </div>
+    {% if block.synopsis %}<p class="block-lede">{{ block.synopsis }}</p>{% endif %}
+    <div class="rows">
+      {% for entry in block.entries %}{{ m.row(entry) }}{% endfor %}
+    </div>
+  </div>
+</section>
+
+{% elif block.kind == 'thought' %}
+<section class="block" id="{{ block.id }}">
+  <div class="wrap">
+    <figure class="quote-panel">
+      <div class="quote-star" aria-hidden="true">{{ m.asterisk(54) }}</div>
+      <p class="quote-label">{{ block.heading }}</p>
+      <blockquote class="quote-text">{{ block.thought.text }}</blockquote>
+      <figcaption class="quote-foot">
+        {% if block.thought.iso_date %}<time datetime="{{ block.thought.iso_date }}">{{ block.thought.date_display }}</time>{% endif %}
+        <a class="link-arrow" href="{{ block.link_url }}">{{ block.link_label|trim(' →') }}</a>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+{% endif %}
+{% endfor %}
+
+{% if site.newsletter.active %}{% include "partials/newsletter.html" %}{% endif %}
+{% endblock %}

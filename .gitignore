@@ -1,8 +1,7 @@
 dist/
-
-venv/
-
-bin/
-*.log
-*.tmp
-*.bak
+dist.building/
+dist.old/
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+<section class="block notfound">
+  <div class="wrap">
+    <p class="notfound-code">4{{ m.asterisk(120, "notfound-star") }}4</p>
+    <h1 class="page-title">That page wandered off.</h1>
+    <p class="page-lede">The link may be old, or the page may have moved.</p>
+    <a href="{{ urls.home }}" class="btn btn-coral">Back to the homepage {{ m.arrow() }}</a>
+  </div>
+</section>
+{% endblock %}

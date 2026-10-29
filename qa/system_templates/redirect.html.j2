@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+<meta charset="UTF-8">
+<title>Redirecting…</title>
+<link rel="canonical" href="{{ site.url }}/{{ target }}">
+<meta http-equiv="refresh" content="0; url={{ target }}">
+<meta name="robots" content="noindex">
+{% if '#' not in target %}
+<script>window.location.replace({{ target|tojson }} + window.location.hash);</script>
+{% endif %}
+</head>
+<body>
+<p>This page has moved to <a href="{{ target }}">{{ target }}</a>.</p>
+</body>
+</html>

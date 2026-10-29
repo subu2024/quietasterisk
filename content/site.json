@@ -1,0 +1,51 @@
+{
+  "title": "quiet asterisk",
+  "tagline": "Writing that slows thinking just enough to notice what uncertainty is trying to teach us",
+  "url": "https://www.quietasterisk.com",
+  "language": "en",
+  "author": "Subu Sangameswar",
+  "email": "hello@quietasterisk.com",
+  "copyright": "© 2026 pathway llc. All rights reserved.",
+  "logo": "logo.png",
+  "analytics_id": "G-H4FF5RJXE7",
+  "theme": "bold",
+
+  "social": [
+    {"label": "YouTube", "icon": "youtube", "url": "https://www.youtube.com/@quietasterisk"},
+    {"label": "Instagram", "icon": "instagram", "url": "https://www.instagram.com/quiet.asterisk/"}
+  ],
+
+  "newsletter": {
+    "enabled": true,
+    "heading": "New essays land here first",
+    "subhead": "One email, roughly once a week. No noise, no growth-hacking — just the next thing I'm working through.",
+    "fine_print": "Unsubscribe any time. I mean it."
+  },
+
+  "home": {
+    "hero_title": "Essays on life, written from inside the uncertainty.",
+    "thought_after": "sunday_odds"
+  },
+
+  "publishing": {
+    "hide_future_dated": false
+  },
+
+  "redirects": {
+    "archives.html": "essays.html",
+    "reading.html": "books.html#reading-notes"
+  },
+
+  "copy": {
+    "books": {
+      "eyebrow": "Books",
+      "title": "What I've Written, What I've Read",
+      "description": "My own published works and ongoing projects, alongside short running notes on other books that gave me one good idea worth keeping.",
+      "notes_intro": "Short, running notes on books that gave me one good idea worth keeping — not full essays, just what stuck.",
+      "affiliate_disclosure": "As an Amazon Associate I earn from qualifying purchases. Thank you for your support."
+    },
+    "videos": {
+      "description": "Video essays, explanations, and explorations on the topics covered in the blog."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="muted">{{ collection.title }}{% if entry.date %} · {{ entry.date_display }}{% endif %}{% if collection.layout == 'chapters' %} · Chapter {{ position.number }} of {{ position.total }}{% endif %}</p>
+<h1>{{ entry.title }}</h1>
+{{ entry.body_html|safe }}
+{% if entry.asterisk %}<p><em>* {{ entry.asterisk }}</em></p>{% endif %}
+{% if collection.layout == 'chapters' %}<p>{% if prev %}<a href="{{ prev.url }}">← Previous</a> {% endif %}<a href="{{ collection.url }}">{{ collection.home_label }}</a>{% if next %} <a href="{{ next.url }}">Next →</a>{% endif %}</p>{% endif %}
+{% if related %}<h3>Related</h3><ul>{% for r in related %}<li><a href="{{ r.url }}">{{ r.title }}</a></li>{% endfor %}</ul>{% endif %}
+{% endblock %}

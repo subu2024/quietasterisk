@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+<div class="quiet-home">
+  <section class="qa-hero">
+    <div class="wrap">
+      <h1>{{ hero.title }}</h1>
+      <p class="qa-sub">{{ hero.subtitle }}</p>
+    </div>
+  </section>
+
+  {% for block in blocks %}
+  {% if block.kind == 'card' %}
+  <section class="qa-series qa-series--spaced" id="{{ block.id }}">
+    <div class="wrap">
+      <div class="qa-series-card">
+        <div class="qa-series-mark">{{ m.asterisk(132, 0.7) }}</div>
+        <div class="qa-series-body">
+          {% if block.eyebrow %}<p class="qa-eyebrow">{{ block.eyebrow }}</p>{% endif %}
+          <h2>{{ block.title }}</h2>
+          <p class="qa-series-premise">{{ block.synopsis }}</p>
+          <div class="qa-actions">
+            <a class="qa-button" href="{{ block.see_all_url }}">{{ block.see_all_label }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% elif block.kind == 'list' %}
+  <section class="qa-essays" id="{{ block.id }}">
+    <div class="wrap qa-narrow">
+      <div class="qa-section-head"><h2>{{ block.heading }}</h2></div>
+      {% if block.synopsis %}<p class="qa-series-premise qa-list-synopsis">{{ block.synopsis }}</p>{% endif %}
+      <div class="qa-essay-list">
+        {% for entry in block.entries %}{{ m.essay_row(entry) }}{% endfor %}
+      </div>
+      <a class="qa-see-all" href="{{ block.see_all_url }}">{{ block.see_all_label }}</a>
+    </div>
+  </section>
+
+  {% elif block.kind == 'thought' %}
+  <section class="qa-thought" id="{{ block.id }}">
+    <div class="wrap qa-narrow">
+      <div class="qa-section-head"><h2>{{ block.heading }}</h2></div>
+      <div class="qa-thought-card">
+        <p class="qa-thought-text">{{ block.thought.text }}</p>
+        {% if block.thought.iso_date %}<time class="qa-thought-date" datetime="{{ block.thought.iso_date }}">{{ block.thought.date_display }}</time>{% endif %}
+      </div>
+      <a class="qa-see-all" href="{{ block.link_url }}">{{ block.link_label }}</a>
+    </div>
+  </section>
+  {% endif %}
+  {% endfor %}
+
+  {% if site.newsletter.active %}
+  <div class="qa-newsletter">{% include "partials/newsletter.html" %}</div>
+  {% endif %}
+</div>
+{% endblock %}

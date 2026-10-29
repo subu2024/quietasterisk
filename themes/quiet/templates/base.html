@@ -1,0 +1,90 @@
+{% import "macros.html" as m %}
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="canonical" href="{{ page.canonical }}">
+{% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:type" content="{{ page.og_type }}">
+<meta property="og:title" content="{{ page.heading }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:url" content="{{ page.canonical }}">
+{% if page.image_url %}
+<meta property="og:image" content="{{ page.image_url }}">
+<meta name="twitter:card" content="summary_large_image">
+{% else %}
+<meta name="twitter:card" content="summary">
+{% endif %}
+{% if site.feed_url %}<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.feed_url }}">{% endif %}
+{% if page.jsonld_json %}<script type="application/ld+json">{{ page.jsonld_json|safe }}</script>{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="{{ static('css/style.css') }}">
+{% block head_extra %}{% endblock %}
+</head>
+<body>
+{% if site.analytics_id %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', '{{ site.analytics_id }}', { page_path: window.location.pathname });
+</script>
+{% endif %}
+
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="{{ urls.home }}" class="logo">{{ site.title }}{% if site.logo_url %}<img src="{{ site.logo_url }}" alt="logo mark" class="logo-mark" width="70" height="70">{% endif %}</a>
+      <nav class="nav" aria-label="Main">
+        {% for item in site.nav %}
+        <a href="{{ item.href }}" class="nav-link{% if item.page and item.page == page.section %} active{% endif %}">{{ item.label }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+{% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <a href="{{ urls.home }}" class="logo">{{ site.title }}{% if site.logo_url %}<img src="{{ site.logo_url }}" alt="logo mark" class="logo-mark" width="20" height="20">{% endif %}</a>
+        <p class="footer-tagline">{{ site.tagline }}</p>
+      </div>
+      <div>
+        <h4 class="footer-section-title">Explore</h4>
+        <nav class="footer-nav" aria-label="Footer">
+          {% for item in site.footer_nav %}
+          <a href="{{ item.href }}" class="footer-link">{{ item.label }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+      <div>
+        <h4 class="footer-section-title">Connect</h4>
+        {% if site.email %}<a href="mailto:{{ site.email }}" class="footer-link">{{ site.email }}</a>{% endif %}
+        <div class="footer-social">
+          {% for s in site.social %}
+          <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" class="footer-link">{{ m.social_icon(s.icon) }}{{ s.label }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>{{ site.copyright }}</p>
+    </div>
+  </div>
+</footer>
+<script src="{{ static('js/site.js') }}" defer></script>
+</body>
+</html>

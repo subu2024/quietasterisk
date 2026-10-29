@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+<section class="hero hero--page">
+  <div class="container">
+    <div class="hero-content">
+      {% if collection.eyebrow %}
+      <p class="hero-label">{% if collection.eyebrow_url %}<a href="{{ collection.eyebrow_url }}" class="hero-label-link">{{ collection.eyebrow }}</a>{% else %}{{ collection.eyebrow }}{% endif %}</p>
+      {% endif %}
+      <h1 class="hero-title">{{ collection.title }}</h1>
+      <p class="hero-description">{{ description }}</p>
+      {% if collection.read_note %}<p class="chapter-read-note">{{ collection.read_note }}</p>{% endif %}
+      <div class="chapter-hero-actions">
+        <a href="{{ start_entry.url }}" class="btn btn-primary">{{ collection.start_label }}</a>
+        {% for a in book_actions %}
+        <a href="{{ a.href }}" class="btn btn-secondary"{% if a.external %} target="_blank" rel="noopener noreferrer"{% endif %}{% if a.kind == 'download' %} download{% endif %}>{{ a.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <ol class="chapter-list">
+      {% for e in entries %}
+      <li class="chapter-item">
+        <a href="{{ e.url }}" class="chapter-link">
+          <span class="chapter-number">{{ '%02d'|format(e.number) }}</span>
+          <span class="chapter-main">
+            <span class="chapter-title">{{ e.title }}</span>
+            {% if e.synopsis %}<span class="chapter-synopsis">{{ e.synopsis }}</span>{% endif %}
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+    {% if collection.disclaimer %}<p class="chapter-disclaimer chapter-disclaimer-list">{{ collection.disclaimer }}</p>{% endif %}
+  </div>
+</section>
+{% endblock %}

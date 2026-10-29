@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% import "macros.html" as m %}
+{% block content %}
+<h1>{{ copy.title }} {{ copy.accent }}</h1>{% for v in videos %}<h3>{{ v.title }}</h3>{{ m.youtube(v.video_id, v.title) }}{% endfor %}
+{% endblock %}

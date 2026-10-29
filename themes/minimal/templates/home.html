@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% import "macros.html" as m %}
+{% block content %}
+<h1>{{ hero.title }}</h1><p>{{ hero.subtitle }}</p>
+{% for b in blocks %}
+{% if b.kind == 'thought' %}<h2>{{ b.heading }}</h2><blockquote>{{ b.thought.text }}</blockquote><a href="{{ b.link_url }}">{{ b.link_label }}</a>
+{% else %}<h2>{{ b.heading if b.kind == 'list' else b.title }}</h2><p>{{ b.synopsis }}</p>
+{% if b.kind == 'list' %}<ul>{% for e in b.entries %}{{ m.item(e) }}{% endfor %}</ul>{% endif %}
+<a href="{{ b.see_all_url }}">{{ b.see_all_label }}</a>{% endif %}
+{% endfor %}
+{% endblock %}

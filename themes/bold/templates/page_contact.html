@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{# Front matter keys used: eyebrow, heading, accent, intro, card_title, note #}
+{% block content %}
+{{ m.page_head(doc.meta.heading, eyebrow=doc.meta.eyebrow, accent=doc.meta.accent, description=doc.meta.intro) }}
+<section class="block block--tight">
+  <div class="wrap">
+    <div class="panel tone-coral contact">
+      <div class="panel-star" aria-hidden="true">{{ m.asterisk(260) }}</div>
+      <div class="panel-body">
+        <p class="eyebrow eyebrow--panel">{{ doc.meta.card_title }}</p>
+        <a class="contact-mail" href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <p class="panel-text">{{ doc.meta.note }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

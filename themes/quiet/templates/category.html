@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+{{ m.hero(category.name, eyebrow=copy.back_label, eyebrow_url=urls.categories, description=category.description) }}
+<section class="section">
+  <div class="container">
+    {{ m.card_group('category', category.entries, preview_count, step=10) }}
+  </div>
+</section>
+{% endblock %}

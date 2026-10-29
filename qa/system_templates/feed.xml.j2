@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>{{ site.title }}</title>
+    <link>{{ site.url }}/</link>
+    <description>{{ site.tagline }}</description>
+    <language>{{ site.language }}</language>
+    <lastBuildDate>{{ built }}</lastBuildDate>
+    <atom:link href="{{ site.url }}/{{ feed_file }}" rel="self" type="application/rss+xml"/>
+{% for item in items %}
+    <item>
+      <title>{{ item.title }}</title>
+      <link>{{ site.url }}/{{ item.url }}</link>
+      <guid isPermaLink="true">{{ site.url }}/{{ item.url }}</guid>
+{% if item.pub_date %}
+      <pubDate>{{ item.pub_date }}</pubDate>
+{% endif %}
+{% if item.category %}
+      <category>{{ item.category }}</category>
+{% endif %}
+{% if site.author %}
+      <dc:creator>{{ site.author }}</dc:creator>
+{% endif %}
+      <description>{{ item.synopsis }}</description>
+    </item>
+{% endfor %}
+  </channel>
+</rss>

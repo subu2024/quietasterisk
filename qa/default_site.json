@@ -1,0 +1,69 @@
+{
+  "title": "My Site",
+  "tagline": "",
+  "url": "https://example.com",
+  "language": "en",
+  "author": "",
+  "email": "",
+  "copyright": "",
+  "logo": "",
+  "og_image": "",
+  "analytics_id": "",
+  "theme": "quiet",
+  "social": [],
+  "nav": [
+    {"label": "Essays", "page": "essays"},
+    {"label": "Daily Thoughts", "page": "thoughts"},
+    {"label": "About", "page": "about"}
+  ],
+  "footer_nav": [
+    {"label": "Essays", "page": "essays"},
+    {"label": "Daily Thoughts", "page": "thoughts"},
+    {"label": "About", "page": "about"},
+    {"label": "Contact", "page": "contact"}
+  ],
+  "newsletter": {
+    "enabled": false,
+    "endpoint": "",
+    "heading": "Subscribe",
+    "subhead": "",
+    "button_label": "Subscribe",
+    "fine_print": "",
+    "success_message": "You're in — thanks for subscribing.",
+    "error_message": "Something went wrong — please try again in a moment."
+  },
+  "home": {
+    "hero_title": "Welcome",
+    "thought_after": ""
+  },
+  "thoughts": {
+    "newest_first": true,
+    "page_label": "Daily Thoughts",
+    "page_title": "Small thoughts, as they come",
+    "page_intro": "Short notes too small for an essay. One at a time, newest first.",
+    "home_heading": "Today's thought",
+    "home_link_label": "Read all daily thoughts →"
+  },
+  "publishing": {
+    "hide_future_dated": false,
+    "similarity_threshold": 0.18,
+    "related_count": 3,
+    "group_preview_count": 3,
+    "feed_items": 20
+  },
+  "redirects": {},
+  "copy": {
+    "categories": {"title": "Explore by Category", "description": "Different lenses for looking at the world"},
+    "category": {"back_label": "← All Categories", "default_description": "Essays exploring {name}"},
+    "essays": {"eyebrow": "Essays", "title": "Every Essay,", "accent": "Organized",
+               "description": "Explore {count} essays spanning {years} years of writing",
+               "tab_year": "By year", "tab_category": "By category"},
+    "books": {"eyebrow": "Books", "title": "Books", "description": "",
+              "my_books_heading": "Books I've Written", "my_books_pill": "My Books",
+              "notes_heading": "What I've Been Reading", "notes_pill": "What I'm Reading",
+              "notes_intro": "", "affiliate_disclosure": "",
+              "cross_link_to_book": "This one's actually mine — see the full book →",
+              "cross_link_to_note": "I wrote a reading note on this one too →"},
+    "videos": {"eyebrow": "Video Library", "title": "Watch &", "accent": "Learn", "description": ""}
+  }
+}

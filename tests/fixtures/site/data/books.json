@@ -1,0 +1,24 @@
+[
+ {
+  "title": "Life is Happenning",
+  "description": "A guide.",
+  "image": "cover.png",
+  "linkDescription": "Download Free PDF",
+  "link": "downloads/guide.pdf",
+  "video_id": "abc123"
+ },
+ {
+  "title": "Space Between Knowing",
+  "description": "Reflective.",
+  "image": "cover.png",
+  "linkDescription": "Buy on Amazon",
+  "link": "https://example.com/b"
+ },
+ {
+  "title": "Tableau - An Introduction",
+  "description": "Friendly.",
+  "image": "",
+  "linkDescription": "Not Available",
+  "link": ""
+ }
+]

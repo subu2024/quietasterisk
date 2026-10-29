@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="section-header section-header-centered">
+      <h1 class="section-title">{{ copy.title }}</h1>
+      <p class="section-description section-description-centered">{{ copy.description }}</p>
+    </div>
+    <div class="card-grid">
+      {% for c in categories %}
+      <a href="{{ c.url }}" class="card-wrap-link">
+        <article class="card">
+          <div class="card-meta"><span class="card-category card-category-rust">{{ c.count }} {{ 'essay' if c.count == 1 else 'essays' }}</span></div>
+          <h3 class="card-title">{{ c.name }}</h3>
+          <p class="card-excerpt">{{ c.description }}</p>
+          <div class="card-link card-link--spaced">Explore {{ c.name }} {{ m.arrow() }}</div>
+        </article>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

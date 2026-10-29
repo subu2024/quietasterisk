@@ -1,0 +1,12 @@
+{% import "macros.html" as m %}
+<!DOCTYPE html>
+<html lang="{{ site.language }}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }}</title><meta name="description" content="{{ page.description }}">
+<link rel="canonical" href="{{ page.canonical }}">
+{% if page.jsonld_json %}<script type="application/ld+json">{{ page.jsonld_json|safe }}</script>{% endif %}
+<link rel="stylesheet" href="{{ static('css/style.css') }}"></head>
+<body>
+<nav><a href="{{ urls.home }}"><b>{{ site.title }}</b></a>{% for i in site.nav %}<a href="{{ i.href }}">{{ i.label }}</a>{% endfor %}</nav>
+<main>{% block content %}{% endblock %}</main>
+<footer class="muted"><hr>{{ site.copyright }}</footer>
+</body></html>

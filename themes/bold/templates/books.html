@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+{{ m.page_head(copy.title, eyebrow=copy.eyebrow, description=copy.description) }}
+<section class="block block--tight">
+  <div class="wrap">
+    {% if books and notes %}
+    <div class="jump">
+      <a href="#my-books" class="btn btn-ghost">{{ copy.my_books_pill }}</a>
+      <a href="#reading-notes" class="btn btn-ink">{{ copy.notes_pill }}</a>
+    </div>
+    {% endif %}
+
+    {% if notes %}
+    <h2 id="reading-notes" class="section-title">{{ copy.notes_heading }}</h2>
+    {% if copy.notes_intro %}<p class="block-lede">{{ copy.notes_intro }}</p>{% endif %}
+    {% if copy.affiliate_disclosure %}<p class="disclosure">{{ copy.affiliate_disclosure }}</p>{% endif %}
+    <div class="notes">
+      {% for n in notes %}
+      <article class="note-card tone-{{ m.TONES[loop.index0 % 5] }}" id="{{ n.anchor }}">
+        <h3 class="note-card-title">{{ n.title }}</h3>
+        {% if n.author %}<p class="by">by {{ n.author }}</p>{% endif %}
+        <p class="note-card-text">{{ n.note }}</p>
+        <div class="note-card-links">
+          {% if n.link %}<a href="{{ n.link }}" target="_blank" rel="nofollow sponsored noopener noreferrer" class="link-arrow">More on this book</a>{% endif %}
+          {% if n.cross_link %}<a href="{{ n.cross_link }}" class="link-arrow">{{ copy.cross_link_to_book|trim(' →') }}</a>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if books %}
+    <h2 id="my-books" class="section-title">{{ copy.my_books_heading }}</h2>
+    <div class="books">
+      {% for b in books %}
+      <article class="book" id="{{ b.anchor }}">
+        <div class="book-row">
+          {% if b.image_url %}<img src="{{ b.image_url }}" class="book-cover" alt="{{ b.title }}" loading="lazy">{% endif %}
+          <div class="book-body">
+            <h3 class="book-title">{{ b.title }}</h3>
+            {% if b.author %}<p class="by">by {{ b.author }}</p>{% endif %}
+            {% if b.year %}<p class="by">Published {{ b.year }}</p>{% endif %}
+            <p class="book-text">{{ b.description }}</p>
+            {% if b.actions %}
+            <div class="actions">
+              {% for a in b.actions %}
+              <a href="{{ a.href }}" class="btn {{ 'btn-ghost' if a.kind == 'read' else 'btn-coral' }}"{% if a.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ a.label }}</a>
+              {% endfor %}
+            </div>
+            {% else %}
+            <p class="unavailable">{{ b.unavailable_label }}</p>
+            {% endif %}
+            {% if b.cross_link %}<a href="{{ b.cross_link }}" class="link-arrow">{{ copy.cross_link_to_note|trim(' →') }}</a>{% endif %}
+          </div>
+        </div>
+        {% if b.video_id %}{{ m.youtube(b.video_id, 'Video about ' ~ b.title) }}{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

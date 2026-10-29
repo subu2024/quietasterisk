@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+{{ m.page_head(copy.title, eyebrow=copy.eyebrow, accent=copy.accent, description=copy.description) }}
+<section class="block block--tight">
+  <div class="wrap">
+    <div class="card-grid">
+      {% for v in videos %}
+      <article class="card video-card tone-{{ m.TONES[loop.index0 % 5] }}">
+        <h3 class="card-title">{{ v.title }}</h3>
+        {{ m.youtube(v.video_id, v.title) }}
+        {% if v.article_link %}<a href="{{ v.article_link }}" class="link-arrow">Read this essay</a>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

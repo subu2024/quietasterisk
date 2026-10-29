@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ collection.title }}</h1><p>{{ description }}</p>
+<p><a href="{{ start_entry.url }}">{{ collection.start_label }}</a></p>
+<ol>{% for e in entries %}<li><a href="{{ e.url }}">{{ e.title }}</a> — {{ e.synopsis }}</li>{% endfor %}</ol>
+{% endblock %}

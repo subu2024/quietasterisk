@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+{{ m.page_head(copy.title, description=copy.description, centered=true) }}
+<section class="block block--tight">
+  <div class="wrap">
+    <div class="tiles">
+      {% for c in categories %}
+      <a href="{{ c.url }}" class="tile tone-{{ m.TONES[loop.index0 % 5] }}">
+        <span class="tile-count">{{ c.count }} {{ 'essay' if c.count == 1 else 'essays' }}</span>
+        <h2 class="tile-title">{{ c.name }}</h2>
+        <p class="tile-text">{{ c.description }}</p>
+        <span class="tile-go">Explore {{ m.arrow() }}</span>
+        <span class="tile-star" aria-hidden="true">{{ m.asterisk(120) }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

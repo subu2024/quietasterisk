@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% import "macros.html" as m %}
+{% block content %}
+<h1>{{ copy.title }} {{ copy.accent }}</h1><p>{{ copy.description }}</p>
+{% for y in years %}<h2>{{ y.year }}</h2><ul>{% for e in y.entries %}{{ m.item(e) }}{% endfor %}</ul>{% endfor %}
+<p><a href="{{ urls.categories }}">{{ copy.tab_category }}</a></p>
+{% endblock %}
