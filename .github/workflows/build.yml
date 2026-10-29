@@ -2,7 +2,7 @@ name: build and deploy
 
 on:
   push:
-    branches: [main]
+    branches: [main, v2]      # v2 builds and tests only; deploy below runs on main only
   pull_request:
   workflow_dispatch:          # "Run workflow" button in the Actions tab
   # To publish essays that are future-dated on the day they are due, set
