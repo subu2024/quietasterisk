@@ -2,7 +2,7 @@
 title: The Second Toast
 slug: the-second-toast
 date: 2025-11-08
-category: Love, Loss & Family
+category: Fiction
 lock: false
 synopsis: At my son's wedding, one old nickname was enough to unravel decades of my own marriage in my head.
 ---

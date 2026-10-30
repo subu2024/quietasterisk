@@ -2,7 +2,7 @@
 title: The Girl at Arc Coffee
 slug: the-girl-at-arc-coffee
 date: 2025-11-02
-category: Love, Loss & Family
+category: Fiction
 lock: false
 synopsis: I wasn't looking for anything that gray morning, which might be exactly why I found it.
 ---

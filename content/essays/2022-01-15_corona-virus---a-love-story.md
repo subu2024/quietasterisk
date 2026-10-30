@@ -30,4 +30,4 @@ Today, I smiled and felt good and not worried about her anymore .. but I know sh
 > _Dinner merged with time and had no shame_  
 > _Eating at odd hours - breakfast, dinner or give any name_
 >
-> - an excerpt from the poem ["Corona Virus", Aug 2020](2020_08_23_corona_virus.html)
+> - an excerpt from the poem ["Corona Virus", Aug 2020](corona-virus.html)

@@ -1,7 +1,7 @@
 ---
 title: Love in the Aisles
 date: "2025-11-01"
-category: Love, Loss & Family
+category: Fiction
 lock: true
 synopsis: I've kept my guard up since I got hurt, and somehow, in a bookstore of all places, it started coming down.
 slug: love-in-the-aisles

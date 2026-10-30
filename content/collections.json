@@ -51,7 +51,7 @@
       "title": "Pocket Poems",
       "folder": "pocket_poems",
       "layout": "chapters",
-      "sort": "ascending",
+      "sort": "descending",
       "show_on_home": 0,
       "eyebrow": "← All Poems",
       "synopsis": "Short, plainspoken poems about love, longing, loss, and memory, and the quiet work of seeing yourself and the people you’ve lost without disguise.",
