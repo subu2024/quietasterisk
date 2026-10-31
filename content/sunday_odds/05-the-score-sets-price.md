@@ -2,7 +2,7 @@
 title: "The Score Sets the Price"
 synopsis: "When an apartment renewal triggers a credit check, Anika learns that a credit score is a priced forecast of repayment, that the gap between score bands costs real dollars on a car loan, and that a credit card is a tool with variance that needs rules."
 keywords: credit score, credit report, credit utilization, auto loan, APR, loan term, credit cards, autopay, reference class, calibration, probability
-lock: false
+lock: true
 asterisk: "The score Anika sees in her app is one version of a number, and a lender may see a different one. Every dollar figure in the chapter comes from invented rates and cutoffs, so the real price of her score is whatever an actual offer says on the day, and what she cannot see is how each lender’s model reads a three-year-old file"
 teaser: "Next Sunday: the number on Emma’s screenshot, and what it costs to say yes"
 ---

@@ -61,7 +61,7 @@ even the British royal wedding managed to inspire one of my more inane pieces ..
 > _Sensuously wrapping its arms around me_  
 > _Shielding me from the solar glare sublimely_
 
-> - an excerpt from the poem [Reflection, may 2011](reflection-in-the-rain.html)
+> - an excerpt from the poem [Reflection, may 2011](reflection.html)
 
 ah, the many forms of love .. and yet, as far as I can tell, none of them are quite real .. love is the feeling that gets generated inside you .. the silhouette, the girl on the train, the moon, the rain are only triggers .. Damasio might say the feeling comes first and we go looking for a face to put it on, and I hold that loosely, but it explains a lot about my notebooks ..
 
@@ -71,4 +71,4 @@ last month, I caught myself waving enthusiatically at someone who was clearly wa
 
 **part 1, [Love](love.html)**
 
-**part 2, [Dark Love](dark_love.html)**
+**part 2, [Dark Love](dark-love.html)**

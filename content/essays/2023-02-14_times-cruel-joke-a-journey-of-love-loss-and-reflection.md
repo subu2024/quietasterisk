@@ -53,7 +53,7 @@ In 2019, I wrote about two strangers on a chariot, pulled by invisible forces—
 > _Money is the silent one that does the tugging to seek fame_  
 > _The mannered Goals and value refusing to play others game_
 >
-> - ["25", May 2019](turning-twenty-five.html)
+> - ["25", May 2019](twenty-five.html)
 
 I romanticized the chaos. I mistook turbulence for depth.
 

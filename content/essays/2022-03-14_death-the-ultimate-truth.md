@@ -36,7 +36,7 @@ an unstoppable melody
 A destined tragedy in nature's harmony  
 Death is the poignant note
 
-— an excerpt from the poem ["Death", Jul 1999](deaths-quiet-melody.html)
+— an excerpt from the poem ["Death", Jul 1999](death.html)
 
 When we look at history, we see how deeply this fear has shaped human thought.
 
@@ -73,7 +73,7 @@ on the roads of rich and poor
 unaware and ignorant are we,  
 Death is our final destination
 
-— an excerpt from the poem ["Death", Jul 1999](deaths-quiet-melody.html)
+— an excerpt from the poem ["Death", Jul 1999](death.html)
 
 At some level, the truth is simple.
 

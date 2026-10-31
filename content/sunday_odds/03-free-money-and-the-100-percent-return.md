@@ -2,7 +2,7 @@
 title: Free Money and the 100% Return
 synopsis: A 401(k) match that pays 100%, if you stay long enough to keep it.
 keywords: 401(k), employer match, vesting, expected value
-lock: false
+lock: true
 asterisk: "You only live one of those outcomes."
 teaser: "Next Sunday, Chapter 4: Debt Is a Bet You Already Lost. Anika opens her loan portal, and Revathi asks her to rank the pain before she ranks the math."
 ---

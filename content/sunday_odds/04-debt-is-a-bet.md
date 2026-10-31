@@ -2,7 +2,7 @@
 title: "Debt Is a Bet You Already Lost"
 synopsis: "Anika opens her loan portal and finds $24,000 in debt and a $132 monthly interest bill. Revathi shows her that paying off a fixed-rate loan earns its rate with no variance, and the two disagree over whether a win you will keep beats the cheapest plan on paper."
 keywords: student loans, paying off debt, guaranteed return, debt snowball, expected value
-lock: false
+lock: true
 asterisk: "A locked return carries a star: the 7.5% is certain only if your buffer survives the year and your servicer actually applies extra payments to principal. What can't you see from the portal?"
 teaser: "If debt is the bet you already lost, what's a bet worth taking?"
 ---

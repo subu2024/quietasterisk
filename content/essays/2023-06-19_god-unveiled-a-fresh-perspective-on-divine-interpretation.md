@@ -2,7 +2,7 @@
 title: "God Unveiled: A Fresh Perspective on Divine Interpretation"
 date: "2023-06-19"
 category: Authenticity & Vulnerability
-lock: true
+lock: false
 synopsis: I went back and questioned everything I was taught to believe about God, and I didn't come back with easy answers.
 slug: god-unveiled-a-fresh-perspective-on-divine-interpretation
 ---
@@ -21,4 +21,4 @@ In the perplexing world of morality, we often find ourselves adrift, grappling w
 
 God serves as the intangible boundary that separates the land of science and the unknown .. the dichotomy between good and evil .. the demarcation between the familiar and the uncharted .. encompassing everything that eludes our comprehension .. everything our heart yearns for ..
 
-God is a concept that defies definition .. encompassing the infinite possibilities of our boundless imaginations .. interestingly, [all residing within us](2019_08_19_she.html).
+God is a concept that defies definition .. encompassing the infinite possibilities of our boundless imaginations .. interestingly, [all residing within us](she.html).

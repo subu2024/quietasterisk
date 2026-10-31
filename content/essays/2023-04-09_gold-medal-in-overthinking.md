@@ -34,7 +34,7 @@ At work, presentations felt like public trials. No matter how much I prepared, n
 
 The numbers never supported my fear. But fear is not interested in numbers.
 
-Then I read **[Quiet: The Power of Introverts in a World That Can't Stop Talking](<(https://www.amazon.com/quiet-power-introverts-world-talking/dp/0307352153)>)** by **Susan Cain**, and something softened. The book didn’t erase my anxiety, but it reframed it. It suggested that sensitivity is not deficiency. That introspection is not incompetence. That the traits I treated as liabilities might simply be different variables in a world optimized for louder personalities.
+Then I read **[Quiet: The Power of Introverts in a World That Can't Stop Talking](https://www.amazon.com/quiet-power-introverts-world-talking/dp/0307352153)** by **Susan Cain**, and something softened. The book didn’t erase my anxiety, but it reframed it. It suggested that sensitivity is not deficiency. That introspection is not incompetence. That the traits I treated as liabilities might simply be different variables in a world optimized for louder personalities.
 
 It did not eliminate worry. But it lowered its authority.
 
