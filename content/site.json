@@ -22,9 +22,24 @@
     "fine_print": "Unsubscribe any time. I mean it."
   },
 
+  "nav": [
+    {"label": "Long Thoughts", "page": "essays"},
+    {"label": "Sunday Odds", "page": "sunday_odds"},
+    {"label": "Pocket Poems", "page": "pocket_poems"},
+    {"label": "Books", "page": "books"},
+    {"label": "Daily Thoughts", "page": "thoughts"},
+    {"label": "About", "page": "about"}
+  ],
+
   "home": {
     "hero_title": "Essays on life, written from inside the uncertainty.",
-    "thought_after": "sunday_odds"
+    "thought_after": "sunday_odds",
+    "featured": {
+      "enabled": true,
+      "page": "this-unpredictable-life.html",
+      "heading": "Poem of the moment",
+      "link_label": "Open this poem on its own page →"
+    }
   },
 
   "publishing": {

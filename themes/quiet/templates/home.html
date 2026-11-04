@@ -9,6 +9,20 @@
     </div>
   </section>
 
+  {% if featured %}
+  <section class="qa-featured" id="featured">
+    <div class="wrap qa-narrow">
+      {% if featured.heading %}<p class="qa-eyebrow">{{ featured.heading }}</p>{% endif %}
+      <article class="qa-featured-piece">
+        <h2 class="qa-featured-title">{{ featured.entry.title }}</h2>
+        <p class="qa-featured-meta">{{ featured.collection.title }}{% if featured.entry.date_display %} · {{ featured.entry.date_display }}{% endif %}</p>
+        <div class="post-body">{{ featured.entry.body_html|safe }}</div>
+      </article>
+      {% if featured.link_label %}<a class="qa-see-all" href="{{ featured.link_url }}">{{ featured.link_label }}</a>{% endif %}
+    </div>
+  </section>
+  {% endif %}
+
   {% for block in blocks %}
   {% if block.kind == 'card' %}
   <section class="qa-series qa-series--spaced" id="{{ block.id }}">

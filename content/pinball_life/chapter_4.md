@@ -1,0 +1,49 @@
+---
+title: "Chapter 4: Most First Meetings Are Just First Meetings"
+synopsis: "Discusses base rates and why rushing to judgment on a single initial encounter usually leads us astray."
+keywords: ["first impression", "base rates", "intuition", "judgment", "coffee shop", "nuance"]
+lock: false
+slug: "chapter-4-most-first-meetings-are-just-first-meetings"
+---
+
+## The First Meeting
+
+I was meeting Sheela for the first time. The first time I meet someone new, I’m aware of how much work my mind is doing without asking me first. It gathers details quickly. Too quickly. A tone of voice. A way of standing. Shoes that look practical or impractical, depending on my mood. Within minutes—sometimes seconds—I feel the beginnings of a conclusion forming. I tell myself I’m just observing. But I know better.
+
+This particular meeting took place in a small café, the kind with mismatched chairs and a chalkboard menu written in careful, friendly handwriting. I arrived early, which is my default setting. Early enough to choose a seat, early enough to wonder if I should have chosen a different one.
+
+The person I was meeting walked in a few minutes later. She scanned the room, spotted me, smiled. Nothing remarkable. No red flags. No sparks either. Just a person, arriving. We exchanged pleasantries. Sat down. Ordered coffee. The conversation moved easily enough, but not effortlessly. There were pauses. Moments where one of us searched for the next thing to say. Nothing awkward exactly, but not seamless. As we talked, my mind began quietly sorting the experience into categories.
+
+*She is not tall. She is dark. She’s very expressive and chatty. This might not go anywhere.*
+
+I wasn’t unhappy. Just mildly conclusive. When the meeting ended, we said goodbye politely. I walked home replaying parts of the conversation, editing it in my head. By the time I reached my apartment, I felt I had a decent sense of who this person was. Later—weeks later, actually—I would realize how little information I’d been working with.
+
+At the time, though, my confidence felt justified. First impressions often do. They arrive with a sense of clarity, even when they’re built on very little. I’ve always trusted my instincts. Or at least, I’ve told myself I do. It feels adult to say that. Reassuring. As if intuition were a reliable instrument, finely calibrated. But intuition, I’m learning, is not neutral. It’s trained. And it’s trained on a very particular set of experiences.
+
+When I meet someone, I’m not just meeting them. I’m meeting them in the context of everyone I’ve met before. People who reminded me of them. Situations that felt similar. Outcomes that followed. If someone is quiet, my mind searches its archive of quiet people. Some were thoughtful. Some were distant. Some were uninterested. The mind doesn’t always distinguish carefully. It grabs the most vivid examples and holds them up as representative. This is efficient. It saves time. It also gets things wrong.
+
+There’s a concept I came across once that helped me name this habit. It’s about **base rates**—the background frequencies of things. How common something actually is, before we add specific details. In everyday terms, it means this: it helps to ask how often that thing happens in general before deciding what that something means.
+
+Most people are a little nervous when meeting someone new. Most conversations take time to warm up. Most first meetings are unremarkable. But these base facts are quiet. They don’t stand out. They’re easy to ignore in favor of more vivid interpretations.
+
+I think about this whenever I notice myself reacting strongly to a small signal. A delayed reply. A flat tone. A moment of distraction. These things feel meaningful, but they’re also common. The café meeting was a good example. Nothing about it was unusual. Two people meeting for the first time, feeling each other out, not quite finding a rhythm yet. This describes the majority of first meetings I’ve ever had. And yet, my mind wanted to treat it as diagnostic.
+
+A week later, we met again. Different setting. A walk this time, outside, moving instead of sitting. The conversation was better. Looser. We laughed. The pauses felt natural rather than strained. I remember feeling surprised. Not because anything extraordinary happened, but because it contradicted my initial assessment.
+
+*Oh,* I thought. *Maybe I was wrong.*
+
+This shouldn’t have been a revelation. It should have been expected. People don’t reveal much of themselves in one encounter. Context matters. Comfort matters. Time matters. But my first impression had felt so solid. I’ve seen this pattern play out in other areas of my life too. At work, someone joins a team and seems disorganized in the first meeting. I quietly label them as such. Weeks later, I learn they were covering for someone else, or new to the process, or having a bad day. My initial judgment, based on a single data point, dissolves. Or someone speaks confidently early on and earns a reputation for competence that persists even when evidence becomes mixed. First impressions stick, not because they’re accurate, but because they arrive first. I’m not immune to this myself. I know how much effort it takes to revise an early conclusion. How reluctant the mind is to reopen a case it considers closed.
+
+There’s something comforting about quick judgments. They reduce uncertainty. They give us a sense of orientation. In a crowded social world, we’re constantly scanning for signals about who is safe, who is interesting, who is likely to matter. But speed comes at a cost. When we overweight early information, we underweight everything that comes later. We stop collecting data. We stop noticing contradictions. I’ve started to wonder how many people I’ve misunderstood simply because I didn’t give the base rates their due. How many times I assumed meaning where there was only common human behavior. Someone being quiet at a meeting is more likely to be nervous than hostile. Someone being distracted is more likely to be tired than uninterested. Someone being brief is more likely to be busy than dismissive. These explanations are less dramatic. Less personal. They don’t flatter the ego. But they’re often closer to the truth. There’s a humility required to lean on base rates. It means accepting that most things are ordinary. That most behaviors are not tailored to us specifically. This can feel disappointing at first. We like to believe we’re central characters in other people’s stories. That their actions are responses to us. Letting go of that idea can feel like shrinking. But I’ve found it’s also a relief. When I remind myself that most silences are just silences, most flat moments are just flat moments, I carry less weight. I don’t have to decode every interaction as if it were a puzzle with stakes. This doesn’t mean ignoring patterns when they genuinely emerge. Over time, consistent behavior does become informative. Base rates don’t replace observation; they ground it. The danger lies in skipping the grounding step.
+
+I’ve been on the other side of this too. I’ve been misunderstood early and felt it linger. Labeled quiet when I was overwhelmed. Labeled confident when I was just trying not to show nerves. I could feel the first impression shaping how people interacted with me, narrowing the space I had to show up differently. It’s an odd feeling, realizing how little control we have over the stories others tell about us—and how much control we imagine we have over the stories we tell about them.
+
+These days, when I meet someone new, I try to leave more room than I used to. I try to treat the first meeting as what it is: an introduction, not a conclusion. This doesn’t come naturally. The impulse to assess is strong. But I’ve learned to slow it down, to add a quiet asterisk to my early thoughts. *This is provisional,* I tell myself. *This could change.* Sometimes I even say it out loud, jokingly, to myself. It helps loosen the grip of certainty.
+
+The person from the café eventually became the person I married. She became a person who revealed themselves gradually, in pieces, across time and context. If I’d relied solely on that first meeting, I would have missed most of what mattered. This realization has made me more patient—not just with others, but with situations. When something doesn’t make sense right away, I try not to rush to interpret it. I remind myself that early data is noisy. That context is incomplete. Life offers very few clean samples. Most of what we see at first is distorted by novelty, nerves, and chance.
+
+Base rates don’t eliminate uncertainty. They temper it. They whisper, *this is common. This happens a lot. Don’t rush.* There’s a kindness in that whisper. It asks us to widen the frame, to see individual moments as part of a larger distribution rather than isolated signals demanding explanation.
+
+As I move through my days now—meeting people, starting things, forming opinions—I try to keep that larger frame in mind. I don’t always succeed. I still jump to conclusions. I still mistake vivid impressions for truth. But more often than before, I pause. I ask myself what’s actually likely here, given how the world usually works. I let the ordinary have its say. And in that pause, I’ve found a little more room for curiosity. For patience. For letting stories unfold instead of writing them too soon. Because the more I pay attention, the more I see how often my mind prefers a compelling narrative to a simple explanation. How eager it is to link details into meaning, even when they don’t quite belong together.
+
+That habit—the storytelling impulse—turns out to be one of the strongest forces shaping how I experience the world. And it’s one I’m only just beginning to understand.

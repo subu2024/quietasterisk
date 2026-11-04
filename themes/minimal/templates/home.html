@@ -1,6 +1,7 @@
 {% extends "base.html" %}{% import "macros.html" as m %}
 {% block content %}
 <h1>{{ hero.title }}</h1><p>{{ hero.subtitle }}</p>
+{% if featured %}<h2>{{ featured.heading }}</h2><h3>{{ featured.entry.title }}</h3>{{ featured.entry.body_html|safe }}<p><a href="{{ featured.link_url }}">{{ featured.link_label }}</a></p>{% endif %}
 {% for b in blocks %}
 {% if b.kind == 'thought' %}<h2>{{ b.heading }}</h2><blockquote>{{ b.thought.text }}</blockquote><a href="{{ b.link_url }}">{{ b.link_label }}</a>
 {% else %}<h2>{{ b.heading if b.kind == 'list' else b.title }}</h2><p>{{ b.synopsis }}</p>

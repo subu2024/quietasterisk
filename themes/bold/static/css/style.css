@@ -366,3 +366,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.05; letter-spa
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Featured piece on the homepage (home.featured in site.json) */
+.featured { background: var(--paper-2); border: var(--line); border-radius: calc(var(--radius) + 8px); box-shadow: 9px 9px 0 var(--ink); padding: clamp(1.75rem, 5vw, 3.5rem); }
+.featured-title { font-weight: 800; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -0.03em; margin: 0; }
+.featured-meta { font-family: var(--font-ui); font-size: .9rem; color: var(--muted); margin: .6rem 0 1.75rem; }
+.featured .prose { padding-bottom: 0; }
+.featured .prose > :last-child { margin-bottom: 1.75rem; }

@@ -34,13 +34,20 @@
   },
   "home": {
     "hero_title": "Welcome",
-    "thought_after": ""
+    "thought_after": "",
+    "featured": {
+      "enabled": false,
+      "page": "",
+      "heading": "Featured",
+      "link_label": "Read on its own page →"
+    }
   },
   "thoughts": {
     "newest_first": true,
     "page_label": "Daily Thoughts",
     "page_title": "Small thoughts, as they come",
     "page_intro": "Short notes too small for an essay. One at a time, newest first.",
+    "show_on_home": true,
     "home_heading": "Today's thought",
     "home_link_label": "Read all daily thoughts →"
   },

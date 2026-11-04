@@ -68,7 +68,7 @@ In the body you can use normal markdown plus:
 | `layout` | `essays` (flat title-based URLs; listed on the Essays and category pages, feed, related) or `chapters` (a list page `<page_prefix>.html` plus `<prefix>-<file>.html` pages) |
 | `lock` | `true` unpublishes the whole collection |
 | `sort` | `ascending` / `descending` (default: essays descending, chapters ascending). Controls every list, prev/next and the homepage "top N". Chapter numbers always follow reading order |
-| `show_on_home` | absent or `false`: not on the homepage. `0`: synopsis and a "read all" link. `N`: synopsis, top N entries, "read all" |
+| `show_on_home` | `false`: not on the homepage (it stays in the menu, and its pages still exist). `0`: synopsis and a "read all" link. `N`: synopsis, top N entries, "read all" |
 | `synopsis`, `home_heading`, `see_all_label` | Homepage block text |
 | `page_prefix` | Chapters only; default `book-<folder>` |
 | `linked_book` | Exact title in `books.json`: adds Read Me, Buy and Download buttons |
@@ -84,16 +84,40 @@ Layered over `qa/default_site.json`, so you only override what you need. Notable
 |---|---|
 | `title`, `tagline`, `url`, `author`, `email`, `copyright`, `logo`, `analytics_id` | Identity (logo is a file in `assets/images`) |
 | `theme` | Folder name under `themes/` |
-| `nav`, `footer_nav` | `[{"label": "...", "page": "essays"}]`; a page that does not exist is dropped. Use `"url"` for external links |
+| `nav`, `footer_nav` | `[{"label": "...", "page": "essays"}]`; `page` is a page key (`essays`, `books`, `thoughts`, `videos`, `about`...) or a collection id from `collections.json` (`sunday_odds`...). A page that does not exist is dropped. Use `"url"` for external links. The menu is separate from the homepage: hiding something from the homepage never removes it from here |
 | `social` | `[{"label", "icon", "url"}]` |
 | `newsletter` | `enabled`, `heading`, `subhead`, `fine_print`, messages. The endpoint comes from env `BLOG_NEWSLETTER_API_ENDPOINT` |
-| `home` | `hero_title`, `thought_after` (collection id after which the daily thought appears) |
-| `thoughts` | `newest_first` and the daily-thoughts texts |
+| `home` | `hero_title`, `thought_after` (collection id after which the daily thought appears), `featured` (below) |
+| `thoughts` | `show_on_home` (`false` hides today's thought from the homepage; the Daily Thoughts page and its menu item stay), `newest_first`, and the daily-thoughts texts |
 | `publishing` | `hide_future_dated`, `similarity_threshold`, `related_count`, `group_preview_count`, `feed_items` |
 | `redirects` | `{"old.html": "new.html"}` |
 | `copy` | Headings and descriptions for the Essays, Categories, Books and Videos pages |
 
 Environment overrides: `BLOG_SITE_URL`, `BLOG_NEWSLETTER_API_ENDPOINT`.
+
+### Featured piece on the homepage
+
+Show one poem, essay or chapter in full at the top of the homepage:
+
+```json
+"home": {
+  "featured": {
+    "enabled": true,
+    "page": "this-unpredictable-life.html",
+    "heading": "Poem of the moment",
+    "link_label": "Open this poem on its own page →"
+  }
+}
+```
+
+| Key | Meaning |
+|---|---|
+| `enabled` | `true` shows it, `false` hides it. Default `false` |
+| `page` | The piece's page name, as in its address (`.html` is optional). Look for it in the browser's address bar, or it is the `slug:` / title-based name |
+| `heading` | Label above the piece. Default "Featured" |
+| `link_label` | Text of the link to the piece's own page. Empty hides the link |
+
+A locked, future-dated, removed or misspelled piece is never shown: a normal build leaves the section out and warns, and `python build.py --strict` fails with the reason. If the piece would also be in a homepage list (e.g. "Recent essays"), it is removed from that list so it appears once.
 
 ## Data files
 
@@ -121,5 +145,8 @@ A book and a reading note with the same title are cross-linked automatically.
 | Rename a URL | Change `slug:` and add the old name to `aliases:` |
 | Reverse a series | `"sort": "descending"` |
 | Feature a series on the home page | `"show_on_home": 0` (card) or `3` (top three) |
+| Take something off the home page but keep it in the menu | `"show_on_home": false` on its collection; for the daily thought, `"thoughts": {"show_on_home": false}` in site.json |
+| Feature one poem or essay in full on the home page | `home.featured` in site.json (above) |
+| Add a collection to the menu | `{"label": "Sunday Odds", "page": "sunday_odds"}` in `nav` (the collection id) |
 | Add a new series | New folder + new entry in `collections.json` |
 | Check before deploying | `python build.py --strict` |

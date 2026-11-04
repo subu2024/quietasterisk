@@ -7,7 +7,7 @@ import pytest
 
 from conftest import read
 
-THEMES = ["quiet", "minimal"]
+THEMES = ["quiet", "bold", "minimal"]
 BUILD = dict(hide_future=True)
 from datetime import date
 TODAY = date(2026, 12, 31)
@@ -125,3 +125,93 @@ def test_non_strict_build_reports_but_publishes(run_build, content_dir):
     (content_dir / "pages" / "about.md").write_text("---\ntitle: About\ntemplate: letter\n---\n[x](nowhere.html)\n")
     result = run_build(strict=False, hide_future=True, today=TODAY)
     assert result.ok and result.warnings and (result.output / "about.html").exists()
+
+
+# ---- homepage: featured piece, home toggles, menu ---------------------------------------------------
+
+def edit_json(path, change):
+    cfg = json.loads(path.read_text(encoding="utf-8"))
+    change(cfg)
+    path.write_text(json.dumps(cfg), encoding="utf-8")
+
+
+def feature(content_dir, page, **extra):
+    edit_json(content_dir / "site.json",
+              lambda c: c["home"].update(featured={"enabled": True, "page": page, **extra}))
+
+
+@pytest.mark.parametrize("theme", THEMES)
+def test_featured_piece_is_shown_in_full_in_every_theme(run_build, content_dir, theme):
+    feature(content_dir, "memories-of-another-day.html", heading="Poem of the moment")
+    result = run_build(theme=theme, hide_future=True, today=TODAY)
+    assert result.ok, result.warnings
+    home = read(result, "index.html")
+    assert "<p>Poem.</p>" in home and "Memories of Another Day" in home and "Poem of the moment" in home
+    assert 'href="memories-of-another-day.html"' in home          # link to its own page
+    assert (result.output / "memories-of-another-day.html").exists()   # the page itself is unchanged
+
+
+@pytest.mark.parametrize("theme", THEMES)
+def test_featured_piece_off_by_default_and_when_disabled(run_build, content_dir, theme):
+    assert "<p>Poem.</p>" not in read(run_build(theme=theme, hide_future=True, today=TODAY), "index.html")
+    feature(content_dir, "memories-of-another-day.html")
+    edit_json(content_dir / "site.json", lambda c: c["home"]["featured"].update(enabled=False))
+    assert "<p>Poem.</p>" not in read(run_build(theme=theme, hide_future=True, today=TODAY), "index.html")
+
+
+def test_featured_page_name_is_forgiving(run_build, content_dir):
+    for name in ("memories-of-another-day", "  Memories-Of-Another-Day.html "):
+        feature(content_dir, name)
+        assert "<p>Poem.</p>" in read(run_build(hide_future=True, today=TODAY), "index.html")
+
+
+def test_featured_essay_is_not_listed_twice(run_build, content_dir):
+    feature(content_dir, "who-would-cry.html")
+    home = read(run_build(hide_future=True, today=TODAY), "index.html")
+    assert home.count("Body one about death and noticing.") == 1                      # shown in full once
+    assert home.count('class="qa-essay"') == 1 and 'href="who-would-cry.html" class="qa-essay"' not in home
+
+
+@pytest.mark.parametrize("page", ["secret-essay.html", "future-essay.html", "no-such-page.html", ""])
+def test_featured_locked_future_or_missing_is_never_shown(run_build, content_dir, page):
+    feature(content_dir, page)
+    strict = run_build(hide_future=True, today=TODAY)
+    assert not strict.ok and any("home.featured" in w for w in strict.warnings)     # strict names the problem
+    lenient = run_build(strict=False, hide_future=True, today=TODAY)
+    assert lenient.ok and (lenient.output / "index.html").exists()                    # normal build still works
+    everything = "".join(p.read_text(encoding="utf-8") for p in lenient.output.glob("*.html"))
+    assert "Should not publish either." not in everything and 'id="featured"' not in read(lenient, "index.html")
+
+
+def test_homepage_items_can_be_hidden_but_stay_in_the_menu(run_build, content_dir):
+    def hide(cfg):
+        for c in cfg["collections"]:
+            if c["id"] in ("essays", "sunday_odds", "life_is_happenning"):
+                c["show_on_home"] = False
+    edit_json(content_dir / "collections.json", hide)
+    edit_json(content_dir / "site.json", lambda c: c.update(
+        thoughts={"show_on_home": False},
+        nav=[{"label": "Essays", "page": "essays"}, {"label": "Sunday Odds", "page": "sunday_odds"},
+             {"label": "Daily Thoughts", "page": "thoughts"}]))
+    result = run_build(hide_future=True, today=TODAY)
+    assert result.ok, result.warnings
+    home = read(result, "index.html")
+    for gone in ('id="essays"', 'class="qa-essay"', 'id="sunday_odds"', 'id="life_is_happenning"', 'id="daily-thought"'):
+        assert gone not in home, gone
+    for page in ("essays.html", "series.html", "thoughts.html"):          # pages still built...
+        assert (result.output / page).exists()
+        assert f'href="{page}" class="nav-link' in home                   # ...and still in the menu
+
+
+def test_daily_thought_shows_on_home_by_default(run_build):
+    assert 'id="daily-thought"' in read(run_build(hide_future=True, today=TODAY), "index.html")
+
+
+def test_menu_can_list_collections_and_highlights_them(run_build, content_dir):
+    edit_json(content_dir / "site.json", lambda c: c.update(
+        nav=[{"label": "Sunday Odds", "page": "sunday_odds"}, {"label": "Poems", "page": "pocket_poems"}]))
+    result = run_build(hide_future=True, today=TODAY)
+    chapter = read(result, "series-01-plan-for-the-bad-month.html")
+    assert 'href="series.html" class="nav-link active"' in chapter
+    assert 'href="book-pocket-poems.html" class="nav-link"' in chapter
+    assert 'href="book-pocket-poems.html" class="nav-link active"' in read(result, "memories-of-another-day.html")

@@ -31,7 +31,7 @@ For a long time I assumed the discomfort was a defect in me.
 
 ---
 
-My neighbor, Priya, has the opposite Friday. Last month I met her in the hallway, grocery bag on one arm, heels dangling from two fingers. She announced, unprompted, that she was "wrecked, absolutely wrecked," and would be on her couch by seven with the phone off. She said it with a kind of triumph. She was announcing the exact thing I hide, and I nodded like it was perfectly reasonable, which it was. *Wrecked* is a respectable reason to stay home. *Content* is not. An evening alone is acceptable if it can be framed as a casualty. It becomes suspicious only when it's chosen and enjoyed.
+My neighbor, Rithika, has the opposite Friday. Last month I met her in the hallway, reeking of cigarette smoke, grocery bag on one arm, heels dangling from two fingers. She announced, unprompted, that she was "wrecked, absolutely wrecked," and would be on her couch by seven with the phone off. She said it with a kind of triumph. She was announcing the exact thing I hide, and I nodded like it was perfectly reasonable, which it was. *Wrecked* is a respectable reason to stay home. *Content* is not. An evening alone is acceptable if it can be framed as a casualty. It becomes suspicious only when it's chosen and enjoyed.
 
 An older colleague once said he spends his Fridays reorganizing spice racks and watching documentaries about bridges. The table went quiet for half a second, then someone laughed warmly and asked a follow-up about bridges. He was fine. Nothing collapsed. I remember being briefly furious with him, and I still can't fully explain why. It might have been envy, which tends to disguise itself as irritation.
 

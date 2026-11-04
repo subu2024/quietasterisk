@@ -9,14 +9,14 @@
   "collections": [
     {
       "id": "essays",
-      "title": "Essays",
+      "title": "Long Thoughts",
       "folder": "essays",
       "layout": "essays",
       "sort": "descending",
       "show_on_home": 3,
-      "home_heading": "Recent essays",
+      "home_heading": "Recent Long Thoughts",
       "synopsis": "Essays on love, loss, money, parenting, technology and work, each noticing the small thing that turns out to be the big thing.",
-      "see_all_label": "Browse all essays →"
+      "see_all_label": "Browse all long thoughts →"
     },
     {
       "id": "sunday_odds",
@@ -44,6 +44,18 @@
       "eyebrow": "← All Books",
       "eyebrow_url": "books.html",
       "synopsis": "A practical, funny, and occasionally enlightening guide to actually showing up for your own life.",
+      "start_label": "Start reading"
+    },
+      {
+      "id": "pinball_life",
+      "title": "Pinball Life",
+      "folder": "pinball_life",
+      "layout": "chapters",
+      "sort": "ascending",
+      "show_on_home": 1,
+      "eyebrow": "← All Books",
+      "eyebrow_url": "books.html",
+      "synopsis": "The book uses everyday moments and probability concepts to teach us how to soften our emotional anxiety, let go of the illusion of absolute control, and find peace in a life made of uncertain attempts.",
       "start_label": "Start reading"
     },
     {

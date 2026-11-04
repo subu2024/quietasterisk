@@ -58,7 +58,7 @@ themes/<name>/
 
 `title`, `tagline`, `url`, `language`, `author`, `email`, `copyright`, `logo_url` (`""` if none),
 `analytics_id` (`""` if none), `social` (list of `{label, icon, url}`),
-`nav` and `footer_nav` (lists of `{label, href, page}`; items whose page does not exist are already removed),
+`nav` and `footer_nav` (lists of `{label, href, page}`; items whose page does not exist are already removed; `page` can be a page key or a collection id),
 `feed_url` (`""` if no feed), `home`, `thoughts`,
 `newsletter` (`{active, endpoint, heading, subhead, button_label, fine_print, success_message, error_message}`; render the signup form only if `newsletter.active`).
 
@@ -70,7 +70,7 @@ Map of page key to file name: `home`, `essays`, `categories`, `books`, `thoughts
 ### `page` (SEO and navigation)
 
 `title` (full `<title>` text), `heading` (short title), `description`, `canonical`, `og_type`,
-`image_url` (`""` if none), `section` (compare with `item.page` to highlight the current nav item),
+`image_url` (`""` if none), `section` (compare with `item.page` to highlight the current nav item; on an entry page it is `essays` or the collection id),
 `noindex`, `jsonld_json` (JSON string; print with `|safe` inside `<script type="application/ld+json">`), `url`.
 
 ### `static(path)`
@@ -81,7 +81,7 @@ Function returning the URL of a file in the theme's `static/` folder.
 
 | Template | Variables |
 |---|---|
-| `home.html` | `hero` (`{title, subtitle}`), `blocks` (ordered list, see below) |
+| `home.html` | `hero` (`{title, subtitle}`), `featured` (a piece to show in full, or `None`; see below), `blocks` (ordered list, see below) |
 | `entry.html` | `entry`, `collection`, `prev`, `next` (entries or `None`, in the collection's display order), `related` (essays only; list of entries), `position` (`{number, total}`) |
 | `collection.html` | `collection`, `entries`, `start_entry`, `description`, `book` (`Book` or `None`), `book_actions` (list of `Action`, excluding "read") |
 | `essays.html` | `years` (list of `{year, entries, count}`), `categories` (list of `CategoryInfo`), `stats` (`{count, years, categories}`), `preview_count`, `copy` |
@@ -115,6 +115,19 @@ Each block is a dict with a `kind`:
 | `thought` | `id, heading, thought, link_label, link_url` |
 
 Render them in order; the engine already placed the daily thought where `site.json` asks.
+
+### Homepage `featured`
+
+`None` when the feature is off, otherwise a dict. Render it above `blocks`, only `{% if featured %}`:
+
+| Field | Meaning |
+|---|---|
+| `heading` | Label above the piece (from `site.json` `home.featured.heading`; may be empty) |
+| `entry` | The `Entry` to show in full: `title`, `date_display`, `body_html` (print with `\|safe`) |
+| `collection` | Its `Collection` (use `collection.title` as the label) |
+| `link_label`, `link_url` | Link to the piece's own page (`link_label` may be empty: then show no link) |
+
+The engine has already removed the featured piece from the homepage `list` blocks, so it never appears twice.
 
 ## Objects
 

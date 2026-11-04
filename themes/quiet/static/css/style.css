@@ -1138,3 +1138,9 @@ body {
 .letter a:not(.btn) { color: var(--color-rust); text-decoration: underline; font-weight: 600; transition: color 0.15s; }
 .letter a:not(.btn):hover { color: var(--color-rust-deep); }
 .letter-signoff p:first-child { margin-bottom: 0.5rem; }
+
+/* Featured piece on the homepage (home.featured in site.json) */
+.quiet-home .qa-featured { padding: 56px 0 0; }
+.quiet-home .qa-featured-piece { margin-top: 16px; padding: 40px 0; border-top: 1px solid var(--color-sand); border-bottom: 1px solid var(--color-sand); }
+.quiet-home .qa-featured-title { font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12; margin: 0; }
+.quiet-home .qa-featured-meta { margin: 12px 0 28px; font-size: 14px; color: var(--color-slate); }

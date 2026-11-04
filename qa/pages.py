@@ -13,7 +13,7 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional
 
-from .loaders import Content
+from .loaders import Content, normalize_page_name
 from .models import LAYOUT_CHAPTERS, LAYOUT_ESSAYS, CategoryInfo, Collection, Entry, slugify
 
 logger = logging.getLogger("qa")
@@ -82,6 +82,30 @@ def _fmt(copy_block: dict, **values) -> dict:
     return out
 
 
+def _find_featured(content: Content, cfg: dict) -> Optional[dict]:
+    """The piece named by home.featured, or None (off, unnamed, or not published).
+
+    Only published entries are searched, so a locked, future-dated or deleted piece can never be
+    featured. A bad setting is a warning, which makes `--strict` fail and a normal build skip it.
+    """
+    if not cfg.get("enabled"):
+        return None
+    wanted = normalize_page_name(str(cfg.get("page") or ""))
+    if not wanted:
+        logger.warning("home.featured is enabled but home.featured.page is empty or unusable; "
+                       "the featured section is left out.")
+        return None
+    for coll in content.collections:
+        for entry in coll.entries:
+            if entry.url.casefold() == wanted.casefold():
+                return {"heading": cfg.get("heading", ""), "entry": entry, "collection": coll,
+                        "link_label": cfg.get("link_label", ""), "link_url": entry.url}
+    logger.warning("home.featured.page %r is not a published page (check the spelling; a locked, "
+                   "future-dated or removed piece cannot be featured); the featured section is left out.",
+                   cfg.get("page"))
+    return None
+
+
 def plan_site(content: Content) -> Plan:
     s = content.settings
     plan = Plan()
@@ -140,10 +164,12 @@ def plan_site(content: Content) -> Plan:
     if content.thoughts:
         latest = content.thoughts[0] if s["thoughts"]["newest_first"] else content.thoughts[-1]
     thought_block = None
-    if latest and "thoughts" in urls:
+    if latest and "thoughts" in urls and s["thoughts"]["show_on_home"]:
         thought_block = {"kind": "thought", "id": "daily-thought", "heading": s["thoughts"]["home_heading"],
                          "thought": latest, "link_label": s["thoughts"]["home_link_label"],
                          "link_url": urls["thoughts"]}
+    featured = _find_featured(content, s["home"]["featured"])
+    featured_url = featured["entry"].url if featured else None
     blocks, placed = [], False
     for coll in content.collections:
         if coll.show_on_home is None:
@@ -151,7 +177,8 @@ def plan_site(content: Content) -> Plan:
         blocks.append({
             "kind": "card" if coll.show_on_home == 0 else "list",
             "id": coll.id, "collection": coll, "title": coll.title, "heading": coll.home_heading,
-            "synopsis": coll.synopsis, "eyebrow": coll.eyebrow, "entries": coll.home_entries,
+            "synopsis": coll.synopsis, "eyebrow": coll.eyebrow,
+            "entries": [e for e in coll.home_entries if e.url != featured_url],   # never twice on the page
             "see_all_label": coll.see_all_label or "See all", "see_all_url": coll.url,
         })
         if thought_block and coll.id == s["home"]["thought_after"]:
@@ -164,7 +191,8 @@ def plan_site(content: Content) -> Plan:
         url=HOME_FILE, template="home.html", title="Home", description=s["tagline"], section="home",
         jsonld={"@context": "https://schema.org", "@type": "WebSite", "name": s["title"],
                 "url": s["url"] + "/", "description": s["tagline"]},
-        context={"hero": {"title": s["home"]["hero_title"], "subtitle": s["tagline"]}, "blocks": blocks},
+        context={"hero": {"title": s["home"]["hero_title"], "subtitle": s["tagline"]}, "featured": featured,
+                 "blocks": blocks},
     ))
 
     # ---- entry pages and chapter lists ---------------------------------------
@@ -192,7 +220,7 @@ def plan_site(content: Content) -> Plan:
             add(PageSpec(
                 url=entry.url, template="entry.html",
                 title=entry.title if is_essay else f"{entry.title} - {coll.title}",
-                description=entry.synopsis, section="essays" if is_essay else "reading",
+                description=entry.synopsis, section="essays" if is_essay else coll.id,
                 og_type="article", image=entry.image, jsonld=ld, lastmod=entry.iso_date,
                 context={"entry": entry, "collection": coll,
                          "prev": coll.entries[index - 1] if index > 0 else None,

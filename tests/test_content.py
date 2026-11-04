@@ -104,3 +104,17 @@ def test_books_notes_cross_link_and_actions(content_dir):
 
 def test_thoughts_newest_first_by_default(content_dir):
     assert [t.date for t in load(content_dir).thoughts] == ["2026-10-25", "2026-06-01"]
+
+
+def test_featured_and_home_toggle_defaults(content_dir):
+    s = load_settings(content_dir)
+    assert s["home"]["featured"]["enabled"] is False and s["thoughts"]["show_on_home"] is True
+
+
+def test_featured_settings_typos_warn_with_suggestion(content_dir, caplog):
+    cfg = json.loads((content_dir / "site.json").read_text())
+    cfg["home"]["featured"] = {"enabled": True, "pagee": "x.html"}
+    (content_dir / "site.json").write_text(json.dumps(cfg))
+    with caplog.at_level(logging.WARNING, logger="qa"):
+        load_settings(content_dir)
+    assert any("pagee" in r.message and "page" in r.message for r in caplog.records)
