@@ -2,7 +2,7 @@
 title: A Journey from Rituals to Self-Discovery
 date: 2024-07-04
 category: Authenticity & Vulnerability
-lock: true
+lock: false
 synopsis: I refused to pray the way I was expected to, and that refusal cracked something open in me.
 slug: a-journey-from-rituals-to-self-discovery
 ---
