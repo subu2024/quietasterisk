@@ -126,7 +126,7 @@ Under 30 minutes. Do this once; revisit it each time your life changes.
 1. Open your last three months of bank statements. Circle only the things you would pay even if you had no income: rent, utilities, groceries, insurance, phone, loan minimums, medications.
 2. Add them. That is your monthly essentials.
 3. Multiply by 3, 6 and 9. Those are your survival numbers.
-4. Find one thing you left out (health coverage after a job loss is a common one) and write it next to the total with a star. [CHECK CURRENT: unemployment benefit rules and amounts for your state]
+4. Find one thing you left out (health coverage after a job loss is a common one) and write it next to the total with a star. Research unemployment benefit rules and amounts for your state on state website.
 5. Write one sentence: "My first target is ___ months, and I will review it on ___." This is a forecast about your own life, not advice. Your numbers will differ.
 
 ### The Ledger

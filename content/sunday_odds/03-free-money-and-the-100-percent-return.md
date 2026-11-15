@@ -2,136 +2,138 @@
 title: Free Money and the 100% Return
 synopsis: A 401(k) match that pays 100%, if you stay long enough to keep it.
 keywords: 401(k), employer match, vesting, expected value
-lock: true
+lock: false
 asterisk: "You only live one of those outcomes."
-teaser: "Next Sunday, Chapter 4: Debt Is a Bet You Already Lost. Anika opens her loan portal, and Revathi asks her to rank the pain before she ranks the math."
+teaser: "Anika opens the loan portal she has been avoiding, and Emma says never to pay off cheap debt"
 ---
-*Sunday, October 11, 2026. Revathi's kitchen, Fairfax, Virginia.*
 
-The all-hands lasted eleven minutes. No layoffs. A hiring freeze, a promise that the company had "runway through next summer," and a link to open enrollment, which closes October 31. Marcus in finance sent a single thumbs-up to the whole group chat and nothing else.
 
-Anika forwards the benefits email to Emma with a note: *apparently I need to "review my 401(k) elections."* Emma answers in four seconds: *retirement is so far away lol. i'll do it when i'm 30.*
+Anika's phone buzzed twice on Thursday afternoon, both times from the same people. HR had sent "ACTION REQUIRED: Review your 401(k) options," with a stock photo of a retiree on a sailboat. Emma's text came right after: *retirement is so far away lol. i'll deal with it at like 40.*
 
-On Sunday, Revathi is assembling a turkey sandwich with mango chutney, the kind of lunch she makes when she wants the conversation to be short. It is not going to be short.
+She screenshotted both and carried them to Fairfax on Sunday.
 
-**Anika:** First, a score. The all-hands: no layoffs. I said 30%. You said 40%.
-
-**Revathi:** So we were both a little wrong in the same direction. Nobody gets a prize. We score properly in January.
+*Sunday, November 15, 2026. Revathi's kitchen, Fairfax, Virginia.*
 
 ### The Question
 
-**Anika:** Do I have to do anything about this 401(k) thing, or is it a future-me problem? Emma says it's a future-her problem.
+Revathi was browning onions for sambar. A steel tumbler of chai sat at her elbow, and the yellow table held one clean napkin and a glazed donut in a paper bag, which was Anika's.
 
-### Revathi's Frame: the only offer in finance that pays you first
+**Anika:** Okay. HR says there's a "company match." Emma says retirement is so far away it's basically fiction. Meanwhile I have $24,000 in loans and $500 in my buffer. Why would I lock money away for forty years when I could throw it at the loans now? Be so for real, what are the odds this is a good idea?
 
-**Revathi:** Emma's thirty is a story that ends with the word "later." Let me ask you something else. A stranger says, hand me a dollar and I'll add a dollar of my own, instantly. Do you take it?
+**Revathi:** Do you know your match terms?
 
-**Anika:** Obviously.
+**Anika:** I know there's a PDF.
 
-**Revathi:** That's your match. Dollar for dollar, up to 6% of your salary. A hundred percent return the moment it lands. I've worked in markets for twenty-six years and I have never seen anyone offer a guaranteed hundred percent.
+**Revathi:** Get the PDF.
 
-**Anika:** Unless I leave before August. I read the PDF.
+She read it standing up, pencil in one hand, wooden spoon in the other.
 
-**Revathi:** You read the PDF?
+**Revathi:** Dollar for dollar on your first six percent of pay. You contribute four.
 
-**Anika:** Page 6. The match "vests" on my first anniversary. August 17th next year. If I leave before then, the company keeps its half. My own contributions stay mine either way.
+**Anika:** So I'm already doing most of it. Gold star.
 
-**Revathi:** (setting down the knife) Then it isn't a guaranteed hundred percent. It's a hundred percent times the chance that you stay. I said "guaranteed" and I shouldn't have.
+**Revathi:** You're doing two thirds of it. Call it a hole in the bucket.
 
-**Anika:** I put my odds of staying at 70%.
+### Revathi's Frame
 
-**Revathi:** You already wrote the odds. Use them.
+**Revathi:** Go to the market. Flour is a dollar a pound. The sign says: for every pound you buy, up to six, we give you a pound free. You've been buying four.
 
-**Revathi:** Here is a distinction you will use for the rest of your life. A savings account pays a guaranteed return: the bank promises a rate and the law backs the promise. A match is an expected return: it has a probability attached, and the number you quote is an average over outcomes. You only live one of those outcomes. So you ask two questions. What is the average, and what happens in the version where it goes wrong?
+**Anika:** So I'm leaving two free pounds on the shelf. Cute. But "free" is how every scam in my group chat starts.
 
-**Anika:** And the version where it goes wrong is I leave early and keep my own money.
+**Revathi:** Good instinct. Check what's attached. A stock that "might double" is a forecast: it might rain, it might not. A match is a contract. It's posted on the sign.
 
-**Revathi:** Which is why this is a good bet and not a gamble. The downside is capped.
+**Anika:** You said "contract." That's your word for "guaranteed" wearing a mustache.
+
+**Revathi:** Nearly. The company has to keep offering the match, the plan has to stay intact, and you have to stay long enough for the flour to become yours. The free pounds go into a locked cabinet, and the cabinet opens a third at a time.
+
+**Anika:** So it's not a hundred percent.
+
+**Revathi:** It's a hundred percent with an asterisk. Say it in odds: the match is the best-priced bet on the table this year, and the asterisk is the odds that you stay. Boring is a position.
 
 ### The Napkin
 
-Revathi slides a napkin across the yellow table. Assumptions first, all illustrative, so replace them with your own plan's terms.
+Revathi slid the napkin over and wrote the assumptions first.
 
-<div class="napkin" markdown="1">
+**Assumptions (all illustrative; these are this plan's terms, not a rule):**
+- Salary: $92,000.
+- Match: 100 percent of your contributions, up to 6 percent of pay.
+- You currently contribute 4 percent.
+- Vesting: you own the match 33 percent after one year of service, 67 percent after two, 100 percent after three. Your own contributions are always yours.
 
-- **Match:** dollar for dollar on the first 6% of salary. Salary: $92,000.
-- **Anika's contribution now:** 4%.
-- **Vesting:** the employer's money becomes hers on August 17, 2027. Her own contributions are hers immediately.
-- **Her odds of staying that long:** 70% (her own Ledger entry).
-- **Taxes:** pre-tax contributions, at a combined marginal rate of about 28%. In a Roth plan, take-home falls by the full amount.
+**The math:**
+- Salary × match percentage = dollars on the table: $92,000 × 6% = $5,520 of match available each year.
+- At 4 percent you capture $3,680. You leave $1,840 a year behind.
+- To grab it, you contribute $1,840 more: about $153 a month before tax, about $77 per paycheck.
+- You put in $1,840. Your employer puts in $1,840. That is a 100 percent return on the extra dollars, immediately.
 
-</div>
+**Anika:** Okay, that actually makes sense, I hate it. But my take-home goes down.
 
-**Revathi:** Maximum match: $92,000 × 6% = $5,520. You're capturing 4%, which is $3,680. The gap is $1,840 a year, about $153 a month. That's what you're leaving on the table.
+**Revathi:** By less than $153, if it's a traditional plan, because contributions come out before tax. How much less depends on your bracket. Call it $120 a month for the napkin. Your $500 to the buffer becomes about $380.
 
-**Revathi:** Now, what does it cost? Putting $153 a month into a pre-tax account lowers your take-home by only about $110, because the tax savings cover the rest. Over a year, call it $1,320 less to spend.
+**Anika:** And then the asterisk.
 
-<div class="tw" markdown="1">
+**Revathi:** Suppose you leave at your one-year anniversary. You keep one third of the extra match: $613. How likely are you to be here at a year?
 
-| Raise from 4% to 6% | Chance | Money in your account after one year |
-| --- | --- | --- |
-| You stay past August 17, 2027 | 70% | $1,840 yours + $1,840 from the employer = $3,680 |
-| You leave before it vests | 30% | $1,840 yours, $0 from the employer |
-| **Expected** |  | **$1,840 + (70% × $1,840) = ~$3,128** for ~$1,320 of lost take-home |
+**Anika:** Call it seventy percent. I like it here. I also like options.
 
-</div>
+**Revathi:** Then the expected vested value of the extra match is 70 percent of $613, about $429. On the $1,840 you put in, that's about 23 percent.
 
-**Revathi:** Even in the bad case you've turned $1,320 of spendable money into $1,840 of locked-up money. In the good case you've turned it into $3,680. I'd take that bet at 70%. I'd take it at 50%.
+**Anika:** That's the sad version. Year one only.
 
-**Anika:** You know what's funny? Every one of my friends knows their cliff date the way you know earnings dates. It's why people quit the month after it.
+**Revathi:** It's the floor. Stay, and the cabinet keeps opening.
 
-**Revathi:** Which means your 70% isn't independent of the match. The match changes the odds that you stay. I hadn't priced that.
+**Anika:** What if the schedule were different?
 
-**Anika:** I'm trying to tell you that the handcuffs are very visible.
-
-**Revathi:** Then write down the cliff date. It belongs in your decisions.
+**Revathi:** Change one assumption and watch the answer move. If the plan vested everything on day one, the extra $1,840 is yours whether you stay or go, and your seventy percent stops mattering. If it made you wait three full years for any of it, your year-one match is worth zero. Same sign on the shelf. Different cabinet.
 
 ### The Disagreement
 
-**Anika:** Okay, but I have $24,000 in loans. Shouldn't every extra dollar go there? And locking money away until I'm sixty feels bad.
+**Anika:** Here's my real problem. I owe $24,000. Every dollar I send into a retirement account is a dollar I'm not sending to the loans, and I can't touch it until I'm old. Locked is locked.
 
-**Revathi:** The liquidity point is fair. It's the best objection to a 401(k) there is, and I won't pretend otherwise. Your loans probably cost six or seven percent, and in a few weeks we'll rank them properly. But a match that pays 70 cents on the dollar in expectation beats a guaranteed six or seven.
+**Revathi:** The lock is real. Taking money out early usually costs a penalty and tax. There are early-withdrawal rules. I won't wave that away.
 
-**Anika:** Unless something goes wrong and I need the money.
+**Anika:** Thank you.
 
-**Revathi:** Which is why the buffer comes first. You'll hit $1,000 on November 1. You raise the contribution after that, not before.
+**Revathi:** So compare the two uses of the same $1,840. Send it to the loans, and you save whatever they charge. What would a loan have to charge to beat a hundred percent?
 
-**Anika:** So November 15th. And it comes out of the $300 of slack I get in an average month, not out of the $500 for the buffer.
+**Anika:** More than a hundred percent interest.
 
-**Revathi:** That's cleaner than my plan. Put it in the Ledger.
+**Revathi:** That's a payday lender, not a student loan. Pull yours up soon. Put your 23 percent floor next to those rates and let the loans make their case.
 
-### Monday Move (25 minutes)
+**Anika:** And if I skip the match?
 
-<div class="move" markdown="1">
+**Revathi:** What would have to be true for skipping to be right?
 
-1. **Find the match terms.** Look in your benefits portal or the plan's Summary Plan Description. You want two things: the match formula and the vesting schedule.
-2. **Compute the gap.** Salary × (match cap − the percent you contribute now) = dollars left on the table each year.
-3. **Write down your cliff date.** If you leave before it, you may forfeit the employer's share.
-4. **Schedule the raise.** If your buffer isn't at its first $1,000 yet, set a calendar reminder for the day it is. Then raise your contribution to the full match.
+**Anika:** I'd need to be sure I'm gone before a year. Or I'd need the cash for something real.
 
-*Check whether your plan is pre-tax or Roth before you calculate the take-home impact.*
+**Revathi:** The second one is what your buffer is for. The first one is a prediction. Write it down with a number.
 
-</div>
+**Anika:** Okay. But here's what you're missing. Everyone in my group chat has been at their job under two years. A three-year vesting schedule is a leash, and most of us are reading the next recruiter message. And the portal has a slider that shows your balance at sixty-five. It mostly makes retirement feel like a screensaver.
+
+**Revathi:** I set mine up years ago and never touched that slider. I'd have called the vesting page the boring part. For you, it's the whole bet. Noted.
+
+**Anika:** So I wasn't wrong about the loans?
+
+**Revathi:** You weren't wrong about the lock. You were wrong that the lock is the only price.
+
+### Monday Move
+
+Under 30 minutes. (Anika's match is hers. Yours will differ, and whether any change fits your finances is your call.)
+
+1. Open your plan's summary document or benefits portal.
+2. Find three things: the match formula, the cap on matched pay, and the vesting schedule. Write them in your notes app.
+3. Compute your gap: (match cap % − your contribution %) × your salary.
+4. Find out when a contribution change takes effect. Many plans apply it on a specific payroll date.
+5. Decide whether to raise your contribution up to the full match. If you do, preview your new take-home number before you confirm.
 
 ### The Ledger
 
-Anika scores number six, adds a new entry and shows it to her mother.
+Anika opened her iPhone Ledger and typed with one thumb, licking glaze off the other.
 
-<div class="tw" markdown="1">
+- **New prediction:** I will submit the contribution change by Sunday, November 22, 2026. Anika: 90%. Revathi: 80% ("You'll find a reason to wait a week").
+- **Decision note:** the change takes effect on the first January paycheck, so the $1,000 buffer target is not affected.
+- **Match terms logged:** 100 percent of the first 6 percent, vesting 33/67/100 over three years of service. Gap: $1,840 a year, about $153 a month before tax.
 
-| # | Prediction | Anika | Revathi | Resolves |
-| --- | --- | --- | --- | --- |
-| 6 | The all-hands announces layoffs | 30% | 40% | Resolved: no |
-| 7 | I raise my contribution to 6% | 80% | 65% | Nov 30, 2026 |
+**Anika:** Timestamped.
 
-</div>
-
-**Revathi:** Sixty-five. You'll wait for the buffer to be done, and then you'll forget.
-
-**Anika:** I have a calendar reminder.
-
-**Revathi:** Page 6, you said. Send me that PDF.
-
-**Anika:** Why?
-
-**Revathi:** Because I'd like to see what else you've read that I haven't.
+**Revathi:** I'm aware.
