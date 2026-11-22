@@ -169,3 +169,30 @@ ANYTHING I INVENTED THAT THE AUTHOR SHOULD CONFIRM:
 - Semi-monthly pay (24 paychecks a year).
 - That Revathi has her own 401(k)/plan portal she set up years ago and never explored.
 - Anika's group-chat remark that friends have been at jobs under two years (anecdotal, not a statistic).
+
+
+CHAPTER 4: Debt Is a Bet You Already Lost, Sunday, November 22, 2026. Revathi's kitchen, Fairfax, Virginia (cold open: Anika's desk, Tuesday, 12:40 p.m.).
+FACTS ESTABLISHED (all numbers illustrative):
+- Loan list, total $24,000, both fixed rate: Loan 1 $14,000 at 6.8%, minimum $160; Loan 2 $10,000 at 4.5%, minimum $100. Minimums total $260.
+- Year-one interest at starting balances: $952 (Loan 1) + $450 (Loan 2) = $1,402, about $117 a month ("the rent on owing").
+- Napkin, one year on $1,000 extra, taxes ignored on both sides: Loan 1 saves $68; Loan 2 saves $45. Student-loan interest deduction noted only as [CHECK CURRENT].
+- Stock-fund three-case sketch (Revathi's guesses, not research): 20% at -20%, 50% at +9%, 30% at +22%; expected +7.1% (+$71). Expected edge over Loan 1: $3; over Loan 2: $26. At a 5% expected return: edge over Loan 2 is $5 and Loan 1 wins ($68 to $50).
+- Hypothetical extra $150 a month after the buffer and match, with freed minimums rolling forward (total budget $410): minimums only 125 months, about $7,947 interest; avalanche 69 months, about $4,050; snowball 70 months, about $4,643. Snowball costs about $593 (about $8.50 a month). Rule of thumb: each dollar-year on the 4.5% loan instead of the 6.8% loan costs 2.3 cents.
+- Anika's portal parks extra payments as "paid ahead" or spreads them across loans unless she selects "apply to principal" on a specific loan [CHECK CURRENT: servicer rules]. Two people in her group chat paid ahead for months before noticing (anecdote).
+- Revathi did not know this; she paid off her own loans "by check, with a stamp" (invented backstory).
+- Cold open: Emma's text "never pay off cheap debt. ur literally paying the bank to be boring." Setting details: ham-and-Swiss, office printer, Thanksgiving cranberry-orange relish, a "mug" joke.
+- Revathi calls Anika "Annie" in dialogue. Revathi says "contractual," not "guaranteed."
+- Hook: landlord email, subject "Lease renewal: credit check authorization required."
+- Lines to recur: "Contractual." "The rent on owing." "A plan you abandon returns zero." "Say it in odds." "Translate it to rent." "Okay, that actually makes sense, I hate it."
+WHAT ANIKA NOW KNOWS / DOES: has the full loan list and rate ranking planned; knows a loan payoff is a contractual return equal to its rate; understands snowball costs about $593 in the sketch; knows to use "apply to principal"; plans to finish the sheet by Nov 29.
+WHAT REVATHI NOW KNOWS / FEELS: her 7.1% was an assumption she trusted too much and a sketch cannot tell 5% from 7%; learned the "paid ahead" default from Anika; concedes that behavior has a price.
+IDEA TAUGHT / TOOL INTRODUCED: paying off a debt is a contractual return equal to its rate; compare with an expected return only after pricing the risk. Tool: list debts by rate; guaranteed-versus-expected comparison; avalanche versus snowball.
+PREDICTIONS LOGGED (with probability and resolve date): (1) Debt list and ranking done by Nov 29, 2026: Anika 90%, Revathi 80%. (2) On Jan 31, 2027, Anika still says the 6.8% loan gets the first extra dollar: Anika 75%, Revathi 60%.
+OPEN THREADS: $40,000, Kill Journal, Learning Portfolio, The Number: not touched. Emma's "5x" stock: not mentioned in the final text. Buffer balance: not stated. 401(k) match terms: not stated. Job-stay prediction: not touched. New: loan list established (Ch 4); extra-payment plan pending the buffer and match; landlord credit-check email (Ch 5).
+HOOK FOR NEXT SUNDAY: Chapter 5, the apartment-renewal credit check.
+ANYTHING I INVENTED THAT THE AUTHOR SHOULD CONFIRM:
+- Both loans' balances, rates, minimums and fixed-rate status; federal or private is not stated. Reconcile with any earlier chapter that states loan minimums ($260).
+- The stock-fund three cases, the hypothetical $150 extra payment, and the spreadsheet payoff figures built on it.
+- Revathi's "paid off by check, with a stamp," and Anika's group-chat "paid ahead" story.
+- The cold-open setting, the relish, the mug joke, and the landlord's email wording.
+- Prediction 2 and its Jan 31, 2027 resolve date.

@@ -1,7 +1,7 @@
 ---
 title: "Acknowledgements"
 synopsis: "A thank-you to the friends, storytellers, and tools that quietly shaped this book, and to you for paying attention."
-lock: false
+lock: true
 ---
 
 # Acknowledgements

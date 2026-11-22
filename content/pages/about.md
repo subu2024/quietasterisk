@@ -31,7 +31,7 @@ Thanks for stopping by. The asterisk is silent, but the questions are loud.
 <div class="letter-signoff" markdown="1">
 Warmly,
 
-Kay Yen
+Subu
 {: .name }
 </div>
 
