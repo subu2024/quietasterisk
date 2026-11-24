@@ -3,7 +3,7 @@ title: The Tuesday We Threw Away
 slug: the-tuesday-we-threw-away
 date: 2026-12-01
 category: Self-Awareness & EQ
-lock: true
+lock: false
 synopsis: Most divorces don't end over one big betrayal but over a thousand ordinary days we stopped counting, and over a longing that was never really about the other person.
 ---
 
@@ -38,7 +38,7 @@ Then we get disappointed, and the disappointment needs somewhere to go.
 
 ## The blame, which is always available
 
-Blame is a wonderfully efficient emotion. It asks nothing of us. It comes with a ready cast: *they changed, they stopped trying, they never really got me, they weren't who I thought, they aren't the husband or wife I deserved.* Our friends nod. Our families, who love us, often nod the hardest.
+Blame is a wonderfully efficient emotion. It asks nothing of us. It comes with a ready cast: *they changed, they stopped trying, they never really got me, they weren't who I thought, they aren't the husband or wife I deserved.* Our best friends nod. Our families, who love us, often nod the hardest.
 
 And some of it is even true. People do change and people do stop trying. But I've noticed that blame has a particular function in these moments. It lets us leave without looking inside. Looking inside is slow and unflattering. It asks questions like: *What was I expecting this person to fix in me? When did I last show up fully, without keeping score? How much of my loneliness did I bring with me?*
 
