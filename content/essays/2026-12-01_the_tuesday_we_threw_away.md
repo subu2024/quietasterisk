@@ -4,85 +4,72 @@ slug: the-tuesday-we-threw-away
 date: 2026-12-01
 category: Self-Awareness & EQ
 lock: false
-synopsis: Most divorces don't end over one big betrayal but over a thousand ordinary days we stopped counting, and over a longing that was never really about the other person.
+synopsis: Most marriages don't end in a courtroom. They end in a thousand ordinary Tuesdays we stopped counting.
 ---
 
-> Most marriages don't end in a courtroom   
-> They end in a thousand ordinary Tuesdays we stopped counting   
+I pour a whiskey and turn on the news. Another couple has split this month. Nobody cheated. Nobody did anything you could put in a headline. When I called a friend to ask what happened, she shrugged. "They just wanted different things."
 
-I pour myself a whiskey and turn on the news ..  Another [couple](https://people.com/roger-waters-files-for-divorce-kamilah-chavis-after-5-years-of-marriage-12251373) has split up this month. As far as anyone said, nobody cheated and nobody did anything you could put in a headline. When I called a friend to ask what happened, she shrugged and said, "They just wanted different things."
+I've heard that sentence so often it has stopped sounding like an explanation. It sounds like a coat people put on when they leave a house they never really looked around in.
 
-I have heard that sentence enough times that it has stopped sounding like an explanation. It sounds like a coat people put on when they leave a house they never really looked around in.
+I won't argue about whether any particular divorce was right. Some are necessary. Some are the bravest thing a person ever does. What I keep circling is the quieter kind, where nothing is wrong enough to name and something is missing enough to leave over. I know that edge. I've stood near it.
 
-I'm not going to argue about whether any particular divorce was right. Some are necessary, and some are the bravest thing a person ever does. What I keep circling is the quieter kind, the one where nothing is wrong enough to name and something is missing enough to leave over. I suspect most of us have stood near that edge at least once.
+Like many, she probably walked into this relationship carrying an unwritten list. Good looking. Smart. Educated. Caring. Respectful. Somewhere along the way, she handed the list to me and waited.
 
-## The thing we were looking for
+Then the waiting became the relationship. Many years later, sitting across the dinner table, her mind probably found the list incomplete, and quietly decided it was my fault.
 
-Most of us walk into a relationship carrying an unwritten list. We want to feel chosen, understood, and lit up. We want to feel like the main character of something. Somewhere along the way, we hand that list to another person and wait.
+*Seeking* is an interesting word. It points outward by design. You can only seek what you believe is somewhere else. So when she grew restless, her mind probably did what minds are built to do. It scanned the horizon for the person, the place, or the version of life where the missing thing must be kept.
 
-Then the waiting starts to feel like the relationship itself. We look across the dinner table, find the list incomplete, and quietly decide the other person is the reason.
+It rarely scanned the room she was standing in. Or the man sitting across from her.
 
-*Seeking* is an interesting word. It points outward by design. You can only seek what you believe is somewhere else. So when we're restless, the mind does what it was built to do. It scans the horizon for the person, the place, or the version of life where the missing thing must be kept.
+Life is mostly the dishwasher and the traffic. On most Tuesdays, she did the dishes and the groceries. I talked about my work. She listened.
 
-It rarely scans the room we're standing in.
+I drove, and she sat beside me in a silence that was either comfortable or not, depending on her mood.
 
-## What a life is actually made of
+I never asked which.
 
-Here is the part I keep forgetting, and I'd bet you do too. Life is mostly not the highlight reel. It is the dishwasher and the traffic. It is who picks up the milk, the half-listened-to story about someone's meeting, and the silence in the car that is either comfortable or not.
+That is where the days lived. A marriage is built almost entirely out of material like this, and she probably knew it. Yet she kept expecting it to deliver fireworks on schedule, as if the daily stuff were only the packaging around the real relationship.
 
-That is where the days live. A marriage is built almost entirely out of material like this, and we know it. Yet we keep expecting it to deliver fireworks on schedule, as if the daily stuff were only the packaging around the real relationship.
+So she probably started looking for validation somewhere with better lighting. A friend who found her fascinating. A colleague who laughed a little longer. A version of herself that existed only in someone else's attention. None of it was wicked, exactly. It's just that outside eyes see you on your best behavior, and a spouse sees you on a Tuesday. Of course the Tuesday lost. The contest was rigged, and I'm not sure I wasn't the one who rigged it.
 
-So we start looking for validation somewhere with better lighting. A friend who finds us fascinating. A colleague who laughs a little longer. A version of ourselves that exists only in someone else's attention. None of it is wicked, exactly. It's just that outside eyes see us on our best behavior, and our partner sees us on a Tuesday. Of course the Tuesday loses. We've rigged the contest.
+Then the disappointment needed somewhere to go.
 
-Then we get disappointed, and the disappointment needs somewhere to go.
+Blame asks nothing of us. It arrives with a ready cast: *he changed, he stopped trying, he never respected me.* Her friends probably nodded. Her family, who love her, nodded hardest.
 
-## The blame, which is always available
+Some of it was even true. I did change. I did stop trying. But blame lets anyone leave without looking inside, and looking inside is slow and unflattering. It asks: *What was she expecting me to fix in her? When did either of us last show up fully, without keeping score? How much of her loneliness did she bring with her? How much of it did I add?*
 
-Blame is a wonderfully efficient emotion. It asks nothing of us. It comes with a ready cast: *they changed, they stopped trying, they never really got me, they weren't who I thought, they aren't the husband or wife I deserved.* Our best friends nod. Our families, who love us, often nod the hardest.
+Those questions have no villain in them, which is exactly why they go unasked. A story with no villain gives you nothing to walk away from.
 
-And some of it is even true. People do change and people do stop trying. But I've noticed that blame has a particular function in these moments. It lets us leave without looking inside. Looking inside is slow and unflattering. It asks questions like: *What was I expecting this person to fix in me? When did I last show up fully, without keeping score? How much of my loneliness did I bring with me?*
+(It's easy to write this from a safe distance, and I'm only guessing at her side. I have my own list of rooms I left without turning on the light.)
 
-Those questions don't have villains in them, which is exactly why we avoid them. A story with no villain gives you nothing to walk away from.
+Here is what I've come to believe, and I hold it loosely: the longing doesn't live in the relationship. It lives in us. It was there before we met, and it will be waiting at the next address too, with its bags already unpacked.
 
-(I'm aware that this is easy to write from a safe distance. I have my own list of rooms I left without turning on the light.)
+That's why the new relationship, the new city, the new life so often feels wonderful for a stretch and then slowly begins to sound familiar. The same restlessness gets a fresh audience. The same list gets handed to someone new. You call it a pattern only much later, usually after the second or third time.
 
-## The part that stays within us
-
-Here is what I've come to believe, and I hold it loosely: the longing doesn't live in the relationship. It lives in us. It was in us before we met the person, and it will be waiting at the next address too, with its bags already unpacked.
-
-That's why the new relationship, the new city, and the new life so often feel wonderful for a stretch and then slowly begin to sound familiar. The same restlessness gets a fresh audience. The same list gets handed to a new person. We call it a pattern only much later, usually after the second or third time.
-
-I don't mean this as an accusation. Wanting more isn't a flaw. But it matters enormously whether we treat the wanting as information about ourselves or as a verdict on someone else.
+Wanting more isn't a flaw. But it matters enormously whether we treat the wanting as information about ourselves or as a verdict on someone else.
 
 ## What gets thrown away
 
-This is the part that bothers me most. When a relationship ends this way, it doesn't only end the future. It quietly rewrites the past.
+When a relationship ends this way, it doesn't only end the future. It quietly rewrites the past.
 
-Think of everything that was good. The first apartment with the wobbly table. The road trip where you got lost and laughed so hard you had to pull over. The song from a bad movie that still makes only the two of you crack up. The night one of you was sick and the other stayed up and drove you to the emergency room, not because it was romantic but because that's simply what you did. The private jokes that no one else on earth will ever understand.
+The first apartment with the wobbly table. The road trip where we got lost and laughed so hard we had to pull over. The song from a bad movie that still makes only the two of us crack up. The night one of us was sick and the other drove to the emergency room, not because it was romantic but because that's simply what we did.
 
-All of it gets filed under *the old life*. In the rush to defend the decision, we start remembering only the dull parts, the arguments, and the evidence. We trade a real, textured, imperfect history for a vague promise of happiness somewhere ahead. It has no face and no address, and it never quite arrives.
+All of it gets filed under *the old life*. In the rush to defend the decision, she discounted the dull parts while magnifying the others: the arguments, the evidence. She traded a real, textured, imperfect history for a vague promise of happiness somewhere ahead. It had no face and no address, and it never quite arrived.
 
-A concrete past for an abstract future is a terrible exchange rate. We rarely notice because the future never sends a receipt.
+A concrete past for an abstract future is a terrible exchange rate. The future never sends a receipt.
 
 ## The privacy of regret
 
-Regret is shy. It does not announce itself at the signing. It doesn't show up at the party where everyone says *you're so brave* and *you deserve to be happy*.
+Regret is shy. It doesn't announce itself at the signing. It doesn't show up at the party where everyone says *you're so brave* and *you deserve to be happy*.
 
-It comes later, usually on a quiet evening in a quiet apartment. Something small does it: a song, a smell, a photo that surfaces on your phone with an old date on it. You find yourself looking at a Tuesday from six years ago, an unremarkable one with nothing happening in it, and it suddenly looks like the richest day you ever had.
+It comes later, on a quiet evening in a quiet apartment. Something small does it: a song, a smell, a photo surfacing on my phone with an old date on it. I find myself looking at a Tuesday from six years ago, an unremarkable one with nothing happening in it, and it suddenly looks like the richest day I ever had.
 
-And you sit with that, alone, because there's no one to say it to. The person who would understand it best is the person you've just spent a great deal of effort leaving and trying to forget.
+And I sit with that, alone. The one person who would understand it best is the person who spent so much effort leaving.
 
-That is the loneliest part of the whole story. It happens in private, with nobody watching, and nobody ever sees it.
+I don't have a method, and I'm wary of anyone who does.
 
-## So, a small thing
+I only have one question, best asked before the door closes: *If this person stayed exactly as they are today, what would I still see in them?*
 
-I don't have a method for this, and I'm wary of anyone who claims one. I can't tell you whether to stay or go. That belongs to the two people inside the room.
+It may change nothing. But someone, a few seconds before the end, might notice that the thing they were seeking was sitting across the table, doing the dishes, waiting for a Tuesday to be counted.
 
-What I can do is offer one modest question, to ask before the door closes rather than after: *If this person stayed exactly as they are today, with all the same habits and none of the improvements I'm waiting for, what would I still be able to see in them?*
-
-And then a second, slightly harder one: *What am I hoping someone else will give me that I haven't tried giving myself?*
-
-It's possible those questions will change nothing. It's also possible that someone will notice, a few seconds before the end, that the thing they were seeking was sitting across from them, doing the dishes, waiting for a Tuesday to be counted.
-
-And so goes another couple. My whiskey has gone warm ..  I drink it anyway ..
+My whiskey has gone warm. I drink it anyway.
 
